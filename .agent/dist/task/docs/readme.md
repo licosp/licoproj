@@ -10,4 +10,6 @@ Link to the published GitHub page
 
 ## 1-2: Developer Information
 
-Developer's email address and name
+name: licosp
+github account: https://github.com/licosp
+x account: https://x.com/licospx

@@ -10,4 +10,6 @@ README.mdでより詳細なプロジェクトの概要を説明する
 
 ## 1-2: 開発者情報
 
-開発者のメールアドレスと名前
+名前: licosp
+アカウント github : https://github.com/licosp
+アカウント x : https://x.com/licospx
