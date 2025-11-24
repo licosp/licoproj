@@ -1,3 +1,7 @@
+---
+description: Translate Japanese source files to English and maintain a clean output directory
+---
+
 # Translate and Cleanup Task
 
 ## Objective

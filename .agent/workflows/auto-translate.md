@@ -1,3 +1,7 @@
+---
+description: Design document for an automated translation system that monitors source files and automatically translates them from Japanese to English
+---
+
 # Auto-Translation System (Future Implementation)
 
 ## Overview

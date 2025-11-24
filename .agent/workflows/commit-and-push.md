@@ -1,3 +1,7 @@
+---
+description: Identify repository changes, organize them into logical commits, and push them to GitHub
+---
+
 # Commit and Push Workflow
 
 ## Objective
