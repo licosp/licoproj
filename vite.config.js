@@ -1,8 +1,8 @@
-import { defineConfig } from 'vite'
+import { defineConfig } from "vite";
 
 export default defineConfig({
-    base: '/licoimg/', // Base path for GitHub Pages
-    build: {
-        outDir: 'docs',
-    },
-})
+  base: "/licoimg/", // Base path for GitHub Pages
+  build: {
+    outDir: "docs",
+  },
+});

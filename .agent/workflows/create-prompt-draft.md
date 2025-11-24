@@ -9,12 +9,13 @@ This workflow creates a new prompt draft file in `.agent/.draft/` with timestamp
 ## Steps
 
 1. Create the `.agent/.draft/` directory if it doesn't exist:
+
 ```bash
 mkdir -p .agent/.draft
 ```
 
-// turbo
-2. Create a new draft file with the current timestamp:
+// turbo 2. Create a new draft file with the current timestamp:
+
 ```bash
 cat > .agent/.draft/draft_$(date -Iseconds).md << EOF
 ---

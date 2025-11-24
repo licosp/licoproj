@@ -20,6 +20,7 @@ Translate Japanese source files to English and maintain a clean output directory
 Recursively translate all files from the source directory to the destination directory.
 
 **Requirements**:
+
 - Translate content from Japanese to English
 - Preserve directory structure
 - Only translate files when:
@@ -27,6 +28,7 @@ Recursively translate all files from the source directory to the destination dir
   - The destination file does not exist
 
 **File Handling**:
+
 - Maintain the same filename
 - Preserve the same relative path structure
 - Keep the same file extension
@@ -36,6 +38,7 @@ Recursively translate all files from the source directory to the destination dir
 Remove orphaned files and directories from the destination.
 
 **Requirements**:
+
 - Delete files in the destination directory that no longer exist in the source directory
 - Delete empty directories in the destination directory
 - Preserve files that correspond to existing source files

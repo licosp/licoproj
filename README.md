@@ -16,11 +16,13 @@ A premium, client-side web-based image viewer built with Vite and Vanilla JavaSc
 ## Getting Started
 
 1.  Install dependencies:
+
     ```bash
     npm install
     ```
 
 2.  Start the development server:
+
     ```bash
     npm run dev
     ```
