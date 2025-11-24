@@ -16,9 +16,9 @@ mkdir -p .agent/.draft
 // turbo
 2. Create a new draft file with the current timestamp:
 ```bash
-cat > .agent/.draft/draft_$(date +%Y-%m-%d_%H%M%S).md << 'EOF'
+cat > .agent/.draft/draft_$(date -Iseconds).md << EOF
 ---
-date: $(date +%Y-%m-%d %H:%M:%S)
+date: $(date -Iseconds)
 user: $(whoami)
 ---
 
@@ -32,9 +32,9 @@ user: $(whoami)
 EOF
 ```
 
-3. The draft file will be created at: `.agent/.draft/draft_YYYY-MM-DD_HHMMSS.md`
+3. The draft file will be created at: `.agent/.draft/draft_YYYY-MM-DDTHH:MM:SS+HH:MM.md`
 
 ## File Naming Convention
 
-- Format: `draft_YYYY-MM-DD_HHMMSS.md`
-- Example: `draft_2025-11-24_161853.md`
+- Format: `draft_YYYY-MM-DDTHH:MM:SS+HH:MM.md` (ISO 8601)
+- Example: `draft_2025-11-24T17:37:42+09:00.md`
