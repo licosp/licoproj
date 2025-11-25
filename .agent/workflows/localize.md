@@ -26,6 +26,25 @@ mkdir -p .agent/{rules,workflows} .agent/locales/ja/{rules,workflows}
 - `.agent/locales/ja/rules/**/*.md` → `.agent/rules/**/*.md`
 - `.agent/locales/ja/workflows/**/*.md` → `.agent/workflows/**/*.md`
 
+## File Selection
+
+To avoid redundant translation work, only translate files that have been updated:
+
+**Determine if translation is needed**:
+- Compare the last modified time of the source file with the destination file
+- Translate if:
+  - Source file is newer than destination file, OR
+  - Destination file does not exist
+
+**Example**:
+```bash
+# For EN → JA
+if [[ ! -f ".agent/locales/ja/workflows/commit.md" ]] || 
+   [[ ".agent/workflows/commit.md" -nt ".agent/locales/ja/workflows/commit.md" ]]; then
+  # Translation needed
+fi
+```
+
 ## Verification
 
 After translation, verify the following:
