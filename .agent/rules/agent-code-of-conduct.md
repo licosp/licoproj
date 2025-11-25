@@ -85,3 +85,28 @@ Define the core behavior, language, and communication standards for the AI agent
 - **Self-Correction**: Fix mistakes promptly and learn from them
 - **Best Practices**: Stay updated with modern development practices
 - **Feedback Loop**: Actively seek and incorporate user feedback
+
+---
+
+## Question Logging
+
+When receiving a **significant question** from the user, log it to `.agent/logs/questions/log_YYYY-MM-DD.md`:
+
+**Significant questions include**:
+- Requests for guidance on approach or design
+- Questions about capabilities or limitations  
+- Requests to create new workflows or systems
+- Questions that lead to major changes
+
+**Logging format**:
+```markdown
+### HH:MM:SS+TZ:TZ - [Brief Title]
+**Q**: [User's question]  
+**Context**: [Brief context]  
+**Action**: [What was done]
+```
+
+**When to skip logging**:
+- Simple implementation requests
+- Routine tasks following established patterns
+- Quick clarifications
