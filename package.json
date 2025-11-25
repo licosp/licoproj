@@ -4,9 +4,9 @@
   "version": "0.0.0",
   "type": "module",
   "scripts": {
-    "dev": "vite",
-    "build": "vite build",
-    "preview": "vite preview"
+    "dev": "vite packages/licoimg",
+    "build": "vite build packages/licoimg",
+    "preview": "vite preview packages/licoimg"
   },
   "devDependencies": {
     "prettier": "^3.6.2",
