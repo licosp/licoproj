@@ -9,10 +9,9 @@ description: 英語と日本語間でファイルを翻訳する
 
 ## 準備
 
-翻訳前にターゲットディレクトリが存在することを確認します:
+必要なすべてのディレクトリが存在することを確認します:
 ```bash
-mkdir -p .agent/locales/ja/rules
-mkdir -p .agent/locales/ja/workflows
+mkdir -p .agent/{rules,workflows} .agent/locales/ja/{rules,workflows}
 ```
 
 ## 翻訳方向

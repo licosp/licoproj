@@ -9,10 +9,9 @@ Translate documentation files (`.md`) between English and Japanese, following th
 
 ## Preparation
 
-Ensure target directories exist before translating:
+Ensure all required directories exist:
 ```bash
-mkdir -p .agent/locales/ja/rules
-mkdir -p .agent/locales/ja/workflows
+mkdir -p .agent/{rules,workflows} .agent/locales/ja/{rules,workflows}
 ```
 
 ## Translation Directions
