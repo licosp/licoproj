@@ -7,6 +7,14 @@ description: Translate files between English and Japanese
 ## Purpose
 Translate documentation files (`.md`) between English and Japanese, following the standards defined in `.agent/rules/core/localization.md`.
 
+## Preparation
+
+Ensure target directories exist before translating:
+```bash
+mkdir -p .agent/locales/ja/rules
+mkdir -p .agent/locales/ja/workflows
+```
+
 ## Translation Directions
 
 ### English to Japanese (EN → JA)
@@ -15,17 +23,11 @@ Translate documentation files (`.md`) between English and Japanese, following th
 **Destination**: `.agent/locales/ja/` (preserving directory structure)
 
 #### Steps
-1. **Create Directories**
-   ```bash
-   mkdir -p .agent/locales/ja/rules
-   mkdir -p .agent/locales/ja/workflows
-   ```
-
-2. **Translate & Save**
+1. **Translate & Save**
    - **Rules**: `.agent/rules/**/*.md` → `.agent/locales/ja/rules/**/*.md`
    - **Workflows**: `.agent/workflows/*.md` → `.agent/locales/ja/workflows/*.md`
 
-3. **Verify & Commit**
+2. **Verify & Commit**
    - Check translation accuracy and Markdown formatting
    - Commit and push changes
 

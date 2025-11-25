@@ -7,6 +7,14 @@ description: 英語と日本語間でファイルを翻訳する
 ## 目的
 `.agent/rules/core/localization.md`で定義された標準に従って、ドキュメントファイル（`.md`）を英語と日本語間で翻訳します。
 
+## 準備
+
+翻訳前にターゲットディレクトリが存在することを確認します:
+```bash
+mkdir -p .agent/locales/ja/rules
+mkdir -p .agent/locales/ja/workflows
+```
+
 ## 翻訳方向
 
 ### 英語から日本語へ (EN → JA)
@@ -15,17 +23,11 @@ description: 英語と日本語間でファイルを翻訳する
 **宛先**: `.agent/locales/ja/` (ディレクトリ構造を保持)
 
 #### ステップ
-1. **ディレクトリ作成**
-   ```bash
-   mkdir -p .agent/locales/ja/rules
-   mkdir -p .agent/locales/ja/workflows
-   ```
-
-2. **翻訳と保存**
+1. **翻訳と保存**
    - **Rules**: `.agent/rules/**/*.md` → `.agent/locales/ja/rules/**/*.md`
    - **Workflows**: `.agent/workflows/*.md` → `.agent/locales/ja/workflows/*.md`
 
-3. **検証とコミット**
+2. **検証とコミット**
    - 翻訳の正確性とMarkdownフォーマットを確認します
    - 変更をコミットしてプッシュします
 
