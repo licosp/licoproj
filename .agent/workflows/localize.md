@@ -21,14 +21,9 @@ mkdir -p .agent/{rules,workflows} .agent/locales/ja/{rules,workflows}
 **Source**: `.agent/rules/**/*.md` and `.agent/workflows/*.md`  
 **Destination**: `.agent/locales/ja/` (preserving directory structure)
 
-#### Steps
-1. **Translate & Save**
-   - **Rules**: `.agent/rules/**/*.md` → `.agent/locales/ja/rules/**/*.md`
-   - **Workflows**: `.agent/workflows/*.md` → `.agent/locales/ja/workflows/*.md`
-
-2. **Verify & Commit**
-   - Check translation accuracy and Markdown formatting
-   - Commit and push changes
+**Translate & Save**:
+- **Rules**: `.agent/rules/**/*.md` → `.agent/locales/ja/rules/**/*.md`
+- **Workflows**: `.agent/workflows/*.md` → `.agent/locales/ja/workflows/*.md`
 
 ---
 
@@ -40,14 +35,16 @@ mkdir -p .agent/{rules,workflows} .agent/locales/ja/{rules,workflows}
 > [!WARNING]
 > This overwrites existing English files. Commit changes before running.
 
-#### Steps
-1. **Translate & Overwrite**
-   - **Rules**: `.agent/locales/ja/rules/**/*.md` → `.agent/rules/**/*.md`
-   - **Workflows**: `.agent/locales/ja/workflows/*.md` → `.agent/workflows/*.md`
+**Translate & Overwrite**:
+- **Rules**: `.agent/locales/ja/rules/**/*.md` → `.agent/rules/**/*.md`
+- **Workflows**: `.agent/locales/ja/workflows/*.md` → `.agent/workflows/*.md`
 
-2. **Verify & Commit**
-   - Ensure accurate translation and correct formatting
-   - Commit and push changes
+## Verification
+
+After translation, verify the following:
+- Translation preserves the original meaning and intent
+- Markdown formatting remains intact
+- Terminology is consistent across related documents
 
 ## Guidelines
 Refer to `.agent/rules/core/localization.md` for detailed translation standards.

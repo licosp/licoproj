@@ -21,14 +21,9 @@ mkdir -p .agent/{rules,workflows} .agent/locales/ja/{rules,workflows}
 **ソース**: `.agent/rules/**/*.md` と `.agent/workflows/*.md`  
 **宛先**: `.agent/locales/ja/` (ディレクトリ構造を保持)
 
-#### ステップ
-1. **翻訳と保存**
-   - **Rules**: `.agent/rules/**/*.md` → `.agent/locales/ja/rules/**/*.md`
-   - **Workflows**: `.agent/workflows/*.md` → `.agent/locales/ja/workflows/*.md`
-
-2. **検証とコミット**
-   - 翻訳の正確性とMarkdownフォーマットを確認します
-   - 変更をコミットしてプッシュします
+**翻訳と保存**:
+- **Rules**: `.agent/rules/**/*.md` → `.agent/locales/ja/rules/**/*.md`
+- **Workflows**: `.agent/workflows/*.md` → `.agent/locales/ja/workflows/*.md`
 
 ---
 
@@ -40,14 +35,16 @@ mkdir -p .agent/{rules,workflows} .agent/locales/ja/{rules,workflows}
 > [!WARNING]
 > これは既存の英語ファイルを上書きします。実行前に変更をコミットしてください。
 
-#### ステップ
-1. **翻訳と上書き**
-   - **Rules**: `.agent/locales/ja/rules/**/*.md` → `.agent/rules/**/*.md`
-   - **Workflows**: `.agent/locales/ja/workflows/*.md` → `.agent/workflows/*.md`
+**翻訳と上書き**:
+- **Rules**: `.agent/locales/ja/rules/**/*.md` → `.agent/rules/**/*.md`
+- **Workflows**: `.agent/locales/ja/workflows/*.md` → `.agent/workflows/*.md`
 
-2. **検証とコミット**
-   - 正確な翻訳と正しいフォーマットを確認します
-   - 変更をコミットしてプッシュします
+## 検証
+
+翻訳後、以下を確認します:
+- 翻訳が元の意味と意図を保持していること
+- Markdownフォーマットがそのまま保持されていること
+- 関連ドキュメント全体で用語が一貫していること
 
 ## ガイドライン
 詳細な翻訳標準については`.agent/rules/core/localization.md`を参照してください。
