@@ -26,8 +26,7 @@ Generate a new Markdown draft file in `.agent/.draft/` for writing AI instructio
    ## Prompt
    [Enter your instructions for Ai here]
 
-   ## Notes
-   [Optional context, background, or expected results]
+
    EOF
    ```
 
