@@ -17,9 +17,18 @@ Define translation and localization principles for maintaining multilingual docu
 - **Links**: Preserve file links and URLs in their original form
 
 ### Tone and Style
+
+#### English to Japanese (EN → JA)
 - **Formal Japanese**: Use polite Japanese (Desu/Masu form) for professional documentation
+- **Technical Terms**: Keep technical terms in Katakana or English (e.g., `コミット`, `ワークフロー`, or `commit`, `workflow`)
 - **Clarity**: Prioritize clear communication over literal translation
-- **Natural Flow**: Ensure translations read naturally in the target language
+- **Natural Flow**: Ensure translations read naturally in Japanese
+
+#### Japanese to English (JA → EN)
+- **Professional Tone**: Use clear, professional English appropriate for technical documentation
+- **Technical Terms**: Preserve technical terms already in English or Katakana in their original form
+- **Idiomatic English**: Translate to natural English expressions rather than literal word-for-word translation
+- **Conciseness**: Prefer concise English phrasing while maintaining completeness
 
 ## Quality Assurance
 - **Accuracy Check**: Verify translation preserves the original meaning and intent
