@@ -18,15 +18,13 @@ mkdir -p .agent/{rules,workflows} .agent/locales/ja/{rules,workflows}
 
 ### English to Japanese (EN → JA)
 
-**Source**: `.agent/rules/**/*.md` and `.agent/workflows/*.md`  
-**Destination**: `.agent/locales/ja/` (preserving directory structure)
-
----
+- `.agent/rules/**/*.md` → `.agent/locales/ja/rules/**/*.md`
+- `.agent/workflows/*.md` → `.agent/locales/ja/workflows/*.md`
 
 ### Japanese to English (JA → EN)
 
-**Source**: `.agent/locales/ja/`  
-**Destination**: `.agent/rules/**/*.md` and `.agent/workflows/*.md`
+- `.agent/locales/ja/rules/**/*.md` → `.agent/rules/**/*.md`
+- `.agent/locales/ja/workflows/*.md` → `.agent/workflows/*.md`
 
 ## Verification
 
