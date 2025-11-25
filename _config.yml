@@ -1,21 +1,21 @@
-# Jekyll設定ファイル
-# licoimg プロジェクトを https://licosp.github.io/licoimg で公開するための設定
+# Jekyll Configuration File
+# Configuration for publishing the licoimg project to https://licosp.github.io/licoimg
 
 # ============================================
-# ベースURL設定
+# Base URL Configuration
 # ============================================
-# GitHub Pages のサブパスを指定
-# この設定により、すべてのリンクとアセットパスの先頭に /licoimg が追加される
+# Specify the GitHub Pages subpath
+# This setting prepends /licoimg to all links and asset paths
 baseurl: "/licoimg"
 
-# リポジトリURL（GitHub Pagesのルート）
+# Repository URL (GitHub Pages root)
 url: "https://licosp.github.io"
 
 # ============================================
-# Jekyll処理の除外設定
+# Jekyll Exclusion Settings
 # ============================================
-# Jekyllがビルド時に処理しないファイル/ディレクトリを指定
-# これにより不要なファイルが公開されず、ビルド時間も短縮される
+# Specify files/directories that Jekyll should not process during build
+# This prevents unnecessary files from being published and reduces build time
 exclude:
   - node_modules/
   - package.json
@@ -27,27 +27,27 @@ exclude:
   - packages/
 
 # ============================================
-# Jekyll機能の無効化
+# Jekyll Feature Disabling
 # ============================================
-# プラグインを使用しない（静的ファイルのみをデプロイ）
+# Do not use plugins (deploy static files only)
 plugins: []
 
-# Markdownエンジンを無効化（HTMLファイルを直接配信）
+# Disable Markdown engine (serve HTML files directly)
 markdown: kramdown
 
 # ============================================
-# その他の設定
+# Other Settings
 # ============================================
-# タイムゾーン
+# Timezone
 timezone: Asia/Tokyo
 
-# エンコーディング
+# Encoding
 encoding: utf-8
 
 # ============================================
-# 注意事項
+# Important Notes
 # ============================================
-# このファイルはプロジェクトルートに配置されていますが、
-# 実際に公開されるのは packages/licoimg/docs の内容のみです。
-# GitHub Actions ワークフローで docs の内容を _site にコピーして
-# デプロイしています。
+# This file is located at the project root, but
+# only the content from packages/licoimg/docs is actually published.
+# The GitHub Actions workflow copies the docs content to _site
+# for deployment.
