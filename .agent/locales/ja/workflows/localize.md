@@ -21,20 +21,12 @@ mkdir -p .agent/{rules,workflows} .agent/locales/ja/{rules,workflows}
 **ソース**: `.agent/rules/**/*.md` と `.agent/workflows/*.md`  
 **宛先**: `.agent/locales/ja/` (ディレクトリ構造を保持)
 
-**翻訳と保存**:
-- **Rules**: `.agent/rules/**/*.md` → `.agent/locales/ja/rules/**/*.md`
-- **Workflows**: `.agent/workflows/*.md` → `.agent/locales/ja/workflows/*.md`
-
 ---
 
 ### 日本語から英語へ (JA → EN)
 
 **ソース**: `.agent/locales/ja/`  
 **宛先**: `.agent/rules/**/*.md` と `.agent/workflows/*.md`
-
-**翻訳と上書き**:
-- **Rules**: `.agent/locales/ja/rules/**/*.md` → `.agent/rules/**/*.md`
-- **Workflows**: `.agent/locales/ja/workflows/*.md` → `.agent/workflows/*.md`
 
 ## 検証
 
