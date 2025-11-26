@@ -4,12 +4,38 @@
       "name": "Workspace",
       "path": "../",
     },
+    {
+      "name": "Root",
+      "path": "/",
+    },
   ],
   "settings": {
     // ! Prioritize ".code-workspace"
     // Other
-    
-    // Test
+    "explorer.confirmDragAndDrop": false,
+    "extensions.ignoreRecommendations": false,
+    "workbench.colorTheme": "Dracula Theme",
+    "workbench.editor.enablePreview": false,
+
+    // Font
+    "debug.console.fontFamily": "editor",
+
+    // Color
+    "editor.tokenColorCustomizations": {
+      "textMateRules": [
+        {
+          "scope": "string.quoted.docstring.multi.python",
+          "settings": {
+            "foreground": "#ffBB00",
+          },
+        },
+      ],
+    },
+    "workbench.colorCustomizations": {
+      "editorLineNumber.activeForeground": "#DD0000",
+      "editorLineNumber.foreground": "#88ff00",
+      "tree.indentGuidesStroke": "#DD0000",
+    },
 
     // Test
     "testing.automaticallyOpenTestResults": "neverOpen",
@@ -34,7 +60,7 @@
     "bashIde.shfmt.path": "", // Disable format
 
     // Python
-    "python.languageServer": "Jedi",
+    "python.languageServer": "Pylance",
 
     // Docstring
     "autoDocstring.docstringFormat": "google",
