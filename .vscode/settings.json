@@ -2,7 +2,13 @@
   // ! Prioritize "settings.json"
   // * VSCode
   // Other
-  // Editor
+
+
+
+
+
+
+  // Save
   "editor.codeActionsOnSave": {
     "source.organizeImports": "explicit",
     "source.fixAll.shellcheck": "explicit"
@@ -12,6 +18,12 @@
   // * Outside tools
   // Python
   "python.analysis.diagnosticMode": "workspace",
+  "python.analysis.extraPaths": [
+    "packages/pyspartadevc/src",
+    "packages/pyspartaimg/src",
+    "packages/pyspartalib/src",
+    "packages/pyspartawsl/src"
+  ],
   "python.analysis.typeCheckingMode": "strict",
 
   // Prettier
