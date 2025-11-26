@@ -1,0 +1,73 @@
+{
+  // ! Prioritize "settings.json"
+  // * VSCode
+  // Other
+  "explorer.excludeGitIgnore": false,
+  "workbench.startupEditor": "none",
+  "workbench.colorTheme": "Elaina"
+  
+  // Font
+  "editor.fontFamily": "UDEV Gothic JPDOC",
+
+  // Editor
+  "editor.minimap.enabled": false,
+  "editor.renderWhitespace": "all",
+  "editor.rulers": [79],
+
+  // Save
+  "editor.codeActionsOnSave": {
+    "source.organizeImports": "explicit",
+    "source.fixAll.shellcheck": "explicit"
+  },
+  "editor.formatOnSave": true,
+
+  // * Outside tools
+  // Python
+  "python.analysis.diagnosticMode": "workspace",
+  "python.analysis.extraPaths": [
+    "packages/pyspartadevc/src",
+    "packages/pyspartaimg/src",
+    "packages/pyspartalib/src",
+    "packages/pyspartawsl/src"
+  ],
+  "python.analysis.typeCheckingMode": "strict",
+
+  // Prettier
+  "prettier.configPath": ".vscode/.prettierrc.toml",
+  "prettier.ignorePath": ".vscode/.prettierignore",
+  "prettier.requireConfig": true,
+
+  // Pytest
+  "python.testing.pytestEnabled": true,
+  "pythonTestExplorer.testFramework": "pytest",
+
+  // ShellCheck
+  "shellcheck.customArgs": ["--rcfile=.vscode/.shellcheckrc"],
+  "shellcheck.executablePath": "shellcheck",
+  "shellcheck.useWorkspaceRootAsCwd": true,
+
+  // Mypy
+  "mypy-type-checker.args": ["--config-file=pyproject.toml"],
+
+  // * Formatter
+  // Prettier
+  "editor.defaultFormatter": "esbenp.prettier-vscode",
+
+  // Docker
+  "[dockerfile]": {
+    "editor.defaultFormatter": "ms-azuretools.vscode-containers"
+  },
+  "[dockercompose]": {
+    "editor.defaultFormatter": "ms-azuretools.vscode-containers"
+  },
+
+  // Shell
+  "[bats]": { "editor.defaultFormatter": "foxundermoon.shell-format" },
+  "[dotenv]": { "editor.defaultFormatter": "foxundermoon.shell-format" },
+  "[ignore]": { "editor.defaultFormatter": "foxundermoon.shell-format" },
+  "[properties]": { "editor.defaultFormatter": "foxundermoon.shell-format" },
+  "[shellscript]": { "editor.defaultFormatter": "foxundermoon.shell-format" },
+
+  // Python
+  "[python]": {    "editor.defaultFormatter": "charliermarsh.ruff"  },
+}

@@ -1,0 +1,71 @@
+{
+  "folders": [
+    {
+      "name": "Workspace",
+      "path": "../",
+    },
+    {
+      "name": "Root",
+      "path": "/",
+    },
+  ],
+  "settings": {
+    // ! Prioritize ".code-workspace"
+    // Other
+    "explorer.confirmDragAndDrop": false,
+    "extensions.ignoreRecommendations": false,
+    "workbench.colorTheme": "Dracula Theme",
+    "workbench.editor.enablePreview": false,
+
+    // Font
+    "debug.console.fontFamily": "editor",
+
+    // Color
+    "editor.tokenColorCustomizations": {
+      "textMateRules": [
+        {
+          "scope": "string.quoted.docstring.multi.python",
+          "settings": {
+            "foreground": "#ffBB00",
+          },
+        },
+      ],
+    },
+    "workbench.colorCustomizations": {
+      "editorLineNumber.activeForeground": "#DD0000",
+      "editorLineNumber.foreground": "#88ff00",
+      "tree.indentGuidesStroke": "#DD0000",
+    },
+
+    // Test
+    "testing.automaticallyOpenTestResults": "neverOpen",
+    "testing.gutterEnabled": true,
+
+    // Git
+    "git.autoRepositoryDetection": "openEditors",
+    "git.inputValidation": true,
+
+    // TD Tree
+    "todo-tree.filtering.includedWorkspaces": ["."],
+
+    // ShellCheck
+    "shellcheck.logLevel": "debug",
+
+    // shfmt
+    "shellformat.useEditorConfig": true,
+
+    // Bash IDE
+    "bashIde.logLevel": "debug",
+    "bashIde.shellcheckPath": "", // Disable lint
+    "bashIde.shfmt.path": "", // Disable format
+
+    // Python
+    "python.languageServer": "Pylance",
+
+    // Docstring
+    "autoDocstring.docstringFormat": "google",
+
+    // Ruff
+    "ruff.configuration": "pyproject.toml",
+  },
+}
