@@ -34,7 +34,7 @@
     "bashIde.shfmt.path": "", // Disable format
 
     // Python
-    "python.languageServer": "Pylance",
+    "python.languageServer": "Jedi",
 
     // Docstring
     "autoDocstring.docstringFormat": "google",
