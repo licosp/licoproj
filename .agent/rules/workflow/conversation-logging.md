@@ -1,7 +1,3 @@
----
-trigger: always_on
----
-
 # Conversation Logging
 
 ## Purpose

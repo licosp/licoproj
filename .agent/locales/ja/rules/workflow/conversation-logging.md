@@ -1,7 +1,3 @@
----
-trigger: always_on
----
-
 # 会話ログ
 
 ## 目的
