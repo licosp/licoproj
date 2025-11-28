@@ -1,0 +1,11 @@
+{
+  "updated_at": "2025-11-28T02:00:31+09:00",
+  "changed_files": [
+    ".agent/rules/core/localization/localization-en-to-ja.md"
+  ],
+  "change_type": "enhancement",
+  "user": "User (manual) + Lico (preparation)",
+  "summary": "Added Human-Facing Documentation Workflow section mandating two-step process: (1) Create AI-facing English docs in .agent/, (2) Create human-optimized Japanese docs in .human/locales/ja/.agent/ with visual enhancements per markdown-readability.md",
+  "temporary_file": ".agent/.internal/temp-update-localization-en-to-ja-20251128-015810.md",
+  "workflow_used": ".agent/workflows/update-protected-rules.md"
+}

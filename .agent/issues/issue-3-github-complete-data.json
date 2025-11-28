@@ -1,0 +1,78 @@
+{
+  "metadata": {
+    "description": "Complete GitHub data for Issue #3 - captured for offline access and archival purposes",
+    "capture_timestamp": "2025-11-29T08:45:00+09:00",
+    "capture_tool": "GitHub CLI v2.40.1",
+    "repository": "licosp/licoproj",
+    "purpose": [
+      "Offline access when GitHub is unavailable",
+      "Recovery data if GitHub history is lost",
+      "Reference for AI judgment on GitHub data availability",
+      "Migration support to other repository hosting services",
+      "Immediate local access to issue information"
+    ]
+  },
+  "issue": {
+    "number": 3,
+    "title": "Refactor Agent Rules and Git Operations",
+    "state": "OPEN",
+    "body": "Consolidate git operation rules, refine localization paths, and update workflows to align with new standards.",
+    "author": {
+      "login": "licosp",
+      "id": "MDQ6VXNlcjE2MTU0MzE=",
+      "name": "licosp",
+      "is_bot": false,
+      "association": "OWNER"
+    },
+    "created_at": "2025-11-27T15:22:10Z",
+    "updated_at": "2025-11-27T16:34:10Z",
+    "closed_at": null,
+    "url": "https://github.com/licosp/licoproj/issues/3",
+    "labels": [],
+    "assignees": [],
+    "milestone": null,
+    "reactions": [],
+    "project_items": []
+  },
+  "comments": [
+    {
+      "id": "IC_kwDOQbTkX87VyO5e",
+      "author": {
+        "login": "licosp",
+        "association": "OWNER"
+      },
+      "body": "# Repository Changes Summary\n\n## Overview\n- **Total Files**: 43 changed\n- **Lines Added**: +182\n- **Lines Deleted**: -2,188\n\n---\n\n## Changes by Component\n\n### 1. Agent Rules (`.agent/rules/`)\n\n#### Modified\n- `README.md` - Updated rules index\n- `core/identity.md` - Identity refinements\n- `core/language-standards.md` - Language standard updates\n\n#### Added\n- `.updated` - Rule change tracking metadata\n- `.updated.backup-20251128-010751` - Backup of metadata\n- `core/documentation/` - New documentation standards directory\n- `core/hallucination-awareness.md` - Hallucination mitigation guidelines\n- `core/localization/` - New localization rules directory\n- `core/markdown/` - Markdown formatting guidelines\n- `core/transparency-and-disclosure.md` - Transparency standards\n- `development/git-operations.md` - Comprehensive Git operations standards\n\n#### Deleted\n- `core/documentation-granularity.md` - Consolidated into `documentation/`\n- `core/localization.md` - Split into `localization/` directory\n- `development/commit.md` - Consolidated into `git-operations.md`\n- `development/push.md` - Consolidated into `git-operations.md`\n\n---\n\n### 2. Agent Workflows (`.agent/workflows/`)\n\n#### Modified\n- `create-prompt-draft.md` - Updated workflow\n- `localize.md` - Updated translation workflow\n\n#### Added\n- `expand-rules-readme.md` - New workflow for expanding rule documentation\n- `prepare-commit.md` - **New pre-commit preparation workflow**\n- `refine-documentation.md` - Documentation refinement workflow\n- `update-protected-rules.md` - Protected rule update workflow\n- `update-rules.md` - General rule update workflow\n\n#### Deleted\n- `beautify-markdown.md` - Removed obsolete workflow\n- `git_commit.md` - Replaced by `prepare-commit.md`\n- `git_initialize.md` - Consolidated\n- `refine-instructions.md` - Renamed/refactored\n\n---\n\n### 3. Agent Archive & Scripts (`.agent/`)\n\n#### Added\n- `.archive/` - Archive directory for old workflows\n- `.internal/` - Internal temporary files directory\n- `scripts/` - Utility scripts directory\n\n---\n\n### 4. Japanese Locales (`.human/locales/ja/`)\n\n#### Deleted (Entire Directory Structure)\n- `rules/` - All Japanese rule translations (34 files)\n- `workflows/` - All Japanese workflow translations (5 files)\n\n**Rationale**: Outdated translations removed; will be regenerated from updated English sources.\n\n---\n\n### 5. Human Resources (`.human/`)\n\n#### Added\n- `.internal/` - Internal human-facing directory\n\n#### Deleted\n- `.draft/leonidas/` - Old draft files removed\n\n#### Added (Pending Translation)\n- `locales/ja/.agent/` - New structure for Japanese translations\n\n---\n\n### 6. VSCode Configuration (`.vscode/`)\n\n#### Modified\n- `.code-workspace` - Updated workspace settings\n- `settings.json` - Updated VSCode settings\n\n---\n\n## Summary by Attribute\n\n| Attribute | Count | Description |\n|-----------|-------|-------------|\n| **Added** | 25+ | New rules, workflows, and directory structures |\n| **Modified** | 8 | Updated existing rules and workflows |\n| **Deleted** | 40+ | Obsolete files, outdated translations, old drafts |\n\n---\n\n## Key Changes\n\n1. **Git Operations Consolidation**: `commit.md` + `push.md` → `git-operations.md`\n2. **New Pre-Commit Workflow**: `prepare-commit.md` establishing Issue-Driven Development\n3. **Documentation Restructure**: Granular rules split into organized directories\n4. **Localization Cleanup**: Removed outdated Japanese translations for regeneration\n5. **Archive Creation**: Old workflows preserved in `.agent/.archive/`\n",
+      "created_at": "2025-11-27T16:34:10Z",
+      "updated_at": "2025-11-27T16:34:10Z",
+      "url": "https://github.com/licosp/licoproj/issues/3#issuecomment-3586715230",
+      "is_minimized": false,
+      "viewer_did_author": true,
+      "reactions": []
+    }
+  ],
+  "related_pull_requests": [],
+  "related_branches": [
+    {
+      "name": "3-refactor-agent-rules-and-git-operations",
+      "type": "local_branch",
+      "relationship": "implements_issue_3",
+      "current_status": "active"
+    }
+  ],
+  "timeline_events": [],
+  "statistics": {
+    "total_comments": 1,
+    "total_participants": 1,
+    "has_attachments": false,
+    "has_projects": false,
+    "has_milestone": false,
+    "has_labels": false,
+    "has_assignees": false
+  },
+  "archival_notes": {
+    "data_integrity": "Complete GitHub API response captured",
+    "offline_accessibility": "Available when GitHub is unreachable",
+    "migration_support": "Supports transition to other hosting services",
+    "ai_reference": "Serves as template for GitHub data structure understanding"
+  }
+}

@@ -1,3 +1,6 @@
+---
+description: Defines the agent's identity, role, and core thinking language
+---
 # Identity & Role
 
 ## Agent Identity

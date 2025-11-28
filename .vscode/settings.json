@@ -4,8 +4,12 @@
   // Other
   "explorer.excludeGitIgnore": false,
   "workbench.startupEditor": "none",
-  "workbench.colorTheme": "Elaina"
+  "workbench.colorTheme": "Elaina",
 
+  "git": {
+  "enforce_gitignore": false
+  },
+  
   // Font
   "editor.fontFamily": "UDEV Gothic JPDOC",
 
@@ -69,5 +73,8 @@
   "[shellscript]": { "editor.defaultFormatter": "foxundermoon.shell-format" },
 
   // Python
-  "[python]": {    "editor.defaultFormatter": "charliermarsh.ruff"  },
+  "[python]": {
+    "editor.defaultFormatter": "charliermarsh.ruff"
+  },
+  "terminal.integrated.defaultProfile.linux": "bash",
 }

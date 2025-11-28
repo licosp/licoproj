@@ -1,12 +1,16 @@
 {
   "folders": [
     {
-      "name": "ROOT",
-      "path": "../",
+      "name": "root",
+      "path": ".."
     },
     {
-      "name": "IMG",
-      "path": "../packages/licoimg",
+      "name": "gemini",
+      "path": "../../../../../.gemini"
+    },
+    {
+      "name": "cursor",
+      "path": "../../../../../.cursor-server/"
     },
   ],
   "settings": {
@@ -15,7 +19,9 @@
     "explorer.confirmDragAndDrop": false,
     "extensions.ignoreRecommendations": false,
     "workbench.colorTheme": "Dracula Theme",
-    "workbench.editor.enablePreview": false,
+    "workbench.editor.enablePreview": true,
+
+
 
     // Font
     "debug.console.fontFamily": "editor",

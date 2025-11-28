@@ -4,50 +4,10 @@
     <meta charset="UTF-8" />
     <link rel="icon" type="image/svg+xml" href="/vite.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Premium Image Viewer</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap"
-      rel="stylesheet"
-    />
+    <title>LicoImg - Image Viewer</title>
   </head>
-
   <body>
-    <div id="app">
-      <header class="app-header">
-        <h1>Image Viewer</h1>
-        <p>Drag & drop images anywhere to start</p>
-      </header>
-
-      <main class="gallery-container" id="gallery">
-        <!-- Images will be inserted here -->
-        <div class="empty-state" id="empty-state">
-          <div class="drop-icon">📂</div>
-          <p>Drop images here</p>
-        </div>
-      </main>
-
-      <div class="lightbox" id="lightbox" aria-hidden="true">
-        <div class="lightbox-controls">
-          <button class="icon-btn" id="zoom-out" title="Zoom Out">−</button>
-          <span class="zoom-level" id="zoom-level">100%</span>
-          <button class="icon-btn" id="zoom-in" title="Zoom In">+</button>
-          <button class="icon-btn close-btn" id="close-lightbox" title="Close">
-            ×
-          </button>
-        </div>
-        <div class="lightbox-content" id="lightbox-content">
-          <img src="" alt="Full view" id="lightbox-img" />
-          <video
-            src=""
-            controls
-            id="lightbox-video"
-            style="display: none; max-width: 90%; max-height: 90%"
-          ></video>
-        </div>
-      </div>
-    </div>
+    <div id="app"></div>
     <script type="module" src="/src/main.js"></script>
   </body>
 </html>

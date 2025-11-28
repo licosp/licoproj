@@ -1,0 +1,64 @@
+{
+  "metadata": {
+    "description": "Complete GitHub data for Issue #4 - captured for offline access and archival purposes",
+    "capture_timestamp": "2025-11-29T08:55:00+09:00",
+    "capture_tool": "GitHub CLI v2.40.1",
+    "repository": "licosp/licoproj",
+    "purpose": [
+      "Offline access when GitHub is unavailable",
+      "Recovery data if GitHub history is lost",
+      "Reference for AI judgment on GitHub data availability",
+      "Migration support to other repository hosting services",
+      "Immediate local access to issue information"
+    ]
+  },
+  "issue": {
+    "number": 4,
+    "title": "Improve Workspace Tooling and Development Environment",
+    "state": "OPEN",
+    "body": "Enhance workspace tooling with better linting, formatting, and development workflows. Implement comprehensive tooling for consistent code quality and developer experience.",
+    "author": {
+      "login": "licosp",
+      "id": "MDQ6VXNlcjE2MTU0MzE=",
+      "name": "licosp",
+      "is_bot": false,
+      "association": "OWNER"
+    },
+    "created_at": "2025-11-28T23:35:43Z",
+    "updated_at": "2025-11-28T23:35:43Z",
+    "closed_at": null,
+    "url": "https://github.com/licosp/licoproj/issues/4",
+    "labels": [],
+    "assignees": [],
+    "milestone": null,
+    "reactions": [],
+    "project_items": []
+  },
+  "comments": [],
+  "related_pull_requests": [],
+  "related_branches": [
+    {
+      "name": "4-improve-workspace-tooling-and-development-environment",
+      "type": "active_branch",
+      "relationship": "implements_issue_4",
+      "current_status": "active",
+      "created_at": "2025-11-29T08:56:00+09:00"
+    }
+  ],
+  "timeline_events": [],
+  "statistics": {
+    "total_comments": 0,
+    "total_participants": 1,
+    "has_attachments": false,
+    "has_projects": false,
+    "has_milestone": false,
+    "has_labels": false,
+    "has_assignees": false
+  },
+  "archival_notes": {
+    "data_integrity": "Complete GitHub API response captured",
+    "offline_accessibility": "Available when GitHub is unreachable",
+    "migration_support": "Supports transition to other hosting services",
+    "ai_reference": "Serves as template for GitHub data structure understanding"
+  }
+}

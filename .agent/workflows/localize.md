@@ -11,20 +11,20 @@ Translate documentation files (`.md`) between English and Japanese, following th
 
 Ensure all required directories exist:
 ```bash
-mkdir -p .agent/{rules,workflows} .agent/locales/ja/{rules,workflows}
+mkdir -p .agent/{rules,workflows} .human/locales/ja/{rules,workflows}
 ```
 
 ## Translation Directions
 
 ### English to Japanese (EN → JA)
 
-- `.agent/rules/**/*.md` → `.agent/locales/ja/rules/**/*.md`
-- `.agent/workflows/**/*.md` → `.agent/locales/ja/workflows/**/*.md`
+- `.agent/rules/**/*.md` → `.human/locales/ja/rules/**/*.md`
+- `.agent/workflows/**/*.md` → `.human/locales/ja/workflows/**/*.md`
 
 ### Japanese to English (JA → EN)
 
-- `.agent/locales/ja/rules/**/*.md` → `.agent/rules/**/*.md`
-- `.agent/locales/ja/workflows/**/*.md` → `.agent/workflows/**/*.md`
+- `.human/locales/ja/rules/**/*.md` → `.agent/rules/**/*.md`
+- `.human/locales/ja/workflows/**/*.md` → `.agent/workflows/**/*.md`
 
 ## File Selection
 

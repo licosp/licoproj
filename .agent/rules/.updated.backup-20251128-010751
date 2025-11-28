@@ -1,0 +1,9 @@
+{
+  "updated_at": "2025-11-27T18:50:00+09:00",
+  "changed_files": [
+    ".agent/rules/core/markdown/markdown-ai-parsing-patterns.md"
+  ],
+  "change_type": "rules_update",
+  "user": "Lico",
+  "summary": "Added Robust AI Instruction Patterns (Low-Compute & Resumability) to markdown-ai-parsing-patterns.md"
+}

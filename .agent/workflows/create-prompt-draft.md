@@ -5,31 +5,31 @@ description: Create a new prompt draft with a date-based filename
 # Create Prompt Draft Workflow
 
 ## Purpose
-Generate a new Markdown draft file in `.agent/.draft/` for writing AI instructions.
+Generate a new Markdown draft file in `.human/.internal/drafts/$(whoami)` for writing AI instructions.
 
 ## Steps
 
 1. **Create Directory** (if missing)
    ```bash
-   mkdir -p .agent/.draft
+   mkdir -p .human/.internal/drafts/$(whoami)
    ```
 
 2. **Generate File**
    Run the following to create a dated draft:
    ```bash
-   cat > .agent/.draft/draft_$(date +%Y-%m-%d).md << 'EOF'
+   cat > .human/.internal/drafts/$(whoami)/draft_$(date +%Y-%m-%d).md << 'EOF'
    ---
    date: $(date -Iseconds)
    user: $(whoami)
    ---
 
    ## Prompt
-   [Enter your instructions for Lico here]
+   [Enter your instructions]
 
 
    EOF
    ```
 
 ## Output
-- **Path**: `.agent/.draft/draft_YYYY-MM-DD.md`
+- **Path**: `.human/.internal/drafts/$(whoami)/draft_YYYY-MM-DD.md`
 - **Usage**: Edit the `## Prompt` section to instruct the agent.

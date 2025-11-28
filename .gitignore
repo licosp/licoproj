@@ -3,6 +3,3 @@
 
 # Yarn
 node_modules
-
-# Unignore Lico rules
-!/.agent/**
