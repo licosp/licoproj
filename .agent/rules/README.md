@@ -4,11 +4,54 @@ trigger: always_on
 
 # Agent Rules Index
 
-**Reference**: Lico (AI Assistant) refers to this index to understand behavioral guidelines.  
+**Purpose**: Navigation map for Lico to understand behavioral guidelines and workspace structure.  
 **Scope**: Defines how Lico thinks, communicates, makes decisions, and interacts with the repository.
 
 ---
 
+## 🗺️ Workspace Context
+
+> **Note**: This workspace is under active reorganization. Directory names and file contents may not perfectly align yet. This README serves as a living map to guide ongoing cleanup efforts.
+
+This repository (`licoproj/`) is Lico's cognitive workspace implementing the "Repository as Brain" model.
+
+### Key Directories
+
+| Directory | Purpose |
+|-----------|---------|
+| `.agent/` | **Lico's cognitive infrastructure** (rules, workflows, memory) |
+| `.human/` | Human-facing files (locales, drafts, plans, strategies) |
+| `packages/` | Application code (e.g., licoimg) |
+| `.github/` | GitHub Actions and CI/CD configuration |
+| `.devcontainer/` | Development environment settings |
+| `.husky/` | Git hooks for commit validation |
+
+**For detailed structure**: See individual README files or documentation in each directory.
+
+---
+
+## 📂 .agent/ Directory Structure
+
+Lico's behavioral and operational files.
+
+| Directory | Purpose |
+|-----------|---------|
+| `rules/` | **Behavioral guidelines** (this directory, detailed below) |
+| `workflows/` | **Executable procedures** (invoked via /slash-command) |
+| `.internal/` | Internal data (conversations, ideas, temporary files) |
+| `issues/` | Local GitHub issue backups for offline access |
+| `scripts/` | Automation scripts |
+| `runtimes/` | Portable runtime tools (e.g., gh CLI v2.40.1) |
+| `.archive/` | Historical data and recovery snapshots |
+
+### Navigation Strategy
+
+1. **Find behavioral rules** → Use this file's index below
+2. **Find task procedures** → Check `.agent/workflows/*.md`
+3. **Access conversation history** → See `.agent/.internal/conversations/`
+4. **Review past decisions** → See `.agent/.internal/ideas/`
+
+---
 ## 🔗 AI-to-AI Communication System
 
 **Change Detection File**: `.agent/rules/.updated`
@@ -86,6 +129,7 @@ Day-to-day workflows and operational guidelines for Lico.
 |------|---------|
 | [Conversation Logging](workflow/conversation-logging.md) | How interactions are recorded for audit and learning |
 | [Enhanced Communication](workflow/enhanced-communication.md) | Protocols for clarifying ambiguous user requests |
+| [Session Lifecycle](workflow/session-lifecycle.md) | Protocols for normal and abnormal session termination |
 | [User Experience](workflow/user-experience.md) | Guidelines for optimal interaction and feedback |
 
 ### **issues/** — GitHub Data Archive
@@ -112,6 +156,8 @@ Archived GitHub issue data for offline access and migration support.
 | **"How should I log conversations?"** | `workflow/conversation-logging.md` |
 | **"Where should I install tools and dependencies?"** | `development/workspace-tooling.md` |
 | **"How should I maintain project consistency?"** | `development/maintenance.md` |
+| **"How should I end a session?"** | `workflow/session-lifecycle.md` |
+| **"What is the workspace structure?"** | See "Workspace Context" section above |
 
 ---
 

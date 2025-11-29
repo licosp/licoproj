@@ -1,11 +1,9 @@
 {
-  "updated_at": "2025-11-29T08:50:00+09:00",
+  "updated_at": "2025-11-30T02:03:00+09:00",
   "changed_files": [
-    "development/workspace-tooling.md",
-    "development/maintenance.md",
-    "issues/issue-3-github-complete-data.json"
+    ".agent/rules/README.md"
   ],
-  "change_type": "rules_update",
+  "change_type": "expansion",
   "user": "Leonidas",
-  "summary": "Added workspace tooling guidelines, maintenance rules, and archived complete GitHub data for issue #3."
+  "summary": "Added workspace context and .agent/ directory structure overview. Added session-lifecycle.md to workflow section. Enhanced quick reference with session termination and workspace structure queries."
 }
