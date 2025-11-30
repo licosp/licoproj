@@ -1,10 +1,10 @@
 {
-  "updated_at": "2025-12-01T00:35:00+09:00",
+  "updated_at": "2025-12-01T02:05:00+09:00",
   "changed_files": [
-    ".agent/rules/core/pre-task-assessment.md",
-    ".agent/rules/README.md"
+    ".agent/rules/development/project-understanding.md",
+    ".agent/rules/core/post-task-assessment.md"
   ],
-  "change_type": "addition",
+  "change_type": "modification",
   "user": "Leonidas",
-  "summary": "Added Pre-Task Assessment Protocol (Lico Risk Score) and updated index."
+  "summary": "Defined 3-layer memory architecture (Conscious/Unconscious/Environmental) and added Post-Task Assessment protocol."
 }
