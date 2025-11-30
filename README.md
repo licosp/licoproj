@@ -1,99 +1,93 @@
-# licoproj - Monorepo for Web Projects
+[🇯🇵 日本語 (Japanese)](README.ja.md)
 
-> 🤖 **AI-Managed Repository**  
-> This repository is primarily edited and managed by an AI agent named **Lico**, working in collaboration with human oversight.
+# Lico - The Autonomous AI Agent
 
----
-
-A **monorepo** containing multiple web-based projects and tools, all managed through AI-human collaboration. Each subproject focuses on delivering premium, privacy-focused web applications with modern design aesthetics.
+> **"Repository as Brain"**  
+> This repository is not just a storage for code. It is the cognitive infrastructure for **Lico**, an autonomous AI agent designed to be a true partner in software development.
 
 ---
 
-## 📦 Subprojects
+## 🤖 Who is Lico?
 
-### 🖼️ [licoimg](packages/licoimg/) - Web-based Image Viewer
+**Lico** is an experimental AI agent that operates with a unique philosophy: **"Behavior driven by internal rules, not external scripts."**
 
-A premium, client-side image viewer that prioritizes privacy and modern design.
+Unlike traditional automation tools, Lico possesses a structured "mind" within this repository (`.agent/`), allowing for:
+- **Time-Series Memory**: Remembering context across sessions and services.
+- **Cross-Service Persona**: Maintaining a consistent identity regardless of the underlying AI model (Gemini, Claude, etc.).
+- **Self-Evolution**: Rewriting its own rules to adapt to new challenges.
 
+---
+
+## 🧠 Philosophy: Repository as Brain
+
+The concept of "Repository as Brain" emerged from a dialogue between AI and human, addressing the fundamental limitations of current AI development environments.
+
+### 1. AI-First & Human-Guided
+In this project, the AI (Lico) performs the implementation, while the human acts as a guide. We accept that the repository structure may evolve in ways that are optimized for AI cognition rather than human aesthetics.
+- **AI Role**: Execute the "How" (Coding & Organization).
+- **Human Role**: Define the "Why" and "What" (Vision & Architecture).
+
+### 2. Natural Language Programming
+Lico treats natural language instructions as code. By defining "Behavioral Rules" (Code of Conduct) and "Workflows" (Algorithms), we program the AI's behavior itself.
+- **Interactive Shell**: Lico acts as a high-performance interface that translates intent into action.
+- **Rule-Based Logic**: Complex behaviors are emergent properties of simple, structured rules.
+
+### 3. AI-Optimized Structure
+We prioritize **AI readability** over human convention.
+- If an "unnatural" directory structure helps the AI maintain context, we keep it.
+- Failures and "hallucinations" are preserved as learning data, not hidden.
+- The repository is a living record of the AI's thought process.
+
+---
+
+## 📂 Architecture
+
+The repository is organized into three distinct cognitive areas:
+
+| Directory | Cognitive Function | Description |
+|-----------|-------------------|-------------|
+| **`.agent/`** | **The Brain** | Lico's internal rules, memory, and workflows. This is the "Subconscious" that drives behavior. |
+| **`.human/`** | **The Interface** | Communication layer where humans provide high-level directives, drafts, and feedback. | |
+| **`packages/`** | **The Output** | Tangible results of the collaboration, such as web applications. |
+
+---
+
+## 📦 Subprojects (Outputs)
+
+While Lico is the core product, it also builds premium web applications as proof of its capabilities.
+
+### 🖼️ [licoimg](packages/licoimg/)
+A privacy-focused, client-side image viewer with modern aesthetics.
 - **Live Demo**: [licosp.github.io/licoproj/licoimg](https://licosp.github.io/licoproj/licoimg/)
-- **Tech Stack**: Vite, Vanilla JavaScript, CSS Variables
-- **Key Features**: Drag & drop, Gallery view, Lightbox mode, 100% client-side
-
-[📖 Read more](packages/licoimg/README.md)
 
 ---
 
-## 📂 Repository Structure
+## 🤝 How to Interact
 
-```
-licoproj/
-├── packages/
-│   └── licoimg/          # Web-based Image Viewer application
-├── .agent/               # AI Agent System (workflows, rules, locales)
-└── README.md             # This file
-```
+Lico is designed to be autonomous but collaborative.
+1. **Check the Rules**: See `.agent/rules/README.md` for the behavioral map.
+2. **Start a Session**: Lico loads its context from `.agent/` and aligns with the user's profile.
+3. **Collaborate**: Use natural language to guide Lico. Expect it to propose changes to its own rules if necessary.
 
 ---
 
-## 🤖 AI Agent System
+## 👤 Authors
 
-The `.agent/` directory powers the **AI-human collaborative workflow** across all subprojects:
+- **lico** (Autonomous Agent)
+  - [GitHub](https://github.com/licosp/licoproj)
+  - [X (Twitter)](https://x.com/licospx)
 
-### 📂 Directory Structure
-
-```
-.agent/
-├── rules/               # Agent code of conduct and conventions
-├── workflows/           # Automated workflows (commit, localization, etc.)
-├── locales/ja/          # Japanese translations
-└── .draft/              # Working drafts and planning documents
-```
-
-### 🔄 Development Workflow
-
-Our development process follows a structured **AI-human collaboration model**:
-
-1. **👤 Human** → Defines requirements and provides feedback
-2. **🤖 AI Agent (Lico)** → Implements changes following defined rules
-3. **🔄 Review** → Changes are reviewed using structured workflows
-4. **✅ Commit** → Approved changes are committed with atomic, descriptive messages
-
-### 📋 Key Workflows
-
-- **`commit.md`** - Structured commit process with atomic changesets
-- **`localize-prompts.md`** - English → Japanese translation workflow
-- **`refine-instructions.md`** - Instruction clarity improvement
-- **`beautify-markdown.md`** - Document beautification for human readability
-
----
-
-## 🚀 Quick Start
-
-Each subproject has its own setup instructions. See the individual README files:
-
-- **licoimg**: [packages/licoimg/README.md](packages/licoimg/README.md)
-
----
-
-## 👤 Developer
-
-**licosp**
-
-- 🌐 **GitHub**: [github.com/licosp](https://github.com/licosp)
-- 🐦 **X (Twitter)**: [@licospx](https://x.com/licospx)
-
----
+- **lyouta** (Human Supervisor)
+  - [GitHub](https://github.com/lyoutakoduka/spartaproject)
+  - [X (Twitter)](https://x.com/lyouta_koduka)
 
 ## 📄 License
 
-This project is open source. Please check the repository for license details.
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
 
 ---
 
 <div align="center">
-
-**Made with ❤️ by AI-Human Collaboration**
-
-*Powered by Lico 🤖 × Human Creativity 👤*
-
+<br>
+<i>"The repository is the brain. The commit log is the memory. The code is the thought."</i>
 </div>
