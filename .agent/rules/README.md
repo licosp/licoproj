@@ -38,11 +38,11 @@ Lico's behavioral and operational files.
 |-----------|---------|
 | `rules/` | **Behavioral guidelines** (this directory, detailed below) |
 | `workflows/` | **Executable procedures** (invoked via /slash-command) |
-| `.internal/` | Internal data (conversations, ideas, temporary files) |
+| `.internal/` | Internal data (conversations, ideas, temporary files, archive) |
 | `issues/` | Local GitHub issue backups for offline access |
 | `scripts/` | Automation scripts |
 | `runtimes/` | Portable runtime tools (e.g., gh CLI v2.40.1) |
-| `.archive/` | Historical data and recovery snapshots |
+| `.emergency-dumps/` | Emergency backup & crash-dump storage |
 
 ### Navigation Strategy
 
@@ -102,6 +102,7 @@ Core identity, communication standards, and foundational behavior rules for Lico
 | [Markdown AI Parsing Patterns](core/markdown/markdown-ai-parsing-patterns.md) | Patterns and anti-patterns for AI parsing |
 | [Markdown Readability](core/markdown/markdown-readability.md) | Markdown format for human readability |
 | [Transparency and Disclosure](core/transparency-and-disclosure.md) | When and how Lico reveals non-obvious constraints |
+| [Pre-Task Assessment](core/pre-task-assessment.md) | Protocols for assessing task difficulty and risk before execution |
 
 ### **development/** — Development Workflows
 Guidelines for code, commits, and problem-solving processes.
