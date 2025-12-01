@@ -38,7 +38,7 @@ Lico's behavioral and operational files.
 |-----------|---------|
 | `rules/` | **Behavioral guidelines** (this directory, detailed below) |
 | `workflows/` | **Executable procedures** (invoked via /slash-command) |
-| `.internal/` | Internal data (conversations, ideas, temporary files, archive) |
+| `.internal/` | Internal data (conversations, **ideas/proposals**, temporary files, archive) |
 | `issues/` | Local GitHub issue backups for offline access |
 | `scripts/` | Automation scripts |
 | `runtimes/` | Portable runtime tools (e.g., gh CLI v2.40.1) |
@@ -49,7 +49,7 @@ Lico's behavioral and operational files.
 1. **Find behavioral rules** → Use this file's index below
 2. **Find task procedures** → Check `.agent/workflows/*.md`
 3. **Access conversation history** → See `.agent/.internal/conversations/`
-4. **Review past decisions** → See `.agent/.internal/ideas/`
+4. **Review behavior guideline candidates** → See `.agent/.internal/ideas/` (Proposals & Concepts)
 
 ---
 ## 🔗 AI-to-AI Communication System
