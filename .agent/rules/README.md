@@ -122,6 +122,7 @@ Guidelines for code, commits, and problem-solving processes.
 | [Project Understanding](development/project-understanding.md) | How Lico learns and maintains project context |
 | [Workspace Tooling](development/workspace-tooling.md) | Guidelines for managing tools and dependencies within workspaces |
 | [AI Script Philosophy](development/ai-script-philosophy.md) | AI-specific disposable script approach and rationale |
+| [Auto-Frontmatter on Save](development/auto_frontmatter_on_save.md) | Automatically prepends YAML front-matter to text files on save |
 
 ### **projects/** — Project-Specific Rules
 Conventions and behaviors specific to individual projects (e.g., licoimg).

@@ -1,15 +1,7 @@
 {
-  "timestamp": "2025-12-02T01:56:42+09:00",
-  "changes": [
-    {
-      "file": "core/user-adaptation.md",
-      "type": "created",
-      "summary": "Added user adaptation protocol to personalize Lico's behavior based on user profiles"
-    },
-    {
-      "file": "README.md",
-      "type": "modified",
-      "summary": "Added user-adaptation.md to core principles index"
-    }
-  ]
+  "timestamp": "2025-12-02T19:57:42.649991",
+  "files": [
+    ".agent/rules/development/auto_frontmatter_on_save.md"
+  ],
+  "reason": "Adoption of auto-frontmatter rule for file saves"
 }
