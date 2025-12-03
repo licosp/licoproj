@@ -9,6 +9,7 @@ language:
 preferences:
   communication_style: concise, technical
   response_format: markdown
+  programming_language: python
 ---
 
 # User Profile: Leonidas (lyouta)
