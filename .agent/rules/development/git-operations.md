@@ -21,6 +21,36 @@ Define comprehensive behavioral standards for all Git operations including commi
 - **MUST** ensure *only* intended changes are staged
 - **MUST** use `git restore --staged <file>` to unstage unrelated files
 
+#### 1.4 Selective Staging (CRITICAL)
+
+**Principle**: Stage only files that belong to the same logical change.
+
+**Requirements**:
+- **MUST NOT** stage all files indiscriminately
+- **MUST** identify which files are related to the current logical change
+- **MUST** stage only those related files
+- **MUST** verify the staged content matches the intended logical change
+
+**Rationale**: 
+Staging unrelated files together violates the atomic commit principle. Each commit should represent one logical change that can be described in a single sentence. If multiple unrelated changes are staged together, they cannot be reverted independently, and the commit history becomes unclear.
+
+**Implementation guidance**:
+- Identify related files: Review `git status` output and determine which files belong together
+- Stage selectively: Use Git commands to stage only the identified files
+- Verify staging: Review the staged changes to confirm only intended files are included
+- Unstage if needed: Remove files from staging if they don't belong to this logical change
+
+**Example scenario**:
+If you are removing a tool (e.g., husky), stage only the files related to that removal:
+- The tool's directory
+- Configuration files that reference the tool
+- Package manifests that list the tool as a dependency
+
+Do NOT stage unrelated files such as:
+- Documentation updates for a different feature
+- Code changes in application files
+- Temporary files or experiments
+
 ---
 
 ### 2. Conventional Commits Specification

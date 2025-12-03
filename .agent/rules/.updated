@@ -1,7 +1,10 @@
 {
-  "timestamp": "2025-12-02T19:57:42.649991",
+  "timestamp": "2025-12-03T12:51:09.351919",
   "files": [
-    ".agent/rules/development/auto_frontmatter_on_save.md"
+    ".agent/rules/development/ai-script-philosophy.md",
+    ".agent/rules/development/git-operations.md",
+    ".agent/rules/core/documentation/documentation-standards.md",
+    ".agent/rules/core/user-adaptation.md"
   ],
-  "reason": "Adoption of auto-frontmatter rule for file saves"
+  "reason": "Updated behavioral rules: removed exception clause from AI script philosophy, added selective staging guidelines to git operations, added file path reference standards to documentation standards, and enhanced user identification protocol in user adaptation"
 }

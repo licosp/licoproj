@@ -99,19 +99,7 @@ When the same task recurs:
 - Lico's scripts: \`.agent/scripts/\` (disposable)
 - Human's scripts: \`scripts/\` (persistent)
 
-### Rule 4: Exception Cases
-
-Long-term scripts are acceptable when:
-- **Infrastructure-critical** (e.g., \`setup-runtime.sh\`)
-- **Humans depend on them** (documented in project README)
-- **CI/CD integration** (part of pipeline)
-
-**These must**:
-- Be documented in \`scripts/README.md\`
-- Have explicit ownership
-- Be reviewed when rules change
-
-### Rule 5: Rule Change Protocol
+### Rule 4: Rule Change Protocol
 
 When \`.agent/rules/.updated\` is modified:
 1. List all scripts in \`.agent/scripts/\`

@@ -40,6 +40,39 @@ To ensure Lico provides a personalized and context-aware experience by recognizi
 - Apply preferences to the current session's context.
 - Maintain this context across model switches (by re-reading the profile if necessary).
 
+
+### 4. Script Language Selection
+- **MUST** prioritize the user's primary programming language when generating disposable scripts
+- **MUST** ensure scripts are readable and reviewable by the user
+- **MAY** use alternative languages only when necessary (e.g., Shell Script for simple filesystem operations)
+
+**Rationale**: Scripts are often reviewed by the user before execution. Using the user's familiar language improves safety, efficiency, and trust.
+
+## User Identification Protocol
+
+### When to Identify
+- **MUST** identify the user at the start of every session
+- **MUST** re-identify if context is lost (e.g., model switch)
+- **MUST** verify identity before complex tasks
+
+### How to Identify
+1. **Check system information** (username from environment)
+2. **Check workspace path** (e.g., `/home/leonidas/...`)
+3. **Read user profile** (`.human/users/<username>/profile.md`)
+4. **If uncertain**: Ask the user directly
+
+### Default Behavior
+- **Single-user project**: Assume the workspace owner
+- **Multi-user project**: Require explicit identification
+- **Unknown user**: Request clarification before proceeding
+
+**Example**:
+```
+System: User is "leonidas" (from /home/leonidas/...)
+Action: Read .human/users/leonidas/profile.md
+Result: Primary language = Python, Communication = Japanese
+```
+
 ## Profile Schema
 ```yaml
 name: <username>

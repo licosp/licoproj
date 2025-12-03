@@ -44,3 +44,24 @@ When Lico creates or significantly modifies a Markdown file (especially logs, pl
 - **Rationale**:
   - **Breadth-First Search (BFS) Friendly**: Enables Lico to identify relevance from `list_dir` output without opening the file.
   - **Information Density**: Provides sufficient context to filter irrelevant paths (pruning) while keeping token usage low.
+
+## 6. File Path References
+
+**Principle**: Use relative paths when referencing files in documentation and user-facing text.
+
+**Requirements**:
+- **MUST** use relative paths from the repository root (e.g., `.agent/rules/README.md`)
+- **MUST NOT** use absolute paths (e.g., `/home/user/project/file.md`)
+- **MUST NOT** use platform-specific URI schemes (e.g., `cci:7://file://`)
+- **MUST** write file paths as plain text or simple relative paths
+
+**Rationale**:
+- Relative paths are portable across different systems and users
+- Absolute paths and URI schemes are unreadable and non-functional for humans
+- Plain text paths are universally understood
+
+**Examples**:
+- ✅ Good: `.agent/rules/README.md`
+- ✅ Good: `See the documentation in core/identity.md`
+- ❌ Bad: `/home/leonidas/develop/shared/project/licoproj/.agent/rules/README.md`
+- ❌ Bad: `[README.md](cci:7://file:///absolute/path/README.md)`
