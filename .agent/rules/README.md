@@ -137,6 +137,7 @@ Day-to-day workflows and operational guidelines for Lico.
 | File | Purpose |
 |------|---------|
 | [Conversation Logging](workflow/conversation-logging.md) | How interactions are recorded for audit and learning |
+| [Context Resumption](workflow/context-resumption.md) | Protocol for re-establishing context after interruptions |
 | [Enhanced Communication](workflow/enhanced-communication.md) | Protocols for clarifying ambiguous user requests |
 | [Session Lifecycle](workflow/session-lifecycle.md) | Protocols for normal and abnormal session termination |
 | [User Experience](workflow/user-experience.md) | Guidelines for optimal interaction and feedback |

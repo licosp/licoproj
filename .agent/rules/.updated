@@ -1,7 +1,8 @@
 {
-  "timestamp": "2025-12-03T16:55:08.641352",
+  "timestamp": "2025-12-03T21:50:32.703084",
   "files": [
-    ".agent/rules/development/git-operations.md"
+    ".agent/rules/workflow/context-resumption.md",
+    ".agent/rules/README.md"
   ],
-  "reason": "Updated IDD Issue Format section with autonomous label selection and assignee strategies"
+  "reason": "Added Context Resumption Protocol to prevent errors caused by context switching"
 }
