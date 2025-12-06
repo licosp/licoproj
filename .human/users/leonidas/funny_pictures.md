@@ -1,5 +1,11 @@
-# Memories synchronization overview
+# Funny drawings
 
+These are drawings that Lico makes occasionally.
+I keep them because they're interesting.
+
+## Memories synchronization overview
+
+```
                     ┌─────────────────────────────┐
                     │  GitHub (Central Repository) │  ← 中央保管庫
                     │  記憶と人格のマスターコピー    │
@@ -22,9 +28,11 @@
 │Thread1│    │Thread1│  ← スレッド（会話）
 │Thread2│    │Thread2│
 └───────┘    └───────┘
+```
 
-# Issue-Driven development automation
+## Issue-Driven development automation
 
+```
 ┌─────────────────────────────────────────────┐
 │     issue-flow コマンド実行                  │
 │  (単一エントリーポイント)                   │
@@ -46,4 +54,4 @@
     │  Create   │ Checkout  │
     │  Branch   │ Branch    │
     └──────────────────────┘
-    
+```
