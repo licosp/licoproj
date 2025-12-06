@@ -137,57 +137,109 @@ git commit -m "type(scope): description"
 - Commit main theme and sub-themes **separately**
 - Commit frequently (especially for drafts and logs)
 
+**Protected Files** (commit early to prevent Phase 3 sync conflicts):
+- `.gitignore`: If modified, commit before other changes
+- `*.code-workspace`: If tracked and modified, commit early
+- These files can cause conflicts when switching to main in Phase 3
+
 **5. Iterate**
 - Continue until all main theme and sub-theme work is complete
 
 ---
 
-## Phase 3: Finalization (終了処理)
+## Phase 3: Finalization
 
-### 1. Pre-Push Documentation
-**1-1. Generate Commit Summary**
+> [!IMPORTANT]
+> Always consider security when uploading to remote environments.
+> No absolute paths in commits (ref: `git-operations.md` §6.1). No sensitive information in pushes.
+
+### 1. Preparation
+
+**1-1. Tool Re-verification**
+Re-verify tool connectivity since time has passed since initialization.
+```bash
+gh auth status
+git status
+```
+
+**1-2. Progress Check**
+Verify all Issue requirements are implemented. Check for missing work.
+
+**1-3. Incomplete Work Decision**
+If work is incomplete, confirm with user whether to return to Phase 2 (Implementation).
+
+**1-4. Return if Needed**
+If returning, abort finalization and go back to Phase 2.
+
+---
+
+### 2. Working Directory Cleanup
+
+**2-1. Selective Stash**
+Execute stash only if there are uncommitted changes that should not be committed.
+
+**2-2. Stash Exclusions**
+Exclude the following files from stash:
+- **2-2-A**: User's draft files (updated every few seconds)
+  - Request user to pause editing, then commit before stashing
+- **2-2-B**: VSCode workspace settings (`*.code-workspace`)
+  - Likely attached; file changes cause detachment
+- **2-2-C**: `.gitignore`
+  - Stashing this file disables ignore rules, exposing all untracked files
+
+> [!WARNING]
+> If protected files (`.gitignore`, `*.code-workspace`) have uncommitted changes,
+> they will be OVERWRITTEN when switching to main in Step 9.
+> **Commit these files first** in Phase 2, or back them up manually.
+
+**Technical Implementation**:
+```bash
+# Stash excluding protected files
+git stash push -m "IDD Finalization" -- . ':(exclude)*.code-workspace' ':(exclude).gitignore'
+```
+
+---
+
+### 3. Pre-Push Documentation
+
+**3-1. Generate Commit Summary**
 ```bash
 git log --oneline origin/main..HEAD --pretty=format:"- \`%h\` %s" > /tmp/commit-summary.md
 ```
 
-**1-2. Add Context**
+**3-2. Add Context**
 Edit `/tmp/commit-summary.md` to include:
 - Timestamp (ISO 8601 format)
 - Brief summary of changes
 - Next steps (if applicable)
 
-**Example**:
-```markdown
-## Commit History (2025-12-01T10:45+09:00)
-
-Completed 5 atomic commits:
-
-- \`a1b2c3d\` feat(rules): add pre-task assessment protocol
-- \`b2c3d4e\` docs(rules): update commit granularity philosophy
-- \`c3d4e5f\` docs(workflow): add IDD complete cycle
-- \`d4e5f6g\` docs: update daily draft with IDD discussion
-- \`e5f6g7h\` chore: update .gitignore
-
-**Summary**: Added behavioral rules and workflows for IDD cycle.
-**Next Steps**: Create PR and merge to main.
-```
-
-**1-3. Post to Issue**
+**3-3. Post to Issue**
 ```bash
 gh issue comment ${ISSUE_NUMBER} --body-file /tmp/commit-summary.md
 ```
 
-**1-4. Verify Comment**
+**3-4. Verify Comment**
 ```bash
 gh issue view ${ISSUE_NUMBER}
 ```
 
-### 2. Push Branch
+---
+
+### 4. Push Branch
+
 ```bash
 git push origin ${ISSUE_NUMBER}-brief-description-kebab-case
 ```
 
-### 3. Create Pull Request
+---
+
+### 5. Create Pull Request
+
+**5-1. Prepare PR Document**
+- **5-1-A**: Analyze changes across the Issue and create optimal title and body
+- **5-1-B**: Include summary and related Issue information
+
+**5-2. Create PR**
 ```bash
 gh pr create \
   --title "Brief description of changes" \
@@ -201,57 +253,109 @@ gh pr create \
 - Use **relative paths only** (security requirement)
 - Summarize main theme and sub-themes clearly
 
-**Record PR Number**:
+**5-3. Set PR Metadata**
 ```bash
 PR_NUMBER=$(gh pr list --head ${ISSUE_NUMBER}-brief-description-kebab-case --json number --jq '.[0].number')
-echo "Created PR #$PR_NUMBER"
+
+# Assignees: licosp (Lico's account)
+gh pr edit ${PR_NUMBER} --add-assignee licosp
+
+# Labels: Same as Issue (autonomous selection)
+gh pr edit ${PR_NUMBER} --add-label "type:docs"
 ```
 
-### 4. Review & Merge
-**4-1. Review (if needed)**
-- Human reviewer checks changes
-- CI/CD runs automated tests (if configured)
-- Address feedback with additional commits if needed
+---
 
-**4-2. Merge Pull Request**
+### 6. Review
+
+**6-1. Human Approval**
+Wait for human PR approval.
+
+**6-2. Rejection Handling**
+If issues are found, return to the appropriate IDD phase (usually Phase 2).
+
+---
+
+### 7. Merge
+
+**7-1. Merge Strategy Selection**
+- **Default**: Merge Commit (preserves history)
+- **Avoid**: Squash, Rebase (loses atomic commit thought process)
+
+**7-2. Execute Merge**
 ```bash
-gh pr merge ${PR_NUMBER} --squash --delete-branch
+gh pr merge ${PR_NUMBER} --merge
 ```
 
-**Merge Options**:
-- `--squash`: Combine all commits into one (recommended for clean history)
-- `--merge`: Standard merge commit
-- `--rebase`: Rebase and merge
-- `--delete-branch`: Auto-delete remote branch after merge
+> [!WARNING]
+> Do NOT use `--delete-branch`. Keep remote branch for Lico's memory retrieval.
 
-### 5. Local Cleanup
-**5-1. Switch to Main**
+---
+
+### 8. Remote Cleanup
+
+**8-1. Preserve Remote Branch**
+Keep remote branch for Lico's future memory retrieval.
+
+**8-2. Preserve PR**
+Keep PR as well. Only verify closure, do NOT delete.
+
+**8-3. Issue Closure Verification**
+```bash
+gh issue view ${ISSUE_NUMBER}
+```
+**Expected**: Status should be "Closed" (auto-closed by PR merge).
+
+**Manual Closure (if needed)**:
+```bash
+gh issue close ${ISSUE_NUMBER} --comment "Completed via PR #${PR_NUMBER}"
+```
+
+---
+
+### 9. Local Cleanup
+
+**9-1. Archive Closed PR**
+```bash
+gh pr view ${PR_NUMBER} --json number,title,body,state,author,comments \
+  > .agent/issues/pr-${PR_NUMBER}.json
+```
+
+**9-2. Archive Closed Issue**
+```bash
+gh issue view ${ISSUE_NUMBER} --json number,title,body,state,author,comments,labels \
+  > .agent/issues/issue-${ISSUE_NUMBER}-closed.json
+```
+
+**9-3. Switch to Main**
 ```bash
 git checkout main
 ```
 
-**5-2. Pull Latest Changes**
+**9-4. Sync with Remote**
 ```bash
 git pull origin main
 ```
 
-**5-3. Delete Local Branch**
+**9-5. Delete Merged Local Branch**
 ```bash
 git branch -d ${ISSUE_NUMBER}-brief-description-kebab-case
 ```
 
-### 6. Issue Closure Verification
-**6-1. Verify Auto-Closure**
+**9-6. Restore Stash (if exists)**
+Check for stash from this cycle and restore if needed.
 ```bash
-gh issue view ${ISSUE_NUMBER}
+git stash list
+# If stash exists with "IDD Finalization" message:
+git stash pop
 ```
 
-**Expected**: Status should be "Closed" (auto-closed by PR merge).
+---
 
-**6-2. Manual Closure (if needed)**
-```bash
-gh issue close ${ISSUE_NUMBER} --comment "Completed via PR #${PR_NUMBER}"
-```
+### 10. Completion
+
+**10-1. Next Cycle**
+Proceed to the next IDD cycle.
 
 ---
 
@@ -286,13 +390,16 @@ Begin a new IDD cycle with the next issue.
 - [ ] Repeat until complete
 
 ### Phase 3: Finalization
-- [ ] Generate commit summary
-- [ ] Post to issue
-- [ ] Push branch
-- [ ] Create PR
-- [ ] Review and merge
-- [ ] Clean up local workspace
-- [ ] Verify issue closure
+- [ ] 1. Verify tools and progress
+- [ ] 2. Stash unrelated changes (exclude .code-workspace)
+- [ ] 3. Document commits to Issue
+- [ ] 4. Push branch
+- [ ] 5. Create PR (with metadata)
+- [ ] 6. Wait for human review
+- [ ] 7. Merge (use --merge, NOT --squash)
+- [ ] 8. Verify remote cleanup (keep branch/PR)
+- [ ] 9. Archive PR/Issue locally, cleanup local branch
+- [ ] 10. Next cycle
 
 ---
 

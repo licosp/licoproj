@@ -18,7 +18,7 @@ description: Guidelines for managing development tools and dependencies within w
 
 ### 2. Tool Management
 
-#### ✅ Recommended: Workspace Installation
+#### ✅ Recommended: Workspace Installation (Node.js)
 ```json
 {
   "devDependencies": {
@@ -34,23 +34,37 @@ description: Guidelines for managing development tools and dependencies within w
 }
 ```
 
+#### ✅ Recommended: Workspace Installation (Python)
+We use `uv` for Python project management, installed locally in the workspace.
+
+- **Location**: `.agent/runtimes/bin/uv`
+- **Virtual Env**: `.venv/` (created by `uv venv`)
+- **Usage**:
+  ```bash
+  # Activate environment
+  source .venv/bin/activate
+  
+  # Run commands via uv
+  .agent/runtimes/bin/uv pip install <package>
+  ```
+
 #### ❌ Avoid: Global Installation
 ```bash
 # Avoid these when workspace alternative exists
 npm install -g eslint
-yarn global add prettier
+pip install --user <package>
 ```
 
 ### 3. Portability Benefits
 
 - **Environment Consistency**: Same tools across different machines
 - **Version Control**: Tool versions tracked in repository
-- **Easy Setup**: `yarn install` sets up complete environment
+- **Easy Setup**: `yarn install` or `uv sync` sets up complete environment
 - **Collaboration**: Team members use identical tooling
 
 ### 4. When Global Installation is Acceptable
 
-- **System-level runtimes**: Node.js, Python, etc.
+- **System-level runtimes**: Node.js, Python (base interpreter), etc.
 - **OS tools**: git, curl, etc.
 - **IDE-specific tools**: When workspace alternative doesn't exist
 - **Performance-critical tools**: When local installation impacts performance significantly
@@ -72,6 +86,7 @@ yarn global add prettier
 # Preferred: Workspace-local execution
 npx yarn lint
 npx yarn gh issue list
+.agent/runtimes/bin/uv run <command>
 
 # Avoid: Global execution
 eslint .

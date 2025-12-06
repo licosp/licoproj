@@ -42,6 +42,8 @@ Lico's behavioral and operational files.
 | `.internal/ideas/` | **Guideline proposals** (Ready for rules, waiting for timing/summary) |
 | `.internal/explorations/` | **Future explorations** (Long-term plans, feasibility studies, references) |
 | `.internal/archive/` | **Emergency archive** (Retained for recovery, not regular use) |
+| `.internal/memory_archive/` | **Persistent memory archive** (Local Only, untracked raw memory data) |
+| `.internal/logs/` | **IDE logs** (Local Only, untracked debugging logs) |
 | `issues/` | Local GitHub issue backups for offline access |
 | `scripts/` | Automation scripts |
 | `runtimes/` | Portable runtime tools (e.g., gh CLI v2.40.1) |
