@@ -125,3 +125,7 @@ playwright/.cache/
 !/.agent/rules/core/*.md
 
 !/.agent/rules/proposals/
+
+# Lico memory archives (local only, not tracked)
+.agent/.internal/memory_archive/
+.agent/.internal/session_archive/
