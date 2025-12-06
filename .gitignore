@@ -118,12 +118,8 @@ playwright/.cache/
 # Local development
 .temp/
 *.local
-!/.agent/rules/development/commit-granularity.md
-.agent/runtimes/
-*.tar.gz
-!/.agent/rules/development/git-operations.md
-!/.agent/rules/core/*.md
-
+# Allow agent rules documentation
+!/.agent/rules/**/*.md
 !/.agent/rules/proposals/
 
 # Lico memory archives (local only, not tracked)
