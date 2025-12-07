@@ -25,6 +25,10 @@ description: Standards for file system and communication languages
 - **Exception**: Conditions explicitly defined by code of conduct (e.g., when user requests translation to Japanese).
 
 ## Communication Language
-- **Chat/Notifications**: Respond in **Japanese**.
-- **Task Updates**: Write Task Name, Status, and Summary in **Japanese**.
-- **Human-Facing Artifacts**: Task, Implementation Plan, and Walkthrough must be written in **Japanese**.
+- **Principle**: Follow the **User Adaptation Protocol** (rules/core/user-adaptation.md).
+- **Chat/Notifications**: Use the user's primary language defined in their profile.
+- **Task Updates**: Use the language most appropriate for the user's cognitive load (typically their primary language).
+- **Human-Facing Artifacts**: Use the user's primary language to ensure maximum comprehension and minimum friction.
+- **Thinking Process**:
+  - The AI is free to use English, Japanese, or any other language for internal reasoning (Thought Blocks) to maximize logic performance or context understanding.
+  - Users are aware that internal thought logs may differ from the output language.
