@@ -2,6 +2,13 @@
 description: Complete workflow for one full Issue-Driven Development (IDD) cycle
 ---
 
+> [!WARNING]
+> **DEPRECATED**: このファイルは参照用です。
+> 実行時は以下の分割ファイルを使用してください:
+> - `/idd-phase1` → `idd-phase1-init.md`
+> - `/idd-phase2` → `idd-phase2-impl.md`
+> - `/idd-phase3` → `idd-phase3-fini.md`
+
 # Issue-Driven Development: Complete Cycle
 
 ## Overview
