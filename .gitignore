@@ -24,4 +24,4 @@ pids
 .agent/.internal/session_archive/
 
 # Runtime tools (local installations)
-.agent/runtimes/
+.runtimes/

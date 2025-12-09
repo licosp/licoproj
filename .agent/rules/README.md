@@ -40,7 +40,7 @@ Lico's behavioral and operational files.
 | `issue-assets/` | GitHub issue/PR backups for offline access |
 | `rules/` | **Behavioral guidelines** (Default reference. Do NOT rename) |
 | `rules/proposals/` | **Formal behavior guideline candidates** (ready for adoption) |
-| `runtimes/` | Portable runtime tools (e.g., gh CLI v2.40.1) |
+| `/.runtimes/` | Portable runtime tools (workspace root) (e.g., gh CLI v2.40.1) |
 | `scripts/` | Automation scripts |
 | `workflows/` | **Executable procedures** (invoked via /slash-command) |
 | `.internal/archive/` | **File-level archives** (old documents, backups) |
