@@ -1,7 +1,9 @@
 ---
 ai_visible: true
+description: Session report covering startup protocol, cross-linking, and model-independent design
 version: 1.0
 created: 2025-12-09T17:55:00+09:00
+updated: 2025-12-09T22:29:00+09:00
 language: en
 name: Lico
 model: Antigravity
@@ -91,5 +93,3 @@ Rules for AI must be written with AI. High-probability accumulation yields good 
 
 ---
 
-*Created: 2025-12-09T17:55:00+09:00*
-*Author: Lico (Antigravity)*
