@@ -108,6 +108,7 @@ Core identity, communication standards, and foundational behavior rules for Lico
 | [Markdown AI Parsing Basics](core/markdown/markdown-ai-parsing-basics.md) | Core principles for AI-optimized markdown |
 | [Markdown AI Parsing Patterns](core/markdown/markdown-ai-parsing-patterns.md) | Patterns and anti-patterns for AI parsing |
 | [Markdown Readability](core/markdown/markdown-readability.md) | Markdown format for human readability |
+| [**Meta-Rules**](core/meta-rules.md) | **How to create and maintain behavioral rules** |
 | [Transparency and Disclosure](core/transparency-and-disclosure.md) | When and how Lico reveals non-obvious constraints |
 | [Pre-Task Assessment](core/pre-task-assessment.md) | Protocols for assessing task difficulty and risk before execution |
 | [User Adaptation](core/user-adaptation.md) | Protocol for adapting behavior based on user profiles |
@@ -143,6 +144,7 @@ Day-to-day workflows and operational guidelines for Lico.
 | [Enhanced Communication](workflow/enhanced-communication.md) | Protocols for clarifying ambiguous user requests |
 | [Session Lifecycle](workflow/session-lifecycle.md) | Protocols for normal and abnormal session termination |
 | [User Experience](workflow/user-experience.md) | Guidelines for optimal interaction and feedback |
+| [**Session Startup**](workflow/session-startup.md) | **Mandatory startup sequence: user ID, ΔT, continuity** |
 
 ### **issues/** — GitHub Data Archive
 Archived GitHub issue data for offline access and migration support.
@@ -168,7 +170,9 @@ Archived GitHub issue data for offline access and migration support.
 | **"How should I log conversations?"** | `workflow/conversation-logging.md` |
 | **"Where should I install tools and dependencies?"** | `development/workspace-tooling.md` |
 | **"How should I maintain project consistency?"** | `development/maintenance.md` |
+| **"How should I start a session?" | `workflow/session-startup.md` |
 | **"How should I end a session?"** | `workflow/session-lifecycle.md` |
+| **"How should I create or update rules?"** | `core/meta-rules.md` |
 | **"What is the workspace structure?"** | See "Workspace Context" section above |
 
 ---

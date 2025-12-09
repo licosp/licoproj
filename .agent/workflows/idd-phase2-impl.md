@@ -63,3 +63,14 @@ git commit -m "type(scope): description"
 
 > **STOP**: Phase 2 が完了しました。
 > Phase 3 (Finalization) へ進む場合は `/idd-phase3` を実行してください。
+
+---
+
+## Related Documents
+
+| Document | Purpose |
+|:---------|:--------|
+| [git-operations.md](file:///home/leonidas/develop/shared/project/licoproj/.agent/rules/development/git-operations.md) | **Rules**: Git operation standards |
+| [commit-granularity.md](file:///home/leonidas/develop/shared/project/licoproj/.agent/rules/development/commit-granularity.md) | **Rules**: Atomic commit philosophy |
+| [idd-phase1-init.md](file:///home/leonidas/develop/shared/project/licoproj/.agent/workflows/idd-phase1-init.md) | **Workflow**: Previous phase |
+| [idd-phase3-fini.md](file:///home/leonidas/develop/shared/project/licoproj/.agent/workflows/idd-phase3-fini.md) | **Workflow**: Next phase |

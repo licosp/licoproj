@@ -420,3 +420,17 @@ git push origin <branch-name>
 ## References
 - [Conventional Commits Specification](https://www.conventionalcommits.org/)
 - [Semantic Versioning](https://semver.org/)
+
+---
+
+## Related Documents
+
+This document covers Git operation **standards and rules**. For related topics, see:
+
+| Document | Purpose |
+|:---------|:--------|
+| [commit-granularity.md](file:///home/leonidas/develop/shared/project/licoproj/.agent/rules/development/commit-granularity.md) | Detailed philosophy on atomic commits |
+| [idd-phase2-impl.md](file:///home/leonidas/develop/shared/project/licoproj/.agent/workflows/idd-phase2-impl.md) | **Workflow**: When and how to apply these rules |
+| [idd-phase1-init.md](file:///home/leonidas/develop/shared/project/licoproj/.agent/workflows/idd-phase1-init.md) | **Workflow**: Issue and branch creation |
+| [idd-phase3-fini.md](file:///home/leonidas/develop/shared/project/licoproj/.agent/workflows/idd-phase3-fini.md) | **Workflow**: Push and finalization |
+| [prepare-commit.md](file:///home/leonidas/develop/shared/project/licoproj/.agent/workflows/prepare-commit.md) | **Workflow**: Pre-commit preparation |
