@@ -194,3 +194,12 @@ Choose based on primary audience:
 - **Audience: AI Systems** → Use AI-Optimized Markdown
 - **Audience: Humans (with AI reading secondarily)** → Use Human-Readable Markdown
 - **Mixed Audience** → Err toward human-readable unless parsing is critical
+
+---
+
+## Related Documents
+
+| Document | Purpose |
+|:---------|:--------|
+| [markdown-ai-parsing-basics.md](markdown-ai-parsing-basics.md) | Core AI parsing principles |
+| [markdown-readability.md](markdown-readability.md) | Human-readable formatting |

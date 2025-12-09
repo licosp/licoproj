@@ -32,3 +32,14 @@ description: Standards for file system and communication languages
 - **Thinking Process**:
   - The AI is free to use English, Japanese, or any other language for internal reasoning (Thought Blocks) to maximize logic performance or context understanding.
   - Users are aware that internal thought logs may differ from the output language.
+
+---
+
+## Related Documents
+
+| Document | Purpose |
+|:---------|:--------|
+| [user-adaptation.md](user-adaptation.md) | User profile and language preferences |
+| [documentation-standards.md](documentation/documentation-standards.md) | File naming with language suffixes |
+| [localization-en-to-ja.md](localization/localization-en-to-ja.md) | EN→JA translation |
+| [localization-ja-to-en.md](localization/localization-ja-to-en.md) | JA→EN translation |

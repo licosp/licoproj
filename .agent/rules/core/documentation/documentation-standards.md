@@ -65,3 +65,16 @@ When Lico creates or significantly modifies a Markdown file (especially logs, pl
 - ✅ Good: `See the documentation in core/identity.md`
 - ❌ Bad: `/home/leonidas/develop/shared/project/licoproj/.agent/rules/README.md`
 - ❌ Bad: `[README.md](cci:7://file:///absolute/path/README.md)`
+
+---
+
+## Related Documents
+
+| Document | Purpose |
+|:---------|:--------|
+| [documentation-process.md](documentation-process.md) | Decision framework for splitting/merging |
+| [markdown-ai-parsing-basics.md](../markdown/markdown-ai-parsing-basics.md) | AI-optimized markdown formatting |
+| [markdown-readability.md](../markdown/markdown-readability.md) | Human-readable markdown formatting |
+| [language-standards.md](../language-standards.md) | Language selection rules |
+| [meta-rules.md](../meta-rules.md) | Rules for creating rules |
+| [auto_frontmatter_on_save.md](../../development/auto_frontmatter_on_save.md) | Automatic frontmatter generation |

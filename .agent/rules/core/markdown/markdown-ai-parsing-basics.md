@@ -152,3 +152,14 @@ Configuration Options:
 - option_a: Enables feature A (default: true)
 - option_b: Controls behavior B (default: false)
 ```
+
+---
+
+## Related Documents
+
+| Document | Purpose |
+|:---------|:--------|
+| [markdown-ai-parsing-patterns.md](markdown-ai-parsing-patterns.md) | Specific patterns and anti-patterns |
+| [markdown-readability.md](markdown-readability.md) | Human-readable formatting |
+| [documentation-standards.md](../documentation/documentation-standards.md) | File naming, size, signatures |
+| [language-standards.md](../language-standards.md) | Language selection |

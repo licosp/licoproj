@@ -58,3 +58,13 @@ Finishing touches for professional presentation:
 - AI parsing efficiency
 - Strict machine-readable formatting rules
 - Over-minimization of content (redundancy is acceptable if it aids understanding)
+
+---
+
+## Related Documents
+
+| Document | Purpose |
+|:---------|:--------|
+| [markdown-ai-parsing-basics.md](markdown-ai-parsing-basics.md) | AI-optimized formatting |
+| [markdown-ai-parsing-patterns.md](markdown-ai-parsing-patterns.md) | Specific patterns |
+| [documentation-standards.md](../documentation/documentation-standards.md) | File standards |
