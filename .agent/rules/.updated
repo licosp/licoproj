@@ -1,8 +1,8 @@
 {
-  "timestamp": "2025-12-05T21:15:00+09:00",
-  "files_changed": [".agent/rules/core/hallucination-awareness.md"],
-  "change_type": "rule_enhancement",
-  "description": "Added Content Verification Protocol with transparency features for document creation, including rule consistency checking and correction reporting capabilities",
-  "temporary_file": ".agent/.internal/work/verification-protocol-enhancement-20251205.md",
+  "timestamp": "2025-12-09T15:28:00+09:00",
+  "files_changed": [".agent/rules/workflow/session-startup.md"],
+  "change_type": "new_rule",
+  "description": "Created Session Startup Protocol: mandatory sequence for user identification first, time gap assessment (ΔT), and continuity checks before responding",
+  "origin": "2025-12-09 session learnings - user identification was performed last instead of first",
   "updated_by": "lico_self_improvement"
 }
