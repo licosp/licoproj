@@ -48,3 +48,11 @@ Create `$BACKUP_DIR/incident-report.md`:
 |:---------|:--------|
 | [session-lifecycle.md](../rules/workflow/session-lifecycle.md) | Normal session termination |
 | [recover-from-failure.md](recover-from-failure.md) | Recovery procedures |
+
+---
+
+## Related Documents
+
+| Document | Purpose |
+|:---------|:--------|
+| [recover-from-failure.md](recover-from-failure.md) | Post-failure recovery and analysis |
