@@ -77,7 +77,7 @@ Separate "AI thinking process" from "Human review documents" to optimize for bot
 - **Purpose**: Task tracking and context maintenance for the agent.
 
 ### 2. Human Review Plan (Deliverable)
-- **Location**: `.human/plans/YYYY-MM-DDTHH-MM-SS+09-00_implementation_plan.md`
+- **Location**: `.human/plans/See datetime-format.md for format`
 - **Format**: **Strictly adhering to Code of Conduct** (Japanese, human-readable, formatted)
 - **Purpose**: User review, approval, and project history.
 - **Requirement**: MUST be created and presented to the user for any complex task.
@@ -86,7 +86,7 @@ Separate "AI thinking process" from "Human review documents" to optimize for bot
 
 ### Policy
 - When a task is interrupted or suspended, it MUST be recorded to preserve context.
-- **Location**: `.human/tasks/YYYY-MM-DDTHH-MM-SS+09-00_interrupted-tasks.md`
+- **Location**: `.human/tasks/See datetime-format.md for format`
 - **Content**: Summary of task, reason for interruption, and requirements for resumption.
 
 ## Issue Archival Standards

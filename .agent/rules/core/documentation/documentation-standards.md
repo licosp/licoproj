@@ -62,3 +62,4 @@ description: Defines standards for file naming, size, structure, and AI signatur
 | [language-standards.md](../language-standards.md) | Language selection rules |
 | [meta-rules.md](../meta-rules.md) | Rules for creating rules |
 | [auto_frontmatter_on_save.md](../../development/auto_frontmatter_on_save.md) | Automatic frontmatter generation |
+| [datetime-format.md](datetime-format.md) | Standard datetime formats |
