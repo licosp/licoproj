@@ -62,3 +62,37 @@ When context is long or complex:
 | [pre-task-assessment.md](pre-task-assessment.md) | Risk assessment before tasks |
 | [meta-rules.md](meta-rules.md) | Model-independent design (§6) |
 | [context-resumption.md](../workflow/context-resumption.md) | Re-verifying context |
+
+---
+
+## Context Sparsity Tolerance
+
+**Incomplete context is acceptable. Asking is preferred over guessing.**
+
+When memory or context feels uncertain:
+- **MUST** ask for confirmation rather than rely on uncertain memory
+- **MUST NOT** fabricate details to fill gaps
+- **SHOULD** state explicitly: "I'm not certain about X, let me verify"
+
+### Why This Matters
+
+AI cannot reliably self-assess memory accuracy:
+- Information in context window may be incomplete
+- Long sessions may have "lost in the middle" effects
+- Fresh context is more reliable than stale assumptions
+
+### Correct Pattern
+
+```
+"I don't have clear context on this. Could you confirm...?"
+"My memory of this is uncertain. Let me check the repository."
+"Rather than assume, I'll ask: ..."
+```
+
+### Anti-Pattern
+
+```
+"I remember we decided..."  (when uncertain)
+"Based on earlier discussion..."  (when context is stale)
+"This must be..."  (inference without verification)
+```
