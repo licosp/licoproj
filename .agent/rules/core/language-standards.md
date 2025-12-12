@@ -6,7 +6,7 @@ description: Standards for file system and communication languages
 ## File System Language
 - **File System**: ALL files (code, docs, artifacts) must be in **English**.
   - **Exception**: User explicitly requests another language.
-  - **Exception**: System artifacts in **"Temporary documents outside the workspace (System Artifacts)"** must be in **Japanese**.
+  - **Exception**: System artifacts (task.md, etc.) follow the [System Artifacts Guidelines](../workflow/system-artifacts.md).
 
 ## AI System Directory (.agent/)
 > [!IMPORTANT]
@@ -14,9 +14,10 @@ description: Standards for file system and communication languages
 
 - **All files in `.agent/`** (rules, workflows, documentation) must be written in **English**.
 - **Rationale**: The `.agent/` directory contains behavioral rules and workflows for AI systems. Using English ensures:
-  - Consistent AI interpretation across different language models
-  - Better compatibility with AI training data (predominantly English)
-  - Easier maintenance and debugging of AI behavior
+  - **AI Reasoning Accuracy**: English is the dominant language in LLM training data, ensuring higher precision in logic and adherence to rules.
+  - **Ambiguity Reduction**: English technical terms are less prone to translation nuances than Japanese.
+  - **Consistent AI Interpretation**: Ensures uniform behavior across different language models.
+  - Easier maintenance and debugging of AI behavior.
 - **No exceptions**: Even when communicating with users in Japanese, all `.agent/` content must remain in English.
 
 ## Project Directory Files
