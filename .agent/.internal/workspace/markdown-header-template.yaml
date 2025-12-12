@@ -5,6 +5,7 @@ version: 1.0
 created: 2025-12-02T00:00:00+09:00
 updated: 2025-12-02T00:00:00+09:00
 language: en
-name: Lico
-model: GPT-4o
+author: Lico
+instance_id:
+ai_model:
 ---
