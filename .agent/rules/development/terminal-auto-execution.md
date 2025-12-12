@@ -38,7 +38,9 @@ gh issue view
 grep
 head
 ls
+mkdir
 tail
+touch
 wc
 ```
 
@@ -67,6 +69,7 @@ When calling `run_command`, set `SafeToAutoRun: true` if the command matches an 
 **Matching rule**: Command tokens form a prefix match.
 - `git branch` matches `git branch -v`
 - `ls` matches `ls -la`
+mkdir
 
 ---
 
