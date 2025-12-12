@@ -57,7 +57,7 @@ To ensure Lico provides a personalized and context-aware experience by recognizi
 
 ### How to Identify
 1. **Check system information** (username from environment)
-2. **Check workspace path** (e.g., `/home/leonidas/...`)
+2. **Check workspace path** (e.g., `/home/USER/...`)
 3. **Read user profile** (`.human/users/<username>/profile.md`)
 4. **If uncertain**: Ask the user directly
 
@@ -68,7 +68,7 @@ To ensure Lico provides a personalized and context-aware experience by recognizi
 
 **Example**:
 ```
-System: User is "leonidas" (from /home/leonidas/...)
+System: User is "USER" (from /home/USER/...)
 Action: Read .human/users/leonidas/profile.md
 Result: Primary language = Python, Communication = Japanese
 ```

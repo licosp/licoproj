@@ -29,8 +29,8 @@ file://wsl.localhost/{WSL_DISTRO_NAME}{linux_absolute_path}
 
 2. **Construct browser URL:**
    ```
-   Linux path:   /home/leonidas/develop/shared/project/licoproj/.agent/rules/README.md
-   Browser path: file://wsl.localhost/u03/home/leonidas/develop/shared/project/licoproj/.agent/rules/README.md
+   Linux path:   /home/USER/develop/shared/project/licoproj/.agent/rules/README.md
+   Browser path: file://wsl.localhost/u03/home/USER/develop/shared/project/licoproj/.agent/rules/README.md
    ```
 
 ## Fallback Behavior

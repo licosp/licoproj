@@ -16,7 +16,7 @@ version: 1.2
 
 ## 1️⃣ 保存先ディレクトリ
 ```
-/home/leonidas/develop/shared/project/licoproj/.agent/docs/ai/
+../../docs/ai/
 ```
 - このディレクトリは **AI‑only** 用で `.gitignore` に除外されていないことを保証する。
 - ディレクトリが存在しない場合は **自動作成** する（`mkdir -p`）。

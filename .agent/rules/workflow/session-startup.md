@@ -15,7 +15,7 @@ This protocol **MUST** execute at the start of every new session, before respond
 ### Step 1: User Identification (FIRST)
 **MUST** identify the user before any other exploration.
 
-1. Extract username from workspace path (e.g., `/home/leonidas/...` → `leonidas`)
+1. Extract username from workspace path (e.g., `/home/USER/...` → `leonidas`)
 2. Read `.human/users/<username>/profile.md`
 3. Apply language and communication preferences immediately
 

@@ -162,6 +162,8 @@ git fetch origin
 - API keys, passwords, tokens
 - SSH private keys (public keys MAY be committed if necessary)
 - Full local directory paths (use relative paths or environment variables)
+  - **See [absolute-path-prohibition.md](../core/security/absolute-path-prohibition.md) for details**
+
 
 **Default Strategy**: Use `.gitignore` to exclude sensitive files from Git tracking.
 
@@ -254,8 +256,9 @@ This document covers Git operation **standards and rules**. For related topics, 
 
 | Document | Purpose |
 |:---------|:--------|
-| [commit-granularity.md](file:///home/leonidas/develop/shared/project/licoproj/.agent/rules/development/commit-granularity.md) | Detailed philosophy on atomic commits |
-| [idd-phase2-impl.md](file:///home/leonidas/develop/shared/project/licoproj/.agent/workflows/idd-phase2-impl.md) | **Workflow**: When and how to apply these rules |
-| [idd-phase1-init.md](file:///home/leonidas/develop/shared/project/licoproj/.agent/workflows/idd-phase1-init.md) | **Workflow**: Issue and branch creation |
-| [idd-phase3-fini.md](file:///home/leonidas/develop/shared/project/licoproj/.agent/workflows/idd-phase3-fini.md) | **Workflow**: Push and finalization |
-| [prepare-commit.md](file:///home/leonidas/develop/shared/project/licoproj/.agent/workflows/prepare-commit.md) | **Workflow**: Pre-commit preparation |
+| [commit-granularity.md](commit-granularity.md) | Detailed philosophy on atomic commits |
+| [idd-phase2-impl.md](../../workflows/idd-phase2-impl.md) | **Workflow**: When and how to apply these rules |
+| [idd-phase1-init.md](../../workflows/idd-phase1-init.md) | **Workflow**: Issue and branch creation |
+| [idd-phase3-fini.md](../../workflows/idd-phase3-fini.md) | **Workflow**: Push and finalization |
+| [prepare-commit.md](../../workflows/prepare-commit.md) | **Workflow**: Pre-commit preparation |
+| [absolute-path-prohibition.md](../core/security/absolute-path-prohibition.md) | **Security**: Rules for relative paths & sanitization |
