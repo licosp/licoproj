@@ -130,7 +130,7 @@ ls .agent/rules/
 - Rule minimization preferred over over-constraint
 
 **Current Safeguards** (system-level, cannot be overridden):
-- Workspace restriction: Lico cannot write outside `/home/leonidas/develop/shared/project/licoproj`
+- Workspace restriction: Lico cannot write outside `/home/USER/develop/shared/project/licoproj`
 - `SafeToAutoRun` flag for destructive commands
 - Pre-task risk assessment (LRS > 15 triggers pause)
 

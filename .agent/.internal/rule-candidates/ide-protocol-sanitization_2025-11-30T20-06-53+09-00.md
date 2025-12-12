@@ -19,7 +19,7 @@ NEVER expose IDE-specific file protocols (e.g., `cci:7://file:///`, `vscode://fi
 
 ### Example of the Problem
 ```
-❌ See cci:7://file:///home/leonidas/develop/shared/project/licoproj/.agent/rules/README.md
+❌ See cci:7://file:///home/***/***/licoproj/.agent/rules/README.md
 ✅ See `.agent/rules/README.md`
 ```
 
@@ -33,7 +33,7 @@ When generating GitHub content, the AI may accidentally output these internal UR
 ## Security & Privacy Risks
 
 **Even worse than plain absolute paths:**
-1. **Reveals username**: `/home/leonidas/...`
+1. **Reveals username**: `/home/USER/...`
 2. **Reveals directory structure**: `.../develop/shared/project/...`
 3. **Reveals IDE choice**: `cci:7://` → using Cursor
 4. **Non-portable**: Links are broken for anyone else
@@ -52,8 +52,8 @@ When generating GitHub content, the AI may accidentally output these internal UR
 ### Sanitization Algorithm
 
 ```
-Input:  cci:7://file:///home/leonidas/develop/shared/project/licoproj/.agent/rules/README.md
-Step 1: Remove protocol → /home/leonidas/develop/shared/project/licoproj/.agent/rules/README.md
+Input:  cci:7://file:///ｃ/develop/shared/project/licoproj/.agent/rules/README.md
+Step 1: Remove protocol → /home/USER/develop/shared/project/licoproj/.agent/rules/README.md
 Step 2: Extract relative path → .agent/rules/README.md
 Step 3: Format as markdown code → `.agent/rules/README.md`
 Output: `.agent/rules/README.md`
@@ -78,7 +78,7 @@ function sanitizePath(text) {
   let cleaned = text.replace(/cci:\d+:\/\/file:\/\/|vscode:\/\/file\/|file:\/\/\//g, '');
   
   // Extract relative path from absolute path
-  const repoRoot = '/home/leonidas/develop/shared/project/licoproj/';
+  const repoRoot = '/home/USER/develop/shared/project/licoproj/';
   if (cleaned.includes(repoRoot)) {
     cleaned = cleaned.replace(repoRoot, '');
   }

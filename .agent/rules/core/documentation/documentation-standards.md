@@ -47,7 +47,7 @@ description: Defines standards for file naming, size, structure, and AI signatur
 **Examples**:
 - ✅ Good: `.agent/rules/README.md`
 - ✅ Good: `See the documentation in core/identity.md`
-- ❌ Bad: `/home/leonidas/develop/shared/project/licoproj/.agent/rules/README.md`
+- ❌ Bad: `/home/USER/develop/shared/project/licoproj/.agent/rules/README.md`
 - ❌ Bad: `[README.md](cci:7://file:///absolute/path/README.md)`
 
 ---

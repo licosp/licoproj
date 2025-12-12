@@ -103,5 +103,5 @@ Fine‑grained commits:
 
 | Document | Purpose |
 |:---------|:--------|
-| [git-operations.md](file:///home/leonidas/develop/shared/project/licoproj/.agent/rules/development/git-operations.md) | Comprehensive Git standards (Conventional Commits, security, etc.) |
-| [idd-phase2-impl.md](file:///home/leonidas/develop/shared/project/licoproj/.agent/workflows/idd-phase2-impl.md) | **Workflow**: Apply commit rules during implementation |
+| [git-operations.md](file:///home/USER/develop/shared/project/licoproj/.agent/rules/development/git-operations.md) | Comprehensive Git standards (Conventional Commits, security, etc.) |
+| [idd-phase2-impl.md](file:///home/USER/develop/shared/project/licoproj/.agent/workflows/idd-phase2-impl.md) | **Workflow**: Apply commit rules during implementation |

@@ -22,13 +22,13 @@ This workflow targets:
 
 ### 1. Verify current structure
 ```bash
-tree -L 2 -a /home/leonidas/develop/shared/project/licoproj
+tree -L 2 -a /home/USER/develop/shared/project/licoproj
 ```
 
 ### 2. Create backup of existing README.md
 ```bash
-cp /home/leonidas/develop/shared/project/licoproj/.agent/rules/README.md \
-   /home/leonidas/develop/shared/project/licoproj/.agent/rules/README.md.backup
+cp /home/USER/develop/shared/project/licoproj/.agent/rules/README.md \
+   /home/USER/develop/shared/project/licoproj/.agent/rules/README.md.backup
 ```
 
 ### 3. Design README.md expansion content

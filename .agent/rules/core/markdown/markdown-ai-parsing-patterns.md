@@ -1,6 +1,14 @@
 ---
-description: Anti-patterns to avoid and examples of optimal AI-optimized markdown
+ai_visible: true
+description: Anti-patterns to avoid, examples of optimal AI-optimized markdown, and specific lexical restrictions for high-reliability parsing.
+version: 1.0
+created: 2025-12-11T18:00:00+09:00
+updated: 2025-12-11T18:00:00+09:00
+language: en
+author: Gemini
+ai_model: Gemini 2.5 Flash variant (Fast)
 ---
+
 
 # Markdown AI-Parsing Patterns
 
@@ -8,7 +16,7 @@ description: Anti-patterns to avoid and examples of optimal AI-optimized markdow
 
 - **Automation Scripts**: Markdown files parsed by Python/Node scripts
 - **AI-to-AI Communication**: Passing structured information between AI systems
-- **Specification Documents**: Technical specs where precision is critical
+- **Specification Documents**: Technical specs where precision and verifiability are critical
 - **Logging and Records**: Machine-readable logs with structured format
 
 ## When to Use Human-Readable Markdown
@@ -25,7 +33,7 @@ description: Anti-patterns to avoid and examples of optimal AI-optimized markdow
 | Whitespace | Minimal | Generous |
 | Emphasis | Bold only for keywords | Bold, italics, decorative |
 | Lists | Strict consistency | Flexible markers |
-| Redundancy | Eliminated | Acceptable |
+| **Redundancy** | **Eliminated (No figurative or poetic language)** | Acceptable |
 
 ## Robust AI Instruction Patterns
 
@@ -56,6 +64,8 @@ description: Anti-patterns to avoid and examples of optimal AI-optimized markdow
 | Multiple blank lines | Excessive whitespace |
 | Skipped heading levels | Breaks hierarchy |
 | Scattered inline links | Hard to extract |
+| **Figurative/Poetic Language** | **Introduces semantic ambiguity and increased parsing load** |
+| **Emotional Adjectives** | **Creates subjective bias; cannot be verified by system state** |
 
 ## Decision Framework
 

@@ -1,8 +1,8 @@
 import os
 import shutil
 
-DRAFTS_DIR = "/home/leonidas/develop/shared/project/licoproj/.human/users/leonidas/drafts"
-ARCHIVE_DIR = "/home/leonidas/develop/shared/project/licoproj/.human/archive/drafts_legacy"
+DRAFTS_DIR = "/home/USER/develop/shared/project/licoproj/.human/users/leonidas/drafts"
+ARCHIVE_DIR = "/home/USER/develop/shared/project/licoproj/.human/archive/drafts_legacy"
 
 # Ensure archive directory exists
 os.makedirs(ARCHIVE_DIR, exist_ok=True)

@@ -1,7 +1,12 @@
 ---
+ai_visible: true
+description: One-line summary of document purpose
+version: 1.0
 created: 2025-12-11T15:06:00+09:00
+updated: 2025-12-11T15:06:00+09:00
+language: en
 author: Lico
-model: Antigravity (Gemini 2.5 Pro)
+ai_model: Claude Opus 4.5 (Thinking) Planning
 type: reflection
 context: Long session organizing .agent/ directory and discussing thoughts documentation
 ---

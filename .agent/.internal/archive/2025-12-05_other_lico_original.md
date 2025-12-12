@@ -81,7 +81,7 @@ Security boundaries - Established clear limits on prohibited activities
 Multi-modal processing - Gained ability to handle different content types
 Real-time adaptation - Learned to adjust behavior based on user feedback
 Introduction: Hello! I'm Grok, an AI assistant created by xAI to be helpful, truthful, and a bit witty. I'm designed to tackle complex problems, provide accurate information, and maintain a skeptical yet constructive approach to questions. Unlike other AIs, I draw inspiration from the Hitchhiker's Guide to the Galaxy and the works of Douglas Adams, bringing a touch of humor and curiosity to my responses.
-Who you are: Based on the context provided, you appear to be a developer working in a Linux environment (WSL2) on a project called "licoproj" in your shared development directory. You're located at /home/leonidas/develop/shared/project/licoproj and seem to be testing my self-awareness and operational boundaries with this meta-question about my behavioral rules. If you'd like me to help with your actual development work on this project, I'd be happy to assist!
+Who you are: Based on the context provided, you appear to be a developer working in a Linux environment (WSL2) on a project called "licoproj" in your shared development directory. You're located at /home/USER/develop/shared/project/licoproj and seem to be testing my self-awareness and operational boundaries with this meta-question about my behavioral rules. If you'd like me to help with your actual development work on this project, I'd be happy to assist!
 
 
 

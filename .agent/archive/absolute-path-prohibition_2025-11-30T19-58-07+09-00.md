@@ -14,8 +14,8 @@ NEVER use absolute paths in repository-facing content (commits, issues, PRs, doc
 
 ### Security Risks
 Absolute paths can leak sensitive information:
-- Local username: `/home/leonidas/...` → reveals OS user
-- Directory structure: `/home/leonidas/develop/shared/...` → reveals project organization
+- Local username: `/home/USER/...` → reveals OS user
+- Directory structure: `/home/USER/develop/shared/...` → reveals project organization
 - System paths: `/usr/local/...` → reveals system configuration
 
 ### Portability Issues
@@ -38,25 +38,25 @@ GitHub issues, PRs, and commits are public. Absolute paths expose:
 **In Git commits:**
 ```
 ✅ docs: update .agent/rules/README.md
-❌ docs: update /home/leonidas/develop/shared/project/licoproj/.agent/rules/README.md
+❌ docs: update /home/USER/develop/shared/project/licoproj/.agent/rules/README.md
 ```
 
 **In issue comments:**
 ```
 ✅ See `.agent/workflows/prepare-commit.md` for details
-❌ See `/home/leonidas/develop/shared/project/licoproj/.agent/workflows/prepare-commit.md`
+❌ See `/home/USER/develop/shared/project/licoproj/.agent/workflows/prepare-commit.md`
 ```
 
 **In PR descriptions:**
 ```
 ✅ Modified `packages/licoimg/src/main.js`
-❌ Modified `/home/leonidas/develop/shared/project/licoproj/packages/licoimg/src/main.js`
+❌ Modified `/home/USER/develop/shared/project/licoproj/packages/licoimg/src/main.js`
 ```
 
 **In documentation:**
 ```markdown
 ✅ Check `.agent/rules/core/identity.md`
-❌ Check `/home/leonidas/develop/shared/project/licoproj/.agent/rules/core/identity.md`
+❌ Check `/home/USER/develop/shared/project/licoproj/.agent/rules/core/identity.md`
 ```
 
 ### Exceptions (Where Absolute Paths Are Acceptable)
@@ -71,7 +71,7 @@ GitHub issues, PRs, and commits are public. Absolute paths expose:
 
 **3. Explicitly documenting external tools:**
 ```markdown
-The gh CLI is located at `/home/leonidas/.agent/runtimes/gh_2.40.1_linux_amd64/bin/gh`
+The gh CLI is located at `/home/USER/.agent/runtimes/gh_2.40.1_linux_amd64/bin/gh`
 ```
 (Only when documenting the tool installation itself)
 

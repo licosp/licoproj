@@ -1,7 +1,7 @@
 import os
 import re
 
-TARGET_DIR = "/home/leonidas/develop/shared/project/licoproj/.human/users/leonidas/drafts"
+TARGET_DIR = "/home/USER/develop/shared/project/licoproj/.human/users/leonidas/drafts"
 
 def get_backtick_delimiter(content_lines):
     """

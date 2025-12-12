@@ -262,6 +262,6 @@ cp .human/workflows/emergency-backup.md .agent/workflows/emergency-backup.md
 - **PR**: [#5](https://github.com/licosp/licoproj/pull/5) (Merged)
 - **Issue**: [#4](https://github.com/licosp/licoproj/issues/4) (Closed)
 - **Rule files**: 
-  - [session-lifecycle.md](file:///home/leonidas/develop/shared/project/licoproj/.agent/rules/workflow/session-lifecycle.md)
-  - [emergency-backup.md](file:///home/leonidas/develop/shared/project/licoproj/.agent/workflows/emergency-backup.md)
+  - [session-lifecycle.md](file:///home/USER/develop/shared/project/licoproj/.agent/rules/workflow/session-lifecycle.md)
+  - [emergency-backup.md](file:///home/USER/develop/shared/project/licoproj/.agent/workflows/emergency-backup.md)
 - **Backup location**: `.agent/issues/004-improve-workspace-tooling/`
