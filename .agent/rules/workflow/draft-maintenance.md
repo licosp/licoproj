@@ -16,11 +16,11 @@ description: Protocols for maintaining formatting and readability in Human Draft
 
 ### Rule A: Long Query (Multi-line)
 If the user's query spans multiple lines or contains complex instructions:
-- **Action**: **Summarize the Intent**.
+- **Action**: **Summarize the Intent in the User's Language**.
 - **Format**: `### [Summary of Intent]`
 - **Example**:
     ```markdown
-    ### Request: Create new rule for logging
+    ### 要約: ログ記録の新しいルール作成依頼
     (User query content...)
     ```
 
