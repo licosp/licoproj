@@ -38,4 +38,3 @@ preferences:
 | Document | Purpose |
 |:---------|:--------|
 | [lico-assessment-2025-12-06.md](lico-assessment-2025-12-06.md) | Past Lico's longitudinal behavioral analysis |
-| [profile_analysis_2025-12-06.md](profile_analysis_2025-12-06.md) | Japanese version of assessment |
