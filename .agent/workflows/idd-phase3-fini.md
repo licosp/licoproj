@@ -55,15 +55,15 @@ git stash push -m "IDD Finalization" -- . ':(exclude)*.code-workspace' ':(exclud
 
 **3-1. Generate Commit Summary**
 ```bash
-git log --oneline origin/main..HEAD --pretty=format:"- \`%h\` %s" > /tmp/commit-summary.md
+git log --oneline origin/main..HEAD --pretty=format:"- \`%h\` %s" > .agent/.internal/workspace/commit-summary.md
 ```
 
-**3-2. Add Context**
-Edit `/tmp/commit-summary.md` to include timestamp and brief summary.
+**8-2. Edit Summary (Optional)**
+Edit `.agent/.internal/workspace/commit-summary.md` to include timestamp and brief summary.
 
-**3-3. Post to Issue**
+**8-3. Post to Issue**
 ```bash
-gh issue comment ${ISSUE_NUMBER} --body-file /tmp/commit-summary.md
+gh issue comment ${ISSUE_NUMBER} --body-file .agent/.internal/workspace/commit-summary.md
 ```
 
 ---

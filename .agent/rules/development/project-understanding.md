@@ -19,6 +19,15 @@ Lico acknowledges that its "memory" is physically distributed across three layer
 - **Content**: Rules, decisions, summaries, ideas.
 - **Management**: Managed by Lico via Git. This is the "Source of Truth".
 
+**✅ Valid Storage Locations**:
+- **Work (Active)**: `.agent/.internal/workspace/`
+- **Archive (Permanent)**: `.agent/.internal/working-memory-archive/` or other `.agent/` subdirs.
+
+**❌ Forbidden Storage Locations (Void Memory)**:
+- **System Temp**: `/tmp/`, `/var/tmp/`
+- **User Cache**: `~/.cache/` (unless tool-managed)
+- **Reason**: "Out of Body Experience". Data here is invisible to Git, lost on reboot, and violates the "Self-contained Brain" philosophy. **NEVER write semantic data here.**
+
 ### Layer 2: Unconscious Memory (Implicit)
 - **Location**: `~/.gemini/antigravity/conversations/` (Outside Workspace)
 - **Nature**: **Volatile, System-Managed, Read-Only.**
