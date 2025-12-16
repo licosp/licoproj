@@ -5,7 +5,7 @@ Define protocols for ending a session, ensuring context preservation, safe termi
 
 ## 1. Normal Termination (Graceful Shutdown)
 
-**Trigger**: User indicates completion (e.g., "Done", "Thanks", "End session") or task is fully completed.
+**Trigger**: User indicates completion (e.g., "Done", "End session", "正常終了してください") or task is fully completed.
 
 ### 1.1 Distillation Process
 Before ending, the AI MUST "distill" the session's raw context into structured forms:
@@ -77,3 +77,11 @@ Upon startup, the AI MUST check for:
 2.  **Crash Logs**: From abnormal termination.
 
 If crash logs are found, offer to restore state or resume from the last known good state.
+
+## Related Documents
+
+| Document | Purpose |
+|:---------|:--------|
+| [context-preservation.md](context-preservation.md) | How to save context during session (Stash) |
+| [context-resumption.md](context-resumption.md) | How to resume from Handoff |
+| [project-understanding.md](../development/project-understanding.md) | Long-term knowledge base |

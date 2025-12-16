@@ -9,7 +9,7 @@ To prevent errors caused by **context loss**, **attention drift**, or **outdated
 
 ## 2. Trigger Conditions
 This protocol **MUST** be executed when:
-- Returning to a main task after a conversation digression (e.g., discussing tools, exploring unrelated topics).
+- Returning to a main task. (Trigger: "どんなメモが残っていますか？", "Check for existing memos") (e.g., discussing tools, exploring unrelated topics).
 - Resuming work after a significant time gap.
 - Switching focus back from a complex sub-task to the parent task.
 - Any time the AI feels "uncertain" about the current file state.
@@ -44,3 +44,11 @@ If an error occurs due to context loss (e.g., deleting a wrong file):
 2. **Acknowledge the error** and the cause (context loss).
 3. **Restore** the state (e.g., `git restore`, `git checkout`).
 4. **Re-run** the Status Re-verification step.
+
+## Related Documents
+
+| Document | Purpose |
+|:---------|:--------|
+| [context-preservation.md](context-preservation.md) | How to save context before interruption |
+| [session-lifecycle.md](session-lifecycle.md) | Session-level context protocols |
+| [project-understanding.md](../development/project-understanding.md) | Long-term knowledge base |

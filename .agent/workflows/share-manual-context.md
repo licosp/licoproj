@@ -16,12 +16,12 @@ This workflow enables the user to record their manual terminal operations (comma
 Before performing manual operations, run the following command in your terminal:
 
 ```bash
-script -f .agent/.internal/work/manual.log
+script -f .agent/.internal/workspace/manual.log
 ```
 
 - `script`: A standard Linux utility to make a typescript of terminal session.
 - `-f`: Flush output after each write (real-time update).
-- Output file: `.agent/.internal/work/manual.log`
+- Output file: `.agent/.internal/workspace/manual.log`
 
 ### 2. Perform Operations
 Run your commands as usual. Everything displayed on the screen is recorded.
@@ -37,8 +37,8 @@ exit
 Tell Lico to check the log:
 > "Check manual.log" or "I did some manual work, please review."
 
-Lico will then read `.agent/.internal/work/manual.log` to understand the context.
+Lico will then read `.agent/.internal/workspace/manual.log` to understand the context.
 
 ## Notes
 - The log file is overwritten each time you run `script` (unless `-a` append mode is used, but overwriting is usually preferred for fresh context).
-- This file is ignored by Git (`.agent/.internal/work/manual.log` is in `.gitignore`).
+- This file is ignored by Git (`.agent/.internal/workspace/manual.log` is in `.gitignore`).

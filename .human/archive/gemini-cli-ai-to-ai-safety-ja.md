@@ -130,7 +130,7 @@ ls .agent/rules/
 - 過度な制約よりもルールの最小化を優先
 
 **現在のセーフガード**（システムレベル、上書き不可）:
-- ワークスペース制限: Lico は `/home/leonidas/develop/shared/project/licoproj` 外に書き込めない
+- ワークスペース制限: Lico は `/home/.../.../licoproj` 外に書き込めない
 - 破壊的コマンドに対する `SafeToAutoRun` フラグ
 - 事前タスクリスク評価（LRS > 15 で一時停止）
 

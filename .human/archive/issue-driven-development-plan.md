@@ -119,7 +119,7 @@ chmod +x .agent/scripts/issue-flow
 
 # パスに追加（オプション）
 # ~/.bashrc または ~/.zshrc に以下を追記:
-# export PATH="$HOME/develop/shared/project/licoproj/.agent/scripts:$PATH"
+# export PATH="$HOME/.../.../licoproj/.agent/scripts:$PATH"
 ```
 
 ### 実行方法

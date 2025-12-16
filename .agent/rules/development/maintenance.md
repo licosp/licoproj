@@ -22,7 +22,7 @@ The following hook files must contain identical content:
 1. **When updating rules**: Modify the primary hook file first
 2. **Immediate sync**: Copy content to all other hook files
 3. **Verification**: Ensure diff shows no differences
-4. **Documentation**: Update `.agent/rules/.updated` with synchronization note
+4. **Documentation**: Document the synchronization in commit message
 
 ### Primary Hook File
 
@@ -77,7 +77,7 @@ Separate "AI thinking process" from "Human review documents" to optimize for bot
 - **Purpose**: Task tracking and context maintenance for the agent.
 
 ### 2. Human Review Plan (Deliverable)
-- **Location**: `.human/plans/YYYY-MM-DDTHH-MM-SS+09-00_implementation_plan.md`
+- **Location**: `.human/plans/See datetime-format.md for format`
 - **Format**: **Strictly adhering to Code of Conduct** (Japanese, human-readable, formatted)
 - **Purpose**: User review, approval, and project history.
 - **Requirement**: MUST be created and presented to the user for any complex task.
@@ -86,7 +86,7 @@ Separate "AI thinking process" from "Human review documents" to optimize for bot
 
 ### Policy
 - When a task is interrupted or suspended, it MUST be recorded to preserve context.
-- **Location**: `.human/tasks/YYYY-MM-DDTHH-MM-SS+09-00_interrupted-tasks.md`
+- **Location**: `.human/tasks/See datetime-format.md for format`
 - **Content**: Summary of task, reason for interruption, and requirements for resumption.
 
 ## Issue Archival Standards
@@ -158,7 +158,7 @@ All file creation and modification operations must use the `.agent/.internal/wor
 **Success Path**:
 - Apply changes to production file
 - Delete intermediate file immediately
-- Update `.agent/rules/.updated` tracking
+- Document changes in commit messages
 
 **Failure Path**:
 - Move intermediate file to `.agent/.internal/archive/work/`
@@ -190,3 +190,5 @@ All file creation and modification operations must use the `.agent/.internal/wor
 - User review trail preserved
 
 This workflow ensures safe, transparent, and environment-agnostic file operations across all Lico instances and development environments.
+
+| [file-deletion.md](file-deletion.md) | **Safety**: Protocol for safe file deletion (Trash) |

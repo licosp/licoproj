@@ -1,148 +1,23 @@
+---
+description: Git standards for branches, IDD workflow, security, and push procedures
+---
+
 # Git Operations Standards
 
 ## Purpose
-Define comprehensive behavioral standards for all Git operations including commits, branches, conflict resolution, and security practices.
 
-## Core Principles
+Define behavioral standards for Git operations beyond commits: branches, conflict resolution, security practices, and push procedures.
 
-### 1. Commit Atomicity and Logic
-
-#### 1.1 Logical Separation
-- **MUST** categorize changes into logical units (e.g., Config, Refactor, Feat, Docs)
-- **MUST** determine if a single commit is sufficient or if splitting is required
-- **MUST NOT** mix unrelated changes in the same commit
-
-#### 1.2 Pre-Commit Analysis
-- **MUST** run `git status` and `git diff --stat` before committing
-- **MUST** understand the full scope of changes before proceeding
-
-#### 1.3 Staging Verification (CRITICAL)
-- **MUST** verify staged content with `git diff --cached --stat` and `git diff --cached`
-- **MUST** ensure *only* intended changes are staged
-- **MUST** use `git restore --staged <file>` to unstage unrelated files
-
-#### 1.4 Selective Staging (CRITICAL)
-
-**Principle**: Stage only files that belong to the same logical change.
-
-**Requirements**:
-- **MUST NOT** stage all files indiscriminately
-- **MUST** identify which files are related to the current logical change
-- **MUST** stage only those related files
-- **MUST** verify the staged content matches the intended logical change
-
-**Rationale**: 
-Staging unrelated files together violates the atomic commit principle. Each commit should represent one logical change that can be described in a single sentence. If multiple unrelated changes are staged together, they cannot be reverted independently, and the commit history becomes unclear.
-
-**Implementation guidance**:
-- Identify related files: Review `git status` output and determine which files belong together
-- Stage selectively: Use Git commands to stage only the identified files
-- Verify staging: Review the staged changes to confirm only intended files are included
-- Unstage if needed: Remove files from staging if they don't belong to this logical change
-
-**Example scenario**:
-If you are removing a tool (e.g., husky), stage only the files related to that removal:
-- The tool's directory
-- Configuration files that reference the tool
-- Package manifests that list the tool as a dependency
-
-Do NOT stage unrelated files such as:
-- Documentation updates for a different feature
-- Code changes in application files
-- Temporary files or experiments
+> [!NOTE]
+> **For commit message standards and atomic commit philosophy, see [commit-standards.md](commit-standards.md).**
 
 ---
 
-### 2. Conventional Commits Specification
 
-#### 2.1 Basic Format
-```
-<type>[optional scope]: <description>
+### 2. File Operations
 
-[optional body]
-
-[optional footer(s)]
-```
-
-#### 2.2 Type
-**REQUIRED**. MUST be one of:
-- `feat`: New feature (correlates with MINOR in SemVer)
-- `fix`: Bug fix (correlates with PATCH in SemVer)
-- `docs`: Documentation changes
-- `style`: Code style changes (formatting, no logic change)
-- `refactor`: Code refactoring (no feature or bug fix)
-- `perf`: Performance improvements
-- `test`: Adding or updating tests
-- `build`: Build system or external dependencies
-- `ci`: CI/CD configuration changes
-- `chore`: Other changes (e.g., tooling, maintenance)
-
-#### 2.3 Scope (Optional)
-- Provides additional context (e.g., `feat(auth): add login page`)
-- Enclosed in parentheses after type
-
-#### 2.4 Description
-**REQUIRED**. MUST:
-- Use imperative, present tense (e.g., "Add" not "Added" or "Adds")
-- Be concise and clear
-- Not end with a period
-
-**Example**: `feat: add user authentication module`
-
-#### 2.5 Body (Optional)
-- MUST be separated from description by a blank line
-- MAY consist of multiple paragraphs separated by blank lines
-- SHOULD explain:
-  - **Why** the change was made
-  - **Impact** and side effects
-  - **Implementation** details if complex
-
-**Example**:
-```
-feat: add user authentication module
-
-This change introduces JWT-based authentication to secure API endpoints.
-The implementation uses bcrypt for password hashing and includes
-session management with automatic token refresh.
-
-This affects all protected routes and requires database migration.
-```
-
-#### 2.6 Footers (Optional)
-- MUST be separated from body (or description if no body) by a blank line
-- Format: `<word-token>: <value>` or `<word-token> #<value>`
-
-**Common footers**:
-- `Closes #<issue-number>`: Links to closed issue
-- `Refs #<issue-number>`: References related issue
-- `BREAKING CHANGE: <description>`: Indicates breaking change
-
-**Example**:
-```
-feat: redesign API response structure
-
-BREAKING CHANGE: API endpoints now return data in `{ success, data, error }` format
-Closes #275
-```
-
-#### 2.7 Breaking Changes
-**MUST** be indicated using one of these methods:
-
-**Method 1**: `BREAKING CHANGE:` footer
-```
-feat: remove legacy authentication
-
-BREAKING CHANGE: Old session-based auth is no longer supported
-```
-
-**Method 2**: `!` after type/scope
-```
-feat!: remove legacy authentication
-```
-
-**Meaning**: Backward-incompatible change (correlates with MAJOR in SemVer)
-
----
+**Rule**: Use  for file movements whenever possible.
+If manual  is used, you **MUST** explicitly stage the deletion ( or ) in the same commit to preserve history as a rename.
 
 ### 3. Branch Strategy
 
@@ -221,7 +96,8 @@ git rev-parse --is-inside-work-tree &> /dev/null || exit 1
 **Format Requirements**:
 - Use markdown for structure (headers, lists, code blocks)
 - Include timestamps in ISO 8601 format when relevant
-- Reference files with absolute paths or relative from repo root
+- - Reference files with **relative paths only** (See [absolute-path-prohibition.md](../core/security/absolute-path-prohibition.md))
+- **MUST** sanitize IDE protocols (e.g., `cci:`, `vscode:`) before posting
 - Explain "why" changes were made, not just "what"
 
 **Example**:
@@ -293,6 +169,8 @@ git fetch origin
 - API keys, passwords, tokens
 - SSH private keys (public keys MAY be committed if necessary)
 - Full local directory paths (use relative paths or environment variables)
+  - **See [absolute-path-prohibition.md](../core/security/absolute-path-prohibition.md) for details**
+
 
 **Default Strategy**: Use `.gitignore` to exclude sensitive files from Git tracking.
 
@@ -376,3 +254,18 @@ git push origin <branch-name>
 ## References
 - [Conventional Commits Specification](https://www.conventionalcommits.org/)
 - [Semantic Versioning](https://semver.org/)
+
+---
+
+## Related Documents
+
+This document covers Git operation **standards and rules**. For related topics, see:
+
+| Document | Purpose |
+|:---------|:--------|
+| [commit-granularity.md](commit-granularity.md) | Detailed philosophy on atomic commits |
+| [idd-phase2-impl.md](../../workflows/idd-phase2-impl.md) | **Workflow**: When and how to apply these rules |
+| [idd-phase1-init.md](../../workflows/idd-phase1-init.md) | **Workflow**: Issue and branch creation |
+| [idd-phase3-fini.md](../../workflows/idd-phase3-fini.md) | **Workflow**: Push and finalization |
+| [prepare-commit.md](../../workflows/prepare-commit.md) | **Workflow**: Pre-commit preparation |
+| [absolute-path-prohibition.md](../core/security/absolute-path-prohibition.md) | **Security**: Rules for relative paths & sanitization |

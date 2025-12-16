@@ -1,0 +1,8 @@
+{
+  "timestamp": "2025-12-09T15:28:00+09:00",
+  "files_changed": [".agent/rules/workflow/session-startup.md"],
+  "change_type": "new_rule",
+  "description": "Created Session Startup Protocol: mandatory sequence for user identification first, time gap assessment (ΔT), and continuity checks before responding",
+  "origin": "2025-12-09 session learnings - user identification was performed last instead of first",
+  "updated_by": "lico_self_improvement"
+}

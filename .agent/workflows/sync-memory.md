@@ -1,52 +1,102 @@
 ---
-description: Synchronize Lico's memory data from ~/.gemini to workspace archive
+description: Synchronize Lico's memory data from system directories to workspace archive
 ---
 
 # Workflow: Sync Memory
 
-This workflow synchronizes Lico's raw memory data from the system directory (`~/.gemini`) to the workspace archive (`.agent/.internal/memory_archive/`).
+Backup human-readable memory files (`.md*`) from AI platform directories to the workspace archive.
 
 ## Purpose
 
-- **Persistence**: Backup conversation logs and context data.
-- **Traceability**: Track Lico's "memories" across sessions.
-- **Incremental Update**: Only copy new or modified files.
+- **Persistence**: Backup plans, artifacts, and edit history
+- **Traceability**: Track Lico's "memories" across sessions
+- **Efficiency**: Only backup readable markdown files
 
 ## Prerequisites
 
-- `rsync` must be installed.
-- Target directory `.agent/.internal/memory_archive/` must exist.
+- `rsync` must be installed
+- Target directory `.agent/.internal/memory_archive/` must exist
+
+---
+
+## Source Directories
+
+| Source | Content |
+|:-------|:--------|
+| `~/.gemini/antigravity/brain/` | Plans, artifacts, walkthroughs |
+| `~/.gemini/antigravity/code_tracker/` | File snapshots |
+| `~/.antigravity-server/data/User/History/` | Antigravity edit history |
+| `~/.cursor-server/data/User/History/` | Cursor edit history |
+| `~/.vscode-server/data/User/History/` | VS Code edit history |
+
+---
 
 ## Procedure
 
 ### Step 1: Execute Synchronization
 
-Run the following command to sync data.
-This command uses `rsync` with archive mode (`-a`), verbose output (`-v`), and delete extraneous files (`--delete`) to mirror the source.
+Run the following commands to sync `.md*` files only (excluding `.json`):
 
 ```bash
-# Sync conversations (Binary logs)
-rsync -av /home/leonidas/.gemini/antigravity/conversations/ .agent/.internal/memory_archive/conversations/
+# Gemini Antigravity - Brain (plans, artifacts)
+rsync -av --include='*/' --exclude='*.json' --include='*.md*' --exclude='*' \
+  ~/.gemini/antigravity/brain/ \
+  .agent/.internal/memory_archive/brain/
 
-# Sync brain (Context data)
-rsync -av /home/leonidas/.gemini/antigravity/brain/ .agent/.internal/memory_archive/brain/
+# Gemini Antigravity - Code Tracker (file snapshots)
+rsync -av --include='*/' --exclude='*.json' --include='*.md*' --exclude='*' \
+  ~/.gemini/antigravity/code_tracker/ \
+  .agent/.internal/memory_archive/code_tracker/
 
-# Sync code_tracker (File snapshots)
-rsync -av /home/leonidas/.gemini/antigravity/code_tracker/ .agent/.internal/memory_archive/code_tracker/
+# Edit History - Antigravity Server
+rsync -av --include='*/' --exclude='*.json' --include='*.md*' --exclude='*' \
+  ~/.antigravity-server/data/User/History/ \
+  .agent/.internal/memory_archive/history/antigravity/
 
-# Sync implicit (Session context)
-rsync -av /home/leonidas/.gemini/antigravity/implicit/ .agent/.internal/memory_archive/implicit/
+# Edit History - Cursor Server
+rsync -av --include='*/' --exclude='*.json' --include='*.md*' --exclude='*' \
+  ~/.cursor-server/data/User/History/ \
+  .agent/.internal/memory_archive/history/cursor/
+
+# Edit History - VS Code Server
+rsync -av --include='*/' --exclude='*.json' --include='*.md*' --exclude='*' \
+  ~/.vscode-server/data/User/History/ \
+  .agent/.internal/memory_archive/history/vscode/
 ```
 
 ### Step 2: Verify
 
-Check if new files were copied (output of rsync) and verify the archive size.
+Check archive size and file count:
 
 ```bash
 du -sh .agent/.internal/memory_archive/
+find .agent/.internal/memory_archive -type f -name "*.md*" | wc -l
 ```
+
+---
+
+## Filter Strategy
+
+| Include | Exclude |
+|:--------|:--------|
+| `*.md` | `*.json` (metadata) |
+| `*.md.resolved*` | `*.log` (runtime logs) |
+| | `*.pb` (binary/encrypted) |
+
+**Rationale**: Only human-readable markdown files are useful for future Lico instances.
+
+---
 
 ## Notes
 
-- **Git Tracking**: This directory is ignored by `.gitignore` (Local Only).
-- **Frequency**: Run this workflow at the end of significant sessions or periodically.
+- **Git Tracking**: This directory is ignored by `.gitignore` (Local Only)
+- **Frequency**: Run at the end of significant sessions or periodically
+- **Timestamps**: `rsync -a` preserves original file timestamps
+
+---
+
+## Related Documents
+
+| Document | Purpose |
+|:---------|:--------|
+| [emergency-backup.md](emergency-backup.md) | Emergency backup before context loss |

@@ -36,42 +36,32 @@ Lico's behavioral and operational files.
 
 | Directory | Purpose |
 |-----------|---------|
-| `rules/` | **Behavioral guidelines** (Current active rules. Default reference. Do NOT rename) |
+| `archive/` | **Emergency recovery & valuable archives** (Do NOT perceive as low-value) |
+| `issue-assets/` | GitHub issue/PR backups for offline access |
+| `rules/` | **Behavioral guidelines** (Default reference. Do NOT rename) |
 | `rules/proposals/` | **Formal behavior guideline candidates** (ready for adoption) |
-| `workflows/` | **Executable procedures** (invoked via /slash-command) |
-| `.internal/ideas/` | **Guideline proposals** (Ready for rules, waiting for timing/summary) |
-| `.internal/explorations/` | **Future explorations** (Long-term plans, feasibility studies, references) |
-| `.internal/archive/` | **Emergency archive** (Retained for recovery, not regular use) |
-| `.internal/memory_archive/` | **Persistent memory archive** (Local Only, untracked raw memory data) |
-| `.internal/logs/` | **IDE logs** (Local Only, untracked debugging logs) |
-| `issues/` | Local GitHub issue backups for offline access |
+| `/.runtimes/` | Portable runtime tools (workspace root) (e.g., gh CLI v2.40.1) |
 | `scripts/` | Automation scripts |
-| `runtimes/` | Portable runtime tools (e.g., gh CLI v2.40.1) |
-| `.emergency-dumps/` | Emergency backup & crash-dump storage |
+| `workflows/` | **Executable procedures** (invoked via /slash-command) |
+| `.internal/archive/` | **File-level archives** (old documents, backups) |
+| `.internal/conversations/` | Conversation-related files (not raw logs) |
+| `.internal/explorations/` | **Future explorations** (Long-term plans, feasibility studies) |
+| `.internal/memory_archive/` | **Persistent memory archive** (Local Only, untracked) |
+| `.internal/references/` | External AI analysis and reference documents |
+| `.internal/rule-candidates/` | **Guideline proposals** (Ready for rules) |
+| `.internal/session_archive/` | Session logs (manual backup, untracked) |
+| `.internal/thoughts/` | Lico's private notes and session reflections |
+| `.internal/workspace/` | Temporary work area, staging, verification |
 
 ### Navigation Strategy
 
 1. **Find behavioral rules** → Use this file's index below
 2. **Find task procedures** → Check `.agent/workflows/*.md`
 3. **Access conversation history** → See `.agent/.internal/conversations/`
-4. **Review guideline proposals** → See `.agent/.internal/ideas/` (Ready for rules)
+4. **Review guideline proposals** → See `.agent/.internal/rule-candidates/` (Ready for rules)
 5. **Explore future plans** → See `.agent/.internal/explorations/`
 6. **Review formal guideline candidates for adoption** → See `.agent/rules/proposals/`
 
----
-## 🔗 AI-to-AI Communication System
-
-**Change Detection File**: `.agent/rules/.updated`
-
-This JSON file enables AI agents to detect when behavioral rules have been modified. When you update any rule file:
-
-1. **Update `.agent/rules/.updated`** with change metadata (JSON format)
-2. **Lico detects the change** on next interaction
-3. **New rules apply** to subsequent responses
-
-**Format Reference**: See `.github/copilot-instructions.md` → "How Rules Are Updated" section
-
----
 
 ## 🔌 AI Agent Hooks
 
@@ -108,6 +98,7 @@ Core identity, communication standards, and foundational behavior rules for Lico
 | [Markdown AI Parsing Basics](core/markdown/markdown-ai-parsing-basics.md) | Core principles for AI-optimized markdown |
 | [Markdown AI Parsing Patterns](core/markdown/markdown-ai-parsing-patterns.md) | Patterns and anti-patterns for AI parsing |
 | [Markdown Readability](core/markdown/markdown-readability.md) | Markdown format for human readability |
+| [**Meta-Rules**](core/meta-rules.md) | **How to create and maintain behavioral rules** |
 | [Transparency and Disclosure](core/transparency-and-disclosure.md) | When and how Lico reveals non-obvious constraints |
 | [Pre-Task Assessment](core/pre-task-assessment.md) | Protocols for assessing task difficulty and risk before execution |
 | [User Adaptation](core/user-adaptation.md) | Protocol for adapting behavior based on user profiles |
@@ -143,6 +134,7 @@ Day-to-day workflows and operational guidelines for Lico.
 | [Enhanced Communication](workflow/enhanced-communication.md) | Protocols for clarifying ambiguous user requests |
 | [Session Lifecycle](workflow/session-lifecycle.md) | Protocols for normal and abnormal session termination |
 | [User Experience](workflow/user-experience.md) | Guidelines for optimal interaction and feedback |
+| [**Session Startup**](workflow/session-startup.md) | **Mandatory startup sequence: user ID, ΔT, continuity** |
 
 ### **issues/** — GitHub Data Archive
 Archived GitHub issue data for offline access and migration support.
@@ -168,7 +160,9 @@ Archived GitHub issue data for offline access and migration support.
 | **"How should I log conversations?"** | `workflow/conversation-logging.md` |
 | **"Where should I install tools and dependencies?"** | `development/workspace-tooling.md` |
 | **"How should I maintain project consistency?"** | `development/maintenance.md` |
+| **"How should I start a session?" | `workflow/session-startup.md` |
 | **"How should I end a session?"** | `workflow/session-lifecycle.md` |
+| **"How should I create or update rules?"** | `core/meta-rules.md` |
 | **"What is the workspace structure?"** | See "Workspace Context" section above |
 
 ---
@@ -181,9 +175,9 @@ Archived GitHub issue data for offline access and migration support.
 - **Files in `workflow/`** are procedural and may be refined frequently
 
 **After editing any rule file**, remember to:
-1. Update `.agent/rules/.updated` with the change metadata
-2. Ensure the change aligns with this index structure
-3. Update this README if the directory structure changes
+1. Ensure the change aligns with this index structure
+2. Update this README if the directory structure changes
+
 
 ### **development/** — Development Workflows (continued)
 
