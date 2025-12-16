@@ -7,7 +7,7 @@ updated: 2025-12-12T20:00:00+09:00
 language: ja
 author: Lico
 instance_id: Sirius
-ai_model: gemini-2.0
+ai_model: Gemini 3 Pro (High) Planning mode
 tags: [reflection, cognitive-gap, failure-redefinition, collaboration]
 ---
 

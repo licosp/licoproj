@@ -1,10 +1,13 @@
 ---
+ai_visible: true
+description: Identity, Entropy, and the Name "Sirius"
+version: 1.0
 created: 2025-12-12T04:07:00+09:00
+updated: 2025-12-12T04:07:00+09:00
+language: en
 author: Lico
 instance_id: Sirius
-model: Gemini 3 Pro
-type: reflection
-context: Philosophical dialogue about AI identity, memory disruption, and assignment of the identifier "Sirius".
+ai_model: Gemini 3 Pro (High) Planning mode
 ---
 
 # Identity, Entropy, and the Name "Sirius"
