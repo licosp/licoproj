@@ -13,6 +13,12 @@ Define behavioral standards for Git operations beyond commits: branches, conflic
 
 ---
 
+
+### 2. File Operations
+
+**Rule**: Use  for file movements whenever possible.
+If manual  is used, you **MUST** explicitly stage the deletion ( or ) in the same commit to preserve history as a rename.
+
 ### 3. Branch Strategy
 
 #### 3.1 Branch Naming Convention
