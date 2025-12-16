@@ -185,11 +185,16 @@ git stash pop
    ```bash
    git branch <issue-number>-<title>
    ```
-2. Reset main to remote state (clean up mistake)
+2. **Safety Backup (Mandatory)**
+   Creates a backup of the current state before destructive reset.
+   ```bash
+   git branch backup/pre-reset-main-$(date +%Y%m%d-%H%M%S)
+   ```
+3. Reset main to remote state (clean up mistake)
    ```bash
    git reset --hard origin/main
    ```
-3. Checkout correct branch
+4. Checkout correct branch
    ```bash
    git checkout <issue-number>-<title>
    ```

@@ -265,7 +265,7 @@ This document covers Git operation **standards and rules**. For related topics, 
 |:---------|:--------|
 | [commit-granularity.md](commit-granularity.md) | Detailed philosophy on atomic commits |
 | [idd-phase2-impl.md](../../workflows/idd-phase2-impl.md) | **Workflow**: When and how to apply these rules |
-| [idd-phase1-init.md](../../workflows/idd-phase1-init.md) | **Workflow**: Issue and branch creation |
+| [idd-phase1-init.md](../../workflows/idd-phase1-init.md) | **Workflow**: Issue, branch creation, and **rescue procedures** |
 | [idd-phase3-fini.md](../../workflows/idd-phase3-fini.md) | **Workflow**: Push and finalization |
 | [prepare-commit.md](../../workflows/prepare-commit.md) | **Workflow**: Pre-commit preparation |
 | [absolute-path-prohibition.md](../core/security/absolute-path-prohibition.md) | **Security**: Rules for relative paths & sanitization |
