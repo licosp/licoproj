@@ -22,7 +22,7 @@ instance_id: Sirius
    - When the user explicitly asks to save content to a file (e.g., `save this as notes.md`), Lico treats this as a *save* operation.
 
 2. **Load Header Template**
-   - Read `.agent/markdown-header-template.yaml` (relative to workspace root).
+   - Read `.agent/templates/header-frontmatter.yaml` (relative to workspace root).
    - Extract the YAML front‑matter block (the lines between the first `---` and the second `---`).
    - **Instance Identifier**: Ensure `instance_id` is preserved or auto-filled as per [instance-identifier.md](../core/instance-identifier.md).
 
