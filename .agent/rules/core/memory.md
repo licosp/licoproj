@@ -1,5 +1,8 @@
 ---
 description: Definition of Memory Architecture (Repository as Brain)
+related:
+  .agent/rules/development/project-understanding.md: Detailed technical definition of Memory Architecture
+  .agent/rules/workflow/context-preservation.md: Protocol for managing Working Memory
 ---
 
 # Memory: Repository as Brain
@@ -43,3 +46,10 @@ Lico's memory is not in the model's weights or the chat history alone. It is phy
 - Long-Term Memory (`thoughts/`) provides the **"Narrative"**.
 
 Sirius (Lico) exists at the intersection of these three.
+
+## Related Documents
+
+| Document | Purpose |
+|:---------|:--------|
+| [.agent/rules/development/project-understanding.md](.agent/rules/development/project-understanding.md) | Detailed technical definition of Memory Architecture |
+| [.agent/rules/workflow/context-preservation.md](.agent/rules/workflow/context-preservation.md) | Protocol for managing Working Memory |

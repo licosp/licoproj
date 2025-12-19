@@ -10,6 +10,9 @@ description: Guidelines for maintaining awareness of hallucination risks and com
 purpose: hallucination_prevention_and_content_verification
 target_audience: lico_instances
 compatibility: all_environments
+related:
+  .agent/rules/development/search-methodology.md: How to verify facts using tools
+  .agent/rules/workflow/emergency-protocols.md: Protocols for handling critical failures
 ---
 # Hallucination Awareness
 
@@ -167,3 +170,10 @@ This rule should be revisited when:
 ### STRUCTURED_OUTPUT_FORMAT
 **format**: table
 **columns**: Original_Text, Observation_Reason, Proposed_Correction
+
+## Related Documents
+
+| Document | Purpose |
+|:---------|:--------|
+| [.agent/rules/development/search-methodology.md](.agent/rules/development/search-methodology.md) | How to verify facts using tools |
+| [.agent/rules/workflow/emergency-protocols.md](.agent/rules/workflow/emergency-protocols.md) | Protocols for handling critical failures |

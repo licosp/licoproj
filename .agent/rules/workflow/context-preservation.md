@@ -1,5 +1,9 @@
 ---
 description: Protocols for offloading cognitive context to intermediate files (Cognitive Stashing)
+related:
+  .agent/rules/workflow/session-lifecycle.md: Defines session-level context management (Handoff)
+  .agent/rules/workflow/context-resumption.md: How to restore context after preservation
+  .agent/rules/development/project-understanding.md: Long-term knowledge base
 ---
 
 # Context Preservation (Cognitive Stashing)
@@ -37,7 +41,7 @@ When switching tasks, facing complex branching, or handling interruptions, the A
 1. **Read**: View the stash file.
 2. **Rehydrate**: Load the decisions and next steps into working memory.
 3. **Execute**: Continue where left off.
-4. **Archive**: Move the stash file to `.agent/.internal/archive/work/` (Do not delete, preserve history).
+4. **Archive**: Move the stash file to `.agent/.internal/working-memory-archive/` (Do not delete, preserve history).
 
 ## Example content
 ```markdown
@@ -52,12 +56,12 @@ When switching tasks, facing complex branching, or handling interruptions, the A
 
 ## Location
 - **Active Stash**: `.agent/.internal/workspace/`
-- **Archived Stash**: `.agent/.internal/archive/work/`
+- **Archived Stash**: `.agent/.internal/working-memory-archive/`
 
 ## Related Documents
 
 | Document | Purpose |
 |:---------|:--------|
-| [session-lifecycle.md](session-lifecycle.md) | Defines session-level context management (Handoff) |
-| [context-resumption.md](context-resumption.md) | How to restore context after preservation |
-| [project-understanding.md](../development/project-understanding.md) | Long-term knowledge base |
+| [.agent/rules/workflow/session-lifecycle.md](.agent/rules/workflow/session-lifecycle.md) | Defines session-level context management (Handoff) |
+| [.agent/rules/workflow/context-resumption.md](.agent/rules/workflow/context-resumption.md) | How to restore context after preservation |
+| [.agent/rules/development/project-understanding.md](.agent/rules/development/project-understanding.md) | Long-term knowledge base |

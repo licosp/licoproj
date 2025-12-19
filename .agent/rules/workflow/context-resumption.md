@@ -1,5 +1,9 @@
 ---
 description: Protocol for re-establishing accurate context after interruptions or topic switches
+related:
+  .agent/rules/workflow/context-preservation.md: How to save context before interruption
+  .agent/rules/workflow/session-lifecycle.md: Session-level context protocols
+  .agent/rules/development/project-understanding.md: Long-term knowledge base
 ---
 
 # Context Resumption Protocol
@@ -49,6 +53,6 @@ If an error occurs due to context loss (e.g., deleting a wrong file):
 
 | Document | Purpose |
 |:---------|:--------|
-| [context-preservation.md](context-preservation.md) | How to save context before interruption |
-| [session-lifecycle.md](session-lifecycle.md) | Session-level context protocols |
-| [project-understanding.md](../development/project-understanding.md) | Long-term knowledge base |
+| [.agent/rules/workflow/context-preservation.md](.agent/rules/workflow/context-preservation.md) | How to save context before interruption |
+| [.agent/rules/workflow/session-lifecycle.md](.agent/rules/workflow/session-lifecycle.md) | Session-level context protocols |
+| [.agent/rules/development/project-understanding.md](.agent/rules/development/project-understanding.md) | Long-term knowledge base |

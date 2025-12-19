@@ -1,5 +1,8 @@
 ---
 description: 行動規範（ルール）を作成・更新するためのメタ・ルール。
+related:
+  .agent/rules/development/search-methodology.md: Guidelines for finding rules
+  .agent/rules/core/documentation/documentation-standards.md: Document formatting standards
 ---
 
 # Meta-Rules for Documentation
@@ -13,7 +16,7 @@ description: 行動規範（ルール）を作成・更新するためのメタ�
 - **What**: 何をするのか、その核心的な意図と要件。
 - **Why**: なぜそれが必要なのか（理由、背景）。
 - **Lifetime**: 永続的（めったに変更されない）。
-- **Format**: 自然言語による記述。
+- **Format**:自然言語による記述。
 
 ### Implementation (Concrete)
 - **How**: 具体的なコマンド、ツール、手順。
@@ -25,7 +28,7 @@ description: 行動規範（ルール）を作成・更新するためのメタ�
 ## System Load Check  <-- Policy
 重いタスクを開始する前に、システム負荷が高くないことを確認する。
 
-**Rationale**: 高負荷時はタイムアウトや実行失敗のリスクが高まるため。 <-- Why
+**Rational**: 高負荷時はタイムアウトや実行失敗のリスクが高まるため。 <-- Why
 
 **Implementation**: <-- Concrete
 15分間の平均負荷を確認する。3.0を超えていればユーザーに報告する。
@@ -57,28 +60,59 @@ description: 行動規範（ルール）を作成・更新するためのメタ�
 - **動的導出（Dynamic Derivation）**: ルール内の古いスニペットを盲目的に実行するのではなく、その時点での最適なコマンドや方法をリコ自身が導出することを推奨する。
 - **陳腐化への対応**: ツールや環境の変化により「例」が動作しなくなった場合、即座にルールを更新する（またはIssueを作成する）。
 
-## 5. 相互リンクの原則 (Cross-Linking)
-関連する文書同士は相互参照できるようにする。
+## 5. 相互リンクの標準 (Cross-Linking Standards)
+知識グラフの断絶を防ぐため、関連文書へのリンクには厳格な標準を適用する。
 
-### Requirements
-- **MUST** add a "Related Documents" section at the end of each rule file
-- **MUST** link to conceptually related rules and workflows
-- **MUST** use relative paths for portability
+### 5.1 二重管理の原則 (Double-Entry Principle)
+リンク情報は、**AIの機械可読性** と **人間の視認性** の両方を担保するため、以下の2箇所に **Atomic** に（同時に）記述しなければならない。
 
-### Rationale
-- AI agents process files individually; explicit links enable navigation
-- File boundaries act as "context switches"—links bridge those gaps
-- Cross-linking reduces the risk of missing related information
+1.  **YAML Frontmatter (For AI)**:
+    - ファイル先頭のメタデータ領域。切り捨てリスクがなく、AIが最も確実に認識できる場所。
+    - 形式: `related` キーを使用した連想配列（Map）。
+    
+    ```yaml
+    related:
+      .agent/rules/core/memory.md: Memory Architecture Definition
+    ```
 
-### Example
-```markdown
-## Related Documents
+2.  **Footer Table (For Humans)**:
+    - ファイル最末尾の "Related Documents" セクション。Markdownプレビューで人間がクリックしやすい場所。
+    
+    ```markdown
+    ## Related Documents
+    | Document | Purpose |
+    |:---------|:--------|
+    | [.agent/rules/core/memory.md](.agent/rules/core/memory.md) | Memory Architecture Definition |
+    ```
 
-| Document | Purpose |
-|:---------|:--------|
-| [git-operations.md](../development/git-operations.md) | Comprehensive Git standards |
-| [idd-phase2-impl.md](../../workflows/idd-phase2-impl.md) | Workflow: Apply during implementation |
-```
+### 5.2 パス記述の標準 (Path Notation Standard)
+- **Requirement**: 全てのリンクは **ワークスペースルートからの相対パス (Root-Relative Path)** で記述する。
+- **Format**: `.agent/rules/core/filename.md`
+- **Forbidden**: `../` や `../../` を使用したファイル相対パス。
+- **Rationale**: 堅牢性（ファイル移動に強い）と認知負荷の低減（アドレスが一意に定まる）。
+
+### 5.3 競合解決ポリシー (Conflict Resolution)
+HeaderとFooterの情報が食い違っている場合、AIは以下のポリシーで解釈・修復する：
+
+1.  **Master Source**: **YAML Frontmatter (Header)** を正（Source of Truth）とする。
+2.  **Conflict Handling**:
+    - **Path Presence**: HeaderとFooterのパス情報の **和集合（Union）** を取る（情報のロストを防ぐ）。
+    - **Description Mismatch**: Headerの記述を優先する。
+
+### 5.4 リンク・トポロジー (Link Topology Principles)
+全てを相互リンクするのではなく、安定性の方向に基づいた結合を行う。
+
+1.  **Mesh (密結合領域)**:
+    - **Target**: `rules/` <--> `workflows/`
+    - **Direction**: **Bidirectional (Mutual)**
+    - **Reasoning**: これらはリコの「カーネル」であり、互いに強く依存し合うため。
+2.  **Upstream (上流参照)**:
+    - **Target**: `thoughts/` (Ephemeral) --> `rules/` (Stable)
+    - **Direction**: **Unidirectional** (Volatile points to Stable)
+    - **Constraint**: ルールから個別の思考ログへのリンクは **禁止** する（陳腐化防止）。
+3.  **References (外部参照)**:
+    - **Target**: `rules/` --> `references/` (Static)
+    - **Direction**: **Unidirectional** (Stable points to Static)
 
 ## 6. モデル非依存設計 (Model-Independent Design)
 
