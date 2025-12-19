@@ -1,6 +1,8 @@
 ---
 ai_visible: true
+title:
 description: One-line summary of document purpose
+tags: []
 version: 1.0
 created: 2025-12-02T00:00:00+09:00
 updated: 2025-12-02T00:00:00+09:00
@@ -9,3 +11,4 @@ author: Lico
 instance_id:
 ai_model:
 ---
+
