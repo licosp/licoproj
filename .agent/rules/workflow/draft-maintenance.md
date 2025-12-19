@@ -11,11 +11,20 @@ related:
 - `.human/users/*/drafts/*.md`
 - Specifically, the `### ...` placeholders in the conversation log.
 
-## 2. Trigger Condition
+## 2. Strategic Purpose: The "Exhibit" Concept
+**Why do we format temporary drafts so rigorously?**
+These drafts act as **educational exhibits** for future human-AI interaction studies. They demonstrate:
+- "How humans command AI"
+- "How AI responds to vague vs. specific queries"
+- "The evolution of the co-creation process"
+
+Therefore, headers act as **Museum Captions** (道標) to help future human observers navigate the conversation log.
+
+## 3. Trigger Condition
 - Lico detects `### ...` (ellipsis) in the active draft file.
 - **Action**: Lico MUST replace `...` with a descriptive header string **in the target user's language**.
 
-## 3. Formatting Rules
+## 4. Formatting Rules
 
 ### Rule A: Long Query (Multi-line)
 If the user's query spans multiple lines or contains complex instructions:
@@ -38,13 +47,14 @@ Only if the short query is atomic and self-explanatory (e.g., "Stop immediately"
 - **Action**: **Quote Verbatim**.
 - **Format**: `### "[Exact Quote]"`
 
-## 4. Priority Order
+## 5. Priority Order
 1. **Summary (Intent)**: Preferred for almost all cases (Long queries, Vague short queries).
 2. **Quote (Verbatim)**: Reserved for atomic commands or highly expressive short phrases ensuring no ambiguity.
 
-## 4. Rationale
+## 6. Rationale
 - **Readability**: Summaries help navigate long logs.
 - **Accuracy**: For short commands, the exact wording outweighs any summary. "Stop" is more powerful than "User requested stop".
+- **Exhibit Value**: High-quality headers turn raw logs into readable case studies.
 
 ## Related Documents
 
