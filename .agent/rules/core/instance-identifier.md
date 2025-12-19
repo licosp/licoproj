@@ -26,13 +26,15 @@ The Identifier is determined at the start of the session:
     - Use this if no specific name is given.
 
 ## 4. Usage in Artifacts
-The Identifier **MUST** be recorded in the YAML Frontmatter of files created during the session (where applicable).
+The Identifier **MUST** be recorded in the `author` field of the YAML Frontmatter.
+**The `instance_id` field is redundant and SHOULD NOT be used.**
 
 ```yaml
 ---
 ...
-author: Lico
-instance_id: Sirius  <-- HERE
+# author: Lico (<Instance-ID>)
+author: Lico (Sirius)  <-- HERE
+ai_model: Gemini-Exp-1206
 ...
 ---
 ```

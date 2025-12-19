@@ -4,10 +4,10 @@
 # - Use bullet points.
 # - Explain "Why", not just "What".
 #
-# Context-ID Examples:
+# Context-ID Examples (Customize this per session):
 #   [Draft-1202]    for draft processing
 #   [Rule-Audit]    for rule maintenance
-#   [Issue-13]      for specific issue work
+#   [Topic-Name]    for ad-hoc tasks
 #
 # Type Examples:
 #   feat, fix, docs, style, refactor, perf, test, chore
