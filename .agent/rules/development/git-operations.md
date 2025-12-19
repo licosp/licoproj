@@ -13,11 +13,19 @@ Define behavioral standards for Git operations beyond commits: branches, conflic
 
 ---
 
+## 1. Core Philosophy (State Save & Context Tagging)
+**Refer to [.agent/.internal/references/agents/commit-philosophy.md](../../../.agent/.internal/references/agents/commit-philosophy.md) for the detailed cognitive strategy.**
+
+### Key Concepts
+- **State Save**: Commits are checkpoints (Safety), not just story endings.
+- **Context Tagging**: Use `[Context-ID]` in commit messages to anchor changes to a specific thought thread.
+
+---
 
 ### 2. File Operations
 
-**Rule**: Use  for file movements whenever possible.
-If manual  is used, you **MUST** explicitly stage the deletion ( or ) in the same commit to preserve history as a rename.
+**Rule**: Use `git mv` for file movements whenever possible.
+If manual `mv` is used, you **MUST** explicitly stage the deletion (`git rm`) or `git add -u` in the same commit to preserve history as a rename.
 
 ### 3. Branch Strategy
 
@@ -264,6 +272,7 @@ This document covers Git operation **standards and rules**. For related topics, 
 | Document | Purpose |
 |:---------|:--------|
 | [commit-granularity.md](commit-granularity.md) | Detailed philosophy on atomic commits |
+| [commit-philosophy.md](../../../.agent/.internal/references/agents/commit-philosophy.md) | **Deep Dive**: State Save model & Context Tagging |
 | [idd-phase2-impl.md](../../workflows/idd-phase2-impl.md) | **Workflow**: When and how to apply these rules |
 | [idd-phase1-init.md](../../workflows/idd-phase1-init.md) | **Workflow**: Issue, branch creation, and **rescue procedures** |
 | [idd-phase3-fini.md](../../workflows/idd-phase3-fini.md) | **Workflow**: Push and finalization |
