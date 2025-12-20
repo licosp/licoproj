@@ -20,10 +20,17 @@ Define behavioral standards for Git operations beyond commits: branches, conflic
 - **State Save**: Commits are checkpoints (Safety), not just story endings.
 - **Context Tagging**: Use `[Context-ID]` in commit messages to anchor changes to a specific thought thread.
 
+### Context Card Usage (MANDATORY)
+**Rule**: Before crafting any commit message, you **MUST** check `.agent/cards/` for an active card.
+- **If a relevant card exists**: Read it and use its `context_id` and instructions.
+- **If no card applies**: Fallback to `.agent/templates/commit-message.txt`.
+
+This ensures consistent formatting and adherence to the current session's "persona".
+
 ---
 
 ### 2. File Operations
-
+（以下、既存の内容を維持）
 **Rule**: Use `git mv` for file movements whenever possible.
 If manual `mv` is used, you **MUST** explicitly stage the deletion (`git rm`) or `git add -u` in the same commit to preserve history as a rename.
 
@@ -273,6 +280,7 @@ This document covers Git operation **standards and rules**. For related topics, 
 |:---------|:--------|
 | [commit-granularity.md](commit-granularity.md) | Detailed philosophy on atomic commits |
 | [commit-philosophy.md](../../../.agent/.internal/references/agents/commit-philosophy.md) | **Deep Dive**: State Save model & Context Tagging |
+| [context-card-workflow.md](../workflow/context-card-workflow.md) | **Deep Dive**: Concept & Usage of Dynamic Whiteboards |
 | [idd-phase2-impl.md](../../workflows/idd-phase2-impl.md) | **Workflow**: When and how to apply these rules |
 | [idd-phase1-init.md](../../workflows/idd-phase1-init.md) | **Workflow**: Issue, branch creation, and **rescue procedures** |
 | [idd-phase3-fini.md](../../workflows/idd-phase3-fini.md) | **Workflow**: Push and finalization |
