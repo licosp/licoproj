@@ -51,7 +51,7 @@ tags: ["maintenance", "cleanup", "archive"]
 
 ### 使ってほしい道具
 
-- `.agent/archive/`
+- `.agent/.internal/archive/`
 - `.human/archive/`
 - `.agent/templates/commit-message.txt`
 
