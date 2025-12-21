@@ -5,13 +5,14 @@ default_phase: "(WIP)"
 tags: ["human-usage", "header", "2025-12-03", "part1"]
 ---
 
-# Context Card: Drafts Cleanup
+# Context Whiteboard: Drafts Cleanup
 
 ## Human Notes (Japanese OK)
 
 ### 作業の文脈
 
-「2025/12/2」の下書きの清書を行っています。
+私のAI向けの指示や質問の際の下書きファイル、
+これの清書を行っています。
 
 ### 関連書類を探す
 
@@ -21,6 +22,7 @@ tags: ["human-usage", "header", "2025-12-03", "part1"]
 - 下書き
 - 遅延の許容
 - IDD（フェーズ2）
+- カード
 
 ### 作業の注意点
 
@@ -33,7 +35,8 @@ tags: ["human-usage", "header", "2025-12-03", "part1"]
 
 ### 使ってほしい道具
 
-.agent/templates/commit-message.txt
+- `.human/users/leonidas/drafts/`
+- `.agent/templates/commit-message.txt`
 
 ### 清書の最終的な目的
 

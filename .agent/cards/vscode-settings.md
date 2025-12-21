@@ -20,6 +20,7 @@ VSCodeで使われる設定ファイルを更新しました。
 他にも必要そうなものがあれば自主的に探してください。
 
 - IDD（フェーズ2）
+- カード
 
 ### 作業の注意点
 
@@ -30,7 +31,7 @@ VSCodeで使われる設定ファイルを更新しました。
 
 ### 使ってほしい道具
 
-.agent/templates/commit-message.txt
+- `.agent/templates/commit-message.txt`
 
 ## Agent Observations
 

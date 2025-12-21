@@ -32,6 +32,7 @@ tags: ["thoughts", "sirius"]
 - 遅延の許容
 - 認知負荷
 - 識別子
+- カード
 
 ### 作業の注意点
 
@@ -40,8 +41,9 @@ tags: ["thoughts", "sirius"]
 
 ### 使ってほしい道具
 
-.agent/templates/header-frontmatter.yaml
-.agent/templates/commit-message.txt
+- `.agent/.internal/thoughts/`
+- `.agent/templates/header-frontmatter.yaml`
+- `.agent/templates/commit-message.txt`
 
 ### 残した文書の活用
 

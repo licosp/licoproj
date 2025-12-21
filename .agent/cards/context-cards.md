@@ -5,7 +5,7 @@ default_phase: "(WIP)"
 tags: ["templates", "active"]
 ---
 
-# Context Card: Templates Management
+# Context Whiteboard: Templates Management
 
 ## Human Notes (Japanese OK)
 
@@ -22,17 +22,19 @@ tags: ["templates", "active"]
 以下の項目に関す行動規範や手順書を探して参考にしてください。
 他にも必要そうなものがあれば自主的に探してください。
 
-- カード
-- コンテキスト
+- 文脈
 - IDD（フェーズ2）
+- カード
 
 ### 作業の注意点
 
-コミットは頻繁に、単位は1ファイルでもOK
+このカードたちですが、私が手動で頻繁に修正することが想定されます。
+自然とコミットの機会も多くなると感じます。
 
 ### 使ってほしい道具
 
-.agent/templates/commit-message.txt
+- `.agent/cards/`
+- `.agent/templates/commit-message.txt`
 
 ## Agent Observations
 
