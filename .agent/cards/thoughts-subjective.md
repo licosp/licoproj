@@ -1,8 +1,8 @@
 ---
 # Context Configuration (Lico's Source of Truth)
-context_id: "[Thoughts-Sirius]"
+context_id: "[Thoughts-Polaris]"
 default_phase: "(Reflect)"
-tags: ["thoughts", "sirius"]
+tags: ["thoughts", "polaris"]
 ---
 
 # Context Whiteboard: Thoughts & Reflections
