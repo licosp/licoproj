@@ -5,8 +5,8 @@
       "path": "../../../../",
     },
     {
-      "name": "licoimg",
-      "path": "../../../../packages/licoimg",
+      "name": "backup",
+      "path": "../../../../../licoproj_backup/",
     },
   ],
   "settings": {
