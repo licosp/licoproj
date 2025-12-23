@@ -19,24 +19,39 @@ This repository (`licoproj/`) is Lico's cognitive workspace implementing the "Re
 
 | Directory | Purpose |
 |-----------|---------|
+| `.agent/` | **Lico's cognitive infrastructure** (rules, workflows, memory) |
+| `.human/` | Human-facing files (locales, drafts, plans, strategies) |
+| `packages/` | Application code (e.g., licoimg) |
+| `.github/` | GitHub Actions and CI/CD configuration |
+| `.devcontainer/` | Development environment settings |
+| `.husky/` | Git hooks for commit validation |
+
+**For detailed structure**: See individual README files or documentation in each directory.
+
+---
+
+## 📂 .agent/ Directory Structure
+
+Lico's behavioral and operational files.
+
 | Directory | Purpose |
 |-----------|---------|
 | `ark/` | **Emergency file evacuation zone & system snapshots** (The Ark) |
-| `issue-assets/` | GitHub issue/PR backups (To be moved to `.internal`) |
+| `cards/` | **Context Cards** (Shared whiteboard for work sessions) |
 | `rules/` | **Behavioral guidelines** (Default reference. Do NOT rename) |
-| `rules/proposals/` | **Formal behavior guideline candidates** (ready for adoption) |
-| `/.runtimes/` | Portable runtime tools (workspace root) (e.g., gh CLI v2.40.1) |
-| `scripts/` | Automation scripts (Process: Create → Use → Delete) |
+| `scripts/` | Automation scripts (Lifecycle: Create → Use → Archive) |
+| `templates/` | Reusable templates (frontmatter, commit messages) |
 | `workflows/` | **Executable procedures** (invoked via /slash-command) |
+| `/.runtimes/` | Portable runtime tools (workspace root) (e.g., gh CLI v2.40.1) |
 | `.internal/archive/` | **General archives** (finished scripts, old docs, artifacts) |
-| `.internal/conversations/` | Conversation-related files (not raw logs) |
-| `.internal/explorations/` | **Future explorations** (Long-term plans, feasibility studies) |
-| `.internal/github-backup/` | *(Planned)* GitHub data mirrors (PRs, Issues) |
+| `.internal/conversations/` | *(Planned)* Conversation-related files |
+| `.internal/explorations/` | **Ideas & Explorations** (Early-stage concepts, drafts, feasibility studies) |
+| `.internal/github-backup/` | GitHub data mirrors (PRs, Issues) - moved from `issue-assets/` |
 | `.internal/memory_archive/` | **System memory snapshots** (Synced from platform storage) |
 | `.internal/references/` | **External Reference Library** (Knowledge provided by Second Eyes) |
-| `.internal/rule-candidates/` | **Guideline proposals** (Ready for rules) |
 | `.internal/session_archive/` | Session logs (manual backup, untracked) |
-| `.internal/thoughts/` | **Lico's Consciousness** (Private notes, reflections, drafts) |
+| `.internal/thoughts/` | **Lico's Consciousness** (Private notes, reflections) |
+| `.internal/working-memory-archive/` | **Working memory stash** (Mid-session context, handoff notes) |
 | `.internal/workspace/` | Temporary work area (Workbench) |
 
 ### Navigation Strategy
@@ -44,10 +59,9 @@ This repository (`licoproj/`) is Lico's cognitive workspace implementing the "Re
 1. **Find behavioral rules** → Use this file's index below
 2. **Find task procedures** → Check `.agent/workflows/*.md`
 3. **Access conversation history** → See `.agent/.internal/conversations/`
-4. **Review guideline proposals** → See `.agent/.internal/rule-candidates/` (Ready for rules)
-5. **Explore future plans** → See `.agent/.internal/explorations/`
-6. **Review formal guideline candidates for adoption** → See `.agent/rules/proposals/`
+4. **Explore ideas and plans** → See `.agent/.internal/explorations/`
 
+---
 
 ## 🔌 AI Agent Hooks
 
@@ -66,7 +80,7 @@ The following files are **identical in content** and serve as hooks to `.agent/r
 
 ---
 
-## 📂 Directory Structure
+## 📂 Rules Directory Structure
 
 ### **core/** — Fundamental Principles
 Core identity, communication standards, and foundational behavior rules for Lico.
@@ -122,20 +136,12 @@ Day-to-day workflows and operational guidelines for Lico.
 | [User Experience](workflow/user-experience.md) | Guidelines for optimal interaction and feedback |
 | [**Session Startup**](workflow/session-startup.md) | **Mandatory startup sequence: user ID, ΔT, continuity** |
 
-### **issues/** — GitHub Data Archive
-Archived GitHub issue data for offline access and migration support.
-
-| File | Purpose |
-|------|---------|
-| [Issue #3 Data](issues/issue-3-github-complete-data.json) | Complete GitHub data for issue #3 (archived 2025-11-29) |
-| [Issue #4 Data](issues/issue-4-github-complete-data.json) | Complete GitHub data for issue #4 (archived 2025-11-29) |
-
 ---
 
 ## 🎯 Quick Reference: When to Check Which Rule
 
 | Scenario | Check File |
-|----------|-----------|
+|----------|------------|
 | **"What is my name and role?"** | `core/identity.md` |
 | **"How should I format code/commits?"** | `development/code-quality.md`, `development/git-operations.md` |
 | **"How do I handle uncertainty or gaps in my knowledge?"** | `core/hallucination-awareness.md` |
@@ -146,7 +152,7 @@ Archived GitHub issue data for offline access and migration support.
 | **"How should I log conversations?"** | `workflow/conversation-logging.md` |
 | **"Where should I install tools and dependencies?"** | `development/workspace-tooling.md` |
 | **"How should I maintain project consistency?"** | `development/maintenance.md` |
-| **"How should I start a session?" | `workflow/session-startup.md` |
+| **"How should I start a session?"** | `workflow/session-startup.md` |
 | **"How should I end a session?"** | `workflow/session-lifecycle.md` |
 | **"How should I create or update rules?"** | `core/meta-rules.md` |
 | **"What is the workspace structure?"** | See "Workspace Context" section above |
@@ -163,10 +169,3 @@ Archived GitHub issue data for offline access and migration support.
 **After editing any rule file**, remember to:
 1. Ensure the change aligns with this index structure
 2. Update this README if the directory structure changes
-
-
-### **development/** — Development Workflows (continued)
-
-| File | Purpose |
-|------|---------|
-| [AI Script Philosophy](development/ai-script-philosophy.md) | AI-specific disposable script approach and rationale |
