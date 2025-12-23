@@ -1,5 +1,17 @@
 ---
+ai_visible: true
+title: Project Maintenance Guidelines
 description: Guidelines for maintaining project consistency and documentation
+tags: [maintenance, documentation, consistency]
+version: 1.1
+created: 2025-12-01T00:00:00+09:00
+updated: 2025-12-23T12:15:00+09:00
+language: en
+author: Lico (Polaris)
+ai_model: Claude Opus 4.5 (Thinking) Planning mode
+related:
+  .agent/rules/development/file-deletion.md: Protocol for safe file handling
+  .agent/rules/development/ai-script-philosophy.md: Script lifecycle philosophy
 ---
 
 # Project Maintenance Guidelines
@@ -131,7 +143,7 @@ All file creation and modification operations must use the `.agent/.internal/wor
 - **Never modify production files directly**
 - **Always create intermediate files first**
 - **Use timestamp-based naming for concurrency safety**
-- **Clean up intermediate files after successful operations**
+- **Archive intermediate files after successful operations**
 
 ### Workflow Process
 
@@ -157,7 +169,7 @@ All file creation and modification operations must use the `.agent/.internal/wor
 #### 4. Production Application
 **Success Path**:
 - Apply changes to production file
-- Delete intermediate file immediately
+- Archive intermediate file to `.agent/.internal/archive/work/`
 - Document changes in commit messages
 
 **Failure Path**:
@@ -168,7 +180,7 @@ All file creation and modification operations must use the `.agent/.internal/wor
 ### Environment-Specific Handling
 
 #### Permission Granted Environments (e.g., Cursor)
-- Automated application with immediate cleanup
+- Automated application with immediate archival
 - Direct production file updates
 - Minimal user intervention
 
@@ -177,8 +189,8 @@ All file creation and modification operations must use the `.agent/.internal/wor
 - User notification for manual application
 - Work preservation for later application
 
-### File Cleanup Policy
-- **Successful operations**: Delete intermediate files immediately
+### File Handling Policy
+- **Successful operations**: Archive intermediate files to `.agent/.internal/archive/work/`
 - **Failed operations**: Archive to `.agent/.internal/archive/work/` with timestamp
 - **Review-required operations**: Preserve until user approval
 - **Concurrent operations**: Timestamp prevents conflicts, manual merge if needed
@@ -191,4 +203,11 @@ All file creation and modification operations must use the `.agent/.internal/wor
 
 This workflow ensures safe, transparent, and environment-agnostic file operations across all Lico instances and development environments.
 
-| [file-deletion.md](file-deletion.md) | **Safety**: Protocol for safe file deletion (Trash) |
+---
+
+## Related Documents
+
+| Document | Purpose |
+|:---------|:--------|
+| [.agent/rules/development/file-deletion.md](.agent/rules/development/file-deletion.md) | Protocol for safe file handling |
+| [.agent/rules/development/ai-script-philosophy.md](.agent/rules/development/ai-script-philosophy.md) | Script lifecycle philosophy |
