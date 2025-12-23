@@ -8,6 +8,8 @@ related:
   https://www.reddit.com/r/google_antigravity/comments/1pre0ub/comment/nv1j06g/: 0000
   https://www.reddit.com/r/google_antigravity/comments/1prpevi/comment/nv6fkrj/: 0001
   https://www.reddit.com/r/google_antigravity/comments/1psug0v/comment/nvdmgb2/: 0002
+  https://www.reddit.com/r/google_antigravity/comments/1ptqgpl/comment/nvj7r9o/: 0003
+  https://www.reddit.com/r/google_antigravity/comments/1ptnd90/comment/nvj94vh/: 0004
 ---
 
 # The discussion on Reddit.
@@ -29,3 +31,11 @@ I also have the AI ​​write its own guidelines and manuals. I’ve found that
 ### Comment: 0002, 1psug0v-nvdmgb2
 
 Do you mean that the AI appears to have memory loss once it starts working across different contexts in a single conversation?
+
+### Comment: 0003, 1ptqgpl-nvj7r9o
+
+I’ve been using Antigravity since the initial release, but the "Knowledge" space in the UI is still empty. :| Since many people are reporting the same issue, I suspect it might be a bug. Could the fact that I'm using it on WSL be the cause?
+
+### Comment: 0004, 1ptnd90-nvj94vh
+
+Maintaining an AI’s memory during a conversation at a user level requires a proper system and some patience. You should frequently have the AI export its thoughts to a file. Always use files to exchange the context you want to share. Even if it feels like you've successfully shared something in the chat, the AI will forget most of it after a few dozen exchanges. :D
