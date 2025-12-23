@@ -3,9 +3,9 @@ ai_visible: true
 title: Context Card Workflow
 description: Methodology for using "Context Cards" to manage AI persona and task context.
 tags: [cards, context, workflow, whiteboard]
-version: 1.1
+version: 1.2
 created: 2025-12-22T00:00:00+09:00
-updated: 2025-12-23T11:04:00+09:00
+updated: 2025-12-23T23:07:00+09:00
 language: en
 author: Lico (Polaris)
 ai_model: Claude Opus 4.5 (Thinking) Planning mode
@@ -43,14 +43,18 @@ tags: ["process", "example"]      <-- OPTIONAL: Search tags
 # Context Whiteboard: Example Process
 
 ## Human Notes (Japanese OK)
-(Users write free-form instructions, goals, and nuances here.)
-- "Don't rush."
-- "This task is for educational purposes."
+
+### 意図で探す
+(User describes the INTENT of the work, not just keywords.
+Lico uses this to proactively search for relevant files.)
+
+### 作業の注意点
+(Specific instructions and nuances.)
 
 ## Agent Observations
 (Lico writes here autonomously!)
 - "Noticed that file X is often source of conflict."
-- "Current focus is on Y."
+- "Hard to find: .agent/rules/core/delay-tolerance.md"
 ```
 
 ---
@@ -58,15 +62,38 @@ tags: ["process", "example"]      <-- OPTIONAL: Search tags
 ## 3. Usage Workflow
 
 ### 3.1 Equipping a Card
+
 When the user says **"Use the [Card Name] card"** (e.g., "Use drafts-cleanup card"):
 
 1.  **Read**: You MUST read `.agent/cards/[card-name].md`.
-2.  **Adopt**:
+2.  **Explore**: Search for related files based on:
+    - Keywords in "関連書類を探す" section
+    - **Intent** described in "意図で探す" section
+    - Your own judgment of what might be relevant
+3.  **Report**: Share findings with the user before proceeding.
+4.  **Adopt**:
     - Use `context_id` for ALL commit messages (e.g., `[Drafts-Cleanup]`).
     - Internalize the "Human Notes" as the primary directive.
-3.  **Act**: Proceed with the task under this specific persona.
+5.  **Act**: Proceed with the task under this specific persona.
 
-### 3.2 Updating the Card (Bi-directional)
+### 3.2 Exploration Phase
+
+Before starting work, perform an **Exploration Phase**:
+
+**Purpose**: The user often knows the *intent* but not the *keywords* to find relevant files. Lico manages most documentation and knows the file structure better.
+
+**Process**:
+1. Read the "意図で探す" section to understand the goal
+2. Search broadly based on intent, not just literal keywords
+3. Report findings in chat (default)
+4. Record hard-to-find files in Agent Observations (for future Licos)
+
+**Example**:
+- User intent: "ディレクトリの構造を変更する際の注意点"
+- Lico searches: `documentation-standards.md`, `delay-tolerance.md`, `thoughts/` for relevant reflections
+
+### 3.3 Updating the Card (Bi-directional)
+
 During the task, if you discover important context (e.g., a recurring pattern, a decision made):
 
 1.  **Self-Correction**: Do not just keep it in your temporary memory.
@@ -74,14 +101,15 @@ During the task, if you discover important context (e.g., a recurring pattern, a
     - *Example*: "Added rule: Headers must be quoted if they contain spaces."
 3.  **Benefit**: Next time you "equip" this card, you will remember this lesson.
 
-### 3.3 Commit Message Integration
+### 3.4 Commit Message Integration
+
 Use the values from Frontmatter to strictly format commits:
 
 `[<context_id>] <type>: <subject> <default_phase>`
 
-### 3.4 Agent Observations Guidelines
+### 3.5 Agent Observations Guidelines
 
-The **Agent Observations** section serves as a safety net for cognitive overload.
+The **Agent Observations** section serves as a safety net for cognitive overload and knowledge transfer.
 
 **Purpose**: Allow Lico to capture context before thought narrowing occurs, so future Lico (or the same instance later) can recover context from fragments.
 
@@ -91,6 +119,19 @@ The **Agent Observations** section serves as a safety net for cognitive overload
 - **Decisions**: Agreements made with user
 - **Learnings**: Lessons useful for similar future work
 - **Paths**: Specific file/directory paths referenced in "Human Notes"
+- **Hard-to-Find Files**: Files that required significant search effort
+
+**Recording Hard-to-Find Files**:
+
+When you struggle to find a relevant file:
+1. Record it in Agent Observations with a note
+2. This helps future Licos using the same card
+
+*Example*:
+```markdown
+## Agent Observations
+- Hard to find: `.agent/rules/core/delay-tolerance.md` (searched "rushing", found via "delay")
+```
 
 **Cognitive Overload Warning Signs**:
 
@@ -135,8 +176,9 @@ Cards are lightweight context-sharing tools. Artifacts are detailed plans for er
 ---
 
 ## 5. Maintenance
+
 - **Creation**: Create new cards when a distinct, recurring activity emerges.
-- **Archival**: When a project is finished, move the card to `.agent/archive/cards/`.
+- **Archival**: When a project is finished, move the card to `.agent/.internal/archive/cards/`.
 
 ---
 
