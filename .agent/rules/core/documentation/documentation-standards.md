@@ -1,5 +1,17 @@
 ---
+ai_visible: true
+title: Documentation Standards
 description: Defines standards for file naming, size, structure, and AI signatures.
+tags: [documentation, standards, formatting]
+version: 1.1
+created: 2025-12-01T00:00:00+09:00
+updated: 2025-12-23T11:53:00+09:00
+language: en
+author: Lico (Polaris)
+ai_model: Claude Opus 4.5 (Thinking) Planning mode
+related:
+  .agent/rules/core/meta-rules.md: Rules for creating rules
+  .agent/templates/header-frontmatter.yaml: Frontmatter template
 ---
 
 # Documentation Standards
@@ -50,6 +62,42 @@ description: Defines standards for file naming, size, structure, and AI signatur
 - ❌ Bad: `/home/USER/develop/shared/project/licoproj/.agent/rules/README.md`
 - ❌ Bad: `[README.md](cci:7://file:///absolute/path/README.md)`
 
+## 6. Frontmatter Template Usage
+
+**Principle**: All files in `.agent/rules/` and `.agent/workflows/` MUST use the standard frontmatter template.
+
+**Template Location**: `.agent/templates/header-frontmatter.yaml`
+
+**Requirements**:
+- **MUST** include the full frontmatter template when creating or updating rules/workflows
+- **MUST** populate all required fields: `ai_visible`, `title`, `description`, `version`, `created`, `updated`, `language`, `author`, `ai_model`
+- **MUST** include `related` field with cross-links per meta-rules cross-linking standards
+- **MUST** include footer Related Documents table
+
+**Rationale**:
+- Ensures consistency across all behavioral documents
+- Enables AI to reliably parse metadata
+- Provides traceability (author, model, timestamps)
+- Supports cross-linking and discoverability
+
+**Example**:
+```yaml
+---
+ai_visible: true
+title: Example Rule
+description: One-line summary
+tags: [example, rule]
+version: 1.0
+created: 2025-12-23T00:00:00+09:00
+updated: 2025-12-23T00:00:00+09:00
+language: en
+author: Lico (Instance-ID)
+ai_model: Model Name
+related:
+  .agent/rules/core/meta-rules.md: Cross-linking standards
+---
+```
+
 ---
 
 ## Related Documents
@@ -64,3 +112,4 @@ description: Defines standards for file naming, size, structure, and AI signatur
 | [auto_frontmatter_on_save.md](../../development/auto_frontmatter_on_save.md) | Automatic frontmatter generation |
 | [datetime-format.md](datetime-format.md) | Standard datetime formats |
 | [instance-identifier.md](../instance-identifier.md) | Instance Identifier rules |
+| [header-frontmatter.yaml](../../../templates/header-frontmatter.yaml) | Frontmatter template |
