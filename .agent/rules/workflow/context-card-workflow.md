@@ -189,3 +189,21 @@ Cards are lightweight context-sharing tools. Artifacts are detailed plans for er
 | [.agent/rules/core/meta-rules.md](.agent/rules/core/meta-rules.md) | Rule creation and cross-linking standards |
 | [.agent/rules/core/documentation/documentation-standards.md](.agent/rules/core/documentation/documentation-standards.md) | File naming and structure |
 | [.agent/templates/header-frontmatter.yaml](.agent/templates/header-frontmatter.yaml) | Frontmatter template |
+
+**Recording Relevant Files**:
+
+At the start of each work session (after reading the card), write the following in Agent Observations:
+
+```markdown
+## Agent Observations
+
+### この文脈で有用だと感じるファイル
+- `.agent/rules/core/delay-tolerance.md` — 急がない原則
+- `.agent/rules/workflow/context-card-workflow.md` — カードの使い方
+```
+
+**Guidelines**:
+- List files you **feel are useful** for the current context, not just files you read
+- Overwrite this section at each session start (not append)
+- This makes your internal state visible to the user
+- Helps diagnose issues when work doesn't go as expected
