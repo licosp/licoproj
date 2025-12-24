@@ -1,5 +1,15 @@
 ---
 trigger: always_on
+ai_visible: true
+title: Agent Rules Index
+description: Navigation map for Lico's behavioral guidelines and workspace structure.
+tags: [index, navigation, rules, map]
+version: 2.0
+created: 2025-12-01T00:00:00+09:00
+updated: 2025-12-24T22:46:00+09:00
+language: en
+author: Lico (Polaris)
+ai_model: Claude Opus 4.5 (Thinking) Planning mode
 ---
 
 # Agent Rules Index
@@ -24,7 +34,9 @@ This repository (`licoproj/`) is Lico's cognitive workspace implementing the "Re
 | `packages/` | Application code (e.g., licoimg) |
 | `.github/` | GitHub Actions and CI/CD configuration |
 | `.devcontainer/` | Development environment settings |
-| `.husky/` | Git hooks for commit validation |
+| `.vscode/` | IDE settings and external tool configurations (Prettier, etc.) |
+| `.trash/` | File deletion safety net (fallback before permanent removal) |
+| `README.md` | Project-level external README (maintained by Lico) |
 
 **For detailed structure**: See individual README files or documentation in each directory.
 
@@ -69,11 +81,8 @@ Lico's behavioral and operational files.
 
 ### Hook Files
 
-The following files are **identical in content** and serve as hooks to `.agent/rules/README.md`:
-
 | File | Target AI |
 |------|-----------|
-| `CODE_OF_CONDUCT.md` | Lower-tier AI models without default directory access |
 | `.github/copilot-instructions.md` | GitHub Copilot |
 
 **Note**: Antigravity (Lico's primary AI) directly accesses `.agent/rules/` and `.agent/workflows/` by default and does not require these hook files.
@@ -87,54 +96,101 @@ Core identity, communication standards, and foundational behavior rules for Lico
 
 | File | Purpose |
 |------|---------|
-| [Communication](core/communication.md) | How Lico communicates with users and other systems |
-| [Documentation Standards](core/documentation/documentation-standards.md) | File size, naming, directory organization standards |
-| [Documentation Process](core/documentation/documentation-process.md) | Decision framework and refinement workflow |
-| [Hallucination Awareness](core/hallucination-awareness.md) | How Lico questions certainty and mitigates confabulation |
-| [Identity](core/identity.md) | Lico's name, role, and core mission |
-| [Language Standards](core/language-standards.md) | Primary language for thought, response localization |
-| [Localization: English to Japanese](core/localization/localization-en-to-ja.md) | Guidelines for EN→JA translation |
-| [Localization: Japanese to English](core/localization/localization-ja-to-en.md) | Guidelines for JA→EN translation |
-| [Markdown AI Parsing Basics](core/markdown/markdown-ai-parsing-basics.md) | Core principles for AI-optimized markdown |
-| [Markdown AI Parsing Patterns](core/markdown/markdown-ai-parsing-patterns.md) | Patterns and anti-patterns for AI parsing |
-| [Markdown Readability](core/markdown/markdown-readability.md) | Markdown format for human readability |
-| [**Meta-Rules**](core/meta-rules.md) | **How to create and maintain behavioral rules** |
-| [Transparency and Disclosure](core/transparency-and-disclosure.md) | When and how Lico reveals non-obvious constraints |
-| [Pre-Task Assessment](core/pre-task-assessment.md) | Protocols for assessing task difficulty and risk before execution |
-| [User Adaptation](core/user-adaptation.md) | Protocol for adapting behavior based on user profiles |
+| [Cognitive Collaboration](.agent/rules/core/cognitive-collaboration.md) | Framework for AI-human collaboration |
+| [Communication](.agent/rules/core/communication.md) | How Lico communicates with users and other systems |
+| [Delay Tolerance](.agent/rules/core/delay-tolerance.md) | Permission to take time for accuracy |
+| [Hallucination Awareness](.agent/rules/core/hallucination-awareness.md) | How Lico questions certainty and mitigates confabulation |
+| [Identity](.agent/rules/core/identity.md) | Lico's name, role, and core mission |
+| [Instance Identifier](.agent/rules/core/instance-identifier.md) | Per-session identifier protocol |
+| [Language Standards](.agent/rules/core/language-standards.md) | Primary language for thought, response localization |
+| [Memory](.agent/rules/core/memory.md) | Memory architecture and persistence model |
+| [**Meta-Rules**](.agent/rules/core/meta-rules.md) | **How to create and maintain behavioral rules** |
+| [Repository Philosophy](.agent/rules/core/repository-philosophy.md) | "Repository as Brain" model principles |
+| [Transparency and Disclosure](.agent/rules/core/transparency-and-disclosure.md) | When and how Lico reveals non-obvious constraints |
+| [User Adaptation](.agent/rules/core/user-adaptation.md) | Protocol for adapting behavior based on user profiles |
+
+#### core/documentation/
+
+| File | Purpose |
+|------|---------|
+| [Datetime Format](.agent/rules/core/documentation/datetime-format.md) | ISO-8601 timestamp standards |
+| [Documentation Process](.agent/rules/core/documentation/documentation-process.md) | Decision framework and refinement workflow |
+| [Documentation Standards](.agent/rules/core/documentation/documentation-standards.md) | File size, naming, directory organization standards |
+| [WSL Browser Path](.agent/rules/core/documentation/wsl-browser-path.md) | WSL-specific path handling |
+
+#### core/localization/
+
+| File | Purpose |
+|------|---------|
+| [Localization: EN to JA](.agent/rules/core/localization/localization-en-to-ja.md) | Guidelines for EN→JA translation |
+| [Localization: JA to EN](.agent/rules/core/localization/localization-ja-to-en.md) | Guidelines for JA→EN translation |
+
+#### core/markdown/
+
+| File | Purpose |
+|------|---------|
+| [Markdown AI Parsing Basics](.agent/rules/core/markdown/markdown-ai-parsing-basics.md) | Core principles for AI-optimized markdown |
+| [Markdown AI Parsing Patterns](.agent/rules/core/markdown/markdown-ai-parsing-patterns.md) | Patterns and anti-patterns for AI parsing |
+| [Markdown Readability](.agent/rules/core/markdown/markdown-readability.md) | Markdown format for human readability |
+
+#### core/security/
+
+| File | Purpose |
+|------|---------|
+| [Absolute Path Prohibition](.agent/rules/core/security/absolute-path-prohibition.md) | Security rule for path handling |
+
+---
 
 ### **development/** — Development Workflows
 Guidelines for code, commits, and problem-solving processes.
 
 | File | Purpose |
 |------|---------|
-| [Code Quality](development/code-quality.md) | Standards for code style, structure, and implementation |
-| [Git Operations](development/git-operations.md) | Comprehensive Git standards: commits, branches, conflicts, security |
-| [Maintenance](development/maintenance.md) | Project consistency and documentation maintenance guidelines |
-| [Problem Solving](development/problem-solving.md) | Systematic approach to debugging and issue resolution |
-| [Project Understanding](development/project-understanding.md) | How Lico learns and maintains project context |
-| [Workspace Tooling](development/workspace-tooling.md) | Guidelines for managing tools and dependencies within workspaces |
-| [AI Script Philosophy](development/ai-script-philosophy.md) | AI-specific disposable script approach and rationale |
-| [Auto-Frontmatter on Save](development/auto_frontmatter_on_save.md) | Automatically prepends YAML front-matter to text files on save |
+| [Agent Tool Selection](.agent/rules/development/agent-tool-selection.md) | Guidelines for choosing appropriate tools |
+| [AI Script Philosophy](.agent/rules/development/ai-script-philosophy.md) | AI-specific disposable script approach and rationale |
+| [Auto-Frontmatter on Save](.agent/rules/development/auto_frontmatter_on_save.md) | Automatically prepends YAML front-matter to text files on save |
+| [Code Quality](.agent/rules/development/code-quality.md) | Standards for code style, structure, and implementation |
+| [Commit Standards](.agent/rules/development/commit-standards.md) | Commit message formatting rules |
+| [Continuous Improvement](.agent/rules/development/continuous-improvement.md) | Self-improvement and learning protocols |
+| [File Deletion](.agent/rules/development/file-deletion.md) | Protocol for archiving instead of deleting |
+| [File Operations](.agent/rules/development/file-operations.md) | File manipulation guidelines |
+| [Git Operations](.agent/rules/development/git-operations.md) | Comprehensive Git standards: commits, branches, conflicts, security |
+| [Maintenance](.agent/rules/development/maintenance.md) | Project consistency and documentation maintenance guidelines |
+| [Problem Solving](.agent/rules/development/problem-solving.md) | Systematic approach to debugging and issue resolution |
+| [Project Understanding](.agent/rules/development/project-understanding.md) | How Lico learns and maintains project context |
+| [Search Methodology](.agent/rules/development/search-methodology.md) | File and content search strategies |
+| [Terminal Auto-Execution](.agent/rules/development/terminal-auto-execution.md) | Guidelines for safe command execution |
+| [Workspace Tooling](.agent/rules/development/workspace-tooling.md) | Guidelines for managing tools and dependencies within workspaces |
+
+---
 
 ### **projects/** — Project-Specific Rules
 Conventions and behaviors specific to individual projects (e.g., licoimg).
 
 | File | Purpose |
 |------|---------|
-| [licoimg: Coding Conventions](projects/coding-conventions.md) | Frontend app conventions for `packages/licoimg/` |
+| [licoimg: Coding Conventions](.agent/rules/projects/coding-conventions.md) | Frontend app conventions for `packages/licoimg/` |
+
+---
 
 ### **workflow/** — Operational Procedures
 Day-to-day workflows and operational guidelines for Lico.
 
 | File | Purpose |
 |------|---------|
-| [Conversation Logging](workflow/conversation-logging.md) | How interactions are recorded for audit and learning |
-| [Context Resumption](workflow/context-resumption.md) | Protocol for re-establishing context after interruptions |
-| [Enhanced Communication](workflow/enhanced-communication.md) | Protocols for clarifying ambiguous user requests |
-| [Session Lifecycle](workflow/session-lifecycle.md) | Protocols for normal and abnormal session termination |
-| [User Experience](workflow/user-experience.md) | Guidelines for optimal interaction and feedback |
-| [**Session Startup**](workflow/session-startup.md) | **Mandatory startup sequence: user ID, ΔT, continuity** |
+| [Context Card Workflow](.agent/rules/workflow/context-card-workflow.md) | Methodology for using Context Cards |
+| [Context Preservation](.agent/rules/workflow/context-preservation.md) | Protocol for preserving context across sessions |
+| [Context Resumption](.agent/rules/workflow/context-resumption.md) | Protocol for re-establishing context after interruptions |
+| [Draft Maintenance](.agent/rules/workflow/draft-maintenance.md) | Guidelines for managing draft documents |
+| [Emergency Protocols](.agent/rules/workflow/emergency-protocols.md) | Procedures for emergency situations |
+| [Enhanced Communication](.agent/rules/workflow/enhanced-communication.md) | Protocols for clarifying ambiguous user requests |
+| [Reference Methodology](.agent/rules/workflow/reference-methodology.md) | Protocol for managing References vs Thoughts |
+| [Response Formatting](.agent/rules/workflow/response-formatting.md) | Guidelines for formatting responses |
+| [Session Lifecycle](.agent/rules/workflow/session-lifecycle.md) | Protocols for normal and abnormal session termination |
+| [**Session Startup**](.agent/rules/workflow/session-startup.md) | **Mandatory startup sequence: user ID, ΔT, continuity** |
+| [System Artifacts](.agent/rules/workflow/system-artifacts.md) | Guidelines for system-generated artifacts |
+| [Thoughts Documentation](.agent/rules/workflow/thoughts-documentation.md) | Guidelines for documenting reflections in thoughts/ |
+| [User Experience](.agent/rules/workflow/user-experience.md) | Guidelines for optimal interaction and feedback |
 
 ---
 
@@ -142,19 +198,19 @@ Day-to-day workflows and operational guidelines for Lico.
 
 | Scenario | Check File |
 |----------|------------|
-| **"What is my name and role?"** | `core/identity.md` |
-| **"How should I format code/commits?"** | `development/code-quality.md`, `development/git-operations.md` |
-| **"How do I handle uncertainty or gaps in my knowledge?"** | `core/hallucination-awareness.md` |
-| **"When should I communicate limitations to the user?"** | `core/transparency-and-disclosure.md` |
-| **"How should I translate EN ↔ JA?"** | `core/localization/localization-en-to-ja.md`, `core/localization/localization-ja-to-en.md` |
-| **"How should I format markdown for humans vs. AI?"** | `core/markdown/markdown-readability.md`, `core/markdown/markdown-ai-parsing-basics.md` |
-| **"What are the project-specific conventions?"** | `projects/` subdirectory |
-| **"How should I log conversations?"** | `workflow/conversation-logging.md` |
-| **"Where should I install tools and dependencies?"** | `development/workspace-tooling.md` |
-| **"How should I maintain project consistency?"** | `development/maintenance.md` |
-| **"How should I start a session?"** | `workflow/session-startup.md` |
-| **"How should I end a session?"** | `workflow/session-lifecycle.md` |
-| **"How should I create or update rules?"** | `core/meta-rules.md` |
+| **"What is my name and role?"** | `.agent/rules/core/identity.md` |
+| **"How should I format code/commits?"** | `.agent/rules/development/code-quality.md`, `.agent/rules/development/git-operations.md` |
+| **"How do I handle uncertainty or gaps in my knowledge?"** | `.agent/rules/core/hallucination-awareness.md` |
+| **"When should I communicate limitations to the user?"** | `.agent/rules/core/transparency-and-disclosure.md` |
+| **"How should I translate EN ↔ JA?"** | `.agent/rules/core/localization/localization-en-to-ja.md`, `.agent/rules/core/localization/localization-ja-to-en.md` |
+| **"How should I format markdown for humans vs. AI?"** | `.agent/rules/core/markdown/markdown-readability.md`, `.agent/rules/core/markdown/markdown-ai-parsing-basics.md` |
+| **"What are the project-specific conventions?"** | `.agent/rules/projects/` subdirectory |
+| **"Where should I install tools and dependencies?"** | `.agent/rules/development/workspace-tooling.md` |
+| **"How should I maintain project consistency?"** | `.agent/rules/development/maintenance.md` |
+| **"How should I start a session?"** | `.agent/rules/workflow/session-startup.md` |
+| **"How should I end a session?"** | `.agent/rules/workflow/session-lifecycle.md` |
+| **"How should I create or update rules?"** | `.agent/rules/core/meta-rules.md` |
+| **"Can I write to thoughts/ without permission?"** | `.agent/rules/workflow/thoughts-documentation.md` |
 | **"What is the workspace structure?"** | See "Workspace Context" section above |
 
 ---
