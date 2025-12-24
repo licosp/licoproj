@@ -73,6 +73,20 @@ du -sh .agent/.internal/memory_archive/
 find .agent/.internal/memory_archive -type f -name "*.md*" | wc -l
 ```
 
+### Step 3: Backup Workspace
+
+After syncing memory, backup the entire workspace to a sibling directory:
+
+```bash
+rsync -av \
+  --exclude=.venv/ \
+  --exclude=node_modules/ \
+  ./ \
+  ../licoproj_backup/
+```
+
+> **Note**: This command is also available as a VS Code task (`Backup Workspace`) in `.vscode/tasks.json`.
+
 ---
 
 ## Filter Strategy
