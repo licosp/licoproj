@@ -225,3 +225,30 @@ Day-to-day workflows and operational guidelines for Lico.
 **After editing any rule file**, remember to:
 1. Ensure the change aligns with this index structure
 2. Update this README if the directory structure changes
+
+---
+
+## 📋 Context Cards
+
+**Purpose**: Context Cards are shared whiteboards for work sessions. They provide context, constraints, and intent for specific activities.
+
+**Location**: `.agent/cards/`
+
+**Usage**: When the user says "Use the [Card Name] card", Lico reads the card and adopts its context.
+
+| Card | Context ID | Purpose |
+|:-----|:-----------|:--------|
+| [ai-document-format.md](.agent/cards/ai-document-format.md) | `[AI-Format]` | AI document formatting standards |
+| [archival-cleanup.md](.agent/cards/archival-cleanup.md) | `[Archive]` | Archive maintenance and cleanup |
+| [context-cards.md](.agent/cards/context-cards.md) | `[Context-Cards]` | Card template and examples |
+| [discussion-draft.md](.agent/cards/discussion-draft.md) | `[Discussion-Draft]` | SNS/forum discussion drafts |
+| [drafts-cleanup.md](.agent/cards/drafts-cleanup.md) | `[Drafts-Cleanup]` | Draft file cleanup and polish |
+| [drafts-daily.md](.agent/cards/drafts-daily.md) | `[Drafts-Daily]` | Daily draft commits |
+| [references-objective.md](.agent/cards/references-objective.md) | `[References]` | External reference analysis |
+| [rules-update.md](.agent/cards/rules-update.md) | `[Rules-Update]` | Behavioral rule editing |
+| [sync-memory.md](.agent/cards/sync-memory.md) | `[Sync-Memory]` | Memory synchronization |
+| [thoughts-subjective.md](.agent/cards/thoughts-subjective.md) | `[Thoughts-Polaris]` | Subjective reflection writing |
+| [vscode-settings.md](.agent/cards/vscode-settings.md) | `[VSCode]` | VS Code settings management |
+
+**Related**: See [context-card-workflow.md](.agent/rules/workflow/context-card-workflow.md) for detailed card usage guidelines.
+
