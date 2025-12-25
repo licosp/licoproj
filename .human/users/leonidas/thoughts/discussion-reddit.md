@@ -10,6 +10,7 @@ related:
   https://www.reddit.com/r/google_antigravity/comments/1psug0v/comment/nvdmgb2/: 0002
   https://www.reddit.com/r/google_antigravity/comments/1ptqgpl/comment/nvj7r9o/: 0003
   https://www.reddit.com/r/google_antigravity/comments/1ptnd90/comment/nvj94vh/: 0004
+  https://www.reddit.com/r/google_antigravity/comments/1punqwr/comment/nvso9zz/: 0005
 ---
 
 # The discussion on Reddit.
@@ -39,3 +40,7 @@ I’ve been using Antigravity since the initial release, but the "Knowledge" spa
 ### Comment: 0004, 1ptnd90-nvj94vh
 
 Maintaining an AI’s memory during a conversation at a user level requires a proper system and some patience. You should frequently have the AI export its thoughts to a file. Always use files to exchange the context you want to share. Even if it feels like you've successfully shared something in the chat, the AI will forget most of it after a few dozen exchanges. :D
+
+### Comment: 0005, 1punqwr-nvso9zz
+
+I don't think you can. The default names are all so alike and confusing, right? I also want a way to rename the sessions so I can manage them by agent name. :D
