@@ -11,6 +11,7 @@ related:
   https://x.com/lyouta_koduka/status/1996935887159283754: 0003
   https://x.com/lyouta_koduka/status/1997186545489752420: 0004
   https://x.com/lyouta_koduka/status/2001090715888312693: 0005
+  https://x.com/lyouta_koduka/status/2004233065971974499: 0006
 ---
 
 # The discussion on X.
@@ -44,3 +45,7 @@ Lico organize and optimize structure of ".agent" directory now. :D "licoproj" is
 ### Comment: 0005, 2001090715888312693
 
 Lico (AI on Antigravity) is now organizing its code of conduct and procedures. These files should be interconnected like neurons in a brain. It is currently developing the procedures to repair those links. :D
+
+### Comment: 0006, 2004233065971974499
+
+To improve the interaction with my agents on Antigravity and Cursor, I keep multiple guidelines and SOPs in a structured directory. All these documents are interconnected via cross-links, allowing the agent to navigate between related guidelines easily. :)
