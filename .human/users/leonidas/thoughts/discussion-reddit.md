@@ -12,6 +12,8 @@ related:
   https://www.reddit.com/r/google_antigravity/comments/1ptnd90/comment/nvj94vh/: 0004
   https://www.reddit.com/r/google_antigravity/comments/1punqwr/comment/nvso9zz/: 0005
   https://www.reddit.com/r/google_antigravity/comments/1pv6nyc/comment/nvvrwe6/: 0006
+  https://www.reddit.com/r/google_antigravity/comments/1pvs6g4/comment/nvyoi4c/: 0007
+  https://www.reddit.com/r/google_antigravity/comments/1pw6qcf/comment/nw29lbt/: 0008
 ---
 
 # The discussion on Reddit.
@@ -49,3 +51,29 @@ I don't think you can. The default names are all so alike and confusing, right? 
 ### Comment: 0006, 1pv6nyc-nvvrwe6
 
 I recently conducted an experiment to see how long a single session could last. The session reached about 20,000 lines in the chat log. However, I found that the UI only displays around 12,000 to 15,000 lines. There might be a difference depending on the user's environment. Finally, it took about a 30-second wait to reload the session. :)
+
+### Comment: 0007, 1pvs6g4-nvyoi4c
+
+I believe that providing the AI with only the optimal context to keep it focused is one of the current best practices for AI interaction.
+
+On the other hand, I am exploring ways to maintain long-term sessions with a single, AI (generalist). One of the challenges I face is sharing information with parallel AI instances. And handing over context to the next session.
+
+(I’m not sure if this will be helpful for you, but...) My approach eventually settled on a file-based system.
+
+I prepare a structured directory with interconnected guidelines and SOPs. Within that structure, I have the AI list the necessary files and create a dedicated file for information sharing.
+
+For switching contexts, I use a very similar 'whiteboard' file.
+
+The workflow goes like this. I have the AI create a template, I edit it, the AI recognizes the changes and appends its understanding to the file, I verify it, and finally, the work begins.
+
+I’m still not sure if this method is something AI can handle directly with other AI agents without a human. :|
+
+### Comment: 0008, 1pw6qcf-nw29lbt
+
+I understand why service providers like Google want to monopolize the integrated AI development experience within their IDEs.
+
+However, I choose to treat the IDE and the AI agent platform as two completely separate entities. Currently, my main development environment is a combination of Antigravity and VS Code. :)
+
+One reason for this is that I want to prevent issues caused by the AI agent platform from affecting the editor side. In fact, Antigravity offers many highly innovative features, but it can be quite heavy, can't it?
+
+Another reason is that it’s not easy to switch editors, mainly due to the mature ecosystems that have been built around them over the years.
