@@ -252,3 +252,18 @@ references/
 - At the start of any file reorganization work
 - When working with unfamiliar directory structures
 - Before bulk `git add` operations
+
+**Always include workspace**:
+
+`.agent/.internal/workspace/` should **always** be recorded in tree structure, regardless of the card context. This directory is used across all work and may contain untracked files from manual additions.
+
+```markdown
+### 作業場の構造
+
+workspace/
+├── file-reorganization-plan.md  ← 今回の作業
+├── communal-wisdom-curation.md  ← 手動追加（別作業）
+└── polaris-conversation-begin.md ← 手動追加（別作業）
+```
+
+This prevents accidentally including unrelated files when using `git add workspace/`.
