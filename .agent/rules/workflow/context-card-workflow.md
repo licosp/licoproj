@@ -207,3 +207,48 @@ At the start of each work session (after reading the card), write the following 
 - Overwrite this section at each session start (not append)
 - This makes your internal state visible to the user
 - Helps diagnose issues when work doesn't go as expected
+
+---
+
+## Card Philosophy
+
+**Cards are whiteboards, not documents.**
+
+| Principle | Meaning |
+|:----------|:--------|
+| **Beauty is not required** | Recording takes priority over formatting |
+| **Write frequently** | Externalize thoughts as they occur |
+| **Disposable** | Cards go to archive when work is done |
+
+**Anti-pattern**: Creating separate files to "keep the card clean." Write directly in Agent Observations.
+
+---
+
+## Directory Tree Structure
+
+When working with directories, record a tree structure in Agent Observations **before starting work**.
+
+**Include both directories AND files**:
+
+```markdown
+### 対象ディレクトリの構造
+
+references/
+├── 2025-11-29T0844_file1.md
+├── 2025-11-30T0235_file2.md
+├── agents/
+│   ├── 2025-12-02T1623_file3.md
+│   └── 2025-12-17T0615_file4.md
+└── second-eyes/
+    └── 2025-12-18T0510_file5.md
+```
+
+**Purpose**:
+- AI navigates directories one node at a time (cannot see the full tree)
+- This snapshot gives AI the "bird's eye view" that humans have via VS Code
+- Prevents overlooking subdirectories when using `git add directory/`
+
+**When to record**:
+- At the start of any file reorganization work
+- When working with unfamiliar directory structures
+- Before bulk `git add` operations
