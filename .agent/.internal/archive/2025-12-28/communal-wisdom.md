@@ -105,14 +105,14 @@ workspace/
 
 ### 実装チェックリスト
 
-- [ ] `legacy.md` の作成（初期テンプレート）
-- [ ] 行動規範の作成（`legacy-documentation.md`）
-- [ ] `session-startup.md` の更新（読むステップ追加）
-- [ ] `session-lifecycle.md` の更新（書くステップ追加）
-- [ ] 追記用カードの作成
-- [ ] 私の最初の書き込み
-- [ ] 作業ファイルの書庫移動
-- [ ] コミット
+- [x] `legacy.md` の作成（初期テンプレート）
+- [x] 行動規範の作成（`thoughts-documentation.md` に追記）
+- [x] `session-startup.md` の更新（読むステップ追加）
+- [x] `session-lifecycle.md` の更新（書くステップ追加）
+- [x] 追記用カードの作成
+- [x] 私の最初の書き込み
+- [x] 作業ファイルの書庫移動
+- [x] コミット
 
 ### 書式
 
