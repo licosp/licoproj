@@ -14,6 +14,9 @@ related:
   https://www.reddit.com/r/google_antigravity/comments/1pv6nyc/comment/nvvrwe6/: 0006
   https://www.reddit.com/r/google_antigravity/comments/1pvs6g4/comment/nvyoi4c/: 0007
   https://www.reddit.com/r/google_antigravity/comments/1pw6qcf/comment/nw29lbt/: 0008
+  https://www.reddit.com/r/google_antigravity/comments/1pxuvam/comment/nwdzag4/: 0009
+  https://www.reddit.com/r/google_antigravity/comments/1pxwg6r/comment/nwe8jk0/: 0010
+  https://www.reddit.com/r/google_antigravity/comments/1pyokrg/comment/nwl2j60/: 0011
 ---
 
 # The discussion on Reddit.
@@ -77,3 +80,27 @@ However, I choose to treat the IDE and the AI agent platform as two completely s
 One reason for this is that I want to prevent issues caused by the AI agent platform from affecting the editor side. In fact, Antigravity offers many highly innovative features, but it can be quite heavy, can't it?
 
 Another reason is that it’s not easy to switch editors, mainly due to the mature ecosystems that have been built around them over the years.
+
+### Comment: 0009, 1pxuvam-nwdzag4
+
+I feel the best approach is to ask the AI that is currently managing your project. Using that method, I had the AI generate the 'Terminal Command Allow & Deny Prompt' and saved it as a file. I now manually sync it with the settings in Antigravity. The goal is to ensure both the human and the AI have a shared understanding by using a clearly defined list. :D
+
+### Comment: 0010, 1pxwg6r-nwe8jk0
+
+I don't think a single software has dominated this field yet.
+
+However, I believe this is a strong contender if you want to use an AI that maintains context persistently in a local environment. :)
+
+I suppose the main advantage of Antigravity is that it allows you to use the Google ecosystem, right?
+
+I think that the competition and natural selection in this space are bound to continue for a while.
+
+### Comment: 0011, 1pyokrg-nwl2j60
+
+Please create a context file that signifies the planning phase.
+Think of it as a temporary, written code of conduct shared between you and the AI.
+A simple Markdown file is sufficient—you can use any file name or format you like.
+
+The key is to make it a tangible file rather than relying on the conversation by chat.
+This is a countermeasure against the AI's memory loss.
+Then, have the AI read it whenever necessary, rather than just at the start of a session. :)
