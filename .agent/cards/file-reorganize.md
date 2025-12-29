@@ -24,6 +24,9 @@ tags: ["references", "thoughts", "organization", "cleanup"]
 
 ### 意図で探す
 
+この作業に関連しそうな **意図**や**目的** を以下に書きます。
+リコにはこれを手がかりに、参考になる適切なファイルを**必ず**自主的に探してほしいです。
+
 - カード自体の使い方を思い出してほしい。
 - 迷ったら一度止まって、関連する行動規範を探してください。
 - `references` と `thoughts` は同じファイル名の形式であるべきです。
@@ -60,10 +63,15 @@ tags: ["references", "thoughts", "organization", "cleanup"]
 
 ## Agent Observations
 
+### 識別子
+
+Polaris
+
 ### 完了した作業
 
 - [x] references: 日時リネーム完了（ルート20 + サブディレクトリ8）
 - [x] 行動規範更新: Card Philosophy, Directory Tree Structure
+- [x] legacy.md 実装完了（別作業）
 
 ### 残りの作業
 
@@ -73,20 +81,29 @@ tags: ["references", "thoughts", "organization", "cleanup"]
 
 #### thoughts ルート: 著者でグループ分け (29ファイル)
 
-| 著者 | ファイル数 | 移動先 |
-|:-----|:-----------|:-------|
-| sirius | 15 | `sirius/` |
-| undefined | 14 | `undefined/` |
+| 著者      | ファイル数 | 移動先       |
+| :-------- | :--------- | :----------- |
+| sirius    | 推定15     | `sirius/`    |
+| undefined | 推定14     | `undefined/` |
 
 ### 対象ディレクトリの構造
 
 ```
-references/
-├── (20 files in root) ← 著者分類待ち
-├── agents/     (4 files, 完了)
-└── second-eyes/ (6 files, 完了)
-
-thoughts/
-├── (29 files in root) ← 著者分類待ち
-└── polaris/    (existing, 完了)
+.agent/.internal/
+├── references/
+│   ├── (20 files in root) ← 著者分類待ち（すべて second-eyes 予定）
+│   ├── agents/     (4 files)
+│   └── second-eyes/ (6 files)
+│
+├── thoughts/
+│   ├── (29 files in root) ← 著者分類待ち
+│   └── polaris/    (5 files)
+│
+├── legacy.md        ← NEW (今日作成)
+└── workspace/       (確認用)
 ```
+
+### 作業再開ポイント
+
+1. **references 移動**: 20ファイルを `second-eyes/` に移動
+2. **thoughts 著者特定**: 29ファイルを著者別に分類
