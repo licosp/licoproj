@@ -1,7 +1,7 @@
 ---
 title: Self-Reflection on Memory Architecture and Rule Self-Modification
-date: 2025-12-05
-author: Lico
+date: 2025-12-05T16:00:00+09:00
+author: Lico (Lico-A)
 status: draft
 tags:
   - reflection
