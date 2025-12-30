@@ -20,24 +20,15 @@ tags: ["drafts", "sns", "discussion", "human-facing"]
 リコにはこれを手がかりに、参考になる適切なファイルを**必ず**自主的に探してほしいです。
 
 - カード自体の使い方を思い出してほしい。
+- 作業で必要なディレクトリやテンプレートが存在します。
 - 未コミットのファイルから、このカード対象になるものを探してください。
+- **AI用の質問や指示のための下書きファイル**とは関係ありません。
 - コミットをする際は、IDDのフェーズを意識してください。
 
 ### 作業の注意点
 
 これらは私が手動で編集する文書なので、
 リコの記憶にない形で更新された可能性が高いです。
-
-また「下書き」という文脈ですが、
-下記のような「AI用の質問や指示のための下書きファイル」とは関係ありません。
-
-- `.agent/cards/drafts-daily.md`
-- `.agent/cards/drafts-cleanup.md`
-
-### 使ってほしい道具
-
-- `.agent/templates/header-frontmatter.yaml`
-- `.agent/templates/commit-message.txt`
 
 ## Agent Observations
 
