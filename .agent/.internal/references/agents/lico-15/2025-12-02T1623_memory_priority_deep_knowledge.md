@@ -3,8 +3,8 @@ ai_visible: true
 description: Critical knowledge that is important but easily forgotten or requires deep thinking to recall
 version: 1.0
 language: en
-author: Lico (Sirius)
-ai_model: Gemini 3 Pro (High) Planning mode
+author: Lico (Lico 15)
+ai_model: Claude 4.5 Sonnet
 ---
 
 # Memory Priority: Deep Knowledge Repository
