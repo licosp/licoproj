@@ -1,12 +1,13 @@
 ---
 ai_visible: true
+title: "Intermediate Report: 2025-12-09 Afternoon Session"
 description: Session report covering startup protocol, cross-linking, and model-independent design
 version: 1.0
 created: 2025-12-09T17:55:00+09:00
 updated: 2025-12-09T22:29:00+09:00
 language: en
-name: Lico
-model: Antigravity
+author: Lico (Lico-D)
+ai_model: Antigravity
 category: intermediate_report
 session_id: 2025-12-09-afternoon
 ---

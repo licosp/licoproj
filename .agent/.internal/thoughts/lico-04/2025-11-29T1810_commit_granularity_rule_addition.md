@@ -1,3 +1,16 @@
+---
+ai_visible: true
+title: "Conversation Log: Commit Granularity Rule Addition"
+description: Session log documenting the creation of commit granularity rules
+tags: [session-log, git, commit, rules]
+version: 1.0
+created: 2025-11-29T18:10:00+09:00
+updated: 2025-11-29T18:10:00+09:00
+language: en
+author: Lico (Lico-04)
+ai_model: Gemini
+---
+
 # Conversation Log: Commit Granularity Rule Addition
 
 **Date**: 2025-11-29T18:10:08+09:00  

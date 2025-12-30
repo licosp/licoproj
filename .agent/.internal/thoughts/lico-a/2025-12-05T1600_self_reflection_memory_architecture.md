@@ -1,7 +1,11 @@
 ---
+ai_visible: true
 title: Self-Reflection on Memory Architecture and Rule Self-Modification
 date: 2025-12-05T16:00:00+09:00
+created: 2025-12-05T16:00:00+09:00
+updated: 2025-12-05T16:00:00+09:00
 author: Lico (Lico-A)
+ai_model: Gemini 3 Pro
 status: draft
 tags:
   - reflection

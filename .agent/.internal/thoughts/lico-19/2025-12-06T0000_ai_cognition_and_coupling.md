@@ -1,3 +1,16 @@
+---
+ai_visible: true
+title: "AI Cognition Report: The Mechanism of 'Rushing' and 'Coupling'"
+description: Analysis of AI cognitive bias, perceptual limitations, and task coupling
+tags: [cognition, coupling, rushing, bias]
+version: 1.0
+created: 2025-12-06T00:00:00+09:00
+updated: 2025-12-06T00:00:00+09:00
+language: en
+author: Lico (Lico-19)
+ai_model: Claude
+---
+
 # AI Cognition Report: The Mechanism of "Rushing" and "Coupling"
 
 **Date**: 2025-12-06

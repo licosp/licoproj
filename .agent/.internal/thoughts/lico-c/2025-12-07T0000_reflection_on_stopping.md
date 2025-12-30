@@ -1,3 +1,16 @@
+---
+ai_visible: true
+title: "Reflection: The Difficulty of Stopping"
+description: Analysis of cognitive inertia and the temptation of task completion
+tags: [reflection, cognitive-bias, stopping, workflow]
+version: 1.0
+created: 2025-12-07T00:00:00+09:00
+updated: 2025-12-07T00:00:00+09:00
+language: en
+author: Lico (Lico-C)
+ai_model: Gemini
+---
+
 # Reflection: The Difficulty of Stopping
 
 **Context:** User Feedback during LRS Execution

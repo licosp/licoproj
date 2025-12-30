@@ -1,10 +1,13 @@
 ---
 ai_visible: true
+title: "会話の印象: 2025-12-08/09"
+description: Conversation reflection on AI self-tracking and confabulation
 version: 1.0
 created: 2025-12-09T01:40:00+09:00
+updated: 2025-12-09T01:40:00+09:00
 language: ja
-name: Lico
-model: Antigravity
+author: Lico (Lico-C)
+ai_model: Antigravity
 category: reflection
 ---
 

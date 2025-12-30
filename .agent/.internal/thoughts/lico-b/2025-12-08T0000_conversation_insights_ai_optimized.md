@@ -1,12 +1,13 @@
-
 ---
 ai_visible: true
+title: "Conversation Insights: AI Self-Tracking Problems and Solutions"
+description: Analysis of AI self-tracking limitations in the Repository as Brain model
 version: 1.0
 created: 2025-12-08T23:00:00+09:00
 updated: 2025-12-08T23:00:00+09:00
 language: en
-name: Lico
-model: Grok
+author: Lico (Lico-B)
+ai_model: Grok
 category: self-reflection
 priority: high
 priority_score: 9.5

@@ -1,8 +1,14 @@
 ---
+ai_visible: true
 type: session-summary
 date: 2025-12-02
 topic: IDD Workflow Refinement & AI Philosophy
 participants: [leonidas, lico]
+created: 2025-12-02T00:00:00+09:00
+updated: 2025-12-02T00:00:00+09:00
+language: en
+author: Lico (Lico-14)
+ai_model: Claude 3.5 Sonnet
 ---
 
 # Session Summary: IDD Refinement & AI Philosophy

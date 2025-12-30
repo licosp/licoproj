@@ -1,12 +1,13 @@
 ---
 ai_visible: true
+title: "Session Report: 2025-12-10 Night Session"
 description: Second session report covering directory structure, frontmatter standards, and delay tolerance principle
 version: 1.0
 created: 2025-12-10T01:35:00+09:00
 updated: 2025-12-10T01:35:00+09:00
 language: en
-name: Lico
-model: Antigravity
+author: Lico (Lico-D)
+ai_model: Antigravity
 category: session_report
 ---
 

@@ -1,4 +1,5 @@
 ---
+ai_visible: true
 id: emergency-thinking-2025-11-30
 title: Emergency Thinking & Behavior Summary (Commit Failure)
 created: 2025-11-30T23:09:44+09:00
@@ -6,6 +7,9 @@ updated: 2025-11-30T23:25:10+09:00
 status: reference
 category: emergency
 tags: [commit-failure, high-load, self-evaluation, constraint-violation]
+language: en
+author: Lico (Lico-10)
+ai_model: Gemini
 ---
 
 # Emergency Thinking & Behavior Summary (Commit Failure)
