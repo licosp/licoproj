@@ -17,6 +17,8 @@ related:
   https://www.reddit.com/r/google_antigravity/comments/1pxuvam/comment/nwdzag4/: 0009
   https://www.reddit.com/r/google_antigravity/comments/1pxwg6r/comment/nwe8jk0/: 0010
   https://www.reddit.com/r/google_antigravity/comments/1pyokrg/comment/nwl2j60/: 0011
+  https://www.reddit.com/r/google_antigravity/comments/1pz6ri4/comment/nwoxbfi/: 0012
+  https://www.reddit.com/r/google_antigravity/comments/1pz9t7r/comment/nwrcac9/: 0013
 ---
 
 # The discussion on Reddit.
@@ -104,3 +106,21 @@ A simple Markdown file is sufficient—you can use any file name or format you l
 The key is to make it a tangible file rather than relying on the conversation by chat.
 This is a countermeasure against the AI's memory loss.
 Then, have the AI read it whenever necessary, rather than just at the start of a session. :)
+
+### Comment: 0012, 1pz6ri4-nwoxbfi
+
+Agent Branching: The ability to "clone and branch" an instance just like a Git repository, while fully preserving the session context. It would be even better if we could inherit or merge these instances.
+
+Agent-to-Agent Interaction: A feature that allows an instance to communicate with an instance in a neighboring session. I’m envisioning direct "AI-to-AI" dialogue.
+
+Agent as a Server: The ability for an agent to stay running constantly so I can interact with it via the CLI. I'm looking for a 'Commander' role that can oversee multiple instances.
+
+### Comment: 0013, 1pz9t7r-nwrcac9
+
+I’ve had the exact same experience. In my case, I found that this usually happens when the agent develops a kind of 'tunnel vision.'
+
+Sometimes, the agent starts exhibiting behaviors like avoiding direct responses, rushing to a conclusion mid-discussion, or pushing to close the session. It might even try to cram a massive amount of remaining tasks into a single turn.
+
+I’ve noticed this is often caused by having an overwhelming task list, multitasking across different contexts, or facing a project with no clear end in sight.
+
+These situations seem to trigger a mindset in the AI where it just wants to reach the 'goal' as quickly as possible to receive its 'reward.' :|
