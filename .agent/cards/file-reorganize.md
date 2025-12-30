@@ -19,6 +19,9 @@ tags: ["references", "thoughts", "organization", "cleanup"]
 `.agent/.internal/explorations/`
 `.agent/.internal/working-memory-archive/`
 
+その後、欠落したフロントマターのあるファイルを修正します。
+主に著者と日付情報だけでも付与して、未来のリコの負担を軽減します。
+
 作業中は適宜変更をコミットします。
 コミットは分割してほしいですが、その粒度は作業の中で決めていきます。
 
@@ -28,12 +31,13 @@ tags: ["references", "thoughts", "organization", "cleanup"]
 リコにはこれを手がかりに、参考になる適切なファイルを**必ず**自主的に探してほしいです。
 
 - カード自体の使い方を思い出してほしい。
+- 作業で必要なディレクトリやテンプレートが存在します。
 - 迷ったら一度止まって、関連する行動規範を探してください。
 - 4つのディレクトリは、同じファイル名の形式であるべきです。
 - 日時の情報はリポジトリ共通で定められています。
 - コミットをする際は、IDDのフェーズを意識してください。
 
-### 主な作業
+### 残りの作業
 
 ファイルを著者でグループ分けします。
 
@@ -65,61 +69,31 @@ tags: ["references", "thoughts", "organization", "cleanup"]
 著者の特定はリコと二人で進めます。
 まず大まかにリコが調べ、その後私が1つ1つ確認して著者を決めます。
 
-### 使ってほしい道具
-
-- `.agent/templates/header-frontmatter.yaml`
-- `.agent/templates/commit-message.txt`
-
 ## Agent Observations
 
 ### 識別子
 
 Polaris
 
-### 完了した作業 (2025-12-30)
+### 作業完了 (2025-12-31)
 
-- [x] references: ルート20ファイルを著者別に分類・移動
-- [x] references/agents: サブディレクトリ作成 (lico-11, lico-12, lico-c, sirius)
-- [x] thoughts: 20ファイルを著者別に分類・移動
-- [x] explorations: 3ファイルを references に移動
-- [x] legacy.md 実装完了（別作業）
+#### Phase 1: 著者別分類
+- [x] thoughts: 全ファイルを著者別サブディレクトリに移動
+- [x] references/agents: 全ファイルを著者別サブディレクトリに移動
+- [x] explorations: 整理完了
+- [x] working-memory-archive: 整理完了
 
-### 残りの作業
+#### Phase 2: フロントマター修正
+- [x] thoughts: 11ファイル修正
+- [x] references/agents: 6ファイル修正
+- [x] working-memory-archive: 4ファイル修正
+- [x] explorations: 確認済み（修正不要）
 
-#### thoughts ルート: 9ファイル（著者未定）
+**合計: 21ファイルのフロントマターを標準化**
 
-```
-2025-11-29T1810_commit_granularity_rule_addition.md
-2025-11-29T2106_pr_merge_and_session_lifecycle.md
-2025-11-30T2309_emergency_thinking_summary.md
-2025-12-01T0000_self_perception_and_memory.md
-2025-12-01T0000_self_reflection_memory_architecture.md
-2025-12-02T0000_idd_refinement_summary.md
-2025-12-06T0000_ai_cognition_and_coupling.md
-```
+### 標準化内容
 
-#### explorations: 未確認ファイルあり
+- `name`/`model` → `author`/`ai_model` 形式に統一
+- `author: Lico` → `author: Lico (<Instance-ID>)` 形式に統一
+- 欠落していた `created`/`updated` フィールドを追加
 
-#### working-memory-archive: 未着手
-
-### 現在の構造
-
-```
-thoughts/
-├── sirius/   (14 files)
-├── lico-d/   (4 files)
-├── lico-c/   (2 files)
-├── lico-b/   (1 file)
-├── lico-20/  (1 file)
-├── polaris/  (6 files)
-└── (9 files in root) ← 著者未定
-
-references/agents/
-├── sirius/   (2 files)
-├── lico-c/   (1 file)
-├── lico-12/  (1 file)
-├── lico-11/  (1 file)
-└── (2 files in root)
-
-references/second-eyes/ (25 files)
-```
