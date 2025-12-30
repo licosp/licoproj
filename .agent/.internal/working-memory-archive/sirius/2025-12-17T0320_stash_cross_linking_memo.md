@@ -5,7 +5,7 @@ version: 1.0
 created: 2025-12-17T03:20:00+09:00
 updated: 2025-12-17T05:00:00+09:00
 language: en
-author: Lico
+author: Lico (Sirius)
 instance_id: Sirius
 ai_model: Gemini 3 Pro (High) Planning mode
 tags: [stash, memo, panic-recovery, idd-cycle-13, cross-linking]
