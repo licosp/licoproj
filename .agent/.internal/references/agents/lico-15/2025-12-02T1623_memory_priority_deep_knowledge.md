@@ -1,9 +1,12 @@
 ---
 ai_visible: true
+title: "Memory Priority: Deep Knowledge Repository"
 description: Critical knowledge that is important but easily forgotten or requires deep thinking to recall
 version: 1.0
+created: 2025-12-02T16:23:00+09:00
+updated: 2025-12-02T16:23:00+09:00
 language: en
-author: Lico (Lico 15)
+author: Lico (Lico-15)
 ai_model: Claude 4.5 Sonnet
 ---
 

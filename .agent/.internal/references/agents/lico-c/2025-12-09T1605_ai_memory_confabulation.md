@@ -1,10 +1,13 @@
 ---
 ai_visible: true
+title: AI Memory Confabulation Analysis
+description: Analysis of AI recovery attempts and confabulation patterns
 version: 1.0
 created: 2025-12-09T16:05:00+09:00
+updated: 2025-12-09T16:05:00+09:00
 language: en
-name: Lico
-model: Antigravity
+author: Lico (Lico-C)
+ai_model: Antigravity
 purpose: reference_document
 source: restructured from leonidas handwritten scratchpad
 ---

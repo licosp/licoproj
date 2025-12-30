@@ -1,17 +1,16 @@
 ---
 ai_visible: true
+title: Gemini CLI Integration and AI-to-AI Safety
+description: Analysis of Gemini CLI capabilities, AI-to-AI communication risks, and safety considerations
 version: 1.0
 created: 2025-12-01T22:20:44+09:00
 updated: 2025-12-01T22:20:44+09:00
 language: en
-name: Gemini CLI and AI-to-AI Communication Safety Analysis
-model: Claude 3.5 Sonnet
+author: Lico (Lico-12)
+ai_model: Claude 3.5 Sonnet
 id: gemini-cli-safety-2025-12-01
 status: exploration
 category: AI Safety & Tool Integration
-description: Analysis of Gemini CLI capabilities, AI-to-AI communication risks, and safety considerations for Lico using external AI tools. Includes installation details, past incidents, and future experiment proposals.
-title: Gemini CLI Integration and AI-to-AI Safety
-topic: External AI Tool Safety
 tags: [gemini-cli, ai-safety, prompt-injection, ai-to-ai-communication, sandbox]
 ---
 

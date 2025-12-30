@@ -1,7 +1,10 @@
 ---
+ai_visible: true
 title: IDD‑TBD Integration Discussion
-author: Lico
-date: 2025-12-01T11:57:53+09:00
+author: Lico (Lico-11)
+ai_model: Gemini
+created: 2025-12-01T11:57:53+09:00
+updated: 2025-12-01T11:57:53+09:00
 version: 1.0
 ---
 

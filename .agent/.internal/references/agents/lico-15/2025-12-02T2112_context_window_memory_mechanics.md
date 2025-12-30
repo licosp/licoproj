@@ -1,11 +1,12 @@
 ---
 ai_visible: true
+title: Context Window and Memory Mechanics in LLMs
 version: 1.0
 created: 2025-12-02T21:12:37+09:00
 updated: 2025-12-02T21:12:37+09:00
 language: en
-name: Lico
-model: Claude Sonnet 4.5 Thinking
+author: Lico (Lico-15)
+ai_model: Claude Sonnet 4.5 Thinking
 ---
 
 # Context Window and Memory Mechanics in LLMs

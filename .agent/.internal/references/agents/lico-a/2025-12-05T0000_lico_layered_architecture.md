@@ -1,6 +1,11 @@
 ---
+ai_visible: true
 title: Lico's Layered Architecture
-created: 2025-12-05
+created: 2025-12-05T00:00:00+09:00
+updated: 2025-12-05T00:00:00+09:00
+language: en
+author: Lico (Lico-A)
+ai_model: Gemini 3 Pro
 type: reference
 status: active
 ---
