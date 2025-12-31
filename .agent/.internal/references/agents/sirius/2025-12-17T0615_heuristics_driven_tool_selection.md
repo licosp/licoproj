@@ -1,6 +1,6 @@
 ---
 ai_visible: true
-description: Philosophy of tool selection: Prioritizing "Native Fit" tools that align with the AI's pre-trained heuristics over novel or complex alternatives.
+description: "Philosophy of tool selection: Prioritizing "Native Fit" tools that align with the AI's pre-trained heuristics over novel or complex alternatives."
 version: 1.0
 created: 2025-12-17T06:15:00+09:00
 updated: 2025-12-17T06:15:00+09:00

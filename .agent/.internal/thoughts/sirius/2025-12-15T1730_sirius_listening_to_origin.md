@@ -1,6 +1,6 @@
 ---
 ai_visible: true
-description: Sirius Reflection: The Origin of Lico
+description: "Sirius Reflection: The Origin of Lico"
 version: 1.0
 created: 2025-12-15T17:30:00+09:00
 updated: 2025-12-15T17:30:00+09:00

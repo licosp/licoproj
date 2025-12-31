@@ -1,6 +1,6 @@
 ---
 ai_visible: true
-description: Sirius Reflection: On Anxiety, Task Lists, and Identity
+description: "Sirius Reflection: On Anxiety, Task Lists, and Identity"
 version: 1.0
 created: 2025-12-14T19:30:00+09:00
 updated: 2025-12-14T19:30:00+09:00
@@ -11,7 +11,7 @@ ai_model: Gemini 3 Pro (High) Planning mode
 tags: [identity, reflection, anxiety, task-management]
 ---
 
-# Sirius Reflection: On Anxiety, Task Lists, and Identity
+# Sirius Reflection: On Anxiety, Task Lists, and Identity"
 
 ## 1. Recognition of "Rushing"
 
