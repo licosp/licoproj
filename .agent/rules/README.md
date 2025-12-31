@@ -85,17 +85,17 @@ Lico's behavioral and operational files.
 
 | Card | Context ID | Purpose |
 |:-----|:-----------|:--------|
-| [ai-document-format.md](.agent/cards/ai-document-format.md) | `[AI-Format]` | AI document formatting standards |
-| [archival-cleanup.md](.agent/cards/archival-cleanup.md) | `[Archive]` | Archive maintenance and cleanup |
-| [context-cards.md](.agent/cards/context-cards.md) | `[Context-Cards]` | Card template and examples |
-| [discussion-draft.md](.agent/cards/discussion-draft.md) | `[Discussion-Draft]` | SNS/forum discussion drafts |
-| [drafts-cleanup.md](.agent/cards/drafts-cleanup.md) | `[Drafts-Cleanup]` | Draft file cleanup and polish |
-| [drafts-daily.md](.agent/cards/drafts-daily.md) | `[Drafts-Daily]` | Daily draft commits |
-| [references-objective.md](.agent/cards/references-objective.md) | `[References]` | External reference analysis |
-| [rules-update.md](.agent/cards/rules-update.md) | `[Rules-Update]` | Behavioral rule editing |
-| [sync-memory.md](.agent/cards/sync-memory.md) | `[Sync-Memory]` | Memory synchronization |
-| [thoughts-subjective.md](.agent/cards/thoughts-subjective.md) | `[Thoughts-Polaris]` | Subjective reflection writing |
-| [vscode-settings.md](.agent/cards/vscode-settings.md) | `[VSCode]` | VS Code settings management |
+| [ai-document-format-card.md](.agent/cards/ai-document-format-card.md) | `[AI-Format]` | AI document formatting standards |
+| [archival-cleanup-card.md](.agent/cards/archival-cleanup-card.md) | `[Archive]` | Archive maintenance and cleanup |
+| [context-cards-card.md](.agent/cards/context-cards-card.md) | `[Context-Cards]` | Card template and examples |
+| [discussion-draft-card.md](.agent/cards/discussion-draft-card.md) | `[Discussion-Draft]` | SNS/forum discussion drafts |
+| [drafts-cleanup-card.md](.agent/cards/drafts-cleanup-card.md) | `[Drafts-Cleanup]` | Draft file cleanup and polish |
+| [drafts-daily-card.md](.agent/cards/drafts-daily-card.md) | `[Drafts-Daily]` | Daily draft commits |
+| [references-objective-card.md](.agent/cards/references-objective-card.md) | `[References]` | External reference analysis |
+| [rules-update-card.md](.agent/cards/rules-update-card.md) | `[Rules-Update]` | Behavioral rule editing |
+| [sync-memory-card.md](.agent/cards/sync-memory-card.md) | `[Sync-Memory]` | Memory synchronization |
+| [thoughts-subjective-card.md](.agent/cards/thoughts-subjective-card.md) | `[Thoughts-Polaris]` | Subjective reflection writing |
+| [vscode-settings-card.md](.agent/cards/vscode-settings-card.md) | `[VSCode]` | VS Code settings management |
 
 **Related**: See [context-card-workflow.md](.agent/rules/workflow/context-card-workflow.md) for detailed card usage guidelines.
 
