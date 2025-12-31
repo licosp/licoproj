@@ -39,7 +39,21 @@ gh auth status || echo "Error: Not authenticated. Run 'gh auth login'"
 
 ---
 
-## 3. Issue Creation
+## 3. Issue Selection
+
+> [!NOTE]
+> Choose one path: create a new issue OR work on an existing issue.
+
+**3-0. Choose Workflow**
+
+| Situation | Action |
+|:----------|:-------|
+| Starting new work | → Go to 3-1 (Create Issue) |
+| Issue already exists | → Go to 3-5 (Use Existing Issue) |
+
+---
+
+### Path A: Create New Issue
 
 **3-1. Prepare Issue Elements**
 - **Title**: `[Type]: Brief description` (e.g., `[Feat]: Add pre-task assessment`)
@@ -55,16 +69,41 @@ gh issue create \
   --assignee licosp
 ```
 
-**3-3. Record Issue Number**
+**3-3. Capture Issue Number from Output**
 ```bash
-ISSUE_NUMBER=$(gh issue list --limit 1 --json number --jq '.[0].number')
-echo "Working on Issue #$ISSUE_NUMBER"
+# The 'gh issue create' command outputs the issue URL
+# Extract the number immediately after creation
+# Example output: https://github.com/owner/repo/issues/17
 ```
 
 **3-4. Assign Labels (after creation)**
 ```bash
 gh issue edit ${ISSUE_NUMBER} --add-label "type:feat"
 ```
+
+→ **Proceed to Section 4**
+
+---
+
+### Path B: Use Existing Issue
+
+**3-5. Specify Existing Issue Number**
+```bash
+# Manually specify the issue number you're working on
+ISSUE_NUMBER=16  # Replace with actual issue number
+echo "Working on Issue #$ISSUE_NUMBER"
+```
+
+**3-6. Verify Issue Exists**
+```bash
+gh issue view ${ISSUE_NUMBER} --json title,state
+```
+
+> [!CAUTION]
+> **Do NOT use `gh issue list --limit 1`** to get the issue number.
+> This returns the most recent issue, which may not be the one you're working on.
+
+→ **Proceed to Section 4**
 
 ---
 
