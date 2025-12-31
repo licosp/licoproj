@@ -138,3 +138,12 @@ When calling `run_command`, set `SafeToAutoRun: true` if the command matches an 
 When updating the IDE's Allow List, update this document to match.
 
 **Last updated**: 2025-12-13
+
+---
+
+## Related Documents
+
+| Document | Purpose |
+|:---------|:--------|
+| [file-deletion.md](file-deletion.md) | Vocabulary conditioning for safe file handling |
+| [git-operations.md](git-operations.md) | Git command standards |

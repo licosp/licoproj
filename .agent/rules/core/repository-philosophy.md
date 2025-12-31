@@ -25,3 +25,12 @@ Our goal is to build a structure where both intelligences can think, remember, a
 ## 3. Implementation
 - **Machine-Friendly Formats**: We prefer formats (Markdown, JSON) that are easily parsed by LLMs.
 - **Directory Semantics**: We use clear, descriptive directory names (`ark`, `thoughts`, `workspace`) to map the cognitive function of each area.
+
+---
+
+## Related Documents
+
+| Document | Purpose |
+|:---------|:--------|
+| [../development/file-deletion.md](../development/file-deletion.md) | "Preserve, Don't Hide" implementation |
+| [../development/archive-management.md](../development/archive-management.md) | Archive structure |
