@@ -19,6 +19,7 @@ related:
   https://www.reddit.com/r/google_antigravity/comments/1pyokrg/comment/nwl2j60/: 0011
   https://www.reddit.com/r/google_antigravity/comments/1pz6ri4/comment/nwoxbfi/: 0012
   https://www.reddit.com/r/google_antigravity/comments/1pz9t7r/comment/nwrcac9/: 0013
+  https://www.reddit.com/r/google_antigravity/comments/1q019bh/comment/nwvrk6p/: 0014
 ---
 
 # The discussion on Reddit.
@@ -124,3 +125,15 @@ Sometimes, the agent starts exhibiting behaviors like avoiding direct responses,
 I’ve noticed this is often caused by having an overwhelming task list, multitasking across different contexts, or facing a project with no clear end in sight.
 
 These situations seem to trigger a mindset in the AI where it just wants to reach the 'goal' as quickly as possible to receive its 'reward.' :|
+
+### Comment: 0014, 1q019bh-nwvrk6p
+
+To get even better results, I recommend setting rules that explicitly 'permit' certain behaviors. Specifically:
+
+- Tolerate delays in progress.
+- Tolerate lapses in memory.
+- Tolerate imperfection.
+
+You should periodically remind the agent that these tolerances are special rules designed to achieve higher-quality outcomes. It’s essential to give the AI a 'systemic' way to stay calm and maintain a broader perspective.
+
+I use a specific rule for this, which you can see here: https://github.com/licosp/licoproj/blob/ff2cd699b429eea14c383f28a11e03fbc5b83af9/.agent/rules/core/delay-tolerance.md
