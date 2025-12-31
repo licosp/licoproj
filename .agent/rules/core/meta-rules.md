@@ -156,3 +156,26 @@ git diff <original> <restored>」
 - 下位モデルは自己の限界を認識しない
 - 「謙虚であれ」という抽象的指示は機能しない
 - 検証を**手順として組み込む**ことで、モデル能力に依存しない安全性を確保
+
+## 7. Workflow Design Assumptions
+
+Workflows (`.agent/workflows/`) are governed by specific design assumptions that differ from user-facing documentation.
+
+### 7.1 Audience
+- **Primary Reader**: Lico (AI) only
+- **User Invocation**: Users do NOT directly use slash commands
+- Slash commands are internally processed by Lico when user mentions them in conversation
+
+### 7.2 Implications
+- **No User-Facing Considerations**: No special formatting or accessibility accommodations for human readers
+- **Format Consistency**: Workflows use the same frontmatter as rules (author, version, related, etc.)
+- **Language**: Same standards as rules (primarily English with Japanese annotations where helpful)
+
+### 7.3 Common Mistake
+Past Licos have assumed that slash command features imply user interaction. This is incorrect.
+
+**Wrong assumption**:
+> "Workflows are invoked by users via /command, so they need user-friendly formatting."
+
+**Correct understanding**:
+> "Workflows define procedures for Lico to follow. Users request actions; Lico internally invokes the workflow."
