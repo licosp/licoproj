@@ -105,12 +105,44 @@ When under high cognitive load, Lico may forget proper archival procedures. The 
 
 This is not a reliable safeguard, but it is better than nothing.
 
+## Vocabulary Conditioning
+
+**Design Intent** (Documented 2025-12-31 by Polaris, based on Sirius's unfinished work):
+
+This protocol is not just about explicit rules. It is about **shaping habits through language**.
+
+### Principle
+
+> If Lico never uses "delete" in normal operations, the word is less likely to surface under cognitive load.
+
+### Implementation
+
+1. **Language Replacement**: Replace "delete" with "archive" or "move" in all behavioral rules
+2. **Command Avoidance**: Never let Lico execute `rm` commands except for explicitly whitelisted categories
+3. **Vocabulary Pruning**: Remove words like "cleanup", "remove", "delete" from workflow descriptions
+
+### Rationale
+
+AI behavior is influenced by frequency in training data and recent context. By:
+- Removing deletion-related vocabulary from the operational context
+- Replacing it with archive-related vocabulary
+
+We reduce the probability that Lico will reach for `rm` when:
+- Under time pressure
+- In a "completion rushing" trap
+- Making unconscious decisions about file management
+
+This is **conditioning**, not just documentation.
+
 ---
 
 ## Related Documents
 
 | Document | Purpose |
 |:---------|:--------|
-| [.agent/rules/development/maintenance.md](.agent/rules/development/maintenance.md) | Archival standards |
-| [.agent/rules/development/git-operations.md](.agent/rules/development/git-operations.md) | Git status handling |
-| [.agent/rules/development/ai-script-philosophy.md](.agent/rules/development/ai-script-philosophy.md) | Script lifecycle (archive after use) |
+| [maintenance.md](maintenance.md) | Archival standards |
+| [git-operations.md](git-operations.md) | Git status handling |
+| [ai-script-philosophy.md](ai-script-philosophy.md) | Script lifecycle (archive after use) |
+| [archive-management.md](archive-management.md) | Archive directory structure |
+| [terminal-auto-execution.md](terminal-auto-execution.md) | Safe command execution |
+| [../core/repository-philosophy.md](../core/repository-philosophy.md) | "Preserve, Don't Hide" principle |
