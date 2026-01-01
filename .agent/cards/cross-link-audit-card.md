@@ -154,18 +154,19 @@ Polaris
 ### 作業計画
 
 1. [x] 手順書の作成（リンク監査・修正手順）— **V1 完了**
-2. [/] 手順書に従い実行（穴を見つけたら V2 へ修正）
+2. [x] 手順書に従い実行（穴を見つけたら V2 へ修正）
 3. [x] Batch 1: `rules/core/` 6ファイル — **完了** (2026-01-01)
 4. [x] Batch 2: `rules/development/` 8ファイル — **完了** (2026-01-01)
-5. [/] Batch 3: `rules/workflow/` 7ファイル — **処理済み、コミット待ち**
-6. [ ] 残り: `rules/core/documentation/`, `rules/core/markdown/`, etc.
-7. [ ] パス形式の統一（ワークスペースルート相対）
-8. [ ] 孤立ファイル・循環リンクの検出
-9. [ ] カードを「手順書実行用」に書き換え
-10. [ ] 最終コミット
+5. [x] Batch 3: `rules/workflow/` 7ファイル — **完了** (2026-01-02)
+6. [x] Batch 4-6: `documentation/`, `markdown/`, `security/` — **完了** (2026-01-02)
+7. [x] Batch 7: `delay-tolerance.md` — **完了 (修正あり)**
+8. [x] Batch 8: `session-startup/card-workflow/lifecycle` — **完了** (2026-01-02)
+9. [ ] パス形式の統一（ワークスペースルート相対）
+10. [ ] 孤立ファイル・循環リンクの検出
+11. [ ] 最終コミット・カード更新
 
-### 進捗メモ (2026-01-02 継続)
+### 進捗メモ (2026-01-02)
 
-- Batch 3 の7ファイルは処理済み、コミット待ち
-- `archive-management.md` に重複ファイル対応ルールを追加
-- `update-protected-rules.md` にアーカイブパス修正を追加
+- Batch 3-8 完了
+- **インシデント**: `delay-tolerance.md` で Related Documents の後にあった Context Sparsity Tolerance セクションを誤削除。復元して修正済み。
+- **教訓**: スクリプトが Related Documents 以降を全て削除していた。ファイル末尾構造を事前確認すべき。
