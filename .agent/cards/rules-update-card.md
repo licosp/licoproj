@@ -41,4 +41,11 @@ tags: ["rules", "maintenance", "behavioral"]
 
 ## Agent Observations
 
-- (Space for Lico)
+### 識別子
+
+Polaris
+
+### 作業 (2026-01-02)
+
+- [x] markdown-ai-parsing-basics.md に GitHub Alerts セクションを追加
+

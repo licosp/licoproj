@@ -1,11 +1,11 @@
 ---
 ai_visible: true
 description: Core principles for creating markdown documents optimized for AI parsing, prioritizing semantic clarity and execution reliability.
-version: 1.0
+version: 1.1
 created: 2025-12-11T18:00:00+09:00
-updated: 2025-12-11T18:00:00+09:00
+updated: 2026-01-02T08:11:00+09:00
 language: en
-author: Gemini
+author: Gemini (updated by Polaris)
 ai_model: Gemini 2.5 Flash variant (Fast)
 ---
 
@@ -42,7 +42,7 @@ Maintain consistency within context:
   - Do not mix list markers in the same logical group
   - Indent nested lists with exactly 2 spaces
 
-### 2\. Information Density and Lexical Strictness
+### 2. Information Density and Lexical Strictness
 
 Remove unnecessary whitespace and decoration to reduce cognitive load during parsing. Prioritize concrete, verifiable vocabulary.
 
@@ -65,7 +65,7 @@ Remove unnecessary whitespace and decoration to reduce cognitive load during par
   - **Avoid decorative emojis.** Use only structural emojis if strictly necessary for machine-readable section markers (e.g., ⚠️ warning, ✅ confirmation).
   - **Strictly prohibit** poetic expressions, metaphors, or subjective language that requires interpretation (e.g., "the heart of the system," "a shining future"). Use only literal, technical definitions.
 
-### 3\. YAML Frontmatter Consistency
+### 3. YAML Frontmatter Consistency
 
 Include standardized metadata at document start:
 
@@ -81,15 +81,15 @@ Optional fields:
   - `updated`: ISO 8601 date when last modified
   - `language`: Content language code (e.g., "en", "ja")
 
-### 4\. Link Standardization
+### 4. Link Standardization
 
 Use reference-style links for efficiency:
 
 ```markdown
 This is [a link][ref1] and [another][ref2].
 
-[ref1]: [https://example.com](https://example.com)
-[ref2]: [https://example.org/path](https://example.org/path)
+[ref1]: https://example.com
+[ref2]: https://example.org/path
 ```
 
 Benefits:
@@ -98,7 +98,47 @@ Benefits:
   - Easier to extract and validate
   - Cleaner text for semantic analysis
 
-### 5\. Code Comments and Annotations
+### 5. GitHub Alerts (Callouts)
+
+Use GitHub-flavored alerts to highlight important information. These are semantically clear and easy for AI to parse.
+
+#### Syntax
+
+```markdown
+> [!NOTE]
+> Supplementary information the reader should know.
+
+> [!TIP]
+> Helpful advice for best practices.
+
+> [!IMPORTANT]
+> Key information users must know.
+
+> [!WARNING]
+> Urgent information requiring attention.
+
+> [!CAUTION]
+> Negative potential consequences of an action.
+```
+
+#### Alert Types and Usage
+
+| Type | Purpose | AI Priority |
+|:-----|:--------|:------------|
+| `[!NOTE]` | Supplementary context | Normal |
+| `[!TIP]` | Best practices, recommendations | Normal |
+| `[!IMPORTANT]` | Critical requirements | Elevated |
+| `[!WARNING]` | Issues requiring attention | Elevated |
+| `[!CAUTION]` | Risks or dangerous actions | Highest |
+
+#### Benefits for AI Parsing
+
+- **Explicit label** — `[!TYPE]` pattern is easily detectable
+- **Structured** — Contained within blockquote
+- **Semantic meaning** — Alert type indicates importance level
+- **Prioritization** — AI can elevate attention for WARNING/CAUTION
+
+### 6. Code Comments and Annotations
 
 Use consistent patterns for metadata within code blocks:
 
@@ -117,7 +157,7 @@ Mark important sections with standard prefixes:
   - `# TODO:` for incomplete work
   - `# Deprecated:` for obsolete content
 
-### 6\. Tables and Structured Data
+### 7. Tables and Structured Data
 
 Use strict table formatting:
 
@@ -134,7 +174,7 @@ Rules:
   - One data row per line
   - Escape pipes within cells as `\|`
 
-### 7\. Content Organization Rules
+### 8. Content Organization Rules
 
 #### Single Responsibility
 
@@ -158,7 +198,7 @@ Begin each H2 section with a one-sentence purpose statement:
 This section defines how to structure and maintain configuration files.
 ```
 
-### 8\. Data Structures and Definitions
+### 9. Data Structures and Definitions
 
 #### Lists of Items
 
@@ -181,11 +221,11 @@ Configuration Options:
 
 ---
 
-## Related Documents
+## Origin
 
-| Document | Purpose |
-|:---------|:--------|
-| [markdown-ai-parsing-patterns.md](markdown-ai-parsing-patterns.md) | Specific patterns and anti-patterns |
-| [markdown-readability.md](markdown-readability.md) | Human-readable formatting |
-| [documentation-standards.md](../documentation/documentation-standards.md) | File naming, size, signatures |
-| [language-standards.md](../language-standards.md) | Language selection |
+- 2025-12-11T1800: Created by Gemini
+- 2026-01-02T0811 by Polaris: Added GitHub Alerts section (Section 5), replaced Related Documents with Navigation
+
+---
+
+**Navigation**: [← Back to Rules Index](.agent/rules/README.md)
