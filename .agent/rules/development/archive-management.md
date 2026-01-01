@@ -3,15 +3,16 @@ ai_visible: true
 title: Archive Management
 description: Guidelines for organizing and maintaining archive directories with time-based structure.
 tags: [archive, maintenance, organization, file-management]
-version: 1.1
+version: 1.2
 created: 2025-12-25T03:43:00+09:00
-updated: 2025-12-28T00:35:00+09:00
+updated: 2026-01-01T15:13:00+09:00
 language: en
 author: Lico (Polaris)
 ai_model: Claude Opus 4.5 (Thinking) Planning mode
 related:
   .agent/rules/development/file-deletion.md: Archive vs deletion policy
   .agent/rules/core/cognitive-collaboration.md: AI-Human visibility differences
+  .agent/workflows/update-protected-rules.md: Protected file workaround using temp files
 ---
 
 # Archive Management
@@ -79,6 +80,24 @@ Within each date directory, **attempt to recreate the original directory structu
 - **Small file count per day** — Easy to understand later
 - **Routine-work friendly** — Low cognitive overhead
 
+### Duplicate File Handling
+
+When archiving temp files (e.g., from protected file workaround):
+
+| Situation | Action |
+|:----------|:-------|
+| Simple file move | No duplicate check needed (Best effort) |
+| Complex workflow with many temp files | Check for duplicates before moving |
+| Same workflow run multiple times per day | Add timestamp to filename (`-HHMM`) |
+
+**Detection**:
+```bash
+# Check before moving
+ls .agent/.internal/archive/YYYY-MM-DD/workspace/temp-*.md 2>/dev/null
+```
+
+**Rationale**: Avoid overwriting previous work, but keep routine moves lightweight.
+
 ---
 
 ## 3. Metadata Policy
@@ -132,9 +151,12 @@ Both follow the same rules for consistency.
 
 ---
 
-## Related Documents
+## Origin
 
-| Document | Purpose |
-|:---------|:--------|
-| [file-deletion.md](.agent/rules/development/file-deletion.md) | Archive vs deletion policy |
-| [cognitive-collaboration.md](.agent/rules/core/cognitive-collaboration.md) | AI-Human visibility differences |
+- 2025-12-25T0343: Created as archive management guidelines
+- 2025-12-28T0035 by Polaris: Added date selection rule
+- 2026-01-01T1513 by Polaris: Added duplicate file handling section, replaced Related Documents with Navigation
+
+---
+
+**Navigation**: [← Back to Rules Index](.agent/rules/README.md)

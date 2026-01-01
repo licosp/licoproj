@@ -3,15 +3,16 @@ ai_visible: true
 title: Protected File Update Workaround
 description: Workaround when Antigravity blocks direct edits to protected files
 tags: [workaround, protected, rules, workflow]
-version: 1.1
+version: 1.2
 created: 2025-12-10T00:00:00+09:00
-updated: 2025-12-23T12:05:00+09:00
+updated: 2026-01-01T15:15:00+09:00
 language: en
 author: Lico (Polaris)
 ai_model: Claude Opus 4.5 (Thinking) Planning mode
 related:
   .agent/rules/core/documentation/documentation-standards.md: Documentation standards
   .agent/rules/core/meta-rules.md: Rules for creating rules
+  .agent/rules/development/archive-management.md: Archive organization rules
 ---
 
 # Workaround: Protected File Edits
@@ -55,10 +56,14 @@ Use this workflow **only if** Antigravity reports:
 
 3. Stage and commit the change
 
-4. Archive the temporary file:
+4. Archive the temporary file (use today's date):
    ```bash
-   mv .agent/.internal/workspace/temp-update-*.md .agent/.internal/archive/workspace/
+   mkdir -p .agent/.internal/archive/YYYY-MM-DD/workspace
+   mv .agent/.internal/workspace/temp-update-*.md .agent/.internal/archive/YYYY-MM-DD/workspace/
    ```
+
+   > **Note**: For complex workflows with many temp files, check for duplicates first.
+   > See [archive-management.md](.agent/rules/development/archive-management.md) Section 2.
 
 ### Method B: User Manual Copy (Fallback)
 
@@ -101,9 +106,12 @@ If Method A fails (terminal commands are also blocked):
 
 ---
 
-## Related Documents
+## Origin
 
-| Document | Purpose |
-|:---------|:--------|
-| [.agent/rules/core/documentation/documentation-standards.md](.agent/rules/core/documentation/documentation-standards.md) | Documentation standards |
-| [.agent/rules/core/meta-rules.md](.agent/rules/core/meta-rules.md) | Rules for creating rules |
+- 2025-12-10T0000: Created as protected file workaround
+- 2025-12-23T1205 by Polaris: Documented Method A (terminal bypass)
+- 2026-01-01T1515 by Polaris: Fixed archive path to use date directory, added duplicate check note, replaced Related Documents with Navigation
+
+---
+
+**Navigation**: [← Back to Workflows](.agent/workflows/)
