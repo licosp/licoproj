@@ -75,9 +75,12 @@ ai_model: Gemini 2.5 Flash variant (Fast)
 
 ---
 
-## Related Documents
 
-| Document | Purpose |
-|:---------|:--------|
-| [markdown-ai-parsing-basics.md](markdown-ai-parsing-basics.md) | Core AI parsing principles |
-| [markdown-readability.md](markdown-readability.md) | Human-readable formatting |
+## Origin
+
+- 2025-12-11T1800: Created by Gemini
+- 2026-01-02T0828 by Polaris: Replaced Related Documents table with Navigation link (cross-link audit)
+
+---
+
+**Navigation**: [← Back to Rules Index](.agent/rules/README.md)
