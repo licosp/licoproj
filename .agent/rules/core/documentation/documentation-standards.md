@@ -148,24 +148,12 @@ related:
 
 ---
 
-## Related Documents
-
-| Document                                                                     | Purpose                                  |
-| :--------------------------------------------------------------------------- | :--------------------------------------- |
-| [documentation-process.md](documentation-process.md)                         | Decision framework for splitting/merging |
-| [markdown-ai-parsing-basics.md](../markdown/markdown-ai-parsing-basics.md)   | AI-optimized markdown formatting         |
-| [markdown-readability.md](../markdown/markdown-readability.md)               | Human-readable markdown formatting       |
-| [language-standards.md](../language-standards.md)                            | Language selection rules                 |
-| [meta-rules.md](../meta-rules.md)                                            | Rules for creating rules                 |
-| [auto_frontmatter_on_save.md](../../development/auto_frontmatter_on_save.md) | Automatic frontmatter generation         |
-| [datetime-format.md](datetime-format.md)                                     | Standard datetime formats                |
-| [instance-identifier.md](../instance-identifier.md)                          | Instance Identifier rules                |
-| [header-frontmatter.yaml](../../../templates/header-frontmatter.yaml)        | Frontmatter template                     |
-
----
 
 ## Origin
 
 - 2025-12-01T0000: Created as documentation standards
-- 2025-12-23T1153 by Polaris: Added frontmatter template usage section
-- 2025-12-28T0940 by Polaris: Added Origin section documentation
+- 2026-01-02T0828 by Polaris: Replaced Related Documents table with Navigation link (cross-link audit)
+
+---
+
+**Navigation**: [← Back to Rules Index](.agent/rules/README.md)

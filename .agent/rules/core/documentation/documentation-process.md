@@ -85,10 +85,12 @@ Rewrite documentation with these goals:
 
 ---
 
-## Related Documents
 
-| Document | Purpose |
-|:---------|:--------|
-| [documentation-standards.md](documentation-standards.md) | Naming, size, and signature standards |
-| [markdown-ai-parsing-basics.md](../markdown/markdown-ai-parsing-basics.md) | AI-optimized formatting |
-| [meta-rules.md](../meta-rules.md) | Rules for creating rules |
+## Origin
+
+- 2025-12-01T0000: Created as documentation process
+- 2026-01-02T0828 by Polaris: Replaced Related Documents table with Navigation link (cross-link audit)
+
+---
+
+**Navigation**: [← Back to Rules Index](.agent/rules/README.md)
