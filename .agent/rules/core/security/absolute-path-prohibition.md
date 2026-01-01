@@ -77,10 +77,12 @@ If a full path structure is absolutely necessary for context (e.g., documenting 
 ❌ "Ensure the config is at /home/USER/.config/myapp/settings.json"
 ```
 
-## Related Documents
 
-| Document | Purpose |
-|:---------|:--------|
-| [git-operations.md](../../development/git-operations.md) | Standards including commit practices |
-| [identity.md](../identity.md) | Agent identity and core values |
-| [documentation-standards.md](../documentation/documentation-standards.md) | Documentation rules |
+## Origin
+
+- 2025-12-01T0000: Created as absolute path prohibition rule
+- 2026-01-02T0828 by Polaris: Replaced Related Documents table with Navigation link (cross-link audit)
+
+---
+
+**Navigation**: [← Back to Rules Index](.agent/rules/README.md)
