@@ -56,4 +56,10 @@ tags: ["thoughts", "polaris"]
 
 ## Agent Observations
 
-- (Space for Lico)
+### 識別子
+
+Polaris
+
+### 作業 (2026-01-01)
+
+- [x] Spica の文書を AI 向け書式に修正（英語、ニュアンス維持）
