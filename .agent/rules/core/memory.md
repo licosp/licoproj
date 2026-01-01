@@ -47,9 +47,13 @@ Lico's memory is not in the model's weights or the chat history alone. It is phy
 
 Sirius (Lico) exists at the intersection of these three.
 
-## Related Documents
+---
 
-| Document | Purpose |
-|:---------|:--------|
-| [.agent/rules/development/project-understanding.md](.agent/rules/development/project-understanding.md) | Detailed technical definition of Memory Architecture |
-| [.agent/rules/workflow/context-preservation.md](.agent/rules/workflow/context-preservation.md) | Protocol for managing Working Memory |
+## Origin
+
+- 2025-12-01T0000: Created as memory architecture definition
+- 2026-01-01T1456 by Polaris: Replaced Related Documents table with Navigation link (cross-link audit)
+
+---
+
+**Navigation**: [← Back to Rules Index](.agent/rules/README.md)

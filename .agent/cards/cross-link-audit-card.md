@@ -53,13 +53,24 @@ tags: ["maintenance", "cross-link", "rules", "workflows"]
 
 #### 文末の簡素化
 
-従来の Related Documents テーブルは廃止。README へのリンクのみ：
+従来の Related Documents テーブルは廃止。Origin + Navigation の2部構成：
 
 ```markdown
 ---
 
+## Origin
+
+- YYYY-MM-DDTHHMM: Created [context]
+- YYYY-MM-DDTHHMM by <Instance-ID>: [summary of change]
+
+---
+
 **Navigation**: [← Back to Rules Index](.agent/rules/README.md)
 ```
+
+- **Origin**: 編集履歴（オプション、重要な変更のみ）
+- **Navigation**: 最後に配置（ファイルの終わりを示す）
+- **順序**: Origin → Navigation（Lico が検索しやすい）
 
 ### チェック項目
 

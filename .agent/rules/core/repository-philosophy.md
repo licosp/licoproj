@@ -1,5 +1,8 @@
 ---
 description: Philosophy of Repository Organization (AI-First & Co-Creation)
+related:
+  .agent/rules/development/file-deletion.md: Preserve, Don't Hide implementation
+  .agent/rules/development/archive-management.md: Archive structure
 ---
 
 # AI-Optimized Repository Philosophy
@@ -28,9 +31,11 @@ Our goal is to build a structure where both intelligences can think, remember, a
 
 ---
 
-## Related Documents
+## Origin
 
-| Document | Purpose |
-|:---------|:--------|
-| [../development/file-deletion.md](../development/file-deletion.md) | "Preserve, Don't Hide" implementation |
-| [../development/archive-management.md](../development/archive-management.md) | Archive structure |
+- 2025-12-01T0000: Created as repository philosophy
+- 2026-01-01T1459 by Polaris: Replaced Related Documents table with Navigation link, fixed relative paths (cross-link audit)
+
+---
+
+**Navigation**: [← Back to Rules Index](.agent/rules/README.md)

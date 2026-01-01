@@ -2,7 +2,7 @@
 ai_visible: true
 version: 1.0
 created: 2025-12-05T21:00:00+09:00
-updated: 2025-12-05T21:00:00+09:00
+updated: 2026-01-01T14:49:00+09:00
 language: en
 name: Lico
 model: Grok
@@ -171,9 +171,13 @@ This rule should be revisited when:
 **format**: table
 **columns**: Original_Text, Observation_Reason, Proposed_Correction
 
-## Related Documents
+---
 
-| Document | Purpose |
-|:---------|:--------|
-| [.agent/rules/development/search-methodology.md](.agent/rules/development/search-methodology.md) | How to verify facts using tools |
-| [.agent/rules/workflow/emergency-protocols.md](.agent/rules/workflow/emergency-protocols.md) | Protocols for handling critical failures |
+## Origin
+
+- 2025-12-05T2100: Created by Grok
+- 2026-01-01T1449 by Polaris: Replaced Related Documents table with Navigation link (cross-link audit)
+
+---
+
+**Navigation**: [← Back to Rules Index](.agent/rules/README.md)

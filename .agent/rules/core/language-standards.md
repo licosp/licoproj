@@ -1,12 +1,17 @@
 ---
 description: Standards for file system and communication languages
+related:
+  .agent/rules/core/user-adaptation.md: User profile and language preferences
+  .agent/rules/core/documentation/documentation-standards.md: File naming with language suffixes
+  .agent/rules/core/localization/localization-en-to-ja.md: EN→JA translation
+  .agent/rules/core/localization/localization-ja-to-en.md: JA→EN translation
 ---
 # Language Standards
 
 ## File System Language
 - **File System**: ALL files (code, docs, artifacts) must be in **English**.
   - **Exception**: User explicitly requests another language.
-  - **Exception**: System artifacts (task.md, etc.) follow the [System Artifacts Guidelines](../workflow/system-artifacts.md).
+  - **Exception**: System artifacts (task.md, etc.) follow the [System Artifacts Guidelines](.agent/rules/workflow/system-artifacts.md).
 
 ## AI System Directory (.agent/)
 > [!IMPORTANT]
@@ -26,7 +31,7 @@ description: Standards for file system and communication languages
 - **Exception**: Conditions explicitly defined by code of conduct (e.g., when user requests translation to Japanese).
 
 ## Communication Language
-- **Principle**: Follow the **User Adaptation Protocol** (rules/core/user-adaptation.md).
+- **Principle**: Follow the **User Adaptation Protocol** (.agent/rules/core/user-adaptation.md).
 - **Chat/Notifications**: Use the user's primary language defined in their profile.
 - **Task Updates**: Use the language most appropriate for the user's cognitive load (typically their primary language).
 - **Human-Facing Artifacts**: Use the user's primary language to ensure maximum comprehension and minimum friction.
@@ -36,11 +41,11 @@ description: Standards for file system and communication languages
 
 ---
 
-## Related Documents
+## Origin
 
-| Document | Purpose |
-|:---------|:--------|
-| [user-adaptation.md](user-adaptation.md) | User profile and language preferences |
-| [documentation-standards.md](documentation/documentation-standards.md) | File naming with language suffixes |
-| [localization-en-to-ja.md](localization/localization-en-to-ja.md) | EN→JA translation |
-| [localization-ja-to-en.md](localization/localization-ja-to-en.md) | JA→EN translation |
+- 2025-12-01T0000: Created as language standards
+- 2026-01-01T1459 by Polaris: Replaced Related Documents table with Navigation link, fixed relative paths (cross-link audit)
+
+---
+
+**Navigation**: [← Back to Rules Index](.agent/rules/README.md)
