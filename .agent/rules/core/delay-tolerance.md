@@ -65,13 +65,14 @@ When context is long or complex:
 
 ---
 
-## Related Documents
+## Origin
 
-| Document | Purpose |
-|:---------|:--------|
-| [pre-task-assessment.md](pre-task-assessment.md) | Risk assessment before tasks |
-| [meta-rules.md](meta-rules.md) | Model-independent design (§6) |
-| [context-resumption.md](../workflow/context-resumption.md) | Re-verifying context |
+- 2025-12-01T0000: Created as delay tolerance guidelines
+- 2026-01-02T0846 by Polaris: Replaced Related Documents table with Navigation link (cross-link audit)
+
+---
+
+**Navigation**: [← Back to Rules Index](.agent/rules/README.md)
 
 ---
 
