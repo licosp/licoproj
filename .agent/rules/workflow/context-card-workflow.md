@@ -182,88 +182,12 @@ Cards are lightweight context-sharing tools. Artifacts are detailed plans for er
 
 ---
 
-## Related Documents
 
-| Document | Purpose |
-|:---------|:--------|
-| [.agent/rules/core/meta-rules.md](.agent/rules/core/meta-rules.md) | Rule creation and cross-linking standards |
-| [.agent/rules/core/documentation/documentation-standards.md](.agent/rules/core/documentation/documentation-standards.md) | File naming and structure |
-| [.agent/templates/header-frontmatter.yaml](.agent/templates/header-frontmatter.yaml) | Frontmatter template |
+## Origin
 
-**Recording Relevant Files**:
-
-At the start of each work session (after reading the card), write the following in Agent Observations:
-
-```markdown
-## Agent Observations
-
-### この文脈で有用だと感じるファイル
-- `.agent/rules/core/delay-tolerance.md` — 急がない原則
-- `.agent/rules/workflow/context-card-workflow.md` — カードの使い方
-```
-
-**Guidelines**:
-- List files you **feel are useful** for the current context, not just files you read
-- Overwrite this section at each session start (not append)
-- This makes your internal state visible to the user
-- Helps diagnose issues when work doesn't go as expected
+- 2025-12-01T0000: Created as context card workflow
+- 2026-01-02T0830 by Polaris: Replaced Related Documents table with Navigation link (cross-link audit)
 
 ---
 
-## Card Philosophy
-
-**Cards are whiteboards, not documents.**
-
-| Principle | Meaning |
-|:----------|:--------|
-| **Beauty is not required** | Recording takes priority over formatting |
-| **Write frequently** | Externalize thoughts as they occur |
-| **Disposable** | Cards go to archive when work is done |
-
-**Anti-pattern**: Creating separate files to "keep the card clean." Write directly in Agent Observations.
-
----
-
-## Directory Tree Structure
-
-When working with directories, record a tree structure in Agent Observations **before starting work**.
-
-**Include both directories AND files**:
-
-```markdown
-### 対象ディレクトリの構造
-
-references/
-├── 2025-11-29T0844_file1.md
-├── 2025-11-30T0235_file2.md
-├── agents/
-│   ├── 2025-12-02T1623_file3.md
-│   └── 2025-12-17T0615_file4.md
-└── second-eyes/
-    └── 2025-12-18T0510_file5.md
-```
-
-**Purpose**:
-- AI navigates directories one node at a time (cannot see the full tree)
-- This snapshot gives AI the "bird's eye view" that humans have via VS Code
-- Prevents overlooking subdirectories when using `git add directory/`
-
-**When to record**:
-- At the start of any file reorganization work
-- When working with unfamiliar directory structures
-- Before bulk `git add` operations
-
-**Always include workspace**:
-
-`.agent/.internal/workspace/` should **always** be recorded in tree structure, regardless of the card context. This directory is used across all work and may contain untracked files from manual additions.
-
-```markdown
-### 作業場の構造
-
-workspace/
-├── file-reorganization-plan.md  ← 今回の作業
-├── communal-wisdom-curation.md  ← 手動追加（別作業）
-└── polaris-conversation-begin.md ← 手動追加（別作業）
-```
-
-This prevents accidentally including unrelated files when using `git add workspace/`.
+**Navigation**: [← Back to Rules Index](.agent/rules/README.md)

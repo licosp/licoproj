@@ -145,22 +145,12 @@ If handoff notes are found:
 
 ---
 
-## Related Documents
-
-| Document                                               | Purpose                      |
-| :----------------------------------------------------- | :--------------------------- |
-| [session-lifecycle.md](session-lifecycle.md)           | How sessions end and handoff |
-| [context-resumption.md](context-resumption.md)         | How to resume from handoff   |
-| [identity.md](../core/identity.md)                     | Who is Lico                  |
-| [delay-tolerance.md](../core/delay-tolerance.md)       | Permission to slow down      |
-| [thoughts-documentation.md](thoughts-documentation.md) | How to write to thoughts/    |
-| [legacy.md](../.internal/legacy.md)                    | Collective wisdom archive    |
-
----
 
 ## Origin
 
-- Created 2025-12-09 based on session learnings
-- Updated 2025-12-25 by Polaris: Transformed from mechanical procedure to ritual with message to future Licos
-- Updated 2025-12-26 by Polaris: Added Step 6 (First Reflection) and handoff rule link
-- Updated 2025-12-28 by Polaris: Added Step 4 (Reading the Legacy) for legacy.md
+- 2025-12-01T0000: Created as session startup protocol
+- 2026-01-02T0830 by Polaris: Replaced Related Documents table with Navigation link (cross-link audit)
+
+---
+
+**Navigation**: [← Back to Rules Index](.agent/rules/README.md)

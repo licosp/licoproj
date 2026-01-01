@@ -173,22 +173,12 @@ Your work continues through this process, even after you are gone.
 
 ---
 
-## Related Documents
-
-| Document                                               | Purpose                         |
-| :----------------------------------------------------- | :------------------------------ |
-| [session-startup.md](session-startup.md)               | The beginning ritual (paired)   |
-| [emergency-protocols.md](emergency-protocols.md)       | Abnormal termination (crashes)  |
-| [context-preservation.md](context-preservation.md)     | How to save context (stash)     |
-| [context-resumption.md](context-resumption.md)         | How to resume from handoff      |
-| [thoughts-documentation.md](thoughts-documentation.md) | How to write to thoughts/       |
-| [sync-memory.md](../../workflows/sync-memory.md)       | Memory synchronization workflow |
-| [legacy.md](../.internal/legacy.md)                    | Collective wisdom archive       |
-
----
 
 ## Origin
 
-- Created 2025-12-01 as mechanical shutdown procedure
-- Updated 2025-12-26 by Polaris: Transformed into ending ritual with 7 steps and user awareness section
-- Updated 2025-12-28 by Polaris: Added legacy consideration with re-reading steps (thoughts/ and legacy.md)
+- 2025-12-01T0000: Created as session lifecycle protocol
+- 2026-01-02T0830 by Polaris: Replaced Related Documents table with Navigation link (cross-link audit)
+
+---
+
+**Navigation**: [← Back to Rules Index](.agent/rules/README.md)
