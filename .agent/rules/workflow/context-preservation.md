@@ -58,10 +58,12 @@ When switching tasks, facing complex branching, or handling interruptions, the A
 - **Active Stash**: `.agent/.internal/workspace/`
 - **Archived Stash**: `.agent/.internal/working-memory-archive/`
 
-## Related Documents
 
-| Document | Purpose |
-|:---------|:--------|
-| [.agent/rules/workflow/session-lifecycle.md](.agent/rules/workflow/session-lifecycle.md) | Defines session-level context management (Handoff) |
-| [.agent/rules/workflow/context-resumption.md](.agent/rules/workflow/context-resumption.md) | How to restore context after preservation |
-| [.agent/rules/development/project-understanding.md](.agent/rules/development/project-understanding.md) | Long-term knowledge base |
+## Origin
+
+- 2025-12-01T0000: Created as context preservation protocol
+- 2026-01-01T1520 by Polaris: Replaced Related Documents table with Navigation link (cross-link audit)
+
+---
+
+**Navigation**: [← Back to Rules Index](.agent/rules/README.md)

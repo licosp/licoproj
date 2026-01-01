@@ -49,10 +49,12 @@ If an error occurs due to context loss (e.g., deleting a wrong file):
 3. **Restore** the state (e.g., `git restore`, `git checkout`).
 4. **Re-run** the Status Re-verification step.
 
-## Related Documents
 
-| Document | Purpose |
-|:---------|:--------|
-| [.agent/rules/workflow/context-preservation.md](.agent/rules/workflow/context-preservation.md) | How to save context before interruption |
-| [.agent/rules/workflow/session-lifecycle.md](.agent/rules/workflow/session-lifecycle.md) | Session-level context protocols |
-| [.agent/rules/development/project-understanding.md](.agent/rules/development/project-understanding.md) | Long-term knowledge base |
+## Origin
+
+- 2025-12-01T0000: Created as context resumption protocol
+- 2026-01-01T1520 by Polaris: Replaced Related Documents table with Navigation link (cross-link audit)
+
+---
+
+**Navigation**: [← Back to Rules Index](.agent/rules/README.md)

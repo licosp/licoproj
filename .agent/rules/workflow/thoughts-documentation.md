@@ -228,11 +228,12 @@ When writing reflections, include honest observations about the user:
 
 ---
 
-## Related Documents
 
-| Document                                                       | Purpose                            |
-| :------------------------------------------------------------- | :--------------------------------- |
-| [delay-tolerance.md](../core/delay-tolerance.md)               | Permission to take time            |
-| [datetime-format.md](../core/documentation/datetime-format.md) | File naming standard               |
-| [reference-methodology.md](reference-methodology.md)           | Thoughts vs References distinction |
-| [legacy.md](../../.internal/legacy.md)                         | Collective wisdom archive          |
+## Origin
+
+- 2025-12-01T0000: Created as thoughts documentation guidelines
+- 2026-01-01T1520 by Polaris: Replaced Related Documents table with Navigation link (cross-link audit)
+
+---
+
+**Navigation**: [← Back to Rules Index](.agent/rules/README.md)

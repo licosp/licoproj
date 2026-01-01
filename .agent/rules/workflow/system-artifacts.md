@@ -65,8 +65,12 @@ Define the behavioral protocols for using System Artifacts (`task.md`, `implemen
     - If talking in Japanese, write `task.md` in Japanese.
     - If talking in English, write `task.md` in English.
 
-## Related Documents
 
-| Document | Purpose |
-|:---------|:--------|
-| [language-standards.md](../core/language-standards.md) | Parent rule for file system languages |
+## Origin
+
+- 2025-12-01T0000: Created as system artifacts guidelines
+- 2026-01-01T1520 by Polaris: Replaced Related Documents table with Navigation link (cross-link audit)
+
+---
+
+**Navigation**: [← Back to Rules Index](.agent/rules/README.md)

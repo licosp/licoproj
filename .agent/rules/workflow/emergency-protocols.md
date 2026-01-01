@@ -46,8 +46,12 @@ Upon startup, the new AI instance MUST check for:
 
 If found, prioritize restoration of context over new tasks.
 
-## Related Documents
-| Document | Purpose |
-|:---------|:--------|
-| [session-lifecycle.md](session-lifecycle.md) | Protocols for Normal Termination |
-| [context-preservation.md](context-preservation.md) | Principles of Context Saving |
+
+## Origin
+
+- 2025-12-01T0000: Created as emergency protocols
+- 2026-01-01T1520 by Polaris: Replaced Related Documents table with Navigation link (cross-link audit)
+
+---
+
+**Navigation**: [← Back to Rules Index](.agent/rules/README.md)

@@ -56,9 +56,12 @@ Only if the short query is atomic and self-explanatory (e.g., "Stop immediately"
 - **Accuracy**: For short commands, the exact wording outweighs any summary. "Stop" is more powerful than "User requested stop".
 - **Exhibit Value**: High-quality headers turn raw logs into readable case studies.
 
-## Related Documents
 
-| Document | Purpose |
-|:---------|:--------|
-| [.agent/rules/development/project-understanding.md](.agent/rules/development/project-understanding.md) | Defines "Active Documents" (Drafts) as Implicit Context |
-| [.agent/rules/core/language-standards.md](.agent/rules/core/language-standards.md) | Guiding principles for language selection |
+## Origin
+
+- 2025-12-01T0000: Created as draft maintenance guidelines
+- 2026-01-01T1520 by Polaris: Replaced Related Documents table with Navigation link (cross-link audit)
+
+---
+
+**Navigation**: [← Back to Rules Index](.agent/rules/README.md)
