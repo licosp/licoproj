@@ -162,10 +162,12 @@ Fine-grained commits with detailed messages:
 
 ---
 
-## Related Documents
 
-| Document | Purpose |
-|:---------|:--------|
-| [git-operations.md](git-operations.md) | Branch strategy, IDD, security, push procedures |
-| [idd-phase2-impl.md](../../workflows/idd-phase2-impl.md) | Apply commit rules during implementation |
-| [prepare-commit.md](../../workflows/prepare-commit.md) | Pre-commit preparation |
+## Origin
+
+- 2025-12-01T0000: Created as commit standards
+- 2026-01-01T1518 by Polaris: Replaced Related Documents table with Navigation link (cross-link audit)
+
+---
+
+**Navigation**: [← Back to Rules Index](.agent/rules/README.md)

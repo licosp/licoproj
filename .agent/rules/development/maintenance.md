@@ -205,9 +205,12 @@ This workflow ensures safe, transparent, and environment-agnostic file operation
 
 ---
 
-## Related Documents
 
-| Document | Purpose |
-|:---------|:--------|
-| [.agent/rules/development/file-deletion.md](.agent/rules/development/file-deletion.md) | Protocol for safe file handling |
-| [.agent/rules/development/ai-script-philosophy.md](.agent/rules/development/ai-script-philosophy.md) | Script lifecycle philosophy |
+## Origin
+
+- 2025-12-01T0000: Created as maintenance guidelines
+- 2026-01-01T1518 by Polaris: Replaced Related Documents table with Navigation link (cross-link audit)
+
+---
+
+**Navigation**: [← Back to Rules Index](.agent/rules/README.md)

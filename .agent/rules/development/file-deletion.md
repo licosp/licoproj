@@ -136,13 +136,12 @@ This is **conditioning**, not just documentation.
 
 ---
 
-## Related Documents
 
-| Document | Purpose |
-|:---------|:--------|
-| [maintenance.md](maintenance.md) | Archival standards |
-| [git-operations.md](git-operations.md) | Git status handling |
-| [ai-script-philosophy.md](ai-script-philosophy.md) | Script lifecycle (archive after use) |
-| [archive-management.md](archive-management.md) | Archive directory structure |
-| [terminal-auto-execution.md](terminal-auto-execution.md) | Safe command execution |
-| [../core/repository-philosophy.md](../core/repository-philosophy.md) | "Preserve, Don't Hide" principle |
+## Origin
+
+- 2025-12-01T0000: Created as file deletion protocol
+- 2026-01-01T1518 by Polaris: Replaced Related Documents table with Navigation link (cross-link audit)
+
+---
+
+**Navigation**: [← Back to Rules Index](.agent/rules/README.md)

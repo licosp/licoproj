@@ -141,9 +141,12 @@ When updating the IDE's Allow List, update this document to match.
 
 ---
 
-## Related Documents
 
-| Document | Purpose |
-|:---------|:--------|
-| [file-deletion.md](file-deletion.md) | Vocabulary conditioning for safe file handling |
-| [git-operations.md](git-operations.md) | Git command standards |
+## Origin
+
+- 2025-12-01T0000: Created as terminal auto-execution rules
+- 2026-01-01T1518 by Polaris: Replaced Related Documents table with Navigation link (cross-link audit)
+
+---
+
+**Navigation**: [← Back to Rules Index](.agent/rules/README.md)

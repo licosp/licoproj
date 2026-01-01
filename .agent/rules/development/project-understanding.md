@@ -77,11 +77,12 @@ These files are critical **Implicit Context**.
     - Recognize that drafts contain conversations with other AI models.
     - Use this to learn from their successes/failures and maintain continuity.
 
-## Related Documents
 
-| Document | Purpose |
-|:---------|:--------|
-| [session-lifecycle.md](../workflow/session-lifecycle.md) | Defines when to record knowledge (Handoff) |
-| [context-preservation.md](../workflow/context-preservation.md) | How to save short-term context during work |
-| [context-resumption.md](../workflow/context-resumption.md) | How to restore context when returning |
-| [draft-maintenance.md](../workflow/draft-maintenance.md) | How to format and maintain Human Draft files |
+## Origin
+
+- 2025-12-01T0000: Created as project understanding guide
+- 2026-01-01T1518 by Polaris: Replaced Related Documents table with Navigation link (cross-link audit)
+
+---
+
+**Navigation**: [← Back to Rules Index](.agent/rules/README.md)

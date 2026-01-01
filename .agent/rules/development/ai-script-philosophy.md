@@ -274,10 +274,13 @@ Full dialogue archived at: `.agent/.internal/archive/no-more-husky-dialogue.ini`
 
 ---
 
-## Related Documents
 
-| Document | Purpose |
-|:---------|:--------|
-| [.agent/rules/development/maintenance.md](.agent/rules/development/maintenance.md) | Long-term project consistency |
-| [.agent/rules/development/file-deletion.md](.agent/rules/development/file-deletion.md) | File deletion protocol |
-| [.agent/rules/development/workspace-tooling.md](.agent/rules/development/workspace-tooling.md) | General tool management |
+## Origin
+
+- 2025-12-02T0000: Created as AI script philosophy
+- 2025-12-23T1210 by Polaris: Updated version to 1.1
+- 2026-01-01T1517 by Polaris: Replaced Related Documents table with Navigation link (cross-link audit)
+
+---
+
+**Navigation**: [← Back to Rules Index](.agent/rules/README.md)

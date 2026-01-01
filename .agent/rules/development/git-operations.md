@@ -272,17 +272,12 @@ git push origin <branch-name>
 
 ---
 
-## Related Documents
 
-This document covers Git operation **standards and rules**. For related topics, see:
+## Origin
 
-| Document | Purpose |
-|:---------|:--------|
-| [commit-granularity.md](commit-granularity.md) | Detailed philosophy on atomic commits |
-| [commit-philosophy.md](../../../.agent/.internal/references/agents/commit-philosophy.md) | **Deep Dive**: State Save model & Context Tagging |
-| [context-card-workflow.md](../workflow/context-card-workflow.md) | **Deep Dive**: Concept & Usage of Dynamic Whiteboards |
-| [idd-phase2-impl.md](../../workflows/idd-phase2-impl.md) | **Workflow**: When and how to apply these rules |
-| [idd-phase1-init.md](../../workflows/idd-phase1-init.md) | **Workflow**: Issue, branch creation, and **rescue procedures** |
-| [idd-phase3-fini.md](../../workflows/idd-phase3-fini.md) | **Workflow**: Push and finalization |
-| [prepare-commit.md](../../workflows/prepare-commit.md) | **Workflow**: Pre-commit preparation |
-| [absolute-path-prohibition.md](../core/security/absolute-path-prohibition.md) | **Security**: Rules for relative paths & sanitization |
+- 2025-12-01T0000: Created as git operations standards
+- 2026-01-01T1518 by Polaris: Replaced Related Documents table with Navigation link (cross-link audit)
+
+---
+
+**Navigation**: [← Back to Rules Index](.agent/rules/README.md)
