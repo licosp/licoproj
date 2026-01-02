@@ -1,8 +1,8 @@
 ---
 # Context Configuration (Lico's Source of Truth)
-context_id: "[Thoughts-Polaris]"
+context_id: "[Thoughts-Subjective]"
 default_phase: "(Reflect)"
-tags: ["thoughts", "polaris"]
+tags: ["thoughts", "shared"]
 ---
 
 # Context Whiteboard: Thoughts & Reflections
@@ -56,10 +56,14 @@ tags: ["thoughts", "polaris"]
 
 ## Agent Observations
 
-### 識別子
+### Polaris
 
-Polaris
+- (記入待ち)
 
-### 作業 (2026-01-01)
+#### 作業 (History)
 
 - [x] Spica の文書を AI 向け書式に修正（英語、ニュアンス維持）
+
+### Spica
+
+- (記入待ち)
