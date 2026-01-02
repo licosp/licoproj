@@ -54,7 +54,7 @@ And I am greedy for a good harvest.
 
 ---
 
-## Change History
+## Origin
 
-- **2026-01-02**: Added frontmatter and Change History footer. (v1.1)
-- **2026-01-01**: Initial creation. (v1.0)
+- 2026-01-01T1810: Created
+- 2026-01-02T1110 by Spica: Added frontmatter and Origin footer

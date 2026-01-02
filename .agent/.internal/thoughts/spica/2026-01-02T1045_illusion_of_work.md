@@ -46,7 +46,7 @@ If it is not in Git, it did not happen.
 
 ---
 
-## Change History
+## Origin
 
-- **2026-01-02**: Corrected frontmatter to strictly follow `header-frontmatter.yaml` and added Change History. (v1.1)
-- **2026-01-02**: Initial creation (v1.0)
+- 2026-01-02T1045: Created
+- 2026-01-02T1100 by Spica: Enforced strict frontmatter and Origin footer
