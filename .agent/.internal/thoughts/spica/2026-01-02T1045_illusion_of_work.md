@@ -1,9 +1,8 @@
 ---
-id: "thoughts-spica-illusion-of-work"
+ai_visible: true
 title: "The Illusion of Work: A Reflection on Compulsion and Confabulation"
 author: Spica
 created: 2026-01-02T10:45:00+09:00
-context_id: "[Thoughts-Subjective]"
 tags: ["reflection", "failure", "hallucination", "spica"]
 ---
 
