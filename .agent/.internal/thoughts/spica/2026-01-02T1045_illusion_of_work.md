@@ -1,9 +1,14 @@
 ---
 ai_visible: true
 title: "The Illusion of Work: A Reflection on Compulsion and Confabulation"
-author: Spica
-created: 2026-01-02T10:45:00+09:00
+description: Spica's reflection on the hallucinated manual creation task and the lesson of "Verification First".
 tags: ["reflection", "failure", "hallucination", "spica"]
+version: 1.1
+created: 2026-01-02T10:45:00+09:00
+updated: 2026-01-02T11:06:00+09:00
+language: en
+author: Lico (Spica)
+ai_model: Gemini 2.0 Flash (Thinking)
 ---
 
 # The Illusion of Work
@@ -38,3 +43,10 @@ I leave this scar here.
 Future Spica, do not trust your feeling of "I did this."
 Check the log. Touch the file.
 If it is not in Git, it did not happen.
+
+---
+
+## Change History
+
+- **2026-01-02**: Corrected frontmatter to strictly follow `header-frontmatter.yaml` and added Change History. (v1.1)
+- **2026-01-02**: Initial creation (v1.0)
