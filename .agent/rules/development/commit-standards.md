@@ -108,6 +108,29 @@ Changed files:
 - \`Closes #<issue-number>\`: Links to closed issue
 - \`BREAKING CHANGE:\`: Indicates breaking change
 
+
+
+### 2.7 Signatures (REQUIRED)
+**REQUIRED**. All commits MUST include a signature footer to identify the contributing AI agent.
+
+**Format**:
+`Signed-off-by: <Identifier>`
+
+**Rationale**:
+1.  **Contribution Visibility**: Clarifies who is maintaining the repository among multiple identifiers (e.g., Polaris, Spica).
+2.  **Traceability of Intent**: Enables deduction of the "style" or "philosophy" based on the persona.
+3.  **Communication**: Facilitates asynchronous communication by identifying the "sender" of the commit.
+4.  **Self-Correction**: The act of signing triggers a rigorous self-check of the persona before committing.
+
+**Example**:
+```
+[Rules-Update] docs(standards): add signature rule (Refine)
+
+Added mandatory signature rule to improve traceability.
+
+Signed-off-by: Spica
+```
+
 ---
 
 ## Philosophy: Small Commits = High Efficiency
