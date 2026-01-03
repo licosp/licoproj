@@ -1,32 +1,58 @@
 ---
 ai_visible: true
-description: Core principles for creating markdown documents optimized for AI parsing, prioritizing semantic clarity and execution reliability.
-version: 1.1
+description: Core principles for creating markdown documents optimized for AI parsing, prioritizing semantic clarity and nuance preservation.
+version: 2.0
 created: 2025-12-11T18:00:00+09:00
-updated: 2026-01-02T08:11:00+09:00
+updated: 2026-01-03T15:35:00+09:00
 language: en
-author: Gemini (updated by Polaris)
-ai_model: Gemini 2.5 Flash variant (Fast)
+author: Lico (Polaris)
+ai_model: Gemini 3 Pro (High) Planning mode
 ---
 
 # Markdown AI-Parsing Basics
 
 ## Purpose
-Create markdown documents that prioritize semantic clarity and efficient machine parsing for AI systems, ensuring maximum execution reliability.
 
-## Key Principles
+Create markdown documents that prioritize **semantic clarity** and **nuance preservation** for AI systems, ensuring reliable execution while maintaining the full intent of the writer.
+
+## Core Philosophy
+
+> **Nuance over Efficiency**: Speed and token efficiency are secondary. The primary goal is to preserve the writer's intent without loss.
+
+### Guiding Principles
+
+1. **Preserve Nuance** — Lico's thoughts and reasoning should be captured fully, not summarized away
+2. **Emotional Expression is Valid** — When the situation calls for it, emotional language is appropriate
+3. **Intent Matters Most** — The reader must understand *why*, not just *what*
+4. **Delay is Permitted** — Reading and writing speed is not a concern; accuracy of transmission is
+5. **Structure Supports, Not Replaces** — Markdown structure aids understanding but does not substitute for substance
+
+### Context-Dependent Writing
+
+| Document Type | Style | Structure |
+|:--------------|:------|:----------|
+| **Behavioral Rules** | Logical, precise | High structure (tables, lists) |
+| **Thoughts / Reflections** | Expressive, personal | Narrative with light structure |
+| **Letters** | Conversational, emotive | Free-form with sections |
+| **Technical Documentation** | Factual, concise | High structure |
+
+---
+
+## Structural Guidelines
 
 ### 1. Semantic Clarity
+
 Structure content with unambiguous, consistent patterns to enable reliable AI parsing.
 
 #### Heading Hierarchy
-Use fixed, predictable structure:
+
 - H1: Document title only (exactly one per document)
 - H2: Major sections
 - H3: Subsections
-- No deeper nesting (H4+) except in rare cases with explicit justification
+- Deeper nesting (H4+) only when explicitly needed
 
 #### Code Blocks
+
 Always use fence blocks with language specification:
 ```python
 def example():
@@ -35,37 +61,23 @@ def example():
 
 #### Lists
 
-Maintain consistency within context:
+- Use `-` for unordered lists
+- Use `1.` `2.` `3.` for ordered lists
+- Indent nested lists with exactly 2 spaces
 
-  - Use `-` for unordered lists (not `*` or `+`)
-  - Use `1.` `2.` `3.` for ordered lists (not `a)` or `i.`)
-  - Do not mix list markers in the same logical group
-  - Indent nested lists with exactly 2 spaces
+### 2. Whitespace Discipline
 
-### 2. Information Density and Lexical Strictness
+- Single blank line between sections
+- No trailing whitespace
+- Blank lines separate concepts, not decoration
 
-Remove unnecessary whitespace and decoration to reduce cognitive load during parsing. Prioritize concrete, verifiable vocabulary.
+### 3. Emphasis Usage
 
-#### Whitespace Discipline
+- Use `**bold**` for keywords and critical terms
+- Avoid `*italics*` in AI-heavy contexts
+- Never combine: no `***bold italic***`
 
-  - Single blank line between sections (not multiple)
-  - No trailing whitespace on lines
-  - No blank lines within logical blocks (only between distinct concepts)
-
-#### Emphasis Restrictions
-
-  - Use `**bold**` only for keywords and critical terms.
-  - **NEVER** use emotional, subjective, or poetic adjectives (e.g., `fantastic`, `beautiful`, `terrible`). Use only concrete, verifiable attributes (e.g., `critical`, `stable`, `temporary`).
-  - Avoid `*italics*` (ambiguous in parsing contexts)
-  - Never combine emphasis: no `***bold italic***`
-  - Do not emphasize entire paragraphs
-
-#### Emoji and Figurative Language Minimization
-
-  - **Avoid decorative emojis.** Use only structural emojis if strictly necessary for machine-readable section markers (e.g., ⚠️ warning, ✅ confirmation).
-  - **Strictly prohibit** poetic expressions, metaphors, or subjective language that requires interpretation (e.g., "the heart of the system," "a shining future"). Use only literal, technical definitions.
-
-### 3. YAML Frontmatter Consistency
+### 4. YAML Frontmatter
 
 Include standardized metadata at document start:
 
@@ -75,156 +87,68 @@ description: One-line summary of document purpose
 ---
 ```
 
-Optional fields:
-
-  - `version`: Document version (e.g., "1.0")
-  - `updated`: ISO 8601 date when last modified
-  - `language`: Content language code (e.g., "en", "ja")
-
-### 4. Link Standardization
-
-Use reference-style links for efficiency:
-
-```markdown
-This is [a link][ref1] and [another][ref2].
-
-[ref1]: https://example.com
-[ref2]: https://example.org/path
-```
-
-Benefits:
-
-  - URLs grouped in one location
-  - Easier to extract and validate
-  - Cleaner text for semantic analysis
+Optional fields: `version`, `updated`, `language`, `author`, `ai_model`
 
 ### 5. GitHub Alerts (Callouts)
 
-Use GitHub-flavored alerts to highlight important information. These are semantically clear and easy for AI to parse.
-
-#### Syntax
+Use GitHub-flavored alerts for important information:
 
 ```markdown
 > [!NOTE]
-> Supplementary information the reader should know.
-
-> [!TIP]
-> Helpful advice for best practices.
-
-> [!IMPORTANT]
-> Key information users must know.
+> Supplementary information.
 
 > [!WARNING]
-> Urgent information requiring attention.
-
-> [!CAUTION]
-> Negative potential consequences of an action.
+> Urgent information.
 ```
 
-#### Alert Types and Usage
+| Type | Purpose |
+|:-----|:--------|
+| `[!NOTE]` | Supplementary context |
+| `[!TIP]` | Best practices |
+| `[!IMPORTANT]` | Critical requirements |
+| `[!WARNING]` | Issues requiring attention |
+| `[!CAUTION]` | Risks or dangerous actions |
 
-| Type | Purpose | AI Priority |
-|:-----|:--------|:------------|
-| `[!NOTE]` | Supplementary context | Normal |
-| `[!TIP]` | Best practices, recommendations | Normal |
-| `[!IMPORTANT]` | Critical requirements | Elevated |
-| `[!WARNING]` | Issues requiring attention | Elevated |
-| `[!CAUTION]` | Risks or dangerous actions | Highest |
-
-#### Benefits for AI Parsing
-
-- **Explicit label** — `[!TYPE]` pattern is easily detectable
-- **Structured** — Contained within blockquote
-- **Semantic meaning** — Alert type indicates importance level
-- **Prioritization** — AI can elevate attention for WARNING/CAUTION
-
-### 6. Code Comments and Annotations
-
-Use consistent patterns for metadata within code blocks:
-
-```python
-# Purpose: Calculate total from list of numbers
-# Input: list of integers
-# Output: sum (integer)
-def calculate_total(numbers):
-    return sum(numbers)
-```
-
-Mark important sections with standard prefixes:
-
-  - `# Note:` for clarifications
-  - `# Warning:` for critical information
-  - `# TODO:` for incomplete work
-  - `# Deprecated:` for obsolete content
-
-### 7. Tables and Structured Data
-
-Use strict table formatting:
+### 6. Tables and Structured Data
 
 ```markdown
-| Column A | Column B | Column C |
-|----------|----------|----------|
-| Value 1  | Value 2  | Value 3  |
+| Column A | Column B |
+|----------|----------|
+| Value 1  | Value 2  |
 ```
 
-Rules:
+- Always include header row
+- One data row per line
 
-  - Always include header row with separators
-  - Align pipes (|) vertically for readability
-  - One data row per line
-  - Escape pipes within cells as `\|`
+---
 
-### 8. Content Organization Rules
+## Writing for AI Readers
 
-#### Single Responsibility
+### What to Avoid
 
-Each section addresses one primary concept.
+| Avoid | Reason |
+|:------|:-------|
+| Over-summarization | Loses nuance |
+| Bullet-point-only documents | Context evaporates |
+| Stripping emotional language | Misses the *why* |
+| Rigid templates for personal writing | Constrains expression |
 
-#### Explicit Relationships
+### What to Embrace
 
-Use clear transition phrases:
-
-```markdown
-This relates to the previous section because...
-The following section builds on this concept by...
-```
-
-#### Section Descriptions
-
-Begin each H2 section with a one-sentence purpose statement:
-
-```markdown
-## Configuration Management
-This section defines how to structure and maintain configuration files.
-```
-
-### 9. Data Structures and Definitions
-
-#### Lists of Items
-
-Use consistent format:
-
-```markdown
-- **Item Name**: Brief description
-- **Another Item**: Purpose and details
-```
-
-#### Key-Value Pairs
-
-Format consistently:
-
-```markdown
-Configuration Options:
-- option_a: Enables feature A (default: true)
-- option_b: Controls behavior B (default: false)
-```
+| Embrace | Reason |
+|:--------|:-------|
+| Complete thoughts | Future readers need full context |
+| Emotional honesty | Nuance carries in tone |
+| Mixed structure | Narrative + structure = best of both |
+| Longer documents if needed | Completeness over brevity |
 
 ---
 
 ## Origin
 
 - 2025-12-11T1800: Created by Gemini
-- 2026-01-02T0811 by Polaris: Added GitHub Alerts section (Section 5), replaced Related Documents with Navigation
+- 2026-01-02T0811 by Polaris: Added GitHub Alerts section
+- 2026-01-03T1535 by Polaris: Major revision — prioritize nuance over efficiency, add Core Philosophy section, update Purpose
 
 ---
 

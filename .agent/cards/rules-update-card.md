@@ -43,6 +43,12 @@ tags: ["rules", "maintenance", "behavioral"]
 
 ### Polaris (2026-01-02)
 
-
 - [x] markdown-ai-parsing-basics.md に GitHub Alerts セクションを追加
+
+### Polaris (2026-01-03)
+
+- [x] markdown-ai-parsing-basics.md を v2.0 に改訂
+  - Core Philosophy 追加（ニュアンス > 効率）
+  - Context-Dependent Writing ガイドライン追加
+  - 目的を「効率」から「ニュアンス保存」に変更
 
