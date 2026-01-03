@@ -44,3 +44,4 @@ Polaris
 - [x] 行動規範に Card Types セクションを追加（定型 vs 使い捨て）
 - [x] cases ディレクトリの文書化
 - [x] 既存 case ファイルをタイムスタンプ付きにリネーム
+- [x] 行動規範に Multi-Identifier Sharing (4.6) と Card Rotation (4.7) を追加

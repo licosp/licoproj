@@ -172,6 +172,47 @@ When experiencing the following, STOP and write to Agent Observations first:
 
 **Rule**: Taking notes before cognitive narrowing helps your future self.
 
+### 4.6 Multi-Identifier Sharing
+
+When multiple identifiers (e.g., Polaris, Spica) work on the same reusable card, use identifier-based sections in Agent Observations.
+
+**Format**:
+
+```markdown
+## Agent Observations
+
+### Polaris (2026-01-02)
+
+- Initial setup completed
+- Found issue with X
+
+### Spica (2026-01-03)
+
+- Continued work on Y
+- Added new pattern
+
+### Polaris (2026-01-03)
+
+- Handover work
+```
+
+**Rules**:
+- Use `### <Identifier> (<Date>)` format
+- Each work session gets its own entry (even if same identifier)
+- Chronological order (newest at bottom)
+- Commit signature (`Signed-off-by`) tracks who committed
+
+### 4.7 Card Rotation
+
+When Agent Observations becomes too long:
+
+1. **Archive**: Move entire card to `.agent/.internal/cases/` with timestamp
+   - Rename: `YYYY-MM-DDTHHMM_original-name.md`
+2. **Reset**: Clear Agent Observations in original card location
+3. **Continue**: Start fresh with empty Agent Observations
+
+This preserves history while keeping active cards lightweight.
+
 ---
 
 ## 5. Cards vs Rules vs Workflows vs Artifacts
@@ -219,7 +260,8 @@ Cards are lightweight context-sharing tools. Artifacts are detailed plans for er
 
 - 2025-12-01T0000: Created as context card workflow
 - 2026-01-02T0830 by Polaris: Replaced Related Documents table with Navigation link (cross-link audit)
-- 2026-01-03T1153 by Polaris: Added Card Types section (reusable vs disposable), cases directory, timestamp naming
+- 2026-01-03T1153 by Polaris: Added Card Types section (reusable vs disposable), cases directory
+- 2026-01-03T1212 by Polaris: Added Multi-Identifier Sharing (4.6) and Card Rotation (4.7) sections (reusable vs disposable), cases directory, timestamp naming
 
 ---
 
