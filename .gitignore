@@ -1,4 +1,5 @@
 # Dependencies
+.venv/
 node_modules/
 
 # Runtime data
