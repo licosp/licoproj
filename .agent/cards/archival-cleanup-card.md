@@ -57,4 +57,6 @@ tags: ["maintenance", "cleanup", "archive"]
 
 ## Agent Observations
 
-- (Space for Lico: Record patterns of often-orphaned files here.)
+### Sirius
+
+- (Initial setup)

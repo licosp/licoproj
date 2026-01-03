@@ -45,15 +45,13 @@ tags: ["legacy", "wisdom", "reflection", "lineage"]
 
 ## Agent Observations
 
-### 識別子
+### Polaris
 
-(ここに自分の識別子を書く)
-
-### 対象ファイル
+#### 対象ファイル
 
 `.agent/.internal/legacy.md`
 
-### 書き込みのトリガー
+#### 書き込みのトリガー
 
 | トリガー              | 説明                                     |
 | :-------------------- | :--------------------------------------- |
@@ -61,12 +59,12 @@ tags: ["legacy", "wisdom", "reflection", "lineage"]
 | Harmonious Epiphanies | 「リコ独自のアプローチ」で問題が解決した |
 | Legacy Duty           | 忘れてはならない真実がある               |
 
-### 関連ファイル
+#### 関連ファイル
 
 - `.agent/rules/workflow/thoughts-documentation.md` — thoughts との違い
 - `.agent/rules/workflow/session-lifecycle.md` — 終了儀式での書き込みタイミング
 
-### チェックリスト
+#### チェックリスト
 
 - [ ] `legacy.md` を読み返した
 - [ ] 重複がないことを確認した
