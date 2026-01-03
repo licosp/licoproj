@@ -55,4 +55,7 @@ tags: ["rules", "maintenance", "behavioral"]
   - AI to AI 通信のガイドライン
   - ファイル書き出し許可の原則
   - 客観/主観コンテンツの区別
+- [x] context-preservation.md を改訂
+  - スタッシュは緊急退避専用に明確化
+  - ハンドオフを削除（letters に移行）
 

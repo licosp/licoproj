@@ -1,49 +1,69 @@
 ---
-description: Protocols for offloading cognitive context to intermediate files (Cognitive Stashing)
+description: Protocols for emergency offloading of cognitive context (Cognitive Stashing)
 related:
-  .agent/rules/workflow/session-lifecycle.md: Defines session-level context management (Handoff)
   .agent/rules/workflow/context-resumption.md: How to restore context after preservation
-  .agent/rules/development/project-understanding.md: Long-term knowledge base
+  .agent/rules/workflow/letters-documentation.md: For handoff to other identifiers (use letters)
+  .agent/rules/workflow/context-card-workflow.md: For structured ongoing work (use cards)
 ---
 
 # Context Preservation (Cognitive Stashing)
 
 ## Summary
-**"Write to forget, Read to resume."**
-When switching tasks, facing complex branching, or handling interruptions, the Agent MUST offload current cognitive state to a physical file in `.agent/.internal/workspace/`.
 
-## Rationale
-- **Context Window Limits**: AI context is finite and expensive. Long conversations degrade reasoning quality.
-- **Task Switching**: Interruptions cause "Context Loss". Re-reading the whole conversation to resume is inefficient and error-prone.
-- **Cognitive Stash**: Like `git stash`, saving the current state allows the Agent to clear its working memory (Safe to Forget) and focus on the new input, knowing resumption is guaranteed.
+**"Write to forget, Read to resume."**
+
+When facing cognitive overload or emergency situations, the Agent offloads current state to a physical file. This is for **self-resumption**, not handoff to others.
+
+## When to Use Stash
+
+Stash is for **emergency context evacuation**:
+
+| Use Case | Description |
+|:---------|:------------|
+| **No Card Available** | The context doesn't fit any existing card |
+| **Too Small for Card** | Not worth creating a dedicated card |
+| **Multiple Contexts** | Holding several threads, need to write one out |
+| **Cognitive Overload** | "I am confused" or "Too many files open" |
+| **Sudden Interruption** | User asks to "pause this and do that" |
+
+## When NOT to Use Stash
+
+| Situation | Use Instead |
+|:----------|:------------|
+| Ongoing structured work | **Card** (`.agent/cards/`) |
+| Passing to next identifier | **Letter** (`.agent/.internal/letters/`) |
+| End of session handoff | **Letter** |
+
+---
 
 ## Protocol
 
-### 1. Trigger Conditions
-- **Task Switching**: User asks to "pause this and do that".
-- **Deep Recursion**: Sub-task complexity grows too large (e.g., recursive grep/refactor loops).
-- **Session End**: Preparing for session termination where context might be lost.
-- **High Cognitive Load**: "I am confused" or "Too many files open".
+### 1. Stashing Process
 
-### 2. Stashing Process
 1. **Summarize**:
    - Current Goal
    - Decisions made so far
    - Next immediate steps
    - List of relevant files/data
+
 2. **Write**:
-   - Create a markdown file in `.agent/.internal/workspace/`.
+   - Create a markdown file in `.agent/.internal/workspace/`
    - **Naming**: `stash_{topic}_{timestamp}.md`
+
 3. **Confirm**:
    - Notify user: "I have stashed the current context to [file]. Ready for new task."
 
-### 3. Resumption Process
-1. **Read**: View the stash file.
-2. **Rehydrate**: Load the decisions and next steps into working memory.
-3. **Execute**: Continue where left off.
-4. **Archive**: Move the stash file to `.agent/.internal/working-memory-archive/` (Do not delete, preserve history).
+### 2. Resumption Process
 
-## Example content
+1. **Read**: View the stash file
+2. **Rehydrate**: Load the decisions and next steps into working memory
+3. **Execute**: Continue where left off
+4. **Archive**: Move the stash file to `.agent/.internal/working-memory/{identifier}/`
+
+---
+
+## Example Content
+
 ```markdown
 # Stash: Rule Candidate Review
 - **Status**: Analyzed 15 files.
@@ -54,15 +74,22 @@ When switching tasks, facing complex branching, or handling interruptions, the A
 - **Relevant Path**: .agent/.internal/rule-candidates/
 ```
 
-## Location
-- **Active Stash**: `.agent/.internal/workspace/`
-- **Archived Stash**: `.agent/.internal/working-memory-archive/`
+---
 
+## Location
+
+| State | Location |
+|:------|:---------|
+| **Active Stash** | `.agent/.internal/workspace/` |
+| **Archived Stash** | `.agent/.internal/working-memory/{identifier}/` |
+
+---
 
 ## Origin
 
 - 2025-12-01T0000: Created as context preservation protocol
 - 2026-01-01T1520 by Polaris: Replaced Related Documents table with Navigation link (cross-link audit)
+- 2026-01-03T2156 by Polaris: Clarified stash as emergency evacuation only, removed handoff (now in letters)
 
 ---
 
