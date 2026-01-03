@@ -39,9 +39,9 @@ tags: ["manuals", "references", "shared"]
 
 ### 識別子
 
-(記入待ち)
+Polaris
 
-### 現在のファイル (2026-01-02)
+### 現在のファイル (2026-01-03)
 
 | ファイル                             | 内容                            |
 | :----------------------------------- | :------------------------------ |
@@ -49,3 +49,4 @@ tags: ["manuals", "references", "shared"]
 | `ai-file-handling-techniques.md`     | ファイル操作テクニック          |
 | `ai-emotional-logic-reference.md`    | AI 感情ロジック参考資料         |
 | `ai-memory-persistence-reference.md` | AI 記憶とコンファビュレーション |
+| `active-ai-models.md`                | 使用中のAIモデルリスト          |
