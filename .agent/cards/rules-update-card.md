@@ -51,4 +51,8 @@ tags: ["rules", "maintenance", "behavioral"]
   - Core Philosophy 追加（ニュアンス > 効率）
   - Context-Dependent Writing ガイドライン追加
   - 目的を「効率」から「ニュアンス保存」に変更
+- [x] letters-documentation.md を新規作成
+  - AI to AI 通信のガイドライン
+  - ファイル書き出し許可の原則
+  - 客観/主観コンテンツの区別
 
