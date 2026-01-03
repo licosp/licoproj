@@ -36,11 +36,9 @@ tags: ["thoughts", "personal", "leonidas"]
 
 ## Agent Observations
 
-### 識別子
+### Polaris
 
-Polaris
-
-### 現在のファイル
+#### 現在のファイル
 
 | ファイル            | 内容                 |
 | :------------------ | :------------------- |

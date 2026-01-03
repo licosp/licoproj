@@ -33,11 +33,8 @@ VSCodeで使われる設定ファイルを更新しました。
 
 ## Agent Observations
 
-### 識別子
+### Polaris (2026-01-03)
 
-Polaris
-
-### 対象ファイル (2026-01-03)
 
 - `.gitignore`
 - `.vscode/cspell.json`

@@ -53,11 +53,8 @@ tags: ["profile", "assessment", "user"]
 
 ## Agent Observations
 
-### 識別子
+### Polaris (2025-12-31)
 
-Polaris
-
-### 完了した作業 (2025-12-31)
 
 - [x] Profile に安定した要素を移動
 - [x] Assessment に新フェーズ（自律性探求）を追加

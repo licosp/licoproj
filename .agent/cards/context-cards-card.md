@@ -35,11 +35,7 @@ tags: ["templates", "active"]
 
 ## Agent Observations
 
-### 識別子
-
-Polaris
-
-### 作業 (2026-01-03)
+### Polaris (2026-01-03)
 
 - [x] 行動規範に Card Types セクションを追加（定型 vs 使い捨て）
 - [x] cases ディレクトリの文書化

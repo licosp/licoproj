@@ -39,11 +39,8 @@ tags: ["drafts", "daily", "notes"]
 
 ## Agent Observations
 
-### 識別子
+### Polaris (2026-01-03)
 
-Polaris
-
-### 対象ファイル (2026-01-03)
 
 - `draft_2026-01-02.md`
 - `draft_2026-01-03.md`

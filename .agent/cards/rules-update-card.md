@@ -41,11 +41,8 @@ tags: ["rules", "maintenance", "behavioral"]
 
 ## Agent Observations
 
-### 識別子
+### Polaris (2026-01-02)
 
-Polaris
-
-### 作業 (2026-01-02)
 
 - [x] markdown-ai-parsing-basics.md に GitHub Alerts セクションを追加
 

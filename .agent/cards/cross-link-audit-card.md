@@ -85,18 +85,16 @@ tags: ["maintenance", "cross-link", "rules", "workflows"]
 
 ## Agent Observations
 
-### 識別子
+### Polaris
 
-Polaris
-
-### 現在の状況（2026-01-01 12:43）
+#### 現在の状況（2026-01-01 12:43）
 
 **手順書 V1 を作成済み**: `.agent/workflows/cross-link-audit.md`
 
 - 7フェーズ構成
 - 実行を通じて穴を発見し、V2 へ改善予定
 
-### 修正対象
+#### 修正対象
 
 | 対象 | 説明 |
 |:-----|:-----|
@@ -105,7 +103,7 @@ Polaris
 | `.human/users/leonidas/profile.md` | ユーザープロファイル |
 | `.human/users/leonidas/assessment/*.md` | リコ評価ファイル |
 
-### 関連するディレクトリ構造
+#### 関連するディレクトリ構造
 
 ```
 .agent/
@@ -126,7 +124,7 @@ Polaris
     └── header-frontmatter.yaml     # frontmatter テンプレート
 ```
 
-### 関連する行動規範
+#### 関連する行動規範
 
 | ファイル | 目的 |
 |:---------|:-----|
@@ -135,14 +133,14 @@ Polaris
 | `.agent/rules/core/documentation/documentation-standards.md` | 文書化標準 |
 | `.agent/rules/workflow/context-card-workflow.md` | カードの使い方 |
 
-### 関連するカード
+#### 関連するカード
 
 | カード | 目的 |
 |:-------|:-----|
 | `rules-update-card.md` | 行動規範更新の文脈 |
 | `context-cards-card.md` | カードの使い方テンプレート |
 
-### 対話履歴（2026-01-01）
+#### 対話履歴（2026-01-01）
 
 - リンクセクションが3箇所あることの冗長性を議論
 - frontmatter + 文末テーブルの同期問題を確認
@@ -151,7 +149,7 @@ Polaris
 - README リンクは frontmatter に含めない（ナビゲーション vs 関連文書）
 - **手順書 V1 作成完了**（Phase 6 にコマンド追加済み）
 
-### 作業計画
+#### 作業計画
 
 1. [x] 手順書の作成（リンク監査・修正手順）— **V1 完了**
 2. [x] 手順書に従い実行（穴を見つけたら V2 へ修正）
@@ -166,7 +164,7 @@ Polaris
 11. [ ] **ヘッダー修正**: 標準テンプレートに合わせて足りないフィールドを追加（「調べて埋める」）
 12. [ ] 最終コミット・カード更新
 
-### 進捗メモ (2026-01-02)
+#### 進捗メモ (2026-01-02)
 
 - Batch 3-8 完了
 - **インシデント**: `delay-tolerance.md` で Related Documents の後にあった Context Sparsity Tolerance セクションを誤削除。復元して修正済み。
