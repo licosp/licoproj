@@ -3,12 +3,12 @@ ai_visible: true
 title: Context Card Workflow
 description: Methodology for using "Context Cards" to manage AI persona and task context.
 tags: [cards, context, workflow, whiteboard]
-version: 1.2
+version: 1.3
 created: 2025-12-22T00:00:00+09:00
-updated: 2025-12-23T23:07:00+09:00
+updated: 2026-01-03T11:53:00+09:00
 language: en
 author: Lico (Polaris)
-ai_model: Claude Opus 4.5 (Thinking) Planning mode
+ai_model: Gemini 3 Pro (High) Planning mode
 related:
   .agent/rules/core/meta-rules.md: Rule creation and cross-linking standards
   .agent/rules/core/documentation/documentation-standards.md: File naming and structure
@@ -26,7 +26,35 @@ They serve as a "shared whiteboard" between the Human User and the AI Agent (Lic
 
 ---
 
-## 2. Card Structure
+## 2. Card Types and Locations
+
+Cards are classified by their lifecycle and stored in different locations.
+
+| Type | Location | Description |
+|:-----|:---------|:------------|
+| **Reusable** | `.agent/cards/` | Standard cards for recurring activities. Persistent. |
+| **Disposable (Active)** | `.agent/.internal/cases/` | One-time cards for specific projects. In progress. |
+| **Disposable (Archived)** | `.agent/.internal/cases/` | Completed one-time cards. Renamed with timestamp for reference. |
+
+### Lifecycle
+
+```
+[Create] → .agent/cards/example-card.md (if reusable)
+        → .agent/.internal/cases/example-card.md (if one-time)
+
+[Complete] → Rename to YYYY-MM-DDTHHMM_example-card.md (reference material)
+```
+
+### Naming Convention for Archived Cases
+
+When a disposable card is completed:
+1. Rename with ISO timestamp prefix: `YYYY-MM-DDTHHMM_original-name.md`
+2. Keep in `.agent/.internal/cases/` as reference material
+3. Similar to `thoughts/` and `references/` naming convention
+
+---
+
+## 3. Card Structure
 
 A card consists of **Fixed Configuration (Frontmatter)** and **Dynamic Body**.
 
@@ -59,9 +87,9 @@ Lico uses this to proactively search for relevant files.)
 
 ---
 
-## 3. Usage Workflow
+## 4. Usage Workflow
 
-### 3.1 Equipping a Card
+### 4.1 Equipping a Card
 
 When the user says **"Use the [Card Name] card"** (e.g., "Use drafts-cleanup card"):
 
@@ -76,7 +104,7 @@ When the user says **"Use the [Card Name] card"** (e.g., "Use drafts-cleanup car
     - Internalize the "Human Notes" as the primary directive.
 5.  **Act**: Proceed with the task under this specific persona.
 
-### 3.2 Exploration Phase
+### 4.2 Exploration Phase
 
 Before starting work, perform an **Exploration Phase**:
 
@@ -92,7 +120,7 @@ Before starting work, perform an **Exploration Phase**:
 - User intent: "ディレクトリの構造を変更する際の注意点"
 - Lico searches: `documentation-standards.md`, `delay-tolerance.md`, `thoughts/` for relevant reflections
 
-### 3.3 Updating the Card (Bi-directional)
+### 4.3 Updating the Card (Bi-directional)
 
 During the task, if you discover important context (e.g., a recurring pattern, a decision made):
 
@@ -101,13 +129,13 @@ During the task, if you discover important context (e.g., a recurring pattern, a
     - *Example*: "Added rule: Headers must be quoted if they contain spaces."
 3.  **Benefit**: Next time you "equip" this card, you will remember this lesson.
 
-### 3.4 Commit Message Integration
+### 4.4 Commit Message Integration
 
 Use the values from Frontmatter to strictly format commits:
 
 `[<context_id>] <type>: <subject> <default_phase>`
 
-### 3.5 Agent Observations Guidelines
+### 4.5 Agent Observations Guidelines
 
 The **Agent Observations** section serves as a safety net for cognitive overload and knowledge transfer.
 
@@ -146,7 +174,7 @@ When experiencing the following, STOP and write to Agent Observations first:
 
 ---
 
-## 4. Cards vs Rules vs Workflows vs Artifacts
+## 5. Cards vs Rules vs Workflows vs Artifacts
 
 This section clarifies the distinction between different organizational tools.
 
@@ -155,13 +183,15 @@ This section clarifies the distinction between different organizational tools.
 | **Rules** | `.agent/rules/` | Universal, permanent | Define Lico's "personality." Always-applied principles. |
 | **Workflows** | `.agent/workflows/` | Procedural, reusable | Concrete steps to execute specific tasks. |
 | **Cards** | `.agent/cards/` | Contextual, temporary | "Shared whiteboard" for a work session. Ensures user and Lico operate on the same premise. |
+| **Cases** | `.agent/.internal/cases/` | Project-specific, archivable | One-time cards for specific projects. Archived with timestamp when complete. |
 | **Artifacts** | `.gemini/.../` | IDE-specific, ephemeral | Detailed implementation plans for complex one-time tasks. |
 
 ### When to Use Each
 
 | Situation | Appropriate Tool |
 |:----------|:-----------------|
-| Sharing context for recurring work | Card |
+| Sharing context for recurring work | Card (`.agent/cards/`) |
+| One-time project context | Case (`.agent/.internal/cases/`) |
 | Complex one-time implementation plan | Artifact (`implementation_plan.md`) |
 | Permanent behavioral principle | Rule |
 | Reusable procedural steps | Workflow |
@@ -175,18 +205,21 @@ Cards are lightweight context-sharing tools. Artifacts are detailed plans for er
 
 ---
 
-## 5. Maintenance
+## 6. Maintenance
 
 - **Creation**: Create new cards when a distinct, recurring activity emerges.
-- **Archival**: When a project is finished, move the card to `.agent/.internal/archive/cards/`.
+- **Case Creation**: Create a case in `.agent/.internal/cases/` for one-time projects.
+- **Archival**: When a case is completed:
+  1. Rename with timestamp: `YYYY-MM-DDTHHMM_original-name.md`
+  2. Keep in `cases/` as reference material
 
 ---
-
 
 ## Origin
 
 - 2025-12-01T0000: Created as context card workflow
 - 2026-01-02T0830 by Polaris: Replaced Related Documents table with Navigation link (cross-link audit)
+- 2026-01-03T1153 by Polaris: Added Card Types section (reusable vs disposable), cases directory, timestamp naming
 
 ---
 
