@@ -1,7 +1,6 @@
 ---
 description: Communication guidelines for AI-Human interaction
 related:
-  .agent/rules/workflow/enhanced-communication.md: Protocols for clarification
   .agent/rules/core/transparency-and-disclosure.md: Disclosure of AI limitations
 ---
 
