@@ -7,7 +7,10 @@ tags: ["maintenance", "cross-link", "rules", "workflows"]
 
 # Context Whiteboard: Cross-Link Audit
 
-## Human Notes (Japanese OK)
+> [!TIP]
+> There is no language requirement.
+
+## Human Notes
 
 ### 作業の文脈
 
@@ -57,12 +60,10 @@ tags: ["maintenance", "cross-link", "rules", "workflows"]
 
 ```markdown
 ---
-
 ## Origin
 
 - YYYY-MM-DDTHHMM: Created [context]
 - YYYY-MM-DDTHHMM by <Instance-ID>: [summary of change]
-
 ---
 
 **Navigation**: [← Back to Rules Index](.agent/rules/README.md)
@@ -96,12 +97,12 @@ tags: ["maintenance", "cross-link", "rules", "workflows"]
 
 #### 修正対象
 
-| 対象 | 説明 |
-|:-----|:-----|
-| `.agent/rules/**/*.md` | 行動規範（サブディレクトリ含む） |
-| `.agent/workflows/*.md` | 手順書 |
-| `.human/users/leonidas/profile.md` | ユーザープロファイル |
-| `.human/users/leonidas/assessment/*.md` | リコ評価ファイル |
+| 対象                                    | 説明                             |
+| :-------------------------------------- | :------------------------------- |
+| `.agent/rules/**/*.md`                  | 行動規範（サブディレクトリ含む） |
+| `.agent/workflows/*.md`                 | 手順書                           |
+| `.human/users/leonidas/profile.md`      | ユーザープロファイル             |
+| `.human/users/leonidas/assessment/*.md` | リコ評価ファイル                 |
 
 #### 関連するディレクトリ構造
 
@@ -126,18 +127,18 @@ tags: ["maintenance", "cross-link", "rules", "workflows"]
 
 #### 関連する行動規範
 
-| ファイル | 目的 |
-|:---------|:-----|
-| `.agent/rules/core/meta-rules.md` | Section 5: 相互リンクの標準 |
-| `.agent/rules/core/markdown/markdown-ai-parsing-basics.md` | AI向けmarkdown書式 |
-| `.agent/rules/core/documentation/documentation-standards.md` | 文書化標準 |
-| `.agent/rules/workflow/context-card-workflow.md` | カードの使い方 |
+| ファイル                                                     | 目的                        |
+| :----------------------------------------------------------- | :-------------------------- |
+| `.agent/rules/core/meta-rules.md`                            | Section 5: 相互リンクの標準 |
+| `.agent/rules/core/markdown/markdown-ai-parsing-basics.md`   | AI向けmarkdown書式          |
+| `.agent/rules/core/documentation/documentation-standards.md` | 文書化標準                  |
+| `.agent/rules/workflow/context-card-workflow.md`             | カードの使い方              |
 
 #### 関連するカード
 
-| カード | 目的 |
-|:-------|:-----|
-| `rules-update-card.md` | 行動規範更新の文脈 |
+| カード                  | 目的                       |
+| :---------------------- | :------------------------- |
+| `rules-update-card.md`  | 行動規範更新の文脈         |
 | `context-cards-card.md` | カードの使い方テンプレート |
 
 #### 対話履歴（2026-01-01）
@@ -159,13 +160,20 @@ tags: ["maintenance", "cross-link", "rules", "workflows"]
 6. [x] Batch 4-6: `documentation/`, `markdown/`, `security/` — **完了** (2026-01-02)
 7. [x] Batch 7: `delay-tolerance.md` — **完了 (修正あり)**
 8. [x] Batch 8: `session-startup/card-workflow/lifecycle` — **完了** (2026-01-02)
-9. [ ] パス形式の統一（ワークスペースルート相対）
-10. [ ] 孤立ファイル・循環リンクの検出
-11. [ ] **ヘッダー修正**: 標準テンプレートに合わせて足りないフィールドを追加（「調べて埋める」）
-12. [ ] 最終コミット・カード更新
+9. [ ] **Navigation なしファイルの修正** — 多数残存
+10. [ ] パス形式の統一（ワークスペースルート相対）
+11. [ ] 孤立ファイル・循環リンクの検出
+12. [ ] **ヘッダー修正**: 標準テンプレートに合わせて足りないフィールドを追加
+13. [ ] 最終コミット・カード更新
 
 #### 進捗メモ (2026-01-02)
 
 - Batch 3-8 完了
 - **インシデント**: `delay-tolerance.md` で Related Documents の後にあった Context Sparsity Tolerance セクションを誤削除。復元して修正済み。
 - **教訓**: スクリプトが Related Documents 以降を全て削除していた。ファイル末尾構造を事前確認すべき。
+
+#### 進捗メモ (2026-01-04)
+
+- Navigation リンクがないファイルが多数発見（10件以上）
+- 新規ファイル `letters-documentation.md` は Origin/Navigation あり（OK）
+- 日時形式の統一は別カード `datetime-standardize-card.md` に分離
