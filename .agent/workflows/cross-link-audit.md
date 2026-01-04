@@ -3,9 +3,9 @@ ai_visible: true
 title: Cross-Link Audit Workflow
 description: Audit and fix cross-links in rules and workflows
 tags: [maintenance, cross-link, audit]
-version: 1.1
+version: 1.2
 created: 2026-01-01T12:26:00+09:00
-updated: 2026-01-04T11:24:00+09:00
+updated: 2026-01-04T12:24:00+09:00
 language: en
 author: Lico (Polaris)
 ai_model: Claude Opus 4.5 (Thinking)
@@ -189,6 +189,10 @@ comm -23 <(sort /tmp/all-files.txt) <(sort /tmp/linked-files.txt)
 For each orphan:
 - Add link from README.md or parent document
 - Or document why it should remain unlinked
+
+> [!TIP]
+> Personal directories (`thoughts/`, `letters/`, `references/`) are **intentionally orphaned**.
+> They are not linked from `rules/` and this is by design.
 
 ---
 
