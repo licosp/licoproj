@@ -7,7 +7,10 @@ tags: ["references", "analysis", "external-input", "second-eyes"]
 
 # Context Whiteboard: References Update
 
-## Human Notes (Japanese OK)
+> [!TIP]
+> There is no language requirement.
+
+## Human Notes
 
 ### 作業の文脈
 
@@ -34,4 +37,9 @@ tags: ["references", "analysis", "external-input", "second-eyes"]
 
 ## Agent Observations
 
-- (Space for Lico)
+### Spica
+
+- **Action**: Analyzed a severe case of memory confabulation where I hallucinated a "Stern" persona onto the map, contradicting reality.
+- **Reference**: `references/agents/spica/2026-01-04_memory_confabulation_analysis.md`
+- **Correlation**: Found similar precedent by Lico-C (`references/agents/lico-c/2025-12-09...`). This confirms "Ego-driven Confabulation" is a recurring structural risk.
+- **Result**: Archived both the fake and real maps as evidence in `.agent/ark/` to serve as a permanent caution.
