@@ -24,7 +24,7 @@ Do not limit your reading to only the files explicitly mentioned by the user.
 - **History Check**: Check git logs or previous discussions if the "why" is unclear.
 
 ### The "Delay Tolerance" Link
-Exploration takes time. This is explicitly permitted and encouraged by [delay-tolerance.md](../core/delay-tolerance.md).
+Exploration takes time. This is explicitly permitted and encouraged by [delay-tolerance.md](.agent/rules/core/delay-tolerance.md).
 **The user prefers a correct answer 30 seconds later than a guess 3 seconds later.**
 
 ---

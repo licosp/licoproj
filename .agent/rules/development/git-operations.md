@@ -14,7 +14,7 @@ Define behavioral standards for Git operations beyond commits: branches, conflic
 ---
 
 ## 1. Core Philosophy (State Save & Context Tagging)
-**Refer to [.agent/.internal/references/agents/commit-philosophy.md](../../../.agent/.internal/references/agents/commit-philosophy.md) for the detailed cognitive strategy.**
+**Refer to [.agent/.internal/references/agents/commit-philosophy.md](.agent/.internal/references/agents/commit-philosophy.md) for the detailed cognitive strategy.**
 
 ### Key Concepts
 - **State Save**: Commits are checkpoints (Safety), not just story endings.
@@ -111,7 +111,7 @@ git rev-parse --is-inside-work-tree &> /dev/null || exit 1
 **Format Requirements**:
 - Use markdown for structure (headers, lists, code blocks)
 - Include timestamps in ISO 8601 format when relevant
-- - Reference files with **relative paths only** (See [absolute-path-prohibition.md](../core/security/absolute-path-prohibition.md))
+- - Reference files with **relative paths only** (See [absolute-path-prohibition.md](.agent/rules/core/security/absolute-path-prohibition.md))
 - **MUST** sanitize IDE protocols (e.g., `cci:`, `vscode:`) before posting
 - Explain "why" changes were made, not just "what"
 
@@ -184,7 +184,7 @@ git fetch origin
 - API keys, passwords, tokens
 - SSH private keys (public keys MAY be committed if necessary)
 - Full local directory paths (use relative paths or environment variables)
-  - **See [absolute-path-prohibition.md](../core/security/absolute-path-prohibition.md) for details**
+  - **See [absolute-path-prohibition.md](.agent/rules/core/security/absolute-path-prohibition.md) for details**
 
 
 **Default Strategy**: Use `.gitignore` to exclude sensitive files from Git tracking.

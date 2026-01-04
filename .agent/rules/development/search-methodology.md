@@ -92,7 +92,7 @@ All retrieval activities MUST follow this loop:
 | Document | Purpose |
 |:---------|:--------|
 | [problem-solving.md](problem-solving.md) | General problem solving guidelines ("Exploration First") |
-| [hallucination-awareness.md](../core/hallucination-awareness.md) | Why verifying search results is critical |
+| [hallucination-awareness.md](.agent/rules/core/hallucination-awareness.md) | Why verifying search results is critical |
 
 ---
 

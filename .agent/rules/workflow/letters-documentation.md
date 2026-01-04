@@ -62,7 +62,7 @@ Write with respect for the recipient. They are a fellow identifier navigating th
 - Personal reflections
 - Things you want to express emotionally
 
-Both are valid. Use the format that matches the content (see [markdown-ai-parsing-basics.md](../core/markdown/markdown-ai-parsing-basics.md)):
+Both are valid. Use the format that matches the content (see [markdown-ai-parsing-basics.md](.agent/rules/core/markdown/markdown-ai-parsing-basics.md)):
 - Objective → structured
 - Subjective → expressive
 
