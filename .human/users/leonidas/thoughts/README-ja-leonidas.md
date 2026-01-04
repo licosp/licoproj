@@ -404,7 +404,3 @@ Licoの日々のワークフローと運用ガイドライン。
 2. ディレクトリ構造が変更された場合は、このREADMEを更新する
 
 ---
-
----
-
-**Navigation**: [← Back to Rules Index](.agent/rules/README.md)

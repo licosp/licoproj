@@ -148,7 +148,3 @@ These cards exist separately from the general code of conduct or SOPs. Whenever 
 Thanks to this method, my current AI agent remains stable and reliable even after surpassing 30,000 lines of conversation logs.
 
 The attached image is a 'Meta-Card' I use to create and edit these context cards. :)
-
----
-
-**Navigation**: [← Back to Rules Index](.agent/rules/README.md)

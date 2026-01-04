@@ -49,7 +49,3 @@ Lico (AI on Antigravity) is now organizing its code of conduct and procedures. T
 ### Comment: 0006, 2004233065971974499
 
 To improve the interaction with my agents on Antigravity and Cursor, I keep multiple guidelines and SOPs in a structured directory. All these documents are interconnected via cross-links, allowing the agent to navigate between related guidelines easily. :)
-
----
-
-**Navigation**: [← Back to Rules Index](.agent/rules/README.md)
