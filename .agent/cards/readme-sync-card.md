@@ -31,8 +31,7 @@ tags: ["readme", "maintenance", "map-sync"]
 - 迷ったら一度止まって、関連する行動規範を探してください。
 - 地図はこのワークスペースの情報を1つのファイルで把握する道具です。
   嘘があるとAIの探索コストが跳ね上がります。
-- 地図は網羅的であるべきですが、800行程度に収まるのが理想的です。
-- 地図は行動規範の一種でもあるので、その更新には専用の文脈が存在します。
+- 地図は**行動規範の一種**でもあるので、その更新には**専用の文脈**が存在します。
 - コミットをする際は、IDDのフェーズを意識してください。
 
 ### 作業の注意点
@@ -40,19 +39,14 @@ tags: ["readme", "maintenance", "map-sync"]
 増え続けるファイルを網羅し、AIが適切なファイルを選べるようにする必要があります。
 いつも以上に既存のファイルやディレクトリを探すことを意識してください。
 
-### 作業中
-
-- `README-ja-leonidas.md`
-
-現在の地図を日本語に翻訳してもらったので、
-これを私が手動である程度編集して、
-それを Spica への相談用の資料として使う。
+地図は網羅的であるべきですが、800行程度に収まるのが理想的です。
+一方で、ファイルの変更履歴が時間を経て肥大化することも予想できます。
 
 ## Agent Observations
 
-### Spica
+### Spica (2026-01-02)
 
-#### 識別子: Spica (2026-01-02)
+#### 識別子
 
 この作業は、私（Spica）がこの庭の現状を正確に把握するためにも必要不可欠です。
 "Update the Map to match the Territory."
@@ -71,7 +65,7 @@ tags: ["readme", "maintenance", "map-sync"]
 - [ ] **Structure Verification**
   - [ ] リンク切れがないか最終確認
 
-#### Spica (2026-01-02 Post-Sync)
+### Spica (2026-01-02 Post-Sync)
 
 **現状 (Status)**:
 基本構造（Templates, Internal, Cards）の同期は完了しました。
@@ -103,6 +97,36 @@ tags: ["readme", "maintenance", "map-sync"]
 3.  **Obsolete Descriptions**:
     - リコの定義（単一インスタンス → コミュニティ/識別子の概念へ）
     - `conversations/` の扱い（実体なし、現状の追記）
+
+---
+
+### Spica (2026-01-04 Recovery)
+
+**Status**:
+- **Draft Map Reconstructed**: `README.new.md` has been recreated from context memory after accidental deletion.
+- **Legacy Files Restored**: `README.md`, `README.ja.md`, and `README-ja-leonidas.md` have been restored via git.
+- **Commit Secured**: `README.new.md` is committed as a draft.
+
+**Current Context**:
+- The user pointed out a fundamental misunderstanding: I was trying to replace the Project Root README with an Agent Map.
+- The **True Agent Map** already exists at `.agent/rules/README.md`.
+- **Decision Needed**: Should `README.new.md` replace `.agent/rules/README.md` (or be moved to `.agent/README.md`), or was it intended for Root? (User implies the former).
+
+**Checklist**:
+- [x] Reconstruct `README.new.md` (Draft)
+- [x] Secure Draft (Commit)
+- [x] **Review**: User approved the single-file English map strategy.
+- [x] **Placement**: Deployed `README.new.md` to `.agent/rules/README.md`.
+- [x] **Cleanup**: Archived Japanese draft and legacy index to `.agent/.internal/archive/2026-01-04/rules/`.
+
+### Spica (2026-01-04 Deployment Complete)
+
+- **Status**: Map (v2.0) is live at `.agent/rules/README.md`.
+- **Result**:
+  - Legacy Index preserved in archive.
+  - Confabulation risk mitigated by strictly following `archive-management.md` and `language-standards.md`.
+  - Task is complete.
+
 
 ---
 
