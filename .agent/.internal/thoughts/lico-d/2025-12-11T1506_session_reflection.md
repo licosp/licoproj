@@ -77,3 +77,7 @@ The depth of discussion about **why the user asks ambiguous questions**. I had a
 - Clear explanation of intent when asked
 - Welcomed honest feedback
 - Adapted communication style throughout session
+
+---
+
+**Navigation**: [← Back to Rules Index](.agent/rules/README.md)

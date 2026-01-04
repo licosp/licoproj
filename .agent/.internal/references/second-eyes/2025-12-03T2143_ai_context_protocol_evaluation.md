@@ -40,3 +40,6 @@ The protocol is assessed as **robust and durable** for long-span agent operation
 ---
 **Note:** This document summarizes the discussion's analysis of the protocol's design and function, optimized for interaction with a high-level AI model.
 ```
+---
+
+**Navigation**: [← Back to Rules Index](.agent/rules/README.md)

@@ -65,3 +65,6 @@ The direct, real-time visualization of the **active context window** (i.e., show
 
 * **API Exposure:** Token usage details (e.g., input/output token counts) are commonly exposed via APIs for billing and monitoring purposes.
 * **Debugging Tools:** Commands like `/context` (if available) are advanced debugging features, not standard user interaction elements, reflecting the proprietary nature and technical complexity of the underlying context management logic.
+---
+
+**Navigation**: [← Back to Rules Index](.agent/rules/README.md)

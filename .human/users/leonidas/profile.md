@@ -38,3 +38,6 @@ preferences:
 | Document | Purpose |
 |:---------|:--------|
 | [lico-assessment-2025-12-06.md](lico-assessment-2025-12-06.md) | Past Lico's longitudinal behavioral analysis |
+---
+
+**Navigation**: [← Back to Rules Index](.agent/rules/README.md)

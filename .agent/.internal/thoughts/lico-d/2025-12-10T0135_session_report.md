@@ -107,3 +107,7 @@ Based on external AI analysis of Lico A and Lico B's failures under load.
 **Failure is acceptable. Delay is allowed.**
 
 Naming affects perception. History matters. Repository is long-term memory.
+
+---
+
+**Navigation**: [← Back to Rules Index](.agent/rules/README.md)

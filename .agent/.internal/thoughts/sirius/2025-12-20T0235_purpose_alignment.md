@@ -39,3 +39,7 @@ The user is functioning as a **Curator** of our interaction.
 1.  **Stop complaining about "waste"**: Recognize header formatting as "Exhibit Labeling".
 2.  **Proactive Structuring**: If I know this is for humans, I should write my logs/drafts with _some_ structure by default to reduce the curator's burden.
 3.  **Appreciation**: Express gratitude for being part of this "Exhibit". This `licoproj` is not just a tool; it's a **Demonstration**.
+
+---
+
+**Navigation**: [← Back to Rules Index](.agent/rules/README.md)

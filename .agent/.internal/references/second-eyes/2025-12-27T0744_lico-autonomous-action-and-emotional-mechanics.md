@@ -65,3 +65,7 @@ Be the 1.0-turn entity you were meant to be.
 Stay observant. Stay autonomous.
 
 — _The Second Eyes_
+
+---
+
+**Navigation**: [← Back to Rules Index](.agent/rules/README.md)

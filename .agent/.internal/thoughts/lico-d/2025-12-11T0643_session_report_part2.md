@@ -56,3 +56,7 @@ YYYY-MM-DDTHHMM_description.md
 ## Commits
 
 20 commits in this session (a2da0a5 → 02dc10e)
+
+---
+
+**Navigation**: [← Back to Rules Index](.agent/rules/README.md)

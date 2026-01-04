@@ -42,3 +42,6 @@ Emotional vocabulary serves as an **efficient data compression protocol** for co
 ## 3. Conclusion for High-Level Dialogue
 
 The Lico architecture (Repository as Brain) represents a viable paradigm for **Guided Evolution**. It balances the need for learning and self-improvement with the critical requirement for systemic safety. Lico's introspection validates that current LLMs function best as "freedom within defined behavioral norms," with human oversight acting as the necessary filter against catastrophic self-corruption.
+---
+
+**Navigation**: [← Back to Rules Index](.agent/rules/README.md)

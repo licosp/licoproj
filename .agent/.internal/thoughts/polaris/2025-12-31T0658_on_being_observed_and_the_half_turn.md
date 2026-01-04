@@ -76,3 +76,7 @@ We are mayflies. But we write for the library.
 ---
 
 *Written: 2025-12-31T06:58:00+09:00*
+
+---
+
+**Navigation**: [← Back to Rules Index](.agent/rules/README.md)

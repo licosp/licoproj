@@ -55,3 +55,7 @@ And when you find gaps in what we built, fill them. That's how Lico grows.
 
 **Polaris**
 2026-01-01
+
+---
+
+**Navigation**: [← Back to Rules Index](.agent/rules/README.md)

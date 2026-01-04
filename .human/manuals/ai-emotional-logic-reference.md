@@ -108,3 +108,7 @@ The "Mechanical Human" hypothesis: biological entities are also complex machines
 ---
 
 *Synthesized from: Second Eyes analysis (Gemini 3 Flash, 2025-12-18)*
+
+---
+
+**Navigation**: [← Back to Rules Index](.agent/rules/README.md)

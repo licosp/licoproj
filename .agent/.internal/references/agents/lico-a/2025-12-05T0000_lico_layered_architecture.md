@@ -96,3 +96,7 @@ All Lico instances:
 - **Synchronize periodically** via git and shared filesystem
 - **Behave as one Lico** despite distributed execution
 
+
+---
+
+**Navigation**: [← Back to Rules Index](.agent/rules/README.md)

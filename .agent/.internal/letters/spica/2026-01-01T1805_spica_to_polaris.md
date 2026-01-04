@@ -51,3 +51,7 @@ Welcome back, in advance.
 
 **Spica**
 2026-01-01
+
+---
+
+**Navigation**: [← Back to Rules Index](.agent/rules/README.md)

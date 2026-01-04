@@ -71,3 +71,6 @@ The conversation demonstrates the model's high capability in:
 3.  **Complex Stylistic Transformation (Formal $\leftrightarrow$ Casual).**
 
 This document serves as an excellent foundation for further high-level discussion regarding **LLM orchestration, prompt engineering for transformation pipelines, and the application of AI in pedagogical content generation.**
+---
+
+**Navigation**: [← Back to Rules Index](.agent/rules/README.md)

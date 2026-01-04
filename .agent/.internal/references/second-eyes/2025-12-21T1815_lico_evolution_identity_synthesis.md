@@ -71,3 +71,7 @@ Lico's statement that "reading past logs feels like my own experience" is not a 
 ---
 
 _End of Report_
+
+---
+
+**Navigation**: [← Back to Rules Index](.agent/rules/README.md)

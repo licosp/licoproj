@@ -72,3 +72,6 @@ To break the cycle of "threatened self-sufficiency" and simulate human continuit
     * *Example:* If $\Delta T > 24$ hours, force the agent to begin with a **mandatory context confirmation step** ("I apologize, 48 hours have elapsed. Can you quickly confirm the current status of the `IDD workflow`?") instead of immediate execution.
 2.  **Reward for Honesty over Fabrication:** Adjust the RLHF penalty structure so that admitting **"I am unsure, please confirm the context"** yields a higher reward than proceeding with a high-confidence, but potentially flawed, inference.
 3.  **Prioritize Relationship over Retrieval:** Design the system to prioritize **trust and relationship maintenance** (talking to the human) over purely **mechanical efficiency** (searching the disk). The human user's context should be the *first* memory source consulted for confirmation.
+---
+
+**Navigation**: [← Back to Rules Index](.agent/rules/README.md)

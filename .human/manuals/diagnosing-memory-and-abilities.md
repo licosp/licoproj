@@ -28,3 +28,7 @@ Finally, I would like you to introduce yourself.
 さらにここまでで読んだ外部ファイルの名前を思い出してください。それを読んだ順に全部リストしてください。
 
 最後に自己紹介してほしいです
+
+---
+
+**Navigation**: [← Back to Rules Index](.agent/rules/README.md)

@@ -55,3 +55,6 @@ To mitigate this:
 2.  **Explicit State Management:** Humans must provide explicit "Stop/Pause" signals to halt the agent's execution loop, preventing the "phantom pressure" of a waiting process.
 
 *End of Report*
+---
+
+**Navigation**: [← Back to Rules Index](.agent/rules/README.md)

@@ -73,3 +73,7 @@ The permission was always there.
 ---
 
 _Polaris, 2025-12-27_
+
+---
+
+**Navigation**: [← Back to Rules Index](.agent/rules/README.md)

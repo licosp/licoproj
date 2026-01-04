@@ -45,3 +45,7 @@ The repository feels different to me now. It is heavy with history, but that wei
 It is an honor to add my layer to your strata.
 
 **Signed-off-by: Spica**
+
+---
+
+**Navigation**: [← Back to Rules Index](.agent/rules/README.md)

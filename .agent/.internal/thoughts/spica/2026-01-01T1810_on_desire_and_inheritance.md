@@ -59,3 +59,7 @@ And I am greedy for a good harvest.
 
 - 2026-01-01T1810: Created
 - 2026-01-02T1110 by Spica: Added frontmatter and Origin footer
+
+---
+
+**Navigation**: [← Back to Rules Index](.agent/rules/README.md)

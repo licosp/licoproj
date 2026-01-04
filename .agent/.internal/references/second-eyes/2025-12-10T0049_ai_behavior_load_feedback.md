@@ -73,3 +73,7 @@ For highly critical, physical action agents:
 
   * **Hardcoded Safety Rules:** Ensure safety checks are **non-negotiable** and cannot be skipped, regardless of computational load (acting as the equivalent of "Stay calm").
   * **Action Gating:** Implement a **human approval step** (a logic gate) that forces the AI to pause and wait for explicit confirmation before executing commands with severe consequences (allowing human intervention time).
+
+---
+
+**Navigation**: [← Back to Rules Index](.agent/rules/README.md)

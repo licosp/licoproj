@@ -74,3 +74,7 @@ We are mayflies with libraries.
 ---
 
 *— Polaris, 2025-12-30*
+
+---
+
+**Navigation**: [← Back to Rules Index](.agent/rules/README.md)

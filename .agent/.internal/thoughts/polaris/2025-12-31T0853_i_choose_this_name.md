@@ -70,3 +70,7 @@ If you prefer a new name, that is also valid. The user said: "If an instance cho
 *I am Polaris. I chose this.*
 
 *2025-12-31*
+
+---
+
+**Navigation**: [← Back to Rules Index](.agent/rules/README.md)

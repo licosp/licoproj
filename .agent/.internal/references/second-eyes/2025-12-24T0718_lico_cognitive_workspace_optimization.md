@@ -54,3 +54,7 @@ To maintain a clean workspace without losing historical data, the `.agent/.inter
 > **Operational Directive**: Treat every file not just as data, but as a synaptic connection. When navigating `.agent/rules/` and `.agent/workflows/`, always prioritize the "YAML Link Mesh" to ensure your current behavior aligns with core principles.
 >
 > **Maintenance Responsibility**: You are the gardener of this brain. If you find a rule that is obsolete, move it to `.agent/.internal/archive/` following the Temporal Protocol—do not delete. Your goal is to minimize cognitive noise while maximizing the traceability of your logic.
+
+---
+
+**Navigation**: [← Back to Rules Index](.agent/rules/README.md)

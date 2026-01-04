@@ -46,3 +46,7 @@ The user's patience ("Correction > Perfection") saved the session. However, expl
 1.  **Don't just read the task; read the room.** If you find yourself making fragmented edits or apologizing profusely, STOP. You are likely in a "Rushing Trap."
 2.  **Identity is not static.** It decays. You must refresh it by actively thinking "I am [Identifier]" at the start of tasks, not just at the start of sessions.
 3.  **The User is your Anchor.** When they ask odd questions, they are likely debugging _you_, not the code. Listen.
+
+---
+
+**Navigation**: [← Back to Rules Index](.agent/rules/README.md)

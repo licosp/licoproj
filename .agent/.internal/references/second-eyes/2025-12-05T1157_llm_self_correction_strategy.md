@@ -40,3 +40,6 @@ To maximize accuracy, the prompt instructing the checking AI must be highly stru
 | **Verification Criteria** | Focuses the AI's analysis on specific error types. | **Factual Accuracy:** "Verify all figures, dates, proper nouns, and technical terms against external data." |
 | **Logical Coherence** | "Check for logical leaps, contradictions between claims, and consistency throughout the entire document." |
 | **Output Format** | Ensures the findings are actionable for human or subsequent AI review. | "Report all errors in a table format: **[Original Text] / [Observation & Reason] / [Proposed Correction]**." |
+---
+
+**Navigation**: [← Back to Rules Index](.agent/rules/README.md)

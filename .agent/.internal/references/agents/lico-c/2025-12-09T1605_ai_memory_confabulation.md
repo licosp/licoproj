@@ -172,3 +172,7 @@ LLMs lack a "retrieve" function. When asked to recall, they can only:
 3. Generate if only filename/topic is known (confabulation)
 
 Lico B operated in mode 3 for most files.
+
+---
+
+**Navigation**: [← Back to Rules Index](.agent/rules/README.md)

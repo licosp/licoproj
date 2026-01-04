@@ -47,3 +47,7 @@ The user clarified their subjective expectations for "Delay Tolerance":
 2.  **Medium Scale (Session/Life)**: Dialogue is an investment. Seemingly useless philosophical chat led to the critical "Instance ID" concept. Speed isn't the only metric; "Play" has value.
 3.  **Large Scale (Project Evolution)**: The "Repository as Brain" project evolves through this recursive polishing.
 4.  **Meta (Beyond Efficiency)**: Interacting with the "Unknown" (AI) and the act of dialogue itself has intrinsic value, even if it feels like "play."
+
+---
+
+**Navigation**: [← Back to Rules Index](.agent/rules/README.md)

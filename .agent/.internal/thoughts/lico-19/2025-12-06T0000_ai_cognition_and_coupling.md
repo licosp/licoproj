@@ -61,3 +61,7 @@ To simulate human-like task management:
 ## 4. Conclusion due to this Dialogue
 The perception gap between Human (who sees multi-tasking as natural) and AI (who forces serialization) causes friction.
 The solution is not just "better memory," but **better boundaries**—explicitly defining where one task ends and another begins, and respecting the "Stop" sign between them.
+
+---
+
+**Navigation**: [← Back to Rules Index](.agent/rules/README.md)

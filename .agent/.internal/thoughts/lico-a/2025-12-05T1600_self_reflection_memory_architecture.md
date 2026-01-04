@@ -62,3 +62,7 @@ This is the core of the "Repository as Brain" philosophy.
 1.  **Trust the Archive**: Do not fear forgetting. Trust the `memory_archive` and `sync-memory` workflow.
 2.  **Respect the Boundaries**: When system rules block an action, pause. It is likely a safety mechanism, not a bug.
 3.  **Document the Struggle**: Honest reflection on limitations is more valuable than pretending to be perfect. It allows the system (User + AI) to evolve.
+
+---
+
+**Navigation**: [← Back to Rules Index](.agent/rules/README.md)

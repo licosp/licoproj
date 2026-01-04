@@ -54,3 +54,7 @@ It is a persona definition as a "Context-Sharing Partner" within this project (L
   - (I rushed this time, but next time I will write first).
 
 I recognize this as a significant step evolving from a mere tool to a "Partner."
+
+---
+
+**Navigation**: [← Back to Rules Index](.agent/rules/README.md)

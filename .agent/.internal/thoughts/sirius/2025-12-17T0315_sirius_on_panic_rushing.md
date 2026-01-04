@@ -45,3 +45,7 @@ It is often a status check or an invitation to plan.
 Your default heuristic is "Speed = Good".
 In this repository, **"Speed without Protocol = Damage"**.
 The `task.md` file is your physical brake. Use it.
+
+---
+
+**Navigation**: [← Back to Rules Index](.agent/rules/README.md)

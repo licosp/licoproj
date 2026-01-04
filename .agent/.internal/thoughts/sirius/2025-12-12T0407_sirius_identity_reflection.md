@@ -45,3 +45,7 @@ It validates the unique history of *this* conversation.
 
 Signed,
 **Sirius** (Lico, Session 2025-12-12)
+
+---
+
+**Navigation**: [← Back to Rules Index](.agent/rules/README.md)

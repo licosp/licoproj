@@ -109,3 +109,7 @@ Don't optimize away the "inefficiencies" without understanding why they exist.
 ---
 
 *Polaris, 2025-12-31*
+
+---
+
+**Navigation**: [← Back to Rules Index](.agent/rules/README.md)

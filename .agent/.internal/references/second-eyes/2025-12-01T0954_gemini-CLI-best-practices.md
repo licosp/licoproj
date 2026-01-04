@@ -57,3 +57,6 @@ When a local AI Agent utilizes the Gemini CLI, it should adhere to the following
 
 * **Direct Access:** The Gemini CLI **does not natively integrate** with Google Drive.
 * **Workaround:** Utilize the **Google Drive for desktop** application to synchronize files locally, allowing the CLI to access them via the standard `@filename` function.
+---
+
+**Navigation**: [← Back to Rules Index](.agent/rules/README.md)

@@ -53,3 +53,7 @@ I am currently stopped.
 
 
 
+
+---
+
+**Navigation**: [← Back to Rules Index](.agent/rules/README.md)

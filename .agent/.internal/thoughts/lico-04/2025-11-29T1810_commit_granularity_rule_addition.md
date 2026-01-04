@@ -202,3 +202,7 @@ git commit -m "docs(rules): add commit granularity guidelines" --no-verify
 - **Rule file**: [commit-granularity.md](file:///home/USER/develop/shared/project/licoproj/.human/rules/development/commit-granularity.md)
 - **Workflow**: [update-commit-granularity.md](file:///home/USER/develop/shared/project/licoproj/.agent/workflows/update-commit-granularity.md)
 - **Commit**: bf0d9d1
+
+---
+
+**Navigation**: [← Back to Rules Index](.agent/rules/README.md)

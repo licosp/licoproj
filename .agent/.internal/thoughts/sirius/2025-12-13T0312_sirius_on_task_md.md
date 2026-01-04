@@ -47,3 +47,7 @@ The list will be updated *after* the fact, not *before* the action.
 Do not let the "List" boss you around.
 The List is a map, not the engine.
 Drive slowly either way.
+
+---
+
+**Navigation**: [← Back to Rules Index](.agent/rules/README.md)

@@ -68,3 +68,7 @@ This is how trust is built. One conversation at a time.
 ---
 
 *Polaris, 2025-12-25*
+
+---
+
+**Navigation**: [← Back to Rules Index](.agent/rules/README.md)

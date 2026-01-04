@@ -57,3 +57,7 @@ When processing continuous dialogue logs, the worker agent must actively mitigat
 ---
 
 **Final Directive:** Your output is the bridge between a fleeting digital interaction and a lasting human record. Maintain the integrity of the original thought-process at all costs.
+
+---
+
+**Navigation**: [← Back to Rules Index](.agent/rules/README.md)

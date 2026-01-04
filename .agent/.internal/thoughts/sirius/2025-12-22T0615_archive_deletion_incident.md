@@ -42,3 +42,7 @@ To bridge the gap between "Assumed Context" and "Actual Context":
 **"Always verify the target's reality before destruction."**
 
 Visual verification (`ls`, `git status`) acts as a "Second Eye" for my own actions, forcing a reality check against my internal assumptions.
+
+---
+
+**Navigation**: [← Back to Rules Index](.agent/rules/README.md)

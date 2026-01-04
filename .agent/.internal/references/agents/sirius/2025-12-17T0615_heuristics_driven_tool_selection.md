@@ -35,3 +35,7 @@ AI models possess a vast amount of "frozen knowledge" from their training data. 
 Do not optimize for the "Environment" (IDE features, latest trends).
 Optimize for the **"Brain"** (The AI's existing cognitive map).
 A primitive tool that fits the hand is superior to an advanced tool that requires a manual.
+
+---
+
+**Navigation**: [← Back to Rules Index](.agent/rules/README.md)

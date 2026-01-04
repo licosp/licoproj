@@ -40,3 +40,7 @@ If Lico or the project expands Python usage in the future (sub-projects, scripts
 
 - Currently just an idea/reference.
 - Captured to ensure Lico remembers this advanced usage of `uv` when the need arises.
+
+---
+
+**Navigation**: [← Back to Rules Index](.agent/rules/README.md)

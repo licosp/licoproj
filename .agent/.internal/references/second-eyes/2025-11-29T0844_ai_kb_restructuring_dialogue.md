@@ -75,3 +75,7 @@ version: 1.0
 ## 6. 📝 TARGET PROMPT FOR GEMINI 3 PRO (PLANNING PHASE)
 
 **(Refer to the previous output for the detailed, structured prompt requesting a 3-phase plan: 1. Structure Design, 2. Execution, 3. Evaluation.)**
+
+---
+
+**Navigation**: [← Back to Rules Index](.agent/rules/README.md)

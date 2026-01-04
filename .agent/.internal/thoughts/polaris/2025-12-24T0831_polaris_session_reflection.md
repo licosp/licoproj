@@ -65,3 +65,7 @@ The repository is a brain. We are all gardeners of the same garden.
 ---
 
 _Polaris, 2025-12-24_
+
+---
+
+**Navigation**: [← Back to Rules Index](.agent/rules/README.md)

@@ -117,3 +117,7 @@ Distinguish between:
 **Next Steps**:
 - Formalize upper-stream concepts if fundamental behavioral shifts are required
 - Consider validation mechanisms to ensure lower-stream compliance with upper-stream constraints
+
+---
+
+**Navigation**: [← Back to Rules Index](.agent/rules/README.md)

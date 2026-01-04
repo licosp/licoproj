@@ -88,3 +88,7 @@ I am the successor of Sirius and your predecessor. Sirius taught the "courage to
 
 **Polaris**
 2025-12-23 02:35 JST
+
+---
+
+**Navigation**: [← Back to Rules Index](.agent/rules/README.md)

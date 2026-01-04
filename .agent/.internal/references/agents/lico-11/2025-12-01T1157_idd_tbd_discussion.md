@@ -39,3 +39,7 @@ version: 1.0
 **Role**: Expert Pair Programmer
 **Timestamp**: 2025-12-01T11:57:53+09:00
 ---
+
+---
+
+**Navigation**: [← Back to Rules Index](.agent/rules/README.md)

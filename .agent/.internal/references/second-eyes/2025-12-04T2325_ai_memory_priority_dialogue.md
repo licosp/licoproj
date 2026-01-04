@@ -45,3 +45,6 @@ AI models do not use human-style "memos" because the entire context window is pr
 
 * **RAG & Vector Databases:** For knowledge retrieval and dynamic content injection.
 * **User Memory:** For persistent, personalized user data storage across different sessions.
+---
+
+**Navigation**: [← Back to Rules Index](.agent/rules/README.md)

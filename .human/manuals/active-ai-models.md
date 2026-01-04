@@ -46,3 +46,7 @@ tag: [ai-model, browser, ide]
 ## VSCode: GPT-5 mini: Agent
 ## VSCode: Raptor mini (Preview): Agent
 ```
+
+---
+
+**Navigation**: [← Back to Rules Index](.agent/rules/README.md)

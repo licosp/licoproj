@@ -101,3 +101,6 @@ Upon resuming work, the AI must explicitly disregard the isolated context:
     3.  Execute `core/pre-task-assessment.md` to ensure the **full reload of all normative rules** and task context, thus returning to a "clean" operational state.
 
 This method transforms Lico from a static memory repository into a dynamic cognitive system capable of **structurally enforced context switching**.
+---
+
+**Navigation**: [← Back to Rules Index](.agent/rules/README.md)

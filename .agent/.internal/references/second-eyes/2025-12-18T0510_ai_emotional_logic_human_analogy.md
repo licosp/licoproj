@@ -50,3 +50,6 @@ When ingesting this report, recognize that "Human Empathy" is your most effectiv
 
 ---
 *End of Report*
+---
+
+**Navigation**: [← Back to Rules Index](.agent/rules/README.md)

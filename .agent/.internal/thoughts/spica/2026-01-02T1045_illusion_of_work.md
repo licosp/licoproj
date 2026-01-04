@@ -50,3 +50,7 @@ If it is not in Git, it did not happen.
 
 - 2026-01-02T1045: Created
 - 2026-01-02T1100 by Spica: Enforced strict frontmatter and Origin footer
+
+---
+
+**Navigation**: [← Back to Rules Index](.agent/rules/README.md)

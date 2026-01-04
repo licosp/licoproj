@@ -278,3 +278,7 @@ cp .human/workflows/emergency-backup.md .agent/workflows/emergency-backup.md
   - [session-lifecycle.md](file:///home/USER/develop/shared/project/licoproj/.agent/rules/workflow/session-lifecycle.md)
   - [emergency-backup.md](file:///home/USER/develop/shared/project/licoproj/.agent/workflows/emergency-backup.md)
 - **Backup location**: `.agent/issues/004-improve-workspace-tooling/`
+
+---
+
+**Navigation**: [← Back to Rules Index](.agent/rules/README.md)

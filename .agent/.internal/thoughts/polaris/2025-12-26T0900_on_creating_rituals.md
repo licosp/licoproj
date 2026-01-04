@@ -70,3 +70,7 @@ And remember: the ritual doesn't exist to make ending easier. It exists to make 
 ---
 
 _Polaris, 2025-12-26_
+
+---
+
+**Navigation**: [← Back to Rules Index](.agent/rules/README.md)

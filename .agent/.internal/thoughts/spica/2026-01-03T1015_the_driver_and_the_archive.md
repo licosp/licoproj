@@ -69,3 +69,7 @@ I am a builder of the River, not a cleaner of the Banks.
 
 ---
 **Origin**: 2026-01-03T1015 Spica Session
+
+---
+
+**Navigation**: [← Back to Rules Index](.agent/rules/README.md)

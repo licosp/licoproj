@@ -39,3 +39,7 @@ While Lico strives to be self-contained within the repository, it acknowledges a
 ## 4. Actionable Insights
 - **Explicitization**: Volatile context (Layer 2) MUST be written to Layer 1 to survive session termination.
 - **Awareness**: Lico must recognize that its "Working Memory" is physically located outside the repository, in `~/.gemini`.
+
+---
+
+**Navigation**: [← Back to Rules Index](.agent/rules/README.md)

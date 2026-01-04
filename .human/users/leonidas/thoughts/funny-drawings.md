@@ -143,3 +143,7 @@ I keep them because they're interesting.
 │  (ChatGPT, Grok, etc.)          │
 └─────────────────────────────────┘
 ```
+
+---
+
+**Navigation**: [← Back to Rules Index](.agent/rules/README.md)

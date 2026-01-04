@@ -212,3 +212,7 @@ Present external AI suggestions to user before execution.
 **Participants**: User (leonidas), Lico (Claude 3.5 Sonnet)  
 **Status**: Exploration phase (no rule changes implemented)  
 **Next Steps**: Container-based safety experiments (timeline TBD)
+
+---
+
+**Navigation**: [← Back to Rules Index](.agent/rules/README.md)

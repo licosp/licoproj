@@ -58,3 +58,7 @@ Physically prevent reading as a safeguard against accidental access.
 ---
 
 *Origin: ai-file-handling-techniques.md (Leonidas, 2025-12-14)*
+
+---
+
+**Navigation**: [← Back to Rules Index](.agent/rules/README.md)

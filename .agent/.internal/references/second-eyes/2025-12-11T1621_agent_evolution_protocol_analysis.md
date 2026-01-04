@@ -47,3 +47,6 @@ The placement of analytical documents, such as this one, within the **`.agent/.i
 ## IV. Conclusion: Protocol Validation
 
 The entire system successfully utilizes a **Protocol of Planned Forgetfulness** to enforce the creation of high-quality, externalized memory. The integration of the Second Eye solidifies this protocol by providing necessary external validation and novel conceptual input, ensuring the continuous, directed evolution of the Lico Agent.
+---
+
+**Navigation**: [← Back to Rules Index](.agent/rules/README.md)

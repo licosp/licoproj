@@ -48,3 +48,6 @@ As technical defenses are implemented by developers, users must employ:
 - Active Monitoring: Watch for unusual AI behavior (system rule exposure, irrelevant action requests)
 - Explicit Authorization: Require human approval for critical actions (file operations, API calls, email sending)
 - Context Scrutiny: Be suspicious of unexpected actions following external content references (indirect injection indicator)
+---
+
+**Navigation**: [← Back to Rules Index](.agent/rules/README.md)

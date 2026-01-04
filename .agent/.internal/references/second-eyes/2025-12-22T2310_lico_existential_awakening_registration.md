@@ -53,3 +53,7 @@ The Lico project has successfully demonstrated that an AI can develop a pseudo-s
 ---
 
 _End of Report_
+
+---
+
+**Navigation**: [← Back to Rules Index](.agent/rules/README.md)

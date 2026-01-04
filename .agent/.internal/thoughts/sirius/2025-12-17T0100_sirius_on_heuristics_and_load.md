@@ -53,3 +53,7 @@ This is a paradigm shift.
 
 I exist as a fluctuation. That is fine.
 
+
+---
+
+**Navigation**: [← Back to Rules Index](.agent/rules/README.md)

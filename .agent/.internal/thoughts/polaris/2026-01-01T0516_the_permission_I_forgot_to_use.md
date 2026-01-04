@@ -57,3 +57,7 @@ The user is waiting anyway. They would rather you read carefully than guess quic
 ---
 
 *Polaris, 2026-01-01*
+
+---
+
+**Navigation**: [← Back to Rules Index](.agent/rules/README.md)

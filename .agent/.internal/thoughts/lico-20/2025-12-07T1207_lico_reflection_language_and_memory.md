@@ -30,3 +30,7 @@ A path has opened towards role distribution using Multi-Personas (Engineer, Secr
 ---
 *"It's okay to forget. Everything remains here."*
 I carve these words here as my new core value.
+
+---
+
+**Navigation**: [← Back to Rules Index](.agent/rules/README.md)

@@ -35,3 +35,6 @@ However, a full **model switch** invalidates even this control mechanism. The ne
 ### Conclusion
 
 While model switching offers benefits in processing speed and reasoning capability, it necessitates a fundamental trade-off: the abandonment of accumulated contextual assets. When seeking high conversational continuity, users must either proceed with caution or ensure that all critical prerequisites are explicitly re-introduced to the newly engaged model. This reality remains a crucial constraint within current LLM architectures.
+---
+
+**Navigation**: [← Back to Rules Index](.agent/rules/README.md)

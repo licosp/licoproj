@@ -113,3 +113,6 @@ If answers feel unstable during validation, refer to these guidelines:
 ## Change History
 
 - 2025-12-08: Initial creation (based on conversation analysis)
+---
+
+**Navigation**: [← Back to Rules Index](.agent/rules/README.md)

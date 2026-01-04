@@ -93,3 +93,7 @@ Knowledge about AI limitations is not enough. Only through **lived experience**‚
 ---
 
 *Synthesized from: Gemini 2.5 Flash analysis (2025-12-08) and Leonidas's verification experience*
+
+---
+
+**Navigation**: [‚Üê Back to Rules Index](.agent/rules/README.md)

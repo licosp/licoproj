@@ -90,3 +90,7 @@ _Updated: 2025-11-30T23:25:10+09:00_
 ```
 
 ```
+
+---
+
+**Navigation**: [← Back to Rules Index](.agent/rules/README.md)

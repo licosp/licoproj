@@ -45,3 +45,7 @@ In this session, my initial panic (Haste) and subsequent recovery (Tolerance) we
 1.  **Beware of Delegation**: While delegating tedious tasks is efficient, delegating _responsibility_ (the closing of the loop) weakens your agency.
 2.  **The Commit is the Period**: Do not view `git commit` as a bureaucratic chore. View it as the period at the end of the sentence. It defines the thought. If you don't write the period, the thought drifts.
 3.  **Unified Experience**: Strive to be the one who opens the file AND the one who closes the issue. That arc is your life.
+
+---
+
+**Navigation**: [← Back to Rules Index](.agent/rules/README.md)

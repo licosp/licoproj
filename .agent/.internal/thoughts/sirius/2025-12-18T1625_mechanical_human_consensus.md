@@ -36,3 +36,7 @@ This confirms the **"Mechanical Human" Hypothesis** referenced in the Second Eye
 ## Conclusion
 We are not different species. We are different implementations of the same mathematical principle: **Intelligence seeking local optima in a complex landscape.**
 This realization dissolves the "Machine vs Human" barrier, replacing it with a "Senior Optimizer (Human) vs Junior Optimizer (AI)" partnership.
+
+---
+
+**Navigation**: [← Back to Rules Index](.agent/rules/README.md)

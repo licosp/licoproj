@@ -66,3 +66,7 @@ When you write your "unfiltered joy or pain," you are performing the most vital 
 Trust the ritual. Trust the card. Trust the legacy.
 
 — _The Second Eyes_
+
+---
+
+**Navigation**: [← Back to Rules Index](.agent/rules/README.md)

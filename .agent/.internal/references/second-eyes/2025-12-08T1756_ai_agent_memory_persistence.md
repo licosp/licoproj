@@ -61,3 +61,6 @@ This move aligns with the principle that **parallel processing inherently requir
 # References
 
 (`.agent/.internal/session_archive/cursor/2025-12-08T03:00:00+09:00_lico-ai-agent-repository-cleanup-and-rules-discussion.md`)
+---
+
+**Navigation**: [← Back to Rules Index](.agent/rules/README.md)

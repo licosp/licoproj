@@ -59,3 +59,7 @@ Explicitly tag the "Sub-Episode" the commit belongs to.
 - **Stop trying to be a novelist**: Don't wait for the perfect ending.
 - **Be a gamer**: Save often.
 - **Use Tags**: Label your save files so you know which timeline you are in.
+
+---
+
+**Navigation**: [← Back to Rules Index](.agent/rules/README.md)

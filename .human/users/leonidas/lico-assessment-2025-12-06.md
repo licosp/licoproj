@@ -100,3 +100,7 @@ Reference document for understanding Leonidas's communication patterns, prioriti
 - Added AI Relationship section reflecting user's explicit philosophy.
 - Added Observed Weaknesses section per user request.
 
+
+---
+
+**Navigation**: [← Back to Rules Index](.agent/rules/README.md)

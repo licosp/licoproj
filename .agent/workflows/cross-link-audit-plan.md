@@ -26,24 +26,24 @@ This document defines the **target directories** for cross-link audit. For the a
 | Directory | Status | Files | Notes |
 |:----------|:-------|:------|:------|
 | `.agent/rules/` | ✓ **完了** | ~50 | 2026-01-04 |
-| `.agent/workflows/` | [ ] 未着手 | ~15 | |
-| `.agent/.internal/legacy.md` | [ ] 未着手 | 1 | Single file |
+| `.agent/workflows/` | ✓ **完了** | 13 | 2026-01-04, path-fixed |
+| `.agent/.internal/legacy.md` | ✓ **完了** | 1 | Navigation only (append-only) |
 
 ### Tier 2: Internal Documentation
 
 | Directory | Status | Files | Notes |
 |:----------|:-------|:------|:------|
-| `.agent/.internal/references/` | [ ] 未着手 | 36 | External references |
-| `.agent/.internal/thoughts/` | [ ] 未着手 | 43 | Personal reflections |
-| `.agent/.internal/letters/` | [ ] 未着手 | 3 | AI correspondence |
-| `.agent/.internal/explorations/` | [ ] 未着手 | 1 | Ideas |
+| `.agent/.internal/references/` | ✓ **完了** | 36 | 2026-01-04 |
+| `.agent/.internal/thoughts/` | ✓ **完了** | 43 | 2026-01-04 |
+| `.agent/.internal/letters/` | ✓ **完了** | 3 | 2026-01-04 |
+| `.agent/.internal/explorations/` | ✓ **完了** | 1 | 2026-01-04 |
 
 ### Tier 3: Human-Facing
 
 | Directory | Status | Files | Notes |
 |:----------|:-------|:------|:------|
-| `.human/users/leonidas/` | [ ] 未着手 | 2 | User profile |
-| `.human/manuals/` | [ ] 未着手 | 5 | Shared manuals |
+| `.human/users/leonidas/` | ✓ **完了** | 6 | 2026-01-04 |
+| `.human/manuals/` | ✓ **完了** | 5 | 2026-01-04 |
 
 ---
 

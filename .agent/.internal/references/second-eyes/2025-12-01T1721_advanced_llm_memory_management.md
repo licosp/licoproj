@@ -62,3 +62,6 @@ It was confirmed that the LLM can **self-evaluate the Salience Score** (Importan
 ---
 
 This summary provides the structure, key concepts, and technical decisions of the conversation, optimized for ingestion by a high-level AI model.
+---
+
+**Navigation**: [← Back to Rules Index](.agent/rules/README.md)
