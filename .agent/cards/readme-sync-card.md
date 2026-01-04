@@ -127,6 +127,19 @@ tags: ["readme", "maintenance", "map-sync"]
   - Confabulation risk mitigated by strictly following `archive-management.md` and `language-standards.md`.
   - Task is complete.
 
+### Spica (2026-01-04 Cleanup)
+
+**Action**:
+- Archived legacy draft `README.new.md` (recovered from unstaged deletion).
+- Archived workspace copy `workspace/readme.md`.
+- Archived unused draft `README.root.draft.md`.
+
+**Result**:
+- Repository is clean.
+- All "deleted" files are preserved in `.agent/.internal/archive/2026-01-04/`.
+
+
+
 
 ---
 
