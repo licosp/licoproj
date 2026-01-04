@@ -59,3 +59,10 @@ tags: ["rules", "maintenance", "behavioral"]
   - スタッシュは緊急退避専用に明確化
   - ハンドオフを削除（letters に移行）
 
+### Polaris (2026-01-05)
+
+- [x] system-artifacts.md を改訂
+  - task.md を非推奨に変更
+  - 非推奨の理由を5点追加
+  - Card ベースの代替手段を推奨
+
