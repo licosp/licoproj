@@ -160,9 +160,9 @@ tags: ["maintenance", "cross-link", "rules", "workflows"]
 6. [x] Batch 4-6: `documentation/`, `markdown/`, `security/` — **完了** (2026-01-02)
 7. [x] Batch 7: `delay-tolerance.md` — **完了 (修正あり)**
 8. [x] Batch 8: `session-startup/card-workflow/lifecycle` — **完了** (2026-01-02)
-9. [ ] **Navigation なしファイルの修正** — 多数残存
-10. [ ] パス形式の統一（ワークスペースルート相対）
-11. [ ] 孤立ファイル・循環リンクの検出
+9. [x] **Navigation なしファイルの修正** — **完了** (18ファイル, 2026-01-04)
+10. [x] パス形式の統一 — **完了** (5ファイル, 2026-01-04)
+11. [x] 孤立ファイル・循環リンクの検出 — **完了** (孤立ファイルなし)
 12. [ ] **ヘッダー修正**: 標準テンプレートに合わせて足りないフィールドを追加
 13. [ ] 最終コミット・カード更新
 
@@ -177,3 +177,6 @@ tags: ["maintenance", "cross-link", "rules", "workflows"]
 - Navigation リンクがないファイルが多数発見（10件以上）
 - 新規ファイル `letters-documentation.md` は Origin/Navigation あり（OK）
 - 日時形式の統一は別カード `datetime-standardize-card.md` に分離
+- **18ファイル** に Origin + Navigation を追加
+- **5ファイル** の相対パスをワークスペースルート相対に変換
+- 孤立ファイルは検出されず（全ファイルがリンク済み）

@@ -3,9 +3,9 @@ ai_visible: true
 title: Cross-Link Audit Workflow
 description: Audit and fix cross-links in rules and workflows
 tags: [maintenance, cross-link, audit]
-version: 1.0
+version: 1.1
 created: 2026-01-01T12:26:00+09:00
-updated: 2026-01-01T12:26:00+09:00
+updated: 2026-01-04T11:24:00+09:00
 language: en
 author: Lico (Polaris)
 ai_model: Claude Opus 4.5 (Thinking)
@@ -28,6 +28,15 @@ Audit and fix cross-links in rules and workflows to ensure consistency and maint
 - When creating new rules or workflows
 
 ---
+
+## Scope
+
+> [!IMPORTANT]
+> Execute this workflow on **one directory at a time** (e.g., `.agent/rules/`).
+> Complete all phases for one directory before moving to the next.
+
+---
+
 
 ## Link Design Policy
 
@@ -96,6 +105,19 @@ All paths should be workspace-root relative (`.agent/...`), not file-relative (`
 # Find relative paths (../...)
 grep -rE "\.\./.*\.md" .agent/rules --include="*.md"
 ```
+
+**2-3. Convert Relative Paths to Workspace Root**
+
+For each file with `../` paths, convert to workspace-root format:
+
+```bash
+# Example: Convert ../core/foo.md to .agent/rules/core/foo.md
+sed -i 's|\.\./core/|.agent/rules/core/|g' <file>
+sed -i 's|\.\./\.\./|.agent/|g' <file>
+```
+
+> [!TIP]
+> Paths in documentation examples (showing what NOT to do) should remain unchanged.
 
 > [!CAUTION]
 > Do NOT delete broken links immediately. The file may have moved. Search first.
