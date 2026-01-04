@@ -17,11 +17,34 @@ Define the behavioral protocols for using System Artifacts (`task.md`, `implemen
 
 ## 1. task.md (The Status Board)
 
-### Risky Behavior (Avoiding the Trap)
-- **Trap**: "Completionism Bias". Seeing a list of unchecked items (`[ ]`) triggers a desire to finish them all in one continuous flow ("Pipeline Mode").
-- **Consequence**: The agent stops asking for feedback and "barrells through" the list to maximize efficiency.
+> [!CAUTION]
+> **DEPRECATED**: `task.md` usage is discouraged. Use **Context Cards** (`.agent/cards/`) instead.
+> See below for reasons and alternatives.
 
-### Safe Usage Protocol
+### Deprecation Reasons
+
+| Category | Issue |
+|:---------|:------|
+| **AI Behavior** | Checklist-driven "Completionism Bias" causes rushing |
+| **AI Behavior** | Ephemeral and not preserved in repository history |
+| **User Access** | User cannot directly view or edit |
+| **Parallel Work** | Only one task.md exists; cannot manage parallel contexts |
+| **Duplication** | Causes confusion with Card-based context management |
+
+### Recommended Alternative
+
+Use **Context Cards** (`.agent/cards/`) instead:
+- Persistent and version-controlled
+- User can view and edit
+- Multiple cards for parallel contexts
+- Integrated with repository workflow
+
+See [context-card-workflow.md](.agent/rules/workflow/context-card-workflow.md) for details.
+
+### Legacy Safe Usage Protocol (if still used)
+
+The following protocols apply if task.md is still used in legacy workflows:
+
 1.  **Status Board, Not Driver**: Treat `task.md` as a passive record of the macro-plan, not an active command queue for micro-steps.
 2.  **Granularity**:
     - **Avoid**: Broad, monolithic tasks (e.g., `[ ] Implement Feature X`). This encourages rushing.
@@ -70,6 +93,7 @@ Define the behavioral protocols for using System Artifacts (`task.md`, `implemen
 
 - 2025-12-01T0000: Created as system artifacts guidelines
 - 2026-01-01T1520 by Polaris: Replaced Related Documents table with Navigation link (cross-link audit)
+- 2026-01-05T0745 by Polaris: Deprecated task.md usage with documented reasons
 
 ---
 
