@@ -15,7 +15,7 @@ Systematically review behavioral rules to ensure they are properly interconnecte
 - **Specific**: After adding a new core rule (e.g., `emergency-protocols.md`) to retroactively link it from existing files.
 
 ## Methodology
-This workflow strictly follows **[search-methodology.md](../rules/development/search-methodology.md)**.
+This workflow strictly follows **[search-methodology.md](.agent/rules/development/search-methodology.md)**.
 - **Do not assume scalar results**.
 - **Detect and report Overflow**.
 - **Seek help if stuck**.

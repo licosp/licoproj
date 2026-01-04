@@ -212,8 +212,8 @@ git stash pop
 |:---------|:--------|
 | [idd-phase2-impl.md](idd-phase2-impl.md) | Phase 2: Implementation |
 | [idd-phase3-fini.md](idd-phase3-fini.md) | Phase 3: Finalization |
-| [git-operations.md](../rules/development/git-operations.md) | Branch naming, IDD details |
-| [commit-standards.md](../rules/development/commit-standards.md) | Commit message standards |
+| [git-operations.md](.agent/rules/development/git-operations.md) | Branch naming, IDD details |
+| [commit-standards.md](.agent/rules/development/commit-standards.md) | Commit message standards |
 
 ### Issue: Accidentally committed to main (local)
 

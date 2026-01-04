@@ -95,4 +95,4 @@ Phase separation triggers **forced re-reading**.
 | Document | Purpose |
 |:---------|:--------|
 | [deep-writing.md](deep-writing.md) | Deep writing protocol |
-| [context-preservation.md](../rules/workflow/context-preservation.md) | Context preservation |
+| [context-preservation.md](.agent/rules/workflow/context-preservation.md) | Context preservation |

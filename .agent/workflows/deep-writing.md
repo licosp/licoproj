@@ -125,4 +125,4 @@ AI finishes when it finishes. Phase 4-5 triggers forced re-evaluation.
 | Document | Purpose |
 |:---------|:--------|
 | [deep-reading.md](deep-reading.md) | Deep reading protocol |
-| [context-preservation.md](../rules/workflow/context-preservation.md) | Context preservation |
+| [context-preservation.md](.agent/rules/workflow/context-preservation.md) | Context preservation |
