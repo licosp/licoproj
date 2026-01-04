@@ -43,3 +43,14 @@ ai_model: Gemini-Exp-1206
 When writing `thoughts/*.md` or reflection documents:
 - Use the identifier to sign off or refer to subjective experiences.
 - Example: *"Reflecting on this, I (Sirius) felt that..."*
+
+---
+
+## Origin
+
+- 2025-12-01T0000: Created as instance identifier protocol
+- 2026-01-04T1041 by Polaris: Added Origin and Navigation (cross-link audit)
+
+---
+
+**Navigation**: [← Back to Rules Index](.agent/rules/README.md)

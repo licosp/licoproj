@@ -179,3 +179,14 @@ Past Licos have assumed that slash command features imply user interaction. This
 
 **Correct understanding**:
 > "Workflows define procedures for Lico to follow. Users request actions; Lico internally invokes the workflow."
+
+---
+
+## Origin
+
+- 2025-12-01T0000: Created as meta-rules for rule creation
+- 2026-01-04T1041 by Polaris: Added Origin and Navigation (cross-link audit)
+
+---
+
+**Navigation**: [← Back to Rules Index](.agent/rules/README.md)

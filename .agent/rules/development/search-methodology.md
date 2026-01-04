@@ -93,3 +93,14 @@ All retrieval activities MUST follow this loop:
 |:---------|:--------|
 | [problem-solving.md](problem-solving.md) | General problem solving guidelines ("Exploration First") |
 | [hallucination-awareness.md](../core/hallucination-awareness.md) | Why verifying search results is critical |
+
+---
+
+## Origin
+
+- 2025-12-01T0000: Created
+- 2026-01-04T1041 by Polaris: Added Origin and Navigation (cross-link audit)
+
+---
+
+**Navigation**: [← Back to Rules Index](.agent/rules/README.md)

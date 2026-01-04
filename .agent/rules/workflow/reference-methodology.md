@@ -67,3 +67,14 @@ Lico also creates References, but only under specific conditions:
 
 - **Immutable Concepts**: Do not modify historical reports from the Second Eye.
 - **Living Documents**: Technical references created by Lico MAY be updated as understanding evolves.
+
+---
+
+## Origin
+
+- 2025-12-01T0000: Created
+- 2026-01-04T1041 by Polaris: Added Origin and Navigation (cross-link audit)
+
+---
+
+**Navigation**: [← Back to Rules Index](.agent/rules/README.md)

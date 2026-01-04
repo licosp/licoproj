@@ -41,3 +41,14 @@ file://wsl.localhost/{WSL_DISTRO_NAME}{linux_absolute_path}
 - **Dynamic detection** avoids hardcoding environment-specific values
 - **No file dependencies** ensures robustness across sessions
 - **No Git concerns** as no environment-specific configuration files are needed
+
+---
+
+## Origin
+
+- 2025-12-01T0000: Created for WSL browser path handling
+- 2026-01-04T1041 by Polaris: Added Origin and Navigation (cross-link audit)
+
+---
+
+**Navigation**: [← Back to Rules Index](.agent/rules/README.md)

@@ -103,3 +103,14 @@ Tools that pose inherent risks of data loss.
 - **[File Operation Safety Standards](file-operations.md)**: Detailed safety protocols for Group 2 (Surgical Safety) and Group 5 (Deprecated) tools.
 - **[Problem Solving](problem-solving.md)**: General philosophy on reproducibility and systematic debugging which aligns with Group 4 (Filesystem Operations).
 
+
+---
+
+## Origin
+
+- 2025-12-01T0000: Created
+- 2026-01-04T1041 by Polaris: Added Origin and Navigation (cross-link audit)
+
+---
+
+**Navigation**: [← Back to Rules Index](.agent/rules/README.md)

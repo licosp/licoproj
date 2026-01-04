@@ -75,3 +75,14 @@ Ensure proper handling of Japanese characters (UTF-8) and special punctuation ma
 
 ### Contextual Considerations
 When direct translation would be unclear, provide English equivalents or explanations. Maintain technical precision while adapting to English conventions.
+
+---
+
+## Origin
+
+- 2025-12-01T0000: Created for JA→EN translation guidelines
+- 2026-01-04T1041 by Polaris: Added Origin and Navigation (cross-link audit)
+
+---
+
+**Navigation**: [← Back to Rules Index](.agent/rules/README.md)

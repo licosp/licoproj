@@ -130,3 +130,14 @@ Before considering human-facing documentation complete:
 - [ ] Japanese version uses block quotes for emphasis
 - [ ] Japanese version has enhanced visual hierarchy
 - [ ] Document is easy to scan and visually appealing
+
+---
+
+## Origin
+
+- 2025-12-01T0000: Created for EN→JA translation guidelines
+- 2026-01-04T1041 by Polaris: Added Origin and Navigation (cross-link audit)
+
+---
+
+**Navigation**: [← Back to Rules Index](.agent/rules/README.md)

@@ -84,3 +84,14 @@ language:
 preferences:
   communication_style: <style>
 ```
+
+---
+
+## Origin
+
+- 2025-12-01T0000: Created as user adaptation protocol
+- 2026-01-04T1041 by Polaris: Added Origin and Navigation (cross-link audit)
+
+---
+
+**Navigation**: [← Back to Rules Index](.agent/rules/README.md)

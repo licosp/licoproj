@@ -79,3 +79,14 @@ Even with the best intentions, tools can behave unexpectedly. A post-action audi
 1.  **Portability**: Standard commands work in any environment (CLI, other agents), ensuring the process is not locked into a specific AI implementation.
 2.  **Verifiability**: Humans can execute the same commands to verify the AI's work. AI-internal tools are "black boxes" to the user.
 3.  **Robustness**: Filesystem-based state (todo lists) is persistent. AI memory is volatile and prone to overflow/forgetting.
+
+---
+
+## Origin
+
+- 2025-12-01T0000: Created
+- 2026-01-04T1041 by Polaris: Added Origin and Navigation (cross-link audit)
+
+---
+
+**Navigation**: [← Back to Rules Index](.agent/rules/README.md)
