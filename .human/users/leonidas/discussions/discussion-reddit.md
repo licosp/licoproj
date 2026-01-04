@@ -20,6 +20,7 @@ related:
   https://www.reddit.com/r/google_antigravity/comments/1pz6ri4/comment/nwoxbfi/: 0012
   https://www.reddit.com/r/google_antigravity/comments/1pz9t7r/comment/nwrcac9/: 0013
   https://www.reddit.com/r/google_antigravity/comments/1q019bh/comment/nwvrk6p/: 0014
+  https://www.reddit.com/r/google_antigravity/comments/1q35vex/comment/nxj2t0o/: 0015
 ---
 
 # The discussion on Reddit.
@@ -137,3 +138,13 @@ To get even better results, I recommend setting rules that explicitly 'permit' c
 You should periodically remind the agent that these tolerances are special rules designed to achieve higher-quality outcomes. It’s essential to give the AI a 'systemic' way to stay calm and maintain a broader perspective.
 
 I use a specific rule for this, which you can see here: https://github.com/licosp/licoproj/blob/ff2cd699b429eea14c383f28a11e03fbc5b83af9/.agent/rules/core/delay-tolerance.md
+
+### Comment: 0015, 1q35vex-nxj2t0o
+
+To keep long conversations smooth, I divide my sessions into 'context units' and manage them using a switchable 'whiteboard' system, which I call 'Context Cards.'
+
+These cards exist separately from the general code of conduct or SOPs. Whenever the context of the work changes, I have the AI read the relevant card. Since both the human and the AI can write to these cards, we can explicitly share and align our understanding of the current context.
+
+Thanks to this method, my current AI agent remains stable and reliable even after surpassing 30,000 lines of conversation logs.
+
+The attached image is a 'Meta-Card' I use to create and edit these context cards. :)
