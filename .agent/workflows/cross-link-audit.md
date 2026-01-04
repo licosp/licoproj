@@ -3,9 +3,9 @@ ai_visible: true
 title: Cross-Link Audit Workflow
 description: Audit and fix cross-links in rules and workflows
 tags: [maintenance, cross-link, audit]
-version: 1.2
+version: 1.3
 created: 2026-01-01T12:26:00+09:00
-updated: 2026-01-04T12:24:00+09:00
+updated: 2026-01-05T07:55:00+09:00
 language: en
 author: Lico (Polaris)
 ai_model: Claude Opus 4.5 (Thinking)
@@ -244,6 +244,47 @@ git commit -m "docs(rules): audit and fix cross-links
 
 [16-cross-link-methods] (Maintenance)"
 ```
+
+---
+
+## Phase 8: Verification
+
+> [!IMPORTANT]
+> **Always verify before declaring complete.**
+> This phase ensures the work is truly done, not just assumed done.
+
+**8-1. Confirm Navigation Links**
+
+Check that all target files have Navigation footer:
+```bash
+# Count files without Navigation
+for f in $(find .agent/rules -name "*.md" -type f); do
+  if ! grep -q "Navigation" "$f"; then
+    echo "Missing: $f"
+  fi
+done
+```
+
+**8-2. Confirm Path Format**
+
+Check that no relative paths (`../`) remain:
+```bash
+grep -rn "\.\.\/" .agent/rules --include="*.md"
+```
+
+**8-3. Spot Check**
+
+Review 2-3 files manually to confirm:
+- Footer format is correct
+- Frontmatter `related:` section is accurate
+- No broken links
+
+**8-4. Update Card and Close**
+
+If all checks pass:
+1. Update the card with final status
+2. Archive or reset the card for next use
+3. Mark the audit as complete
 
 ---
 
