@@ -164,11 +164,11 @@ tags: ["maintenance", "cross-link", "rules", "workflows"]
 10. [x] パス形式の統一 — **完了** (5ファイル, 2026-01-04)
 11. [x] 孤立ファイル・循環リンクの検出 — **完了** (孤立ファイルなし)
 12. [x] **rules/ 完了** — 2026-01-04
-13. [ ] **workflows/** — Tier 1
-14. [ ] **legacy.md** — Tier 1
-15. [ ] **references/, thoughts/, letters/, explorations/** — Tier 2
-16. [ ] **users/leonidas/, manuals/** — Tier 3
-17. [ ] 最終コミット・カード更新
+13. [x] **workflows/** — **完了** (パス修正6ファイル, 2026-01-04)
+14. [x] **legacy.md** — **完了** (Navigation追加, 2026-01-04)
+15. [x] **references/, thoughts/, letters/, explorations/** — **完了** (2026-01-04)
+16. [x] **users/leonidas/, manuals/** — **完了** (一部戻し, 2026-01-04)
+17. [x] 最終コミット・カード更新 — **完了**
 
 > [!NOTE]
 > ヘッダー修正は `datetime-standardize-card.md` に分離。
@@ -188,4 +188,5 @@ tags: ["maintenance", "cross-link", "rules", "workflows"]
 - **5ファイル** の相対パスをワークスペースルート相対に変換
 - 孤立ファイルは検出されず（全ファイルがリンク済み）
 - **cross-link-audit-plan.md** を作成（全体計画）
-- 残りディレクトリの作業続行
+- 全 Tier 監査完了: 相対パスなし、Tier 2/3 は orphan が意図的
+- 一部の個人ファイル (discussions, thoughts) は Navigation を戻した
