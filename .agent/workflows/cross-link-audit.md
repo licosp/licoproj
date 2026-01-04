@@ -3,9 +3,9 @@ ai_visible: true
 title: Cross-Link Audit Workflow
 description: Audit and fix cross-links in rules and workflows
 tags: [maintenance, cross-link, audit]
-version: 1.3
+version: 1.4
 created: 2026-01-01T12:26:00+09:00
-updated: 2026-01-05T07:55:00+09:00
+updated: 2026-01-05T08:10:00+09:00
 language: en
 author: Lico (Polaris)
 ai_model: Claude Opus 4.5 (Thinking)
@@ -158,8 +158,12 @@ For each file, compare:
 
 **4-2. Add Missing Links to Frontmatter**
 
+> [!NOTE]
+> The following is an **EXAMPLE** format. Adapt paths and descriptions to your actual files.
+
 Format:
 ```yaml
+# EXAMPLE - adapt to your actual related files
 related:
   .agent/rules/core/memory.md: Memory architecture
   .agent/rules/development/git-operations.md: Git standards
@@ -234,7 +238,12 @@ git status --short
 ```
 
 **7-2. Commit**
+
+> [!NOTE]
+> The following is an **EXAMPLE** commit message. Adapt the content to reflect your actual changes.
+
 ```bash
+# EXAMPLE - adapt to your actual changes
 git commit -m "docs(rules): audit and fix cross-links
 
 - Simplified footers to README link only
@@ -242,7 +251,9 @@ git commit -m "docs(rules): audit and fix cross-links
 - Fixed broken links
 - Unified path format to workspace-root relative
 
-[16-cross-link-methods] (Maintenance)"
+[Cross-Link-Audit] (Maintenance)
+
+Signed-off-by: <your-identifier>"
 ```
 
 ---
@@ -258,33 +269,57 @@ git commit -m "docs(rules): audit and fix cross-links
 Check that all target files have Navigation footer:
 ```bash
 # Count files without Navigation
+count=0
 for f in $(find .agent/rules -name "*.md" -type f); do
   if ! grep -q "Navigation" "$f"; then
     echo "Missing: $f"
+    count=$((count + 1))
   fi
 done
+echo "Total missing: $count"
 ```
+
+**Expected outcome**: `Total missing: 0`. If not, go back and add Navigation to missing files.
 
 **8-2. Confirm Path Format**
 
-Check that no relative paths (`../`) remain:
+Check that no relative paths (`../`) remain in actual links:
 ```bash
-grep -rn "\.\.\/" .agent/rules --include="*.md"
+# Check for links containing ../
+grep -rn "\](\.\.\/" .agent/rules --include="*.md"
 ```
 
-**8-3. Spot Check**
+**Expected outcome**: No output. If matches found, they may be:
+- Documentation text (OK): e.g., "Forbidden: `../`"
+- Actual links (FIX): e.g., `[link](../other.md)`
+
+**8-3. Confirm Broken Links**
+
+Check for broken links:
+```bash
+# Find broken .md links
+grep -rohE '\[.*\]\([^)]+\.md\)' .agent/rules | \
+  grep -oE '\([^)]+\)' | tr -d '()' | sort -u | \
+  while read path; do
+    [ ! -f "$path" ] && echo "BROKEN: $path"
+  done
+```
+
+**Expected outcome**: No output. If broken links found, fix or remove them.
+
+**8-4. Spot Check**
 
 Review 2-3 files manually to confirm:
-- Footer format is correct
-- Frontmatter `related:` section is accurate
-- No broken links
+- [ ] Footer format is correct
+- [ ] Frontmatter `related:` section is accurate
+- [ ] No obvious issues
 
-**8-4. Update Card and Close**
+**8-5. Update Card and Close**
 
 If all checks pass:
 1. Update the card with final status
-2. Archive or reset the card for next use
-3. Mark the audit as complete
+2. Reset the card for next use (clear Agent Observations if reusable)
+3. Commit the card update
 
 ---
 
