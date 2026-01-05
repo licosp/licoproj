@@ -32,7 +32,7 @@ Before starting development, understand these principles:
 
 - **Vertical split** is recommended (divide by directory, not by process step)
 - Use **Letters** for handoff to other identifiers
-- Use **Issue comments** for official progress reports
+- Use **Issue comments** for official progress reports (ref: `.agent/templates/issue-comment.md`)
   - Format: Context ID + Identifier signature
   - Timing: Too many commits, direction change, card completion, management trouble
 
