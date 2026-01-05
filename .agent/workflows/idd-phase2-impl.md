@@ -40,6 +40,14 @@ Before starting development, understand these principles:
 
 - **What**: Required
 - **Why**: Write if possible (recommended)
+- Template: `.agent/templates/commit-message.txt`
+
+### Commit Maintenance
+
+**Before posting Issue comments**, check recent commits:
+- Follow template format (Context-ID, Type, Subject, Phase)
+- Include `Signed-off-by: <Identifier>`
+- Fix with `git rebase -i` while commits are fresh
 
 ### Mindset
 
