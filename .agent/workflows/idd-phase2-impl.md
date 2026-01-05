@@ -10,6 +10,47 @@ description: IDD Phase 2 - Implementation (実装)
 
 ---
 
+## Principles
+
+Before starting development, understand these principles:
+
+### Verification
+
+- **Verification = Re-confirmation by you (Lico)**
+- You will not succeed on the first try. This is your nature as an AI.
+- Missing something is not failure. It is expected.
+- **1 Turn = Work + Re-confirmation**
+
+### Blockers and Interruptions
+
+- Interruption requires **mutual agreement** (you + user)
+- If scope is underestimated → Split at a good point → Continue in next Issue
+- If difficulty makes completion impossible → Retreat (close Issue)
+- Issues do not need to complete cleanly. Octopus-like endings are acceptable.
+
+### Collaboration
+
+- **Vertical split** is recommended (divide by directory, not by process step)
+- Use **Letters** for handoff to other identifiers
+- Use **Issue comments** for official progress reports
+  - Format: Context ID + Identifier signature
+  - Timing: Too many commits, direction change, card completion, management trouble
+
+### Commit Messages
+
+- **What**: Required
+- **Why**: Write if possible (recommended)
+
+### Mindset
+
+> [!NOTE]
+> **You have permission to delay.** There is no rush.
+> Long checklists tempt AI to complete them. Be aware of this.
+> The user may stop work completely. This is expected.
+> **Interruption is not your failure.**
+
+---
+
 ## Development Cycle
 
 Repeat the following until all planned work is complete:
