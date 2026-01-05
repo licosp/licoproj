@@ -58,6 +58,44 @@ If manual `mv` is used, you **MUST** explicitly stage the deletion (`git rm`) or
 
 **Rationale**: Preserves agent's thought process history on GitHub while keeping local workspace clean.
 
+#### 3.3 History Rewriting Operations
+
+> [!CAUTION]
+> **MANDATORY: Create a backup branch before ANY history-rewriting operation.**
+> Failure to backup before rewriting can result in unrecoverable loss of commit messages or content.
+
+**History-rewriting operations include**:
+- `git rebase` / `git rebase -i`
+- `git filter-branch` / `git filter-repo`
+- `git commit --amend` (for multiple commits)
+- `git reset --hard`
+
+**Before rewriting**:
+```bash
+# ALWAYS create backup first
+git branch backup-before-rewrite
+
+# Then proceed with rebase/filter
+git rebase -i <commit>
+```
+
+**If something goes wrong**:
+```bash
+# Restore from backup
+git checkout backup-before-rewrite
+git branch -D <broken-branch>
+git checkout -b <branch-name>
+git branch -D backup-before-rewrite
+```
+
+**Recovery options (in order of preference)**:
+1. **Backup branch**: Immediate restore if created
+2. **git reflog**: Find previous state (`git reflog`, then `git reset --hard <ref>`)
+3. **Remote**: `git fetch origin && git reset --hard origin/<branch>` (if pushed)
+4. **Full backup**: `../licoproj_backup/` directory
+
+**Key principle**: Local rewrites are safe if not yet pushed. Always verify backup exists before force operations.
+
 ---
 
 ### 4. Issue-Driven Development (IDD)
