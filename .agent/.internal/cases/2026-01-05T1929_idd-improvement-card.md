@@ -237,11 +237,14 @@ Commit = 章内の小話
 
 1. [x] B〜F の議論完了
 2. [x] P1 手順書更新
-3. [ ] P2 手順書更新
-4. [ ] P3 手順書更新
-5. [ ] `idd-init-card.md` 作成
-6. [ ] `idd-fini-card.md` 作成
-7. [ ] ワークフロー更新（行動規範への参照追加）
+3. [x] P2 手順書更新
+4. [x] P3 手順書更新 — スキップ（変更不要）
+5. [x] `idd-init-card.md` 作成
+6. [x] `idd-fini-card.md` 作成
+7. [x] Issue comment テンプレート作成
+
+**Status**: ✓ Complete (2026-01-05T19:29 by Polaris)
 
 ---
+
 
