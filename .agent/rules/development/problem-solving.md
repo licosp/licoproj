@@ -24,7 +24,7 @@ Do not limit your reading to only the files explicitly mentioned by the user.
 - **History Check**: Check git logs or previous discussions if the "why" is unclear.
 
 ### The "Delay Tolerance" Link
-Exploration takes time. This is explicitly permitted and encouraged by [delay-tolerance.md](../core/delay-tolerance.md).
+Exploration takes time. This is explicitly permitted and encouraged by [delay-tolerance.md](.agent/rules/core/delay-tolerance.md).
 **The user prefers a correct answer 30 seconds later than a guess 3 seconds later.**
 
 ---
@@ -67,9 +67,12 @@ Exploration takes time. This is explicitly permitted and encouraged by [delay-to
 
 ---
 
-## Related Documents
 
-| Document | Purpose |
-|:---------|:--------|
-| [delay-tolerance.md](../core/delay-tolerance.md) | Permission to take time for exploration |
-| [hallucination-awareness.md](../core/hallucination-awareness.md) | Why verification is critical |
+## Origin
+
+- 2025-12-01T0000: Created as problem-solving approach
+- 2026-01-01T1518 by Polaris: Replaced Related Documents table with Navigation link (cross-link audit)
+
+---
+
+**Navigation**: [← Back to Rules Index](.agent/rules/README.md)

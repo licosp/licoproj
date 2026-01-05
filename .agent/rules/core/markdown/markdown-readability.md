@@ -61,10 +61,12 @@ Finishing touches for professional presentation:
 
 ---
 
-## Related Documents
 
-| Document | Purpose |
-|:---------|:--------|
-| [markdown-ai-parsing-basics.md](markdown-ai-parsing-basics.md) | AI-optimized formatting |
-| [markdown-ai-parsing-patterns.md](markdown-ai-parsing-patterns.md) | Specific patterns |
-| [documentation-standards.md](../documentation/documentation-standards.md) | File standards |
+## Origin
+
+- 2025-12-11T1800: Created as markdown readability guide
+- 2026-01-02T0828 by Polaris: Replaced Related Documents table with Navigation link (cross-link audit)
+
+---
+
+**Navigation**: [← Back to Rules Index](.agent/rules/README.md)

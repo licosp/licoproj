@@ -74,8 +74,12 @@ updated: 2025-12-11T01:30:00+09:00
 
 ---
 
-## Related Documents
 
-| Document | Purpose |
-|:---------|:--------|
-| [documentation-standards.md](documentation-standards.md) | General documentation rules |
+## Origin
+
+- 2025-12-01T0000: Created as datetime format standards
+- 2026-01-02T0828 by Polaris: Replaced Related Documents table with Navigation link (cross-link audit)
+
+---
+
+**Navigation**: [← Back to Rules Index](.agent/rules/README.md)

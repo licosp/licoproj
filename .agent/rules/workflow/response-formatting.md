@@ -39,9 +39,12 @@ When ending a session or providing significant reports in chat, append a signatu
 
 ---
 
-## Related Documents
 
-| Document | Purpose |
-|:---------|:--------|
-| [documentation-standards.md](../core/documentation/documentation-standards.md) | File documentation rules |
-| [session-lifecycle.md](session-lifecycle.md) | Session ending protocols |
+## Origin
+
+- 2025-12-01T0000: Created as response formatting guidelines
+- 2026-01-01T1520 by Polaris: Replaced Related Documents table with Navigation link (cross-link audit)
+
+---
+
+**Navigation**: [← Back to Rules Index](.agent/rules/README.md)

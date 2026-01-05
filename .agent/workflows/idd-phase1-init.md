@@ -26,28 +26,75 @@ gh auth status || echo "Error: Not authenticated. Run 'gh auth login'"
 
 ---
 
-## 2. Theme Design
+## 2. Hierarchy Understanding
 
-**2-1. Define Main Theme**
+> [!TIP]
+> Understand the hierarchy of work units in IDD before proceeding.
+
+```
+Story (Connected Issues)
+└── Issue (Chapter)
+    └── Context (Card)
+        └── Commit (Episode)
+            …
+        …
+    …
+```
+
+**Terminology**:
+- **Story**: A collection of connected issues (large theme)
+- **Issue**: A single unit of work (chapter)
+- **Context**: Work context managed by cards
+- **Commit**: The smallest unit of change (episode)
+
+---
+
+## 3. Theme Design
+
+**3-1. Define Main Theme**
 - Identify the primary goal of the issue (e.g., "Add pre-task assessment protocol")
 - Ensure the theme is clear and focused
 
-**2-2. Identify Sub-Themes**
+**3-2. Identify Sub-Themes**
 - List changes unrelated to the main theme but necessary for synchronization
 - Examples: Draft updates, `.gitignore` adjustments, typo fixes
 - **Note**: Sub-themes will be committed separately (ref: `commit-granularity.md`)
 
 ---
 
-## 3. Issue Creation
+## 4. Issue Selection
 
-**3-1. Prepare Issue Elements**
+> [!NOTE]
+> Choose one path: create a new issue OR work on an existing issue.
+
+**4-0. Choose Workflow**
+
+| Situation | Action |
+|:----------|:-------|
+| Starting new work | → Go to 4-1 (Issue Connection Decision) |
+| Issue already exists | → Go to 4-6 (Use Existing Issue) |
+
+**4-1. Issue Connection Decision**
+
+Before creating a new issue, check connection to previous issue:
+
+| Situation | Action |
+|:----------|:-------|
+| Continuation of previous issue | → Add `Follows #N` to Body |
+| Related but not continuation | → Add `Related to #N` to Body |
+| Completely new | → No connection reference |
+
+---
+
+### Path A: Create New Issue
+
+**4-2. Prepare Issue Elements**
 - **Title**: `[Type]: Brief description` (e.g., `[Feat]: Add pre-task assessment`)
 - **Body**: Summary, Changes, Purpose
 - **Assignees**: Assign to yourself or team members
 - **Labels**: Match commit type (`feat`, `fix`, `docs`, etc.)
 
-**3-2. Create Issue**
+**4-3. Create Issue**
 ```bash
 gh issue create \
   --title "[Feat]: Add pre-task assessment protocol" \
@@ -55,31 +102,56 @@ gh issue create \
   --assignee licosp
 ```
 
-**3-3. Record Issue Number**
+**4-4. Capture Issue Number from Output**
 ```bash
-ISSUE_NUMBER=$(gh issue list --limit 1 --json number --jq '.[0].number')
-echo "Working on Issue #$ISSUE_NUMBER"
+# The 'gh issue create' command outputs the issue URL
+# Extract the number immediately after creation
+# Example output: https://github.com/owner/repo/issues/17
 ```
 
-**3-4. Assign Labels (after creation)**
+**4-5. Assign Labels (after creation)**
 ```bash
 gh issue edit ${ISSUE_NUMBER} --add-label "type:feat"
 ```
 
+→ **Proceed to Section 5**
+
 ---
 
-## 4. Branch Creation
+### Path B: Use Existing Issue
+
+**4-6. Specify Existing Issue Number**
+```bash
+# Manually specify the issue number you're working on
+ISSUE_NUMBER=16  # Replace with actual issue number
+echo "Working on Issue #$ISSUE_NUMBER"
+```
+
+**4-7. Verify Issue Exists**
+```bash
+gh issue view ${ISSUE_NUMBER} --json title,state
+```
+
+> [!CAUTION]
+> **Do NOT use `gh issue list --limit 1`** to get the issue number.
+> This returns the most recent issue, which may not be the one you're working on.
+
+→ **Proceed to Section 5**
+
+---
+
+## 5. Branch Creation
 
 > [!CAUTION]
 > **必ず `origin/main` から作成すること。**
 > `HEAD` や現在のブランチから作成すると、他のブランチの変更が混入します。
 
-**4-1. Fetch Latest Remote State**
+**5-1. Fetch Latest Remote State**
 ```bash
 git fetch origin
 ```
 
-**4-2. Create Local Branch from Remote Main**
+**5-2. Create Local Branch from Remote Main**
 ```bash
 git checkout -b ${ISSUE_NUMBER}-brief-description-kebab-case origin/main
 ```
@@ -89,38 +161,38 @@ git checkout -b ${ISSUE_NUMBER}-brief-description-kebab-case origin/main
 - Language: English
 - Length: ~50 characters
 
-**4-3. Push Branch and Set Upstream Tracking**
+**5-3. Push Branch and Set Upstream Tracking**
 ```bash
 git push -u origin ${ISSUE_NUMBER}-brief-description-kebab-case
 ```
 
 ---
 
-## 5. Initial State Verification
+## 6. Initial State Verification
 
-**5-1. Check Current Branch Status**
+**6-1. Check Current Branch Status**
 ```bash
 git status
 ```
 
-**5-2. Verify Feasibility**
+**6-2. Verify Feasibility**
 - Confirm that main theme and sub-themes can be implemented
 - Check for potential conflicts or blockers
 
 ---
 
-## 6. Early Problem Detection
+## 7. Early Problem Detection
 
-**6-1. Identify Issues**
+**7-1. Identify Issues**
 - List any problems discovered during verification
 - Document technical constraints or dependencies
 
-**6-2. Record in Issue Comments**
+**7-2. Record in Issue Comments**
 ```bash
 gh issue comment ${ISSUE_NUMBER} --body "## Initial Assessment\n- Problem: ...\n- Solution: ..."
 ```
 
-**6-3. Backup Issue Locally**
+**7-3. Backup Issue Locally**
 ```bash
 gh issue view ${ISSUE_NUMBER} --json title,body,comments > .agent/issues/issue-${ISSUE_NUMBER}-backup.json
 ```
@@ -173,5 +245,28 @@ git stash pop
 |:---------|:--------|
 | [idd-phase2-impl.md](idd-phase2-impl.md) | Phase 2: Implementation |
 | [idd-phase3-fini.md](idd-phase3-fini.md) | Phase 3: Finalization |
-| [git-operations.md](../rules/development/git-operations.md) | Branch naming, IDD details |
-| [commit-standards.md](../rules/development/commit-standards.md) | Commit message standards |
+| [git-operations.md](.agent/rules/development/git-operations.md) | Branch naming, IDD details |
+| [commit-standards.md](.agent/rules/development/commit-standards.md) | Commit message standards |
+
+### Issue: Accidentally committed to main (local)
+
+**Cause**: Started working without creating a feature branch.
+
+**Solution**:
+1. Create branch from current state (keep changes safe)
+   ```bash
+   git branch <issue-number>-<title>
+   ```
+2. **Safety Backup (Mandatory)**
+   Creates a backup of the current state before destructive reset.
+   ```bash
+   git branch backup/pre-reset-main-$(date +%Y%m%d-%H%M%S)
+   ```
+3. Reset main to remote state (clean up mistake)
+   ```bash
+   git reset --hard origin/main
+   ```
+4. Checkout correct branch
+   ```bash
+   git checkout <issue-number>-<title>
+   ```

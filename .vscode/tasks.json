@@ -1,0 +1,23 @@
+{
+  "version": "2.0.0",
+  "tasks": [
+    {
+      "label": "Backup Workspace",
+      "type": "shell",
+      "command": "rsync",
+      "args": [
+        "-av",
+        "--exclude=.venv/",
+        "--exclude=node_modules/",
+        "${workspaceFolder}/",
+        "${workspaceFolder}/../licoproj_backup/"
+      ],
+      "group": "none",
+      "presentation": {
+        "reveal": "always",
+        "panel": "new"
+      },
+      "problemMatcher": []
+    }
+  ]
+}

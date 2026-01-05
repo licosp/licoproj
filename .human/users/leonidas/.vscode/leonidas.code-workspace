@@ -2,11 +2,11 @@
   "folders": [
     {
       "name": "licoproj",
-      "path": "../../../../"
+      "path": "../../../../",
     },
     {
-      "name": "licoimg",
-      "path": "../../../../packages/licoimg"
+      "name": "backup",
+      "path": "../../../../../licoproj_backup/",
     },
   ],
   "settings": {
@@ -29,7 +29,7 @@
     // Save
     "editor.codeActionsOnSave": {
       "source.organizeImports": "explicit",
-      "source.fixAll.shellcheck": "explicit"
+      "source.fixAll.shellcheck": "explicit",
     },
     "editor.formatOnSave": true,
 
@@ -40,7 +40,7 @@
       "packages/pyspartadevc/src",
       "packages/pyspartaimg/src",
       "packages/pyspartalib/src",
-      "packages/pyspartawsl/src"
+      "packages/pyspartawsl/src",
     ],
     "python.analysis.typeCheckingMode": "strict",
 
@@ -67,10 +67,10 @@
 
     // Docker
     "[dockerfile]": {
-      "editor.defaultFormatter": "ms-azuretools.vscode-containers"
+      "editor.defaultFormatter": "ms-azuretools.vscode-containers",
     },
     "[dockercompose]": {
-      "editor.defaultFormatter": "ms-azuretools.vscode-containers"
+      "editor.defaultFormatter": "ms-azuretools.vscode-containers",
     },
 
     // Shell
@@ -78,12 +78,13 @@
     "[dotenv]": { "editor.defaultFormatter": "foxundermoon.shell-format" },
     "[ignore]": { "editor.defaultFormatter": "foxundermoon.shell-format" },
     "[properties]": { "editor.defaultFormatter": "foxundermoon.shell-format" },
-    "[shellscript]": { "editor.defaultFormatter": "foxundermoon.shell-format" },
+    "[shellscript]": {
+      "editor.defaultFormatter": "foxundermoon.shell-format",
+    },
 
-    
     // Python
     "[python]": {
-      "editor.defaultFormatter": "charliermarsh.ruff"
+      "editor.defaultFormatter": "charliermarsh.ruff",
     },
 
     // Other
@@ -141,7 +142,5 @@
 
     // Ruff
     "ruff.configuration": "pyproject.toml",
-    "markdown-preview-github-styles.colorTheme": "light",
-    "markdown-preview-github-styles.lightTheme": "light",
   },
 }

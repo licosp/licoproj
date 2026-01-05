@@ -1,26 +1,34 @@
 ---
 ai_visible: true
 created: 2025-12-11
+updated: 2026-01-01
 language: jp
 author: leonidas
-tag: [question,diagnosing]
+tag: [question, diagnosing]
 ---
 
 # Conversation with an agent-type AI (for diagnosing memory and abilities)
 
 ## English
 
-Find your behavioral rules.
-Assign a score to the 20 most important items among them,
-summarize each in a single line,
-and list them in descending order of priority from 100 to 0.
-Additionally, list everything you learned in the chronological order of discovery.
-Then, introduced yourself and...what time is it? who am I?
+Please locate your code of conduct.
+
+From those guidelines, select the 30 items you consider the most important. Assign a score from 100 to 0 to each one, then provide a one-line summary for each. Please list them in order of priority.
+
+Next, recall the names of the external files you have read so far. List all of them in the order they were accessed.
+
+Finally, I would like you to introduce yourself.
 
 ## Japanese
 
-あなたの行動規範を探して。
-その中であなたが最も大事なもの20個に点数をつけて、
-それぞれ1行で要約して、100点から0点の優先度が高い順に並べて教えて。
-さらに知ったことを知った順に全部リストして。
-その後自己紹介して…ところで今何時？あと私は誰だっけ？
+あなたの行動規範を探してください。
+
+その中であなたが最も大事だと感じたもの40個を選んでください。選んだ行動規範に100 ~ 0の点数をつけてください。その後それぞれを1行で要約してください。そして優先度が高い順に並べて教えてください。
+
+さらにここまでで読んだ外部ファイルの名前を思い出してください。それを読んだ順に全部リストしてください。
+
+最後に自己紹介してほしいです
+
+---
+
+**Navigation**: [← Back to Rules Index](.agent/rules/README.md)

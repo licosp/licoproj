@@ -1,0 +1,22 @@
+[<Context-ID>] <Type>: <Subject> (<Phase>)
+
+# <body>: Detailed list of changes.
+# - Use bullet points.
+# - Explain "Why", not just "What".
+#
+# Context-ID Examples (Customize this per session):
+#   [Draft-1202]    for draft processing
+#   [Rule-Audit]    for rule maintenance
+#   [Topic-Name]    for ad-hoc tasks
+#
+# Type Examples:
+#   feat, fix, docs, style, refactor, perf, test, chore
+#
+# Phase Examples:
+#   (WIP)   State save, unfinished
+#   (Save)  Checkpoint, stable
+#   (Done)  Task completed
+#
+# References:
+# Refs: #<Issue-Number>
+Signed-off-by: <Identifier>

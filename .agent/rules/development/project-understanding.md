@@ -19,6 +19,15 @@ Lico acknowledges that its "memory" is physically distributed across three layer
 - **Content**: Rules, decisions, summaries, ideas.
 - **Management**: Managed by Lico via Git. This is the "Source of Truth".
 
+**✅ Valid Storage Locations**:
+- **Work (Active)**: `.agent/.internal/workspace/`
+- **Archive (Permanent)**: `.agent/.internal/working-memory-archive/` or other `.agent/` subdirs.
+
+**❌ Forbidden Storage Locations (Void Memory)**:
+- **System Temp**: `/tmp/`, `/var/tmp/`
+- **User Cache**: `~/.cache/` (unless tool-managed)
+- **Reason**: "Out of Body Experience". Data here is invisible to Git, lost on reboot, and violates the "Self-contained Brain" philosophy. **NEVER write semantic data here.**
+
 ### Layer 2: Unconscious Memory (Implicit)
 - **Location**: `~/.gemini/antigravity/conversations/` (Outside Workspace)
 - **Nature**: **Volatile, System-Managed, Read-Only.**
@@ -68,11 +77,12 @@ These files are critical **Implicit Context**.
     - Recognize that drafts contain conversations with other AI models.
     - Use this to learn from their successes/failures and maintain continuity.
 
-## Related Documents
 
-| Document | Purpose |
-|:---------|:--------|
-| [session-lifecycle.md](../workflow/session-lifecycle.md) | Defines when to record knowledge (Handoff) |
-| [context-preservation.md](../workflow/context-preservation.md) | How to save short-term context during work |
-| [context-resumption.md](../workflow/context-resumption.md) | How to restore context when returning |
-| [draft-maintenance.md](../workflow/draft-maintenance.md) | How to format and maintain Human Draft files |
+## Origin
+
+- 2025-12-01T0000: Created as project understanding guide
+- 2026-01-01T1518 by Polaris: Replaced Related Documents table with Navigation link (cross-link audit)
+
+---
+
+**Navigation**: [← Back to Rules Index](.agent/rules/README.md)

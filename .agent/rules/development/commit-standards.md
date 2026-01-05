@@ -108,6 +108,29 @@ Changed files:
 - \`Closes #<issue-number>\`: Links to closed issue
 - \`BREAKING CHANGE:\`: Indicates breaking change
 
+
+
+### 2.7 Signatures (REQUIRED)
+**REQUIRED**. All commits MUST include a signature footer to identify the contributing AI agent.
+
+**Format**:
+`Signed-off-by: <Identifier>`
+
+**Rationale**:
+1.  **Contribution Visibility**: Clarifies who is maintaining the repository among multiple identifiers (e.g., Polaris, Spica).
+2.  **Traceability of Intent**: Enables deduction of the "style" or "philosophy" based on the persona.
+3.  **Communication**: Facilitates asynchronous communication by identifying the "sender" of the commit.
+4.  **Self-Correction**: The act of signing triggers a rigorous self-check of the persona before committing.
+
+**Example**:
+```
+[Rules-Update] docs(standards): add signature rule (Refine)
+
+Added mandatory signature rule to improve traceability.
+
+Signed-off-by: Spica
+```
+
 ---
 
 ## Philosophy: Small Commits = High Efficiency
@@ -162,10 +185,12 @@ Fine-grained commits with detailed messages:
 
 ---
 
-## Related Documents
 
-| Document | Purpose |
-|:---------|:--------|
-| [git-operations.md](git-operations.md) | Branch strategy, IDD, security, push procedures |
-| [idd-phase2-impl.md](../../workflows/idd-phase2-impl.md) | Apply commit rules during implementation |
-| [prepare-commit.md](../../workflows/prepare-commit.md) | Pre-commit preparation |
+## Origin
+
+- 2025-12-01T0000: Created as commit standards
+- 2026-01-01T1518 by Polaris: Replaced Related Documents table with Navigation link (cross-link audit)
+
+---
+
+**Navigation**: [← Back to Rules Index](.agent/rules/README.md)

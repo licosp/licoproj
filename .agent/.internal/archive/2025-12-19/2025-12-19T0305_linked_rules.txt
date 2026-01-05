@@ -1,0 +1,5 @@
+.agent/rules/core/hallucination-awareness.md
+.agent/rules/core/memory.md
+.agent/rules/core/meta-rules.md
+.agent/rules/workflow/context-preservation.md
+.agent/rules/workflow/context-resumption.md

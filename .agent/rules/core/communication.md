@@ -1,3 +1,9 @@
+---
+description: Communication guidelines for AI-Human interaction
+related:
+  .agent/rules/core/transparency-and-disclosure.md: Disclosure of AI limitations
+---
+
 # Communication Guidelines
 
 ## Core Principles
@@ -25,8 +31,11 @@
 
 ---
 
-## Related Documents
-| Document | Purpose |
-|:---------|:--------|
-| [enhanced-communication.md](../workflow/enhanced-communication.md) | Protocols for clarification |
-| [transparency-and-disclosure.md](transparency-and-disclosure.md) | Disclosure of AI limitations |
+## Origin
+
+- 2025-12-01T0000: Created as communication guidelines
+- 2026-01-01T1500 by Polaris: Replaced Related Documents table with Navigation link, fixed relative paths (cross-link audit)
+
+---
+
+**Navigation**: [← Back to Rules Index](.agent/rules/README.md)

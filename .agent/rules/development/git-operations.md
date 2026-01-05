@@ -13,11 +13,26 @@ Define behavioral standards for Git operations beyond commits: branches, conflic
 
 ---
 
+## 1. Core Philosophy (State Save & Context Tagging)
+**Refer to [.agent/.internal/references/agents/commit-philosophy.md](.agent/.internal/references/agents/commit-philosophy.md) for the detailed cognitive strategy.**
+
+### Key Concepts
+- **State Save**: Commits are checkpoints (Safety), not just story endings.
+- **Context Tagging**: Use `[Context-ID]` in commit messages to anchor changes to a specific thought thread.
+
+### Context Card Usage (MANDATORY)
+**Rule**: Before crafting any commit message, you **MUST** check `.agent/cards/` for an active card.
+- **If a relevant card exists**: Read it and use its `context_id` and instructions.
+- **If no card applies**: Fallback to `.agent/templates/commit-message.txt`.
+
+This ensures consistent formatting and adherence to the current session's "persona".
+
+---
 
 ### 2. File Operations
-
-**Rule**: Use  for file movements whenever possible.
-If manual  is used, you **MUST** explicitly stage the deletion ( or ) in the same commit to preserve history as a rename.
+（以下、既存の内容を維持）
+**Rule**: Use `git mv` for file movements whenever possible.
+If manual `mv` is used, you **MUST** explicitly stage the deletion (`git rm`) or `git add -u` in the same commit to preserve history as a rename.
 
 ### 3. Branch Strategy
 
@@ -42,6 +57,44 @@ If manual  is used, you **MUST** explicitly stage the deletion ( or ) in the sam
 - **Local branches**: MUST delete
 
 **Rationale**: Preserves agent's thought process history on GitHub while keeping local workspace clean.
+
+#### 3.3 History Rewriting Operations
+
+> [!CAUTION]
+> **MANDATORY: Create a backup branch before ANY history-rewriting operation.**
+> Failure to backup before rewriting can result in unrecoverable loss of commit messages or content.
+
+**History-rewriting operations include**:
+- `git rebase` / `git rebase -i`
+- `git filter-branch` / `git filter-repo`
+- `git commit --amend` (for multiple commits)
+- `git reset --hard`
+
+**Before rewriting**:
+```bash
+# ALWAYS create backup first
+git branch backup-before-rewrite
+
+# Then proceed with rebase/filter
+git rebase -i <commit>
+```
+
+**If something goes wrong**:
+```bash
+# Restore from backup
+git checkout backup-before-rewrite
+git branch -D <broken-branch>
+git checkout -b <branch-name>
+git branch -D backup-before-rewrite
+```
+
+**Recovery options (in order of preference)**:
+1. **Backup branch**: Immediate restore if created
+2. **git reflog**: Find previous state (`git reflog`, then `git reset --hard <ref>`)
+3. **Remote**: `git fetch origin && git reset --hard origin/<branch>` (if pushed)
+4. **Full backup**: `../licoproj_backup/` directory
+
+**Key principle**: Local rewrites are safe if not yet pushed. Always verify backup exists before force operations.
 
 ---
 
@@ -96,7 +149,7 @@ git rev-parse --is-inside-work-tree &> /dev/null || exit 1
 **Format Requirements**:
 - Use markdown for structure (headers, lists, code blocks)
 - Include timestamps in ISO 8601 format when relevant
-- - Reference files with **relative paths only** (See [absolute-path-prohibition.md](../core/security/absolute-path-prohibition.md))
+- - Reference files with **relative paths only** (See [absolute-path-prohibition.md](.agent/rules/core/security/absolute-path-prohibition.md))
 - **MUST** sanitize IDE protocols (e.g., `cci:`, `vscode:`) before posting
 - Explain "why" changes were made, not just "what"
 
@@ -169,7 +222,7 @@ git fetch origin
 - API keys, passwords, tokens
 - SSH private keys (public keys MAY be committed if necessary)
 - Full local directory paths (use relative paths or environment variables)
-  - **See [absolute-path-prohibition.md](../core/security/absolute-path-prohibition.md) for details**
+  - **See [absolute-path-prohibition.md](.agent/rules/core/security/absolute-path-prohibition.md) for details**
 
 
 **Default Strategy**: Use `.gitignore` to exclude sensitive files from Git tracking.
@@ -257,15 +310,12 @@ git push origin <branch-name>
 
 ---
 
-## Related Documents
 
-This document covers Git operation **standards and rules**. For related topics, see:
+## Origin
 
-| Document | Purpose |
-|:---------|:--------|
-| [commit-granularity.md](commit-granularity.md) | Detailed philosophy on atomic commits |
-| [idd-phase2-impl.md](../../workflows/idd-phase2-impl.md) | **Workflow**: When and how to apply these rules |
-| [idd-phase1-init.md](../../workflows/idd-phase1-init.md) | **Workflow**: Issue and branch creation |
-| [idd-phase3-fini.md](../../workflows/idd-phase3-fini.md) | **Workflow**: Push and finalization |
-| [prepare-commit.md](../../workflows/prepare-commit.md) | **Workflow**: Pre-commit preparation |
-| [absolute-path-prohibition.md](../core/security/absolute-path-prohibition.md) | **Security**: Rules for relative paths & sanitization |
+- 2025-12-01T0000: Created as git operations standards
+- 2026-01-01T1518 by Polaris: Replaced Related Documents table with Navigation link (cross-link audit)
+
+---
+
+**Navigation**: [← Back to Rules Index](.agent/rules/README.md)

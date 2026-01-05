@@ -26,13 +26,15 @@ The Identifier is determined at the start of the session:
     - Use this if no specific name is given.
 
 ## 4. Usage in Artifacts
-The Identifier **MUST** be recorded in the YAML Frontmatter of files created during the session (where applicable).
+The Identifier **MUST** be recorded in the `author` field of the YAML Frontmatter.
+**The `instance_id` field is redundant and SHOULD NOT be used.**
 
 ```yaml
 ---
 ...
-author: Lico
-instance_id: Sirius  <-- HERE
+# author: Lico (<Instance-ID>)
+author: Lico (Sirius)  <-- HERE
+ai_model: Gemini-Exp-1206
 ...
 ---
 ```
@@ -41,3 +43,14 @@ instance_id: Sirius  <-- HERE
 When writing `thoughts/*.md` or reflection documents:
 - Use the identifier to sign off or refer to subjective experiences.
 - Example: *"Reflecting on this, I (Sirius) felt that..."*
+
+---
+
+## Origin
+
+- 2025-12-01T0000: Created as instance identifier protocol
+- 2026-01-04T1041 by Polaris: Added Origin and Navigation (cross-link audit)
+
+---
+
+**Navigation**: [← Back to Rules Index](.agent/rules/README.md)

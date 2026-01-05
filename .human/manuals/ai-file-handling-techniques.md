@@ -1,53 +1,64 @@
 ---
-title: AI対話におけるファイル処理テクニック (AI File Handling Techniques)
-description: AIにファイルを扱わせつつ、意図しない読み込みを防ぐためのプロンプト作成ガイド
-date: 2025-12-14
+ai_visible: true
+title: AI File Handling Techniques
+description: Guide for prompting AI to handle files without reading their contents
+created: 2025-12-14
+updated: 2026-01-02
+language: en
+author: leonidas
+tags: [manual, ai, file-handling, security, prompting]
 ---
 
-# AI対話におけるファイル処理テクニック
+# AI File Handling Techniques
 
-## 目的
-機密性の高いファイルや、中身を読み込ませたくないファイルをAIに処理させる（移動、リネームなど）際、AIが誤って `view_file` などのツールで中身を読んでしまうことを防ぎます。
+## Purpose
 
-## テクニック一覧
+When having AI process sensitive files or files whose contents should not be read (moving, renaming, etc.), prevent the AI from accidentally reading the contents using tools like `view_file`.
 
-### 1. ツール発動の抑制 (Suppressing Tool Invocation)
+## Technique Overview
 
-最も確実な方法は、AIが「中身を読む必要がある」と推論する前に制約をかけることです。
+### 1. Suppressing Tool Invocation
 
-- **制約を最初に宣言する (Constraint First)**
-    - プロンプトの冒頭で「以下のファイルは中身を読まずに扱ってください」と明記します。
-    - 「ファイル名、タイムスタンプなどのメタデータのみを使用してください」と具体的に指示します。
+The most reliable method is to constrain the AI before it infers the need to read file contents.
 
-- **即時のタスク転換 (Task Re-direction)**
-    - ファイルアップロードの直後に、ファイルの中身とは無関係なタスク（例：「ファイルの移動だけを行ってください」）を指示することで、AIの注意を中身から逸らします。
+- **Constraint First**
+    - State at the beginning of the prompt: "Please handle the following files without reading their contents."
+    - Be specific: "Use only metadata such as filename and timestamp."
 
-### 2. コンテンツへのアクセス障壁 (Creating Content Access Barriers)
+- **Task Re-direction**
+    - Immediately after file upload, give a task unrelated to file contents (e.g., "Just move the file") to divert AI's attention away from the contents.
 
-物理的に読み込めない状態にすることで、万が一の誤動作を防ぎます。
+### 2. Creating Content Access Barriers
 
-- **パスワード保護 (Password Protection)**
-    - Word, Excel, PDFなどをパスワード付きで保存します。
-    - AIはパスワードを知らない限り中身を展開できません。これが最も推奨される安全策です。
-    - **注意**: 「パスワードはこれです」とプロンプトに書いてしまわないように！
+Physically prevent reading as a safeguard against accidental access.
 
-- **難読化・圧縮 (Obfuscation / Compression)**
-    - ZIPやRARなどの圧縮ファイル、または拡張子を変更したバイナリ扱いのファイルとして渡します。
-    - ただし、AIはコマンドラインツール（`unzip`など）を使って展開できる能力があるため、パスワード保護に比べると強度は劣ります。明確な「展開禁止」の指示と併用してください。
+- **Password Protection**
+    - Save Word, Excel, PDF files with password protection.
+    - AI cannot extract contents without knowing the password. This is the most recommended safeguard.
+    - **Caution**: Do not write "The password is..." in the prompt!
 
-## 推奨プロンプト例
+- **Obfuscation / Compression**
+    - Pass files as ZIP/RAR archives or as binary files with changed extensions.
+    - However, AI can use command-line tools (`unzip`, etc.) to extract, so this is weaker than password protection. Combine with explicit "Do not extract" instructions.
 
-### ファイル移動の依頼
+## Recommended Prompt Examples
 
-> 「以下のファイルを指定のディレクトリに移動してください。
-> **重要: ファイルの中身は決して読まないでください。**
-> ファイル名とパスの情報だけで操作を行ってください。」
+### File Move Request
 
-### 機密ファイルのアップロード時
+> "Please move the following files to the specified directory.
+> **IMPORTANT: Do not read the file contents under any circumstances.**
+> Operate using only filename and path information."
 
-> 「パスワード付きZIPファイルをアップロードしました。
-> これはアーカイブ用です。**展開したり、中身を確認しようとしないでください。**
-> `.agent/.internal/archive/` にそのまま移動してください。」
+### Uploading Sensitive Files
+
+> "I have uploaded a password-protected ZIP file.
+> This is for archival purposes. **Do not attempt to extract or examine the contents.**
+> Move it as-is to `.agent/.internal/archive/`."
 
 ---
-*Based on: ai-conversation-techniques.md (v1.0)*
+
+*Origin: ai-file-handling-techniques.md (Leonidas, 2025-12-14)*
+
+---
+
+**Navigation**: [← Back to Rules Index](.agent/rules/README.md)
