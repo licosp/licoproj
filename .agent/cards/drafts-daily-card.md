@@ -7,7 +7,10 @@ tags: ["drafts", "daily", "notes"]
 
 # Context Whiteboard: Daily Drafts
 
-## Human Notes (Japanese OK)
+> [!TIP]
+> There is no language requirement.
+
+## Human Notes
 
 ### 作業の文脈
 
@@ -40,7 +43,6 @@ tags: ["drafts", "daily", "notes"]
 ## Agent Observations
 
 ### Polaris (2026-01-03)
-
 
 - `draft_2026-01-02.md`
 - `draft_2026-01-03.md`
