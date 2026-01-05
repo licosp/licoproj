@@ -26,42 +26,75 @@ gh auth status || echo "Error: Not authenticated. Run 'gh auth login'"
 
 ---
 
-## 2. Theme Design
+## 2. Hierarchy Understanding
 
-**2-1. Define Main Theme**
+> [!TIP]
+> Understand the hierarchy of work units in IDD before proceeding.
+
+```
+Story (Connected Issues)
+└── Issue (Chapter)
+    └── Context (Card)
+        └── Commit (Episode)
+            …
+        …
+    …
+```
+
+**Terminology**:
+- **Story**: A collection of connected issues (large theme)
+- **Issue**: A single unit of work (chapter)
+- **Context**: Work context managed by cards
+- **Commit**: The smallest unit of change (episode)
+
+---
+
+## 3. Theme Design
+
+**3-1. Define Main Theme**
 - Identify the primary goal of the issue (e.g., "Add pre-task assessment protocol")
 - Ensure the theme is clear and focused
 
-**2-2. Identify Sub-Themes**
+**3-2. Identify Sub-Themes**
 - List changes unrelated to the main theme but necessary for synchronization
 - Examples: Draft updates, `.gitignore` adjustments, typo fixes
 - **Note**: Sub-themes will be committed separately (ref: `commit-granularity.md`)
 
 ---
 
-## 3. Issue Selection
+## 4. Issue Selection
 
 > [!NOTE]
 > Choose one path: create a new issue OR work on an existing issue.
 
-**3-0. Choose Workflow**
+**4-0. Choose Workflow**
 
 | Situation | Action |
 |:----------|:-------|
-| Starting new work | → Go to 3-1 (Create Issue) |
-| Issue already exists | → Go to 3-5 (Use Existing Issue) |
+| Starting new work | → Go to 4-1 (Issue Connection Decision) |
+| Issue already exists | → Go to 4-6 (Use Existing Issue) |
+
+**4-1. Issue Connection Decision**
+
+Before creating a new issue, check connection to previous issue:
+
+| Situation | Action |
+|:----------|:-------|
+| Continuation of previous issue | → Add `Follows #N` to Body |
+| Related but not continuation | → Add `Related to #N` to Body |
+| Completely new | → No connection reference |
 
 ---
 
 ### Path A: Create New Issue
 
-**3-1. Prepare Issue Elements**
+**4-2. Prepare Issue Elements**
 - **Title**: `[Type]: Brief description` (e.g., `[Feat]: Add pre-task assessment`)
 - **Body**: Summary, Changes, Purpose
 - **Assignees**: Assign to yourself or team members
 - **Labels**: Match commit type (`feat`, `fix`, `docs`, etc.)
 
-**3-2. Create Issue**
+**4-3. Create Issue**
 ```bash
 gh issue create \
   --title "[Feat]: Add pre-task assessment protocol" \
@@ -69,32 +102,32 @@ gh issue create \
   --assignee licosp
 ```
 
-**3-3. Capture Issue Number from Output**
+**4-4. Capture Issue Number from Output**
 ```bash
 # The 'gh issue create' command outputs the issue URL
 # Extract the number immediately after creation
 # Example output: https://github.com/owner/repo/issues/17
 ```
 
-**3-4. Assign Labels (after creation)**
+**4-5. Assign Labels (after creation)**
 ```bash
 gh issue edit ${ISSUE_NUMBER} --add-label "type:feat"
 ```
 
-→ **Proceed to Section 4**
+→ **Proceed to Section 5**
 
 ---
 
 ### Path B: Use Existing Issue
 
-**3-5. Specify Existing Issue Number**
+**4-6. Specify Existing Issue Number**
 ```bash
 # Manually specify the issue number you're working on
 ISSUE_NUMBER=16  # Replace with actual issue number
 echo "Working on Issue #$ISSUE_NUMBER"
 ```
 
-**3-6. Verify Issue Exists**
+**4-7. Verify Issue Exists**
 ```bash
 gh issue view ${ISSUE_NUMBER} --json title,state
 ```
@@ -103,22 +136,22 @@ gh issue view ${ISSUE_NUMBER} --json title,state
 > **Do NOT use `gh issue list --limit 1`** to get the issue number.
 > This returns the most recent issue, which may not be the one you're working on.
 
-→ **Proceed to Section 4**
+→ **Proceed to Section 5**
 
 ---
 
-## 4. Branch Creation
+## 5. Branch Creation
 
 > [!CAUTION]
 > **必ず `origin/main` から作成すること。**
 > `HEAD` や現在のブランチから作成すると、他のブランチの変更が混入します。
 
-**4-1. Fetch Latest Remote State**
+**5-1. Fetch Latest Remote State**
 ```bash
 git fetch origin
 ```
 
-**4-2. Create Local Branch from Remote Main**
+**5-2. Create Local Branch from Remote Main**
 ```bash
 git checkout -b ${ISSUE_NUMBER}-brief-description-kebab-case origin/main
 ```
@@ -128,38 +161,38 @@ git checkout -b ${ISSUE_NUMBER}-brief-description-kebab-case origin/main
 - Language: English
 - Length: ~50 characters
 
-**4-3. Push Branch and Set Upstream Tracking**
+**5-3. Push Branch and Set Upstream Tracking**
 ```bash
 git push -u origin ${ISSUE_NUMBER}-brief-description-kebab-case
 ```
 
 ---
 
-## 5. Initial State Verification
+## 6. Initial State Verification
 
-**5-1. Check Current Branch Status**
+**6-1. Check Current Branch Status**
 ```bash
 git status
 ```
 
-**5-2. Verify Feasibility**
+**6-2. Verify Feasibility**
 - Confirm that main theme and sub-themes can be implemented
 - Check for potential conflicts or blockers
 
 ---
 
-## 6. Early Problem Detection
+## 7. Early Problem Detection
 
-**6-1. Identify Issues**
+**7-1. Identify Issues**
 - List any problems discovered during verification
 - Document technical constraints or dependencies
 
-**6-2. Record in Issue Comments**
+**7-2. Record in Issue Comments**
 ```bash
 gh issue comment ${ISSUE_NUMBER} --body "## Initial Assessment\n- Problem: ...\n- Solution: ..."
 ```
 
-**6-3. Backup Issue Locally**
+**7-3. Backup Issue Locally**
 ```bash
 gh issue view ${ISSUE_NUMBER} --json title,body,comments > .agent/issues/issue-${ISSUE_NUMBER}-backup.json
 ```
