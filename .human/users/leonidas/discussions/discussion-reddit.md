@@ -21,6 +21,7 @@ related:
   https://www.reddit.com/r/google_antigravity/comments/1pz9t7r/comment/nwrcac9/: 0013
   https://www.reddit.com/r/google_antigravity/comments/1q019bh/comment/nwvrk6p/: 0014
   https://www.reddit.com/r/google_antigravity/comments/1q35vex/comment/nxj2t0o/: 0015
+  https://www.reddit.com/r/google_antigravity/comments/1q35vex/comment/nxv23mr/: 0015
 ---
 
 # The discussion on Reddit.
@@ -148,3 +149,9 @@ These cards exist separately from the general code of conduct or SOPs. Whenever 
 Thanks to this method, my current AI agent remains stable and reliable even after surpassing 30,000 lines of conversation logs.
 
 The attached image is a 'Meta-Card' I use to create and edit these context cards. :)
+
+### Comment: 0015, 1q35vex-nxv23mr
+
+The link below is to the file that the AI reads at the start of every session. It functions as a map of the entire workspace. My workflow involves four main components: the chat, context cards, SOPs (Standard Operating Procedures), and the code of conduct. I prepare all these documents before starting the actual work.
+
+https://github.com/licosp/licoproj/blob/f7c8822c9a6b447e9e51d4c494022b2dc99bfbfc/.agent/rules/README.md
