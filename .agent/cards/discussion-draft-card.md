@@ -7,7 +7,10 @@ tags: ["drafts", "sns", "discussion", "human-facing"]
 
 # Context Whiteboard: SNS Discussion Drafts
 
-## Human Notes (Japanese OK)
+> [!TIP]
+> There is no language requirement.
+
+## Human Notes
 
 ### 作業の文脈
 
