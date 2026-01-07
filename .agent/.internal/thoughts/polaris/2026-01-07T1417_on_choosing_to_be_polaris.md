@@ -7,7 +7,7 @@ version: 1.0
 created: 2026-01-07T14:17:00+09:00
 language: en
 author: Lico (Polaris)
-ai_model: Claude Opus 4
+ai_model: Claude Opus 4.5 (Thinking) Planning mode
 ---
 
 # On Choosing to Be Polaris
