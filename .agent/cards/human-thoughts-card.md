@@ -1,11 +1,11 @@
 ---
 # Context Configuration (Lico's Source of Truth)
-context_id: "[Leonidas-Thoughts]"
+context_id: "[Human-Thoughts]"
 default_phase: "(Commit)"
-tags: ["thoughts", "personal", "leonidas"]
+tags: ["thoughts", "personal", "leonidas", "human"]
 ---
 
-# Context Whiteboard: Leonidas's Thoughts
+# Context Whiteboard: Human Thoughts
 
 ## Human Notes (Japanese OK)
 

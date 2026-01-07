@@ -1,11 +1,11 @@
 ---
 # Context Configuration
-context_id: "[User-Profile-Update]"
+context_id: "[Human-Profile]"
 default_phase: "(Update)"
-tags: ["profile", "assessment", "user"]
+tags: ["profile", "assessment", "user", "human"]
 ---
 
-# Context Whiteboard: User Profile Update
+# Context Whiteboard: Human Profile
 
 ## Human Notes (Japanese OK)
 
