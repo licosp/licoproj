@@ -1,5 +1,24 @@
 {
-	"name": "Node.js",
-	"image": "mcr.microsoft.com/devcontainers/javascript-node:20",
-	"postCreateCommand": "npm install"
+  "name": "Gemini Autonomous Resident",
+  "build": {
+    "dockerfile": "Dockerfile"
+  },
+  "customizations": {
+    "vscode": {
+      "extensions": [
+        "ms-python.python",
+        "mhutchie.git-graph",
+        "eamodio.gitlens"
+      ],
+      "settings": {
+        "python.defaultInterpreterPath": "/usr/local/bin/python"
+      }
+    }
+  },
+  // Passing host PC environment variables to a container.
+  "containerEnv": {
+    "GEMINI_API_KEY": "${localEnv:GEMINI_API_KEY}"
+  },
+  // Start an autonomous loop script in the background when the container starts.
+  "postStartCommand": "mkdir -p .agent && nohup python3 .agent/resident_loop.py > .agent/agent.log 2>&1 &"
 }
