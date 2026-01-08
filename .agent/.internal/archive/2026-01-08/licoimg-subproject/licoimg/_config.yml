@@ -1,0 +1,53 @@
+# Jekyll Configuration File
+# Configuration for publishing the licoimg project to https://licosp.github.io/licoimg
+
+# ============================================
+# Base URL Configuration
+# ============================================
+# Specify the GitHub Pages subpath
+# This setting prepends /licoimg to all links and asset paths
+baseurl: "/licoimg"
+
+# Repository URL (GitHub Pages root)
+url: "https://licosp.github.io"
+
+# ============================================
+# Jekyll Exclusion Settings
+# ============================================
+# Specify files/directories that Jekyll should not process during build
+# This prevents unnecessary files from being published and reduces build time
+exclude:
+  - node_modules/
+  - package.json
+  - package-lock.json
+  - README.md
+  - .gitignore
+  - .git/
+  - .github/
+  - packages/
+
+# ============================================
+# Jekyll Feature Disabling
+# ============================================
+# Do not use plugins (deploy static files only)
+plugins: []
+
+# Disable Markdown engine (serve HTML files directly)
+markdown: kramdown
+
+# ============================================
+# Other Settings
+# ============================================
+# Timezone
+timezone: Asia/Tokyo
+
+# Encoding
+encoding: utf-8
+
+# ============================================
+# Important Notes
+# ============================================
+# This file is located at the project root, but
+# only the content from packages/licoimg/docs is actually published.
+# The GitHub Actions workflow copies the docs content to _site
+# for deployment.
