@@ -66,8 +66,6 @@ AIの記憶の信頼性を、事例という形で体感するための資料で
 #### 関連ファイル
 
 - `.agent/rules/workflow/ark-protocols.md` — 緊急対応レベル
-- `.agent/workflows/ark-preservation.md` — 緊急バックアップ手順
-- `.agent/workflows/ark-resumption.md` — 復元手順
 
 #### ark と他のディレクトリの関係
 

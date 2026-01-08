@@ -181,8 +181,6 @@ _Located in `.agent/workflows/`_
 | Workflow                    | Function                                        |
 | :-------------------------- | :---------------------------------------------- |
 | `sync-memory.md`            | **Backup**. Sync Brain/History -> Archive.      |
-| `ark-preservation.md`       | **Emergency**. Quick state dump.                |
-| `ark-resumption.md`   | **Recovery**. How to restore state.             |
 | `deep-reading.md`           | **Learning**. How to analyze large files.       |
 | `deep-writing.md`           | **Creation**. How to write complex docs.        |
 | `idd-phase1-init.md`        | **Dev Loop 1**. Planning & Design.              |

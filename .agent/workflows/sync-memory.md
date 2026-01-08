@@ -109,8 +109,3 @@ rsync -av \
 
 ---
 
-## Related Documents
-
-| Document | Purpose |
-|:---------|:--------|
-| [ark-preservation.md](ark-preservation.md) | Emergency backup before context loss |
