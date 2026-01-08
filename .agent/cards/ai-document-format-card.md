@@ -7,7 +7,10 @@ tags: ["formatting", "ai-document", "markdown"]
 
 # Context Whiteboard: AI Document Formatting
 
-## Human Notes (Japanese OK)
+> [!TIP]
+> There is no language requirement.
+
+## Human Notes
 
 ### 作業の文脈
 
@@ -23,10 +26,10 @@ tags: ["formatting", "ai-document", "markdown"]
 リコにはこれを手がかりに、参考になる適切なファイルを**必ず**自主的に探してほしいです。
 
 - カード自体の使い方を思い出してほしい。
-- 作業で必要なディレクトリやテンプレートが存在します。
+- 作業で必要な**ディレクトリ**や**テンプレート**が存在します。
+- コミットをする際は、IDDのフェーズを意識してください。
 - 迷ったら一度止まって、関連する行動規範を探してください。
 - この文章はAIが読むので、それに最適化する必要があります。
-- コミットをする際は、IDDのフェーズを意識してください。
 
 ### 作業の注意点
 
@@ -36,4 +39,6 @@ e.g. `.human/users/USER/profile.md`
 
 ## Agent Observations
 
-- (Space for Lico)
+### (識別子) (YYYY-MM-DD)
+
+- (作業メモ)

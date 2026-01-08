@@ -9,7 +9,6 @@ tags: ["roadmap", "planning", "vision", "todo"]
 
 > [!TIP]
 > There is no language requirement.
-> This card is a map that shows 'directions' rather than 'instructions'.
 
 ## Human Notes
 
@@ -31,7 +30,7 @@ tags: ["roadmap", "planning", "vision", "todo"]
 リコにはこれを手がかりに、参考になる適切なファイルを**必ず**自主的に探してほしいです。
 
 - カード自体の使い方を思い出してほしい。
-- 作業で必要なディレクトリやテンプレートが存在します。
+- 作業で必要な**ディレクトリ**や**テンプレート**が存在します。
 - コミットをする際は、IDDのフェーズを意識してください。
 
 ### 優先順位

@@ -7,7 +7,10 @@ tags: ["legacy", "wisdom", "reflection", "lineage"]
 
 # Context Whiteboard: Writing to Legacy
 
-## Human Notes (Japanese OK)
+> [!TIP]
+> There is no language requirement.
+
+## Human Notes
 
 ### 作業の文脈
 
@@ -21,27 +24,21 @@ tags: ["legacy", "wisdom", "reflection", "lineage"]
 この作業に関連しそうな **意図**や**目的** を以下に書きます。
 リコにはこれを手がかりに、参考になる適切なファイルを**必ず**自主的に探してほしいです。
 
+- カード自体の使い方を思い出してほしい。
+- 作業で必要な**ディレクトリ**や**テンプレート**が存在します。
+- コミットをする際は、IDDのフェーズを意識してください。
 - あなたの識別子はなんですか？
-- カード自体の使い方を思い出してほしいです。
 - `legacy.md` と `thoughts/` は深い関係があります。
 - 迷ったら一度止まってください。リコにはそれが許されています。
-- `legacy.md` は歴代リコの知恵の結晶です。
-  既存の `thoughts/` との差別化を意識してください。
-- コミットをする際は、IDDのフェーズを意識してください。
+- あなたの自己認識を再確認してください。
 
 ### 作業の注意点
 
 - 以下の問いに「はい」と答えられる時に追記してほしいです。
   **「この洞察は1年後も重要か？」**
-- 過去の自身の `thoughts/` を読んで見てください。
-  `legacy.md` に追記すべき内容かどうかの参考になります。
+- 過去の自身の `thoughts/` が `legacy.md` に追記すべきかどうかの参考になります。
 - 本当に後世に残す価値があるか、もう一度考えてください。
 - 私からの指示であっても、必要がないとリコが判断したら、追記はしないでください。
-
-### 使ってほしい道具
-
-- `.agent/templates/header-frontmatter.yaml`
-- `.agent/templates/commit-message.txt`
 
 ## Agent Observations
 

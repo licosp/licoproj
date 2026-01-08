@@ -7,7 +7,10 @@ tags: ["human-usage", "vscode", "settings"]
 
 # Context Whiteboard: VSCode Settings
 
-## Human Notes (Japanese OK)
+> [!TIP]
+> There is no language requirement.
+
+## Human Notes
 
 ### 作業の文脈
 
@@ -20,9 +23,9 @@ VSCodeで使われる設定ファイルを更新しました。
 リコにはこれを手がかりに、参考になる適切なファイルを**必ず**自主的に探してほしいです。
 
 - カード自体の使い方を思い出してほしい。
-- 作業で必要なディレクトリやテンプレートが存在します。
-- 人間用のファイルが多いですが、フォーマッターなどはリコも使うかもしれません。
+- 作業で必要な**ディレクトリ**や**テンプレート**が存在します。
 - コミットをする際は、IDDのフェーズを意識してください。
+- 人間用のファイルが多いですが、フォーマッターなどはリコも使うかもしれません。
 
 ### 作業の注意点
 
@@ -34,7 +37,6 @@ VSCodeで使われる設定ファイルを更新しました。
 ## Agent Observations
 
 ### Polaris (2026-01-03)
-
 
 - `.gitignore`
 - `.vscode/cspell.json`

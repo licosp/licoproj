@@ -7,7 +7,13 @@ tags: ["maintenance", "cleanup", "archive"]
 
 # Context Whiteboard: Archival Cleanup
 
-## Human Notes (Japanese OK)
+> [!TIP]
+> There is no language requirement.
+
+> [!WARNING]
+> 人間の記述領域の編集がまだ終わっていません。
+
+## Human Notes
 
 ### 作業の文脈
 
@@ -48,12 +54,6 @@ tags: ["maintenance", "cleanup", "archive"]
 
 不要に見えるファイルは書庫に送って、当時の文脈を推測し、
 その後コミットしてください。
-
-### 使ってほしい道具
-
-- `.agent/.internal/archive/`
-- `.human/archive/`
-- `.agent/templates/commit-message.txt`
 
 ## Agent Observations
 

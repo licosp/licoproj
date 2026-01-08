@@ -7,13 +7,20 @@ tags: ["reorganization", "structure", "cleanup"]
 
 # Context Whiteboard: Default Directory Reorganization
 
-## Human Notes (Japanese OK)
+> [!TIP]
+> There is no language requirement.
+
+> [!WARNING]
+> 人間の記述領域の編集がまだ終わっていません。
+
+## Human Notes
 
 ### 作業の文脈
 
 Antigravityのデフォルトディレクトリ（`rules/`, `workflows/`, `scripts/`）の整理です。
 
 現状の問題：
+
 - `scripts/` は使い捨て哲学により実質未使用（`workspace/` が代替）
 - `workflows/` と `rules/` のフロントマターが異なる
 - 両方ともリコだけが読むものなのに、フォーマットが違う
@@ -54,13 +61,14 @@ Antigravityのデフォルトディレクトリ（`rules/`, `workflows/`, `scrip
 
 ## Agent Observations
 
-### 識別子
+### Spica
 
-(未割り当て)
+- (Initial setup)
 
-### 経緯
+### Polaris
 
 2025-12-31〜2026-01-01の対話で Polaris とユーザーが議論：
+
 - 手順書と行動規範のフォーマット差異
 - ユーザーがスラッシュコマンドを使わない事実
 - デフォルトディレクトリの存在理由

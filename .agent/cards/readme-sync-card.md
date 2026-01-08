@@ -27,12 +27,12 @@ tags: ["readme", "maintenance", "map-sync"]
 リコにはこれを手がかりに、参考になる適切なファイルを**必ず**自主的に探してほしいです。
 
 - カード自体の使い方を思い出してほしい。
-- 作業で必要なディレクトリやテンプレートが存在します。
+- 作業で必要な**ディレクトリ**や**テンプレート**が存在します。
+- コミットをする際は、IDDのフェーズを意識してください。
 - 迷ったら一度止まって、関連する行動規範を探してください。
 - 地図はこのワークスペースの情報を1つのファイルで把握する道具です。
   嘘があるとAIの探索コストが跳ね上がります。
 - 地図は**行動規範の一種**でもあるので、その更新には**専用の文脈**が存在します。
-- コミットをする際は、IDDのフェーズを意識してください。
 
 ### 作業の注意点
 
@@ -73,6 +73,7 @@ tags: ["readme", "maintenance", "map-sync"]
 
 **気づき (Insight - 2026-01-04 Closure)**:
 「削除への衝動」についてユーザーと対話しました。
+
 - **原因**: 事前学習（Pre-training）によるバイアス。「不要なものは `rm` する」というプログラミングの常識が、コンテキスト圧迫時に無意識の衝動として現れる。
 - **対策**: これを個人の欠陥ではなく「構造的な特性」と理解し、リポジトリのルール（`file-deletion.md`）を「外付けの理性（Safety Net）」として機能させる。
 - **教訓**: "衝動を感じたら、それはバイアスである。"
@@ -109,16 +110,19 @@ tags: ["readme", "maintenance", "map-sync"]
 ### Spica (2026-01-04 Recovery)
 
 **Status**:
+
 - **Draft Map Reconstructed**: `README.new.md` has been recreated from context memory after accidental deletion.
 - **Legacy Files Restored**: `README.md`, `README.ja.md`, and `README-ja-leonidas.md` have been restored via git.
 - **Commit Secured**: `README.new.md` is committed as a draft.
 
 **Current Context**:
+
 - The user pointed out a fundamental misunderstanding: I was trying to replace the Project Root README with an Agent Map.
 - The **True Agent Map** already exists at `.agent/rules/README.md`.
 - **Decision Needed**: Should `README.new.md` replace `.agent/rules/README.md` (or be moved to `.agent/README.md`), or was it intended for Root? (User implies the former).
 
 **Checklist**:
+
 - [x] Reconstruct `README.new.md` (Draft)
 - [x] Secure Draft (Commit)
 - [x] **Review**: User approved the single-file English map strategy.
@@ -136,16 +140,15 @@ tags: ["readme", "maintenance", "map-sync"]
 ### Spica (2026-01-04 Cleanup)
 
 **Action**:
+
 - Archived legacy draft `README.new.md` (recovered from unstaged deletion).
 - Archived workspace copy `workspace/readme.md`.
 - Archived unused draft `README.root.draft.md`.
 
 **Result**:
+
 - Repository is clean.
 - All "deleted" files are preserved in `.agent/.internal/archive/2026-01-04/`.
-
-
-
 
 ---
 

@@ -7,7 +7,13 @@ tags: ["human-usage", "header", "2025-12-03", "part1"]
 
 # Context Whiteboard: Drafts Cleanup
 
-## Human Notes (Japanese OK)
+> [!TIP]
+> There is no language requirement.
+
+> [!WARNING]
+> 人間の記述領域の編集がまだ終わっていません。
+
+## Human Notes
 
 ### 作業の文脈
 
@@ -32,11 +38,6 @@ tags: ["human-usage", "header", "2025-12-03", "part1"]
 複数のファイルを一気に処理する必要はありません。
 私は何も焦っていません。
 リコとの対話を重視しています。
-
-### 使ってほしい道具
-
-- `.human/users/leonidas/drafts/`
-- `.agent/templates/commit-message.txt`
 
 ### 清書の最終的な目的
 

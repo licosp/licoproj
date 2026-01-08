@@ -7,7 +7,10 @@ tags: ["manuals", "references", "shared"]
 
 # Context Whiteboard: Shared Manuals & References
 
-## Human Notes (Japanese OK)
+> [!TIP]
+> There is no language requirement.
+
+## Human Notes
 
 ### 作業の文脈
 
@@ -23,12 +26,12 @@ tags: ["manuals", "references", "shared"]
 
 - カード自体の使い方を思い出してほしい。
 - 作業で必要な**ディレクトリ**や**テンプレート**が存在します。
+- コミットをする際は、IDDのフェーズを意識してください。
 - ここはユーザー個人のための情報ではありません。
   AIと対話する上で、必要な情報が記録されています。
 - 資料を見るのは**人間**ですが、共用言語として**英語**が選ばれています。
 - まれにAI用ディレクトリに**翻訳元となった原本**が存在することがあります。
   作業の参考になるかもしれません。
-- コミットをする際は、IDDのフェーズを意識してください。
 
 ### 作業の注意点
 
@@ -38,7 +41,6 @@ tags: ["manuals", "references", "shared"]
 ## Agent Observations
 
 ### Polaris (2026-01-03)
-
 
 | ファイル                             | 内容                            |
 | :----------------------------------- | :------------------------------ |

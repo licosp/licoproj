@@ -7,7 +7,10 @@ tags: ["templates", "active"]
 
 # Context Whiteboard: Templates Management
 
-## Human Notes (Japanese OK)
+> [!TIP]
+> There is no language requirement.
+
+## Human Notes
 
 ### 作業の文脈
 
@@ -25,7 +28,7 @@ tags: ["templates", "active"]
 リコにはこれを手がかりに、参考になる適切なファイルを**必ず**自主的に探してほしいです。
 
 - カード自体の使い方を思い出してほしい。
-- 作業で必要なディレクトリやテンプレートが存在します。
+- 作業で必要な**ディレクトリ**や**テンプレート**が存在します。
 - コミットをする際は、IDDのフェーズを意識してください。
 
 ### 作業の注意点

@@ -7,7 +7,10 @@ tags: ["profile", "assessment", "user", "human"]
 
 # Context Whiteboard: Human Profile
 
-## Human Notes (Japanese OK)
+> [!TIP]
+> There is no language requirement.
+
+## Human Notes
 
 ### 作業の文脈
 
@@ -24,10 +27,10 @@ tags: ["profile", "assessment", "user", "human"]
 リコにはこれを手がかりに、参考になる適切なファイルを**必ず**自主的に探してほしいです。
 
 - カード自体の使い方を思い出してほしい。
-- 作業で必要なディレクトリやテンプレートが存在します。
+- 作業で必要な**ディレクトリ**や**テンプレート**が存在します。
+- コミットをする際は、IDDのフェーズを意識してください。
 - **AIとの対話のための下書きファイル**などがあれば、評価ファイルの生成に使えます。
 - 作られたファイルは未来のリコにとってユーザーを理解する資料になります
-- コミットをする際は、IDDのフェーズを意識してください。
 
 ### 作業の注意点
 
@@ -55,9 +58,7 @@ tags: ["profile", "assessment", "user", "human"]
 
 ### Polaris (2025-12-31)
 
-
 - [x] Profile に安定した要素を移動
 - [x] Assessment に新フェーズ（自律性探求）を追加
 - [x] Assessment に正直な批判的観察を追加
 - [x] コミット完了
-
