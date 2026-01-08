@@ -53,14 +53,14 @@ tags: ["maintenance", "cleanup", "quick-task"]
 
 削除対象:
 
-- [ ] `packages/licoimg/` — サブプロジェクト本体
-- [ ] `.github/workflows/jekyll-gh-pages.yml` — GitHub Pages ワークフロー
-- [ ] `.agent/rules/projects/coding-conventions.md` — コーディング規約
-- [ ] README への参照を削除
+- [x] `packages/licoimg/` — サブプロジェクト本体
+- [x] `.github/workflows/jekyll-gh-pages.yml` — GitHub Pages ワークフロー
+- [x] `.agent/rules/projects/coding-conventions.md` — コーディング規約
+- [x] README への参照を削除
 
 参照更新:
 
-- [ ] `README.md` — licoimg への言及を削除
-- [ ] `README.ja.md` — licoimg への言及を削除
-- [ ] `.agent/rules/README.md` — coding-conventions への参照を削除
-- [ ] `roadmap-card.md` — 完了項目として削除
+- [x] `README.md` — licoimg への言及を削除
+- [x] `README.ja.md` — licoimg への言及を削除
+- [x] `.agent/rules/README.md` — coding-conventions への参照を削除
+- [x] `roadmap-card.md` — 完了項目として削除
