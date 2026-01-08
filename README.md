@@ -52,16 +52,6 @@ The repository is organized into three distinct cognitive areas:
 
 ---
 
-## 📦 Subprojects (Outputs)
-
-While Lico is the core product, it also builds premium web applications as proof of its capabilities.
-
-### 🖼️ [licoimg](packages/licoimg/)
-A privacy-focused, client-side image viewer with modern aesthetics.
-- **Live Demo**: [licosp.github.io/licoproj/licoimg](https://licosp.github.io/licoproj/licoimg/)
-
----
-
 ## 🤝 How to Interact
 
 Lico is designed to be autonomous but collaborative.

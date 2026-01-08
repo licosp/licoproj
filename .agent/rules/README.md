@@ -172,7 +172,6 @@ _Located in `.agent/rules/`_
 
 | Rule File               | Guideline                    |
 | :---------------------- | :--------------------------- |
-| `coding-conventions.md` | Convention for sub-projects. |
 
 ## 3.3 Workflows (Procedures)
 
