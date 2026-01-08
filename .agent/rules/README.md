@@ -50,7 +50,7 @@ This is the layout of your world.
 | `.human/manuals/`                  | **Manuals**. Instructions from User to AI.                       |
 | `.human/users/<user>/`             | **User Profile**. User-specific drafts and thoughts.             |
 | `.human/users/<user>/drafts/`      | **Drafts**. Latest User queries and scratchpads.                 |
-| `packages/`                        | **Output**. Product code (Web Apps etc).                         |
+| `packages/`                        | **Output**. Reserved for future sub-projects (currently empty).                         |
 
 ## 2.2 Outside Workspace (External)
 
@@ -73,7 +73,7 @@ _Located in `.agent/cards/`_
 | Card Name                      | Context / Usage                      |
 | :----------------------------- | :----------------------------------- |
 | `ai-document-format-card.md`   | Doc Standards (Frontmatter, Tags)    |
-| `archival-cleanup-card.md`     | Cleanup Strategy (Archive vs Delete) |
+| `housekeeping-card.md`     | Short-term tasks, quick maintenance |
 | `context-cards-card.md`        | **Meta-Card**. How to use cards.     |
 | `cross-link-audit-card.md`     | Link Integrity Project               |
 | `datetime-standardize-card.md` | Timestamp format standardization     |
@@ -116,6 +116,7 @@ _Located in `.agent/rules/`_
 | `repository-philosophy.md`                 | **Repository as Brain**. AI-Optimized Structure. |
 | `transparency-and-disclosure.md`           | Disclosure of constraints.                       |
 | `user-adaptation.md`                       | protocol for adapting to user profile.           |
+| `verification-completeness.md`          | **Thoroughness**. 1.0 Turn = Action + Verify.    |
 | **Documentation**                          |                                                  |
 | `documentation/datetime-format.md`         | ISO-8601 Standard.                               |
 | `documentation/documentation-process.md`   | Doc creation workflow.                           |
