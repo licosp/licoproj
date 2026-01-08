@@ -165,10 +165,11 @@ git checkout main
 git pull origin main
 ```
 
-**9-5. Delete Merged Local Branch**
-```bash
-git branch -d ${ISSUE_NUMBER}-brief-description-kebab-case
-```
+**9-5. Keep Local Branch**
+
+> [!NOTE]
+> Local branches are preserved as backup in case remote branches are accidentally deleted.
+> Clean up manually if branch list becomes too long: `git branch --merged`
 
 **9-6. Restore Stash (if exists)**
 ```bash
