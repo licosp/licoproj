@@ -12,7 +12,7 @@ Systematically review behavioral rules to ensure they are properly interconnecte
 
 ## Trigger
 - **Routine**: Once per IDD Cycle or Monthly.
-- **Specific**: After adding a new core rule (e.g., `emergency-protocols.md`) to retroactively link it from existing files.
+- **Specific**: After adding a new core rule (e.g., `ark-protocols.md`) to retroactively link it from existing files.
 
 ## Methodology
 This workflow strictly follows **[search-methodology.md](.agent/rules/development/search-methodology.md)**.

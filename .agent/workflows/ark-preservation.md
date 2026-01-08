@@ -47,5 +47,5 @@ Create `$BACKUP_DIR/incident-report.md`:
 | Document | Purpose |
 |:---------|:--------|
 | [session-lifecycle.md](.agent/rules/workflow/session-lifecycle.md) | Normal session termination |
-| [recover-from-failure.md](recover-from-failure.md) | Recovery procedures |
+| [ark-resumption.md](ark-resumption.md) | Recovery procedures |
 

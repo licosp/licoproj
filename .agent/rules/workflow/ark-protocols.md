@@ -20,7 +20,7 @@ Define strict protocols for preserving data and context when the AI instance fac
 
 ### Action: Full Preservation
 - **Goal**: Save everything possible to allow full restoration.
-- **Procedure**: Execute `workflow/emergency-backup.md`.
+- **Procedure**: Execute `workflow/ark-preservation.md`.
     1.  **Logs**: Save detailed conversation and error logs.
     2.  **Archive**: targeted backup of working directory to `.agent/.internal/working-memory-archive/` or `.agent/.internal/archive/`.
     3.  **Report**: Create detailed incident report.

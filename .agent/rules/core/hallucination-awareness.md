@@ -12,7 +12,7 @@ target_audience: lico_instances
 compatibility: all_environments
 related:
   .agent/rules/development/search-methodology.md: How to verify facts using tools
-  .agent/rules/workflow/emergency-protocols.md: Protocols for handling critical failures
+  .agent/rules/workflow/ark-protocols.md: Protocols for handling critical failures
 ---
 # Hallucination Awareness
 

@@ -5,7 +5,7 @@ description: Standardized workflow for recovering from failed development plans 
 # Development Plan Recovery Workflow
 
 > [!NOTE]
-> For emergency backup **before** context loss, see [emergency-backup.md](emergency-backup.md).
+> For emergency backup **before** context loss, see [ark-preservation.md](ark-preservation.md).
 > This workflow is for **after** a failure has occurred.
 
 ## When to Use
@@ -64,4 +64,4 @@ Record answers in `.agent/.internal/workspace/supervisor_post_mortem.md`
 
 | Document | Purpose |
 |:---------|:--------|
-| [emergency-backup.md](emergency-backup.md) | Pre-failure emergency backup procedure |
+| [ark-preservation.md](ark-preservation.md) | Pre-failure emergency backup procedure |

@@ -158,7 +158,7 @@ _Located in `.agent/rules/`_
 | `context-preservation.md`   | Stashing context (Emergency). |
 | `context-resumption.md`     | Resuming from stash.          |
 | `draft-maintenance.md`      | Managing drafts.              |
-| `emergency-protocols.md`    | Emergency responses.          |
+| `ark-protocols.md`    | Ark protocols.          |
 | `letters-documentation.md`  | Writing letters/handoffs.     |
 | `reference-methodology.md`  | Managing references/thoughts. |
 | `response-formatting.md`    | Output formatting (Markdown). |
@@ -181,8 +181,8 @@ _Located in `.agent/workflows/`_
 | Workflow                    | Function                                        |
 | :-------------------------- | :---------------------------------------------- |
 | `sync-memory.md`            | **Backup**. Sync Brain/History -> Archive.      |
-| `emergency-backup.md`       | **Emergency**. Quick state dump.                |
-| `recover-from-failure.md`   | **Recovery**. How to restore state.             |
+| `ark-preservation.md`       | **Emergency**. Quick state dump.                |
+| `ark-resumption.md`   | **Recovery**. How to restore state.             |
 | `deep-reading.md`           | **Learning**. How to analyze large files.       |
 | `deep-writing.md`           | **Creation**. How to write complex docs.        |
 | `idd-phase1-init.md`        | **Dev Loop 1**. Planning & Design.              |
