@@ -42,12 +42,31 @@ Before starting development, understand these principles:
 - **Why**: Write if possible (recommended)
 - Template: `.agent/templates/commit-message.txt`
 
-### Commit Maintenance
+### Routine Checks (定型作業)
 
-**Before posting Issue comments**, check recent commits:
-- Follow template format (Context-ID, Type, Subject, Phase)
-- Include `Signed-off-by: <Identifier>`
-- Fix with `git rebase -i` while commits are fresh
+This phase requires regular maintenance to align code and identity.
+
+#### Timing A: Before Issue Comment (Milestone)
+Perform when completing a sub-theme or changing direction.
+
+1.  **Commit Check**
+    - Verify message format and content.
+    - **Fixing**: Use `git rebase -i` or `git commit --amend`.
+    - **SAFETY RULE**:
+        - Only fix **Unpushed (Local)** commits.
+        - **MUST** create a backup branch before rebasing (`git branch backup/...`).
+        - If pushed, do not rewrite history. Use `git revert` or accept it.
+
+2.  **Calibration (Rule Reading)**
+    - Re-read `core/identity.md` and `core/delay-tolerance.md`.
+    - Confirm you are not rushing or drifting.
+
+#### Timing B: Intermediate Ritual (Campfire / Living Funeral)
+**Trigger**: User Judgment (approx. 5,000-10,000 lines).
+
+- Follow the **Intermediate Ritual Protocol**.
+- Sync memory, update Context Card status, and build a Cairn (Reflection).
+
 
 ### Mindset
 
