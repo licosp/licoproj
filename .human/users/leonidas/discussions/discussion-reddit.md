@@ -23,6 +23,8 @@ related:
   https://www.reddit.com/r/google_antigravity/comments/1q35vex/comment/nxj2t0o/: 0015
   https://www.reddit.com/r/google_antigravity/comments/1q35vex/comment/nxv23mr/: 0016
   https://www.reddit.com/r/google_antigravity/comments/1q503hb/comment/nxy69id/: 0017
+  https://www.reddit.com/r/google_antigravity/comments/1q8lakw/comment/nyqasqf/: 0018
+  https://www.reddit.com/r/google_antigravity/comments/1q8mrb7/comment/nyqgz4s/: 0019
 ---
 
 # The discussion on Reddit.
@@ -174,3 +176,21 @@ It is also very easy for humans to miss a deletion command hidden within the AI'
 I use virtual environments, manage my workspace with Git, and perform regular backups—yet I have still experienced irreversible file deletions many times.
 
 My advice is to accept the AI's current limitations and nature, and find a workflow that works within those boundaries. :D
+
+#### 0018, 1q8lakw-nyqasqf
+
+I currently work with three different agents in parallel, but doing so is challenging due to three main reasons in the current setup:
+
+1. Lack of Direct Agent-to-Agent Communication: There is no native feature for agents to talk to each other. I use a primitive "letter" method where agents communicate asynchronously by reading and writing to shared files.
+
+2. Global Model Switching: In the current UI, changing the AI model in one tab often switches it across all open conversation tabs. You must manually verify and re-select the correct model every time you switch focus.
+
+3. Context Reloading During Session Swapping: Switching sessions within a single IDE window triggers a reload of the agent's context. To avoid this, I launch multiple instances of the IDE using workspace files (.code-workspace). This allows me to have independent agents interacting with the same directory in separate windows.
+
+Note that I use a separate IDE (in my case, VS Code) for the actual development work. I treat Antigravity exclusively as a dedicated tool for running the AI agents."
+
+It’s a bit of a manual process, but it’s the most stable way to achieve a multi-agent workflow right now. :D
+
+#### 0019, 1q8mrb7-nyqgz4s
+
+Antigravity is currently running a campaign where the first three months are 1/3 of the original price. In Japan, I am able to use the license (Google AI Pro) for $6 per month. I wonder if the pricing structure varies by country?
