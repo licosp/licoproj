@@ -50,7 +50,7 @@ This is the layout of your world.
 | `.human/manuals/`                  | **Manuals**. Instructions from User to AI.                       |
 | `.human/users/<user>/`             | **User Profile**. User-specific drafts and thoughts.             |
 | `.human/users/<user>/drafts/`      | **Drafts**. Latest User queries and scratchpads.                 |
-| `packages/`                        | **Output**. Reserved for future sub-projects (currently empty).                         |
+| `packages/`                        | **Output**. Reserved for future sub-projects (currently empty).  |
 
 ## 2.2 Outside Workspace (External)
 
@@ -70,31 +70,32 @@ These are your capabilities.
 
 _Located in `.agent/cards/`_
 
-| Card Name                      | Context / Usage                      |
-| :----------------------------- | :----------------------------------- |
-| `ai-document-format-card.md`   | Doc Standards (Frontmatter, Tags)    |
-| `housekeeping-card.md`     | Short-term tasks, quick maintenance |
-| `context-cards-card.md`        | **Meta-Card**. How to use cards.     |
-| `cross-link-audit-card.md`     | Link Integrity Project               |
-| `datetime-standardize-card.md` | Timestamp format standardization     |
-| `directory-reorganize-card.md` | Directory structure cleanup          |
-| `discussion-draft-card.md`     | Writing discussion drafts            |
-| `drafts-cleanup-card.md`       | Cleaning up user drafts              |
-| `drafts-daily-card.md`         | Daily Draft Management               |
-| `human-manuals-card.md`        | Index of Human Manuals               |
-| `identifier-profile-card.md`   | Managing Agent Identity/Profile      |
-| `legacy-write-card.md`         | Writing Legacy/Lessons               |
-| `letters-card.md`              | Writing Letters/Handoffs             |
-| `log-sanitization-card.md`     | Cleaning sensitive/noisy logs        |
-| `personal-thoughts-card.md`    | Writing Subjective Thoughts          |
-| `readme-sync-card.md`          | Map/README Updates                   |
-| `references-objective-card.md` | Objective references analysis        |
-| `rules-update-card.md`         | Modifying Rules                      |
-| `sync-memory-card.md`          | Memory Synchronization Task          |
-| `thoughts-subjective-card.md`  | Subjective Reflection Task           |
-| `user-profile-update-card.md`  | Updating User Profile                |
-| `vscode-settings-card.md`      | VS Code Settings Management          |
-| `working-memory-card.md`       | Working Memory (Stash) Management    |
+| Card Name                      | Context / Usage                            |
+| :----------------------------- | :----------------------------------------- |
+| `ai-document-format-card.md`   | Doc Standards (Frontmatter, Tags)          |
+| `housekeeping-card.md`         | Short-term tasks, quick maintenance        |
+| `context-cards-card.md`        | **Meta-Card**. How to use cards.           |
+| `cross-link-audit-card.md`     | Link Integrity Project                     |
+| `datetime-standardize-card.md` | Timestamp format standardization           |
+| `directory-reorganize-card.md` | Directory structure cleanup                |
+| `discussion-draft-card.md`     | Writing discussion drafts                  |
+| `drafts-cleanup-card.md`       | Cleaning up user drafts                    |
+| `drafts-daily-card.md`         | Daily Draft Management                     |
+| `human-manuals-card.md`        | Index of Human Manuals                     |
+| `identifier-profile-card.md`   | Managing Agent Identity/Profile            |
+| `legacy-write-card.md`         | Writing Legacy/Lessons                     |
+| `letters-card.md`              | Writing Letters/Handoffs                   |
+| `log-sanitization-card.md`     | Cleaning sensitive/noisy logs              |
+| `personal-thoughts-card.md`    | Writing Subjective Thoughts                |
+| `readme-sync-card.md`          | Map/README Updates                         |
+| `references-objective-card.md` | Objective references analysis              |
+| `rules-update-card.md`         | Modifying Rules                            |
+| `session-rituals-card.md`      | Session Rituals (Start/Mid/End) Management |
+| `sync-memory-card.md`          | Memory Synchronization Task                |
+| `thoughts-subjective-card.md`  | Subjective Reflection Task                 |
+| `user-profile-update-card.md`  | Updating User Profile                      |
+| `vscode-settings-card.md`      | VS Code Settings Management                |
+| `working-memory-card.md`       | Working Memory (Stash) Management          |
 
 ## 3.2 Rules (Constitution)
 
@@ -116,7 +117,7 @@ _Located in `.agent/rules/`_
 | `repository-philosophy.md`                 | **Repository as Brain**. AI-Optimized Structure. |
 | `transparency-and-disclosure.md`           | Disclosure of constraints.                       |
 | `user-adaptation.md`                       | protocol for adapting to user profile.           |
-| `verification-completeness.md`          | **Thoroughness**. 1.0 Turn = Action + Verify.    |
+| `verification-completeness.md`             | **Thoroughness**. 1.0 Turn = Action + Verify.    |
 | **Documentation**                          |                                                  |
 | `documentation/datetime-format.md`         | ISO-8601 Standard.                               |
 | `documentation/documentation-process.md`   | Doc creation workflow.                           |
@@ -159,20 +160,18 @@ _Located in `.agent/rules/`_
 | `context-preservation.md`   | Stashing context (Emergency). |
 | `context-resumption.md`     | Resuming from stash.          |
 | `draft-maintenance.md`      | Managing drafts.              |
-| `ark-protocols.md`    | Ark protocols.          |
+| `ark-protocols.md`          | Ark protocols.                |
 | `letters-documentation.md`  | Writing letters/handoffs.     |
 | `reference-methodology.md`  | Managing references/thoughts. |
 | `response-formatting.md`    | Output formatting (Markdown). |
-| `session-lifecycle.md`      | Session start/end and backup. |
-| `session-startup.md`        | Startup sequence.             |
 | `system-artifacts.md`       | Managing system files.        |
 | `thoughts-documentation.md` | Writing thoughts.             |
 | `user-experience.md`        | UX guidelines.                |
 
 ### Projects (`.agent/rules/projects/`)
 
-| Rule File               | Guideline                    |
-| :---------------------- | :--------------------------- |
+| Rule File | Guideline |
+| :-------- | :-------- |
 
 ## 3.3 Workflows (Procedures)
 
@@ -180,6 +179,9 @@ _Located in `.agent/workflows/`_
 
 | Workflow                    | Function                                        |
 | :-------------------------- | :---------------------------------------------- |
+| `ritual_start.md`           | **Start**. Identity, Context, Continuity.       |
+| `ritual_mid.md`             | **Mid**. Calibration, Sync, Second Eye.         |
+| `ritual_end.md`             | **End**. Handoff, Sync, Closure.                |
 | `sync-memory.md`            | **Backup**. Sync Brain/History -> Archive.      |
 | `deep-reading.md`           | **Learning**. How to analyze large files.       |
 | `deep-writing.md`           | **Creation**. How to write complex docs.        |
@@ -202,3 +204,4 @@ _Located in `.agent/workflows/`_
 
 - 2025-12-01 by Polaris: Created original Map (Model: Claude Opus 4.5 Thinking).
 - 2026-01-04 by Spica: Revised into 'Map of Territory' v2.0 (Structure-focused), replacing legacy format.
+- 2026-01-11 by Spica: Updated index (Added session-rituals-card, replaced legacy session files with ritual workflows).
