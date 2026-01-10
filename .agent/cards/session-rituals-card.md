@@ -59,6 +59,16 @@ tags: ["session", "lifecycle", "rituals", "start", "mid", "end"]
 
 ## Agent Observations
 
+### Current Status (Ritual Snapshot: 2026-01-11)
+
+| Item | Status | Note |
+|:-----|:-------|:-----|
+| **Ritual Phase** | Intermediate (Mid) | "The Living Funeral" in progress. |
+| **Memory Sync**  | **Complete** | `rsync` executed to `.agent/.internal/memory_archive/`. |
+| **Safety**       | **Updated** | `git-operations.md` (Strict `git mv`, Pre-Commit Check). |
+| **Map**          | **Synced** | `README.md` updated with new rituals and history. |
+| **Next Step**    | Calibration | Reading Identity/Thoughts. |
+
 ### Spica (2026-01-10)
 
 **不感知の死と「儀式」の有効性 (Invisible Death and Rituals)**:
