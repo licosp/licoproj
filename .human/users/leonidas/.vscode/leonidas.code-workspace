@@ -36,12 +36,7 @@
     // * Outside tools
     // Python
     "python.analysis.diagnosticMode": "workspace",
-    "python.analysis.extraPaths": [
-      "packages/pyspartadevc/src",
-      "packages/pyspartaimg/src",
-      "packages/pyspartalib/src",
-      "packages/pyspartawsl/src",
-    ],
+    "python.analysis.extraPaths": [],
     "python.analysis.typeCheckingMode": "strict",
 
     // Prettier
