@@ -1,0 +1,17 @@
+{
+  "folders": [
+    {
+      "name": "main-workspace",
+      "path": "../../../../../licoproj",
+    },
+    {
+      "name": "identifier-directory",
+      "path": "../",
+    },
+    {
+      "name": "user-directory",
+      "path": "../../../../.human/users/leonidas/",
+    },
+  ],
+  "settings": {},
+}
