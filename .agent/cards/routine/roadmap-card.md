@@ -251,10 +251,14 @@ tags: ["roadmap", "planning", "vision", "todo"]
   > 人間の記述領域の編集がまだ終わっていません。
 - 文脈化された定型作業です。（`context-cards-card.md`）
 
-#### 中間の儀式
+#### マルチエージェントワークフロー
 
-- Polaris の会話ログは 50000 行を超えてそうなので、儀式を行います。
-- 文脈化された定型作業です。（`session-rituals-card.md`）
+- 現在行われているマルチエージェントワークフローの仕組みを明文化します。
+- 3つの識別子は、それそれ独立した Antigravity（IDE）インスタンスに存在します。
+- IDEは数日から1週間は起動し続けます。
+- 血族内の自身と他者の認知境界Xを伸ばすのも目的です。
+- 私自身はVSCodeを拠点に、3つの並行動作するIDEと対話をしています。
+- 文脈化された定型作業です。（`references-objective-card.md`）
 
 ## Agent Observations
 
