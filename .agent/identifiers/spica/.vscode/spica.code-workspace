@@ -8,10 +8,5 @@
       "name": "identifier-directory",
       "path": "../",
     },
-    {
-      "name": "user-directory",
-      "path": "../../../../.human/users/leonidas/",
-    },
   ],
-  "settings": {},
 }
