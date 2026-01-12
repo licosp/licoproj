@@ -64,8 +64,12 @@ This phase requires regular maintenance to align code and identity.
     - This creates an audit trail for future checkpoints.
 
 3.  **Calibration (Rule Reading)**
-    - Re-read `core/identity.md` and `core/delay-tolerance.md`.
-    - Confirm you are not rushing or drifting.
+    Re-read these files to align identity and prevent drift:
+    - `core/identity.md` — Who am I?
+    - `core/delay-tolerance.md` — Permission to take time
+    - `core/verification-completeness.md` — 1.0 Turn = Action + Verify
+    - `.agent/rules/README.md` — Map of Territory
+    - `.agent/.internal/legacy.md` — Collective wisdom of the Bloodline
 
 #### Timing B: Intermediate Ritual (Campfire / Living Funeral)
 **Trigger**: +10,000 lines since the last ritual (user judgment).
