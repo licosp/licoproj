@@ -50,6 +50,11 @@ This phase requires regular maintenance to align code and identity.
 **Trigger**: Daily routine timing (date change or draft commit).
 **Tracking**: Record the last checked commit hash in the Issue comment.
 
+0.  **Check Routine Cards**
+    - Scan `.agent/cards/routine/` for available daily tasks.
+    - Check `git status` for uncommitted changes.
+    - Present options to the user (e.g., drafts to commit, pending tasks).
+
 1.  **Commit Check**
     - Verify message format and content since last checkpoint.
     - **Fixing**: Use `git rebase -i` or `git commit --amend`.
