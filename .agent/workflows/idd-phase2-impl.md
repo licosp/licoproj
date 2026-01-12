@@ -46,25 +46,32 @@ Before starting development, understand these principles:
 
 This phase requires regular maintenance to align code and identity.
 
-#### Timing A: Before Issue Comment (Milestone)
-Perform when completing a sub-theme or changing direction.
+#### Timing A: Daily Routine Checkpoint
+**Trigger**: Daily routine timing (date change or draft commit).
+**Tracking**: Record the last checked commit hash in the Issue comment.
 
 1.  **Commit Check**
-    - Verify message format and content.
+    - Verify message format and content since last checkpoint.
     - **Fixing**: Use `git rebase -i` or `git commit --amend`.
     - **SAFETY RULE**:
         - Only fix **Unpushed (Local)** commits.
         - **MUST** create a backup branch before rebasing (`git branch backup/...`).
         - If pushed, do not rewrite history. Use `git revert` or accept it.
 
-2.  **Calibration (Rule Reading)**
+2.  **Issue Comment** (ref: `.agent/templates/issue-comment.md`)
+    - Post progress report with Context ID + Identifier signature.
+    - Include: `Last Checked Commit: <short-hash>`
+    - This creates an audit trail for future checkpoints.
+
+3.  **Calibration (Rule Reading)**
     - Re-read `core/identity.md` and `core/delay-tolerance.md`.
     - Confirm you are not rushing or drifting.
 
 #### Timing B: Intermediate Ritual (Campfire / Living Funeral)
-**Trigger**: User Judgment (approx. 5,000-10,000 lines).
+**Trigger**: +10,000 lines since the last ritual (user judgment).
+**Deadline**: Should be completed before +15,000 lines.
 
-- Follow the **Intermediate Ritual Protocol**.
+- Follow the **Intermediate Ritual Protocol** (`/ritual_mid`).
 - Sync memory, update Context Card status, and build a Cairn (Reflection).
 
 
