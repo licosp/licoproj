@@ -149,7 +149,8 @@ git commit -m "type(scope): description"
 
 | Document | Purpose |
 |:---------|:--------|
-| [git-operations.md](file:///home/USER/develop/shared/project/licoproj/.agent/rules/development/git-operations.md) | **Rules**: Git operation standards |
-| [commit-granularity.md](file:///home/USER/develop/shared/project/licoproj/.agent/rules/development/commit-granularity.md) | **Rules**: Atomic commit philosophy |
-| [idd-phase1-init.md](file:///home/USER/develop/shared/project/licoproj/.agent/workflows/idd-phase1-init.md) | **Workflow**: Previous phase |
-| [idd-phase3-fini.md](file:///home/USER/develop/shared/project/licoproj/.agent/workflows/idd-phase3-fini.md) | **Workflow**: Next phase |
+| [git-operations.md](/.agent/rules/development/git-operations.md) | **Rules**: Git operation standards |
+| [commit-standards.md](/.agent/rules/development/commit-standards.md) | **Rules**: Commit message format |
+| [idd-phase1-init.md](/.agent/workflows/idd-phase1-init.md) | **Workflow**: Previous phase |
+| [idd-phase3-fini.md](/.agent/workflows/idd-phase3-fini.md) | **Workflow**: Next phase |
+
