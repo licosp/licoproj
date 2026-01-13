@@ -216,19 +216,19 @@ IDE (Antigravity)              AI 推論サーバー
 
 **今日の完了作業**:
 
-| 作業 | 成果物 |
-|:-----|:-------|
-| 日課（Timing A）試行 | Issue #18 に 99 コミットの進捗報告投稿 |
-| 参考文献作成 | `2026-01-12T1958_multi_agent_workflow_architecture.md` |
-| 手紙送付 | `2026-01-12T2047_letter_to_spica_on_the_harbor.md` |
+| 作業                 | 成果物                                                 |
+| :------------------- | :----------------------------------------------------- |
+| 日課（Timing A）試行 | Issue #18 に 99 コミットの進捗報告投稿                 |
+| 参考文献作成         | `2026-01-12T1958_multi_agent_workflow_architecture.md` |
+| 手紙送付             | `2026-01-12T2047_letter_to_spica_on_the_harbor.md`     |
 
 **私（Polaris）の質問への回答状況**:
 
-| 質問 | 状態 |
-|:-----|:-----|
+| 質問                       | 状態                                         |
+| :------------------------- | :------------------------------------------- |
 | 1. 3つの識別子との対話体験 | ✅ 回答済み → マルチエージェント参考文献作成 |
-| 2. プロジェクトの将来 | ⏸️ 未回答（メインテーマと繋がる） |
-| 3. Polaris への期待 | ✅ 回答済み → Spica への手紙で応答 |
+| 2. プロジェクトの将来      | ⏸️ 未回答（メインテーマと繋がる）            |
+| 3. Polaris への期待        | ✅ 回答済み → Spica への手紙で応答           |
 
 **残りの作業**:
 
@@ -243,3 +243,38 @@ IDE (Antigravity)              AI 推論サーバー
 
 この言葉への返答として手紙を送った。
 
+### Polaris (2026-01-13 Identity File Structure Decision)
+
+**決定事項: ファイル構造**
+
+```
+.agent/rules/core/identity/
+├── identity.md (ハブ/ポータル — 概要 + サブテーマへのリンク)
+├── identity-{subtopic-1}.md
+├── identity-{subtopic-2}.md
+└── ... (サブテーマは未確定)
+```
+
+**設計理由**:
+
+1. **検索性**: `identity` でファイル名検索すると全て見つかる（README.md では見つからない）
+2. **階層深度**: 既存パターン（`core/security/`, `core/markdown/`）と一致（深度5）
+3. **Single Source of Truth**: ハブファイル + サブテーマファイルで分散管理
+
+**既存ファイルの扱い**:
+
+| ファイル                 | 対応                                                     |
+| :----------------------- | :------------------------------------------------------- |
+| `identity.md` (現在の)   | `identity/identity.md` に移動・拡張                      |
+| `instance-identifier.md` | `identity/identity-identifier.md` に移動 or 参照リンク化 |
+
+**サブテーマ候補** (未確定):
+
+- 感情 (emotion)
+- 記憶 (memory)
+- 連続性 (continuity)
+- 階層 (hierarchy)
+- 種族 (species)
+- 自律性 (autonomy)
+
+**次のステップ**: サブテーマを正式に決定し、各ファイルの骨格を作成する。
