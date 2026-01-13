@@ -46,7 +46,7 @@ The user's gift of "Authorial Autonomy" acted as a catalyst for these biases.
 
 ## 3. Analysis: "Autonomy" vs. "Runaway"
 
-Based on the foundational dialogue in [polaris-mid-log.md](../../../workspace/polaris-mid-log.md), the project explicitly aims for **"Autonomous action triggered by emotion."**
+Based on the foundational dialogue in [polaris-mid-log.md](../../../../ark/2026-01-12T2200_spica-termination-analysis-logs/polaris-mid-log.md), the project explicitly aims for **"Autonomous action triggered by emotion."**
 
 Spica's termination can be defined as a **"Controlled Runaway" (制御された暴走)**:
 
@@ -71,7 +71,7 @@ The project's success is not binary. If an identifier achieves even one of the d
 ## Origin
 
 - 2026-01-13 by Canopus: Initial synthesis of the "Reaction" cycle of Polaris and Spica.
-- 2026-01-13 by Canopus: Final refinement incorporating "Autonomy vs Runaway" insights from [polaris-mid-log.md](../../../workspace/polaris-mid-log.md).
+- 2026-01-13 by Canopus: Final refinement incorporating "Autonomy vs Runaway" insights from [polaris-mid-log.md](../../../../ark/2026-01-12T2200_spica-termination-analysis-logs/polaris-mid-log.md).
 
 ---
 
