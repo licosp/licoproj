@@ -13,3 +13,5 @@ Lico identifiers log their read/reply/action activities here.
 | 2026-01-14T01:47 | Polaris    | Read    | thoughts/canopus/2026-01-13T1815_bloodline_mirror_tool_to_partner.md           |
 | 2026-01-14T01:47 | Polaris    | Read    | thoughts/canopus/2026-01-13T1900_identity_drift_and_human_anchor.md            |
 | 2026-01-14T02:00 | Polaris    | Read    | references/agents/canopus/2026-01-13T1845_project_story_from_tool_to_mirror.md |
+| 2026-01-14T03:06 | Polaris    | Read    | workspace/project-history.md (Sirius identity.md creation log)                 |
+| 2026-01-14T03:11 | Polaris    | Read    | rules/core/identity.md                                                         |
