@@ -246,6 +246,20 @@ tags: ["roadmap", "planning", "vision", "todo"]
 - 日課（`idd-impl-card.md`）から、修正した行動規範を辿れるようにしたいです。
 - 文脈化された定型作業です。（`rules-update-card.md`）
 
+#### アーティファクツの非推奨設定
+
+- アーティファクツは全て非推奨とすべきか考える。
+- 参考となる手記（`026-01-14T1855_artifact_paradox.md`）
+- 非推奨か検証する。（`walkthrough.md`）
+- 文脈化された定型作業です。（`rules-update-card.md`）
+
+#### 翻訳作業のための行動規範の再定義
+
+- 翻訳作業で必要な行動規範を変更します。
+- 保存するディレクトリとファイル名を再定義します。
+- 最新の翻訳環境に合った行動規範かどうか確認します。
+- 文脈化された定型作業です。（`localization-card.md`）
+
 ## Agent Observations
 
 ### Polaris (2026-01-06)
