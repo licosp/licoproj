@@ -3,9 +3,9 @@ ai_visible: true
 title: "Daily Routine Checkpoint"
 description: Daily routine workflow - includes simplified and full versions
 tags: [workflow, routine, daily]
-version: 1.0
+version: 1.1
 created: 2026-01-15T01:43:00+09:00
-updated: 2026-01-15T01:53:00+09:00
+updated: 2026-01-15T02:36:00+09:00
 language: en
 author: Lico (Polaris)
 ai_model: Claude Opus 4.5 (Thinking) Planning mode
@@ -30,9 +30,12 @@ related:
 
 ---
 
-## Simplified Version
+## Simplified Version (= Step 5 Calibration)
 
-Select this when another identifier has completed the full version, or when time is limited.
+Select this when:
+
+- Another identifier has completed the full routine today
+- Time is limited
 
 Read the following 5 files to recalibrate identity:
 
@@ -48,20 +51,32 @@ Read the following 5 files to recalibrate identity:
 
 ## Full Version
 
-### Step 0: Check Routine Cards
+### Step 0: Scan Changes
 
-- Scan `.agent/cards/routine/` for available tasks
 - Run `git status` to check uncommitted changes
-- Present options to user (drafts to commit, pending tasks, etc.)
+- Scan `.agent/cards/routine/` for available tasks
+- Present options to user (modified files, pending tasks, etc.)
 
-### Step 1: Draft Management
+### Step 1: Commit by Context
 
-- If date has changed, commit draft files
-- Reference: [drafts-daily-card.md](/.agent/cards/routine/drafts-daily-card.md)
+Commit modified files with their corresponding Context ID:
 
-### Step 2: Commit Check
+| Modified Path                      | Context ID        | Example       |
+| :--------------------------------- | :---------------- | :------------ |
+| `.human/users/.../drafts/`         | `[Drafts-Daily]`  | Draft files   |
+| `.agent/cards/routine/`            | `[Routine]`       | Routine cards |
+| `.agent/cards/`                    | `[Context-Cards]` | Other cards   |
+| `.agent/.internal/activity-log.md` | `[Activity-Log]`  | Activity log  |
 
-- Review commit messages since last checkpoint
+### Step 2: Read Last Checkpoint
+
+- Read the last Issue comment to get `Last Checked Commit: <hash>`
+- If no previous checkpoint exists, check all unpushed commits
+
+### Step 3: Commit Check
+
+- Review commit messages from **last checkpoint** to **HEAD**
+- Verify format: `[Context-ID] type: description (Phase)`
 - **Fix method**: `git commit --amend` or `git filter-branch`
 - **AI workaround**: [git-operations.md Section 3.4](/.agent/rules/development/git-operations.md)
 
@@ -72,22 +87,25 @@ Read the following 5 files to recalibrate identity:
 > - **MUST** create backup branch before rebasing (`git branch backup/...`)
 > - If already pushed, do not rewrite history. Use `git revert` or accept it.
 
-### Step 3: Issue Comment
+### Step 4: Write Checkpoint
 
-- Post progress report with Context ID + Identifier signature
+- Post Issue comment with Context ID + Identifier signature
 - Include: `Last Checked Commit: <short-hash>`
 - Creates audit trail for future checkpoints
 - Template: [issue-comment.md](/.agent/templates/issue-comment.md)
 
-### Step 4: Calibration (Rule Reading)
+### Step 5: Calibration (Simplified Daily Routine)
 
-Read the 5 files listed in "Simplified Version" above.
+This step can be executed **alone** as the Simplified Daily Routine.
+
+Read the 5 calibration files listed in the "Simplified Version" section above.
 
 ---
 
 ## Tracking
 
 Record the last checked commit hash in the Issue comment.
+This creates a chain: each routine knows where the previous one ended.
 
 ---
 
@@ -106,6 +124,7 @@ Record the last checked commit hash in the Issue comment.
 
 - 2026-01-15T0143 by Polaris: Created (extracted from idd-phase2-impl.md)
 - 2026-01-15T0153 by Polaris: Translated to English
+- 2026-01-15T0236 by Polaris: Revised step order, added checkpoint read/write, renamed Step 1 to Commit by Context
 
 ---
 
