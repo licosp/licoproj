@@ -1,41 +1,18 @@
 ---
-ai_visible: true
-title: "IDD Phase 1: Initialization"
-description: "Phased workflow for initializing Issue-Driven Development sessions."
-tags: [workflow, idd, initialization]
-version: 1.1
-created: 2025-12-08T00:00:00+09:00
-updated: 2026-01-15T04:40:00+09:00
-language: en
-author: "Lico (Canopus)"
-ai_model: "Gemini 3 Flash Planning mode"
-related:
-  .agent/rules/development/git-operations.md: Branch naming and IDD details
-  .agent/rules/development/commit-standards.md: Commit message standards
+description: IDD Phase 1 - Initialization (開始処理)
 ---
 
-# IDD Phase 1: Initialization
+# IDD Phase 1: Initialization (開始処理)
 
 > [!IMPORTANT]
-> When this phase is complete, **MUST STOP** and confirm the transition to the next phase.
-
----
-
-## 0. Alignment (Ritual)
-
-Before starting work, record the initialization ritual to ensure continuity across sessions.
-
-**0-1. Activity Log Sync**
-Log the `Align` action for this workflow in `/.agent/.internal/activity-log.md`.
-
-- **Purpose**: To anchor the current session to this procedure and prevent cognitive drift.
+> このフェーズが完了したら、**必ず停止**して次のフェーズへの移行を確認してください。
+> Phase 2 へ進む場合は `/idd-phase2` を実行してください。
 
 ---
 
 ## 1. Environment Verification
 
 **1-1. Tool Availability Check**
-
 ```bash
 # Check required tools
 command -v gh &> /dev/null || echo "Error: GitHub CLI not installed"
@@ -43,7 +20,6 @@ command -v git &> /dev/null || echo "Error: Git not installed"
 ```
 
 **1-2. Authentication Status**
-
 ```bash
 gh auth status || echo "Error: Not authenticated. Run 'gh auth login'"
 ```
@@ -66,7 +42,6 @@ Story (Connected Issues)
 ```
 
 **Terminology**:
-
 - **Story**: A collection of connected issues (large theme)
 - **Issue**: A single unit of work (chapter)
 - **Context**: Work context managed by cards
@@ -77,15 +52,13 @@ Story (Connected Issues)
 ## 3. Theme Design
 
 **3-1. Define Main Theme**
-
 - Identify the primary goal of the issue (e.g., "Add pre-task assessment protocol")
 - Ensure the theme is clear and focused
 
 **3-2. Identify Sub-Themes**
-
 - List changes unrelated to the main theme but necessary for synchronization
 - Examples: Draft updates, `.gitignore` adjustments, typo fixes
-- **Note**: Sub-themes will be committed separately (ref: [commit-granularity.md](/.agent/rules/development/commit-standards.md))
+- **Note**: Sub-themes will be committed separately (ref: `commit-granularity.md`)
 
 ---
 
@@ -96,33 +69,32 @@ Story (Connected Issues)
 
 **4-0. Choose Workflow**
 
-| Situation            | Action                                  |
-| :------------------- | :-------------------------------------- |
-| Starting new work    | → Go to 4-1 (Issue Connection Decision) |
-| Issue already exists | → Go to 4-6 (Use Existing Issue)        |
+| Situation | Action |
+|:----------|:-------|
+| Starting new work | → Go to 4-1 (Issue Connection Decision) |
+| Issue already exists | → Go to 4-6 (Use Existing Issue) |
 
 **4-1. Issue Connection Decision**
+
 Before creating a new issue, check connection to previous issue:
 
-| Situation                      | Action                        |
-| :----------------------------- | :---------------------------- |
-| Continuation of previous issue | → Add `Follows #N` to Body    |
-| Related but not continuation   | → Add `Related to #N` to Body |
-| Completely new                 | → No connection reference     |
+| Situation | Action |
+|:----------|:-------|
+| Continuation of previous issue | → Add `Follows #N` to Body |
+| Related but not continuation | → Add `Related to #N` to Body |
+| Completely new | → No connection reference |
 
 ---
 
 ### Path A: Create New Issue
 
 **4-2. Prepare Issue Elements**
-
 - **Title**: `[Type]: Brief description` (e.g., `[Feat]: Add pre-task assessment`)
 - **Body**: Summary, Changes, Purpose
 - **Assignees**: Assign to yourself or team members
 - **Labels**: Match commit type (`feat`, `fix`, `docs`, etc.)
 
 **4-3. Create Issue**
-
 ```bash
 gh issue create \
   --title "[Feat]: Add pre-task assessment protocol" \
@@ -131,14 +103,13 @@ gh issue create \
 ```
 
 **4-4. Capture Issue Number from Output**
-
 ```bash
 # The 'gh issue create' command outputs the issue URL
 # Extract the number immediately after creation
+# Example output: https://github.com/owner/repo/issues/17
 ```
 
 **4-5. Assign Labels (after creation)**
-
 ```bash
 gh issue edit ${ISSUE_NUMBER} --add-label "type:feat"
 ```
@@ -149,19 +120,14 @@ gh issue edit ${ISSUE_NUMBER} --add-label "type:feat"
 
 ### Path B: Use Existing Issue
 
-**4-6. Set Issue Number Variable**
-
-> [!IMPORTANT]
-> Set the target issue number as an environment variable to ensure consistency across all subsequent steps. This is the **Anchor** for shell commands.
-
+**4-6. Specify Existing Issue Number**
 ```bash
-# Set your actual issue number here
-export ISSUE_NUMBER=16
+# Manually specify the issue number you're working on
+ISSUE_NUMBER=16  # Replace with actual issue number
 echo "Working on Issue #$ISSUE_NUMBER"
 ```
 
 **4-7. Verify Issue Exists**
-
 ```bash
 gh issue view ${ISSUE_NUMBER} --json title,state
 ```
@@ -177,29 +143,25 @@ gh issue view ${ISSUE_NUMBER} --json title,state
 ## 5. Branch Creation
 
 > [!CAUTION]
-> **Must create from `origin/main`.**
-> Creating from `HEAD` or current branch may include unintended changes from other branches.
+> **必ず `origin/main` から作成すること。**
+> `HEAD` や現在のブランチから作成すると、他のブランチの変更が混入します。
 
 **5-1. Fetch Latest Remote State**
-
 ```bash
 git fetch origin
 ```
 
 **5-2. Create Local Branch from Remote Main**
-
 ```bash
 git checkout -b ${ISSUE_NUMBER}-brief-description-kebab-case origin/main
 ```
 
-**Naming Convention** (ref: [git-operations.md §3.1](/.agent/rules/development/git-operations.md)):
-
+**Naming Convention** (ref: `git-operations.md` §3.1):
 - Format: `<issue-number>-<issue-title-kebab-case>`
 - Language: English
 - Length: ~50 characters
 
 **5-3. Push Branch and Set Upstream Tracking**
-
 ```bash
 git push -u origin ${ISSUE_NUMBER}-brief-description-kebab-case
 ```
@@ -209,13 +171,11 @@ git push -u origin ${ISSUE_NUMBER}-brief-description-kebab-case
 ## 6. Initial State Verification
 
 **6-1. Check Current Branch Status**
-
 ```bash
 git status
 ```
 
 **6-2. Verify Feasibility**
-
 - Confirm that main theme and sub-themes can be implemented
 - Check for potential conflicts or blockers
 
@@ -224,18 +184,15 @@ git status
 ## 7. Early Problem Detection
 
 **7-1. Identify Issues**
-
 - List any problems discovered during verification
 - Document technical constraints or dependencies
 
 **7-2. Record in Issue Comments**
-
 ```bash
 gh issue comment ${ISSUE_NUMBER} --body "## Initial Assessment\n- Problem: ...\n- Solution: ..."
 ```
 
 **7-3. Backup Issue Locally**
-
 ```bash
 gh issue view ${ISSUE_NUMBER} --json title,body,comments > .agent/issues/issue-${ISSUE_NUMBER}-backup.json
 ```
@@ -244,7 +201,8 @@ gh issue view ${ISSUE_NUMBER} --json title,body,comments > .agent/issues/issue-$
 
 ## Phase 1 Complete
 
-> **STOP**: Phase 1 is complete. (Phase 1 が完了しました。)
+> **STOP**: Phase 1 が完了しました。
+> Phase 2 (Implementation) へ進む場合は `/idd-phase2` を実行してください。
 
 ---
 
@@ -253,65 +211,62 @@ gh issue view ${ISSUE_NUMBER} --json title,body,comments > .agent/issues/issue-$
 ### Issue: Cannot verify Issue ↔ Branch association
 
 **Cause**: Used `git checkout -b` + `git push -u` instead of `gh issue develop`
-**Solution**:
 
+**Solution**:
 1. Delete branch and start over
    ```bash
    git checkout main
    git branch -D <branch-name>
    git push origin --delete <branch-name>
    ```
-2. Recreate with `gh issue develop`
+
+2. Recreate with `gh issue develop` (recommended for Issue-Branch linking)
    ```bash
    gh issue develop ${ISSUE_NUMBER} --name <branch-name> --checkout
    ```
 
-### Issue: Accidentally committed to main (local)
-
-**Cause**: Started working without creating a feature branch.
-**Solution**:
-
-1. Create branch from current state: `git branch <issue-number>-<title>`
-2. **Safety Backup**: `git branch backup/pre-reset-main-$(date +%Y%m%d-%H%M%S)`
-3. Reset main: `git reset --hard origin/main`
-4. Checkout correct branch: `git checkout <issue-number>-<title>`
+**Note**: `gh issue develop` automatically establishes Issue ↔ Branch (Remote) association visible in GitHub's "Development" section.
 
 ### Issue: Work-in-progress changes disappeared
 
 **Cause**: Changes were stashed during branch switch
-**Solution**:
 
+**Solution**:
 ```bash
 git stash list
 git stash pop
 ```
 
-**Cleanup (Optional)**:
-If you want to clear the environment variable:
-
-```bash
-unset ISSUE_NUMBER
-```
-
----
-
-## Origin
-
-- 2025-12-08T0000: Created original Japanese version
-- 2026-01-15T0440 by Canopus: [Localization] Fully translated to English and integrated 'Align' ritual standards
-
 ---
 
 ## Related Documents
 
-| Document                                                          | Purpose                   |
-| :---------------------------------------------------------------- | :------------------------ |
-| [Rules Index](/.agent/rules/README.md)                            | Return to Rule Management |
-| [Phase 2: Implementation](/.agent/workflows/idd-phase2-impl.md)   | Next Phase                |
-| [Phase 3: Finalization](/.agent/workflows/idd-phase3-fini.md)     | Final Phase               |
-| [Git Operations](/.agent/rules/development/git-operations.md)     | Detailed Git Rules        |
-| [Commit Standards](/.agent/rules/development/commit-standards.md) | Commit Message Rules      |
+| Document | Purpose |
+|:---------|:--------|
+| [idd-phase2-impl.md](idd-phase2-impl.md) | Phase 2: Implementation |
+| [idd-phase3-fini.md](idd-phase3-fini.md) | Phase 3: Finalization |
+| [git-operations.md](.agent/rules/development/git-operations.md) | Branch naming, IDD details |
+| [commit-standards.md](.agent/rules/development/commit-standards.md) | Commit message standards |
 
----
+### Issue: Accidentally committed to main (local)
 
-**Navigation**: [← Back to Rules Index](/.agent/rules/README.md)
+**Cause**: Started working without creating a feature branch.
+
+**Solution**:
+1. Create branch from current state (keep changes safe)
+   ```bash
+   git branch <issue-number>-<title>
+   ```
+2. **Safety Backup (Mandatory)**
+   Creates a backup of the current state before destructive reset.
+   ```bash
+   git branch backup/pre-reset-main-$(date +%Y%m%d-%H%M%S)
+   ```
+3. Reset main to remote state (clean up mistake)
+   ```bash
+   git reset --hard origin/main
+   ```
+4. Checkout correct branch
+   ```bash
+   git checkout <issue-number>-<title>
+   ```
