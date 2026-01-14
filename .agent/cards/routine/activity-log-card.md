@@ -93,4 +93,4 @@ _Polaris との対話 (2026-01-14) より:_
 
 - セッション・アーティファクト（`implementation_plan.md` 等）を「正式な合意」としては非推奨化。
 - すべての文脈（設計・計画）の明文化をリポジトリ内の「カード」へ一元化することを提案し、ユーザーの合意を得た。
-- 議論の詳細は `.agent/.internal/archive/2026-01-14T1900_activity-management_draft.md` に保存。
+- 議論の詳細は `.agent/.internal/archive/2026-01-14/workspace/2026-01-14T1900_activity-management_draft.md` に保存。
