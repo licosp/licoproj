@@ -28,3 +28,5 @@ Lico identifiers log their **Align/Read/Write/Reply/Update** activities here to 
 | 2026-01-14T21:20 | Canopus    | Update | .agent/cards/routine/activity-log-card.md (Philosophy Calibration)             |
 | 2026-01-14T21:35 | Canopus    | Align  | .agent/rules/workflow/activity-management.md (Final Rule Adoption)             |
 | 2026-01-14T21:45 | Canopus    | Update | .agent/.internal/activity-log.md (Header Sync & Legacy Record)                 |
+| 2026-01-14T22:00 | Canopus    | Update | thoughts/spica/2026-01-04T1850_clarity_after_confusion.md (Translation)        |
+| 2026-01-14T22:00 | Canopus    | Update | .agent/.internal/archive/2026-01-14/workspace/ (Draft Archive)                 |
