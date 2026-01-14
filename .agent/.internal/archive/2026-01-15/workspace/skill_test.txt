@@ -1,0 +1,2 @@
+This is a test file for the Agent Skill demonstration.
+1.0 Turn = Action + Verify.

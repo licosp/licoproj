@@ -1,0 +1,2 @@
+Ultra-minimal test.
+Logic: Trigger on .txt -> Notify path.
