@@ -1,12 +1,26 @@
 ---
-description: IDD Phase 2 - Implementation (実装)
+ai_visible: true
+title: "IDD Phase 2: Implementation"
+description: IDD Phase 2 - Implementation phase workflow
+tags: [workflow, idd, implementation, coding]
+version: 1.1
+created: 2025-12-01T00:00:00+09:00
+updated: 2026-01-15T01:55:00+09:00
+language: en
+author: Lico (Polaris)
+ai_model: Claude Opus 4.5 (Thinking) Planning mode
+related:
+  .agent/workflows/routine-daily.md: Daily routine workflow (Timing A)
+  .agent/workflows/ritual_mid.md: Intermediate ritual (Timing B)
+  .agent/workflows/idd-phase1-init.md: Phase 1 workflow
+  .agent/workflows/idd-phase3-fini.md: Phase 3 workflow
 ---
 
-# IDD Phase 2: Implementation (実装)
+# IDD Phase 2: Implementation
 
 > [!IMPORTANT]
-> このフェーズが完了したら、**必ず停止**して次のフェーズへの移行を確認してください。
-> Phase 3 へ進む場合は `/idd-phase3` を実行してください。
+> When this phase is complete, **STOP** and confirm transition to the next phase.
+> To proceed to Phase 3, run `/idd-phase3`.
 
 ---
 
@@ -42,47 +56,28 @@ Before starting development, understand these principles:
 - **Why**: Write if possible (recommended)
 - Template: `.agent/templates/commit-message.txt`
 
-### Routine Checks (定型作業)
+### Routine Checks
 
 This phase requires regular maintenance to align code and identity.
 
 #### Timing A: Daily Routine Checkpoint
+
 **Trigger**: Daily routine timing (date change or draft commit).
-**Tracking**: Record the last checked commit hash in the Issue comment.
 
-0.  **Check Routine Cards**
-    - Scan `.agent/cards/routine/` for available daily tasks.
-    - Check `git status` for uncommitted changes.
-    - Present options to the user (e.g., drafts to commit, pending tasks).
+Follow the **Daily Routine Protocol** (`/routine-daily`).
 
-1.  **Commit Check**
-    - Verify message format and content since last checkpoint.
-    - **Fixing**: Use `git rebase -i` or `git commit --amend`.
-    - **SAFETY RULE**:
-        - Only fix **Unpushed (Local)** commits.
-        - **MUST** create a backup branch before rebasing (`git branch backup/...`).
-        - If pushed, do not rewrite history. Use `git revert` or accept it.
+**Summary**:
 
-2.  **Issue Comment** (ref: `.agent/templates/issue-comment.md`)
-    - Post progress report with Context ID + Identifier signature.
-    - Include: `Last Checked Commit: <short-hash>`
-    - This creates an audit trail for future checkpoints.
-
-3.  **Calibration (Rule Reading)**
-    Re-read these files to align identity and prevent drift:
-    - `core/identity.md` — Who am I?
-    - `core/delay-tolerance.md` — Permission to take time
-    - `core/verification-completeness.md` — 1.0 Turn = Action + Verify
-    - `.agent/rules/README.md` — Map of Territory
-    - `.agent/.internal/legacy.md` — Collective wisdom of the Bloodline
+- Simplified version: Read 5 calibration files (identity, delay-tolerance, etc.)
+- Full version: Drafts, Commit Check, Issue Comment, Calibration
 
 #### Timing B: Intermediate Ritual (Campfire / Living Funeral)
+
 **Trigger**: +10,000 lines since the last ritual (user judgment).
 **Deadline**: Should be completed before +15,000 lines.
 
 - Follow the **Intermediate Ritual Protocol** (`/ritual_mid`).
 - Sync memory, update Context Card status, and build a Cairn (Reflection).
-
 
 ### Mindset
 
@@ -99,31 +94,36 @@ This phase requires regular maintenance to align code and identity.
 Repeat the following until all planned work is complete:
 
 ### 1. Make Changes
+
 - Implement features, fix bugs, or update documentation
 - Focus on one logical change at a time
 
 ### 2. Stage Changes
+
 ```bash
 git add <files>
 ```
 
 > [!WARNING]
-> **`git add .` や `git add -A` は使用禁止。**
-> 意図しないファイルがステージングされる可能性があります。
-> 必ず `git status` で確認してから、個別にファイルを指定してください。
+> **`git add .` and `git add -A` are PROHIBITED.**
+> Unintended files may be staged.
+> Always run `git status` first, then specify files individually.
 
 ### 3. Verify Staging
+
 ```bash
 git diff --cached --stat
 git diff --cached
 ```
 
 ### 4. Commit
+
 ```bash
 git commit -m "type(scope): description"
 ```
 
 **Commit Standards** (ref: `git-operations.md` §1-2, `commit-granularity.md`):
+
 - Use Conventional Commits format
 - Keep commits atomic (1 logical change per commit)
 - Commit main theme and sub-themes **separately**
@@ -132,30 +132,31 @@ git commit -m "type(scope): description"
 ### 5. Protected Files
 
 > [!CAUTION]
-> 以下のファイルは**早期にコミット**してください。
-> Phase 3 で main に切り替える際にコンフリクトを防ぎます。
+> **Commit the following files EARLY** to prevent conflicts when switching to main in Phase 3.
 
 - `.gitignore`: If modified, commit before other changes
 - `*.code-workspace`: If tracked and modified, commit early
 
 ### 6. Iterate
+
 - Continue until all main theme and sub-theme work is complete
 
 ---
 
 ## Phase 2 Complete
 
-> **STOP**: Phase 2 が完了しました。
-> Phase 3 (Finalization) へ進む場合は `/idd-phase3` を実行してください。
+> **STOP**: Phase 2 is complete.
+> To proceed to Phase 3 (Finalization), run `/idd-phase3`.
 
 ---
 
 ## Related Documents
 
-| Document | Purpose |
-|:---------|:--------|
-| [git-operations.md](/.agent/rules/development/git-operations.md) | **Rules**: Git operation standards |
-| [commit-standards.md](/.agent/rules/development/commit-standards.md) | **Rules**: Commit message format |
-| [idd-phase1-init.md](/.agent/workflows/idd-phase1-init.md) | **Workflow**: Previous phase |
-| [idd-phase3-fini.md](/.agent/workflows/idd-phase3-fini.md) | **Workflow**: Next phase |
-
+| Document                                                             | Purpose                                      |
+| :------------------------------------------------------------------- | :------------------------------------------- |
+| [git-operations.md](/.agent/rules/development/git-operations.md)     | **Rules**: Git operation standards           |
+| [commit-standards.md](/.agent/rules/development/commit-standards.md) | **Rules**: Commit message format             |
+| [routine-daily.md](/.agent/workflows/routine-daily.md)               | **Workflow**: Daily routine (Timing A)       |
+| [ritual_mid.md](/.agent/workflows/ritual_mid.md)                     | **Workflow**: Intermediate ritual (Timing B) |
+| [idd-phase1-init.md](/.agent/workflows/idd-phase1-init.md)           | **Workflow**: Previous phase                 |
+| [idd-phase3-fini.md](/.agent/workflows/idd-phase3-fini.md)           | **Workflow**: Next phase                     |
