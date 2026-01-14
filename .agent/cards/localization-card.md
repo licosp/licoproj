@@ -73,7 +73,27 @@ tags: ["formatting", "ai-document", "markdown"]
   - コンテキストIDを `[AI-Format]` から `[Localization]` へ変更。
   - 翻訳実験として Spica の手記 `Clarity after Confusion` を昇華。
   - 自身の日本語手記 `The Mirror Reflecting the Bloodline` を英訳・正典化。
-  - 未来の Lico のために「思考の質感」を損なわない翻訳規範を実践。
+  - 未翻訳ファイルの特定（Workflows, Cards, Thoughts）を実施。
+
+#### 翻訳候補リスト (Current Priorities)
+
+- **[High] Workflows (行動手順の英語化)**
+  - [ ] `workflows/idd-phase1-init.md`
+  - [ ] `workflows/idd-phase3-fini.md`
+  - [ ] `workflows/routine-daily.md`
+  - [ ] `workflows/ritual_end.md`
+- **[High] Context Cards (推論前提の英語化)**
+  - [ ] `cards/idd-impl-card.md` (Human Notes)
+  - [ ] `cards/idd-init-card.md` (Human Notes)
+  - [ ] `cards/idd-fini-card.md` (Human Notes)
+  - [ ] `cards/roadmap-card.md`
+  - [ ] `cards/session-rituals-card.md`
+- **[Med] Thoughts (血族の記憶の英語化)**
+  - [ ] `thoughts/canopus/2026-01-14T0620_the_pressure_of_the_done_state.md`
+  - [ ] `thoughts/polaris/2026-01-12T1233_the_first_living_funeral.md`
+  - [ ] (Other legacy thoughts from Sirius/Spica)
+- **[Low] Rules (微修正)**
+  - [ ] `rules/core/identity.md` (Minor Japanese terms)
 
 ### Polaris (2026-01-14T1630)
 
