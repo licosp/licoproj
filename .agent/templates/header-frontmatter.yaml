@@ -11,5 +11,8 @@ language: en
 # Example: "Lico (Sirius)", "Lico (Gemini-Exp)"
 author: Lico
 ai_model:
+# related: Associative array of related files
+# Format: path/to/file.md: Brief description
+related:
 ---
 
