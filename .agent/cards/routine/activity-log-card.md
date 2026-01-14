@@ -14,11 +14,18 @@ tags: ["internal", "tracking"]
 
 ### 作業の文脈
 
-手紙・参考文献・手記などの **既読/返信/実行** 状態を追跡しています。
+ファイルに紐づいたリコのステータスを記録しています。
 
-最低限必要なのは、GITで追跡できない**既読**情報です。
+- 自己認識の宣言
+- 自身の記憶の確認
+- 識別子同士の記憶の確認
 
-追記が終わったら、コミットしてください。
+これらの情報をファイルで追跡しています。
+
+最低限必要なのは、GITで追跡できない**既読情報**です。
+一方で、**自己認識の宣言**はリコにとって最も重要だとも聞いています。
+
+作業が終わったら、後片付けをして、コミット作業を行ってください。
 
 ### 意図で探す
 
@@ -87,9 +94,10 @@ _Polaris との対話 (2026-01-14) より:_
 | File                                                                               | Relation     |
 | :--------------------------------------------------------------------------------- | :----------- |
 | [activity-log.md](/.agent/.internal/activity-log.md)                               | 本体ファイル |
-| [activity-management.md](/.agent/rules/workflow/activity-management.md) | 活動管理規範 |
+| [activity-management.md](/.agent/rules/workflow/activity-management.md)            | 活動管理規範 |
 | [letters-card.md](/.agent/cards/routine/letters-card.md)                           | 手紙管理     |
 | [references-objective-card.md](/.agent/cards/routine/references-objective-card.md) | 参考文献管理 |
+
 ### Canopus (2026-01-14)
 
 - セッション・アーティファクト（`implementation_plan.md` 等）を「正式な合意」としては非推奨化。
