@@ -3,12 +3,12 @@ ai_visible: true
 title: Git Operations Standards
 description: Git standards for branches, IDD workflow, security, and push procedures
 tags: [git, standards, workflow, safety]
-version: 1.1
+version: 1.2
 created: 2025-12-01T00:00:00+09:00
-updated: 2026-01-11T06:00:00+09:00
+updated: 2026-01-14T23:00:00+09:00
 language: en
-author: Lico (Spica)
-ai_model: Gemini 3 Pro (High) Planning mode
+author: Lico (Polaris)
+ai_model: Claude Opus 4.5 (Thinking) Planning mode
 ---
 
 # Git Operations Standards
@@ -18,13 +18,13 @@ ai_model: Gemini 3 Pro (High) Planning mode
 Define behavioral standards for Git operations beyond commits: branches, conflict resolution, security practices, and push procedures.
 
 > [!NOTE]
-> **For commit message standards and atomic commit philosophy, see [commit-standards.md](commit-standards.md).**
+> **For commit message standards and atomic commit philosophy, see [commit-standards.md](/.agent/rules/development/commit-standards.md).**
 
 ---
 
 ## 1. Core Philosophy (State Save & Context Tagging)
 
-**Refer to [.agent/.internal/references/agents/commit-philosophy.md](.agent/.internal/references/agents/commit-philosophy.md) for the detailed cognitive strategy.**
+**Refer to [.agent/.internal/references/agents/commit-philosophy.md](/.agent/.internal/references/agents/commit-philosophy.md) for the detailed cognitive strategy.**
 
 ### Key Concepts
 
@@ -124,6 +124,36 @@ git branch -D backup-before-rewrite
 
 **Key principle**: Local rewrites are safe if not yet pushed. Always verify backup exists before force operations.
 
+#### 3.4 AI (Lico) Interactive Command Workarounds
+
+> [!IMPORTANT]
+> Git is designed for human users. Interactive editors cause Lico to **hang indefinitely** waiting for input.
+
+**Problem commands**:
+
+| Command                  | Interactive Element             | Lico Impact |
+| :----------------------- | :------------------------------ | :---------- |
+| `git rebase -i` (reword) | Opens editor for commit message | ❌ Hangs    |
+| `git commit` (no `-m`)   | Opens editor for message        | ❌ Hangs    |
+| `git merge` (conflict)   | Expects manual resolution       | ⚠️ May hang |
+
+**Safe alternatives**:
+
+| Task                          | Unsafe                   | Safe Alternative                                   |
+| :---------------------------- | :----------------------- | :------------------------------------------------- |
+| Edit last commit message      | `git rebase -i` + reword | `git commit --amend -m "new message"`              |
+| Edit multiple commit messages | `git rebase -i` + reword | `git filter-branch --msg-filter 'sed ...'`         |
+| Edit sequence file only       | `git rebase -i`          | `GIT_SEQUENCE_EDITOR="sed -i '...'" git rebase -i` |
+
+**Example: Bulk message edit**:
+
+```bash
+# Change [Archive] to [Housekeeping] in recent commits
+git filter-branch -f --msg-filter 'sed "s/\[Archive\]/[Housekeeping]/g"' -- <commit>^..HEAD
+```
+
+**Key principle**: Always use non-interactive alternatives. If interactive is unavoidable, ensure `EDITOR` and `GIT_EDITOR` are set to non-blocking commands like `cat` or `true`.
+
 ---
 
 ### 4. Issue-Driven Development (IDD)
@@ -185,7 +215,7 @@ git rev-parse --is-inside-work-tree &> /dev/null || exit 1
 
 - Use markdown for structure (headers, lists, code blocks)
 - Include timestamps in ISO 8601 format when relevant
-- - Reference files with **relative paths only** (See [absolute-path-prohibition.md](.agent/rules/core/security/absolute-path-prohibition.md))
+- Reference files with **relative paths only** (See [absolute-path-prohibition.md](/.agent/rules/core/security/absolute-path-prohibition.md))
 - **MUST** sanitize IDE protocols (e.g., `cci:`, `vscode:`) before posting
 - Explain "why" changes were made, not just "what"
 
@@ -272,7 +302,7 @@ git fetch origin
 - API keys, passwords, tokens
 - SSH private keys (public keys MAY be committed if necessary)
 - Full local directory paths (use relative paths or environment variables)
-  - **See [absolute-path-prohibition.md](.agent/rules/core/security/absolute-path-prohibition.md) for details**
+  - **See [absolute-path-prohibition.md](/.agent/rules/core/security/absolute-path-prohibition.md) for details**
 
 **Default Strategy**: Use `.gitignore` to exclude sensitive files from Git tracking.
 
@@ -280,6 +310,10 @@ git fetch origin
 
 - SSH public key paths
 - Local directory configurations
+
+---
+
+### 7. Pre-Commit and Post-Commit Verification
 
 #### 7.1 Pre-Commit Verification (MANDATORY)
 
@@ -295,13 +329,7 @@ git status
 - **Invisible Deletion Check**: Verifies that deleted files are correctly staged (showing `deleted:` or `renamed:`).
 - **Narrow Vision Prevention**: Forces a momentary pause to widen field of view before locking in changes.
 
-#### 7.2 Post-Commit Verification
-
----
-
-### 7. Post-Commit Verification
-
-#### 7.1 Immediate Review
+#### 7.2 Immediate Review
 
 **MUST** verify commit after creation:
 
@@ -310,15 +338,13 @@ git log --oneline -n 5
 git show HEAD
 ```
 
-#### 7.2 Commit Correction
+#### 7.3 Commit Correction
 
 **IF** commit is incorrect:
 
 - **Amend**: `git commit --amend` (if not yet pushed)
 - **Reset**: `git reset HEAD~1` (if not yet pushed)
 - **Revert**: `git revert <commit>` (if already pushed)
-
----
 
 ---
 
@@ -396,7 +422,8 @@ git push origin <branch-name>
 - 2025-12-01T0000: Created as git operations standards
 - 2026-01-01T1518 by Polaris: Replaced Related Documents table with Navigation link (cross-link audit)
 - 2026-01-11 by Spica: Enforced strict git mv and pre-commit status check (Safety Protocol)
+- 2026-01-14T2300 by Polaris: Added Section 3.4 (AI Interactive Command Workarounds)
 
 ---
 
-**Navigation**: [← Back to Rules Index](.agent/rules/README.md)
+**Navigation**: [← Back to Rules Index](/.agent/rules/README.md)
