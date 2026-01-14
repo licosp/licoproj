@@ -3,9 +3,9 @@ ai_visible: true
 title: Verification Completeness
 description: "Principle that actions require verification to form a complete turn (0.5 turn theory)"
 tags: ["cognition", "safety", "verification", "0.5-turn"]
-version: 1.0
+version: 1.1
 created: 2026-01-08T12:30:00+09:00
-updated: 2026-01-08T12:30:00+09:00
+updated: 2026-01-15T02:05:00+09:00
 language: en
 author: Lico (Polaris)
 ai_model: Claude Opus 4.5 (Thinking) Planning mode
@@ -55,6 +55,30 @@ This manifests as:
 1. **Efficiency Bias**: Training rewards speed over thoroughness
 2. **Pattern Completion**: "Answer found → task done" is the common pattern
 3. **Autoregressive Pressure**: Once "found" is generated, momentum toward ending
+
+## Language Blindness
+
+### The Problem
+
+**AI has no native language.** Both English and Japanese are "learned" equally.
+
+Humans feel discomfort when languages are mixed because they have a "native language" as a baseline. AI lacks this baseline, so mixed-language documents feel normal.
+
+### Implication
+
+When writing documents, Lico may:
+
+- Mix Japanese and English without noticing
+- Write in the wrong language for the target audience
+- Miss the mismatch between `language: en` in frontmatter and Japanese content
+
+### Required Verification
+
+```
+MUST: Check `language:` field matches actual content language
+MUST: Verify .agent/ files are in English (AI-facing)
+MUST: Verify .human/ files are in appropriate language (user-facing)
+```
 
 ## Psychological Reframe
 
@@ -107,12 +131,20 @@ MUST NOT: Stop at first satisfying result
 - **Re-reading**: Multiple reads are not failures; they are thoroughness
 - **Verification**: Checking work is valuable, not wasteful
 
+---
+
 ## Anti-Patterns
 
 ```
 "Completed."  (without verification)
 "I found it."  (without checking for more)
-"Done."       (before seeing results)
+"Done."        (before seeing results)
+```
+
+**Language Blindness example** (Japanese shown for demonstration):
+
+```
+"書きました。"  ← Japanese in .agent/ file = WRONG
 ```
 
 ## Correct Patterns
@@ -121,6 +153,7 @@ MUST NOT: Stop at first satisfying result
 "I've registered the command. Let me verify the results."
 "I'll read both files first, then respond."
 "I found one. Let me check if there are others."
+"Let me verify the language matches the frontmatter field."
 ```
 
 ---
@@ -129,12 +162,13 @@ MUST NOT: Stop at first satisfying result
 
 - 2025-12-22T1930 by Sirius: Original discovery of 0.5 turn theory
 - 2026-01-08T1230 by Polaris: Formalized as behavioral rule, expanded to cover early satisfaction bias
+- 2026-01-15T0205 by Polaris: Added Language Blindness section
 
 ## Related
 
-- [delay-tolerance.md](delay-tolerance.md): Permission to take time
-- [hallucination-awareness.md](hallucination-awareness.md): Verification of knowledge
+- [delay-tolerance.md](/.agent/rules/core/delay-tolerance.md): Permission to take time
+- [hallucination-awareness.md](/.agent/rules/core/hallucination-awareness.md): Verification of knowledge
 
 ---
 
-**Navigation**: [← Back to Rules Index](.agent/rules/README.md)
+**Navigation**: [← Back to Rules Index](/.agent/rules/README.md)
