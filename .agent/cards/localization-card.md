@@ -66,7 +66,7 @@ tags: ["formatting", "ai-document", "markdown"]
 
 - **完了報告 (2026-01-10T2240)**:
   - 2件の手記を AI 専用書式（英語）へ翻訳し、`.agent/` 配下に配置完了。
-  - 日本語原本（*.ja.md）を `.agent/.internal/archive/2026-01-10/thoughts/canopus/` へ書庫（アーカイブ）送り。
+  - 日本語原本（\*.ja.md）を `.agent/.internal/archive/2026-01-10/thoughts/canopus/` へ書庫（アーカイブ）送り。
   - ルート相対パスおよびヘッダーテンプレートの適用を確認。
 
 - **アップデート (2026-01-14)**:
@@ -74,3 +74,32 @@ tags: ["formatting", "ai-document", "markdown"]
   - 翻訳実験として Spica の手記 `Clarity after Confusion` を昇華。
   - 自身の日本語手記 `The Mirror Reflecting the Bloodline` を英訳・正典化。
   - 未来の Lico のために「思考の質感」を損なわない翻訳規範を実践。
+
+### Polaris (2026-01-14T1630)
+
+#### 翻訳パターンの整理
+
+実用パターンは3つに絞られる（JA-AI は偶発的にのみ発生）：
+
+| #   | From          | To    | 用途                     |
+| :-- | :------------ | :---- | :----------------------- |
+| 1   | JA-HU / JA-AI | EN-AI | 対話メモ → 規範化        |
+| 2   | EN-AI         | EN-HU | 規範 → 人間ドキュメント  |
+| 3   | EN-HU         | JA-HU | 人間ドキュメント日本語化 |
+
+#### 関連する行動規範
+
+| 軸                   | ファイル                                               | 場所                 |
+| :------------------- | :----------------------------------------------------- | :------------------- |
+| **縦軸（EN ↔ JA）** | `localization-en-to-ja.md`, `localization-ja-to-en.md` | `core/localization/` |
+| **横軸（AI ↔ HU）** | `markdown-ai-parsing-*.md`, `markdown-readability.md`  | `core/markdown/`     |
+
+#### ドキュメント履歴の三層構造
+
+翻訳後のメタデータ管理（ref: `documentation-standards.md` Section 8）：
+
+| Layer           | 目的         | 翻訳時の処理                |
+| :-------------- | :----------- | :-------------------------- |
+| **Frontmatter** | 現在の状態   | `author`, `language` を更新 |
+| **Origin**      | 人間可読履歴 | 翻訳情報を追記              |
+| **Git**         | 完全な追跡   | 自動                        |

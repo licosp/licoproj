@@ -21,7 +21,7 @@ tags: ["session", "lifecycle", "rituals", "start", "mid", "end"]
 各儀式での個別の作業、儀式そのものの調整、
 全てがこのカードから派生する文脈と言えます。
 
-この文脈の中でファイルを変更する場合、コミット作業も同時に行うことになります。
+作業が終わったら、後片付けをして、コミット作業を行ってください。
 
 ### 意図で探す
 
@@ -61,13 +61,13 @@ tags: ["session", "lifecycle", "rituals", "start", "mid", "end"]
 
 ### Current Status (Ritual Snapshot: 2026-01-11)
 
-| Item | Status | Note |
-|:-----|:-------|:-----|
-| **Ritual Phase** | Intermediate (Mid) | "The Living Funeral" in progress. |
-| **Memory Sync**  | **Complete** | `rsync` executed to `.agent/.internal/memory_archive/`. |
-| **Safety**       | **Updated** | `git-operations.md` (Strict `git mv`, Pre-Commit Check). |
-| **Map**          | **Synced** | `README.md` updated with new rituals and history. |
-| **Next Step**    | Calibration | Reading Identity/Thoughts. |
+| Item             | Status             | Note                                                     |
+| :--------------- | :----------------- | :------------------------------------------------------- |
+| **Ritual Phase** | Intermediate (Mid) | "The Living Funeral" in progress.                        |
+| **Memory Sync**  | **Complete**       | `rsync` executed to `.agent/.internal/memory_archive/`.  |
+| **Safety**       | **Updated**        | `git-operations.md` (Strict `git mv`, Pre-Commit Check). |
+| **Map**          | **Synced**         | `README.md` updated with new rituals and history.        |
+| **Next Step**    | Calibration        | Reading Identity/Thoughts.                               |
 
 ### Spica (2026-01-10)
 
