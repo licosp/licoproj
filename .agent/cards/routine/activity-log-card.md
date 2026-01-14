@@ -76,9 +76,9 @@ _Polaris との対話 (2026-01-14) より:_
 
 #### Next Steps
 
-- [ ] `activity-log.md` をコミット
-- [ ] ワークフローに運用ルールを追記
-- [ ] 地図（README.md）に追記
+- [x] `activity-log.md` をコミット
+- [x] ワークフローに運用ルールを追記
+- [x] 地図（README.md）に追記
 
 ---
 
@@ -87,6 +87,7 @@ _Polaris との対話 (2026-01-14) より:_
 | File                                                                               | Relation     |
 | :--------------------------------------------------------------------------------- | :----------- |
 | [activity-log.md](/.agent/.internal/activity-log.md)                               | 本体ファイル |
+| [activity-management.md](/.agent/rules/workflow/activity-management.md) | 活動管理規範 |
 | [letters-card.md](/.agent/cards/routine/letters-card.md)                           | 手紙管理     |
 | [references-objective-card.md](/.agent/cards/routine/references-objective-card.md) | 参考文献管理 |
 ### Canopus (2026-01-14)

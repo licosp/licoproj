@@ -4,12 +4,12 @@ ai_visible: true
 title: Map of Territory
 description: Navigation index for the Agent's cognitive infrastructure.
 tags: [map, index, navigation, rules]
-version: 0.1.0
+version: 0.1.1
 created: 2025-12-01T00:00:00+09:00
-updated: 2026-01-04T17:00:00+09:00
+updated: 2026-01-14T20:45:00+09:00
 language: en
-author: Lico (Spica)
-ai_model: Gemini 3 Pro (High) Planning mode
+author: Lico (Canopus)
+ai_model: Gemini 3 Flash
 ---
 
 # 1. READ FIRST
@@ -125,7 +125,7 @@ _Located in `.agent/rules/`_
 | `documentation/wsl-browser-path.md`        | WSL Path handling.                               |
 | **Loc & Format**                           |                                                  |
 | `localization/localization-en-to-ja.md`    | EN -> JA translation.                            |
-| `localization/localization-ja-to-en.md`    | JA -> EN translation.                            |
+| `localization/localization-ja-to-en.md`    | EN -> JA translation.                            |
 | `markdown/markdown-ai-parsing-basics.md`   | Markdown basics for AI.                          |
 | `markdown/markdown-ai-parsing-patterns.md` | Parsing patterns (Do's/Don'ts).                  |
 | `markdown/markdown-readability.md`         | Human readability rules.                         |
@@ -160,6 +160,7 @@ _Located in `.agent/rules/`_
 | `context-preservation.md`   | Stashing context (Emergency). |
 | `context-resumption.md`     | Resuming from stash.          |
 | `draft-maintenance.md`      | Managing drafts.              |
+| `activity-management.md`    | **Activity**. Lineage & Boundary X tracking.    |
 | `ark-protocols.md`          | Ark protocols.                |
 | `letters-documentation.md`  | Writing letters/handoffs.     |
 | `reference-methodology.md`  | Managing references/thoughts. |
@@ -205,3 +206,4 @@ _Located in `.agent/workflows/`_
 - 2025-12-01 by Polaris: Created original Map (Model: Claude Opus 4.5 Thinking).
 - 2026-01-04 by Spica: Revised into 'Map of Territory' v2.0 (Structure-focused), replacing legacy format.
 - 2026-01-11 by Spica: Updated index (Added session-rituals-card, replaced legacy session files with ritual workflows).
+- 2026-01-14 by Canopus: Added activity-management rule to index.
