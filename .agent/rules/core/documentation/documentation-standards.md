@@ -2,10 +2,10 @@
 ai_visible: true
 title: Documentation Standards
 description: Defines standards for file naming, size, structure, and AI signatures.
-tags: [documentation, standards, formatting, origin]
-version: 1.2
+tags: [documentation, standards, formatting, origin, history-layers]
+version: 1.3
 created: 2025-12-01T00:00:00+09:00
-updated: 2025-12-28T09:40:00+09:00
+updated: 2026-01-14T14:49:00+09:00
 language: en
 author: Lico (Polaris)
 ai_model: Claude Opus 4.5 (Thinking) Planning mode
@@ -146,13 +146,79 @@ related:
 
 **Note**: This is OPTIONAL for minor updates. Use judgment on whether the change is significant enough to warrant recording.
 
----
+## 8. Document History Layers
 
+**Principle**: Documents track their history through three complementary layers, each serving a distinct purpose.
+
+```
+┌─────────────────────────────────────────────────────────────┐
+│  Frontmatter (Head)     → Current State                     │
+│  ─────────────────────────────────────────────────────────  │
+│  Document Content       → Main Body                         │
+│  ─────────────────────────────────────────────────────────  │
+│  Origin (Foot)          → Human-Readable History            │
+│  ─────────────────────────────────────────────────────────  │
+│  Git                    → Complete Audit Trail              │
+└─────────────────────────────────────────────────────────────┘
+```
+
+### Layer 1: Frontmatter (Current State)
+
+**Definition**: See [header-frontmatter.yaml](/.agent/templates/header-frontmatter.yaml)
+
+**Purpose**: Represents the **current snapshot** of the document.
+
+**Key fields**:
+
+| Field      | Meaning                         |
+| :--------- | :------------------------------ |
+| `author`   | Current/last significant editor |
+| `ai_model` | Model of current author         |
+| `language` | Current language                |
+| `updated`  | Last modification date          |
+
+**Behavior when editing**:
+
+- **Update** field values to reflect the current state
+- **Do not** preserve historical values (that is Origin's role)
+
+### Layer 2: Origin (Human-Readable History)
+
+**Definition**: See Section 7 above.
+
+**Purpose**: Provides a **timeline of notable changes** that humans (and AI) can quickly scan.
+
+**Behavior when editing**:
+
+- Append entry for significant changes (translations, major revisions)
+- Optional for minor fixes
+
+### Layer 3: Git (Complete Audit Trail)
+
+**Purpose**: Provides the **complete, line-by-line history** of all changes.
+
+**Behavior**:
+
+- Automatic via version control
+- Use when Origin is insufficient for investigation
+
+### Relationship Summary
+
+| Layer           | Scope              | When to Use            |
+| :-------------- | :----------------- | :--------------------- |
+| **Frontmatter** | Current state only | Every edit             |
+| **Origin**      | Notable milestones | Significant changes    |
+| **Git**         | All changes        | Detailed investigation |
+
+**These layers complement each other. Frontmatter and Origin do not replace Git.**
+
+---
 
 ## Origin
 
 - 2025-12-01T0000: Created as documentation standards
 - 2026-01-02T0828 by Polaris: Replaced Related Documents table with Navigation link (cross-link audit)
+- 2026-01-14T1449 by Polaris: Added Section 8 (Document History Layers) to clarify relationship between frontmatter, Origin, and Git
 
 ---
 
