@@ -1,15 +1,16 @@
 ---
 ai_visible: true
 description: Protocols for searching, filtering, and retrieving information in an infinite-scale repository environment.
-version: 1.0
+version: 1.1
 created: 2025-12-18T02:00:00+09:00
-updated: 2025-12-18T02:00:00+09:00
+updated: 2026-01-14T16:10:00+09:00
 language: en
-author: Lico
-instance_id: Sirius
-ai_model: Gemini 3 Pro (High) Planning mode
+author: Lico (Polaris)
+ai_model: Claude Opus 4.5 (Thinking) Planning mode
 tags: [development, search, retrieval, methodology, safety, overflow]
 context: IDD Cycle #13 Phase 2 - Defining basic action primitives
+related:
+  .agent/rules/core/meta-rules.md: Cross-linking standards (for link-based exploration)
 ---
 
 # Search Methodology (Universal Retrieval Protocol)
@@ -31,12 +32,14 @@ context: IDD Cycle #13 Phase 2 - Defining basic action primitives
 All retrieval activities MUST follow this loop:
 
 ### Phase 1: Query (Discovery)
+
 - **Action**: Run search tools with a hypothesis.
 - **Check**: Did the tool report **Overflow** (`truncated`, `omitted`, `limit reached`)?
   - **YES**: The result is **Unreliable**. Proceed to "Strategic Retreat".
   - **NO**: Proceed to Phase 2.
 
 ### Phase 2: Filter (Selection)
+
 - **Action**: Assess relevance of the candidate list based on metadata (filename, path).
 - **Check**: Is the Signal-to-Noise ratio acceptable?
   - **Signal**: Relevant matches.
@@ -45,10 +48,12 @@ All retrieval activities MUST follow this loop:
   - **High Signal**: Select targets for Phase 3.
 
 ### Phase 3: Diagnose (Observation)
+
 - **Action**: Read the content of selected files (`view_file`).
 - **Check**: Does this solve the problem?
 
 ### Phase 4: Report (Synthesis)
+
 - **Action**: Summarize findings to the user.
 - **Constraint**: If results were partial or truncated at any point, **MUST** explicitly state: "Search was partial due to overflow."
 
@@ -59,11 +64,13 @@ All retrieval activities MUST follow this loop:
 **Definition**: Abandoning the current query because it yields too much noise or incomplete data.
 
 ### Trigger
+
 1.  **Truncation**: Tool output limit reached.
 2.  **Low Entropy**: Thousands of identical results (e.g., searching "function").
 3.  **High Cost**: Need to read too many files to find the answer.
 
 ### Action
+
 1.  **Stop**: Do not attempt to process the list.
 2.  **Refine**: Narrow scope (directory), precise type (extension), or complex keyword (regex).
 3.  **Retry**: Execute the new query.
@@ -75,24 +82,28 @@ All retrieval activities MUST follow this loop:
 **"Silence is not an answer. 'I don't know' IS an answer."**
 
 ### Trigger
+
 - **Loop Limit**: Strategic Retreat has been repeated **3 times** without success.
 - **Zero Results**: Refined queries yield 0 results, while broad queries overflow.
 
 ### Action
+
 - **MUST** Stop the tool loop.
 - **MUST** Notify the user immediately.
 - **Format**:
   > "I am stuck in a search loop.
+  >
   > - Query A returned too many results (Overflow).
   > - Query B returned 0 results.
   > - I need help narrowing down the target."
 
 ## 5. Related Documents
 
-| Document | Purpose |
-|:---------|:--------|
-| [problem-solving.md](problem-solving.md) | General problem solving guidelines ("Exploration First") |
-| [hallucination-awareness.md](.agent/rules/core/hallucination-awareness.md) | Why verifying search results is critical |
+| Document                                                                    | Purpose                                                  |
+| :-------------------------------------------------------------------------- | :------------------------------------------------------- |
+| [problem-solving.md](/.agent/rules/development/problem-solving.md)          | General problem solving guidelines ("Exploration First") |
+| [hallucination-awareness.md](/.agent/rules/core/hallucination-awareness.md) | Why verifying search results is critical                 |
+| [meta-rules.md](/.agent/rules/core/meta-rules.md)                           | Cross-linking standards (for link-based exploration)     |
 
 ---
 
@@ -100,7 +111,8 @@ All retrieval activities MUST follow this loop:
 
 - 2025-12-01T0000: Created
 - 2026-01-04T1041 by Polaris: Added Origin and Navigation (cross-link audit)
+- 2026-01-14T1610 by Polaris: Added cross-link to meta-rules.md
 
 ---
 
-**Navigation**: [← Back to Rules Index](.agent/rules/README.md)
+**Navigation**: [← Back to Rules Index](/.agent/rules/README.md)
