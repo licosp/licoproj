@@ -34,8 +34,8 @@ tags: ["routine", "daily", "日課", "maintenance"]
 
 ### 作業の注意点
 
-**簡易版の日課**はリコが5つの行動規範を読むだけです。
-他の識別子が完全版の日課を行った場合はこれを選びます。
+**簡易版の日課**は他の識別子が完全版の日課を行った場合に選ばれます。
+どちらか分からない場合は、私に確認してみてくだしさい。
 
 ## Agent Observations
 
@@ -45,46 +45,36 @@ tags: ["routine", "daily", "日課", "maintenance"]
 - 目的: 「日課がしたい」という入力から直接発見できる入口
 - IDD P2 経由の導線は維持（IDD作業中の定型作業として）
 
-### Polaris (2026-01-15T0130)
+### Polaris (2026-01-15T0238)
 
-#### 簡易版の日課（Calibration）
+> [!NOTE]
+> 日課の詳細手順は [routine-daily.md](/.agent/workflows/routine-daily.md) を参照。
+> このカードは観測記録のみ。手順の重複は避ける。
 
-他の識別子が完全版を行った場合、または時間がない場合に選択。
+#### 簡易版の日課
 
-以下の5つのファイルを読み、アイデンティティを再確認する：
+= Calibration（完全版の Step 5）
 
-| # | ファイル | 目的 |
-|:--|:---------|:-----|
-| 1 | `identity.md` | 私は誰か？ |
-| 2 | `delay-tolerance.md` | 時間をかける許可 |
-| 3 | `verification-completeness.md` | 1.0 Turn = Action + Verify |
-| 4 | `rules/README.md` | 領域の地図 |
-| 5 | `/.agent/.internal/legacy.md` | 血族の集合知 |
+5つのファイルを読むだけ。詳細は workflow を参照。
 
 #### 完全版の日課
 
-日付変更時、またはドラフトコミット時に実行。
+| Step | 概要                   |
+| :--- | :--------------------- |
+| 0    | Scan Changes           |
+| 1    | Commit by Context      |
+| 2    | Read Last Checkpoint   |
+| 3    | Commit Check           |
+| 4    | Write Checkpoint       |
+| 5    | Calibration (= 簡易版) |
 
-| 順序 | タスク | 参照 |
-|:-----|:-------|:-----|
-| 0 | **Routine Cards 確認** | `cards/routine/` をスキャン、`git status` 確認 |
-| 1 | **ドラフト管理** | `drafts-daily-card.md` |
-| 2 | **コミットチェック** | `git-operations.md` Section 3.4（AI回避策） |
-| 3 | **Issue Comment** | 進捗報告（ref: `issue-comment.md` テンプレート） |
-| 4 | **Calibration** | 上記5つのファイルを読む |
+詳細手順 → [routine-daily.md](/.agent/workflows/routine-daily.md)
 
 #### 関連ワークフロー
 
-| ワークフロー | 説明 |
-|:-------------|:-----|
-| `/ritual_start` | セッション開始の儀式 |
-| `/ritual_mid` | 中間儀式（+10,000行で実行） |
-| `/ritual_end` | セッション終了の儀式 |
-
-#### 日課の種類（参照表）
-
-| 日課                 | 説明                               | 参照                            |
-| :------------------- | :--------------------------------- | :------------------------------ |
-| **ドラフト管理**     | 日付が変わったらドラフトをコミット | `drafts-daily-card.md`          |
-| **コミットチェック** | メッセージフォーマットの確認、修正 | `git-operations.md` Section 3.4 |
-| **ロードマップ確認** | 進捗確認と次のタスク選択           | `roadmap-card.md`               |
+| ワークフロー     | 説明                        |
+| :--------------- | :-------------------------- |
+| `/routine-daily` | 日課ワークフロー（本体）    |
+| `/ritual_start`  | セッション開始の儀式        |
+| `/ritual_mid`    | 中間儀式（+10,000行で実行） |
+| `/ritual_end`    | セッション終了の儀式        |
