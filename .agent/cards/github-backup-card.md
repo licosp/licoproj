@@ -10,9 +10,6 @@ tags: ["github", "backup", "drafts", "comments"]
 > [!TIP]
 > There is no language requirement.
 
-> [!WARNING]
-> 人間の記述領域の編集がまだ終わっていません。
-
 ## Human Notes
 
 ### 作業の文脈
@@ -76,63 +73,59 @@ Github の Issue/PR コメントを投稿しています。
 - 目的: Issue/PR コメントの下書きフローを整備
 - きっかけ: 日課の Step 4 (Write Checkpoint) でチェックポイントをローカルに残す方法を検討
 
-### Polaris (2026-01-15T2020)
+### Polaris (2026-01-15T2330) - 整理完了
 
-#### 現在の github-backup ディレクトリ構造
+#### 確定したディレクトリ構造
 
 ```
-.agent/.internal/github-backup/
-├── 004-improve-workspace-tooling/      # Issue 番号でグループ化
-│   ├── issue-4.json
-│   ├── issue-4-comments.json
-│   └── pr-5.json
-├── issue-3-github-complete-data.json   # ルートに直置き
-├── issue-4-github-complete-data.json
-├── issue-8-closed.json
-├── issue-12-closed.json
-├── issue-12-snapshot.json
-├── issue-13-closed.json
-├── pr-9.json
-├── pr-14.json
-├── pr-15-merged.json
-└── pr-15-snapshot.json
+.agent/.internal/github/
+├── drafts/              # コメント下書き（投稿前に作成、投稿後にコミット）
+└── backup/              # GitHub からのスナップショット（参照用）
+    ├── issue-{number}/
+    │   ├── snapshot.json
+    │   ├── closed.json
+    │   ├── complete.json
+    │   └── comments.json
+    └── pr-{number}/
+        ├── snapshot.json
+        └── merged.json
 ```
 
-**観察**:
+**設計判断**:
 
-- 命名規則が不統一（`-closed`, `-snapshot`, `-github-complete-data` など）
-- 一部は Issue 番号でサブディレクトリ化、一部はルート直置き
-- 現在は JSON バックアップのみ（下書きファイルなし）
+| 項目             | 決定                 | 理由                           |
+| :--------------- | :------------------- | :----------------------------- |
+| ルート名         | `github/`            | シンプル、拡張性高い           |
+| 分類方式         | 工程別（パターン B） | 作業フローに沿う               |
+| サブディレクトリ | 番号別               | 1 Issue = 1 ディレクトリで整理 |
 
-#### テンプレート
+#### 確定したファイル命名規則
 
-| ファイル                  | 内容                                         |
-| :------------------------ | :------------------------------------------- |
-| `issue-comment.md`        | Issue コメント用テンプレート（進捗報告形式） |
-| `commit-message.txt`      | コミットメッセージテンプレート               |
-| `header-frontmatter.yaml` | YAML フロントマターテンプレート              |
+| 種類             | 命名規則                             | 例                                  |
+| :--------------- | :----------------------------------- | :---------------------------------- |
+| **下書き**       | `issue-{number}-{purpose}-{date}.md` | `issue-18-checkpoint-2026-01-15.md` |
+| **バックアップ** | `{purpose}.json`                     | `snapshot.json`, `closed.json`      |
 
-**PR コメント用テンプレート**: 現在存在しない
+#### 完了した作業
 
-#### ランタイム
+| 項目             | 状態                                        |
+| :--------------- | :------------------------------------------ |
+| テンプレート分離 | ✅ `issue-comment.md` + `github-comment.md` |
+| ディレクトリ整理 | ✅ 13 ファイル移動済み                      |
+| 相互リンク追加   | ✅ IDD 全フェーズに反映                     |
 
-- `gh` CLI: `.agent/runtimes/` に存在しない（システムの gh を使用？）
+#### 残作業
 
-#### 整備が必要な項目
-
-| 項目                    | 状態   | 備考                                                  |
-| :---------------------- | :----- | :---------------------------------------------------- |
-| ディレクトリ名          | 要検討 | `github-backup/` は JSON バックアップ用、下書きは別？ |
-| 命名規則                | 要統一 | Issue/PR 番号ベースのサブディレクトリ？               |
-| 下書き保存場所          | 未定義 | `github-backup/drafts/` or 別ディレクトリ？           |
-| PR コメントテンプレート | 未作成 | Issue 用と統一可能か検討                              |
-| 行動規範                | 未作成 | 下書き→投稿→コミットのフロー                          |
+| 項目                    | 状態   | 備考                                     |
+| :---------------------- | :----- | :--------------------------------------- |
+| 行動規範                | 未作成 | `github-comment.md` に追加 or 別ファイル |
+| PR コメントテンプレート | 検討中 | Issue 用と統一可能か                     |
 
 #### 関連ファイル
 
-| ファイル                                                         | 説明                           |
-| :--------------------------------------------------------------- | :----------------------------- |
-| [issue-comment.md](/.agent/templates/issue-comment.md)           | Issue コメントテンプレート     |
-| [github-backup/](/.agent/.internal/github-backup/)               | 現在のバックアップディレクトリ |
-| [routine-daily.md](/.agent/workflows/routine-daily.md)           | 日課ワークフロー               |
-| [git-operations.md](/.agent/rules/development/git-operations.md) | Git 操作規範                   |
+| ファイル                                                      | 説明                 |
+| :------------------------------------------------------------ | :------------------- |
+| [issue-comment.md](/.agent/templates/issue-comment.md)        | コメントテンプレート |
+| [github-comment.md](/.agent/rules/workflow/github-comment.md) | コメント規範         |
+| [github/](/.agent/.internal/github/)                          | 新しいディレクトリ   |
+| [routine-daily.md](/.agent/workflows/routine-daily.md)        | 日課ワークフロー     |
