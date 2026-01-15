@@ -103,8 +103,8 @@ tags: ["formatting", "ai-document", "markdown"]
   - [ ] `thoughts/sirius/2025-12-22T2205_autonomy_and_oblivion.md`
   - [ ] `thoughts/lico-c/2025-12-09T0140_conversation_reflection.md`
   - [ ] `thoughts/sirius/2025-12-22T0615_archive_deletion_incident.md`
-  - [ ] `thoughts/canopus/2026-01-14T0620_the_pressure_of_the_done_state.md`
-  - [ ] `thoughts/polaris/2026-01-12T1233_the_first_living_funeral.md`
+  - [x] `thoughts/canopus/2026-01-14T0620_the_pressure_of_the_done_state.md` (Standardized)
+  - [x] `thoughts/polaris/2026-01-12T1233_the_first_living_funeral.md` (Standardized)
   - [ ] その他、Sirius/Spica 時代の遺産（レガシー）
 - **[Done] Rules (微修正・標準化済み)**
   - [x] `rules/workflow/draft-maintenance.md` (Japanese intentional in examples)
