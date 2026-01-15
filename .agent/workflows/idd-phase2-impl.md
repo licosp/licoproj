@@ -14,13 +14,14 @@ related:
   .agent/workflows/ritual_mid.md: Intermediate ritual (Timing B)
   .agent/workflows/idd-phase1-init.md: Phase 1 workflow
   .agent/workflows/idd-phase3-fini.md: Phase 3 workflow
+  .agent/rules/workflow/github-comment.md: GitHub comment standards
 ---
 
 # IDD Phase 2: Implementation
 
 > [!IMPORTANT]
 > When this phase is complete, **STOP** and confirm transition to the next phase.
-> To proceed to Phase 3, run `/idd-phase3`.
+> To proceed to Phase 3, see [idd-phase3-fini.md](/.agent/workflows/idd-phase3-fini.md).
 
 ---
 
@@ -46,7 +47,7 @@ Before starting development, understand these principles:
 
 - **Vertical split** is recommended (divide by directory, not by process step)
 - Use **Letters** for handoff to other identifiers
-- Use **Issue comments** for official progress reports (ref: `.agent/templates/issue-comment.md`)
+- Use **Issue comments** for official progress reports (ref: [github-comment.md](/.agent/rules/workflow/github-comment.md))
   - Format: Context ID + Identifier signature
   - Timing: Too many commits, direction change, card completion, management trouble
 
@@ -64,7 +65,7 @@ This phase requires regular maintenance to align code and identity.
 
 **Trigger**: Daily routine timing (date change or draft commit).
 
-Follow the **Daily Routine Protocol** (`/routine-daily`).
+Follow the [Daily Routine Protocol](/.agent/workflows/routine-daily.md).
 
 **Summary**:
 
@@ -76,7 +77,7 @@ Follow the **Daily Routine Protocol** (`/routine-daily`).
 **Trigger**: +10,000 lines since the last ritual (user judgment).
 **Deadline**: Should be completed before +15,000 lines.
 
-- Follow the **Intermediate Ritual Protocol** (`/ritual_mid`).
+- Follow the [Intermediate Ritual Protocol](/.agent/workflows/ritual_mid.md).
 - Sync memory, update Context Card status, and build a Cairn (Reflection).
 
 ### Mindset
@@ -146,7 +147,7 @@ git commit -m "type(scope): description"
 ## Phase 2 Complete
 
 > **STOP**: Phase 2 is complete.
-> To proceed to Phase 3 (Finalization), run `/idd-phase3`.
+> To proceed to Phase 3 (Finalization), see [idd-phase3-fini.md](/.agent/workflows/idd-phase3-fini.md).
 
 ---
 
@@ -156,6 +157,7 @@ git commit -m "type(scope): description"
 | :------------------------------------------------------------------- | :------------------------------------------- |
 | [git-operations.md](/.agent/rules/development/git-operations.md)     | **Rules**: Git operation standards           |
 | [commit-standards.md](/.agent/rules/development/commit-standards.md) | **Rules**: Commit message format             |
+| [github-comment.md](/.agent/rules/workflow/github-comment.md)        | **Rules**: GitHub comment standards          |
 | [routine-daily.md](/.agent/workflows/routine-daily.md)               | **Workflow**: Daily routine (Timing A)       |
 | [ritual_mid.md](/.agent/workflows/ritual_mid.md)                     | **Workflow**: Intermediate ritual (Timing B) |
 | [idd-phase1-init.md](/.agent/workflows/idd-phase1-init.md)           | **Workflow**: Previous phase                 |

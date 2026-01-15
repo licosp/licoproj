@@ -13,6 +13,7 @@ related:
   .agent/workflows/idd-phase2-impl.md: IDD Phase 2 workflow (parent)
   .agent/workflows/ritual_mid.md: Intermediate ritual (Timing B)
   .agent/cards/routine/routine-card.md: Daily routine whiteboard
+  .agent/rules/workflow/github-comment.md: GitHub comment standards
 ---
 
 # Daily Routine Checkpoint
@@ -92,6 +93,7 @@ Commit modified files with their corresponding Context ID:
 - Post Issue comment with Context ID + Identifier signature
 - Include: `Last Checked Commit: <short-hash>`
 - Creates audit trail for future checkpoints
+- Format: [github-comment.md](/.agent/rules/workflow/github-comment.md)
 - Template: [issue-comment.md](/.agent/templates/issue-comment.md)
 
 ### Step 5: Calibration (Simplified Daily Routine)
@@ -117,6 +119,7 @@ This creates a chain: each routine knows where the previous one ended.
 | [ritual_mid.md](/.agent/workflows/ritual_mid.md)                 | Intermediate ritual (Timing B)  |
 | [routine-card.md](/.agent/cards/routine/routine-card.md)         | Daily routine whiteboard (card) |
 | [git-operations.md](/.agent/rules/development/git-operations.md) | Git operations (AI workarounds) |
+| [github-comment.md](/.agent/rules/workflow/github-comment.md)    | GitHub comment standards        |
 
 ---
 

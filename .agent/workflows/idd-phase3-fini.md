@@ -12,6 +12,7 @@ ai_model: "Gemini 3 Flash Planning mode"
 related:
   .agent/rules/development/git-operations.md: Branch naming and IDD details
   .agent/rules/development/commit-standards.md: Commit message standards
+  .agent/rules/workflow/github-comment.md: GitHub comment standards
 ---
 
 # IDD Phase 3: Finalization
@@ -94,6 +95,9 @@ Edit `/.agent/.internal/workspace/commit-summary.md` to include timestamp and br
 ```bash
 gh issue comment ${ISSUE_NUMBER} --body-file /.agent/.internal/workspace/commit-summary.md
 ```
+
+> [!TIP]
+> For comment format standards, see [github-comment.md](/.agent/rules/workflow/github-comment.md).
 
 ---
 
@@ -248,6 +252,7 @@ unset PR_NUMBER
 | [Phase 1: Initialization](/.agent/workflows/idd-phase1-init.md)   | Start or Link Issues      |
 | [Git Operations](/.agent/rules/development/git-operations.md)     | Detailed Git Rules        |
 | [Commit Standards](/.agent/rules/development/commit-standards.md) | Commit Message Rules      |
+| [GitHub Comment](/.agent/rules/workflow/github-comment.md)        | Comment Standards         |
 
 ---
 

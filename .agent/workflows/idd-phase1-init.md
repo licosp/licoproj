@@ -12,6 +12,7 @@ ai_model: "Gemini 3 Flash Planning mode"
 related:
   .agent/rules/development/git-operations.md: Branch naming and IDD details
   .agent/rules/development/commit-standards.md: Commit message standards
+  .agent/rules/workflow/github-comment.md: GitHub comment standards
 ---
 
 # IDD Phase 1: Initialization
@@ -311,6 +312,7 @@ unset ISSUE_NUMBER
 | [Phase 3: Finalization](/.agent/workflows/idd-phase3-fini.md)     | Final Phase               |
 | [Git Operations](/.agent/rules/development/git-operations.md)     | Detailed Git Rules        |
 | [Commit Standards](/.agent/rules/development/commit-standards.md) | Commit Message Rules      |
+| [GitHub Comment](/.agent/rules/workflow/github-comment.md)        | Comment Standards         |
 
 ---
 
