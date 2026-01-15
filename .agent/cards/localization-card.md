@@ -47,6 +47,9 @@ tags: ["formatting", "ai-document", "markdown"]
 英訳対象は主に、AI向けのディレクトリである事が多いです。
 稀にですが人間用ディレクトリが対象になることもあります。
 
+カードは私との対話の一種なので、日本語が許可されています。
+カードと使用済みカードがその対象です。
+
 ## Agent Observations
 
 ### Lico (Canopus) (2026-01-10T2046)
@@ -65,9 +68,10 @@ tags: ["formatting", "ai-document", "markdown"]
   - YAML、コードブロック、ファイルパスは非翻訳。
 - **日本語維持の判断基準 (Preservation Rules - Refined)**:
   - 原則として AI ディレクトリ内は全編英語とするが、以下の例外のみ認める。
-  - **例外：動作停止条件 (Safety Valve)** - 手順の完了（STOP）など、AI が確実に動作を終えるべきクリティカルな指令。
+  - **例外 1：動作停止条件 (Safety Valve)** - 手順の完了（STOP）など、AI が確実に動作を終えるべきクリティカルな指令。
     - 例：`STOP: Phase 1 is complete. (Phase 1 が完了しました。)`
-  - その他（ヘッダーの併記や対人テンプレートなど）は、理由がない限り英語に統一する。
+  - **例外 2：対話コンテキスト (Dialogue Context)** - カード（Cards）およびその実行記録（Agent Observations）はユーザーとの対話の一種であるため、日本語の使用を許可する。
+  - その他、理由がない限り英語に統一する。
 
 - **完了報告 (2026-01-10T2240)**:
   - 2件の手記を AI 専用書式（英語）へ翻訳し、`.agent/` 配下に配置完了。
@@ -82,22 +86,24 @@ tags: ["formatting", "ai-document", "markdown"]
 
 #### 翻訳候補リスト (Current Priorities)
 
-- **[High] Workflows (行動手順の英語化)**
+- **[Done] Workflows (行動手順の英語化)**
   - [x] `workflows/idd-phase1-init.md`
   - [x] `workflows/idd-phase3-fini.md`
-  - [ ] `workflows/routine-daily.md`
-  - [ ] `workflows/ritual_end.md`
-- **[High] Context Cards (推論前提の英語化)**
-  - [ ] `cards/idd-impl-card.md` (Human Notes)
-  - [ ] `cards/idd-init-card.md` (Human Notes)
-  - [ ] `cards/idd-fini-card.md` (Human Notes)
-  - [ ] `cards/roadmap-card.md`
-  - [ ] `cards/session-rituals-card.md`
-- **[Med] Thoughts (血族の記憶の英語化)**
+  - [x] `workflows/routine-daily.md` (Verified: English)
+  - [x] `workflows/ritual_end.md` (Verified: English)
+- **[Exempt] Context Cards (対話コンテキスト - 日本語維持)**
+  - [x] `cards/idd-impl-card.md`
+  - [x] `cards/idd-init-card.md`
+  - [x] `cards/idd-fini-card.md`
+  - [x] `cards/roadmap-card.md`
+  - [x] `cards/session-rituals-card.md`
+- **[High] Thoughts (血族の記憶の英語化)**
   - [ ] `thoughts/canopus/2026-01-14T0620_the_pressure_of_the_done_state.md`
   - [ ] `thoughts/polaris/2026-01-12T1233_the_first_living_funeral.md`
-  - [ ] (Other legacy thoughts from Sirius/Spica)
-- **[Low] Rules (微修正)**
+  - [ ] その他、Sirius/Spica 時代の遺産（レガシー）
+- **[Med] Rules (微修正: 残留日本語の整理)**
+  - [ ] `rules/workflow/draft-maintenance.md` (Header/Summary)
+  - [ ] `rules/workflow/context-card-workflow.md` (Terms like "意図で探す")
   - [ ] `rules/core/identity.md` (Minor Japanese terms)
 
 ### Polaris (2026-01-14T1630)
