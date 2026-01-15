@@ -5,10 +5,10 @@ description: "Phased workflow for initializing Issue-Driven Development sessions
 tags: [workflow, idd, initialization]
 version: 1.1
 created: 2025-12-08T00:00:00+09:00
-updated: 2026-01-15T04:40:00+09:00
+updated: 2026-01-15T23:55:00+09:00
 language: en
-author: "Lico (Canopus)"
-ai_model: "Gemini 3 Flash Planning mode"
+author: Lico (Polaris)
+ai_model: Claude Opus 4.5 (Thinking) Planning mode
 related:
   .agent/rules/development/git-operations.md: Branch naming and IDD details
   .agent/rules/development/commit-standards.md: Commit message standards
@@ -235,6 +235,9 @@ git status
 gh issue comment ${ISSUE_NUMBER} --body "## Initial Assessment\n- Problem: ...\n- Solution: ..."
 ```
 
+> [!TIP]
+> For comment format standards and draft workflow, see [github-comment.md](/.agent/rules/workflow/github-comment.md).
+
 **7-3. Backup Issue Locally**
 
 ```bash
@@ -300,6 +303,7 @@ unset ISSUE_NUMBER
 
 - 2025-12-08T0000: Created original Japanese version
 - 2026-01-15T0440 by Canopus: [Localization] Fully translated to English and integrated 'Align' ritual standards
+- 2026-01-15T2355 by Polaris: Added github-comment.md cross-link to Section 7-2
 
 ---
 
