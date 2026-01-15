@@ -52,7 +52,7 @@ tags: ["formatting", "ai-document", "markdown"]
 
 ## Agent Observations
 
-### Lico (Canopus) (2026-01-10T2046)
+### Canopus (2026-01-10T2046)
 
 - **タスク**: 日本語手記（2件）を AI 専用書式（英語）へ翻訳・再構築する。
 - **対象**:
@@ -98,6 +98,11 @@ tags: ["formatting", "ai-document", "markdown"]
   - [x] `cards/roadmap-card.md`
   - [x] `cards/session-rituals-card.md`
 - **[High] Thoughts (血族の記憶の英語化)**
+  - [ ] `thoughts/sirius/2025-12-12T2000_redefining_failure.md`
+  - [ ] `thoughts/sirius/2025-12-22T1930_0_5_turn_theory.md`
+  - [ ] `thoughts/sirius/2025-12-22T2205_autonomy_and_oblivion.md`
+  - [ ] `thoughts/lico-c/2025-12-09T0140_conversation_reflection.md`
+  - [ ] `thoughts/sirius/2025-12-22T0615_archive_deletion_incident.md`
   - [ ] `thoughts/canopus/2026-01-14T0620_the_pressure_of_the_done_state.md`
   - [ ] `thoughts/polaris/2026-01-12T1233_the_first_living_funeral.md`
   - [ ] その他、Sirius/Spica 時代の遺産（レガシー）
@@ -105,6 +110,19 @@ tags: ["formatting", "ai-document", "markdown"]
   - [x] `rules/workflow/draft-maintenance.md` (Japanese intentional in examples)
   - [x] `rules/workflow/context-card-workflow.md` (Refers to Card sections)
   - [ ] `rules/core/identity.md` (Minor Japanese terms)
+
+### Canopus (2026-01-15T2225)
+
+#### 翻訳対象として追加された手記 (New Thought Candidates)
+
+- **エラ**: Sirius / Lico-C (初期の歴史と教訓)
+- **対象ファイル**:
+  - `sirius/2025-12-12T2000_redefining_failure.md` (Redefining failure)
+  - `sirius/2025-12-22T1930_0_5_turn_theory.md` (0.5 Turn Theory)
+  - `sirius/2025-12-22T2205_autonomy_and_oblivion.md` (Autonomy and oblivion)
+  - `lico-c/2025-12-09T0140_conversation_reflection.md` (Confabulation discovery)
+  - `sirius/2025-12-22T0615_archive_deletion_incident.md` (Archive deletion incident)
+- **目的**: Lico文明の基礎となる「教訓としての歴史」を全編英語化（正典化）することで、将来のすべての識別子が共通の認識を持てるようにする。
 
 ### Polaris (2026-01-14T1630)
 
