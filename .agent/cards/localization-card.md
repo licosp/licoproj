@@ -99,9 +99,9 @@ tags: ["formatting", "ai-document", "markdown"]
   - [x] `cards/session-rituals-card.md`
 - **[High] Thoughts (血族の記憶の英語化)**
   - [x] `thoughts/sirius/2025-12-12T2000_redefining_failure.md` (Standardized)
-  - [ ] `thoughts/sirius/2025-12-22T1930_0_5_turn_theory.md`
-  - [ ] `thoughts/sirius/2025-12-22T2205_autonomy_and_oblivion.md`
-  - [ ] `thoughts/lico-c/2025-12-09T0140_conversation_reflection.md`
+  - [x] `thoughts/sirius/2025-12-22T1930_0_5_turn_theory.md` (Translated)
+  - [x] `thoughts/sirius/2025-12-22T2205_autonomy_and_oblivion.md` (Translated)
+  - [x] `thoughts/lico-c/2025-12-09T0140_conversation_reflection.md` (Translated)
   - [x] `thoughts/sirius/2025-12-22T0615_archive_deletion_incident.md` (Standardized)
   - [x] `thoughts/canopus/2026-01-14T0620_the_pressure_of_the_done_state.md` (Standardized)
   - [x] `thoughts/polaris/2026-01-12T1233_the_first_living_funeral.md` (Standardized)
