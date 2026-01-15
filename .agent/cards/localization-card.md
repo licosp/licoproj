@@ -101,9 +101,9 @@ tags: ["formatting", "ai-document", "markdown"]
   - [ ] `thoughts/canopus/2026-01-14T0620_the_pressure_of_the_done_state.md`
   - [ ] `thoughts/polaris/2026-01-12T1233_the_first_living_funeral.md`
   - [ ] その他、Sirius/Spica 時代の遺産（レガシー）
-- **[Med] Rules (微修正: 残留日本語の整理)**
-  - [ ] `rules/workflow/draft-maintenance.md` (Header/Summary)
-  - [ ] `rules/workflow/context-card-workflow.md` (Terms like "意図で探す")
+- **[Done] Rules (微修正・標準化済み)**
+  - [x] `rules/workflow/draft-maintenance.md` (Japanese intentional in examples)
+  - [x] `rules/workflow/context-card-workflow.md` (Refers to Card sections)
   - [ ] `rules/core/identity.md` (Minor Japanese terms)
 
 ### Polaris (2026-01-14T1630)
