@@ -3,12 +3,15 @@ ai_visible: true
 title: Git Operations Standards
 description: Git standards for branches, IDD workflow, security, and push procedures
 tags: [git, standards, workflow, safety]
-version: 1.2
+version: 1.3
 created: 2025-12-01T00:00:00+09:00
-updated: 2026-01-14T23:00:00+09:00
+updated: 2026-01-15T19:35:00+09:00
 language: en
 author: Lico (Polaris)
 ai_model: Claude Opus 4.5 (Thinking) Planning mode
+related:
+  .agent/rules/development/commit-standards.md: Commit message standards
+  .agent/.internal/references/agents/commit-philosophy.md: Cognitive strategy for commits
 ---
 
 # Git Operations Standards
@@ -44,7 +47,6 @@ This ensures consistent formatting and adherence to the current session's "perso
 
 ### 2. File Operations
 
-（以下、既存の内容を維持）
 **Rule**: You **MUST** use `git mv` for file movements.
 
 **Rationale**:
@@ -121,6 +123,12 @@ git branch -D backup-before-rewrite
 2. **git reflog**: Find previous state (`git reflog`, then `git reset --hard <ref>`)
 3. **Remote**: `git fetch origin && git reset --hard origin/<branch>` (if pushed)
 4. **Full backup**: `../licoproj_backup/` directory
+
+**After successful rewriting**:
+
+1. **Verify the fix**: Check that commit messages or content are correct
+2. **Delete backup branch**: `git branch -D backup-before-rewrite`
+3. **Clean up filter-branch refs**: `rm -rf .git/refs/original/`
 
 **Key principle**: Local rewrites are safe if not yet pushed. Always verify backup exists before force operations.
 
@@ -412,6 +420,16 @@ git push origin <branch-name>
 
 ## References
 
+### Internal
+
+| Document                                                                                 | Purpose                  |
+| :--------------------------------------------------------------------------------------- | :----------------------- |
+| [commit-standards.md](/.agent/rules/development/commit-standards.md)                     | Commit message standards |
+| [commit-philosophy.md](/.agent/.internal/references/agents/commit-philosophy.md)         | Cognitive strategy       |
+| [absolute-path-prohibition.md](/.agent/rules/core/security/absolute-path-prohibition.md) | Path security            |
+
+### External
+
 - [Conventional Commits Specification](https://www.conventionalcommits.org/)
 - [Semantic Versioning](https://semver.org/)
 
@@ -423,6 +441,7 @@ git push origin <branch-name>
 - 2026-01-01T1518 by Polaris: Replaced Related Documents table with Navigation link (cross-link audit)
 - 2026-01-11 by Spica: Enforced strict git mv and pre-commit status check (Safety Protocol)
 - 2026-01-14T2300 by Polaris: Added Section 3.4 (AI Interactive Command Workarounds)
+- 2026-01-15T1935 by Polaris: Added post-rewrite verification and cleanup procedure
 
 ---
 
