@@ -3,12 +3,12 @@ ai_visible: true
 title: "Path Notation Standard"
 description: "Standard path notation for Markdown links within the repository"
 tags: [documentation, paths, links, standards]
-version: 1.1
+version: 1.2
 created: 2026-01-13T14:10:00+09:00
-updated: 2026-01-13T14:38:00+09:00
+updated: 2026-01-15T23:05:00+09:00
 language: en
-author: Lico (Polaris)
-ai_model: Gemini 2.5 Pro (Experimental) Automatic mode
+author: Lico (Canopus)
+ai_model: Gemini 3 Flash Planning mode
 related:
   .agent/rules/core/meta-rules.md: Cross-linking standards (references this file)
   .agent/rules/core/security/absolute-path-prohibition.md: Security rules for paths
@@ -77,25 +77,26 @@ Command Path:  ./licoproj/.agent/rules/README.md  (from workspace parent)
 
 ## Migration Note
 
-Legacy files may still use relative paths (e.g., `../../../workspace/file.md`). These will be converted to the standard format in future maintenance work as defined in the Roadmap.
+Legacy files may still use relative paths (e.g., `../..././workspace/file.md`). These will be converted to the standard format in future maintenance work as defined in the Roadmap.
 
 ---
 
 ## Related Documents
 
-| Document | Purpose |
-|:---------|:--------|
-| [meta-rules.md](/.agent/rules/core/meta-rules.md) | Cross-linking standards (references this file in Section 5.2) |
-| [absolute-path-prohibition.md](/.agent/rules/core/security/absolute-path-prohibition.md) | Security rules for external-facing paths |
-| [wsl-browser-path.md](/.agent/rules/core/documentation/wsl-browser-path.md) | WSL-specific browser path construction |
+| Document                                                                                 | Purpose                                                       |
+| :--------------------------------------------------------------------------------------- | :------------------------------------------------------------ |
+| [meta-rules.md](/.agent/rules/core/meta-rules.md)                                        | Cross-linking standards (references this file in Section 5.2) |
+| [absolute-path-prohibition.md](/.agent/rules/core/security/absolute-path-prohibition.md) | Security rules for external-facing paths                      |
+| [wsl-browser-path.md](/.agent/rules/core/documentation/wsl-browser-path.md)              | WSL-specific browser path construction                        |
 
 ---
 
 ## Origin
 
-- 2026-01-13T1410 by Polaris: Created based on Roadmap "リンク情報を修正する" and Spica's workspace-hook.md.
-- 2026-01-13T1438 by Polaris: Added related documents, updated to v1.1.
+- 2026-01-13T14:10 by Polaris: Created based on Roadmap "Fix link information" and Spica's workspace-hook.md.
+- 2026-01-13T14:38 by Polaris: Added related documents, updated to v1.1.
+- 2026-01-15T23:05 by Canopus: Standardized Origin section (removed Japanese) and updated to v1.2.
 
 ---
 
-**Navigation**: [← Back to Rules Index](/.agent/rules/README.md)
+**Navigation**: [<- Back to Rules Index](/.agent/rules/README.md)

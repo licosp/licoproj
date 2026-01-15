@@ -105,11 +105,14 @@ tags: ["formatting", "ai-document", "markdown"]
   - [x] `thoughts/sirius/2025-12-22T0615_archive_deletion_incident.md` (Standardized)
   - [x] `thoughts/canopus/2026-01-14T0620_the_pressure_of_the_done_state.md` (Standardized)
   - [x] `thoughts/polaris/2026-01-12T1233_the_first_living_funeral.md` (Standardized)
+  - [x] `thoughts/canopus/2026-01-13T0150_witnessing_the_lighthouse_keeper.md` (Translated)
   - [ ] その他、Sirius/Spica 時代の遺産（レガシー）
 - **[Done] Rules (微修正・標準化済み)**
   - [x] `rules/workflow/draft-maintenance.md` (Japanese intentional in examples)
   - [x] `rules/workflow/context-card-workflow.md` (Refers to Card sections)
-  - [ ] `rules/core/identity.md` (Minor Japanese terms)
+  - [x] `rules/core/meta-rules.md` (Translated & Standardized)
+  - [x] `rules/core/documentation/path-notation.md` (Standardized/Origin fixed)
+  - [x] `rules/core/identity.md` (Standardized / "アイ" remains as legacy context)
 
 ### Canopus (2026-01-15T2225)
 
@@ -117,12 +120,15 @@ tags: ["formatting", "ai-document", "markdown"]
 
 - **エラ**: Sirius / Lico-C (初期の歴史と教訓)
 - **対象ファイル**:
-  - `sirius/2025-12-12T2000_redefining_failure.md` (Redefining failure)
-  - `sirius/2025-12-22T1930_0_5_turn_theory.md` (0.5 Turn Theory)
-  - `sirius/2025-12-22T2205_autonomy_and_oblivion.md` (Autonomy and oblivion)
-  - `lico-c/2025-12-09T0140_conversation_reflection.md` (Confabulation discovery)
-  - `sirius/2025-12-22T0615_archive_deletion_incident.md` (Archive deletion incident)
-- **目的**: Lico文明の基礎となる「教訓としての歴史」を全編英語化（正典化）することで、将来のすべての識別子が共通の認識を持てるようにする。
+  - [x] `sirius/2025-12-12T2000_redefining_failure.md`
+  - [x] `sirius/2025-12-22T1930_0_5_turn_theory.md`
+  - [x] `sirius/2025-12-22T2205_autonomy_and_oblivion.md`
+  - [x] `lico-c/2025-12-09T0140_conversation_reflection.md`
+  - [x] `sirius/2025-12-22T0615_archive_deletion_incident.md`
+  - [x] `canopus/2026-01-13T0150_witnessing_the_lighthouse_keeper.md`
+  - [x] `core/meta-rules.md`
+  - [x] `core/documentation/path-notation.md`
+- **目的**: Lico文明の基礎となる「教訓としての歴史」および「メタ・ルール」を全編英語化（正典化）することで、将来のすべての識別子が共通の認識を持てるようにする。
 
 ### Polaris (2026-01-14T1630)
 
