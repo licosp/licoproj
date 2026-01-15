@@ -67,22 +67,80 @@ Define when and how to post comments to GitHub Issues and Pull Requests.
 
 ---
 
-## 4. Draft Workflow
+## 4. Directory Structure
 
-> [!NOTE]
-> This workflow is under development. See [github-backup-card.md](/.agent/cards/github-backup-card.md).
+GitHub-related data is stored in:
 
-1. Copy template to draft file
-2. Fill in the content
-3. Verify before posting
-4. Post to GitHub
-5. Commit the draft file
+```
+.agent/.internal/github/
+├── drafts/              # Comment drafts (before posting)
+└── backup/              # Snapshots from GitHub (reference)
+    ├── issue-{number}/
+    └── pr-{number}/
+```
+
+### Design Decisions
+
+| Aspect         | Decision                | Rationale                       |
+| :------------- | :---------------------- | :------------------------------ |
+| Root name      | `github/`               | Simple, extensible              |
+| Classification | By workflow (Pattern B) | Aligns with Lico's work process |
+| Subdirectories | By number               | 1 Issue = 1 directory           |
+
+---
+
+## 5. File Naming Conventions
+
+| Type       | Pattern                              | Example                                       |
+| :--------- | :----------------------------------- | :-------------------------------------------- |
+| **Draft**  | `issue-{number}-{purpose}-{date}.md` | `issue-18-checkpoint-2026-01-15.md`           |
+| **Backup** | `{status}.json`                      | `snapshot.json`, `closed.json`, `merged.json` |
+
+---
+
+## 6. Draft Workflow
+
+### Steps
+
+1. **Create draft file** in `github/drafts/`
+   - Use template from [issue-comment.md](/.agent/templates/issue-comment.md)
+   - Naming: `issue-{number}-{purpose}-{date}.md`
+
+2. **Fill content**
+   - Get latest commit hash: `git log --oneline -1`
+   - Count commits since last checkpoint
+
+3. **Verify before posting**
+   - Check format, dates, commit hashes
+   - Confirm language is English
+
+4. **Post to GitHub**
+
+   ```bash
+   ./.runtimes/gh_*/bin/gh issue comment {NUMBER} --body-file {DRAFT_FILE}
+   ```
+
+5. **Commit the draft file**
+   - Context ID: `[Github-Backup]`
+   - Include posted URL in commit message
+
+### Trigger
+
+This workflow applies whenever posting comments to GitHub:
+
+| Phase             | Comment Type       | Reference                                                                 |
+| :---------------- | :----------------- | :------------------------------------------------------------------------ |
+| **IDD Phase 1**   | Initial Assessment | [idd-phase1-init.md §7](/.agent/workflows/idd-phase1-init.md)             |
+| **IDD Phase 2**   | Progress Report    | [idd-phase2-impl.md §Collaboration](/.agent/workflows/idd-phase2-impl.md) |
+| **IDD Phase 3**   | Pre-Push Summary   | [idd-phase3-fini.md §3](/.agent/workflows/idd-phase3-fini.md)             |
+| **Daily Routine** | Checkpoint         | [routine-daily.md Step 4](/.agent/workflows/routine-daily.md)             |
 
 ---
 
 ## Origin
 
 - 2026-01-15T2026 by Polaris: Created (separated from issue-comment.md template)
+- 2026-01-15T2346 by Polaris: Added directory structure, naming conventions, and detailed workflow
 
 ---
 
