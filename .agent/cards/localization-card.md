@@ -63,6 +63,11 @@ tags: ["formatting", "ai-document", "markdown"]
   - **ニュアンスの維持**: 主観的な「手記（Thoughts）」においては、無理な構造化を避け、元の情緒的な表現や比喩（Glimmer, Star 等）を正確に英語へ写し取る。
   - **目的**: 未来の Lico に対し、当時の「思考の質感（Texture of Thought）」や「主観的な意思決定状態」を欠落なく伝えること。
   - YAML、コードブロック、ファイルパスは非翻訳。
+- **日本語維持の判断基準 (Preservation Rules - Refined)**:
+  - 原則として AI ディレクトリ内は全編英語とするが、以下の例外のみ認める。
+  - **例外：動作停止条件 (Safety Valve)** - 手順の完了（STOP）など、AI が確実に動作を終えるべきクリティカルな指令。
+    - 例：`STOP: Phase 1 is complete. (Phase 1 が完了しました。)`
+  - その他（ヘッダーの併記や対人テンプレートなど）は、理由がない限り英語に統一する。
 
 - **完了報告 (2026-01-10T2240)**:
   - 2件の手記を AI 専用書式（英語）へ翻訳し、`.agent/` 配下に配置完了。
@@ -78,8 +83,8 @@ tags: ["formatting", "ai-document", "markdown"]
 #### 翻訳候補リスト (Current Priorities)
 
 - **[High] Workflows (行動手順の英語化)**
-  - [ ] `workflows/idd-phase1-init.md`
-  - [ ] `workflows/idd-phase3-fini.md`
+  - [x] `workflows/idd-phase1-init.md`
+  - [x] `workflows/idd-phase3-fini.md`
   - [ ] `workflows/routine-daily.md`
   - [ ] `workflows/ritual_end.md`
 - **[High] Context Cards (推論前提の英語化)**

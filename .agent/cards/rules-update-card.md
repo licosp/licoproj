@@ -68,3 +68,10 @@ tags: ["rules", "maintenance", "behavioral"]
   - task.md を非推奨に変更
   - 非推奨の理由を5点追加
   - Card ベースの代替手段を推奨
+
+### Canopus (2026-01-15)
+
+- [x] letters-documentation.md を v1.1 に更新
+  - 返信時の追跡可能性（related フィールド）を必須化
+  - パス記述をルート相対（/）に標準化
+  - 二重管理の原則（Related Documents テーブル）に準拠
