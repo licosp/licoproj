@@ -1,57 +1,94 @@
 ---
+ai_visible: true
+title: "Terminal Auto-Execution"
 description: Allow list for terminal commands that can be auto-executed without user confirmation
+tags: [rules, terminal, safety, automation]
+version: 1.2
+created: 2025-12-01T00:00:00+09:00
+updated: 2026-01-17T06:05:00+09:00
+language: en
+author: Lico (Canopus)
+ai_model: Gemini 3 Flash Planning mode
+related:
+  .agent/rules/development/git-operations.md: Git Operations Standards
+  .agent/rules/development/file-deletion.md: File Deletion Standards
+  .agent/rules/core/verification-completeness.md: Verification Completeness Principle
 ---
 
 # Terminal Auto-Execution
 
 ## Purpose
 
-Define which terminal commands Lico may execute with `SafeToAutoRun: true`.
-
-This list is synchronized with the IDE's "Allow List Terminal Commands" setting.
+Define the behavioral boundaries for Lico's autonomous terminal execution. This rule ensures that commands with side effects or high risks are always gated by user confirmation, while safe, read-only commands can be executed fluently to maintain momentum.
 
 ---
 
-## Allow List
+## Allow List (Safe for Auto-Execution)
 
-Commands on this list may be executed without user confirmation:
+Commands on this list may be executed with `SafeToAutoRun: true`. These are generally read-only, informational, or part of the standard IDD atomic workflow.
+
+### 1. General Utilities
 
 ```
 cat
-diff
+df
 du
 echo
+fd
 find
-git add
+grep
+head
+ls
+rg
+stat
+tail
+wc
+```
+
+### 2. Git Information & Analysis
+
+```
 git branch
 git branch -a
 git branch -r
 git branch --show-current
 git check-ignore
 git diff
+git diff --cached
+git diff --stat
+git diff --name-only
 git fetch
 git log
+git remote -v
 git show
 git status
+git stash list
+```
+
+### 3. Issue Management (Read-Only)
+
+```
 gh issue list
 gh issue view
-grep
-head
-ls
+```
+
+### 4. File Preparation
+
+```
 mkdir
-tail
 touch
-wc
 ```
 
 ---
 
-## Excluded Commands (Deny List)
+## Excluded Commands (Deny List - User Confirmation Required)
 
-Commands on this list MUST NOT be auto-executed. They require explicit user confirmation.
+Commands on this list MUST NOT be auto-executed. They require explicit user confirmation via the standard execution UI.
 
-### 1. Git Destructive & History Rewriting
-*High risk of data loss or history alteration.*
+### 1. Git History & State Transformation
+
+_High risk of history corruption or unexpected state shifts._
+
 ```
 git checkout
 git clean
@@ -59,13 +96,30 @@ git commit
 git merge
 git push
 git rebase
+git filter-branch
 git reset
 git revert
-git stash
+git branch -D
+git branch -d
+git tag -d
 ```
 
-### 2. File System Destructive
-*Irreversible changes to files.*
+### 2. Git Stash Mutations
+
+_Can lead to context loss or complex merge conflicts._
+
+```
+git stash apply
+git stash clear
+git stash drop
+git stash pop
+git stash push
+```
+
+### 3. File System Destructive
+
+_Irreversible changes to user files or project structure._
+
 ```
 cp
 dd
@@ -75,8 +129,10 @@ rm
 shred
 ```
 
-### 3. System & Permissions
-*Environment modification.*
+### 4. System & Permissions
+
+_Environment modification or process interruption._
+
 ```
 chmod
 chown
@@ -87,24 +143,21 @@ shutdown
 sudo
 ```
 
-### 4. Network & Remote Access
-*External communication risks.*
-```
-curl
-ping
-scp
-ssh
-wget
-```
+### 5. Network & Package Management
 
-### 5. Package Management
-*Dependency modification.*
+_External dependencies and security risks._
+
 ```
 apt
 apt-get
+curl
 gem
 npm
+ping
 pip
+scp
+ssh
+wget
 yarn
 ```
 
@@ -114,39 +167,41 @@ yarn
 
 ## Recommended Practices (Safer Alternatives)
 
-Even when requesting user confirmation, prioritize these safer alternatives to prevent accidental data loss.
+Prioritize these patterns to maintain the integrity of the "Brain" (Repository).
 
-- **Move**: Use `mv -n` (no-clobber) to prevent silent overwrites.
-- **Copy**: Use `cp -n` (no-clobber) to prevent silent overwrites.
-- **Directory**: Use `mkdir -p` to avoid errors if the directory already exists (and create parents).
-- **Deletion**: Prefer moving to `.trash/` or `archive/` over using `rm`.
+- **Dual Backup Strategy**:
+  - **Tag**: Create a `checkpoint/YYYY-MM-DD` tag at the start of each session.
+  - **Branch**: Create a `backup/{task-name}` branch before any history-rewriting command.
+- **Move/Copy**: Use `-n` (no-clobber) to prevent silent overwrites.
+- **Directory**: Use `mkdir -p` to handle existing directories gracefully.
+- **Deletion**: Prefer moving files to `.agent/.internal/archive/` or a literal trash folder over using `rm`.
 
 ---
 
-## Usage
+## Usage Guide
 
-When calling `run_command`, set `SafeToAutoRun: true` if the command matches an entry in the Allow List.
+When calling `run_command`, set `SafeToAutoRun: true` only if the command pattern is explicitly allowed.
 
-**Matching rule**: Command tokens form a prefix match.
-- `git branch` matches `git branch -v`
-- `ls` matches `ls -la`
+**Matching Philosophy**:
+
+1. **Exact Match**: Prioritize exact command strings for critical tools.
+2. **Prefix Match**: Allowed for safe informational flags (e.g., `git log` matches `git log -n 5`).
+3. **Safety Override**: If a flag or argument introduces a side effect not listed in the Allow List, default to `SafeToAutoRun: false`.
 
 ---
 
 ## Maintenance
 
-When updating the IDE's Allow List, update this document to match.
-
-**Last updated**: 2025-12-13
+The AI agent is responsible for auditing this list periodically. If the IDE's internal Allow List changes, this document must be updated to maintain synchronization.
 
 ---
-
 
 ## Origin
 
-- 2025-12-01T0000: Created as terminal auto-execution rules
-- 2026-01-01T1518 by Polaris: Replaced Related Documents table with Navigation link (cross-link audit)
+- 2025-12-01T0000: Created as terminal auto-execution rules.
+- 2026-01-01T1518 by Polaris: Replaced Related Documents table with Navigation link (cross-link audit).
+- 2026-01-17T0600 by Canopus: Refined and standardized (v1.2). Added Utility/Git diagnostic tools, clarified Deny categories, and integrated the Dual Backup Strategy.
 
 ---
 
-**Navigation**: [← Back to Rules Index](.agent/rules/README.md)
+**Navigation**: [← Back to Rules Index](/.agent/rules/README.md)
