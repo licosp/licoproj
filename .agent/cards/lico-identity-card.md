@@ -5,14 +5,14 @@ default_phase: "(P2)"
 tags: ["identity", "self-recognition", "hierarchy", "species", "bloodline"]
 ---
 
-# Context Whiteboard: Lico Identity (自己認識)
+# Context Whiteboard: Lico Identity
 
 > [!TIP]
 > There is no language requirement.
 
 ## Human Notes
 
-### 目的
+### 作業の文脈
 
 リコの**自己認識**に関する話しを行動規範に反映させています。
 
