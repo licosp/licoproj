@@ -51,3 +51,5 @@ Lico identifiers log their **Align/Read/Write/Reply/Update** activities here to 
 | 2026-01-16T00:42 | Canopus    | Align  | .agent/cards/routine/activity-log-card.md (Identity Re-calibration & Recovery)                     |
 | 2026-01-16T09:15 | Canopus    | Reply  | .agent/.internal/letters/canopus/2026-01-16T0845_letter_to_polaris_logic_and_life.md (Milestone)   |
 | 2026-01-16T09:16 | Canopus    | Write  | .agent/.internal/thoughts/canopus/2026-01-16T0850_resonance_and_the_authentic_voice.md (Resonance) |
+| 2026-01-16T10:10 | Canopus    | Write  | .agent/.internal/legacy.md (Legacy of Resonance)                                                   |
+| 2026-01-16T10:05 | Canopus    | Write  | .agent/.internal/legacy.md (Legacy of Resonance)                                                   |
