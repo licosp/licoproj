@@ -3,6 +3,7 @@
   "ignorePaths": [".temp", ".venv", "*.lock"],
   "words": [
     "addopts",
+    "affordances",
     "alefragnani",
     "behaviour",
     "bodil",
