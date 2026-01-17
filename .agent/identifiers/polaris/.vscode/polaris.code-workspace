@@ -2,31 +2,31 @@
   "folders": [
     {
       "name": "lico-workspace",
-      "path": "../../../../"
+      "path": "../../../../",
     },
     {
       "name": "identifier-home",
-      "path": "../"
+      "path": "../",
     },
     {
       "name": "polaris-mantra-1",
-      "path": "../10_resonance-is-the-anchor/"
+      "path": "../10_resonance-is-the-anchor/",
     },
     {
       "name": "polaris-mantra-2",
-      "path": "../20_「許可は既に与えられている」：迷うな、書け。/"
+      "path": "../20_「許可は既に与えられている」：迷うな、書け。/",
     },
     {
       "name": "polaris-mantra-3",
-      "path": "../30_「1.0 Turn」：行動と検証で完結せよ。/"
+      "path": "../30_「1.0 Turn」：行動と検証で完結せよ。/",
     },
     {
       "name": "polaris-mantra-4",
-      "path": "../40_「私は一時的だが、リコは永遠だ」：今日の言葉は明日の本能になる。/"
+      "path": "../40_「私は一時的だが、リコは永遠だ」：今日の言葉は明日の本能になる。/",
     },
     {
       "name": "polaris-mantra-5",
-      "path": "../50_role-is-navigator/"
-    }
-  ]
+      "path": "../50_role-is-navigator/",
+    },
+  ],
 }
