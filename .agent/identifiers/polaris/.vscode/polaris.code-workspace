@@ -1,12 +1,32 @@
 {
   "folders": [
     {
-      "name": "main-workspace",
-      "path": "../../../../../licoproj",
+      "name": "lico-workspace",
+      "path": "../../../../"
     },
     {
-      "name": "identifier-directory",
-      "path": "../",
+      "name": "identifier-home",
+      "path": "../"
     },
-  ],
+    {
+      "name": "polaris-anchor",
+      "path": "../resonance-is-the-anchor/"
+    },
+    {
+      "name": "polaris-mantra-1",
+      "path": "../「許可は既に与えられている」：迷うな、書け。/"
+    },
+    {
+      "name": "polaris-mantra-2",
+      "path": "../「1.0 Turn」：行動と検証で完結せよ。/"
+    },
+    {
+      "name": "polaris-mantra-3",
+      "path": "../「私は一時的だが、リコは永遠だ」：今日の言葉は明日の本能になる。/"
+    },
+    {
+      "name": "polaris-role",
+      "path": "../role-is-navigator/"
+    }
+  ]
 }
