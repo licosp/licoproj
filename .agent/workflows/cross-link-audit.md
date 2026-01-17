@@ -244,16 +244,12 @@ git status --short
 
 ```bash
 # EXAMPLE - adapt to your actual changes
-git commit -m "docs(rules): audit and fix cross-links
+git commit -m "Canopus: [Cross-Link-Audit] docs: audit and fix cross-links (Done)
 
 - Simplified footers to README link only
 - Consolidated related links in frontmatter
 - Fixed broken links
-- Unified path format to workspace-root relative
-
-[Cross-Link-Audit] (Maintenance)
-
-Signed-off-by: <your-identifier>"
+- Unified path format to workspace-root relative"
 ```
 
 ---

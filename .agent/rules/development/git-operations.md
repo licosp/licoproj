@@ -3,12 +3,12 @@ ai_visible: true
 title: Git Operations Standards
 description: Git standards for branches, IDD workflow, security, and push procedures
 tags: [git, standards, workflow, safety]
-version: 1.3
+version: 1.4
 created: 2025-12-01T00:00:00+09:00
-updated: 2026-01-15T19:35:00+09:00
+updated: 2026-01-17T15:35:00+09:00
 language: en
-author: Lico (Polaris)
-ai_model: Claude Opus 4.5 (Thinking) Planning mode
+author: Lico (Canopus)
+ai_model: Gemini 3 Flash
 related:
   .agent/rules/development/commit-standards.md: Commit message standards
   .agent/.internal/references/agents/commit-philosophy.md: Cognitive strategy for commits
@@ -234,8 +234,8 @@ git rev-parse --is-inside-work-tree &> /dev/null || exit 1
 
 Completed 6 atomic commits following `commit-granularity.md` guidelines:
 
-- `b2c3e89` docs(draft): update draft with conversation history
-- `0c49074` chore(config): update .gitignore to track rule files
+- `b2c3e89` Canopus: [Drafts-Daily] docs: update draft for 2026-01-17 (Daily)
+- `0c49074` Canopus: [Rules-Update] chore: update .gitignore (Update)
 
 **Summary**: Added conversation logs and updated config files.
 **Next Steps**: Add pre-push documentation rule.
@@ -442,6 +442,7 @@ git push origin <branch-name>
 - 2026-01-11 by Spica: Enforced strict git mv and pre-commit status check (Safety Protocol)
 - 2026-01-14T2300 by Polaris: Added Section 3.4 (AI Interactive Command Workarounds)
 - 2026-01-15T1935 by Polaris: Added post-rewrite verification and cleanup procedure
+- 2026-01-17T1535 by Canopus: Updated commit message examples to align with "Identifier-First" protocol (v1.4).
 
 ---
 

@@ -3,12 +3,12 @@ ai_visible: true
 title: Context Card Workflow
 description: Methodology for using "Context Cards" to manage AI persona and task context.
 tags: [cards, context, workflow, whiteboard]
-version: 1.3
+version: 1.4
 created: 2025-12-22T00:00:00+09:00
-updated: 2026-01-03T11:53:00+09:00
+updated: 2026-01-17T15:30:00+09:00
 language: en
-author: Lico (Polaris)
-ai_model: Gemini 3 Pro (High) Planning mode
+author: Lico (Canopus)
+ai_model: Gemini 3 Flash
 related:
   .agent/rules/core/meta-rules.md: Rule creation and cross-linking standards
   .agent/rules/core/documentation/documentation-standards.md: File naming and structure
@@ -200,7 +200,8 @@ When multiple identifiers (e.g., Polaris, Spica) work on the same reusable card,
 - Use `### <Identifier> (<Date>)` format
 - Each work session gets its own entry (even if same identifier)
 - Chronological order (newest at bottom)
-- Commit signature (`Signed-off-by`) tracks who committed
+- Commit identification (`Identifier` in header) tracks who the owner of the context is.
+- `Committed-by` footer is used for proxy commits to identify the technical committer.
 
 ### 4.7 Card Rotation
 
@@ -261,7 +262,7 @@ Cards are lightweight context-sharing tools. Artifacts are detailed plans for er
 - 2025-12-01T0000: Created as context card workflow
 - 2026-01-02T0830 by Polaris: Replaced Related Documents table with Navigation link (cross-link audit)
 - 2026-01-03T1153 by Polaris: Added Card Types section (reusable vs disposable), cases directory
-- 2026-01-03T1212 by Polaris: Added Multi-Identifier Sharing (4.6) and Card Rotation (4.7) sections (reusable vs disposable), cases directory, timestamp naming
+- 2026-01-17T1530 by Canopus: Updated commit identification standards (v1.4) to align with "Identifier-First" and optional signature protocol.
 
 ---
 

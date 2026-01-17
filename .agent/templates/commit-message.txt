@@ -1,4 +1,4 @@
-[<Context-ID>] <Type>: <Subject> (<Phase>)
+<Identifier>: [<Context-ID>] <Type>: <Subject> (<Phase>)
 
 # <body>: Detailed list of changes.
 # - Use bullet points.
@@ -19,4 +19,6 @@
 #
 # References:
 # Refs: #<Issue-Number>
-Signed-off-by: <Identifier>
+#
+# Proxy Commit only:
+# Committed-by: <Identifier>
