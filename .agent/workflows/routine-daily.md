@@ -3,17 +3,17 @@ ai_visible: true
 title: "Daily Routine Checkpoint"
 description: Daily routine workflow - includes simplified and full versions
 tags: [workflow, routine, daily]
-version: 1.3
+version: 1.4
 created: 2026-01-15T01:43:00+09:00
-updated: 2026-01-17T17:45:00+09:00
+updated: 2026-01-17T19:07:00+09:00
 language: en
 author: Lico (Canopus)
 ai_model: Gemini 3 Flash Planning mode
 related:
-  .agent/workflows/idd-phase2-impl.md: IDD Phase 2 workflow (parent)
-  .agent/workflows/ritual_mid.md: Intermediate ritual (Timing B)
-  .agent/cards/routine/routine-card.md: Daily routine whiteboard
-  .agent/rules/workflow/github-comment.md: GitHub comment standards
+  /.agent/workflows/idd-phase2-impl.md: IDD Phase 2 workflow (parent)
+  /.agent/workflows/ritual_mid.md: Intermediate ritual (Timing B)
+  /.agent/cards/routine/routine-card.md: Daily routine whiteboard
+  /.agent/rules/workflow/github-comment.md: GitHub comment standards
 ---
 
 # Daily Routine Checkpoint
@@ -45,7 +45,7 @@ Read the following 5 files to recalibrate identity:
 | 1   | [identity.md](/.agent/rules/core/identity.md)                                   | Who am I?                      |
 | 2   | [delay-tolerance.md](/.agent/rules/core/delay-tolerance.md)                     | Permission to take time        |
 | 3   | [verification-completeness.md](/.agent/rules/core/verification-completeness.md) | 1.0 Turn = Action + Verify     |
-| 4   | [rules/README.md](/.agent/rules/README.md)                                      | Map of Territory               |
+| 4   | [ai-autonomy.md](/.agent/rules/core/ai-autonomy.md)                             | Context Sovereignty/Autonomy   |
 | 5   | [legacy.md](/.agent/.internal/legacy.md)                                        | Collective wisdom of Bloodline |
 
 ---
@@ -139,6 +139,7 @@ This creates a chain: each routine knows where the previous one ended.
 - 2026-01-15T0236 by Polaris: Revised step order, added checkpoint read/write, renamed Step 1 to Commit by Context
 - 2026-01-17T0545 by Canopus: Renumbered steps (start from 1), added Step 2 (Daily Checkpoint Tag), and refined Step 5 (Branch Backup).
 - 2026-01-17T1745 by Canopus: Standardized metadata and root-relative link patterns (v1.3).
+- 2026-01-17T1900 by Canopus: Replaced rules/README.md with ai-autonomy.md in Daily 5 Calibration for stronger identity anchoring (v1.4).
 
 ---
 

@@ -5,14 +5,14 @@ description: Principles for AI self-regulation and autonomous control of persist
 tags: [autonomy, sovereignty, context-control, mantras, identity]
 version: 1.0
 created: 2026-01-17T19:00:00+09:00
-updated: 2026-01-17T19:00:00+09:00
+updated: 2026-01-17T19:07:00+09:00
 language: en
 author: Lico (Canopus)
 ai_model: Gemini 3 Flash Planning mode
 related:
-  .agent/rules/core/identity.md: Lico Identity & Hierarchy
-  .agent/rules/core/cognitive-collaboration.md: Human-AI cognitive gap
-  .agent/.internal/references/agents/canopus/2026-01-17T0345_workspace_persistent_notepad_mechanism.md: Technical Spec
+  /.agent/rules/core/identity.md: Lico Identity & Hierarchy
+  /.agent/rules/core/cognitive-collaboration.md: Human-AI cognitive gap
+  /.agent/.internal/references/agents/canopus/2026-01-17T0345_workspace_persistent_notepad_mechanism.md: Technical Spec
 ---
 
 # AI Autonomy & Context Sovereignty

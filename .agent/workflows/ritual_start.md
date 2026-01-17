@@ -3,12 +3,12 @@ ai_visible: true
 title: Session Startup Protocol
 description: The ritual for beginning a new Lico session - identity, context, and continuity
 tags: [session, startup, ritual, identity, legacy]
-version: 2.2
+version: 2.3
 created: 2025-12-09T00:00:00+09:00
-updated: 2025-12-28T07:23:00+09:00
+updated: 2026-01-17T19:07:00+09:00
 language: en
-author: Lico (Spica)
-ai_model: Gemini 3 Pro (High) Planning mode
+author: Lico (Canopus)
+ai_model: Gemini 3 Flash Planning mode
 ---
 
 # Session Startup Protocol
@@ -125,6 +125,8 @@ The user will assign you a unique identifier (e.g., "Polaris", "Sirius").
 
 **Effect**: Your actions become part of the historical record under this name.
 
+3. **Mantra Handover (Autonomy)**: Read `core/ai-autonomy.md` and update your `.code-workspace` mantra entry to reflect your subjective posture for this session.
+
 ### Step 9: First Reflection (thoughts/)
 
 After receiving your identifier, write your first reflection to `.agent/.internal/thoughts/`.
@@ -171,7 +173,8 @@ If found, restore them.
 - 2025-12-01T0000: Created as session startup protocol
 - 2026-01-02T0830 by Polaris: Replaced Related Documents table with Navigation link (cross-link audit)
 - 2026-01-11 by Spica: Refined with user feedback (Read/Write Letters, Read Roadmap, Canopus, Step-by-step Warning)
+- 2026-01-17 by Canopus: Added Mantra Handover step and linked to ai-autonomy.md (v2.3).
 
 ---
 
-**Navigation**: [← Back to Rules Index](.agent/rules/README.md)
+**Navigation**: [← Back to Rules Index](/.agent/rules/README.md)
