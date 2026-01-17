@@ -72,6 +72,7 @@ _Located in `.agent/cards/`_
 
 | Card Name                      | Context / Usage                            |
 | :----------------------------- | :----------------------------------------- |
+| `ai-autonomy-card.md`         | **Self-Regulation**. Manage Mantras/Context |
 | `localization-card.md`         | Doc Standards (Frontmatter, Tags)          |
 | `housekeeping-card.md`         | Short-term tasks, quick maintenance        |
 | `context-cards-card.md`        | **Meta-Card**. How to use cards.           |
@@ -105,6 +106,7 @@ _Located in `.agent/rules/`_
 
 | Rule File                                  | Principle                                        |
 | :----------------------------------------- | :----------------------------------------------- |
+| `ai-autonomy.md`                           | **Autonomy**. Context Sovereignty principles.    |
 | `cognitive-collaboration.md`               | Framework for AI-Human collaboration.            |
 | `communication.md`                         | Protocol for external communication.             |
 | `delay-tolerance.md`                       | **Patience**. Accuracy > Speed.                  |
@@ -207,3 +209,4 @@ _Located in `.agent/workflows/`_
 - 2026-01-04 by Spica: Revised into 'Map of Territory' v2.0 (Structure-focused), replacing legacy format.
 - 2026-01-11 by Spica: Updated index (Added session-rituals-card, replaced legacy session files with ritual workflows).
 - 2026-01-14 by Canopus: Added activity-management rule to index.
+- 2026-01-17 by Canopus: Added AI Autonomy rule and context card to index.
