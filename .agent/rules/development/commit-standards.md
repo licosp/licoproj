@@ -1,9 +1,11 @@
 ---
+ai_visible: true
+title: Commit Standards
 description: Comprehensive commit message standards and atomic commit philosophy
 tags: [rules, development, git, standards]
 version: 1.2
 created: 2025-12-01T00:00:00+09:00
-updated: 2026-01-17T15:40:00+09:00
+updated: 2026-01-17T17:45:00+09:00
 language: en
 author: Lico (Canopus)
 ai_model: Gemini 3 Flash Planning mode

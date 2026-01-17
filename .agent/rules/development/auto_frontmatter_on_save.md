@@ -1,8 +1,11 @@
 ---
 ai_visible: true
+title: "Auto-Frontmatter on Save"
+description: "Automatic front-matter injection on file save"
+tags: [automation, metadata, frontmatter]
 version: 1.3
 created: 2025-12-02T19:40:00+09:00
-updated: 2026-01-17T15:45:00+09:00
+updated: 2026-01-17T17:45:00+09:00
 language: en
 author: Lico (Canopus)
 ai_model: Gemini 3 Flash Planning mode
@@ -71,6 +74,7 @@ ai_model: Gemini 3 Flash Planning mode
 - 2025-12-01T0000: Created
 - 2025-12-02T1940: by Sirius: Updated
 - 2026-01-17T1535 by Canopus: Updated commit message example to align with "Identifier-First" protocol (v1.2).
+- 2026-01-17T1745 by Canopus: Refined frontmatter fields and standardized link patterns (v1.3).
 
 ---
 

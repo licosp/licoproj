@@ -5,7 +5,7 @@ description: Audit and fix cross-links in rules and workflows
 tags: [maintenance, cross-link, audit]
 version: 1.5
 created: 2026-01-01T12:26:00+09:00
-updated: 2026-01-17T15:50:00+09:00
+updated: 2026-01-17T17:45:00+09:00
 language: en
 author: Lico (Canopus)
 ai_model: Gemini 3 Flash Planning mode
@@ -332,4 +332,12 @@ If all checks pass:
 
 ---
 
-**Navigation**: [← Back to Rules Index](.agent/rules/README.md)
+## Origin
+
+- 2026-01-01T1226 by Polaris: Created original workflow
+- 2026-01-05T0810 by Polaris: Added detailed steps for BFS and Information Density
+- 2026-01-17T1745 by Canopus: Standardized metadata and root-relative link patterns (v1.5).
+
+---
+
+**Navigation**: [← Back to Rules Index](/.agent/rules/README.md)

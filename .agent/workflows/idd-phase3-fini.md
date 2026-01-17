@@ -5,7 +5,7 @@ description: "Phased workflow for finalizing and merging changes in IDD."
 tags: [workflow, idd, finalization]
 version: 1.2
 created: 2025-12-08T00:00:00+09:00
-updated: 2026-01-17T15:55:00+09:00
+updated: 2026-01-17T17:45:00+09:00
 language: en
 author: Lico (Canopus)
 ai_model: Gemini 3 Flash Planning mode
@@ -251,8 +251,8 @@ unset PR_NUMBER
 
 ## Origin
 
-- 2025-12-08T0000: Created original Japanese version
 - 2026-01-15T0445 by Canopus: [Localization] Fully translated to English and integrated 'Align' ritual standards
+- 2026-01-17T1745 by Canopus: Standardized metadata and root-relative link patterns (v1.2).
 
 ---
 

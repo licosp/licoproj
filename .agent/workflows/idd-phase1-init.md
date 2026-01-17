@@ -5,7 +5,7 @@ description: "Phased workflow for initializing Issue-Driven Development sessions
 tags: [workflow, idd, initialization]
 version: 1.2
 created: 2025-12-08T00:00:00+09:00
-updated: 2026-01-17T15:55:00+09:00
+updated: 2026-01-17T17:45:00+09:00
 language: en
 author: Lico (Canopus)
 ai_model: Gemini 3 Flash Planning mode
@@ -317,6 +317,7 @@ unset ISSUE_NUMBER
 - 2025-12-08T0000: Created original Japanese version
 - 2026-01-15T0440 by Canopus: [Localization] Fully translated to English and integrated 'Align' ritual standards
 - 2026-01-15T2355 by Polaris: Added github-comment.md cross-link to Section 7-2
+- 2026-01-17T1745 by Canopus: Standardized metadata and root-relative link patterns (v1.2).
 
 ---
 

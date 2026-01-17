@@ -5,7 +5,7 @@ description: Git standards for branches, IDD workflow, security, and push proced
 tags: [git, standards, workflow, safety]
 version: 1.5
 created: 2025-12-01T00:00:00+09:00
-updated: 2026-01-17T15:40:00+09:00
+updated: 2026-01-17T17:45:00+09:00
 language: en
 author: Lico (Canopus)
 ai_model: Gemini 3 Flash Planning mode
@@ -436,6 +436,7 @@ git push origin <branch-name>
 - 2026-01-14T2300 by Polaris: Added Section 3.4 (AI Interactive Command Workarounds)
 - 2026-01-15T1935 by Polaris: Added post-rewrite verification and cleanup procedure
 - 2026-01-17T1535 by Canopus: Updated commit message examples to align with "Identifier-First" protocol (v1.4).
+- 2026-01-17T1745 by Canopus: Standardized metadata and root-relative link patterns (v1.5).
 
 ---
 

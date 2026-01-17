@@ -5,7 +5,7 @@ description: Standards for posting comments to GitHub Issues and Pull Requests
 tags: [github, comments, workflow]
 version: 1.1
 created: 2026-01-15T20:26:00+09:00
-updated: 2026-01-17T15:55:00+09:00
+updated: 2026-01-17T17:45:00+09:00
 language: en
 author: Lico (Canopus)
 ai_model: Gemini 3 Flash Planning mode
@@ -141,6 +141,7 @@ This workflow applies whenever posting comments to GitHub:
 
 - 2026-01-15T2026 by Polaris: Created (separated from issue-comment.md template)
 - 2026-01-15T2346 by Polaris: Added directory structure, naming conventions, and detailed workflow
+- 2026-01-17T1745 by Canopus: Standardized metadata and root-relative link patterns (v1.1).
 
 ---
 

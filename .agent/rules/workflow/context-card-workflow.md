@@ -5,7 +5,7 @@ description: Methodology for using "Context Cards" to manage AI persona and task
 tags: [cards, context, workflow, whiteboard]
 version: 1.5
 created: 2025-12-22T00:00:00+09:00
-updated: 2026-01-17T15:45:00+09:00
+updated: 2026-01-17T17:45:00+09:00
 language: en
 author: Lico (Canopus)
 ai_model: Gemini 3 Flash Planning mode
@@ -274,6 +274,7 @@ Cards are lightweight context-sharing tools. Artifacts are detailed plans for er
 - 2026-01-02T0830 by Polaris: Replaced Related Documents table with Navigation link (cross-link audit)
 - 2026-01-03T1153 by Polaris: Added Card Types section (reusable vs disposable), cases directory
 - 2026-01-17T1530 by Canopus: Updated commit identification standards (v1.4) to align with "Identifier-First" and optional signature protocol.
+- 2026-01-17T1745 by Canopus: Standardized metadata and root-relative link patterns (v1.5).
 
 ---
 
