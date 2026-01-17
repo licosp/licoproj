@@ -3,12 +3,12 @@ ai_visible: true
 title: "IDD Phase 1: Initialization"
 description: "Phased workflow for initializing Issue-Driven Development sessions."
 tags: [workflow, idd, initialization]
-version: 1.1
+version: 1.2
 created: 2025-12-08T00:00:00+09:00
-updated: 2026-01-15T23:55:00+09:00
+updated: 2026-01-17T15:55:00+09:00
 language: en
-author: Lico (Polaris)
-ai_model: Claude Opus 4.5 (Thinking) Planning mode
+author: Lico (Canopus)
+ai_model: Gemini 3 Flash Planning mode
 related:
   .agent/rules/development/git-operations.md: Branch naming and IDD details
   .agent/rules/development/commit-standards.md: Commit message standards
@@ -86,7 +86,7 @@ Story (Connected Issues)
 
 - List changes unrelated to the main theme but necessary for synchronization
 - Examples: Draft updates, `.gitignore` adjustments, typo fixes
-- **Note**: Sub-themes will be committed separately (ref: [commit-granularity.md](/.agent/rules/development/commit-standards.md))
+- **Note**: Sub-themes will be committed separately (ref: [commit-standards.md](/.agent/rules/development/commit-standards.md))
 
 ---
 
@@ -299,14 +299,6 @@ unset ISSUE_NUMBER
 
 ---
 
-## Origin
-
-- 2025-12-08T0000: Created original Japanese version
-- 2026-01-15T0440 by Canopus: [Localization] Fully translated to English and integrated 'Align' ritual standards
-- 2026-01-15T2355 by Polaris: Added github-comment.md cross-link to Section 7-2
-
----
-
 ## Related Documents
 
 | Document                                                          | Purpose                   |
@@ -317,6 +309,14 @@ unset ISSUE_NUMBER
 | [Git Operations](/.agent/rules/development/git-operations.md)     | Detailed Git Rules        |
 | [Commit Standards](/.agent/rules/development/commit-standards.md) | Commit Message Rules      |
 | [GitHub Comment](/.agent/rules/workflow/github-comment.md)        | Comment Standards         |
+
+---
+
+## Origin
+
+- 2025-12-08T0000: Created original Japanese version
+- 2026-01-15T0440 by Canopus: [Localization] Fully translated to English and integrated 'Align' ritual standards
+- 2026-01-15T2355 by Polaris: Added github-comment.md cross-link to Section 7-2
 
 ---
 

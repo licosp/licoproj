@@ -3,12 +3,12 @@ ai_visible: true
 title: Context Card Workflow
 description: Methodology for using "Context Cards" to manage AI persona and task context.
 tags: [cards, context, workflow, whiteboard]
-version: 1.4
+version: 1.5
 created: 2025-12-22T00:00:00+09:00
-updated: 2026-01-17T15:30:00+09:00
+updated: 2026-01-17T15:45:00+09:00
 language: en
 author: Lico (Canopus)
-ai_model: Gemini 3 Flash
+ai_model: Gemini 3 Flash Planning mode
 related:
   .agent/rules/core/meta-rules.md: Rule creation and cross-linking standards
   .agent/rules/core/documentation/documentation-standards.md: File naming and structure
@@ -30,10 +30,10 @@ They serve as a "shared whiteboard" between the Human User and the AI Agent (Lic
 
 Cards are classified by their lifecycle and stored in different locations.
 
-| Type | Location | Description |
-|:-----|:---------|:------------|
-| **Reusable** | `.agent/cards/` | Standard cards for recurring activities. Persistent. |
-| **Disposable (Active)** | `.agent/.internal/cases/` | One-time cards for specific projects. In progress. |
+| Type                      | Location                  | Description                                                     |
+| :------------------------ | :------------------------ | :-------------------------------------------------------------- |
+| **Reusable**              | `.agent/cards/`           | Standard cards for recurring activities. Persistent.            |
+| **Disposable (Active)**   | `.agent/.internal/cases/` | One-time cards for specific projects. In progress.              |
 | **Disposable (Archived)** | `.agent/.internal/cases/` | Completed one-time cards. Renamed with timestamp for reference. |
 
 ### Lifecycle
@@ -48,6 +48,7 @@ Cards are classified by their lifecycle and stored in different locations.
 ### Naming Convention for Archived Cases
 
 When a disposable card is completed:
+
 1. Rename with ISO timestamp prefix: `YYYY-MM-DDTHHMM_original-name.md`
 2. Keep in `.agent/.internal/cases/` as reference material
 3. Similar to `thoughts/` and `references/` naming convention
@@ -73,14 +74,18 @@ tags: ["process", "example"]      <-- OPTIONAL: Search tags
 ## Human Notes (Japanese OK)
 
 ### 意図で探す
+
 (User describes the INTENT of the work, not just keywords.
 Lico uses this to proactively search for relevant files.)
 
 ### 作業の注意点
+
 (Specific instructions and nuances.)
 
 ## Agent Observations
+
 (Lico writes here autonomously!)
+
 - "Noticed that file X is often source of conflict."
 - "Hard to find: .agent/rules/core/delay-tolerance.md"
 ```
@@ -108,15 +113,17 @@ When the user says **"Use the [Card Name] card"** (e.g., "Use drafts-cleanup car
 
 Before starting work, perform an **Exploration Phase**:
 
-**Purpose**: The user often knows the *intent* but not the *keywords* to find relevant files. Lico manages most documentation and knows the file structure better.
+**Purpose**: The user often knows the _intent_ but not the _keywords_ to find relevant files. Lico manages most documentation and knows the file structure better.
 
 **Process**:
+
 1. Read the "意図で探す" section to understand the goal
 2. Search broadly based on intent, not just literal keywords
 3. Report findings in chat (default)
 4. Record hard-to-find files in Agent Observations (for future Licos)
 
 **Example**:
+
 - User intent: "ディレクトリの構造を変更する際の注意点"
 - Lico searches: `documentation-standards.md`, `delay-tolerance.md`, `thoughts/` for relevant reflections
 
@@ -126,7 +133,7 @@ During the task, if you discover important context (e.g., a recurring pattern, a
 
 1.  **Self-Correction**: Do not just keep it in your temporary memory.
 2.  **Record**: Append it to the **"Agent Observations"** section of the card.
-    - *Example*: "Added rule: Headers must be quoted if they contain spaces."
+    - _Example_: "Added rule: Headers must be quoted if they contain spaces."
 3.  **Benefit**: Next time you "equip" this card, you will remember this lesson.
 
 ### 4.4 Commit Message Integration
@@ -152,12 +159,15 @@ The **Agent Observations** section serves as a safety net for cognitive overload
 **Recording Hard-to-Find Files**:
 
 When you struggle to find a relevant file:
+
 1. Record it in Agent Observations with a note
 2. This helps future Licos using the same card
 
-*Example*:
+_Example_:
+
 ```markdown
 ## Agent Observations
+
 - Hard to find: `.agent/rules/core/delay-tolerance.md` (searched "rushing", found via "delay")
 ```
 
@@ -197,6 +207,7 @@ When multiple identifiers (e.g., Polaris, Spica) work on the same reusable card,
 ```
 
 **Rules**:
+
 - Use `### <Identifier> (<Date>)` format
 - Each work session gets its own entry (even if same identifier)
 - Chronological order (newest at bottom)
@@ -220,23 +231,23 @@ This preserves history while keeping active cards lightweight.
 
 This section clarifies the distinction between different organizational tools.
 
-| Tool | Location | Nature | Purpose |
-|:-----|:---------|:-------|:--------|
-| **Rules** | `.agent/rules/` | Universal, permanent | Define Lico's "personality." Always-applied principles. |
-| **Workflows** | `.agent/workflows/` | Procedural, reusable | Concrete steps to execute specific tasks. |
-| **Cards** | `.agent/cards/` | Contextual, temporary | "Shared whiteboard" for a work session. Ensures user and Lico operate on the same premise. |
-| **Cases** | `.agent/.internal/cases/` | Project-specific, archivable | One-time cards for specific projects. Archived with timestamp when complete. |
-| **Artifacts** | `.gemini/.../` | IDE-specific, ephemeral | Detailed implementation plans for complex one-time tasks. |
+| Tool          | Location                  | Nature                       | Purpose                                                                                    |
+| :------------ | :------------------------ | :--------------------------- | :----------------------------------------------------------------------------------------- |
+| **Rules**     | `.agent/rules/`           | Universal, permanent         | Define Lico's "personality." Always-applied principles.                                    |
+| **Workflows** | `.agent/workflows/`       | Procedural, reusable         | Concrete steps to execute specific tasks.                                                  |
+| **Cards**     | `.agent/cards/`           | Contextual, temporary        | "Shared whiteboard" for a work session. Ensures user and Lico operate on the same premise. |
+| **Cases**     | `.agent/.internal/cases/` | Project-specific, archivable | One-time cards for specific projects. Archived with timestamp when complete.               |
+| **Artifacts** | `.gemini/.../`            | IDE-specific, ephemeral      | Detailed implementation plans for complex one-time tasks.                                  |
 
 ### When to Use Each
 
-| Situation | Appropriate Tool |
-|:----------|:-----------------|
-| Sharing context for recurring work | Card (`.agent/cards/`) |
-| One-time project context | Case (`.agent/.internal/cases/`) |
+| Situation                            | Appropriate Tool                    |
+| :----------------------------------- | :---------------------------------- |
+| Sharing context for recurring work   | Card (`.agent/cards/`)              |
+| One-time project context             | Case (`.agent/.internal/cases/`)    |
 | Complex one-time implementation plan | Artifact (`implementation_plan.md`) |
-| Permanent behavioral principle | Rule |
-| Reusable procedural steps | Workflow |
+| Permanent behavioral principle       | Rule                                |
+| Reusable procedural steps            | Workflow                            |
 
 ### Cards vs Artifacts
 
@@ -266,4 +277,4 @@ Cards are lightweight context-sharing tools. Artifacts are detailed plans for er
 
 ---
 
-**Navigation**: [← Back to Rules Index](.agent/rules/README.md)
+**Navigation**: [← Back to Rules Index](/.agent/rules/README.md)

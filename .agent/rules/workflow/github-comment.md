@@ -3,12 +3,12 @@ ai_visible: true
 title: GitHub Comment Standards
 description: Standards for posting comments to GitHub Issues and Pull Requests
 tags: [github, comments, workflow]
-version: 1.0
+version: 1.1
 created: 2026-01-15T20:26:00+09:00
-updated: 2026-01-15T20:26:00+09:00
+updated: 2026-01-17T15:55:00+09:00
 language: en
-author: Lico (Polaris)
-ai_model: Claude Opus 4.5 (Thinking) Planning mode
+author: Lico (Canopus)
+ai_model: Gemini 3 Flash Planning mode
 related:
   .agent/templates/issue-comment.md: Comment templates
   .agent/workflows/routine-daily.md: Daily routine workflow
@@ -144,4 +144,4 @@ This workflow applies whenever posting comments to GitHub:
 
 ---
 
-**Navigation**: [← Back to Workflow Rules](/.agent/rules/workflow/)
+**Navigation**: [← Back to Workflow Rules](/.agent/rules/workflow/README.md)

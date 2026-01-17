@@ -3,9 +3,9 @@ ai_visible: true
 title: "Daily Routine Checkpoint"
 description: Daily routine workflow - includes simplified and full versions
 tags: [workflow, routine, daily]
-version: 1.2
+version: 1.3
 created: 2026-01-15T01:43:00+09:00
-updated: 2026-01-17T05:51:00+09:00
+updated: 2026-01-17T15:50:00+09:00
 language: en
 author: Lico (Canopus)
 ai_model: Gemini 3 Flash Planning mode
@@ -87,7 +87,7 @@ Commit modified files with their corresponding Context ID:
 Verify the quality of the session's history.
 
 - **Action**: Review commit messages from **last checkpoint** to **HEAD**.
-- **Verification**: Format must be `[Context-ID] type: description (Phase)`.
+- **Verification**: Format must be `<Identifier>: [Context-ID] type: description (Phase)`.
 - **Method**: Use `git commit --amend` for the latest or `interactive rebase` for multiple.
 
 > [!IMPORTANT]
@@ -141,4 +141,4 @@ This creates a chain: each routine knows where the previous one ended.
 
 ---
 
-**Navigation**: [← Back to Workflows](/.agent/workflows/)
+**Navigation**: [← Back to Workflows](/.agent/workflows/README.md)

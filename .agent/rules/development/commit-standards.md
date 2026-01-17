@@ -1,22 +1,23 @@
 ---
 description: Comprehensive commit message standards and atomic commit philosophy
 tags: [rules, development, git, standards]
-version: 1.1
+version: 1.2
 created: 2025-12-01T00:00:00+09:00
-updated: 2026-01-17T15:25:00+09:00
+updated: 2026-01-17T15:40:00+09:00
 language: en
 author: Lico (Canopus)
-ai_model: Gemini 3 Flash
+ai_model: Gemini 3 Flash Planning mode
+---
 
 # Commit Standards
 
 ## Purpose
 
 Define comprehensive standards for commit messages and commit granularity to ensure:
-  - Complete reconstruction of project state from git log alone
-  - AI-readable and searchable commit history
-  - Traceable motivation behind each file change
----
+
+- Complete reconstruction of project state from git log alone
+- AI-readable and searchable commit history
+- Traceable motivation behind each file change
 
 ## Core Principles
 
@@ -120,7 +121,7 @@ Changed files:
 - src/auth/jwt-middleware.js: JWT token validation logic
 - src/models/User.js: User model with auth fields
 - src/routes/auth.js: Login/logout endpoints
-\`\`\`
+  \`\`\`
 
 ### 2.6 Footers (Optional)
 
@@ -131,13 +132,14 @@ Changed files:
 
 - **Normal Commit**: Signature footer is **OPTIONAL**. Since the contributing agent is identified in the first line of the header, redundant signatures should be avoided.
 - **Proxy Commit (REQUIRED)**: If an agent (e.g., Canopus) is committing work designed or requested by another agent (e.g., Polaris):
-    1.  **Header Identifier**: Use the **Worker Identifier** (the one who designed/processed the logic).
-    2.  **Signature**: Footer MUST include `Committed-by: <Identifier>` to identify the agent who performed the technical task.
+  1.  **Header Identifier**: Use the **Worker Identifier** (the one who designed/processed the logic).
+  2.  **Signature**: Footer MUST include `Committed-by: <Identifier>` to identify the agent who performed the technical task.
 
 **Format (Proxy)**:
 `Committed-by: <Identifier>`
 
 **Rationale**:
+
 1.  **Contribution Visibility**: Clarifies who the creative/logical owner of the change is vs. who physically committed it.
 2.  **Traceability of Intent**: Enables deduction of the "style" or "philosophy" based on the persona.
 3.  **Communication**: Facilitates asynchronous communication by identifying the "sender" of the commit.
@@ -221,4 +223,4 @@ Fine-grained commits with detailed messages:
 
 ---
 
-**Navigation**: [← Back to Rules Index](.agent/rules/README.md)
+**Navigation**: [← Back to Rules Index](/.agent/rules/README.md)

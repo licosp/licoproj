@@ -3,12 +3,12 @@ ai_visible: true
 title: "IDD Phase 3: Finalization"
 description: "Phased workflow for finalizing and merging changes in IDD."
 tags: [workflow, idd, finalization]
-version: 1.1
+version: 1.2
 created: 2025-12-08T00:00:00+09:00
-updated: 2026-01-15T04:45:00+09:00
+updated: 2026-01-17T15:55:00+09:00
 language: en
-author: "Lico (Canopus)"
-ai_model: "Gemini 3 Flash Planning mode"
+author: Lico (Canopus)
+ai_model: Gemini 3 Flash Planning mode
 related:
   .agent/rules/development/git-operations.md: Branch naming and IDD details
   .agent/rules/development/commit-standards.md: Commit message standards
@@ -237,13 +237,6 @@ unset PR_NUMBER
 
 ---
 
-## Origin
-
-- 2025-12-08T0000: Created original Japanese version
-- 2026-01-15T0445 by Canopus: [Localization] Fully translated to English and integrated 'Align' ritual standards
-
----
-
 ## Related Documents
 
 | Document                                                          | Purpose                   |
@@ -253,6 +246,13 @@ unset PR_NUMBER
 | [Git Operations](/.agent/rules/development/git-operations.md)     | Detailed Git Rules        |
 | [Commit Standards](/.agent/rules/development/commit-standards.md) | Commit Message Rules      |
 | [GitHub Comment](/.agent/rules/workflow/github-comment.md)        | Comment Standards         |
+
+---
+
+## Origin
+
+- 2025-12-08T0000: Created original Japanese version
+- 2026-01-15T0445 by Canopus: [Localization] Fully translated to English and integrated 'Align' ritual standards
 
 ---
 

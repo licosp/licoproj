@@ -3,12 +3,12 @@ ai_visible: true
 title: Git Operations Standards
 description: Git standards for branches, IDD workflow, security, and push procedures
 tags: [git, standards, workflow, safety]
-version: 1.4
+version: 1.5
 created: 2025-12-01T00:00:00+09:00
-updated: 2026-01-17T15:35:00+09:00
+updated: 2026-01-17T15:40:00+09:00
 language: en
 author: Lico (Canopus)
-ai_model: Gemini 3 Flash
+ai_model: Gemini 3 Flash Planning mode
 related:
   .agent/rules/development/commit-standards.md: Commit message standards
   .agent/.internal/references/agents/commit-philosophy.md: Cognitive strategy for commits
@@ -66,7 +66,7 @@ This ensures consistent formatting and adherence to the current session's "perso
 - Format: `<issue-number>-<issue-title-kebab-case>`
 - Language: English
 - Length: ~50 characters
-- Example: `275-use-the-module-shspartadevc-to-show-a-log-message`
+- Example: `275-use-the-module-to-show-a-log-message`
 
 **When Issue Does Not Exist**:
 
@@ -232,7 +232,7 @@ git rev-parse --is-inside-work-tree &> /dev/null || exit 1
 ```markdown
 ## Commit History (2025-11-29T19:27+09:00)
 
-Completed 6 atomic commits following `commit-granularity.md` guidelines:
+Completed 6 atomic commits following `commit-standards.md` guidelines:
 
 - `b2c3e89` Canopus: [Drafts-Daily] docs: update draft for 2026-01-17 (Daily)
 - `0c49074` Canopus: [Rules-Update] chore: update .gitignore (Update)
@@ -418,20 +418,13 @@ git push origin <branch-name>
 
 ---
 
-## References
-
-### Internal
+## Related Documents
 
 | Document                                                                                 | Purpose                  |
 | :--------------------------------------------------------------------------------------- | :----------------------- |
 | [commit-standards.md](/.agent/rules/development/commit-standards.md)                     | Commit message standards |
 | [commit-philosophy.md](/.agent/.internal/references/agents/commit-philosophy.md)         | Cognitive strategy       |
 | [absolute-path-prohibition.md](/.agent/rules/core/security/absolute-path-prohibition.md) | Path security            |
-
-### External
-
-- [Conventional Commits Specification](https://www.conventionalcommits.org/)
-- [Semantic Versioning](https://semver.org/)
 
 ---
 

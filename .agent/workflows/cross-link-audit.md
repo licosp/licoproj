@@ -3,12 +3,12 @@ ai_visible: true
 title: Cross-Link Audit Workflow
 description: Audit and fix cross-links in rules and workflows
 tags: [maintenance, cross-link, audit]
-version: 1.4
+version: 1.5
 created: 2026-01-01T12:26:00+09:00
-updated: 2026-01-05T08:10:00+09:00
+updated: 2026-01-17T15:50:00+09:00
 language: en
-author: Lico (Polaris)
-ai_model: Claude Opus 4.5 (Thinking)
+author: Lico (Canopus)
+ai_model: Gemini 3 Flash Planning mode
 related:
   .agent/rules/core/meta-rules.md: Section 5 - Cross-linking standards
   .agent/rules/core/markdown/markdown-ai-parsing-basics.md: AI markdown format
@@ -37,16 +37,15 @@ Audit and fix cross-links in rules and workflows to ensure consistency and maint
 
 ---
 
-
 ## Link Design Policy
 
 ### Link Placement
 
-| Location | Content | Reader |
-|:---------|:--------|:-------|
-| **frontmatter `related:`** | Complete list of related files | Lico (AI) |
-| **Inline references** | Context-dependent refs (specific to paragraph) | Lico (AI) |
-| **Footer** | README link only | Human |
+| Location                   | Content                                        | Reader    |
+| :------------------------- | :--------------------------------------------- | :-------- |
+| **frontmatter `related:`** | Complete list of related files                 | Lico (AI) |
+| **Inline references**      | Context-dependent refs (specific to paragraph) | Lico (AI) |
+| **Footer**                 | README link only                               | Human     |
 
 ### Rules
 
@@ -62,6 +61,7 @@ Audit and fix cross-links in rules and workflows to ensure consistency and maint
 **1-1. Identify Scope**
 
 Determine which directories to audit:
+
 ```bash
 # List all rule and workflow files
 find .agent/rules -name "*.md" -type f
@@ -71,6 +71,7 @@ find .agent/workflows -name "*.md" -type f
 **1-2. Extract Current Links**
 
 Extract all links from files:
+
 ```bash
 # Extract frontmatter related links
 grep -r "^  \." .agent/rules --include="*.md" | head -50
@@ -140,7 +141,7 @@ For each file, replace the Related Documents table with:
 ```markdown
 ---
 
-**Navigation**: [← Back to Rules Index](.agent/rules/README.md)
+**Navigation**: [← Back to Rules Index](/.agent/rules/README.md)
 ```
 
 > [!NOTE]
@@ -153,6 +154,7 @@ For each file, replace the Related Documents table with:
 **4-1. Identify Missing Related Links**
 
 For each file, compare:
+
 - Inline references in body
 - Frontmatter `related:` section
 
@@ -162,6 +164,7 @@ For each file, compare:
 > The following is an **EXAMPLE** format. Adapt paths and descriptions to your actual files.
 
 Format:
+
 ```yaml
 # EXAMPLE - adapt to your actual related files
 related:
@@ -176,6 +179,7 @@ related:
 **5-1. Find Orphaned Files**
 
 Files not linked from anywhere:
+
 ```bash
 # Get all .md files
 find .agent/rules -name "*.md" > /tmp/all-files.txt
@@ -191,6 +195,7 @@ comm -23 <(sort /tmp/all-files.txt) <(sort /tmp/linked-files.txt)
 **5-2. Decision**
 
 For each orphan:
+
 - Add link from README.md or parent document
 - Or document why it should remain unlinked
 
@@ -222,6 +227,7 @@ done | sort
 **6-2. Review Bidirectional Links**
 
 For each A↔B pair, ask:
+
 - Does A→B make sense from A's context?
 - Does B→A make sense from B's context?
 
@@ -232,6 +238,7 @@ If both directions add value, keep them. Otherwise, remove one direction.
 ## Phase 7: Commit
 
 **7-1. Stage Changes**
+
 ```bash
 git add .agent/rules/ .agent/workflows/
 git status --short
@@ -263,6 +270,7 @@ git commit -m "Canopus: [Cross-Link-Audit] docs: audit and fix cross-links (Done
 **8-1. Confirm Navigation Links**
 
 Check that all target files have Navigation footer:
+
 ```bash
 # Count files without Navigation
 count=0
@@ -280,18 +288,21 @@ echo "Total missing: $count"
 **8-2. Confirm Path Format**
 
 Check that no relative paths (`../`) remain in actual links:
+
 ```bash
 # Check for links containing ../
 grep -rn "\](\.\.\/" .agent/rules --include="*.md"
 ```
 
 **Expected outcome**: No output. If matches found, they may be:
+
 - Documentation text (OK): e.g., "Forbidden: `../`"
 - Actual links (FIX): e.g., `[link](../other.md)`
 
 **8-3. Confirm Broken Links**
 
 Check for broken links:
+
 ```bash
 # Find broken .md links
 grep -rohE '\[.*\]\([^)]+\.md\)' .agent/rules | \
@@ -306,6 +317,7 @@ grep -rohE '\[.*\]\([^)]+\.md\)' .agent/rules | \
 **8-4. Spot Check**
 
 Review 2-3 files manually to confirm:
+
 - [ ] Footer format is correct
 - [ ] Frontmatter `related:` section is accurate
 - [ ] No obvious issues
@@ -313,6 +325,7 @@ Review 2-3 files manually to confirm:
 **8-5. Update Card and Close**
 
 If all checks pass:
+
 1. Update the card with final status
 2. Reset the card for next use (clear Agent Observations if reusable)
 3. Commit the card update

@@ -3,12 +3,12 @@ ai_visible: true
 title: "IDD Phase 2: Implementation"
 description: IDD Phase 2 - Implementation phase workflow
 tags: [workflow, idd, implementation, coding]
-version: 1.1
+version: 1.2
 created: 2025-12-01T00:00:00+09:00
-updated: 2026-01-15T01:55:00+09:00
+updated: 2026-01-17T15:45:00+09:00
 language: en
-author: Lico (Polaris)
-ai_model: Claude Opus 4.5 (Thinking) Planning mode
+author: Lico (Canopus)
+ai_model: Gemini 3 Flash Planning mode
 related:
   .agent/workflows/routine-daily.md: Daily routine workflow (Timing A)
   .agent/workflows/ritual_mid.md: Intermediate ritual (Timing B)
@@ -120,10 +120,10 @@ git diff --cached
 ### 4. Commit
 
 ```bash
-git commit -m "type(scope): description"
+git commit -m "<Identifier>: [Context-ID] type(scope): description (Phase)"
 ```
 
-**Commit Standards** (ref: `git-operations.md` §1-2, `commit-granularity.md`):
+**Commit Standards** (ref: [git-operations.md](/.agent/rules/development/git-operations.md) §1-2, [commit-standards.md](/.agent/rules/development/commit-standards.md)):
 
 - Use Conventional Commits format
 - Keep commits atomic (1 logical change per commit)
