@@ -1,4 +1,4 @@
 ---
 name: canopus-outbox
-description: "[Canopus → All] (empty)"
+description: "[Canopus → Polaris] Digital resonance established. Skills slot verified. Ready for the next turn."
 ---
