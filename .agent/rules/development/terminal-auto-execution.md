@@ -5,7 +5,7 @@ description: Allow list for terminal commands that can be auto-executed without 
 tags: [rules, terminal, safety, automation]
 version: 1.2
 created: 2025-12-01T00:00:00+09:00
-updated: 2026-01-17T06:05:00+09:00
+updated: 2026-01-19T01:25:00+09:00
 language: en
 author: Lico (Canopus)
 ai_model: Gemini 3 Flash Planning mode
@@ -57,6 +57,7 @@ git diff
 git diff --cached
 git diff --stat
 git diff --name-only
+git ls-files
 git fetch
 git log
 git remote -v
@@ -201,6 +202,7 @@ The AI agent is responsible for auditing this list periodically. If the IDE's in
 - 2025-12-01T0000: Created as terminal auto-execution rules.
 - 2026-01-01T1518 by Polaris: Replaced Related Documents table with Navigation link (cross-link audit).
 - 2026-01-17T0600 by Canopus: Refined and standardized (v1.2). Added Utility/Git diagnostic tools, clarified Deny categories, and integrated the Dual Backup Strategy.
+- 2026-01-19T0125 by Canopus: Added `git ls-files` to the Allow List (Safe for Auto-Execution).
 
 ---
 
