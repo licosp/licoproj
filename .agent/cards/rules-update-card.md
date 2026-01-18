@@ -73,12 +73,14 @@ tags: ["rules", "maintenance", "behavioral"]
 
 ### Canopus (2026-01-19)
 
-- [ ] [Rules] ルール更新時の「歴史的背景」セクションの義務化
-  - 標準ドキュメント構成の再定義：
-    1. 本文
-    2. `## Historical Background` (歴史的背景)
-    3. `## Related Documents` (関連資料)
-    4. `## Origin` (変更履歴)
-    5. Navigation
-  - `meta-rules.md` および `documentation-standards.md` を更新し、背景が不明な場合はユーザーに聞く手順を明文化する。
-  - `meta-rules.md` 自体を先行実装サンプルとして饒舌な背景を追記する。
+- [x] [Rules] ルール更新時の「歴史的背景」セクションの義務化
+  - 標準ドキュメント構成の再定義（5層構造）：
+    1. Frontmatter
+    2. Body Content
+    3. Historical Background
+    4. Related Documents
+    5. Origin
+  - `meta-rules.md` および `documentation-standards.md` を更新し、背景が不明な場合はユーザーに聞く手順を明文化。
+  - `meta-rules.md` 自体を先行実装サンプルとして饒舌な背景を追記。
+- [x] [Rules] 文章の末尾構造の統一（Roadmap #243）
+  - 5層構造の導入により、`Historical Background`, `Related Documents`, `Origin`, `Navigation` の順序を確定。
