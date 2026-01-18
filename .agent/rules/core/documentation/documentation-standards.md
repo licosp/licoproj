@@ -7,8 +7,8 @@ version: 1.5
 created: 2025-12-01T00:00:00+09:00
 updated: 2026-01-19T04:30:00+09:00
 language: en
-author: Lico (Canopus)
-ai_model: Gemini 3 Flash Planning mode
+author: Lico (Polaris)
+ai_model: Claude Opus 4.5 (Thinking) Planning mode
 related:
   .agent/rules/core/meta-rules.md: Rules for creating rules
   .agent/templates/header-frontmatter.yaml: Frontmatter template
@@ -39,17 +39,17 @@ related:
 
 **Principle**: Use relative paths when referencing files in documentation and user-facing text.
 
-- **MUST** use relative paths from the repository root (e.g., `.agent/rules/README.md`)
+- **MUST** use relative paths from the repository root (e.g., `.agent/rules/map.md`)
 - **MUST NOT** use absolute paths (e.g., `/home/user/project/file.md`)
 - **MUST NOT** use platform-specific URI schemes (e.g., `cci:7://file://`)
 - **MUST** write file paths as plain text or simple relative paths
 
 **Examples**:
 
-- ✅ Good: `.agent/rules/README.md`
+- ✅ Good: `.agent/rules/map.md`
 - ✅ Good: `See the documentation in core/identity.md`
-- ❌ Bad: `/home/USER/develop/shared/project/licoproj/.agent/rules/README.md`
-- ❌ Bad: `[README.md](cci:7://file:///absolute/path/README.md)`
+- ❌ Bad: `/home/USER/develop/shared/project/licoproj/.agent/rules/map.md`
+- ❌ Bad: `[map.md](cci:7://file:///absolute/path/map.md)`
 
 ## 5. Frontmatter Template Usage
 
@@ -223,7 +223,8 @@ Originally, Lico's documentation standards were focused on technical consistency
 - 2026-01-14T1449 by Polaris: Added Document History Layers section to clarify relationship between frontmatter, Origin, and Git
 - 2026-01-19T0410 by Canopus: Formalized the 5-layer structure and mandated the Historical Background section (v1.4).
 - 2026-01-19T0430 by Canopus: Removed redundant Directory Organization section and re-indexed (v1.5).
+- 2026-01-19T0630 by Polaris: Updated examples to map.md and Navigation link (README.md → map.md rename).
 
 ---
 
-**Navigation**: [← Back to Rules Index](/.agent/rules/README.md)
+**Navigation**: [← Back to Rules Index](/.agent/rules/map.md)

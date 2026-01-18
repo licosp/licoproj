@@ -3,12 +3,12 @@ ai_visible: true
 title: "Path Notation Standard"
 description: "Standard path notation for Markdown links within the repository"
 tags: [documentation, paths, links, standards]
-version: 1.2
+version: 1.3
 created: 2026-01-13T14:10:00+09:00
-updated: 2026-01-15T23:05:00+09:00
+updated: 2026-01-19T06:25:00+09:00
 language: en
-author: Lico (Canopus)
-ai_model: Gemini 3 Flash Planning mode
+author: Lico (Polaris)
+ai_model: Claude Opus 4.5 (Thinking) Planning mode
 related:
   .agent/rules/core/meta-rules.md: Cross-linking standards (references this file)
   .agent/rules/core/security/absolute-path-prohibition.md: Security rules for paths
@@ -68,9 +68,9 @@ Use **repository-root-relative paths** with a leading `/`:
 **NEVER** execute Markdown paths directly. Always translate first:
 
 ```
-Markdown Link: /.agent/rules/README.md
-Command Path:  ./licoproj/.agent/rules/README.md  (from workspace parent)
-           OR: ./.agent/rules/README.md         (from repository root)
+Markdown Link: /.agent/rules/map.md
+Command Path:  ./licoproj/.agent/rules/map.md  (from workspace parent)
+           OR: ./.agent/rules/map.md         (from repository root)
 ```
 
 ---
@@ -78,6 +78,18 @@ Command Path:  ./licoproj/.agent/rules/README.md  (from workspace parent)
 ## Migration Note
 
 Legacy files may still use relative paths (e.g., `../..././workspace/file.md`). These will be converted to the standard format in future maintenance work as defined in the Roadmap.
+
+---
+
+## Historical Background
+
+This standard was created in January 2026 during the cross-link audit project (Polaris).
+
+**The Inconsistency Problem**: The repository had accumulated various path formats over time - relative paths (`../../file.md`), repository-root paths (`/.agent/file.md`), and hybrid formats. This caused broken previews in GitHub and VSCode, and confused AI instances about path interpretation.
+
+**The Cognitive Trap**: AI instances frequently confused the leading `/` in Markdown links (meaning repository root) with the filesystem root. This led to failed file operations when they tried to execute Markdown paths directly.
+
+**The Solution**: Standardizing on `/.agent/path/to/file.md` format with clear documentation about the cognitive mapping required when translating to shell commands.
 
 ---
 
@@ -96,7 +108,8 @@ Legacy files may still use relative paths (e.g., `../..././workspace/file.md`). 
 - 2026-01-13T14:10 by Polaris: Created based on Roadmap "Fix link information" and Spica's workspace-hook.md.
 - 2026-01-13T14:38 by Polaris: Added related documents, updated to v1.1.
 - 2026-01-15T23:05 by Canopus: Standardized Origin section (removed Japanese) and updated to v1.2.
+- 2026-01-19T06:25 by Polaris: Added Historical Background and updated Navigation to map.md (v1.3).
 
 ---
 
-**Navigation**: [<- Back to Rules Index](/.agent/rules/README.md)
+**Navigation**: [← Back to Rules Index](/.agent/rules/map.md)
