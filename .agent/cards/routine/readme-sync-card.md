@@ -56,57 +56,60 @@ tags: ["readme", "maintenance", "map-sync"]
 
 **Section 2.1 (Directories) - 追加が必要**:
 
-| Path | Purpose |
-|:-----|:--------|
-| `.agent/ark/` | Ark protocols (session save points) |
-| `.agent/identifiers/` | Identifier-specific workspaces |
-| `.agent/identifiers/polaris/.vscode/polaris.code-workspace` | Polaris workspace config |
-| `.agent/identifiers/canopus/.vscode/canopus.code-workspace` | Canopus workspace config |
-| `.agent/skills/` | Skills (mantras, notes, outbox) |
-| `.agent/.internal/cases/` | Archived context cards |
-| `.agent/.internal/explorations/` | Exploratory documents |
-| `.agent/.internal/github/` | GitHub drafts and backups |
-| `.agent/.internal/references/` | Objective reference documents |
-| `.agent/.internal/memory_archive/` | Memory archive |
-| `.agent/.internal/session_archive/` | Session archive |
-| `.runtimes/` | Runtime tools (gh CLI, etc.) |
+| Path                                                        | Purpose                             |
+| :---------------------------------------------------------- | :---------------------------------- |
+| `.agent/ark/`                                               | Ark protocols (session save points) |
+| `.agent/identifiers/`                                       | Identifier-specific workspaces      |
+| `.agent/identifiers/polaris/.vscode/polaris.code-workspace` | Polaris workspace config            |
+| `.agent/identifiers/canopus/.vscode/canopus.code-workspace` | Canopus workspace config            |
+| `.agent/skills/`                                            | Skills (mantras, notes, outbox)     |
+| `.agent/.internal/cases/`                                   | Archived context cards              |
+| `.agent/.internal/explorations/`                            | Exploratory documents               |
+| `.agent/.internal/github/`                                  | GitHub drafts and backups           |
+| `.agent/.internal/references/`                              | Objective reference documents       |
+| `.agent/.internal/memory_archive/`                          | Memory archive                      |
+| `.agent/.internal/session_archive/`                         | Session archive                     |
+| `.runtimes/`                                                | Runtime tools (gh CLI, etc.)        |
 
 **Section 2.1 (Files) - 追加が必要**:
 
-| File | Purpose |
-|:-----|:--------|
+| File                               | Purpose                                  |
+| :--------------------------------- | :--------------------------------------- |
 | `.agent/.internal/activity-log.md` | Activity log (Lineage/Boundary tracking) |
-| `.agent/.internal/legacy.md` | Collective wisdom archive |
+| `.agent/.internal/legacy.md`       | Collective wisdom archive                |
 
 **Section 3.1 (Cards) - サブセクション化が必要**:
 
 現在の地図は全てのカードを一覧にしていますが、実際は2つのグループに分かれています。
 
-**Root Cards (`.agent/cards/`)** - 23個:
-- ark-card.md, context-cards-card.md, cross-link-audit-card.md
-- datetime-standardize-card.md, directory-reorganize-card.md, drafts-cleanup-card.md
-- housekeeping-card.md, human-manuals-card.md, human-profile-card.md
-- idd-fini-card.md, idd-impl-card.md, idd-init-card.md
-- identifier-profile-card.md, legacy-write-card.md, lico-identity-card.md
-- localization-card.md, log-sanitization-card.md, readme-sync-card.md
-- rules-update-card.md, session-rituals-card.md, vscode-settings-card.md
-- working-memory-card.md, worktree-evaluation-card.md
+**Root Cards (`.agent/cards/`)**:
 
-**Routine Cards (`.agent/cards/routine/`)** - 13個:
-- activity-log-card.md, ai-autonomy-card.md, dialogue-philosophy-card.md
-- discussion-draft-card.md, drafts-daily-card.md, human-thoughts-card.md
-- letters-card.md, references-objective-card.md, roadmap-card.md
+- ark-card.md, cross-link-audit-card.md, human-manuals-card.md, human-profile-card.md
+- idd-fini-card.md, idd-impl-card.md, idd-init-card.md
+- legacy-write-card.md, lico-identity-card.md, localization-card.md
+- rules-update-card.md, session-rituals-card.md
+
+**Routine Cards (`.agent/cards/routine/`)**:
+
+- activity-log-card.md, ai-autonomy-card.md, context-cards-card.md, dialogue-philosophy-card.md
+- discussion-draft-card.md, drafts-daily-card.md, housekeeping-card.md, human-thoughts-card.md
+- letters-card.md, readme-sync-card.md, references-objective-card.md, roadmap-card.md
 - routine-card.md, skills-create-card.md, sync-memory-card.md
-- thoughts-subjective-card.md
+- thoughts-subjective-card.md, vscode-settings-card.md, working-memory-card.md
+
+**Seed Cards (`.agent/cards/seed/`)**:
+
+- datetime-standardize-card.md, directory-reorganize-card.md, drafts-cleanup-card.md
+- identifier-profile-card.md, log-sanitization-card.md, worktree-evaluation-card.md
 
 **Section 3.2 (Workflow Rules) - 追加が必要**:
 
-| Rule | Purpose |
-|:-----|:--------|
+| Rule                     | Purpose                     |
+| :----------------------- | :-------------------------- |
 | `activity-management.md` | Activity & Lineage tracking |
-| `ark-protocols.md` | Ark save/restore protocols |
-| `github-comment.md` | GitHub comment standards |
-| `skills-application.md` | Skills application protocol |
+| `ark-protocols.md`       | Ark save/restore protocols  |
+| `github-comment.md`      | GitHub comment standards    |
+| `skills-application.md`  | Skills application protocol |
 
 #### 次のアクション
 

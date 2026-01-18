@@ -45,3 +45,37 @@ tags: ["templates", "active"]
 - [x] cases ディレクトリの文書化
 - [x] 既存 case ファイルをタイムスタンプ付きにリネーム
 - [x] 行動規範に Multi-Identifier Sharing (4.6) と Card Rotation (4.7) を追加
+
+### Canopus (2026-01-19 Reorganization Plan)
+
+整理方針の合意事項を記録。Polaris による地図更新作業の完了を待ち、以下の再編を実行する。
+
+#### 1. `routine/` (頻繁に更新)
+
+メンテナンス頻度が高いカードをここに集約。
+
+- [housekeeping-card.md](/.agent/cards/routine/housekeeping-card.md)
+- [working-memory-card.md](/.agent/cards/routine/working-memory-card.md)
+- [vscode-settings-card.md](/.agent/cards/routine/vscode-settings-card.md) (単語リスト等)
+- [readme-sync-card.md](/.agent/cards/routine/readme-sync-card.md) (地図更新)
+- [context-cards-card.md](/.agent/cards/routine/context-cards-card.md) (このカード自体)
+
+#### 2. `seed/` (修正前/未発芽)
+
+「人間の記述領域の編集がまだ終わっていません」警告があるカードを隔離し、誤用を防ぐ。
+
+- [identifier-profile-card.md](/.agent/cards/seed/identifier-profile-card.md)
+- [log-sanitization-card.md](/.agent/cards/seed/log-sanitization-card.md)
+- [drafts-cleanup-card.md](/.agent/cards/seed/drafts-cleanup-card.md)
+- [worktree-evaluation-card.md](/.agent/cards/seed/worktree-evaluation-card.md)
+- [datetime-standardize-card.md](/.agent/cards/seed/datetime-standardize-card.md)
+- [directory-reorganize-card.md](/.agent/cards/seed/directory-reorganize-card.md)
+
+#### 3. Root (据え置き/基盤)
+
+フェーズ管理（IDD）、儀式、その他基盤的な定義カード。
+
+- [idd-init-card.md](/.agent/cards/idd-init-card.md) / [idd-impl-card.md](/.agent/cards/idd-impl-card.md) / [idd-fini-card.md](/.agent/cards/idd-fini-card.md) (非定型・統合維持)
+- [session-rituals-card.md](/.agent/cards/session-rituals-card.md) (低頻度)
+- [lico-identity-card.md](/.agent/cards/lico-identity-card.md) (基盤)
+- その他、上記以外。
