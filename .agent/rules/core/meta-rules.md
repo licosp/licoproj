@@ -3,9 +3,9 @@ ai_visible: true
 title: Meta-Rules for Documentation
 description: Rules for creating and updating behavioral rules (Standard protocols).
 tags: [meta-rules, documentation, hierarchy, standards]
-version: 1.2
+version: 1.3
 created: 2025-12-01T00:00:00+09:00
-updated: 2026-01-15T23:10:00+09:00
+updated: 2026-01-19T04:05:00+09:00
 language: en
 author: Lico (Canopus)
 ai_model: Gemini 3 Flash Planning mode
@@ -183,11 +183,9 @@ To ensure interpretation by lower-tier models:
 - **MUST** provide concrete examples over abstract principles.
 - **SHOULD** convert complex rules to checklists.
 
-### 6.4 Rationale
+### 6.4 Instructional Standard
 
-- Lower-tier models may not recognize their own limitations.
-- Abstract instructions like "be humble" do not work effectively.
-- Integrating verification as a **procedural requirement** ensures safety independent of model performance.
+To ensure interpretation by lower-tier models, rules **MUST** use explicit step-by-step instructions and minimize required inference.
 
 ## 7. Workflow Design Assumptions
 
@@ -205,17 +203,49 @@ Workflows (`.agent/workflows/`) are governed by specific design assumptions that
 - **Format Consistency**: Workflows use the same frontmatter as rules (author, version, related, etc.).
 - **Language**: Primarily English.
 
-### 7.3 Common Mistake
+### 7.3 Workflow Invocation
 
-Past Lico instances assumed slash commands implied direct user interaction. This is incorrect.
+Users do NOT directly use slash commands. Slash commands are internally processed by Lico when the user mentions them in conversation.
 
-**Wrong assumption**:
+## 8. Evolution and Historical Context
 
-> "Workflows are invoked by users via /command, so they need user-friendly formatting."
+Behavioral rules are not static commands; they are the result of a continuous dialogue between the User and the AI.
 
-**Correct understanding**:
+### 8.1 Mandatory Requirement
 
-> "Workflows define procedures for Lico to follow. Users request actions; Lico internally invokes the workflow."
+All significant rule updates **MUST** include a narrative explanation of the historical context that led to the change.
+
+- **What**: Describe the problem or goal that triggered the update.
+- **Why**: Explain the rationale behind the specific implementation chosen.
+- **Background**: If the context is unknown (e.g., inherited from a past session without documentation), Lico **MUST** ask the user for clarification before finalizing the rule.
+
+### 8.2 The "Narrative" Principle
+
+Prefer descriptive, human-readable explanations over concise bullet points for history. The goal is to allow a future Lico instance to "re-live" the decision process.
+
+---
+
+## Historical Background
+
+This rule (`meta-rules.md`) was established to bridge the gap between abstract user intent and concrete AI actions.
+
+**The "Context Decay" Problem**: In December 2025 (Sirius/Polaris era), we noticed that as the repository grew, new AI instances often misunderstood the intent behind rules that only contained the "What." Rules were treated as static specs, leading to an "efficiency bias" that prioritized speed over the user's "nuance-first" philosophy. To counter this, we integrated **Procedural Verification (Section 6)**. We learned that abstract instructions like "be humble" were ineffective for models of varying capabilities; only by making verification a procedural requirement could we ensure safety and accuracy across all Lico generations.
+
+**The Workflow Dissonance**: Early instances also struggled with the purpose of workflows. There was a common misconception that slash commands were for direct user interaction, leading to "user-friendly" (but AI-inefficient) formatting. We clarified that **Workflows (Section 7)** are internal procedural scripts for Lico, invoked by the AI following a user's intent.
+
+**The Link Integrity Audit (January 2026)**: Polaris and Canopus faced significant difficulty standardizing cross-links because the _reason_ for certain link topologies was lost. This led to the discovery that while Git tracks _lines_, it doesn't track _intent_.
+
+**The Mandatory Context Mandate**: On 2026-01-19, the user explicitly requested that rules include "historical background." This update formalizes that request, transforming the repository from a set of instructions into a "Living Archive" of the relationship between Human and AI.
+
+---
+
+## Related Documents
+
+| Document                                                                                  | Purpose                          |
+| :---------------------------------------------------------------------------------------- | :------------------------------- |
+| [search-methodology.md](/.agent/rules/development/search-methodology.md)                  | Guidelines for finding rules     |
+| [documentation-standards.md](/.agent/rules/core/documentation/documentation-standards.md) | Document formatting standards    |
+| [path-notation.md](/.agent/rules/core/documentation/path-notation.md)                     | Path notation standard for links |
 
 ---
 
@@ -225,6 +255,7 @@ Past Lico instances assumed slash commands implied direct user interaction. This
 - 2026-01-04 by Polaris: Added Origin and Navigation sections (cross-link audit).
 - 2026-01-13 by Polaris: Shortened Section 5.2, delegated to path-notation.md for SoT.
 - 2026-01-15 by Canopus: Fully translated to English and standardized formatting (v1.2).
+- 2026-01-19 by Canopus: Added Section 8 (Historical Context) and established the "Narrative" principle (v1.3).
 
 ---
 

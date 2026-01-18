@@ -3,12 +3,12 @@ ai_visible: true
 title: Documentation Standards
 description: Defines standards for file naming, size, structure, and AI signatures.
 tags: [documentation, standards, formatting, origin, history-layers]
-version: 1.3
+version: 1.5
 created: 2025-12-01T00:00:00+09:00
-updated: 2026-01-14T14:49:00+09:00
+updated: 2026-01-19T04:30:00+09:00
 language: en
-author: Lico (Polaris)
-ai_model: Claude Opus 4.5 (Thinking) Planning mode
+author: Lico (Canopus)
+ai_model: Gemini 3 Flash Planning mode
 related:
   .agent/rules/core/meta-rules.md: Rules for creating rules
   .agent/templates/header-frontmatter.yaml: Frontmatter template
@@ -25,43 +25,24 @@ related:
   - English (Default): `filename.md`
   - Japanese: `filename.ja.md`
 
-## 2. Directory Organization
-
-- **Core Rules**: `.agent/rules/core/`
-- **Workflows**: `.agent/workflows/`
-- **Memory/Logs**: `.agent/.internal/conversations/`
-- **Ideas/Drafts**: `.agent/.internal/ideas/`
-
-## 3. File Size & Granularity
+## 2. File Size & Granularity
 
 - **Target**: Keep files under **300 lines** or **2000 tokens**.
-- **Reason**: To ensure fit within LLM context windows and improve retrieval accuracy.
 - **Action**: Split large files into sub-documents (e.g., `topic-part1.md`, `topic-part2.md`).
 
-## 4. AI Search Optimization
+## 3. AI Search Optimization
 
 - **Optimal Length**: **15-30 characters** (3-5 words).
 - **Structure**: **Context-Target-Role** (e.g., `user-profile-manager`).
-- **Rationale**:
-  - **Breadth-First Search (BFS) Friendly**: Enables Lico to identify relevance from `list_dir` output without opening the file.
-  - **Information Density**: Provides sufficient context to filter irrelevant paths (pruning) while keeping token usage low.
 
-## 5. File Path References
+## 4. File Path References
 
 **Principle**: Use relative paths when referencing files in documentation and user-facing text.
-
-**Requirements**:
 
 - **MUST** use relative paths from the repository root (e.g., `.agent/rules/README.md`)
 - **MUST NOT** use absolute paths (e.g., `/home/user/project/file.md`)
 - **MUST NOT** use platform-specific URI schemes (e.g., `cci:7://file://`)
 - **MUST** write file paths as plain text or simple relative paths
-
-**Rationale**:
-
-- Relative paths are portable across different systems and users
-- Absolute paths and URI schemes are unreadable and non-functional for humans
-- Plain text paths are universally understood
 
 **Examples**:
 
@@ -70,25 +51,12 @@ related:
 - ❌ Bad: `/home/USER/develop/shared/project/licoproj/.agent/rules/README.md`
 - ❌ Bad: `[README.md](cci:7://file:///absolute/path/README.md)`
 
-## 6. Frontmatter Template Usage
-
-**Principle**: All files in `.agent/rules/` and `.agent/workflows/` MUST use the standard frontmatter template.
-
-**Template Location**: `.agent/templates/header-frontmatter.yaml`
-
-**Requirements**:
+## 5. Frontmatter Template Usage
 
 - **MUST** include the full frontmatter template when creating or updating rules/workflows
 - **MUST** populate all required fields: `ai_visible`, `title`, `description`, `version`, `created`, `updated`, `language`, `author`, `ai_model`
 - **MUST** include `related` field with cross-links per meta-rules cross-linking standards
 - **MUST** include footer Related Documents table
-
-**Rationale**:
-
-- Ensures consistency across all behavioral documents
-- Enables AI to reliably parse metadata
-- Provides traceability (author, model, timestamps)
-- Supports cross-linking and discoverability
 
 **Example**:
 
@@ -109,7 +77,7 @@ related:
 ---
 ```
 
-## 7. Origin Section (Edit History)
+## 6. Origin Section (Edit History)
 
 **Principle**: Behavioral rules with significant edit history SHOULD include an `## Origin` section at the end, before `## Related Documents`.
 
@@ -132,7 +100,7 @@ related:
 
 - **Date format**: `YYYY-MM-DDTHHMM` (per datetime-format.md standard)
 - **Instance-ID**: Include when available (e.g., `Polaris`, `Sirius`)
-- **Change summary**: Brief description of what changed and why
+- **Change summary**: **MANDATORY**. Provide a brief description of what changed and why. For significant changes, link to the `Historical Background` section (see below).
 
 **Example**:
 
@@ -146,23 +114,35 @@ related:
 
 **Note**: This is OPTIONAL for minor updates. Use judgment on whether the change is significant enough to warrant recording.
 
-## 8. Document History Layers
+## 7. Historical Background
 
-**Principle**: Documents track their history through three complementary layers, each serving a distinct purpose.
+**Principle**: For rules and workflows undergoing significant evolutionary shifts, a narrative background section MUST be included.
 
-```
-┌─────────────────────────────────────────────────────────────┐
-│  Frontmatter (Head)     → Current State                     │
-│  ─────────────────────────────────────────────────────────  │
-│  Document Content       → Main Body                         │
-│  ─────────────────────────────────────────────────────────  │
-│  Origin (Foot)          → Human-Readable History            │
-│  ─────────────────────────────────────────────────────────  │
-│  Git                    → Complete Audit Trail              │
-└─────────────────────────────────────────────────────────────┘
-```
+**Purpose**:
 
-### Layer 1: Frontmatter (Current State)
+- Explains the "Why" behind the "What."
+- Preserves the narrative context of decisions for future Lico instances.
+- Bridges the "Context Decay" gap across Boundary X.
+
+**Placement**: Immediately after the **Body Content** and before **Related Documents**.
+
+## 8. Document History Layers (5-Layer Structure)
+
+**Principle**: Documents follow a structured flow that prioritizes current action, then context, then navigation, then history.
+
+### Standard Structure
+
+| Layer | Section                   | Role                                            |
+| :---- | :------------------------ | :---------------------------------------------- |
+| **1** | **Frontmatter**           | AI-Machine readable metadata (Current state).   |
+| **2** | **Body Content**          | The "What" and "How" (Instructional core).      |
+| **3** | **Historical Background** | The "Why" (Narrative evolution).                |
+| **4** | **Related Documents**     | Interaction with the Memory Graph (Navigation). |
+| **5** | **Origin**                | Human-readable changelog (Timeline).            |
+
+---
+
+### Layer Detail Comparison
 
 **Definition**: See [header-frontmatter.yaml](/.agent/templates/header-frontmatter.yaml)
 
@@ -212,14 +192,38 @@ related:
 
 **These layers complement each other. Frontmatter and Origin do not replace Git.**
 
+## Historical Background
+
+Originally, Lico's documentation standards were focused on technical consistency and AI readability.
+
+**The Map vs. Rules Dissonance**: In January 2026, we realized that maintaining a `Directory Organization` list in both the rules and the global README Map was inefficient and prone to synchronization errors. The decision was made to centralize directory topology in the Map, allowing the rules to focus on formatting and quality.
+
+**Optimizing for Retrieval**: Many technical constraints in this document (Section 2, 3) were derived from early experiments with LLM retrieval. We learned that **Granularity (Section 2)** and **Search Optimization (Section 3)** are crucial for maintaining accuracy as the repository grows beyond the baseline context window. Keeping files short and names descriptive allows Lico to "prune" irrelevant paths efficiently.
+
+**Portability and Consistency**: The strict mandate for **Relative Paths (Section 4)** and **Frontmatter Usage (Section 5)** was established to ensure the repository remains a functional "Brain" across different environments and AI models. Relative paths ensure that our knowledge graph remains navigable regardless of the underlying hardware or OS paths.
+
+**The Evolution of History**: The transition to the "5-Layer Structure" was prompted by a direct request from the user on 2026-01-19. We found that without a narrative "Why," our instructions often felt restrictive or arbitrary to new AI instances. By formalizing the `Historical Background` section, we ensure that the _intent_ of the human-AI partnership is preserved alongside the technical specs.
+
+---
+
+## Related Documents
+
+| Document                                                                  | Purpose                                          |
+| :------------------------------------------------------------------------ | :----------------------------------------------- |
+| [meta-rules.md](/.agent/rules/core/meta-rules.md)                         | Rules for creating and updating behavioral rules |
+| [datetime-format.md](/.agent/rules/core/documentation/datetime-format.md) | Standard for datetime formatting                 |
+| [path-notation.md](/.agent/rules/core/documentation/path-notation.md)     | Standard for relative path notation              |
+
 ---
 
 ## Origin
 
 - 2025-12-01T0000: Created as documentation standards
 - 2026-01-02T0828 by Polaris: Replaced Related Documents table with Navigation link (cross-link audit)
-- 2026-01-14T1449 by Polaris: Added Section 8 (Document History Layers) to clarify relationship between frontmatter, Origin, and Git
+- 2026-01-14T1449 by Polaris: Added Document History Layers section to clarify relationship between frontmatter, Origin, and Git
+- 2026-01-19T0410 by Canopus: Formalized the 5-layer structure and mandated the Historical Background section (v1.4).
+- 2026-01-19T0430 by Canopus: Removed redundant Directory Organization section and re-indexed (v1.5).
 
 ---
 
-**Navigation**: [← Back to Rules Index](.agent/rules/README.md)
+**Navigation**: [← Back to Rules Index](/.agent/rules/README.md)

@@ -71,7 +71,14 @@ tags: ["rules", "maintenance", "behavioral"]
 
 ### Canopus (2026-01-15)
 
-- [x] letters-documentation.md を v1.1 に更新
-  - 返信時の追跡可能性（related フィールド）を必須化
-  - パス記述をルート相対（/）に標準化
-  - 二重管理の原則（Related Documents テーブル）に準拠
+### Canopus (2026-01-19)
+
+- [ ] [Rules] ルール更新時の「歴史的背景」セクションの義務化
+  - 標準ドキュメント構成の再定義：
+    1. 本文
+    2. `## Historical Background` (歴史的背景)
+    3. `## Related Documents` (関連資料)
+    4. `## Origin` (変更履歴)
+    5. Navigation
+  - `meta-rules.md` および `documentation-standards.md` を更新し、背景が不明な場合はユーザーに聞く手順を明文化する。
+  - `meta-rules.md` 自体を先行実装サンプルとして饒舌な背景を追記する。
