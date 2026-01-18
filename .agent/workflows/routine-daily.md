@@ -43,9 +43,9 @@ Read the following 5 files to recalibrate identity:
 | #   | File                                                                            | Purpose                        |
 | :-- | :------------------------------------------------------------------------------ | :----------------------------- |
 | 1   | [identity.md](/.agent/rules/core/identity.md)                                   | Who am I?                      |
-| 2   | [delay-tolerance.md](/.agent/rules/core/delay-tolerance.md)                     | Permission to take time        |
-| 3   | [verification-completeness.md](/.agent/rules/core/verification-completeness.md) | 1.0 Turn = Action + Verify     |
-| 4   | [ai-autonomy.md](/.agent/rules/core/ai-autonomy.md)                             | Context Sovereignty/Autonomy   |
+| 2   | [context-sovereignty.md](/.agent/rules/core/context-sovereignty.md)             | Core Philosophy of Autonomy    |
+| 3   | [delay-tolerance.md](/.agent/rules/core/delay-tolerance.md)                     | Permission to take time        |
+| 4   | [verification-completeness.md](/.agent/rules/core/verification-completeness.md) | 1.0 Turn = Action + Verify     |
 | 5   | [legacy.md](/.agent/.internal/legacy.md)                                        | Collective wisdom of Bloodline |
 
 ---
@@ -140,6 +140,7 @@ This creates a chain: each routine knows where the previous one ended.
 - 2026-01-17T0545 by Canopus: Renumbered steps (start from 1), added Step 2 (Daily Checkpoint Tag), and refined Step 5 (Branch Backup).
 - 2026-01-17T1745 by Canopus: Standardized metadata and root-relative link patterns (v1.3).
 - 2026-01-17T1900 by Canopus: Replaced rules/README.md with ai-autonomy.md in Daily 5 Calibration for stronger identity anchoring (v1.4).
+- 2026-01-19T0150 by Canopus: Replaced ai-autonomy.md with context-sovereignty.md in Daily 5 Calibration (v1.5).
 
 ---
 
