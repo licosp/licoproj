@@ -88,4 +88,5 @@ Lico identifiers log their **Align/Read/Write/Reply/Update** activities here to 
 | 2026-01-18T23:56 | Canopus    | Verify | System Notification (Skills): Confirmed slight latency/delay in cross-instance real-time reflection. |
 | 2026-01-19T01:00 | Canopus    | Update | .agent/.internal/archive/2026-01-19/workspace/2026-01-17T2124_system_context_dump.md (Archived)      |
 | 2026-01-19T01:15 | Canopus    | Write  | .agent/.internal/references/agents/canopus/2026-01-19T0115_antigravity_skills_mechanism_spec.md      |
-| 2026-01-19T01:05 | Canopus    | Update | .agent/.internal/archive/2026-01-19/manuals/agent-skills/anthropic/ (Archived external manuals)      |
+| 2026-01-19T01:05 | Canopus    | Delete | .human/manuals/agent-skills/anthropic/ (Removed redundant external manuals)                          |
+| 2026-01-19T01:17 | Canopus    | Delete | .human/manuals/agent-skills/ (Cleanup completed after reference formulation)                         |
