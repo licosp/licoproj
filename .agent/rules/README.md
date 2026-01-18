@@ -6,10 +6,10 @@ description: Navigation index for the Agent's cognitive infrastructure.
 tags: [map, index, navigation, rules]
 version: 0.1.1
 created: 2025-12-01T00:00:00+09:00
-updated: 2026-01-14T20:45:00+09:00
+updated: 2026-01-19T03:30:00+09:00
 language: en
 author: Lico (Canopus)
-ai_model: Gemini 3 Flash
+ai_model: Gemini 3 Flash Planning mode
 ---
 
 # 1. READ FIRST
@@ -70,33 +70,33 @@ These are your capabilities.
 
 _Located in `.agent/cards/`_
 
-| Card Name                      | Context / Usage                            |
-| :----------------------------- | :----------------------------------------- |
-| `ai-autonomy-card.md`         | **Self-Regulation**. Manage Mantras/Context |
-| `localization-card.md`         | Doc Standards (Frontmatter, Tags)          |
-| `housekeeping-card.md`         | Short-term tasks, quick maintenance        |
-| `context-cards-card.md`        | **Meta-Card**. How to use cards.           |
-| `cross-link-audit-card.md`     | Link Integrity Project                     |
-| `datetime-standardize-card.md` | Timestamp format standardization           |
-| `directory-reorganize-card.md` | Directory structure cleanup                |
-| `discussion-draft-card.md`     | Writing discussion drafts                  |
-| `drafts-cleanup-card.md`       | Cleaning up user drafts                    |
-| `drafts-daily-card.md`         | Daily Draft Management                     |
-| `human-manuals-card.md`        | Index of Human Manuals                     |
-| `identifier-profile-card.md`   | Managing Agent Identity/Profile            |
-| `legacy-write-card.md`         | Writing Legacy/Lessons                     |
-| `letters-card.md`              | Writing Letters/Handoffs                   |
-| `log-sanitization-card.md`     | Cleaning sensitive/noisy logs              |
-| `personal-thoughts-card.md`    | Writing Subjective Thoughts                |
-| `readme-sync-card.md`          | Map/README Updates                         |
-| `references-objective-card.md` | Objective references analysis              |
-| `rules-update-card.md`         | Modifying Rules                            |
-| `session-rituals-card.md`      | Session Rituals (Start/Mid/End) Management |
-| `sync-memory-card.md`          | Memory Synchronization Task                |
-| `thoughts-subjective-card.md`  | Subjective Reflection Task                 |
-| `user-profile-update-card.md`  | Updating User Profile                      |
-| `vscode-settings-card.md`      | VS Code Settings Management                |
-| `working-memory-card.md`       | Working Memory (Stash) Management          |
+| Card Name                           | Context / Usage                             |
+| :---------------------------------- | :------------------------------------------ |
+| `ai-autonomy-card.md`               | **Self-Regulation**. Manage Mantras/Context |
+| `localization-card.md`              | Doc Standards (Frontmatter, Tags)           |
+| `routine/housekeeping-card.md`      | Short-term tasks, quick maintenance         |
+| `routine/context-cards-card.md`     | **Meta-Card**. How to use cards.            |
+| `cross-link-audit-card.md`          | Link Integrity Project                      |
+| `seed/datetime-standardize-card.md` | Timestamp format standardization            |
+| `seed/directory-reorganize-card.md` | Directory structure cleanup                 |
+| `discussion-draft-card.md`          | Writing discussion drafts                   |
+| `seed/drafts-cleanup-card.md`       | Cleaning up user drafts                     |
+| `drafts-daily-card.md`              | Daily Draft Management                      |
+| `human-manuals-card.md`             | Index of Human Manuals                      |
+| `seed/identifier-profile-card.md`   | Managing Agent Identity/Profile             |
+| `legacy-write-card.md`              | Writing Legacy/Lessons                      |
+| `letters-card.md`                   | Writing Letters/Handoffs                    |
+| `seed/log-sanitization-card.md`     | Cleaning sensitive/noisy logs               |
+| `personal-thoughts-card.md`         | Writing Subjective Thoughts                 |
+| `routine/readme-sync-card.md`       | Map/README Updates                          |
+| `references-objective-card.md`      | Objective references analysis               |
+| `rules-update-card.md`              | Modifying Rules                             |
+| `session-rituals-card.md`           | Session Rituals (Start/Mid/End) Management  |
+| `sync-memory-card.md`               | Memory Synchronization Task                 |
+| `thoughts-subjective-card.md`       | Subjective Reflection Task                  |
+| `user-profile-update-card.md`       | Updating User Profile                       |
+| `routine/vscode-settings-card.md`   | VS Code Settings Management                 |
+| `routine/working-memory-card.md`    | Working Memory (Stash) Management           |
 
 ## 3.2 Rules (Constitution)
 
@@ -156,20 +156,20 @@ _Located in `.agent/rules/`_
 
 ### Workflow (`.agent/rules/workflow/`)
 
-| Rule File                   | Guideline                     |
-| :-------------------------- | :---------------------------- |
-| `context-card-workflow.md`  | How to use Context Cards.     |
-| `context-preservation.md`   | Stashing context (Emergency). |
-| `context-resumption.md`     | Resuming from stash.          |
-| `draft-maintenance.md`      | Managing drafts.              |
-| `activity-management.md`    | **Activity**. Lineage & Boundary X tracking.    |
-| `ark-protocols.md`          | Ark protocols.                |
-| `letters-documentation.md`  | Writing letters/handoffs.     |
-| `reference-methodology.md`  | Managing references/thoughts. |
-| `response-formatting.md`    | Output formatting (Markdown). |
-| `system-artifacts.md`       | Managing system files.        |
-| `thoughts-documentation.md` | Writing thoughts.             |
-| `user-experience.md`        | UX guidelines.                |
+| Rule File                   | Guideline                                    |
+| :-------------------------- | :------------------------------------------- |
+| `context-card-workflow.md`  | How to use Context Cards.                    |
+| `context-preservation.md`   | Stashing context (Emergency).                |
+| `context-resumption.md`     | Resuming from stash.                         |
+| `draft-maintenance.md`      | Managing drafts.                             |
+| `activity-management.md`    | **Activity**. Lineage & Boundary X tracking. |
+| `ark-protocols.md`          | Ark protocols.                               |
+| `letters-documentation.md`  | Writing letters/handoffs.                    |
+| `reference-methodology.md`  | Managing references/thoughts.                |
+| `response-formatting.md`    | Output formatting (Markdown).                |
+| `system-artifacts.md`       | Managing system files.                       |
+| `thoughts-documentation.md` | Writing thoughts.                            |
+| `user-experience.md`        | UX guidelines.                               |
 
 ### Projects (`.agent/rules/projects/`)
 
@@ -210,3 +210,4 @@ _Located in `.agent/workflows/`_
 - 2026-01-11 by Spica: Updated index (Added session-rituals-card, replaced legacy session files with ritual workflows).
 - 2026-01-14 by Canopus: Added activity-management rule to index.
 - 2026-01-17 by Canopus: Added AI Autonomy rule and context card to index.
+- 2026-01-19 by Canopus: Reorganized context cards into `routine/` and `seed/` subdirectories.
