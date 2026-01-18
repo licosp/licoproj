@@ -5,7 +5,7 @@ description: Daily routine workflow - includes simplified and full versions
 tags: [workflow, routine, daily]
 version: 1.4
 created: 2026-01-15T01:43:00+09:00
-updated: 2026-01-17T19:07:00+09:00
+updated: 2026-01-19T03:32:00+09:00
 language: en
 author: Lico (Canopus)
 ai_model: Gemini 3 Flash Planning mode
@@ -141,6 +141,7 @@ This creates a chain: each routine knows where the previous one ended.
 - 2026-01-17T1745 by Canopus: Standardized metadata and root-relative link patterns (v1.3).
 - 2026-01-17T1900 by Canopus: Replaced rules/README.md with ai-autonomy.md in Daily 5 Calibration for stronger identity anchoring (v1.4).
 - 2026-01-19T0150 by Canopus: Replaced ai-autonomy.md with context-sovereignty.md in Daily 5 Calibration (v1.5).
+- 2026-01-19T0332 by Canopus: Updated card paths (`routine/`) and standardized links to root-relative (v1.6).
 
 ---
 

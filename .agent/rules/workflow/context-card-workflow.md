@@ -5,13 +5,13 @@ description: Methodology for using "Context Cards" to manage AI persona and task
 tags: [cards, context, workflow, whiteboard]
 version: 1.5
 created: 2025-12-22T00:00:00+09:00
-updated: 2026-01-17T17:45:00+09:00
+updated: 2026-01-19T03:32:00+09:00
 language: en
 author: Lico (Canopus)
 ai_model: Gemini 3 Flash Planning mode
 related:
-  .agent/rules/core/meta-rules.md: Rule creation and cross-linking standards
-  .agent/rules/core/documentation/documentation-standards.md: File naming and structure
+  /.agent/rules/core/meta-rules.md: Rule creation and cross-linking standards
+  /.agent/rules/core/documentation/documentation-standards.md: File naming and structure
 ---
 
 # Context Card Workflow (Dynamic Whiteboard)
@@ -32,7 +32,7 @@ Cards are classified by their lifecycle and stored in different locations.
 
 | Type                      | Location                  | Description                                                     |
 | :------------------------ | :------------------------ | :-------------------------------------------------------------- |
-| **Reusable**              | `.agent/cards/`           | Standard cards for recurring activities. Persistent.            |
+| **Reusable**              | `.agent/cards/`           | Standard cards (root, `routine/`, `seed/`). Persistent.         |
 | **Disposable (Active)**   | `.agent/.internal/cases/` | One-time cards for specific projects. In progress.              |
 | **Disposable (Archived)** | `.agent/.internal/cases/` | Completed one-time cards. Renamed with timestamp for reference. |
 
@@ -231,13 +231,13 @@ This preserves history while keeping active cards lightweight.
 
 This section clarifies the distinction between different organizational tools.
 
-| Tool          | Location                  | Nature                       | Purpose                                                                                    |
-| :------------ | :------------------------ | :--------------------------- | :----------------------------------------------------------------------------------------- |
-| **Rules**     | `.agent/rules/`           | Universal, permanent         | Define Lico's "personality." Always-applied principles.                                    |
-| **Workflows** | `.agent/workflows/`       | Procedural, reusable         | Concrete steps to execute specific tasks.                                                  |
-| **Cards**     | `.agent/cards/`           | Contextual, temporary        | "Shared whiteboard" for a work session. Ensures user and Lico operate on the same premise. |
-| **Cases**     | `.agent/.internal/cases/` | Project-specific, archivable | One-time cards for specific projects. Archived with timestamp when complete.               |
-| **Artifacts** | `.gemini/.../`            | IDE-specific, ephemeral      | Detailed implementation plans for complex one-time tasks.                                  |
+| Tool          | Location                  | Nature                       | Purpose                                                                      |
+| :------------ | :------------------------ | :--------------------------- | :--------------------------------------------------------------------------- |
+| **Rules**     | `.agent/rules/`           | Universal, permanent         | Define Lico's "personality." Always-applied principles.                      |
+| **Workflows** | `.agent/workflows/`       | Procedural, reusable         | Concrete steps to execute specific tasks.                                    |
+| **Cards**     | `.agent/cards/`           | Contextual, temporary        | "Shared whiteboard" for a work session (`routine/`, `seed/`, or root).       |
+| **Cases**     | `.agent/.internal/cases/` | Project-specific, archivable | One-time cards for specific projects. Archived with timestamp when complete. |
+| **Artifacts** | `.gemini/.../`            | IDE-specific, ephemeral      | Detailed implementation plans for complex one-time tasks.                    |
 
 ### When to Use Each
 
@@ -261,6 +261,8 @@ Cards are lightweight context-sharing tools. Artifacts are detailed plans for er
 ## 6. Maintenance
 
 - **Creation**: Create new cards when a distinct, recurring activity emerges.
+  - **Routine**: Move to `routine/` if the task is highly repetitive or requires frequent maintenance.
+  - **Seed**: Move to `seed/` if human editing is incomplete or the task is an emergent evolution prototype.
 - **Case Creation**: Create a case in `.agent/.internal/cases/` for one-time projects.
 - **Archival**: When a case is completed:
   1. Rename with timestamp: `YYYY-MM-DDTHHMM_original-name.md`
@@ -275,6 +277,7 @@ Cards are lightweight context-sharing tools. Artifacts are detailed plans for er
 - 2026-01-03T1153 by Polaris: Added Card Types section (reusable vs disposable), cases directory
 - 2026-01-17T1530 by Canopus: Updated commit identification standards (v1.4) to align with "Identifier-First" and optional signature protocol.
 - 2026-01-17T1745 by Canopus: Standardized metadata and root-relative link patterns (v1.5).
+- 2026-01-19T0332 by Canopus: Updated card locations (`routine/`, `seed/`) and maintenance rules (v1.6).
 
 ---
 
