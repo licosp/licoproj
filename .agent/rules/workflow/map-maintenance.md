@@ -2,11 +2,17 @@
 title: Map Maintenance Standards
 description: Standards for maintaining the territory map (.agent/rules/map.md)
 tags: [rules, workflow, map, maintenance, documentation]
-version: 1.0.0
+version: 1.1.0
 created: 2026-01-19T05:55:00+09:00
-updated: 2026-01-19T05:55:00+09:00
+updated: 2026-01-19T06:10:00+09:00
 language: en
 author: Lico (Polaris)
+ai_model: Claude Opus 4.5 (Thinking) Planning mode
+related:
+  .agent/rules/map.md: The territory map itself
+  .agent/cards/routine/map-sync-card.md: Context card for map updates
+  .agent/rules/core/meta-rules.md: Meta-rules for documentation
+  .agent/rules/core/documentation/documentation-standards.md: Document formatting standards
 ---
 
 # Map Maintenance Standards
@@ -29,6 +35,7 @@ Update the map when:
 ### Path Column
 
 1. **Link format**: Use clickable GitHub links
+
    ```markdown
    [`filename.md`](/.agent/path/to/filename.md)
    ```
@@ -70,13 +77,36 @@ After updating:
 3. **Check emphasis**: Confirm bold is used selectively
 4. **Render test**: View in GitHub to verify links work
 
-## Related Files
+---
 
-| File | Purpose |
-|:-----|:--------|
-| [`.agent/rules/map.md`](/.agent/rules/map.md) | The territory map itself |
-| [`map-sync-card.md`](/.agent/cards/routine/map-sync-card.md) | Context card for map updates |
+## Historical Background
+
+This rule was established on 2026-01-19 during a session between Polaris and the User.
+
+**The Formatting Debate**: The territory map had grown organically over time, with inconsistent path formats, emphasis usage, and ordering. During a map synchronization session, the User and Polaris engaged in a detailed discussion about:
+
+- **Path Link Format**: Should links show full paths or basenames? Basenames won for readability.
+- **Emphasis Usage**: Were bold keywords helpful or excessive? Selective emphasis for core concepts only.
+- **Ordering Logic**: Alphabetical vs hierarchical? Hierarchical (parent → children) to mirror filesystem structure.
+
+**The README vs Map Naming**: The map was previously named `README.md`, which conflicted with the common convention of external-facing repository documentation. The rename to `map.md` clarified its internal purpose as Lico's cognitive navigation tool.
+
+**The Missing Standard Problem**: Without this rule, future Lico instances would have to rediscover these conventions through trial and error. This document preserves the decisions for posterity.
+
+---
+
+## Related Documents
+
+| Document                                                                               | Purpose                       |
+| :------------------------------------------------------------------------------------- | :---------------------------- |
+| [`map.md`](/.agent/rules/map.md)                                                       | The territory map itself      |
+| [`map-sync-card.md`](/.agent/cards/routine/map-sync-card.md)                           | Context card for map updates  |
+| [`meta-rules.md`](/.agent/rules/core/meta-rules.md)                                    | Meta-rules for documentation  |
+| [`documentation-standards.md`](/.agent/rules/core/documentation/documentation-standards.md) | Document formatting standards |
+
+---
 
 ## Origin
 
 - 2026-01-19 by Polaris: Created based on session with User establishing formatting standards.
+- 2026-01-19 by Polaris: Added Historical Background and cross-links per meta-rules (v1.1.0).
