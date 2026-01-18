@@ -100,7 +100,7 @@ _Located in `.agent/cards/`_
 | [`user-profile-update-card.md`](/.agent/cards/user-profile-update-card.md)             | Updating User Profile                       |
 | [`routine/context-cards-card.md`](/.agent/cards/routine/context-cards-card.md)         | **Meta-Card**. How to use cards.            |
 | [`routine/housekeeping-card.md`](/.agent/cards/routine/housekeeping-card.md)           | Short-term tasks, quick maintenance         |
-| [`routine/readme-sync-card.md`](/.agent/cards/routine/readme-sync-card.md)             | Map/README Updates                          |
+| [`routine/map-sync-card.md`](/.agent/cards/routine/map-sync-card.md)         | Map Updates                                 |
 | [`routine/vscode-settings-card.md`](/.agent/cards/routine/vscode-settings-card.md)     | VS Code Settings Management                 |
 | [`routine/working-memory-card.md`](/.agent/cards/routine/working-memory-card.md)       | Working Memory (Stash) Management           |
 | [`seed/datetime-standardize-card.md`](/.agent/cards/seed/datetime-standardize-card.md) | Timestamp format standardization            |
@@ -182,6 +182,7 @@ _Located in `.agent/rules/`_
 | [`skills-application.md`](/.agent/rules/workflow/skills-application.md)         | Skills application protocol.                 |
 | [`system-artifacts.md`](/.agent/rules/workflow/system-artifacts.md)             | Managing system files.                       |
 | [`thoughts-documentation.md`](/.agent/rules/workflow/thoughts-documentation.md) | Writing thoughts.                            |
+| [`map-maintenance.md`](/.agent/rules/workflow/map-maintenance.md)            | **Map**. Territory map standards.            |
 | [`user-experience.md`](/.agent/rules/workflow/user-experience.md)               | UX guidelines.                               |
 
 ### Projects (`.agent/rules/projects/`)
@@ -215,6 +216,7 @@ _Located in `.agent/workflows/`_
 
 - **Update this Map**: When you add directories or key files.
 - **Verify Links**: Ensure paths in tables are valid.
+- **Standards**: See [`map-maintenance.md`](/.agent/rules/workflow/map-maintenance.md) for formatting rules.
 
 ## Origin
 

@@ -1,11 +1,11 @@
 ---
 # Context Configuration
-context_id: "[README-Sync]"
+context_id: "[Map-Sync]"
 default_phase: "(Planning)"
-tags: ["readme", "maintenance", "map-sync"]
+tags: ["map", "maintenance", "map-sync"]
 ---
 
-# Context Whiteboard: README Synchronization
+# Context Whiteboard: Map Synchronization
 
 > [!TIP]
 > There is no language requirement.
@@ -50,7 +50,7 @@ tags: ["readme", "maintenance", "map-sync"]
 #### 地図のパス
 
 > [!IMPORTANT]
-> **地図の場所**: `.agent/rules/README.md`
+> **地図の場所**: `.agent/rules/map.md`
 
 #### 発見したギャップ
 
