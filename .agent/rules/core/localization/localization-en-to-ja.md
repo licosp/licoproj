@@ -92,17 +92,13 @@ This is primarily used for creating human-readable Japanese versions of AI docum
 
 ## Output Specification
 
-### File Location
+> [!NOTE]
+> For common translation workflow and metadata updates, see the [parent rule](/.agent/rules/core/localization/localization.md).
 
-Translated files should be placed in:
+### Direction-Specific File Naming
 
-- **Human documentation**: `.human/locales/ja/.agent/` (mirrors AI structure)
-- **User-facing guides**: `.human/locales/ja/` (appropriate subdirectory)
-
-### File Naming
-
-- Use same basename as English source with `.ja.md` suffix if in same directory
-- Or same basename if in `.human/locales/ja/` directory
+- **Same language, same location**: Keep original filename
+- **Different language version**: Add language suffix (e.g., `file.ja.md`)
 
 ### Visual Enhancements (Human-Facing)
 
@@ -122,14 +118,6 @@ When creating human-facing Japanese documentation, apply these enhancements:
    ```
 
 3. **Visual Separators**: Add `---` between major sections for clarity
-
-### Frontmatter Updates
-
-After translation, update:
-
-- `language: ja`
-- `author: Lico ({Identifier})`
-- Add Origin entry: `YYYY-MM-DDTHHMM by {Identifier}: Translated from English.`
 
 ---
 

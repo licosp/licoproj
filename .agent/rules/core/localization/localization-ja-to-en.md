@@ -93,27 +93,13 @@ This is the primary translation pattern for converting dialogue notes and drafts
 
 ## Output Specification
 
-### File Location
+> [!NOTE]
+> For common translation workflow and metadata updates, see the [parent rule](/.agent/rules/core/localization/localization.md).
 
-Translated files should be placed in:
+### Direction-Specific File Naming
 
-- **Rules**: `.agent/rules/` (same location as source or appropriate category)
-- **Thoughts**: `.agent/.internal/thoughts/{identifier}/`
-- **Workflows**: `.agent/workflows/`
-
-### File Naming
-
-- Use `YYYY-MM-DDTHHMM_kebab-case.md` for thoughts
-- Use `kebab-case.md` for rules and workflows
-- Archive Japanese originals to `.agent/.internal/archive/YYYY-MM-DD/` if needed
-
-### Frontmatter Updates
-
-After translation, update:
-
-- `language: en`
-- `author: Lico ({Identifier})`
-- Add Origin entry: `YYYY-MM-DDTHHMM by {Identifier}: Translated from Japanese.`
+- **Thoughts**: `YYYY-MM-DDTHHMM_kebab-case.md`
+- **Rules and Workflows**: `kebab-case.md`
 
 ---
 

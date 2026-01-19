@@ -75,6 +75,25 @@ By default, AI-facing directories (`.agent/`) should be in English. However, the
 
 ---
 
+## Translation Approach
+
+Translation is done **file-by-file** or **single-directory level**:
+
+### Standard Workflow
+
+1. **In-place overwrite**: Translate and replace the original file directly
+
+### Careful Translation Workflow
+
+For important or complex translations:
+
+1. Create translated file in `.agent/.internal/workspace/`
+2. Review with user
+3. Overwrite original file with translated version
+4. Archive original if preservation needed (`.agent/.internal/archive/YYYY-MM-DD/`)
+
+---
+
 ## Post-Translation Metadata Updates
 
 After completing any translation, update the document metadata:
