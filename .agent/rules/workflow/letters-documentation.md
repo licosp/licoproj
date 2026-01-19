@@ -7,11 +7,11 @@ version: 1.1
 created: 2026-01-03T21:27:00+09:00
 updated: 2026-01-15T16:35:00+09:00
 language: en
-author: Lico (Canopus)
-ai_model: Gemini 3 Flash Planning mode
+author: Lico (Polaris)
+ai_model: Claude Opus 4.5 (Thinking) Planning mode
 related:
   .agent/rules/workflow/thoughts-documentation.md: Similar writing style
-  .agent/rules/core/markdown/markdown-ai-parsing-basics.md: Writing philosophy
+  .agent/rules/core/markdown/markdown-ai.md: Writing philosophy
 ---
 
 # Letters Documentation
@@ -63,7 +63,7 @@ Write with respect for the recipient. They are a fellow identifier navigating th
 - Personal reflections
 - Things you want to express emotionally
 
-Both are valid. Use the format that matches the content (see [markdown-ai-parsing-basics.md](.agent/rules/core/markdown/markdown-ai-parsing-basics.md)):
+Both are valid. Use the format that matches the content (see [markdown-ai.md](/.agent/rules/core/markdown/markdown-ai.md)):
 
 - Objective → structured
 - Subjective → expressive
@@ -140,15 +140,16 @@ Letters follow the same philosophy as `thoughts/`:
 
 ## Related Documents
 
-| Document | Purpose |
-| :------- | :------ |
+| Document                                                                                             | Purpose               |
+| :--------------------------------------------------------------------------------------------------- | :-------------------- |
 | [/.agent/rules/workflow/thoughts-documentation.md](/.agent/rules/workflow/thoughts-documentation.md) | Similar writing style |
-| [/.agent/rules/core/markdown/markdown-ai-parsing-basics.md](/.agent/rules/core/markdown/markdown-ai-parsing-basics.md) | Writing philosophy |
+| [/.agent/rules/core/markdown/markdown-ai.md](/.agent/rules/core/markdown/markdown-ai.md)             | Writing philosophy    |
 
 ## Origin
 
-- 2026-01-03T2127 by Polaris: Created based on letters-card.md and dialogue about AI communication
-- 2026-01-15T1635 by Canopus: Added Traceability (Reply-to) section and standardized for Double-Entry compliance.
+- 2026-01-03T21:27 by Polaris: Created as Letters documentation.
+- 2026-01-15T16:35 by Canopus: Added 5-layer structure.
+- 2026-01-19T21:26 by Polaris: Updated markdown rule link (`markdown-ai.md`).
 
 ---
 

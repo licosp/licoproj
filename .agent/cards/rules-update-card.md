@@ -84,3 +84,22 @@ tags: ["rules", "maintenance", "behavioral"]
   - `meta-rules.md` 自体を先行実装サンプルとして饒舌な背景を追記。
 - [x] [Rules] 文章の末尾構造の統一（Roadmap #243）
   - 5層構造の導入により、`Historical Background`, `Related Documents`, `Origin`, `Navigation` の順序を確定。
+
+### Polaris (2026-01-19)
+
+#### マークダウン行動規範の再編成
+
+**目的**: 翻訳作業に関連するマークダウン行動規範を整理し、探しやすくする。
+
+**現状の問題**:
+
+- AI用ファイルが2つに分かれている（`basics`, `patterns`）
+- `basics` と `patterns` に矛盾がある（ニュアンス重視 vs 感情排除）
+- `readability` という名前が目的を示していない
+
+**計画**:
+
+- [x] AI用を1つに統合: `markdown-ai.md`
+- [x] 人間用をリネーム: `markdown-readability.md` → `markdown-human.md`
+- [x] 古いファイルを書庫に送る
+- [x] 翻訳行動規範のリンクを更新

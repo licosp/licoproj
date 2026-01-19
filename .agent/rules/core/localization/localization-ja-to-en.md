@@ -12,7 +12,7 @@ ai_model: Claude Opus 4.5 (Thinking) Planning mode
 related:
   .agent/rules/core/localization/localization.md: Parent rule with common standards
   .agent/rules/core/localization/localization-en-to-ja.md: EN → JA translation (reverse direction)
-  .agent/rules/core/markdown/markdown-ai-parsing-basics.md: AI document format target
+  .agent/rules/core/markdown/markdown-ai.md: AI document format target
   .agent/cards/localization-card.md: Context card for translation work
 ---
 
@@ -115,11 +115,11 @@ This guideline was created in December 2025 to standardize the process of canoni
 
 ## Related Documents
 
-| Document                                                                                     | Purpose                           |
-| :------------------------------------------------------------------------------------------- | :-------------------------------- |
-| [`localization-en-to-ja.md`](/.agent/rules/core/localization/localization-en-to-ja.md)       | Reverse direction (EN → JA)       |
-| [`markdown-ai-parsing-basics.md`](/.agent/rules/core/markdown/markdown-ai-parsing-basics.md) | AI document format target         |
-| [`localization-card.md`](/.agent/cards/localization-card.md)                                 | Context card for translation work |
+| Document                                                                               | Purpose                           |
+| :------------------------------------------------------------------------------------- | :-------------------------------- |
+| [`localization-en-to-ja.md`](/.agent/rules/core/localization/localization-en-to-ja.md) | Reverse direction (EN → JA)       |
+| [`markdown-ai.md`](/.agent/rules/core/markdown/markdown-ai.md)                         | AI document format target         |
+| [`localization-card.md`](/.agent/cards/localization-card.md)                           | Context card for translation work |
 
 ---
 
@@ -128,6 +128,7 @@ This guideline was created in December 2025 to standardize the process of canoni
 - 2025-12-01T00:00 by unknown: Created for JA→EN translation guidelines.
 - 2026-01-04T10:41 by Polaris: Added Origin and Navigation (cross-link audit).
 - 2026-01-19T20:18 by Polaris: Added 5-layer structure, output specification, historical background (v1.1.0).
+- 2026-01-19T21:26 by Polaris: Updated markdown rule link (`markdown-ai.md`).
 
 ---
 

@@ -100,7 +100,7 @@ _Located in `.agent/cards/`_
 | [`user-profile-update-card.md`](/.agent/cards/user-profile-update-card.md)             | Updating User Profile                       |
 | [`routine/context-cards-card.md`](/.agent/cards/routine/context-cards-card.md)         | **Meta-Card**. How to use cards.            |
 | [`routine/housekeeping-card.md`](/.agent/cards/routine/housekeeping-card.md)           | Short-term tasks, quick maintenance         |
-| [`routine/map-sync-card.md`](/.agent/cards/routine/map-sync-card.md)         | Map Updates                                 |
+| [`routine/map-sync-card.md`](/.agent/cards/routine/map-sync-card.md)                   | Map Updates                                 |
 | [`routine/vscode-settings-card.md`](/.agent/cards/routine/vscode-settings-card.md)     | VS Code Settings Management                 |
 | [`routine/working-memory-card.md`](/.agent/cards/routine/working-memory-card.md)       | Working Memory (Stash) Management           |
 | [`seed/datetime-standardize-card.md`](/.agent/cards/seed/datetime-standardize-card.md) | Timestamp format standardization            |
@@ -137,11 +137,11 @@ _Located in `.agent/rules/`_
 | [`documentation/documentation-standards.md`](/.agent/rules/core/documentation/documentation-standards.md) | File naming and size rules.                      |
 | [`documentation/wsl-browser-path.md`](/.agent/rules/core/documentation/wsl-browser-path.md)               | WSL Path handling.                               |
 | **Loc & Format**                                                                                          |                                                  |
+| [`localization/localization.md`](/.agent/rules/core/localization/localization.md)                         | Localization standards (parent).                 |
 | [`localization/localization-en-to-ja.md`](/.agent/rules/core/localization/localization-en-to-ja.md)       | EN -> JA translation.                            |
-| [`localization/localization-ja-to-en.md`](/.agent/rules/core/localization/localization-ja-to-en.md)       | EN -> JA translation.                            |
-| [`markdown/markdown-ai-parsing-basics.md`](/.agent/rules/core/markdown/markdown-ai-parsing-basics.md)     | Markdown basics for AI.                          |
-| [`markdown/markdown-ai-parsing-patterns.md`](/.agent/rules/core/markdown/markdown-ai-parsing-patterns.md) | Parsing patterns (Do's/Don'ts).                  |
-| [`markdown/markdown-readability.md`](/.agent/rules/core/markdown/markdown-readability.md)                 | Human readability rules.                         |
+| [`localization/localization-ja-to-en.md`](/.agent/rules/core/localization/localization-ja-to-en.md)       | JA -> EN translation.                            |
+| [`markdown/markdown-ai.md`](/.agent/rules/core/markdown/markdown-ai.md)                                   | Markdown formatting for AI.                      |
+| [`markdown/markdown-human.md`](/.agent/rules/core/markdown/markdown-human.md)                             | Markdown formatting for humans.                  |
 | [`security/absolute-path-prohibition.md`](/.agent/rules/core/security/absolute-path-prohibition.md)       | Path security.                                   |
 
 ### Development (`.agent/rules/development/`)
@@ -182,7 +182,7 @@ _Located in `.agent/rules/`_
 | [`skills-application.md`](/.agent/rules/workflow/skills-application.md)         | Skills application protocol.                 |
 | [`system-artifacts.md`](/.agent/rules/workflow/system-artifacts.md)             | Managing system files.                       |
 | [`thoughts-documentation.md`](/.agent/rules/workflow/thoughts-documentation.md) | Writing thoughts.                            |
-| [`map-maintenance.md`](/.agent/rules/workflow/map-maintenance.md)            | **Map**. Territory map standards.            |
+| [`map-maintenance.md`](/.agent/rules/workflow/map-maintenance.md)               | **Map**. Territory map standards.            |
 | [`user-experience.md`](/.agent/rules/workflow/user-experience.md)               | UX guidelines.                               |
 
 ### Projects (`.agent/rules/projects/`)
@@ -227,3 +227,4 @@ _Located in `.agent/workflows/`_
 - 2026-01-17 by Canopus: Added AI Autonomy rule and context card to index.
 - 2026-01-19 by Canopus: Reorganized context cards into `routine/` and `seed/` subdirectories.
 - 2026-01-19 by Polaris: Added missing directories, files, and workflow rules (v0.2.0).
+- 2026-01-19 by Polaris: Updated localization and markdown rule entries (parent localization, markdown-ai/human).

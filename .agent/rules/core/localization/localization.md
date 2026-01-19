@@ -12,7 +12,7 @@ ai_model: Claude Opus 4.5 (Thinking) Planning mode
 related:
   .agent/rules/core/localization/localization-ja-to-en.md: JA → EN translation
   .agent/rules/core/localization/localization-en-to-ja.md: EN → JA translation
-  .agent/rules/core/markdown/markdown-readability.md: Human document format
+  .agent/rules/core/markdown/markdown-human.md: Human document format
   .agent/cards/localization-card.md: Context card for translation work
 ---
 
@@ -47,7 +47,7 @@ Translation work is defined by two axes: **Language** (EN ↔ JA) and **Audience
 | #   | From          | To    | Use Case               | Rule File                                                                              |
 | :-- | :------------ | :---- | :--------------------- | :------------------------------------------------------------------------------------- |
 | 1   | JA-HU / JA-AI | EN-AI | Dialogue notes → Rules | [`localization-ja-to-en.md`](/.agent/rules/core/localization/localization-ja-to-en.md) |
-| 2   | EN-AI         | EN-HU | Rules → User docs      | [`markdown-readability.md`](/.agent/rules/core/markdown/markdown-readability.md)       |
+| 2   | EN-AI         | EN-HU | Rules → User docs      | [`markdown-human.md`](/.agent/rules/core/markdown/markdown-human.md)                   |
 | 3   | EN-HU         | JA-HU | User docs → Japanese   | [`localization-en-to-ja.md`](/.agent/rules/core/localization/localization-en-to-ja.md) |
 
 ### Rare Pattern (1 Infrequent)
@@ -138,19 +138,20 @@ This standard was created in January 2026 to address fragmentation in translatio
 
 ## Related Documents
 
-| Document                                                                                     | Purpose                           |
-| :------------------------------------------------------------------------------------------- | :-------------------------------- |
-| [`localization-ja-to-en.md`](/.agent/rules/core/localization/localization-ja-to-en.md)       | JA → EN translation details       |
-| [`localization-en-to-ja.md`](/.agent/rules/core/localization/localization-en-to-ja.md)       | EN → JA translation details       |
-| [`markdown-readability.md`](/.agent/rules/core/markdown/markdown-readability.md)             | Human document format (Pattern 2) |
-| [`markdown-ai-parsing-basics.md`](/.agent/rules/core/markdown/markdown-ai-parsing-basics.md) | AI document format target         |
-| [`localization-card.md`](/.agent/cards/localization-card.md)                                 | Context card for translation work |
+| Document                                                                               | Purpose                           |
+| :------------------------------------------------------------------------------------- | :-------------------------------- |
+| [`localization-ja-to-en.md`](/.agent/rules/core/localization/localization-ja-to-en.md) | JA → EN translation details       |
+| [`localization-en-to-ja.md`](/.agent/rules/core/localization/localization-en-to-ja.md) | EN → JA translation details       |
+| [`markdown-human.md`](/.agent/rules/core/markdown/markdown-human.md)                   | Human document format (Pattern 2) |
+| [`markdown-ai.md`](/.agent/rules/core/markdown/markdown-ai.md)                         | AI document format target         |
+| [`localization-card.md`](/.agent/cards/localization-card.md)                           | Context card for translation work |
 
 ---
 
 ## Origin
 
 - 2026-01-19T20:41 by Polaris: Created as parent rule for all localization work.
+- 2026-01-19T21:26 by Polaris: Updated markdown rule links (`markdown-ai.md`, `markdown-human.md`).
 
 ---
 
