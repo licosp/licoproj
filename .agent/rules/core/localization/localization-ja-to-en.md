@@ -10,6 +10,7 @@ language: en
 author: Lico (Polaris)
 ai_model: Claude Opus 4.5 (Thinking) Planning mode
 related:
+  .agent/rules/core/localization/localization.md: Parent rule with common standards
   .agent/rules/core/localization/localization-en-to-ja.md: EN → JA translation (reverse direction)
   .agent/rules/core/markdown/markdown-ai-parsing-basics.md: AI document format target
   .agent/cards/localization-card.md: Context card for translation work

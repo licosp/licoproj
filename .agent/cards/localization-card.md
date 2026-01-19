@@ -70,46 +70,16 @@ tags: ["translation", "localization", "formatting"]
 | `markdown-ai-parsing-patterns.md` | 未修正  | ⚠️ (要更新) |
 | `markdown-readability.md`         | 未修正  | ⚠️ (要更新) |
 
-#### 翻訳パターン
+#### 作業完了ノート
 
-##### 実用パターン（3つ）
+行動規範の整備が完了しました。以下の情報は親ルールに移動済みです：
 
-| #   | From          | To    | 用途                     | 行動規範                   |
-| :-- | :------------ | :---- | :----------------------- | :------------------------- |
-| 1   | JA-HU / JA-AI | EN-AI | 対話メモ → 規範化        | `localization-ja-to-en.md` |
-| 2   | EN-AI         | EN-HU | 規範 → 人間ドキュメント  | `markdown-readability.md`  |
-| 3   | EN-HU         | JA-HU | 人間ドキュメント日本語化 | `localization-en-to-ja.md` |
+- 翻訳パターン → [`localization.md`](/.agent/rules/core/localization/localization.md)
+- 日本語維持ルール → [`localization.md`](/.agent/rules/core/localization/localization.md)
+- メタデータ更新手順 → [`localization.md`](/.agent/rules/core/localization/localization.md)
 
-##### 低実用パターン（1つ）
-
-| #   | From  | To    | 用途                 | 備考             |
-| :-- | :---- | :---- | :------------------- | :--------------- |
-| 4   | EN-AI | JA-AI | 規範の日本語化（稀） | 偶発的にのみ発生 |
-
-#### 日本語維持が許可されるファイル
-
-- カード
-- 使用済みカード（cases）
-- スキルを定義するファイル
-- 識別子のワークスペース構成ファイル
-- 書庫の中のファイル
-
-#### 関連する行動規範
-
-| 軸                   | ファイル                                               | 場所                 |
-| :------------------- | :----------------------------------------------------- | :------------------- |
-| **縦軸（EN ↔ JA）** | `localization-en-to-ja.md`, `localization-ja-to-en.md` | `core/localization/` |
-| **横軸（AI ↔ HU）** | `markdown-ai-parsing-*.md`, `markdown-readability.md`  | `core/markdown/`     |
-
-#### ドキュメント履歴の三層構造
-
-翻訳後のメタデータ管理（ref: `documentation-standards.md`）：
-
-| Layer           | 目的         | 翻訳時の処理                |
-| :-------------- | :----------- | :-------------------------- |
-| **Frontmatter** | 現在の状態   | `author`, `language` を更新 |
-| **Origin**      | 人間可読履歴 | 翻訳情報を追記              |
-| **Git**         | 完全な追跡   | 自動                        |
+> [!NOTE]
+> 今後の翻訳作業では、まず [`localization.md`](/.agent/rules/core/localization/localization.md) を読んでから、パターンに応じた詳細ルールを参照してください。
 
 ---
 
@@ -117,6 +87,6 @@ tags: ["translation", "localization", "formatting"]
 
 - 2026-01-10 by Canopus: Created for AI document formatting.
 - 2026-01-14 by Canopus: Renamed context_id from [AI-Format] to [Localization].
-- 2026-01-19 by Polaris: Archived old observations to cases/, reset for behavioral rule refinement.
+- 2026-01-19 by Polaris: Archived old observations to cases/, created parent rule, reset card.
 
 ---
