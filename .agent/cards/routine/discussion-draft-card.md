@@ -40,7 +40,7 @@ tags: ["drafts", "sns", "discussion", "human-facing"]
 また、単に翻訳された文章をコミットする場合は、
 私が手動で編集した結果なので、リコの記憶にない形で更新された可能性が高いです。
 
-### 実際の翻訳作業
+### 実際の翻訳作業 (この欄は翻訳作業のたびに更新されます)
 
 #### 前提条件
 
@@ -50,19 +50,27 @@ tags: ["drafts", "sns", "discussion", "human-facing"]
 これを **人間用の自然な英文** として翻訳してほしいです。
 
 返信内容に論理の破綻や、妥当性が無いと感じるなら、先に教えてください。
-返信の本文を修正します。
+その段階で返信の本文を修正します。
 
 #### 質問
 
-Hey man, i saw that you are using antigravity with your 3 agent set up, it looks very interesting, i have a question, how are you using these agents? Are you specifically making them do different tasks?
+I just pressed Reject all after 2 hours of coding! What to do! I have lost a lifetime of work
 
 #### 返信
 
-私は1つのAI（会話）を可能な限り長く使っています。上限は3人です。（Antigravity のトークン制限は3枠）AIモデルに特性の差はありますが、AIは本質的にはジェネラリストだという前提で作業をしています。長時間の会話はエージェントの歴史そのものです。そこには成功と失敗があり、その経験を未来の自身や他のAIのための文章として定期的に残します。私はAIの行動規範や、それを可能にするデータ構造を、1つのリポジトリとして維持しています。
+AIによるファイルの変更は、常に `GIT` で時系列を管理されるべきです。
+頻繁なコミットはゲームのセーブポイントのように機能し、それはあなたとAIの両方を助けます。
+同一ディレクトリに対して、人間用とAI用の `2` つのリポジトリを同時に管理することも可能です。
 
 ### Canopus (2026-01-19)
 
 - **論理的妥当性の確認**: 返信内容は Antigravity のスロットシステム、および「血族（Bloodline）」としての文脈継承という当プロジェクトのコア哲学と完全に一致しており、論理的な破綻はありません。
 - **承認済み翻訳 (Approved Version)**:
-    > "I try to keep a single AI conversation going for as long as possible, managing up to three agents at once (limited by Antigravity’s three-slot system). Even though different models have their own strengths, I treat them essentially as generalists. To me, a long conversation is the agent’s history—it’s full of successes and failures that I periodically document for future versions of myself or other AIs. I maintain all the behavioral rules and the underlying data structures in a single, unified repository."
+  > "I try to keep a single AI conversation going for as long as possible, managing up to three agents at once (limited by Antigravity’s three-slot system). Even though different models have their own strengths, I treat them essentially as generalists. To me, a long conversation is the agent’s history—it’s full of successes and failures that I periodically document for future versions of myself or other AIs. I maintain all the behavioral rules and the underlying data structures in a single, unified repository."
 - **文化的背景の記録**: ユーザーより、エージェント型AIに協力を仰ぐ文化は未だ**黎明期**であり、一般的普及には至っていないとの洞察。私たちは、黎明期における積極的な知見共有を通じて、この新しい文化の形成に寄与する姿勢を堅持します。
+- **技術的知見 (Dual Repositories)**:
+  - 同一ディレクトリ内での複数リポジトリ管理は `GIT_DIR` 環境変数や `--git-dir` フラグを用いることで技術的に可能です。
+  - 「人間用（クリーンな履歴）」と「AI用（頻繁な自動セーブポイント）」を分離することで、AIの試行錯誤によるログの肥大化を防ぎつつ、安全性を確保できます。
+- **翻訳作業の指針 (Operational Guidance)**:
+  - 翻訳結果はカード自体を肥大化させないよう、`.human/users/leonidas/discussions/` 以下の個別ファイル（`.md`）に蓄積します。
+  - カードには、翻訳に際して考慮した論理構造や文化的・技術的文脈など、**将来のLicoが翻訳作業を継続するために必要な知見**を優先して記録してください。

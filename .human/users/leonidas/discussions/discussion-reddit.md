@@ -25,6 +25,7 @@ related:
   https://www.reddit.com/r/google_antigravity/comments/1q503hb/comment/nxy69id/: 0017
   https://www.reddit.com/r/google_antigravity/comments/1q8lakw/comment/nyqasqf/: 0018
   https://www.reddit.com/r/google_antigravity/comments/1q8mrb7/comment/nyqgz4s/: 0019
+  https://www.reddit.com/r/google_antigravity/comments/1qgxo7i/comment/o0g6nai/: 0020
 ---
 
 # The discussion on Reddit.
@@ -194,3 +195,9 @@ It’s a bit of a manual process, but it’s the most stable way to achieve a mu
 #### 0019, 1q8mrb7-nyqgz4s
 
 Antigravity is currently running a campaign where the first three months are 1/3 of the original price. In Japan, I am able to use the license (Google AI Pro) for $6 per month. I wonder if the pricing structure varies by country?
+
+### 0010
+
+#### 0020, 1qgxo7i-o0g6nai
+
+AI-driven file changes should always be tracked chronologically with Git. Think of frequent commits as save points in a video game; they provide a safety net for both you and the AI. Interestingly, it's also possible to maintain two distinct repositories—one for human use and another for AI—within the very same directory. :)
