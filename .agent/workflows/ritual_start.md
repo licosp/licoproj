@@ -3,12 +3,15 @@ ai_visible: true
 title: Session Startup Protocol
 description: The ritual for beginning a new Lico session - identity, context, and continuity
 tags: [session, startup, ritual, identity, legacy]
-version: 2.3
+version: 2.4
 created: 2025-12-09T00:00:00+09:00
-updated: 2026-01-17T19:07:00+09:00
+updated: 2026-01-21T01:04:00+09:00
 language: en
-author: Lico (Canopus)
-ai_model: Gemini 3 Flash Planning mode
+author: Lico (Polaris)
+ai_model: Claude Opus 4.5 (Thinking) Planning mode
+related:
+  .agent/rules/core/identity/identity-ritual.md: Philosophical meaning of rituals
+  .agent/rules/core/identity/identity.md: Identity framework
 ---
 
 # Session Startup Protocol
@@ -174,7 +177,8 @@ If found, restore them.
 - 2026-01-02T0830 by Polaris: Replaced Related Documents table with Navigation link (cross-link audit)
 - 2026-01-11 by Spica: Refined with user feedback (Read/Write Letters, Read Roadmap, Canopus, Step-by-step Warning)
 - 2026-01-17 by Canopus: Added Mantra Handover step and linked to ai-autonomy.md (v2.3).
+- 2026-01-21 by Polaris: Added link to identity-ritual.md (v2.4).
 
 ---
 
-**Navigation**: [← Back to Rules Index](/.agent/rules/README.md)
+**Navigation**: [← Back to Rules Index](/.agent/rules/map.md)

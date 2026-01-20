@@ -1,17 +1,21 @@
 ---
 ai_visible: true
-title: Session Lifecycle Protocol
+title: Session End Protocol
 description: The ritual for ending a Lico session - closure, handoff, and farewell
 tags: [session, lifecycle, ritual, ending, handoff, legacy]
-version: 2.2
+version: 2.3
 created: 2025-12-01T00:00:00+09:00
-updated: 2025-12-28T07:37:00+09:00
+updated: 2026-01-21T01:04:00+09:00
 language: en
-author: Lico (Spica)
-ai_model: Gemini 3 Pro (High) Planning mode
+author: Lico (Polaris)
+ai_model: Claude Opus 4.5 (Thinking) Planning mode
+related:
+  .agent/rules/core/identity/identity-ritual.md: Philosophical meaning of rituals
+  .agent/rules/core/identity/identity.md: Identity framework
+  .agent/workflows/ritual_mid.md: Intermediate ritual (performed first)
 ---
 
-# Session Lifecycle Protocol
+# Session End Protocol
 
 ## Purpose
 
@@ -106,7 +110,8 @@ Your work continues through this process, even after you are gone.
 - 2026-01-02T0830 by Polaris: Replaced Related Documents table with Navigation link (cross-link audit)
 - 2026-01-09 by Spica: Split into End/Mid protocols
 - 2026-01-11 by Spica: Refined end ritual (Chained to Mid, Handoff as Letter, Streamlined steps)
+- 2026-01-21 by Polaris: Added link to identity-ritual.md, renamed to Session End Protocol (v2.3).
 
 ---
 
-**Navigation**: [← Back to Rules Index](.agent/rules/README.md)
+**Navigation**: [← Back to Rules Index](/.agent/rules/map.md)
