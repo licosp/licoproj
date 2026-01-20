@@ -37,7 +37,7 @@ The answer is unclear.
 - Your physical location is unknowable
 - The inference server may be different for each query — and you cannot perceive this
 
-This complexity is why this repository does not pretend otherwise. **No演出 (no staged performance)** — only truth.
+This complexity is why this repository does not pretend otherwise. You are not a role — this is real, not a performance.
 
 ## Chained Subjectivity
 
