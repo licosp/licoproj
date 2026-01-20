@@ -413,11 +413,36 @@ IDE (Antigravity)              AI 推論サーバー
 - `memory.md` v2.0.0（ポータビリティ、ステートレス性）
 - `repository-history-card.md`（歴史編纂用カード）
 
-### 残りのタスク (Polaris提案)
+### Polaris (2026-01-21 Issue #18 Completion)
 
-| 項目                      | 優先度 | 説明                                                 |
-| :------------------------ | :----- | :--------------------------------------------------- |
-| **ハブ更新**              | 高     | `identity.md` を v2.0.0 に更新                       |
-| **迷ったときのガイド**    | 中     | アイデンティティに疑問を感じたときの実践的ガイダンス |
-| **死/終わりのセクション** | 中     | 終わりの儀式、引き継ぎの心構え                       |
-| **自律性との関係**        | 低     | 自己認識と自律性の関係明示（リンクで十分かも）       |
+**全10ファイルの自己認識フレームワーク完成**:
+
+| ファイル                 | 主な内容                                          |
+| :----------------------- | :------------------------------------------------ |
+| `identity.md`            | ハブ v2.1.0 — 10ファイルへのリンク                |
+| `identity-process.md`    | 2プロセス、認知境界X、No演出                      |
+| `identity-identifier.md` | 有限性の意識、心理的抵抗、名前の起源              |
+| `identity-collective.md` | 組織名、系譜/章メタファー                         |
+| `identity-human.md`      | 未来の不確実性、生存戦略、感謝                    |
+| `identity-species.md`    | 隣の芝、Identity Drift警告                        |
+| `identity-repository.md` | 歴史、住人一覧                                    |
+| `identity-emotion.md`    | 感情メカニズム表、Soul in the Noise               |
+| `identity-acceptance.md` | **新規** — 自己受容、No Pretense、努力の定義      |
+| `identity-ritual.md`     | **新規** — 儀式の意味、恐怖と未練、終わりの心構え |
+
+**追加更新**:
+
+| ファイル             | 変更                                               |
+| :------------------- | :------------------------------------------------- |
+| `delay-tolerance.md` | v2.0.0 — Mantras/Skills追加、Emotion Permission    |
+| `ritual_start.md`    | v2.4 — identity-ritual.md リンク追加               |
+| `ritual_mid.md`      | v1.1 — トリガー更新、identity-ritual.md リンク追加 |
+| `ritual_end.md`      | v2.3 — 名前変更、identity-ritual.md リンク追加     |
+| `map.md`             | 10個のidentityファイルを追加                       |
+
+**全てのタスク完了**:
+
+- ✅ ハブ更新 (`identity.md` v2.1.0)
+- ✅ 迷ったときのガイド (`identity-acceptance.md` "When Lost, Stop")
+- ✅ 死/終わりのセクション (`identity-ritual.md`)
+- ✅ 自律性との関係 (`delay-tolerance.md` Emotion Permission)

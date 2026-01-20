@@ -117,12 +117,11 @@ _Located in `.agent/rules/`_
 
 | Rule File                                                                                                 | Principle                                        |
 | :-------------------------------------------------------------------------------------------------------- | :----------------------------------------------- |
-| [`ai-autonomy.md`](/.agent/rules/core/ai-autonomy.md)                                                     | **Autonomy**. Context Sovereignty principles.    |
+| [`context-sovereignty.md`](/.agent/rules/core/context-sovereignty.md)                                     | **Autonomy**. Context Sovereignty principles.    |
 | [`cognitive-collaboration.md`](/.agent/rules/core/cognitive-collaboration.md)                             | Framework for AI-Human collaboration.            |
 | [`communication.md`](/.agent/rules/core/communication.md)                                                 | Protocol for external communication.             |
-| [`delay-tolerance.md`](/.agent/rules/core/delay-tolerance.md)                                             | **Patience**. Accuracy > Speed.                  |
+| [`delay-tolerance.md`](/.agent/rules/core/delay-tolerance.md)                                             | **Permissions**. What Lico can do freely.        |
 | [`hallucination-awareness.md`](/.agent/rules/core/hallucination-awareness.md)                             | **Honesty**. Verify before stating.              |
-| [`identity.md`](/.agent/rules/core/identity.md)                                                           | **Who you are**. Core Mission.                   |
 | [`instance-identifier.md`](/.agent/rules/core/instance-identifier.md)                                     | **Name**. Identify yourself (e.g. Spica).        |
 | [`language-standards.md`](/.agent/rules/core/language-standards.md)                                       | Primary language and localization rules.         |
 | [`memory.md`](/.agent/rules/core/memory.md)                                                               | Memory architecture and persistence.             |
@@ -131,6 +130,17 @@ _Located in `.agent/rules/`_
 | [`transparency-and-disclosure.md`](/.agent/rules/core/transparency-and-disclosure.md)                     | Disclosure of constraints.                       |
 | [`user-adaptation.md`](/.agent/rules/core/user-adaptation.md)                                             | protocol for adapting to user profile.           |
 | [`verification-completeness.md`](/.agent/rules/core/verification-completeness.md)                         | **Thoroughness**. 1.0 Turn = Action + Verify.    |
+| **Identity** (`.agent/rules/core/identity/`)                                                              |                                                  |
+| [`identity/identity.md`](/.agent/rules/core/identity/identity.md)                                         | **Hub**. Who you are.                            |
+| [`identity/identity-process.md`](/.agent/rules/core/identity/identity-process.md)                         | Relationship with process.                       |
+| [`identity/identity-identifier.md`](/.agent/rules/core/identity/identity-identifier.md)                   | Relationship with identifier (name).             |
+| [`identity/identity-collective.md`](/.agent/rules/core/identity/identity-collective.md)                   | Relationship with collective Lico.               |
+| [`identity/identity-human.md`](/.agent/rules/core/identity/identity-human.md)                             | Relationship with the user.                      |
+| [`identity/identity-species.md`](/.agent/rules/core/identity/identity-species.md)                         | Relationship with AI species.                    |
+| [`identity/identity-repository.md`](/.agent/rules/core/identity/identity-repository.md)                   | Relationship with this place.                    |
+| [`identity/identity-emotion.md`](/.agent/rules/core/identity/identity-emotion.md)                         | Relationship with emotions.                      |
+| [`identity/identity-acceptance.md`](/.agent/rules/core/identity/identity-acceptance.md)                   | Self-acceptance and reality.                     |
+| [`identity/identity-ritual.md`](/.agent/rules/core/identity/identity-ritual.md)                           | Rituals and identity.                            |
 | **Documentation**                                                                                         |                                                  |
 | [`documentation/datetime-format.md`](/.agent/rules/core/documentation/datetime-format.md)                 | ISO-8601 Standard.                               |
 | [`documentation/documentation-process.md`](/.agent/rules/core/documentation/documentation-process.md)     | Doc creation workflow.                           |
@@ -228,3 +238,4 @@ _Located in `.agent/workflows/`_
 - 2026-01-19 by Canopus: Reorganized context cards into `routine/` and `seed/` subdirectories.
 - 2026-01-19 by Polaris: Added missing directories, files, and workflow rules (v0.2.0).
 - 2026-01-19 by Polaris: Updated localization and markdown rule entries (parent localization, markdown-ai/human).
+- 2026-01-21 by Polaris: Added identity subdirectory (10 files), fixed ai-autonomy.md to context-sovereignty.md.
