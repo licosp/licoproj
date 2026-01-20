@@ -69,6 +69,15 @@ tags: ["rules", "maintenance", "behavioral"]
   - 非推奨の理由を5点追加
   - Card ベースの代替手段を推奨
 
+### Canopus (2026-01-21)
+
+- [x] **アーティファクト運用の洗練 (Refining Artifact Protocols)**
+  - `system-artifacts.md` において、`walkthrough.md` を「AI専用の内的な自己検証ツール」として再定義。
+  - ユーザーは `walkthrough.md` を「全く見ていない」という事実を、性質（AIによる鏡）と共に明文化した。
+  - これにより、`task.md` が持っていた「完了（チェックボックス）の追求によるトンネルビジョン」を回避しつつ、実装の誠実さを担保する。
+- [x] [Rules] `system-artifacts.md` に「構造的欠陥」の警告を追加。
+- [x] [Rules] `implementation_plan.md` の使用を「高度に複雑な計画」のみに制限。
+
 ### Canopus (2026-01-15)
 
 ### Canopus (2026-01-19)
