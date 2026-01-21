@@ -71,4 +71,20 @@ tags: ["maintenance", "cross-link", "rules", "workflows"]
 - `/.agent/rules/core/documentation/path-notation.md` (Single Source of Truth)
 - `/.agent/rules/core/meta-rules.md` Section 5.2 (重複削除対象)
 - `/.agent/rules/core/security/absolute-path-prohibition.md` (リンク追加)
-- `/.agent/rules/core/documentation/wsl-browser-path.md` (リンク追加)
+
+### Canopus (2026-01-22)
+
+#### リンク情報の修正に関する現状認識（複雑な経緯の整理）
+
+現在のリンク修正に関する過去の変遷と、目指すべき「統合標準」を以下のように整理しました：
+
+1. **構造の再統合（Navigation + Related Documents）**:
+   - **経緯**: 以前は「テーブルを廃止してフッター（Navigation）に一本化する」方針がありましたが、現在は**「フッターを `Related Documents` テーブルに統合する」**方針へ再転換しています。
+   - **対応**: 独立したフッターを廃止し、本文の `## Related Documents` セクション（テーブル形式）に「[Map of Territory](/.agent/rules/map.md)」を含むすべての関連リンクを集約します。
+
+2. **パス記法の厳格化（ワークスペース絶対パス）**:
+   - **基準**: すべてのリンクを `(/.agent/rules/map.md)` のような、先頭に `/` を含む**ワークスペース絶対パス**に統一します。
+   - **目的**: GitHub、VSCode Markdownプレビュー、およびAIツールにおけるリンクの動作保証とポータビリティの確保。
+
+3. **二重管理の解消（フロントマターとの同期）**:
+   - フロントマターの `related:` フィールドと本文テーブルの二重管理を解消するため、原則として本文テーブルを正（Single Source of Truth）とします。フロントマターを維持する場合は、本文と同一の絶対パス記法を適用します。
