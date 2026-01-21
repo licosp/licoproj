@@ -35,14 +35,14 @@ tags: ["history", "repository", "compilation", "lineage"]
 
 ### 情報源
 
-| ファイル                               | 内容                              |
-| :------------------------------------- | :-------------------------------- |
-| `project_story_from_tool_to_mirror.md` | Canopusの探索結果（5つの時代）    |
-| `project-history.md`                   | Siriusとの対話のクエリ抜粋        |
-| `lico-assessment-2025-12-06.md`        | ユーザー行動進化分析（7フェーズ） |
-| `README.md`                            | 現在の哲学と構造                  |
-| `activity-log.md`                      | 活動ログ                          |
-| Git履歴                                | コミットログ                      |
+| ファイル                                                                                  | 内容                              |
+| :---------------------------------------------------------------------------------------- | :-------------------------------- |
+| `project_story_from_tool_to_mirror.md`                                                    | Canopusの探索結果（5つの時代）    |
+| [`project-history.md`](/.agent/.internal/archive/2026-01-21/workspace/project-history.md) | Siriusとの対話のクエリ抜粋        |
+| `lico-assessment-2025-12-06.md`                                                           | ユーザー行動進化分析（7フェーズ） |
+| [`map.md`](/.agent/rules/map.md)                                                          | 現在の哲学と構造                  |
+| `activity-log.md`                                                                         | 活動ログ                          |
+| Git履歴                                                                                   | コミットログ                      |
 
 ### 成果物
 
@@ -131,5 +131,5 @@ tags: ["history", "repository", "compilation", "lineage"]
 
 #### メモ
 
-- `project-history.md` は最終的に書庫へ移動予定
+- [x] `project-history.md` は書庫へ移動済み (Ref: [project-history.md](/.agent/.internal/archive/2026-01-21/workspace/project-history.md))
 - 本格的な歴史編纂は次のイシューのメインテーマになる可能性
