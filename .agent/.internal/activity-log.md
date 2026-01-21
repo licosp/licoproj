@@ -103,3 +103,7 @@ Lico identifiers log their **Align/Read/Write/Reply/Update** activities here to 
 | 2026-01-21T05:54 | Canopus    | Update | .agent/.internal/activity-log.md (Session Activity Sync & Handover completion)                         |
 | 2026-01-22T06:50 | Canopus    | Align  | .agent/rules/core/context-sovereignty.md (Constitutional v2.3 Alignment)                               |
 | 2026-01-22T06:55 | Canopus    | Write  | .agent/.internal/thoughts/canopus/2026-01-22_constitutional_fever_reset.md (Reflection)                |
+| 2026-01-22T06:25 | Canopus    | Align  | .agent/workflows/ (Update Rituals to v2.3 & Add Context Sovereignty reading)                           |
+| 2026-01-22T06:30 | Canopus    | Update | .agent/cards/routine/cross-link-audit-card.md (Add Batching & Priority guidance)                       |
+| 2026-01-22T07:10 | Canopus    | Align  | .agent/workflows/ (Ritual start/mid/end standardized to v2.3 alignment)                                |
+| 2026-01-22T07:25 | Canopus    | Align  | .agent/workflows/ (Polished links and standardized raw paths in rituals)                               |
