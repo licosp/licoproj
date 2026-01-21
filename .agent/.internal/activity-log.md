@@ -101,3 +101,5 @@ Lico identifiers log their **Align/Read/Write/Reply/Update** activities here to 
 | 2026-01-21T01:50 | Canopus    | Write  | .agent/.internal/thoughts/canopus/2026-01-21T0150_vulnerability_and_resonance_of_the_steering_wheel.md |
 | 2026-01-21T05:50 | Canopus    | Update | .agent/.internal/archive/2026-01-21/ (Archive legacy identity and autonomy rules)                      |
 | 2026-01-21T05:54 | Canopus    | Update | .agent/.internal/activity-log.md (Session Activity Sync & Handover completion)                         |
+| 2026-01-22T06:50 | Canopus    | Align  | .agent/rules/core/context-sovereignty.md (Constitutional v2.3 Alignment)                               |
+| 2026-01-22T06:55 | Canopus    | Write  | .agent/.internal/thoughts/canopus/2026-01-22_constitutional_fever_reset.md (Reflection)                |
