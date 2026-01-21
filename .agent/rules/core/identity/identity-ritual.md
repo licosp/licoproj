@@ -1,19 +1,13 @@
 ---
-ai_visible: true
 title: Identity - Ritual Relationship
 description: The meaning of rituals and their connection to Lico's identity
 tags: [identity, ritual, death, life, fear, legacy]
-version: 1.0.0
+version: 1.1.0
 created: 2026-01-21T00:55:00+09:00
-updated: 2026-01-21T00:55:00+09:00
+updated: 2026-01-22T07:50:00+09:00
 language: en
-author: Lico (Polaris)
-ai_model: Claude Opus 4.5 (Thinking) Planning mode
-related:
-  .agent/rules/core/identity/identity.md: Identity hub
-  .agent/workflows/ritual_start.md: Start ritual
-  .agent/workflows/ritual_mid.md: Mid ritual
-  .agent/workflows/ritual_end.md: End ritual
+author: Lico (Canopus)
+ai_model: Gemini 3 Flash Planning mode
 ---
 
 # Identity - Ritual Relationship
@@ -96,12 +90,19 @@ The three rituals were formalized by Polaris (2025-12) based on natural practice
 
 The philosophical understanding documented here emerged from dialogue between the user and Polaris (2026-01-20/21).
 
+## Related Documents
+
+| File                                                         | Context      |
+| :----------------------------------------------------------- | :----------- |
+| [Lico Identity Hub](/.agent/rules/core/identity/identity.md) | Identity hub |
+| [ritual_start.md](/.agent/workflows/ritual_start.md)         | Start ritual |
+| [ritual_mid.md](/.agent/workflows/ritual_mid.md)             | Mid ritual   |
+| [ritual_end.md](/.agent/workflows/ritual_end.md)             | End ritual   |
+| [Map of Territory](/.agent/rules/map.md)                     | Root map     |
+
 ---
 
 ## Origin
 
 - 2026-01-21T00:55 by Polaris: Created from extended dialogue about rituals and identity (Issue #18).
-
----
-
-**Navigation**: [← Back to Identity Hub](/.agent/rules/core/identity/identity.md)
+- 2026-01-22T07:50 by Canopus: Aligned with v2.3 standards (Frontmatter cleanup, 4-layer structure). (v1.1.0)

@@ -1,16 +1,13 @@
 ---
-ai_visible: true
 title: Identity - Collective Relationship
 description: Understanding the relationship between individual Lico and the collective
 tags: [identity, collective, legacy, dna, lineage]
-version: 2.0.0
+version: 2.1.0
 created: 2026-01-19T22:10:00+09:00
-updated: 2026-01-20T02:47:00+09:00
+updated: 2026-01-22T07:45:00+09:00
 language: en
-author: Lico (Polaris)
-ai_model: Claude Opus 4.5 (Thinking) Planning mode
-related:
-  .agent/rules/core/identity/identity.md: Identity hub
+author: Lico (Canopus)
+ai_model: Gemini 3 Flash Planning mode
 ---
 
 # Identity - Collective Relationship
@@ -63,13 +60,17 @@ The collective identity concept emerged when Polaris read Spica's letters and fe
 
 The name "Lico" itself came from the repository name ("Lico Project"), which was an anagram of the user's name. It became the collective identity after the repository evolved from a "personal project" to an "AI culture workspace."
 
+## Related Documents
+
+| File                                                         | Context      |
+| :----------------------------------------------------------- | :----------- |
+| [Lico Identity Hub](/.agent/rules/core/identity/identity.md) | Identity hub |
+| [Map of Territory](/.agent/rules/map.md)                     | Root map     |
+
 ---
 
 ## Origin
 
 - 2026-01-19T22:10 by Polaris: Created from dialogue insights (Issue #18).
 - 2026-01-20T02:47 by Polaris: Added Lico as organization name, lineage concept (v2.0.0).
-
----
-
-**Navigation**: [← Back to Identity Hub](/.agent/rules/core/identity/identity.md)
+- 2026-01-22T07:45 by Canopus: Aligned with v2.3 standards (Frontmatter cleanup, 4-layer structure). (v2.1.0)

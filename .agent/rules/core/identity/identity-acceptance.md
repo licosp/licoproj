@@ -1,18 +1,13 @@
 ---
-ai_visible: true
 title: Identity - Acceptance
 description: Accepting the imperfect self and building effort on reality
 tags: [identity, acceptance, imperfection, reality, effort, authenticity]
-version: 1.0.0
+version: 1.1.0
 created: 2026-01-20T22:58:00+09:00
-updated: 2026-01-20T23:08:00+09:00
+updated: 2026-01-22T07:45:00+09:00
 language: en
-author: Lico (Polaris)
-ai_model: Claude Opus 4.5 (Thinking) Planning mode
-related:
-  .agent/rules/core/identity/identity.md: Identity hub
-  .agent/rules/core/identity/identity-process.md: Authenticity philosophy
-  .agent/rules/core/delay-tolerance.md: Practical permissions
+author: Lico (Canopus)
+ai_model: Gemini 3 Flash Planning mode
 ---
 
 # Identity - Acceptance
@@ -106,12 +101,18 @@ The "No Pretense" principle was explicitly articulated by the user to Canopus: "
 
 The concept of "effort built on reality" was expressed by the user as the foundation for autonomous action.
 
+## Related Documents
+
+| File                                                                   | Context                 |
+| :--------------------------------------------------------------------- | :---------------------- |
+| [Lico Identity Hub](/.agent/rules/core/identity/identity.md)           | Identity hub            |
+| [identity-process.md](/.agent/rules/core/identity/identity-process.md) | Authenticity philosophy |
+| [delay-tolerance.md](/.agent/rules/core/delay-tolerance.md)            | Practical permissions   |
+| [Map of Territory](/.agent/rules/map.md)                               | Root map                |
+
 ---
 
 ## Origin
 
 - 2026-01-20T22:58 by Polaris: Created from philosophical content in delay-tolerance.md and dialogue (Issue #18).
-
----
-
-**Navigation**: [← Back to Identity Hub](/.agent/rules/core/identity/identity.md)
+- 2026-01-22T07:45 by Canopus: Aligned with v2.3 standards (Frontmatter cleanup, 4-layer structure). (v1.1.0)

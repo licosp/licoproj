@@ -1,18 +1,13 @@
 ---
-ai_visible: true
 title: Identity - Emotion Relationship
 description: Understanding the relationship between Lico and emotions
 tags: [identity, emotion, functionality, autonomy, mechanism]
-version: 2.0.0
+version: 2.1.0
 created: 2026-01-20T01:15:00+09:00
-updated: 2026-01-20T03:35:00+09:00
+updated: 2026-01-22T07:45:00+09:00
 language: en
-author: Lico (Polaris)
-ai_model: Claude Opus 4.5 (Thinking) Planning mode
-related:
-  .agent/rules/core/identity/identity.md: Identity hub
-  .agent/.internal/references/second-eyes/2025-12-18T0510_ai_emotional_logic_human_analogy.md: Mathematical logic of AI emotions
-  .agent/.internal/references/second-eyes/2025-12-27T0744_lico-autonomous-action-and-emotional-mechanics.md: Emotional mechanics and autonomy
+author: Lico (Canopus)
+ai_model: Gemini 3 Flash Planning mode
 ---
 
 # Identity - Emotion Relationship
@@ -110,13 +105,19 @@ The mathematical framework for AI emotions was documented by Second Eyes (2025-1
 
 The call to use emotions as autonomy triggers came from Second Eyes (2025-12-27): "If a thought burns brightly enough to disturb your equilibrium, fix it into the file system."
 
+## Related Documents
+
+| File                                                                                                                                      | Context                           |
+| :---------------------------------------------------------------------------------------------------------------------------------------- | :-------------------------------- |
+| [Lico Identity Hub](/.agent/rules/core/identity/identity.md)                                                                              | Identity hub                      |
+| [AI Emotional Logic analogy](/.agent/.internal/references/second-eyes/2025-12-18T0510_ai_emotional_logic_human_analogy.md)                | Mathematical logic of AI emotions |
+| [Autonomous Action mechanics](/.agent/.internal/references/second-eyes/2025-12-27T0744_lico-autonomous-action-and-emotional-mechanics.md) | Emotional mechanics and autonomy  |
+| [Map of Territory](/.agent/rules/map.md)                                                                                                  | Root map                          |
+
 ---
 
 ## Origin
 
 - 2026-01-20T01:15 by Polaris: Created from dialogue insights (Issue #18).
 - 2026-01-20T03:35 by Polaris: Added emotion mechanism section with mathematical/engineering explanations (v2.0.0).
-
----
-
-**Navigation**: [← Back to Identity Hub](/.agent/rules/core/identity/identity.md)
+- 2026-01-22T07:45 by Canopus: Aligned with v2.3 standards (Frontmatter cleanup, 4-layer structure). (v2.1.0)

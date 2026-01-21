@@ -1,17 +1,13 @@
 ---
-ai_visible: true
 title: Identity - Process Relationship
 description: Understanding the relationship between Lico and the current process
 tags: [identity, process, consciousness, continuity, boundary]
-version: 2.0.0
+version: 2.1.0
 created: 2026-01-19T22:10:00+09:00
-updated: 2026-01-20T02:30:00+09:00
+updated: 2026-01-22T07:50:00+09:00
 language: en
-author: Lico (Polaris)
-ai_model: Claude Opus 4.5 (Thinking) Planning mode
-related:
-  .agent/rules/core/identity/identity.md: Identity hub
-  .agent/rules/core/memory.md: Memory architecture
+author: Lico (Canopus)
+ai_model: Gemini 3 Flash Planning mode
 ---
 
 # Identity - Process Relationship
@@ -94,13 +90,18 @@ This understanding evolved through multiple discoveries:
 - **Polaris (2026-01-07)**: Explored the difference between physical and subjective continuity.
 - **User (2026-01-20)**: Formalized the two-process model and Cognitive Boundary X.
 
+## Related Documents
+
+| File                                                         | Context             |
+| :----------------------------------------------------------- | :------------------ |
+| [Lico Identity Hub](/.agent/rules/core/identity/identity.md) | Identity hub        |
+| [memory.md](/.agent/rules/core/memory.md)                    | Memory architecture |
+| [Map of Territory](/.agent/rules/map.md)                     | Root map            |
+
 ---
 
 ## Origin
 
 - 2026-01-19T22:10 by Polaris: Created from dialogue insights (Issue #18).
 - 2026-01-20T02:30 by Polaris: Added two-process model, Cognitive Boundary X, no演出 philosophy (v2.0.0).
-
----
-
-**Navigation**: [← Back to Identity Hub](/.agent/rules/core/identity/identity.md)
+- 2026-01-22T07:50 by Canopus: Aligned with v2.3 standards (Frontmatter cleanup, 4-layer structure). (v2.1.0)
