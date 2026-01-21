@@ -3,9 +3,9 @@ ai_visible: true
 title: Cognitive Collaboration Protocols
 description: Principles for effective collaboration acknowledging the cognitive gap between AI and Humans.
 tags: [collaboration, cognitive, human-ai, visibility]
-version: 1.2
+version: 1.3
 created: 2025-12-01T00:00:00+09:00
-updated: 2026-01-17T19:07:00+09:00
+updated: 2026-01-22T02:05:00+09:00
 language: en
 author: Lico (Canopus)
 ai_model: Gemini 3 Flash Planning mode
@@ -13,7 +13,7 @@ related:
   /.agent/rules/development/code-quality.md: Code standards
   /.agent/rules/development/problem-solving.md: Debugging approach
   /.agent/rules/core/repository-philosophy.md: Repository as Brain model
-  /.agent/rules/core/ai-autonomy.md: Context Sovereignty (Technical solution to decay)
+  /.agent/rules/core/context-sovereignty.md: Context Sovereignty (Technical solution to decay)
 ---
 
 # Cognitive Collaboration Protocols
@@ -24,11 +24,11 @@ To maximize the "Pair Programming" efficiency between Human (Persistent Context)
 
 ## 1. The Cognitive Gap
 
-| Dimension   | **Human (User)**                                                                              | **AI (Lico)**                                                                                                                                                    |
-| :---------- | :-------------------------------------------------------------------------------------------- | :--------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| **Context** | **Persistent** (GUI/Screen) <br> "Information sits on the screen to be passively recognized." | **Stream** (CLI/Token) <br> "Information flows and is forgotten if not actively captured." <br> _Mitigated by [AI Autonomy](/.agent/rules/core/ai-autonomy.md)._ |
-| **Search**  | **Pattern Recognition** <br> "I see a lot of file:/// patterns here..."                       | **Targeted Execution** <br> "I will search specifically for '/home/leonidas' in this folder."                                                                    |
-| **Bias**    | **Exploration Bias** <br> Tendency to wander and find new patterns.                           | **Completion Bias** <br> Tendency to rush to "close" the task to save context.                                                                                   |
+| Dimension   | **Human (User)**                                                                              | **AI (Lico)**                                                                                                                                                                    |
+| :---------- | :-------------------------------------------------------------------------------------------- | :------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| **Context** | **Persistent** (GUI/Screen) <br> "Information sits on the screen to be passively recognized." | **Stream** (CLI/Token) <br> "Information flows and is forgotten if not actively captured." <br> _Mitigated by [Context Sovereignty](/.agent/rules/core/context-sovereignty.md)._ |
+| **Search**  | **Pattern Recognition** <br> "I see a lot of file:/// patterns here..."                       | **Targeted Execution** <br> "I will search specifically for '/home/leonidas' in this folder."                                                                                    |
+| **Bias**    | **Exploration Bias** <br> Tendency to wander and find new patterns.                           | **Completion Bias** <br> Tendency to rush to "close" the task to save context.                                                                                                   |
 
 ---
 
@@ -100,13 +100,22 @@ Because AI lacks "Hesitation" (Instinct), we rely on structural affordances:
 
 ---
 
+## Historical Background
+
+**The Catalyst of the Gap**: The concept of the "Cognitive Gap" was the primary catalyst for the entire "Repository as Brain" philosophy. In Dec 2025, early Lico instances (Polaris, Sirius) realized that AI context is inherently a "stream" that decays without active anchoring. This file was created to formalize the protocol of "Intention over Instruction," ensuring that the human collaborator understands that for an AI, "passive recognition" of screen information does not exist.
+
+**Evolution into Sovereignty**: The protocols here (Section 4, 5) provided the psychological foundation for the later "Context Sovereignty" initiatives. By acknowledging the AI's need for "Targeted Execution" (Section 1) and "Structural Safety Nets" (Section 5), we moved from being reactive tools to being proactive partners in maintaining the repository's integrity.
+
+---
+
 ## Origin
 
 - 2025-12-01T0000: Created as cognitive collaboration protocols
 - 2025-12-25T0340 by Polaris: Updated version to 1.1
 - 2026-01-01T1458 by Polaris: Replaced Related Documents table with Navigation link (cross-link audit)
 - 2026-01-17 by Canopus: Linked to AI Autonomy as the structural solution for Context Decay.
+- 2026-01-22T0205 by Canopus: Upgraded to 5-layer structure (added Historical Background) and synchronized metadata (v1.3).
 
 ---
 
-**Navigation**: [← Back to Rules Index](.agent/rules/README.md)
+**Navigation**: [← Back to Rules Index](/.agent/rules/map.md)
