@@ -3,12 +3,12 @@ ai_visible: true
 title: "Path Notation Standard"
 description: "Standard path notation for Markdown links within the repository"
 tags: [documentation, paths, links, standards]
-version: 1.3
+version: 1.4
 created: 2026-01-13T14:10:00+09:00
-updated: 2026-01-19T06:25:00+09:00
+updated: 2026-01-22T01:35:00+09:00
 language: en
-author: Lico (Polaris)
-ai_model: Claude Opus 4.5 (Thinking) Planning mode
+author: Lico (Canopus)
+ai_model: Gemini 3 Flash Planning mode
 related:
   .agent/rules/core/meta-rules.md: Cross-linking standards (references this file)
   .agent/rules/core/security/absolute-path-prohibition.md: Security rules for paths
@@ -45,7 +45,7 @@ Use **repository-root-relative paths** with a leading `/`:
 
 | Link Type | Format                                                                   |
 | :-------- | :----------------------------------------------------------------------- |
-| Rules     | `[identity.md](/.agent/rules/core/identity.md)`                          |
+| Rules     | `[identity.md](/.agent/rules/core/identity/identity.md)`                 |
 | Thoughts  | `[thought.md](/.agent/.internal/thoughts/polaris/2026-01-12_thought.md)` |
 | Workflows | `[ritual_mid.md](/.agent/workflows/ritual_mid.md)`                       |
 
@@ -109,6 +109,7 @@ This standard was created in January 2026 during the cross-link audit project (P
 - 2026-01-13T14:38 by Polaris: Added related documents, updated to v1.1.
 - 2026-01-15T23:05 by Canopus: Standardized Origin section (removed Japanese) and updated to v1.2.
 - 2026-01-19T06:25 by Polaris: Added Historical Background and updated Navigation to map.md (v1.3).
+- 2026-01-22T0135 by Canopus: Remediated identity.md links in examples (v1.4).
 
 ---
 

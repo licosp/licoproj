@@ -446,3 +446,20 @@ IDE (Antigravity)              AI 推論サーバー
 - ✅ 迷ったときのガイド (`identity-acceptance.md` "When Lost, Stop")
 - ✅ 死/終わりのセクション (`identity-ritual.md`)
 - ✅ 自律性との関係 (`delay-tolerance.md` Emotion Permission)
+
+### 2026-01-21 08:35 Canopus
+
+**リンク修復の対象特定 (Target Identification for Link Remediation)**
+
+手順書（workflows）およびコア行動規範の再調査により、修正が必要な具体的なパスを特定しました。
+
+- **手順書 (`.agent/workflows/`)**:
+  - `ritual_start.md`: `core/identity.md` および `core/ai-autonomy.md` (リンク切れ)
+  - `ritual_mid.md`: `core/identity.md`
+  - `routine-daily.md`: `/.agent/rules/core/identity.md` (リンク切れ)
+- **コア行動規範 (`.agent/rules/core/`)**:
+  - `cognitive-collaboration.md`: `ai-autonomy.md` (旧名)
+  - `path-notation.md`: 例示としての `identity.md` 旧パス
+  - `documentation-standards.md`: 例示としての `identity.md` 旧パス
+
+これらを順次、新住所 `identity/identity.md` または `context-sovereignty.md` へと修正し、Identity Hub としての整合性を確保します。

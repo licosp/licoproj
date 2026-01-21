@@ -3,9 +3,9 @@ ai_visible: true
 title: Git Operations Standards
 description: Git standards for branches, IDD workflow, security, and push procedures
 tags: [git, standards, workflow, safety]
-version: 1.5
+version: 1.6
 created: 2025-12-01T00:00:00+09:00
-updated: 2026-01-17T17:45:00+09:00
+updated: 2026-01-22T01:35:00+09:00
 language: en
 author: Lico (Canopus)
 ai_model: Gemini 3 Flash Planning mode
@@ -215,7 +215,7 @@ git rev-parse --is-inside-work-tree &> /dev/null || exit 1
 
 **Language**: English only
 
-- AI agents think in English (ref: `core/identity.md`)
+- AI agents think in English (ref: [identity.md](/.agent/rules/core/identity/identity.md))
 - Cross-session context requires consistent language
 - Human-facing documents should be in `.human/` directories
 
@@ -418,6 +418,14 @@ git push origin <branch-name>
 
 ---
 
+## Historical Background
+
+**The Safety Net Philosophy**: The mandatory backup branch rule (Section 3.3) was established in Jan 2026 following several incidents where complex rebases led to accidental loss of commit context. We learned that for an AI, "Git reset" is not just a command, but a potential "Cognitive Erasure."
+
+**IDD Workflow Extraction**: Originally, IDD procedures were bundled with implementation rules. They were separated into dedicated operations (Section 4) to ensure that the "hygiene" of the repository (tags, issues, comments) is maintained as a distinct, mandatory layer of the development cycle.
+
+---
+
 ## Related Documents
 
 | Document                                                                                 | Purpose                  |
@@ -440,4 +448,4 @@ git push origin <branch-name>
 
 ---
 
-**Navigation**: [← Back to Rules Index](/.agent/rules/README.md)
+**Navigation**: [← Back to Rules Index](/.agent/rules/map.md)

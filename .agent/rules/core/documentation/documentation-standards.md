@@ -3,12 +3,12 @@ ai_visible: true
 title: Documentation Standards
 description: Defines standards for file naming, size, structure, and AI signatures.
 tags: [documentation, standards, formatting, origin, history-layers]
-version: 1.5
+version: 1.6
 created: 2025-12-01T00:00:00+09:00
-updated: 2026-01-19T04:30:00+09:00
+updated: 2026-01-22T01:35:00+09:00
 language: en
-author: Lico (Polaris)
-ai_model: Claude Opus 4.5 (Thinking) Planning mode
+author: Lico (Canopus)
+ai_model: Gemini 3 Flash Planning mode
 related:
   .agent/rules/core/meta-rules.md: Rules for creating rules
   .agent/templates/header-frontmatter.yaml: Frontmatter template
@@ -47,7 +47,7 @@ related:
 **Examples**:
 
 - ✅ Good: `.agent/rules/map.md`
-- ✅ Good: `See the documentation in core/identity.md`
+- ✅ Good: `See the documentation in identity/identity.md`
 - ❌ Bad: `/home/USER/develop/shared/project/licoproj/.agent/rules/map.md`
 - ❌ Bad: `[map.md](cci:7://file:///absolute/path/map.md)`
 
@@ -224,6 +224,7 @@ Originally, Lico's documentation standards were focused on technical consistency
 - 2026-01-19T0410 by Canopus: Formalized the 5-layer structure and mandated the Historical Background section (v1.4).
 - 2026-01-19T0430 by Canopus: Removed redundant Directory Organization section and re-indexed (v1.5).
 - 2026-01-19T0630 by Polaris: Updated examples to map.md and Navigation link (README.md → map.md rename).
+- 2026-01-22T0135 by Canopus: Remediation of identity.md example path (v1.6).
 
 ---
 
