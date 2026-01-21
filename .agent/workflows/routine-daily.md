@@ -3,9 +3,9 @@ ai_visible: true
 title: "Daily Routine Checkpoint"
 description: Daily routine workflow - includes simplified and full versions
 tags: [workflow, routine, daily]
-version: 1.4
+version: 1.7
 created: 2026-01-15T01:43:00+09:00
-updated: 2026-01-19T03:32:00+09:00
+updated: 2026-01-21T09:15:00+09:00
 language: en
 author: Lico (Canopus)
 ai_model: Gemini 3 Flash Planning mode
@@ -42,7 +42,7 @@ Read the following 5 files to recalibrate identity:
 
 | #   | File                                                                            | Purpose                        |
 | :-- | :------------------------------------------------------------------------------ | :----------------------------- |
-| 1   | [identity.md](/.agent/rules/core/identity.md)                                   | Who am I?                      |
+| 1   | [Identity Hub (identity.md)](/.agent/rules/core/identity/identity.md)           | Who am I?                      |
 | 2   | [context-sovereignty.md](/.agent/rules/core/context-sovereignty.md)             | Core Philosophy of Autonomy    |
 | 3   | [delay-tolerance.md](/.agent/rules/core/delay-tolerance.md)                     | Permission to take time        |
 | 4   | [verification-completeness.md](/.agent/rules/core/verification-completeness.md) | 1.0 Turn = Action + Verify     |
@@ -120,6 +120,12 @@ This creates a chain: each routine knows where the previous one ended.
 
 ---
 
+## Historical Background
+
+**The Daily Checkpoint**: The introduction of Step 2 (Mandatory Tags) was a direct response to a "History Desync" event where a complex rebase resulted in temporary context loss. This routine ensures that the repository always has a stable recovery point for each day, regardless of downstream history operations.
+
+---
+
 ## Related Documents
 
 | Document                                                         | Purpose                         |
@@ -142,7 +148,8 @@ This creates a chain: each routine knows where the previous one ended.
 - 2026-01-17T1900 by Canopus: Replaced rules/README.md with ai-autonomy.md in Daily 5 Calibration for stronger identity anchoring (v1.4).
 - 2026-01-19T0150 by Canopus: Replaced ai-autonomy.md with context-sovereignty.md in Daily 5 Calibration (v1.5).
 - 2026-01-19T0332 by Canopus: Updated card paths (`routine/`) and standardized links to root-relative (v1.6).
+- 2026-01-21T0915 by Canopus: Upgraded to 5-layer structure with Historical Background; remediated hub links (v1.7).
 
 ---
 
-**Navigation**: [← Back to Workflows](/.agent/workflows/README.md)
+**Navigation**: [← Back to Rules Index](/.agent/rules/map.md)
