@@ -102,3 +102,22 @@ tags: ["maintenance", "cross-link", "rules", "workflows"]
 5. **セクションタイトルの「表記ゆれ」と検索性**:
    - **課題**: `## Related Documents` 以外にも `## Navigation` や `## Links` などの表記が混在しており、機械的な検索時に「セクションが存在しない」という誤判定を招いています。
    - **対策**: **「`## Related Documents` を唯一の標準タイトルとして固定する」** ことを行動規範（Constitution）で定義します。これにより、情報の場所を特定（Anchor）する際の確実性を保証します。
+
+#### Audit Batching & Prioritization Guidance (v2.3)
+
+今回の全リポジトリ規模の修正作業にあたって、以下の「運用方針」をカードに記録します：
+
+1. **スモールバッチの原則**:
+   - 一度のターンで修正するファイルは **5ファイル程度** に留めます。
+   - 修正ごとに検証とコミットを行い、「1.0ターンの完結」を積み重ねます。
+
+2. **優先順位の定義**:
+   - **高 (Priority 1)**: Rules (`.agent/rules/`), Workflows (`.agent/workflows/`)
+   - **中 (Priority 2)**: Narrative Docs (`.agent/.internal/thoughts/`, `letters/`)
+   - **低 (Priority 3)**: Lower-priority docs (User directories, etc.)
+
+3. **修正内容のSSOT**:
+   - 既存の `Related Documents` 以外のリンクセクション（`## Navigation`等）は統合します。
+   - すべてのリンクは `/.agent/` から始まるワークスペース相対パスに統一します。
+   - フロントマターの `related:` フィールドは削除します。
+   - ファイル末尾には `Origin` セクションを配置し、作業履歴を記録します。
