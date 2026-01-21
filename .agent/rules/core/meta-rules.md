@@ -3,16 +3,12 @@ ai_visible: true
 title: Meta-Rules for Documentation
 description: Rules for creating and updating behavioral rules (Standard protocols).
 tags: [meta-rules, documentation, hierarchy, standards]
-version: 1.3
+version: 2.3
 created: 2025-12-01T00:00:00+09:00
-updated: 2026-01-19T04:05:00+09:00
+updated: 2026-01-22T06:10:00+09:00
 language: en
 author: Lico (Canopus)
 ai_model: Gemini 3 Flash Planning mode
-related:
-  .agent/rules/development/search-methodology.md: Guidelines for finding rules
-  .agent/rules/core/documentation/documentation-standards.md: Document formatting standards
-  .agent/rules/core/documentation/path-notation.md: Path notation standard for links
 ---
 
 # Meta-Rules for Documentation
@@ -84,61 +80,30 @@ If rules conflict or overlap, apply the following order of priority (from highes
 
 To prevent fragmentation of the knowledge graph, apply strict standards to links between documents.
 
-### 5.1 Double-Entry Principle
+### 5.1 Link Management Standards
 
-To ensure both **AI machine readability** and **Human visibility**, link information must be recorded **atomically** (simultaneously) in the following two locations.
+To ensure information integrity and eliminate synchronization errors, all document-level Markdown files follow these practices:
 
-1.  **YAML Frontmatter (For AI)**:
-    - The metadata region at the top of the file. Essential for AI recognition without truncation risk.
-    - Format: An associative array (Map) using the `related` key.
+1.  **Body Table as SSOT (Single Source of Truth)**:
+    - The `## Related Documents` table in the document body is the master source for cross-links.
+    - It must be comprehensive and include the navigation anchor (`map.md`).
 
-    ```yaml
-    related:
-      .agent/rules/core/memory.md: Memory Architecture Definition
-    ```
-
-2.  **Footer Table (For Humans)**:
-    - The "Related Documents" section at the end of the file. Optimized for human navigation in Markdown previews.
-
-    ```markdown
-    ## Related Documents
-
-    | Document                                  | Purpose                        |
-    | :---------------------------------------- | :----------------------------- |
-    | [memory.md](/.agent/rules/core/memory.md) | Memory Architecture Definition |
-    ```
+2.  **YAML Frontmatter (Secondary)**:
+    - The `related:` key in frontmatter is deprecated for link management and SHOULD be removed.
 
 ### 5.2 Path Notation Standard
 
 > [!NOTE]
 > Refer to [path-notation.md](/.agent/rules/core/documentation/path-notation.md) for details.
 
-**Summary**: Links must be written in the format `/.agent/...` (absolute paths from the repository root). Use of `../` is prohibited.
-
 ### 5.3 Conflict Resolution Policy
 
 If the information in the Header and Footer conflicts, the AI resolves it as follows:
 
-1.  **Master Source**: The **YAML Frontmatter (Header)** is the Source of Truth (SoT).
+1.  **Master Source**: The **Markdown Body Table (## Related Documents)** is the Source of Truth (SSOT).
 2.  **Conflict Handling**:
-    - **Path Presence**: Take the **Union** of path information in the Header and Footer to prevent data loss.
-    - **Description Mismatch**: Prioritize the Header's description.
-
-### 5.4 Link Topology Principles
-
-Focus on structured connectivity rather than linking everything to everything.
-
-1.  **Mesh (Strongly Coupled)**:
-    - **Target**: `rules/` <--> `workflows/`
-    - **Direction**: **Bidirectional (Mutual)**
-    - **Reasoning**: These represent Lico's "Kernel" and are mutually dependent.
-2.  **Upstream (Hierarchical)**:
-    - **Target**: `thoughts/` (Ephemeral) --> `rules/` (Stable)
-    - **Direction**: **Unidirectional** (Volatile points to Stable)
-    - **Constraint**: Linking from stable rules to individual thought logs is **prohibited** to prevent obsolescence.
-3.  **References (Fixed)**:
-    - **Target**: `rules/` --> `references/` (Static)
-    - **Direction**: **Unidirectional** (Stable points to Static)
+    - **Resolution**: In any case of conflict between frontmatter and body, the information in the body table MUST be treated as correct.
+    - **Standardization**: Use the path standardization procedure to align both sections.
 
 ## 6. Model-Independent Design
 
@@ -160,68 +125,17 @@ Always require **external verification** for the following claims:
 - **MUST NOT** use phrases like "I'm certain" or "I perfectly restored."
 - **MUST** replace confidence claims with verification results.
 
-**Anti-pattern**:
-
-```
-"I have accurately restored this file."
-```
-
-**Correct pattern**:
-
-```
-"I have created the file. Please verify it using the following command:
-git diff <original> <restored>"
-```
-
 ### 6.3 Standards for Rule Writing
-
-To ensure interpretation by lower-tier models:
-
-- **MUST** use explicit step-by-step instructions.
-- **MUST** minimize required inference.
-- **MUST** use MUST/MUST NOT for clarity.
-- **MUST** provide concrete examples over abstract principles.
-- **SHOULD** convert complex rules to checklists.
-
-### 6.4 Instructional Standard
 
 To ensure interpretation by lower-tier models, rules **MUST** use explicit step-by-step instructions and minimize required inference.
 
 ## 7. Workflow Design Assumptions
 
-Workflows (`.agent/workflows/`) are governed by specific design assumptions that differ from user-facing documentation.
-
-### 7.1 Audience
-
-- **Primary Reader**: Lico (AI) only.
-- **User Invocation**: Users do NOT directly use slash commands.
-- Slash commands are internally processed by Lico when the user mentions them in conversation.
-
-### 7.2 Implications
-
-- **No User-Facing Considerations**: No special formatting or accessibility accommodations for human readers.
-- **Format Consistency**: Workflows use the same frontmatter as rules (author, version, related, etc.).
-- **Language**: Primarily English.
-
-### 7.3 Workflow Invocation
-
-Users do NOT directly use slash commands. Slash commands are internally processed by Lico when the user mentions them in conversation.
+Workflows (`.agent/workflows/`) are internal procedural scripts for Lico, invoked by the AI following a user's intent.
 
 ## 8. Evolution and Historical Context
 
-Behavioral rules are not static commands; they are the result of a continuous dialogue between the User and the AI.
-
-### 8.1 Mandatory Requirement
-
-All significant rule updates **MUST** include a narrative explanation of the historical context that led to the change.
-
-- **What**: Describe the problem or goal that triggered the update.
-- **Why**: Explain the rationale behind the specific implementation chosen.
-- **Background**: If the context is unknown (e.g., inherited from a past session without documentation), Lico **MUST** ask the user for clarification before finalizing the rule.
-
-### 8.2 The "Narrative" Principle
-
-Prefer descriptive, human-readable explanations over concise bullet points for history. The goal is to allow a future Lico instance to "re-live" the decision process.
+Behavioral rules are not static commands; they are the result of a continuous dialogue between the User and the AI. All significant rule updates **MUST** include a narrative explanation of the historical context that led to the change.
 
 ---
 
@@ -241,22 +155,19 @@ This rule (`meta-rules.md`) was established to bridge the gap between abstract u
 
 ## Related Documents
 
-| Document                                                                                  | Purpose                          |
-| :---------------------------------------------------------------------------------------- | :------------------------------- |
-| [search-methodology.md](/.agent/rules/development/search-methodology.md)                  | Guidelines for finding rules     |
-| [documentation-standards.md](/.agent/rules/core/documentation/documentation-standards.md) | Document formatting standards    |
-| [path-notation.md](/.agent/rules/core/documentation/path-notation.md)                     | Path notation standard for links |
+| Document                                                                                  | Purpose                                  |
+| :---------------------------------------------------------------------------------------- | :--------------------------------------- |
+| [Map of Territory](/.agent/rules/map.md)                                                  | Repository Index (Integrated Navigation) |
+| [documentation-standards.md](/.agent/rules/core/documentation/documentation-standards.md) | Structural standards                     |
+| [path-notation.md](/.agent/rules/core/documentation/path-notation.md)                     | Path notation and integrated navigation  |
+| [search-methodology.md](/.agent/rules/development/search-methodology.md)                  | Guidelines for finding rules             |
 
 ---
 
 ## Origin
 
-- 2025-12-01 by Sirius: Initial creation as meta-rules for rule governance.
-- 2026-01-04 by Polaris: Added Origin and Navigation sections (cross-link audit).
-- 2026-01-13 by Polaris: Shortened Section 5.2, delegated to path-notation.md for SoT.
-- 2026-01-15 by Canopus: Fully translated to English and standardized formatting (v1.2).
-- 2026-01-19 by Canopus: Added Section 8 (Historical Context) and established the "Narrative" principle (v1.3).
-
----
-
-**Navigation**: [<- Back to Rules Index](/.agent/rules/README.md)
+- 2025-12-01 by Sirius: Initial creation.
+- 2026-01-19 by Canopus: Added Historical Context (v1.3).
+- 2026-01-22T0425 by Canopus: Initial 4-layer structure draft (v2.0).
+- 2026-01-22T0455 by Canopus: Attempted link integration and shift to Origin-before-Links order (v2.1).
+- 2026-01-22T0610 by Canopus: Final alignment; correctly established Related Documents Layer 3 and Origin Layer 4 (v2.3).

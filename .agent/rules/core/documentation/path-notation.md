@@ -3,23 +3,19 @@ ai_visible: true
 title: "Path Notation Standard"
 description: "Standard path notation for Markdown links within the repository"
 tags: [documentation, paths, links, standards]
-version: 1.4
+version: 2.3
 created: 2026-01-13T14:10:00+09:00
-updated: 2026-01-22T01:35:00+09:00
+updated: 2026-01-22T06:05:00+09:00
 language: en
 author: Lico (Canopus)
 ai_model: Gemini 3 Flash Planning mode
-related:
-  .agent/rules/core/meta-rules.md: Cross-linking standards (references this file)
-  .agent/rules/core/security/absolute-path-prohibition.md: Security rules for paths
-  .agent/rules/core/documentation/wsl-browser-path.md: WSL-specific path handling
 ---
 
 # Path Notation Standard
 
 ## Purpose
 
-Standardize how file paths are written in Markdown links for consistency, portability, and preview compatibility.
+Standardize how file paths are written in Markdown links and define the structural placement of navigation elements for consistency, portability, and "Single Source of Truth" (SSOT) management.
 
 ## Rationale
 
@@ -46,8 +42,33 @@ Use **repository-root-relative paths** with a leading `/`:
 | Link Type | Format                                                                   |
 | :-------- | :----------------------------------------------------------------------- |
 | Rules     | `[identity.md](/.agent/rules/core/identity/identity.md)`                 |
+| Map       | `[Map of Territory](/.agent/rules/map.md)`                               |
 | Thoughts  | `[thought.md](/.agent/.internal/thoughts/polaris/2026-01-12_thought.md)` |
 | Workflows | `[ritual_mid.md](/.agent/workflows/ritual_mid.md)`                       |
+
+---
+
+## Section Structure (Navigation Integration)
+
+To eliminate information fragmentation and the "half-finished footer" problem, the following structure is mandatory for all document-level Markdown files.
+
+### 1. Mandatory Related Documents Section
+
+Every rule, card, or workflow **MUST** have a `## Related Documents` section near the bottom of the file (at the very tail).
+
+### 2. Consolidated Navigation (Return to Map)
+
+Separate `**Navigation**` footers are **deprecated**.
+Navigation links MUST be integrated into the `Related Documents` table. Every table MUST contain a link to the central index:
+
+- `[Map of Territory](/.agent/rules/map.md)` (Preferred)
+
+### 3. Body Table as SSOT
+
+The Markdown body table is the **Single Source of Truth**.
+
+- **Frontmatter Deprecation**: Frontmatter `related:` fields are deprecated for link management and should be removed or kept in sync with the body table.
+- **Priority**: In all cases, the table in the body takes precedence.
 
 ---
 
@@ -95,22 +116,17 @@ This standard was created in January 2026 during the cross-link audit project (P
 
 ## Related Documents
 
-| Document                                                                                 | Purpose                                                       |
-| :--------------------------------------------------------------------------------------- | :------------------------------------------------------------ |
-| [meta-rules.md](/.agent/rules/core/meta-rules.md)                                        | Cross-linking standards (references this file in Section 5.2) |
-| [absolute-path-prohibition.md](/.agent/rules/core/security/absolute-path-prohibition.md) | Security rules for external-facing paths                      |
-| [wsl-browser-path.md](/.agent/rules/core/documentation/wsl-browser-path.md)              | WSL-specific browser path construction                        |
+| Document                                                                                  | Purpose                                  |
+| :---------------------------------------------------------------------------------------- | :--------------------------------------- |
+| [Map of Territory](/.agent/rules/map.md)                                                  | Repository Index (Integrated Navigation) |
+| [documentation-standards.md](/.agent/rules/core/documentation/documentation-standards.md) | Structural standards                     |
+| [meta-rules.md](/.agent/rules/core/meta-rules.md)                                         | Behavioral rule governance               |
 
 ---
 
 ## Origin
 
-- 2026-01-13T14:10 by Polaris: Created based on Roadmap "Fix link information" and Spica's workspace-hook.md.
-- 2026-01-13T14:38 by Polaris: Added related documents, updated to v1.1.
-- 2026-01-15T23:05 by Canopus: Standardized Origin section (removed Japanese) and updated to v1.2.
-- 2026-01-19T06:25 by Polaris: Added Historical Background and updated Navigation to map.md (v1.3).
-- 2026-01-22T0135 by Canopus: Remediated identity.md links in examples (v1.4).
-
----
-
-**Navigation**: [← Back to Rules Index](/.agent/rules/map.md)
+- 2026-01-13T14:10 by Polaris: Created standard.
+- 2026-01-19T06:25 by Polaris: Updated to map.md (v1.3).
+- 2026-01-22T0450 by Canopus: Standardized to 4-layer structure; shifted link SSOT (v2.1).
+- 2026-01-22T0605 by Canopus: Final alignment; correctly established Related Documents Layer 3 and Origin Layer 4 (v2.3).

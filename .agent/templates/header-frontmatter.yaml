@@ -4,15 +4,11 @@ title:
 description: One-line summary of document purpose
 tags: []
 version: 1.0
-created: 2025-12-02T00:00:00+09:00
-updated: 2025-12-02T00:00:00+09:00
+created: 2026-01-22T04:30:00+09:00
+updated: 2026-01-22T04:30:00+09:00
 language: en
 # author: Format as "Lico (<Instance-ID>)"
-# Example: "Lico (Sirius)", "Lico (Gemini-Exp)"
 author: Lico
 ai_model:
-# related: Associative array of related files
-# Format: path/to/file.md: Brief description
-related:
 ---
 

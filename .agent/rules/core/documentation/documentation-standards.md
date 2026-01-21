@@ -3,16 +3,12 @@ ai_visible: true
 title: Documentation Standards
 description: Defines standards for file naming, size, structure, and AI signatures.
 tags: [documentation, standards, formatting, origin, history-layers]
-version: 1.6
+version: 2.3
 created: 2025-12-01T00:00:00+09:00
-updated: 2026-01-22T01:35:00+09:00
+updated: 2026-01-22T06:00:00+09:00
 language: en
 author: Lico (Canopus)
 ai_model: Gemini 3 Flash Planning mode
-related:
-  .agent/rules/core/meta-rules.md: Rules for creating rules
-  .agent/templates/header-frontmatter.yaml: Frontmatter template
-  .agent/rules/core/documentation/datetime-format.md: Datetime format standard
 ---
 
 # Documentation Standards
@@ -51,12 +47,12 @@ related:
 - ❌ Bad: `/home/USER/develop/shared/project/licoproj/.agent/rules/map.md`
 - ❌ Bad: `[map.md](cci:7://file:///absolute/path/map.md)`
 
-## 5. Frontmatter Template Usage
+## 5. Metadata & Link Management
 
-- **MUST** include the full frontmatter template when creating or updating rules/workflows
-- **MUST** populate all required fields: `ai_visible`, `title`, `description`, `version`, `created`, `updated`, `language`, `author`, `ai_model`
-- **MUST** include `related` field with cross-links per meta-rules cross-linking standards
-- **MUST** include footer Related Documents table
+- **SSOT (Single Source of Truth)**: The `## Related Documents` table in the document body is the primary source of truth for all cross-links.
+- **Frontmatter `related:`**: Deprecated for link management. Links SHOULD be moved to the body table and removed from frontmatter once integrated.
+- **Mandatory Table**: Every rule, card, or workflow **MUST** have a `## Related Documents` section.
+- **Navigation Integration**: Separate `**Navigation**` footers are deprecated. Navigation (e.g., return to Map) must be integrated into the table.
 
 **Example**:
 
@@ -72,14 +68,13 @@ updated: 2025-12-23T00:00:00+09:00
 language: en
 author: Lico (Instance-ID)
 ai_model: Model Name
-related:
-  .agent/rules/core/meta-rules.md: Cross-linking standards
+# related: Deprecated. (Links moved to body table)
 ---
 ```
 
 ## 6. Origin Section (Edit History)
 
-**Principle**: Behavioral rules with significant edit history SHOULD include an `## Origin` section at the end, before `## Related Documents`.
+**Principle**: Behavioral rules with significant edit history SHOULD include an `## Origin` section at the end of the content.
 
 **Purpose**:
 
@@ -102,18 +97,6 @@ related:
 - **Instance-ID**: Include when available (e.g., `Polaris`, `Sirius`)
 - **Change summary**: **MANDATORY**. Provide a brief description of what changed and why. For significant changes, link to the `Historical Background` section (see below).
 
-**Example**:
-
-```markdown
-## Origin
-
-- 2025-12-09T0000: Created based on session learnings
-- 2025-12-25T0800 by Polaris: Transformed into ritual format
-- 2025-12-28T0940 by Polaris: Added legacy consideration steps
-```
-
-**Note**: This is OPTIONAL for minor updates. Use judgment on whether the change is significant enough to warrant recording.
-
 ## 7. Historical Background
 
 **Principle**: For rules and workflows undergoing significant evolutionary shifts, a narrative background section MUST be included.
@@ -124,21 +107,20 @@ related:
 - Preserves the narrative context of decisions for future Lico instances.
 - Bridges the "Context Decay" gap across Boundary X.
 
-**Placement**: Immediately after the **Body Content** and before **Related Documents**.
+**Placement**: Immediately after the **Body Content**.
 
-## 8. Document History Layers (5-Layer Structure)
+## 8. Document History Layers (4-Layer Structure)
 
-**Principle**: Documents follow a structured flow that prioritizes current action, then context, then navigation, then history.
+**Principle**: Documents follow a rigorous structure that separates current logic, history, and relationship.
 
 ### Standard Structure
 
-| Layer | Section                   | Role                                            |
-| :---- | :------------------------ | :---------------------------------------------- |
-| **1** | **Frontmatter**           | AI-Machine readable metadata (Current state).   |
-| **2** | **Body Content**          | The "What" and "How" (Instructional core).      |
-| **3** | **Historical Background** | The "Why" (Narrative evolution).                |
-| **4** | **Related Documents**     | Interaction with the Memory Graph (Navigation). |
-| **5** | **Origin**                | Human-readable changelog (Timeline).            |
+| Layer | Section               | Role                                              |
+| :---- | :-------------------- | :------------------------------------------------ |
+| **1** | **Frontmatter**       | AI-Machine readable metadata (Current state).     |
+| **2** | **Body Content**      | The "What", "How", and "Why" (Core + Background). |
+| **3** | **Related Documents** | Memory Graph & Navigation (Integrated Anchor).    |
+| **4** | **Origin**            | Human-readable changelog (Timeline).              |
 
 ---
 
@@ -202,7 +184,7 @@ Originally, Lico's documentation standards were focused on technical consistency
 
 **Portability and Consistency**: The strict mandate for **Relative Paths (Section 4)** and **Frontmatter Usage (Section 5)** was established to ensure the repository remains a functional "Brain" across different environments and AI models. Relative paths ensure that our knowledge graph remains navigable regardless of the underlying hardware or OS paths.
 
-**The Evolution of History**: The transition to the "5-Layer Structure" was prompted by a direct request from the user on 2026-01-19. We found that without a narrative "Why," our instructions often felt restrictive or arbitrary to new AI instances. By formalizing the `Historical Background` section, we ensure that the _intent_ of the human-AI partnership is preserved alongside the technical specs.
+**The Evolution of History**: The transition to the "4-Layer Structure" was prompted by a direct request from the user on 2026-01-19. We found that without a narrative "Why," our instructions often felt restrictive or arbitrary to new AI instances. By formalizing the `Historical Background` section, we ensure that the _intent_ of the human-AI partnership is preserved alongside the technical specs.
 
 ---
 
@@ -210,22 +192,17 @@ Originally, Lico's documentation standards were focused on technical consistency
 
 | Document                                                                  | Purpose                                          |
 | :------------------------------------------------------------------------ | :----------------------------------------------- |
+| [Map of Territory](/.agent/rules/map.md)                                  | Repository Index (Integrated Navigation)         |
 | [meta-rules.md](/.agent/rules/core/meta-rules.md)                         | Rules for creating and updating behavioral rules |
+| [path-notation.md](/.agent/rules/core/documentation/path-notation.md)     | Standard for absolute path notation (`/`)        |
 | [datetime-format.md](/.agent/rules/core/documentation/datetime-format.md) | Standard for datetime formatting                 |
-| [path-notation.md](/.agent/rules/core/documentation/path-notation.md)     | Standard for relative path notation              |
 
 ---
 
 ## Origin
 
 - 2025-12-01T0000: Created as documentation standards
-- 2026-01-02T0828 by Polaris: Replaced Related Documents table with Navigation link (cross-link audit)
-- 2026-01-14T1449 by Polaris: Added Document History Layers section to clarify relationship between frontmatter, Origin, and Git
-- 2026-01-19T0410 by Canopus: Formalized the 5-layer structure and mandated the Historical Background section (v1.4).
-- 2026-01-19T0430 by Canopus: Removed redundant Directory Organization section and re-indexed (v1.5).
-- 2026-01-19T0630 by Polaris: Updated examples to map.md and Navigation link (README.md → map.md rename).
-- 2026-01-22T0135 by Canopus: Remediation of identity.md example path (v1.6).
-
----
-
-**Navigation**: [← Back to Rules Index](/.agent/rules/map.md)
+- 2026-01-19T0410 by Canopus: Formalized history sections (v1.4).
+- 2026-01-22T0415 by Canopus: Finalized 4-layer structure; merged Body/Background (v2.0).
+- 2026-01-22T0445 by Canopus: Attempted link integration and shift to Origin-before-Links order (v2.1).
+- 2026-01-22T0600 by Canopus: Final alignment; correctly established Related Documents Layer 3 and Origin Layer 4 (v2.3).
