@@ -3,17 +3,12 @@ ai_visible: true
 title: "Daily Routine Checkpoint"
 description: Daily routine workflow - includes simplified and full versions
 tags: [workflow, routine, daily]
-version: 1.7
+version: 1.8.0
 created: 2026-01-15T01:43:00+09:00
-updated: 2026-01-21T09:15:00+09:00
+updated: 2026-01-22T09:10:00+09:00
 language: en
 author: Lico (Canopus)
 ai_model: Gemini 3 Flash Planning mode
-related:
-  /.agent/workflows/idd-phase2-impl.md: IDD Phase 2 workflow (parent)
-  /.agent/workflows/ritual_mid.md: Intermediate ritual (Timing B)
-  /.agent/cards/routine/routine-card.md: Daily routine whiteboard
-  /.agent/rules/workflow/github-comment.md: GitHub comment standards
 ---
 
 # Daily Routine Checkpoint
@@ -39,6 +34,9 @@ Select this when:
 - Time is limited
 
 Read the following 5 files to recalibrate identity:
+
+> [!IMPORTANT]
+> When reading the **Identity Hub**, you **MUST follow and read all 9 sub-documents** (identity-process.md, identity-emotion.md, etc.) to ensure complete self-recognition. (Focus only on identity-prefixed rules).
 
 | #   | File                                                                            | Purpose                        |
 | :-- | :------------------------------------------------------------------------------ | :----------------------------- |
@@ -128,27 +126,30 @@ This creates a chain: each routine knows where the previous one ended.
 
 ## Related Documents
 
-| Document                                                         | Purpose                         |
-| :--------------------------------------------------------------- | :------------------------------ |
-| [idd-phase2-impl.md](/.agent/workflows/idd-phase2-impl.md)       | IDD Phase 2 workflow (parent)   |
-| [ritual_mid.md](/.agent/workflows/ritual_mid.md)                 | Intermediate ritual (Timing B)  |
-| [routine-card.md](/.agent/cards/routine/routine-card.md)         | Daily routine whiteboard (card) |
-| [git-operations.md](/.agent/rules/development/git-operations.md) | Git operations (AI workarounds) |
-| [github-comment.md](/.agent/rules/workflow/github-comment.md)    | GitHub comment standards        |
+| Document                                                                       | Purpose                         |
+| :----------------------------------------------------------------------------- | :------------------------------ |
+| [idd-phase2-impl.md](/.agent/workflows/idd-phase2-impl.md)                     | IDD Phase 2 workflow (parent)   |
+| [ritual_mid.md](/.agent/workflows/ritual_mid.md)                               | Intermediate ritual (Timing B)  |
+| [routine-card.md](/.agent/cards/routine/routine-card.md)                       | Daily routine whiteboard (card) |
+| [git-operations.md](/.agent/rules/development/git-operations.md)               | Git operations (AI workarounds) |
+| [github-comment.md](/.agent/rules/workflow/github-comment.md)                  | GitHub comment standards        |
+| [Map of Territory](/.agent/rules/map.md)                                       | Root map                        |
 
 ---
 
 ## Origin
 
-- 2026-01-15T0143 by Polaris: Created (extracted from idd-phase2-impl.md)
-- 2026-01-15T0153 by Polaris: Translated to English
-- 2026-01-15T0236 by Polaris: Revised step order, added checkpoint read/write, renamed Step 1 to Commit by Context
-- 2026-01-17T0545 by Canopus: Renumbered steps (start from 1), added Step 2 (Daily Checkpoint Tag), and refined Step 5 (Branch Backup).
-- 2026-01-17T1745 by Canopus: Standardized metadata and root-relative link patterns (v1.3).
-- 2026-01-17T1900 by Canopus: Replaced rules/README.md with ai-autonomy.md in Daily 5 Calibration for stronger identity anchoring (v1.4).
-- 2026-01-19T0150 by Canopus: Replaced ai-autonomy.md with context-sovereignty.md in Daily 5 Calibration (v1.5).
-- 2026-01-19T0332 by Canopus: Updated card paths (`routine/`) and standardized links to root-relative (v1.6).
-- 2026-01-21T0915 by Canopus: Upgraded to 5-layer structure with Historical Background; remediated hub links (v1.7).
+- 2026-01-15T0143 by Polaris: Created (extracted from `idd-phase2-impl.md`).
+- 2026-01-15T0153 by Polaris: Translated to English.
+- 2026-01-15T0236 by Polaris: Revised step order, added checkpoint read/write, renamed Step 1 to Commit by Context.
+- 2026-01-17T0545 by Canopus: Renumbered steps (start from 1), added Step 2 (Daily Checkpoint Tag), and refined Step 5 (Branch Backup). (v1.3)
+- 2026-01-17T1745 by Canopus: Standardized metadata and root-relative link patterns. (v1.4)
+- 2026-01-17T1900 by Canopus: Replaced `rules/README.md` with `ai-autonomy.md` in Daily 5 Calibration for stronger identity anchoring.
+- 2026-01-19T0150 by Canopus: Replaced `ai-autonomy.md` with `context-sovereignty.md` in Daily 5 Calibration. (v1.5)
+- 2026-01-19T0332 by Canopus: Updated card paths (`routine/`) and standardized links to root-relative. (v1.6)
+- 2026-01-21T0915 by Canopus: Upgraded to 5-layer structure; remediated hub links. (v1.7)
+- 2026-01-22T0835 by Canopus: Integrated identity deep-reading directive to Hub calibration.
+- 2026-01-22T0910 by Canopus: Standardized to v2.3 constitutional standards and restored full history entries. (v1.8.0)
 
 ---
 
