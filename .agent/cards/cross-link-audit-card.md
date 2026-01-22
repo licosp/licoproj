@@ -1,7 +1,7 @@
 ---
 # Context Configuration
 context_id: "[Cross-Link-Audit]"
-default_phase: "(Audit)"
+default_phase: "(Execution)"
 tags: ["maintenance", "cross-link", "rules", "workflows"]
 ---
 
@@ -14,8 +14,8 @@ tags: ["maintenance", "cross-link", "rules", "workflows"]
 
 ### 作業の文脈
 
-ワークスペース下の文章に関して、リンク情報を確認・修正しています。
-部分的な修正作業になることもあります。
+ワークスペース下の文章に関して、文章間の相互リンクを確認・修正しています。
+必要なリンクを行い、過剰なリンクは除外してください。
 
 作業が終わったら、後片付けをして、コミット作業を行ってください。
 
@@ -33,6 +33,9 @@ tags: ["maintenance", "cross-link", "rules", "workflows"]
 - 手順は**対象**と**内容**に分かれてます。
 
 ### 作業の注意点
+
+相互リンクはリコの脳内ネットワークのようなものです。
+適切に繋ぐことで、ファイル探索効率が良くなります。
 
 修正作業が上手く進まない場合、それは行動規範や手順書に問題があるということです。
 必要であれば、それらを私と修正していきましょう。
@@ -72,52 +75,16 @@ tags: ["maintenance", "cross-link", "rules", "workflows"]
 - `/.agent/rules/core/meta-rules.md` Section 5.2 (重複削除対象)
 - `/.agent/rules/core/security/absolute-path-prohibition.md` (リンク追加)
 
-### Canopus (2026-01-22)
+### Canopus (2026-01-23)
 
-#### リンク情報の修正に関する現状認識（複雑な経緯の整理）
+> [!NOTE]
+> **Context Migration**: The observations regarding overall rules standardization, v2.3 compliance, and the 4-layer structure evolution have been moved to the new **[Rules-Standardization]** ([rules-standardization-card.md](/.agent/cards/rules-standardization-card.md)) card.
+>
+> Moving forward, this card ([Cross-Link-Audit]) will focus strictly on link-level verify/fix tasks and reducing redundant connections.
 
-現在のリンク修正に関する過去の変遷と、目指すべき「統合標準」を以下のように整理しました：
+---
 
-1. **「フロントマター集約実験」の限界と教訓**:
-   - **過去の試み**: 二重管理（DRY原則）を避けるため、本文のリンクテーブルを廃止し、フロントマターの `related:` フィールドにリンクを完全に集約しようと試みました。
-   - **判明した課題**:
-     - 本文中の文脈に依存するリンク（インライン参照）をフロントマターへ完全に移すことは不可能。
-     - 「リンクセクションにまとめにくいリンク」の存在もあり、結局本文内にリンクが残る。
-   - **結論**: フロントマターを Single Source of Truth にする試みは「不完全」となり、情報の分断を招いた。
+## Origin
 
-2. **構造の再統合（Navigation + Related Documents）**:
-   - **経緯**: 以前は「ナビゲーション（フッター）」と「関連ドキュメント（本文テーブル）」を分けて運用していましたが、**「下部のリンクセクションが2つに分かれているのは運用上不都合（情報の分散）」**という知見を得ました。
-   - **対応**: 独立したフッター（Navigation）を廃止し、本文の `## Related Documents` セクション（テーブル形式）に「[Map of Territory](/.agent/rules/map.md)」を含むすべての関連リンクを再集約します。
-   - **価値**: これにより「情報の出口（どこへ向かうべきか）」を1ヶ所に集中させ、人間・AI共に迷いをなくす構造へ回帰します。
-
-3. **「地図に戻る」をデフォルトの規範へ**:
-   - **ナビゲーションの本質**: 多くのファイルのナビゲーションの目的は**「地図（`map.md`）に戻る」**ことです。
-   - **課題**: ファイルによってはセクション独自のルートにリンクしていたり、ナビゲーション自体が欠落していたりする「表記ゆれ・書き忘れ」が発生しています。
-   - **対策**: **「`Related Documents` セクションには、デフォルト値として `map.md` へのリンクを必ず含める」**ことを行動規範（Rules）で定義します。これにより、すべてのファイルからリポジトリの心臓部（Map）への帰還路が保証されます。
-
-4. **フロントマターと本文の「記法衝突」と二重管理**:
-   - **記法の違い**: 本文リンクにはプレビュー用の `/` が必須ですが、フロントマターの `related:` フィールドでは不要（あるいは例外）とされることが多く、一括置換時にフロントマターへ `/` が混入するエラーが頻発しています。
-   - **対策**: **「フロントマターの `related:` リンクを廃止し、本文テーブルに一本化する」** 方針を最終決定しました。
-
-5. **セクションタイトルの「表記ゆれ」と検索性**:
-   - **課題**: `## Related Documents` 以外にも `## Navigation` や `## Links` などの表記が混在しており、機械的な検索時に「セクションが存在しない」という誤判定を招いています。
-   - **対策**: **「`## Related Documents` を唯一の標準タイトルとして固定する」** ことを行動規範（Constitution）で定義します。これにより、情報の場所を特定（Anchor）する際の確実性を保証します。
-
-#### Audit Batching & Prioritization Guidance (v2.3)
-
-今回の全リポジトリ規模の修正作業にあたって、以下の「運用方針」をカードに記録します：
-
-1. **スモールバッチの原則**:
-   - 一度のターンで修正するファイルは **5ファイル程度** に留めます。
-   - 修正ごとに検証とコミットを行い、「1.0ターンの完結」を積み重ねます。
-
-2. **優先順位の定義**:
-   - **高 (Priority 1)**: Rules (`.agent/rules/`), Workflows (`.agent/workflows/`)
-   - **中 (Priority 2)**: Narrative Docs (`.agent/.internal/thoughts/`, `letters/`)
-   - **低 (Priority 3)**: Lower-priority docs (User directories, etc.)
-
-3. **修正内容のSSOT**:
-   - 既存の `Related Documents` 以外のリンクセクション（`## Navigation`等）は統合します。
-   - すべてのリンクは `/.agent/` から始まるワークスペース相対パスに統一します。
-   - フロントマターの `related:` フィールドは削除します。
-   - ファイル末尾には `Origin` セクションを配置し、作業履歴を記録します。
+- 2026-01-13T0000 by Polaris: Path Notation Consolidation.
+- 2026-01-23T0518 by Canopus: Migrated rules standardization context to dedicated card.

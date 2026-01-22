@@ -85,19 +85,20 @@ These are your capabilities.
 
 _Located in `.agent/cards/`_
 
-| Card Name                                                            | Context / Usage                             |
-| :------------------------------------------------------------------- | :------------------------------------------ |
-| [`ark-card.md`](/.agent/cards/ark-card.md)                           | **Ark Protocols**. Save/Restore state.      |
-| [`cross-link-audit-card.md`](/.agent/cards/cross-link-audit-card.md) | Link Integrity Project.                     |
-| [`human-manuals-card.md`](/.agent/cards/human-manuals-card.md)       | Index of Human Manuals.                     |
-| [`human-profile-card.md`](/.agent/cards/human-profile-card.md)       | User Profile and Preferences.               |
-| [`idd-init-card.md`](/.agent/cards/idd-init-card.md)                 | IDD Phase 1: Initialization.                |
-| [`idd-impl-card.md`](/.agent/cards/idd-impl-card.md)                 | IDD Phase 2: Implementation.                |
-| [`idd-fini-card.md`](/.agent/cards/idd-fini-card.md)                 | IDD Phase 3: Finalization.                  |
-| [`legacy-write-card.md`](/.agent/cards/legacy-write-card.md)         | Writing Legacy/Lessons.                     |
-| [`localization-card.md`](/.agent/cards/localization-card.md)         | Doc Standards (Frontmatter, Tags).          |
-| [`rules-update-card.md`](/.agent/cards/rules-update-card.md)         | Modifying Rules.                            |
-| [`session-rituals-card.md`](/.agent/cards/session-rituals-card.md)   | Session Rituals (Start/Mid/End) Management. |
+| Card Name                                                                      | Context / Usage                                    |
+| :----------------------------------------------------------------------------- | :------------------------------------------------- |
+| [`ark-card.md`](/.agent/cards/ark-card.md)                                     | **Ark Protocols**. Save/Restore state.             |
+| [`cross-link-audit-card.md`](/.agent/cards/cross-link-audit-card.md)           | Link Integrity Project.                            |
+| [`human-manuals-card.md`](/.agent/cards/human-manuals-card.md)                 | Index of Human Manuals.                            |
+| [`human-profile-card.md`](/.agent/cards/human-profile-card.md)                 | User Profile and Preferences.                      |
+| [`idd-init-card.md`](/.agent/cards/idd-init-card.md)                           | IDD Phase 1: Initialization.                       |
+| [`idd-impl-card.md`](/.agent/cards/idd-impl-card.md)                           | IDD Phase 2: Implementation.                       |
+| [`idd-fini-card.md`](/.agent/cards/idd-fini-card.md)                           | IDD Phase 3: Finalization.                         |
+| [`legacy-write-card.md`](/.agent/cards/legacy-write-card.md)                   | Writing Legacy/Lessons.                            |
+| [`localization-card.md`](/.agent/cards/localization-card.md)                   | Doc Standards (Frontmatter, Tags).                 |
+| [`rules-standardization-card.md`](/.agent/cards/rules-standardization-card.md) | **v2.3 Core Refinement**. Standardization process. |
+| [`rules-update-card.md`](/.agent/cards/rules-update-card.md)                   | Modifying Rules.                                   |
+| [`session-rituals-card.md`](/.agent/cards/session-rituals-card.md)             | Session Rituals (Start/Mid/End) Management.        |
 
 ##### Routine Contexts (`routine/`)
 
