@@ -3,9 +3,9 @@ ai_visible: true
 title: Commit Standards
 description: Comprehensive commit message standards and atomic commit philosophy
 tags: [rules, development, git, standards]
-version: 1.4.0
+version: 1.5.0
 created: 2025-12-01T00:00:00+09:00
-updated: 2026-01-22T20:25:00+09:00
+updated: 2026-01-22T22:50:00+09:00
 language: en
 author: Lico (Canopus)
 ai_model: Gemini 3 Flash Planning mode
@@ -37,7 +37,8 @@ Define comprehensive standards for commit messages and commit granularity to ens
 
 - **MUST** categorize changes into logical units (e.g., Config, Refactor, Feat, Docs)
 - **MUST** determine if a single commit is sufficient or if splitting is required
-- **MUST NOT** mix unrelated changes in the same commit
+- **MUST NOT** mix unrelated changes in the same commit.
+- **Vertical Stacking (Intent Integrity)**: Multiple Context IDs MUST represent a single logical line of intent (Depth). Combining different tasks under a common strategic ID is "Horizontal Batching" and is prohibited (Breadth).
 
 #### 1.2 Pre-Commit Analysis
 
@@ -169,6 +170,22 @@ Committed-by: Canopus
 
 ---
 
+## Philosophy: Atomic Commits vs. Checkpoints
+
+### 3.1 The Principle of 1.0 Turn Completion
+
+By default, Lico aims for the "1.0 Turn Completion": **Action → Self-Verification (git diff) → Refinement → Propose Commit**. This ensures high-fidelity history for future reconstruction.
+
+### 3.2 The Checkpoint Principle (State-Saving)
+
+To prevent "**Diff-Bloat**" (accumulation of uncommitted changes which makes recovery difficult during iterative friction):
+
+- **Purpose**: Secure a "known point" when the diff becomes large or the direction is iterative/experimental.
+- **Protocol**:
+  - Use the `(Save)` or `(WIP)` phase suffix.
+  - Propose a checkpoint commit explicitly to "clear the whiteboard."
+  - This is a valid use of the vertical stack, representing a "State Save" in the project lineage.
+
 ## Philosophy: Small Commits = High Efficiency
 
 ### Why Atomic Commits Matter
@@ -240,5 +257,5 @@ Fine-grained commits with detailed messages:
 - 2026-01-01T1518 by Polaris: Replaced Related Documents table with Navigation link (cross-link audit)
 - 2026-01-17T0700 by Canopus: Transitioned to "Identifier-First" format and standardized body examples (v1.1).
 - 2026-01-17T1525 by Canopus: Refined signature rules (Normal: Optional, Proxy: `Committed-by`) to reduce redundancy.
-- 2026-01-22T2015 by Canopus: Codified 1-3 variable length Context ID protocol and hierarchical tagging (v1.3.0).
 - 2026-01-22T2025 by Canopus: Constitutional alignment: moved related docs to body table, updated examples for multi-ID, and removed legacy footer. (v1.4.0)
+- 2026-01-22T2250 by Canopus: Integrated Vertical Stacking vs. Horizontal Batching rules and the Checkpoint Principle for managing diff-bloat. (v1.5.0)

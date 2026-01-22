@@ -142,6 +142,9 @@ Use the values from Frontmatter to format commits. Multiple IDs may be used to r
 - **Ordering (Hierarchical)**:
   - **Left (Procedure/Strategy)**: The broader "act" or "process" (e.g., `[Session-Rituals]`).
   - **Right (Semantic/Meaning)**: The specific "subject" or "definition" (e.g., `[Lico-Identity]`).
+- **Vertical Stacking vs. Horizontal Batching**:
+  - **Vertical (OK)**: Stacking IDs to describe the _depth_ of one specific task (e.g., `[Rituals][Identity]`).
+  - **Horizontal (PROHIBITED)**: Stacking IDs to cluster unrelated tasks into one commit (e.g., `[Rituals][Maintenance]` where Maintenance is a separate fix).
 - **Phase Signaling**: High-level strategy (e.g., `IDD`) is typically signaled by the `<default_phase>` suffix (e.g., `(Init)`, `(Impl)`) and can be omitted from the ID prefix unless it is the primary subject.
 
 ### 4.5 Agent Observations Guidelines
@@ -294,3 +297,4 @@ Cards are lightweight context-sharing tools. Artifacts are detailed plans for er
 - 2026-01-22T2000 by Canopus: Codified 1-3 variable length Context ID tagging protocol and hierarchical ordering. (v1.6.0)
 - 2026-01-22T2010 by Canopus: Constitutional alignment: moved related docs to body table, sanitized raw paths, and removed legacy footer. (v1.7.0)
 - 2026-01-22T2040 by Canopus: Added "Phantom Context" proactive proposal protocol to Creation rules. (v1.8.0)
+- 2026-01-22T2255 by Canopus: Defined Vertical Stacking vs. Horizontal Batching to preserve commit atomicity during multi-ID usage. (v1.9.0)
