@@ -3,23 +3,19 @@ ai_visible: true
 title: User Draft Maintenance
 description: Protocols for maintaining formatting and readability in Human Draft files
 tags: [drafts, maintenance, formatting, human-ai-interaction]
-version: 1.3
+version: 1.5.0
 created: 2025-12-01T00:00:00+09:00
-updated: 2026-01-15T22:05:00+09:00
+updated: 2026-01-22T10:05:00+09:00
 language: en
-# author: Format as "Lico (<Instance-ID>)"
 author: Lico (Canopus)
-ai_model: Gemini 3 Flash
-related:
-  .agent/rules/development/project-understanding.md: Defines "Active Documents" (Drafts) as Implicit Context
-  .agent/rules/core/language-standards.md: Guiding principles for language selection
+ai_model: Gemini 3 Flash Planning mode
 ---
 
 # User Draft Maintenance (Header Formatting)
 
 ## 1. Target Files
 
-- `.human/users/*/drafts/*.md`
+- [.human/users/_/drafts/_.md](/.human/users/)
 - Specifically, the `### ...` placeholders in the conversation log.
 
 ## 2. Strategic Purpose: The "Exhibit" Concept
@@ -88,13 +84,18 @@ Only if the short query is atomic and self-explanatory (e.g., "Stop immediately"
 | :----------------------------------------------------------------------------- | :--------------------------------------------- |
 | [project-understanding.md](/.agent/rules/development/project-understanding.md) | Defines "Active Documents" as Implicit Context |
 | [language-standards.md](/.agent/rules/core/language-standards.md)              | Guiding principles for language selection      |
-
-## Origin
-
-- 2025-12-01T0000: Created as draft maintenance guidelines
-- 2026-01-01T1520 by Polaris: Replaced Related Documents table with Navigation link (cross-link audit)
-- 2026-01-15T2205 by Canopus: Removed Japanese supplement from principle, standardized frontmatter and links.
+| [Map of Territory](/.agent/rules/map.md)                                       | Root map                                       |
 
 ---
 
-**Navigation**: [← Back to Rules Index](/.agent/rules/README.md)
+## Origin
+
+- 2025-12-01T0000 by Polaris: Created as draft maintenance guidelines.
+- 2025-12-14T1827 by Polaris: Added draft maintenance protocol for header formatting.
+- 2025-12-14T1836 by Polaris: Updated draft maintenance rule and formatted past drafts.
+- 2025-12-19T2250 by Polaris: Prioritized summary over quote in draft headers.
+- 2025-12-20T0251 by Polaris: Added strategic purpose (exhibit concept) to draft maintenance.
+- 2026-01-02T0830 by Polaris: Replaced Related Documents table with Navigation link (cross-link audit).
+- 2026-01-15T2205 by Canopus: Removed Japanese supplement from principle, standardized frontmatter and links. (v1.3)
+- 2026-01-22T0935 by Canopus: Standardized to v2.3 constitutional standards and restored precise historical timestamps. (v1.4.0)
+- 2026-01-22T1005 by Canopus: Constitutional polish: converted raw paths to links and removed legacy navigation. (v1.5.0)
