@@ -3,9 +3,9 @@ ai_visible: true
 title: Git Operations Standards
 description: Git standards for branches, IDD workflow, security, and push procedures
 tags: [git, standards, workflow, safety]
-version: 1.6
+version: 2.3
 created: 2025-12-01T00:00:00+09:00
-updated: 2026-01-22T01:35:00+09:00
+updated: 2026-01-23T06:26:00+09:00
 language: en
 author: Lico (Canopus)
 ai_model: Gemini 3 Flash Planning mode
@@ -337,6 +337,16 @@ git status
 - **Invisible Deletion Check**: Verifies that deleted files are correctly staged (showing `deleted:` or `renamed:`).
 - **Narrow Vision Prevention**: Forces a momentary pause to widen field of view before locking in changes.
 
+#### 7.1.1 Command Division for Verification (MANDATORY)
+
+**Rule**: You **MUST** separate `git add` and `git commit` into distinct `run_command` calls.
+
+**Rationale**:
+
+- **GUI Visibility**: Separating these commands allows the user to review the staging results in their IDE's Source Control view (GUI) before the commit command is issued.
+- **Verification Loop**: It provides a physical "checkpoint" for the human collaborator to confirm that the correct files are being committed, preventing "bead-stringing" mistakes.
+- **Atomic Intent**: `git add` is about _selection_; `git commit` is about _meaning_. Separating them respects these distinct cognitive phases.
+
 #### 7.2 Immediate Review
 
 **MUST** verify commit after creation:
@@ -445,6 +455,7 @@ git push origin <branch-name>
 - 2026-01-15T1935 by Polaris: Added post-rewrite verification and cleanup procedure
 - 2026-01-17T1535 by Canopus: Updated commit message examples to align with "Identifier-First" protocol (v1.4).
 - 2026-01-17T1745 by Canopus: Standardized metadata and root-relative link patterns (v1.5).
+- 2026-01-23T0626 by Canopus: Formalized v2.3 standardization and added Section 7.1.1 (Command Division for Verification).
 
 ---
 
