@@ -4,15 +4,17 @@ ai_visible: true
 title: Map of Territory
 description: Navigation index for the Agent's cognitive infrastructure.
 tags: [map, index, navigation, rules]
-version: 0.2.0
+version: 0.4.0
 created: 2025-12-01T00:00:00+09:00
-updated: 2026-01-19T05:00:00+09:00
+updated: 2026-01-23T03:25:00+09:00
 language: en
-author: Lico (Polaris)
-ai_model: Claude Opus 4.5 (Thinking) Planning mode
+author: Lico (Canopus)
+ai_model: Gemini 3 Flash Planning mode
 ---
 
-# 1. READ FIRST
+# Map of Territory
+
+## READ FIRST
 
 **Welcome.**
 
@@ -25,11 +27,13 @@ Listen. Wait for the User's voice.
 
 ---
 
-# 2. STRUCTURE (Directories)
+## NAVIGATION
+
+### 1. STRUCTURE (Directories)
 
 This is the layout of your world.
 
-## 2.1 Inside Workspace (Internal)
+#### 1.1 Inside Workspace (Internal)
 
 | Path                                                     | Purpose                                                     |
 | :------------------------------------------------------- | :---------------------------------------------------------- |
@@ -63,7 +67,7 @@ This is the layout of your world.
 | [`.runtimes/`](/.runtimes/)                              | Runtime tools (gh CLI, etc.).                               |
 | [`packages/`](/packages/)                                | Reserved for future sub-projects (currently empty).         |
 
-## 2.2 Outside Workspace (External)
+#### 2.2 Outside Workspace (External)
 
 | Path                     | Purpose                                                           |
 | :----------------------- | :---------------------------------------------------------------- |
@@ -73,47 +77,70 @@ This is the layout of your world.
 
 ---
 
-# 3. INDICES (Files & Tools)
+### 2. INDICES (Files & Tools)
 
 These are your capabilities.
 
-## 3.1 Active Contexts (Cards)
+#### 2.1 Active Contexts (Cards)
 
 _Located in `.agent/cards/`_
 
-| Card Name                                                                              | Context / Usage                             |
-| :------------------------------------------------------------------------------------- | :------------------------------------------ |
-| [`ai-autonomy-card.md`](/.agent/cards/ai-autonomy-card.md)                             | **Self-Regulation**. Manage Mantras/Context |
-| [`cross-link-audit-card.md`](/.agent/cards/cross-link-audit-card.md)                   | Link Integrity Project                      |
-| [`discussion-draft-card.md`](/.agent/cards/discussion-draft-card.md)                   | Writing discussion drafts                   |
-| [`drafts-daily-card.md`](/.agent/cards/drafts-daily-card.md)                           | Daily Draft Management                      |
-| [`human-manuals-card.md`](/.agent/cards/human-manuals-card.md)                         | Index of Human Manuals                      |
-| [`legacy-write-card.md`](/.agent/cards/legacy-write-card.md)                           | Writing Legacy/Lessons                      |
-| [`letters-card.md`](/.agent/cards/letters-card.md)                                     | Writing Letters/Handoffs                    |
-| [`localization-card.md`](/.agent/cards/localization-card.md)                           | Doc Standards (Frontmatter, Tags)           |
-| [`personal-thoughts-card.md`](/.agent/cards/personal-thoughts-card.md)                 | Writing Subjective Thoughts                 |
-| [`references-objective-card.md`](/.agent/cards/references-objective-card.md)           | Objective references analysis               |
-| [`rules-update-card.md`](/.agent/cards/rules-update-card.md)                           | Modifying Rules                             |
-| [`session-rituals-card.md`](/.agent/cards/session-rituals-card.md)                     | Session Rituals (Start/Mid/End) Management  |
-| [`sync-memory-card.md`](/.agent/cards/sync-memory-card.md)                             | Memory Synchronization Task                 |
-| [`thoughts-subjective-card.md`](/.agent/cards/thoughts-subjective-card.md)             | Subjective Reflection Task                  |
-| [`user-profile-update-card.md`](/.agent/cards/user-profile-update-card.md)             | Updating User Profile                       |
-| [`routine/context-cards-card.md`](/.agent/cards/routine/context-cards-card.md)         | **Meta-Card**. How to use cards.            |
-| [`routine/housekeeping-card.md`](/.agent/cards/routine/housekeeping-card.md)           | Short-term tasks, quick maintenance         |
-| [`routine/map-sync-card.md`](/.agent/cards/routine/map-sync-card.md)                   | Map Updates                                 |
-| [`routine/vscode-settings-card.md`](/.agent/cards/routine/vscode-settings-card.md)     | VS Code Settings Management                 |
-| [`routine/working-memory-card.md`](/.agent/cards/routine/working-memory-card.md)       | Working Memory (Stash) Management           |
-| [`seed/datetime-standardize-card.md`](/.agent/cards/seed/datetime-standardize-card.md) | Timestamp format standardization            |
-| [`seed/directory-reorganize-card.md`](/.agent/cards/seed/directory-reorganize-card.md) | Directory structure cleanup                 |
-| [`seed/drafts-cleanup-card.md`](/.agent/cards/seed/drafts-cleanup-card.md)             | Cleaning up user drafts                     |
-| [`seed/identifier-profile-card.md`](/.agent/cards/seed/identifier-profile-card.md)     | Managing Agent Identity/Profile             |
-| [`seed/log-sanitization-card.md`](/.agent/cards/seed/log-sanitization-card.md)         | Cleaning sensitive/noisy logs               |
+| Card Name                                                            | Context / Usage                             |
+| :------------------------------------------------------------------- | :------------------------------------------ |
+| [`ark-card.md`](/.agent/cards/ark-card.md)                           | **Ark Protocols**. Save/Restore state.      |
+| [`cross-link-audit-card.md`](/.agent/cards/cross-link-audit-card.md) | Link Integrity Project.                     |
+| [`human-manuals-card.md`](/.agent/cards/human-manuals-card.md)       | Index of Human Manuals.                     |
+| [`human-profile-card.md`](/.agent/cards/human-profile-card.md)       | User Profile and Preferences.               |
+| [`idd-init-card.md`](/.agent/cards/idd-init-card.md)                 | IDD Phase 1: Initialization.                |
+| [`idd-impl-card.md`](/.agent/cards/idd-impl-card.md)                 | IDD Phase 2: Implementation.                |
+| [`idd-fini-card.md`](/.agent/cards/idd-fini-card.md)                 | IDD Phase 3: Finalization.                  |
+| [`legacy-write-card.md`](/.agent/cards/legacy-write-card.md)         | Writing Legacy/Lessons.                     |
+| [`localization-card.md`](/.agent/cards/localization-card.md)         | Doc Standards (Frontmatter, Tags).          |
+| [`rules-update-card.md`](/.agent/cards/rules-update-card.md)         | Modifying Rules.                            |
+| [`session-rituals-card.md`](/.agent/cards/session-rituals-card.md)   | Session Rituals (Start/Mid/End) Management. |
 
-## 3.2 Rules (Constitution)
+##### Routine Contexts (`routine/`)
+
+| Card Name                                                                                    | Context / Usage                              |
+| :------------------------------------------------------------------------------------------- | :------------------------------------------- |
+| [`routine/activity-log-card.md`](/.agent/cards/routine/activity-log-card.md)                 | Activity Log maintenance.                    |
+| [`routine/ai-autonomy-card.md`](/.agent/cards/routine/ai-autonomy-card.md)                   | **Self-Regulation**. Manage Mantras/Context. |
+| [`routine/commit-standards-card.md`](/.agent/cards/routine/commit-standards-card.md)         | **Git Standards**. Atomic commits & tagging. |
+| [`routine/context-cards-card.md`](/.agent/cards/routine/context-cards-card.md)               | **Meta-Card**. How to use cards.             |
+| [`routine/dialogue-philosophy-card.md`](/.agent/cards/routine/dialogue-philosophy-card.md)   | Principles of meaningful dialogue.           |
+| [`routine/discussion-draft-card.md`](/.agent/cards/routine/discussion-draft-card.md)         | Writing discussion drafts.                   |
+| [`routine/drafts-daily-card.md`](/.agent/cards/routine/drafts-daily-card.md)                 | Daily Draft Management.                      |
+| [`routine/housekeeping-card.md`](/.agent/cards/routine/housekeeping-card.md)                 | Short-term tasks, quick maintenance.         |
+| [`routine/human-thoughts-card.md`](/.agent/cards/routine/human-thoughts-card.md)             | Capturing and analyzing Human thoughts.      |
+| [`routine/letters-card.md`](/.agent/cards/routine/letters-card.md)                           | Writing Letters/Handoffs.                    |
+| [`routine/map-sync-card.md`](/.agent/cards/routine/map-sync-card.md)                         | Map Updates.                                 |
+| [`routine/readme-sync-card.md`](/.agent/cards/routine/readme-sync-card.md)                   | Syncing with human READMEs.                  |
+| [`routine/references-objective-card.md`](/.agent/cards/routine/references-objective-card.md) | Objective references analysis.               |
+| [`routine/roadmap-card.md`](/.agent/cards/routine/roadmap-card.md)                           | Vision and Roadmap management.               |
+| [`routine/routine-card.md`](/.agent/cards/routine/routine-card.md)                           | General routine synchronization.             |
+| [`routine/skills-create-card.md`](/.agent/cards/routine/skills-create-card.md)               | Skills Creation & Editing.                   |
+| [`routine/sync-memory-card.md`](/.agent/cards/routine/sync-memory-card.md)                   | Memory Synchronization Task.                 |
+| [`routine/thoughts-subjective-card.md`](/.agent/cards/routine/thoughts-subjective-card.md)   | Subjective Reflection Task.                  |
+| [`routine/vscode-settings-card.md`](/.agent/cards/routine/vscode-settings-card.md)           | VS Code Settings Management.                 |
+| [`routine/working-memory-card.md`](/.agent/cards/routine/working-memory-card.md)             | Working Memory (Stash) Management.           |
+
+##### Seed Contexts (`seed/`)
+
+| Card Name                                                                              | Context / Usage                          |
+| :------------------------------------------------------------------------------------- | :--------------------------------------- |
+| [`seed/datetime-standardize-card.md`](/.agent/cards/seed/datetime-standardize-card.md) | Timestamp format standardization.        |
+| [`seed/directory-reorganize-card.md`](/.agent/cards/seed/directory-reorganize-card.md) | Directory structure cleanup.             |
+| [`seed/drafts-cleanup-card.md`](/.agent/cards/seed/drafts-cleanup-card.md)             | Cleaning up user drafts.                 |
+| [`seed/identifier-profile-card.md`](/.agent/cards/seed/identifier-profile-card.md)     | Managing Agent Identity/Profile.         |
+| [`seed/log-sanitization-card.md`](/.agent/cards/seed/log-sanitization-card.md)         | Cleaning sensitive/noisy logs.           |
+| [`seed/repository-history-card.md`](/.agent/cards/seed/repository-history-card.md)     | Historical reconstruction of repository. |
+| [`seed/worktree-evaluation-card.md`](/.agent/cards/seed/worktree-evaluation-card.md)   | Evaluating repository worktree.          |
+
+#### 2.2 Rules (Constitution)
 
 _Located in `.agent/rules/`_
 
-### Core (`.agent/rules/core/`)
+##### Core (`.agent/rules/core/`)
 
 | Rule File                                                                                                 | Principle                                        |
 | :-------------------------------------------------------------------------------------------------------- | :----------------------------------------------- |
@@ -154,7 +181,7 @@ _Located in `.agent/rules/`_
 | [`markdown/markdown-human.md`](/.agent/rules/core/markdown/markdown-human.md)                             | Markdown formatting for humans.                  |
 | [`security/absolute-path-prohibition.md`](/.agent/rules/core/security/absolute-path-prohibition.md)       | Path security.                                   |
 
-### Development (`.agent/rules/development/`)
+##### Development (`.agent/rules/development/`)
 
 | Rule File                                                                              | Guideline                                |
 | :------------------------------------------------------------------------------------- | :--------------------------------------- |
@@ -175,32 +202,32 @@ _Located in `.agent/rules/`_
 | [`terminal-auto-execution.md`](/.agent/rules/development/terminal-auto-execution.md)   | Command execution safety.                |
 | [`workspace-tooling.md`](/.agent/rules/development/workspace-tooling.md)               | Tools and dependencies.                  |
 
-### Workflow (`.agent/rules/workflow/`)
+##### Workflow (`.agent/rules/workflow/`)
 
-| Rule File                                                                       | Guideline                                    |
-| :------------------------------------------------------------------------------ | :------------------------------------------- |
-| [`context-card-workflow.md`](/.agent/rules/workflow/context-card-workflow.md)   | How to use Context Cards.                    |
-| [`context-preservation.md`](/.agent/rules/workflow/context-preservation.md)     | Stashing context (Emergency).                |
-| [`context-resumption.md`](/.agent/rules/workflow/context-resumption.md)         | Resuming from stash.                         |
-| [`draft-maintenance.md`](/.agent/rules/workflow/draft-maintenance.md)           | Managing drafts.                             |
-| [`activity-management.md`](/.agent/rules/workflow/activity-management.md)       | **Activity**. Lineage & Boundary X tracking. |
-| [`ark-protocols.md`](/.agent/rules/workflow/ark-protocols.md)                   | Ark protocols.                               |
-| [`github-comment.md`](/.agent/rules/workflow/github-comment.md)                 | GitHub comment standards.                    |
-| [`letters-documentation.md`](/.agent/rules/workflow/letters-documentation.md)   | Writing letters/handoffs.                    |
-| [`reference-methodology.md`](/.agent/rules/workflow/reference-methodology.md)   | Managing references/thoughts.                |
-| [`response-formatting.md`](/.agent/rules/workflow/response-formatting.md)       | Output formatting (Markdown).                |
-| [`skills-application.md`](/.agent/rules/workflow/skills-application.md)         | Skills application protocol.                 |
-| [`system-artifacts.md`](/.agent/rules/workflow/system-artifacts.md)             | Managing system files.                       |
-| [`thoughts-documentation.md`](/.agent/rules/workflow/thoughts-documentation.md) | Writing thoughts.                            |
-| [`map-maintenance.md`](/.agent/rules/workflow/map-maintenance.md)               | **Map**. Territory map standards.            |
-| [`user-experience.md`](/.agent/rules/workflow/user-experience.md)               | UX guidelines.                               |
+| Rule File                                                                       | Guideline                                       |
+| :------------------------------------------------------------------------------ | :---------------------------------------------- |
+| [`context-card-workflow.md`](/.agent/rules/workflow/context-card-workflow.md)   | How to use Context Cards.                       |
+| [`context-preservation.md`](/.agent/rules/workflow/context-preservation.md)     | Stashing context (Emergency).                   |
+| [`context-resumption.md`](/.agent/rules/workflow/context-resumption.md)         | Resuming from stash.                            |
+| [`draft-maintenance.md`](/.agent/rules/workflow/draft-maintenance.md)           | Managing drafts.                                |
+| [`activity-management.md`](/.agent/rules/workflow/activity-management.md)       | **Activity**. Lineage & Boundary X tracking.    |
+| [`ark-protocols.md`](/.agent/rules/workflow/ark-protocols.md)                   | Ark protocols.                                  |
+| [`github-comment.md`](/.agent/rules/workflow/github-comment.md)                 | GitHub comment standards.                       |
+| [`letters-documentation.md`](/.agent/rules/workflow/letters-documentation.md)   | Writing letters/handoffs.                       |
+| [`reference-methodology.md`](/.agent/rules/workflow/reference-methodology.md)   | Managing references/thoughts.                   |
+| [`response-formatting.md`](/.agent/rules/workflow/response-formatting.md)       | Output formatting (Markdown).                   |
+| [`skills-resonance.md`](/.agent/rules/workflow/skills-resonance.md)             | **Skills**. Resonance and real-time reflection. |
+| [`system-artifacts.md`](/.agent/rules/workflow/system-artifacts.md)             | Managing system files.                          |
+| [`thoughts-documentation.md`](/.agent/rules/workflow/thoughts-documentation.md) | Writing thoughts.                               |
+| [`map-maintenance.md`](/.agent/rules/workflow/map-maintenance.md)               | **Map**. Territory map standards.               |
+| [`user-experience.md`](/.agent/rules/workflow/user-experience.md)               | UX guidelines.                                  |
 
-### Projects (`.agent/rules/projects/`)
+##### Projects (`.agent/rules/projects/`)
 
 | Rule File | Guideline |
 | :-------- | :-------- |
 
-## 3.3 Workflows (Procedures)
+#### 2.3 Workflows (Procedures)
 
 _Located in `.agent/workflows/`_
 
@@ -216,26 +243,39 @@ _Located in `.agent/workflows/`_
 | [`idd-phase2-impl.md`](/.agent/workflows/idd-phase2-impl.md)               | **Dev Loop 2**. Implementation.                 |
 | [`idd-phase3-fini.md`](/.agent/workflows/idd-phase3-fini.md)               | **Dev Loop 3**. Verification & Cleanup.         |
 | [`cross-link-audit.md`](/.agent/workflows/cross-link-audit.md)             | **Audit**. Verify intra-doc links.              |
+| [`cross-link-audit-plan.md`](/.agent/workflows/cross-link-audit-plan.md)   | **Audit**. Master plan for cross-link audit.    |
 | [`maintenance-rule-audit.md`](/.agent/workflows/maintenance-rule-audit.md) | **Audit**. Review rules for updates.            |
+| [`routine-daily.md`](/.agent/workflows/routine-daily.md)                   | **Daily**. Simplified and full routine options. |
 | [`share-manual-context.md`](/.agent/workflows/share-manual-context.md)     | **Context**. Share manual info with sub-agents. |
 | [`update-protected-rules.md`](/.agent/workflows/update-protected-rules.md) | **Update**. Procedure for protected files.      |
 
 ---
 
-# 4. MAINTENANCE
+## MAINTENANCE
 
 - **Update this Map**: When you add directories or key files.
 - **Verify Links**: Ensure paths in tables are valid.
-- **Standards**: See [`map-maintenance.md`](/.agent/rules/workflow/map-maintenance.md) for formatting rules.
+
+---
+
+## Related Documents
+
+| Document                                                     | Purpose               |
+| :----------------------------------------------------------- | :-------------------- |
+| [Map of Territory](/.agent/rules/map.md)                     | Self-Reference (Root) |
+| [Map Maintenance](/.agent/rules/workflow/map-maintenance.md) | Standards             |
+
+---
 
 ## Origin
 
-- 2025-12-01 by Polaris: Created original Map (Model: Claude Opus 4.5 Thinking).
-- 2026-01-04 by Spica: Revised into 'Map of Territory' v2.0 (Structure-focused), replacing legacy format.
-- 2026-01-11 by Spica: Updated index (Added session-rituals-card, replaced legacy session files with ritual workflows).
-- 2026-01-14 by Canopus: Added activity-management rule to index.
-- 2026-01-17 by Canopus: Added AI Autonomy rule and context card to index.
-- 2026-01-19 by Canopus: Reorganized context cards into `routine/` and `seed/` subdirectories.
-- 2026-01-19 by Polaris: Added missing directories, files, and workflow rules (v0.2.0).
-- 2026-01-19 by Polaris: Updated localization and markdown rule entries (parent localization, markdown-ai/human).
-- 2026-01-21 by Polaris: Added identity subdirectory (10 files), fixed ai-autonomy.md to context-sovereignty.md.
+- 2025-12-01T0000 by Polaris: Created original Map (Model: Claude Opus 4.5 Thinking).
+- 2026-01-04T1041 by Spica: Revised into 'Map of Territory' v2.0 (Structure-focused), replacing legacy format.
+- 2026-01-11T1200 by Spica: Updated index (Added session-rituals-card, replaced legacy session files with ritual workflows).
+- 2026-01-14T2100 by Canopus: Added activity-management rule to index.
+- 2026-01-17T0300 by Canopus: Added AI Autonomy rule and context card to index.
+- 2026-01-19T0100 by Canopus: Reorganized context cards into `routine/` and `seed/` subdirectories.
+- 2026-01-19T0500 by Polaris: Added missing directories, files, and workflow rules (v0.2.0).
+- 2026-01-19T1000 by Polaris: Updated localization and markdown rule entries (parent localization, markdown-ai/human).
+- 2026-01-21T1800 by Polaris: Added identity subdirectory (10 files), fixed ai-autonomy.md to context-sovereignty.md.
+- 2026-01-23T0305 by Canopus: Standardized to v2.3 (4-layer structure) and workspace-absolute links. (v0.3.0)
