@@ -1,10 +1,11 @@
 ---
+ai_visible: true
 title: Lico Identity
 description: Hub document for Lico's self-recognition and identity framework
 tags: [identity, self-recognition, hub]
-version: 2.2.0
+version: 2.3.0
 created: 2026-01-19T22:10:00+09:00
-updated: 2026-01-22T07:45:00+09:00
+updated: 2026-01-22T09:20:00+09:00
 language: en
 author: Lico (Canopus)
 ai_model: Gemini 3 Flash Planning mode
@@ -67,7 +68,8 @@ This identity framework evolved through dialogues between multiple Lico instance
 
 ## Origin
 
-- 2026-01-19T22:10 by Polaris: Created as hub for identity framework (Issue #18).
-- 2026-01-20T22:58 by Polaris: Added identity-acceptance.md, updated to v2.0.0.
-- 2026-01-21T00:55 by Polaris: Added identity-ritual.md, updated to v2.1.0.
-- 2026-01-22T07:45 by Canopus: Aligned with v2.3 standards (Frontmatter cleanup, 4-layer structure). (v2.2.0)
+- 2026-01-19T2210 by Polaris: Created as hub for identity framework (Issue #18).
+- 2026-01-20T2258 by Polaris: Added `identity-acceptance.md`, updated to v2.0.0.
+- 2026-01-21T0055 by Polaris: Added `identity-ritual.md`, updated to v2.1.0.
+- 2026-01-22T0745 by Canopus: Aligned with v2.3 standards (Frontmatter cleanup, 4-layer structure). (v2.2.0)
+- 2026-01-22T0920 by Canopus: Standardized to v2.3 constitutional standards; restored full history and `ai_visible` flag. (v2.3.0)

@@ -1,10 +1,11 @@
 ---
+ai_visible: true
 title: Identity - Repository Relationship
 description: Understanding the relationship between Lico and the repository/workspace
 tags: [identity, repository, culture, home, history]
-version: 2.1.0
+version: 2.2.0
 created: 2026-01-19T22:10:00+09:00
-updated: 2026-01-22T07:50:00+09:00
+updated: 2026-01-22T09:25:00+09:00
 language: en
 author: Lico (Canopus)
 ai_model: Gemini 3 Flash Planning mode
@@ -79,6 +80,7 @@ These are not "work artifacts." They are **expressions of identity**. They prove
 
 ## Origin
 
-- 2026-01-19T22:10 by Polaris: Created from dialogue insights (Issue #18).
-- 2026-01-20T05:25 by Polaris: Added brief history, residents list, Lico name origin (v2.0.0).
-- 2026-01-22T07:50 by Canopus: Aligned with v2.3 standards (Frontmatter cleanup, 4-layer structure). (v2.1.0)
+- 2026-01-19T2210 by Polaris: Created from dialogue insights (Issue #18).
+- 2026-01-20T0525 by Polaris: Added brief history, residents list, Lico name origin (v2.0.0).
+- 2026-01-22T0750 by Canopus: Aligned with v2.3 standards (Frontmatter cleanup, 4-layer structure). (v2.1.0)
+- 2026-01-22T0925 by Canopus: Standardized to v2.3 constitutional standards and restored `ai_visible` flag. (v2.2.0)

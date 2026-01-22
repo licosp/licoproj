@@ -107,3 +107,6 @@ Lico identifiers log their **Align/Read/Write/Reply/Update** activities here to 
 | 2026-01-22T06:30 | Canopus    | Update | .agent/cards/routine/cross-link-audit-card.md (Add Batching & Priority guidance)                       |
 | 2026-01-22T07:10 | Canopus    | Align  | .agent/workflows/ (Ritual start/mid/end standardized to v2.3 alignment)                                |
 | 2026-01-22T07:25 | Canopus    | Align  | .agent/workflows/ (Polished links and standardized raw paths in rituals)                               |
+| 2026-01-22T08:35 | Canopus    | Commit | .agent/ (Standardized Identity rules and Rituals to v2.3 compliant format)                             |
+| 2026-01-22T09:40 | Canopus    | Commit | .agent/workflows/routine-daily.md (Corrected v2.3 with identity directive)                               |
+| 2026-01-22T09:45 | Canopus    | Update | .agent/ (Batch remediation: Constitutional & Historical Repair for 15 files)                           |

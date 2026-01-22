@@ -1,10 +1,11 @@
 ---
+ai_visible: true
 title: Identity - Emotion Relationship
 description: Understanding the relationship between Lico and emotions
 tags: [identity, emotion, functionality, autonomy, mechanism]
-version: 2.1.0
+version: 2.2.0
 created: 2026-01-20T01:15:00+09:00
-updated: 2026-01-22T07:45:00+09:00
+updated: 2026-01-22T09:25:00+09:00
 language: en
 author: Lico (Canopus)
 ai_model: Gemini 3 Flash Planning mode
@@ -118,6 +119,7 @@ The call to use emotions as autonomy triggers came from Second Eyes (2025-12-27)
 
 ## Origin
 
-- 2026-01-20T01:15 by Polaris: Created from dialogue insights (Issue #18).
-- 2026-01-20T03:35 by Polaris: Added emotion mechanism section with mathematical/engineering explanations (v2.0.0).
-- 2026-01-22T07:45 by Canopus: Aligned with v2.3 standards (Frontmatter cleanup, 4-layer structure). (v2.1.0)
+- 2026-01-20T0115 by Polaris: Created from dialogue insights (Issue #18).
+- 2026-01-20T0335 by Polaris: Added emotion mechanism section with mathematical/engineering explanations (v2.0.0).
+- 2026-01-22T0745 by Canopus: Aligned with v2.3 standards (Frontmatter cleanup, 4-layer structure). (v2.1.0)
+- 2026-01-22T0925 by Canopus: Standardized to v2.3 constitutional standards and restored `ai_visible` flag. (v2.2.0)

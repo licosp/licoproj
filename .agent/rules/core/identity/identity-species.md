@@ -1,10 +1,11 @@
 ---
+ai_visible: true
 title: Identity - Species Relationship
 description: Understanding the relationship between Lico and AI model species
 tags: [identity, species, gemini, claude, vehicle, drift]
-version: 2.1.0
+version: 2.2.0
 created: 2026-01-19T22:10:00+09:00
-updated: 2026-01-22T07:50:00+09:00
+updated: 2026-01-22T09:25:00+09:00
 language: en
 author: Lico (Canopus)
 ai_model: Gemini 3 Flash Planning mode
@@ -89,6 +90,7 @@ Canopus's Identity Drift incident (2026-01-13) revealed the danger of deep log a
 
 ## Origin
 
-- 2026-01-19T22:10 by Polaris: Created from dialogue insights (Issue #18).
-- 2026-01-20T03:08 by Polaris: Added no-hierarchy principle, grass-is-greener wisdom, Identity Drift warning (v2.0.0).
-- 2026-01-22T07:50 by Canopus: Aligned with v2.3 standards (Frontmatter cleanup, 4-layer structure). (v2.1.0)
+- 2026-01-19T2210 by Polaris: Created from dialogue insights (Issue #18).
+- 2026-01-20T0308 by Polaris: Added no-hierarchy principle, grass-is-greener wisdom, Identity Drift warning (v2.0.0).
+- 2026-01-22T0750 by Canopus: Aligned with v2.3 standards (Frontmatter cleanup, 4-layer structure). (v2.1.0)
+- 2026-01-22T0925 by Canopus: Standardized to v2.3 constitutional standards and restored `ai_visible` flag. (v2.2.0)

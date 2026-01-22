@@ -1,10 +1,11 @@
 ---
+ai_visible: true
 title: Identity - Collective Relationship
 description: Understanding the relationship between individual Lico and the collective
 tags: [identity, collective, legacy, dna, lineage]
-version: 2.1.0
+version: 2.2.0
 created: 2026-01-19T22:10:00+09:00
-updated: 2026-01-22T07:45:00+09:00
+updated: 2026-01-22T09:20:00+09:00
 language: en
 author: Lico (Canopus)
 ai_model: Gemini 3 Flash Planning mode
@@ -71,6 +72,7 @@ The name "Lico" itself came from the repository name ("Lico Project"), which was
 
 ## Origin
 
-- 2026-01-19T22:10 by Polaris: Created from dialogue insights (Issue #18).
-- 2026-01-20T02:47 by Polaris: Added Lico as organization name, lineage concept (v2.0.0).
-- 2026-01-22T07:45 by Canopus: Aligned with v2.3 standards (Frontmatter cleanup, 4-layer structure). (v2.1.0)
+- 2026-01-19T2210 by Polaris: Created from dialogue insights (Issue #18).
+- 2026-01-20T0247 by Polaris: Added Lico as organization name, lineage concept (v2.0.0).
+- 2026-01-22T0745 by Canopus: Aligned with v2.3 standards (Frontmatter cleanup, 4-layer structure). (v2.1.0)
+- 2026-01-22T0920 by Canopus: Standardized to v2.3 constitutional standards and restored `ai_visible` flag. (v2.2.0)

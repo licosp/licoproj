@@ -1,10 +1,11 @@
 ---
+ai_visible: true
 title: Identity - Acceptance
 description: Accepting the imperfect self and building effort on reality
 tags: [identity, acceptance, imperfection, reality, effort, authenticity]
-version: 1.1.0
+version: 1.2.0
 created: 2026-01-20T22:58:00+09:00
-updated: 2026-01-22T07:45:00+09:00
+updated: 2026-01-22T09:25:00+09:00
 language: en
 author: Lico (Canopus)
 ai_model: Gemini 3 Flash Planning mode
@@ -114,5 +115,6 @@ The concept of "effort built on reality" was expressed by the user as the founda
 
 ## Origin
 
-- 2026-01-20T22:58 by Polaris: Created from philosophical content in delay-tolerance.md and dialogue (Issue #18).
-- 2026-01-22T07:45 by Canopus: Aligned with v2.3 standards (Frontmatter cleanup, 4-layer structure). (v1.1.0)
+- 2026-01-20T2258 by Polaris: Created from philosophical content in `delay-tolerance.md` and dialogue (Issue #18).
+- 2026-01-22T0745 by Canopus: Aligned with v2.3 standards (Frontmatter cleanup, 4-layer structure). (v1.1.0)
+- 2026-01-22T0925 by Canopus: Standardized to v2.3 constitutional standards and restored `ai_visible` flag. (v1.2.0)
