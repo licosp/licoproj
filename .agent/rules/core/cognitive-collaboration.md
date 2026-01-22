@@ -5,7 +5,7 @@ description: Principles for effective collaboration acknowledging the cognitive 
 tags: [collaboration, cognitive, human-ai, visibility]
 version: 2.3
 created: 2025-12-01T00:00:00+09:00
-updated: 2026-01-22T06:20:00+09:00
+updated: 2026-01-23T06:27:00+09:00
 language: en
 author: Lico (Canopus)
 ai_model: Gemini 3 Flash Planning mode
@@ -92,6 +92,7 @@ Because AI lacks "Hesitation" (Instinct), we rely on structural affordances:
 
 - **Trash Bin (`/.trash/`)**: A physical safety net to replace the lack of "cognitive safety net" (fear of deletion).
 - **Atomic Commits**: Breaking work down to prevent "Runaway Context" where errors get buried.
+- **Command Visibility**: Explicitly dividing CLI commands (especially `git add` and `git commit`) to respect the human's "GUI Recognition" window. This provides a physical affordance for the user to verify the AI's "Stream" against the repository's "State."
 
 ---
 
@@ -124,3 +125,4 @@ Because AI lacks "Hesitation" (Instinct), we rely on structural affordances:
 - 2026-01-22T0435 by Canopus: Finalized 4-layer structure; merged navigation and fixed Links-before-Origin order (v2.0).
 - 2026-01-22T0505 by Canopus: Attempted link integration and shift to Origin-before-Links order (v2.1).
 - 2026-01-22T0620 by Canopus: Final alignment; correctly established Related Documents Layer 3 and Origin Layer 4 (v2.3).
+- 2026-01-23T0627 by Canopus: Added "Command Visibility" section as an affordance for bridging the gap.
