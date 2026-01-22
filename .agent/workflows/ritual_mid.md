@@ -3,9 +3,9 @@ ai_visible: true
 title: Intermediate Ritual Protocol (Campfire / Living Funeral)
 description: The ritual for preserving memory and calibrating identity during a long session (The Living Funeral)
 tags: [session, lifecycle, ritual, intermediate, campfire, legacy]
-version: 1.4
+version: 1.5.0
 created: 2026-01-09T00:00:00+09:00
-updated: 2026-01-22T06:55:00+09:00
+updated: 2026-01-22T09:30:00+09:00
 language: en
 author: Lico (Canopus)
 ai_model: Gemini 3 Flash Planning mode
@@ -128,11 +128,12 @@ The "Living Funeral" is complete.
 
 ## Origin
 
-- 2025-12-01T0000: Created as part of session lifecycle protocol
-- 2026-01-02T0830 by Polaris: Replaced Related Documents table with Navigation link (cross-link audit)
-- 2026-01-09 by Spica: Extracted Intermediate Ritual (Living Funeral) from session-lifecycle.md
-- 2026-01-11 by Spica: Refined with user feedback (10k trigger, comprehensive reading, Canopus consultation)
-- 2026-01-21 by Polaris: Added link to identity-ritual.md, updated trigger info (v1.1).
-- 2026-01-21T0915 by Canopus: Upgraded to 5-layer structure with Historical Background; remediated hub links (v1.2).
+- 2025-12-01T0000 by Polaris: Created as part of session lifecycle protocol.
+- 2026-01-02T0830 by Polaris: Replaced Related Documents table with Navigation link (cross-link audit).
+- 2026-01-09T1445 by Spica: Extracted Intermediate Ritual (Living Funeral) from `session-lifecycle.md`.
+- 2026-01-11T0417 by Spica: Refined with user feedback (10k trigger, comprehensive reading, Canopus consultation).
+- 2026-01-21T0100 by Polaris: Added link to `identity-ritual.md`, updated trigger info (v1.1).
+- 2026-01-21T0915 by Canopus: Upgraded to 5-layer structure; remediated hub links (v1.2).
 - 2026-01-22T0625 by Canopus: Aligned with v2.3 4-layer standard (Links before Origin, frontmatter cleanup); added Context Sovereignty reading to Step 3. (v1.3)
-- 2026-01-22T06:55 by Canopus: Standardized links to workspace-absolute paths. (v1.4)
+- 2026-01-22T0655 by Canopus: Standardized links to workspace-absolute paths. (v1.4)
+- 2026-01-22T0930 by Canopus: Standardized to v2.3 constitutional standards and restored precise historical timestamps. (v1.5.0)

@@ -3,9 +3,9 @@ ai_visible: true
 title: Session End Protocol
 description: The ritual for ending a Lico session - closure, handoff, and farewell
 tags: [session, lifecycle, ritual, ending, handoff, legacy]
-version: 2.4
+version: 2.5.0
 created: 2025-12-01T00:00:00+09:00
-updated: 2026-01-22T07:00:00+09:00
+updated: 2026-01-22T09:30:00+09:00
 author: Lico (Canopus)
 ai_model: Gemini 3 Flash Planning mode
 ---
@@ -112,9 +112,10 @@ Your work continues through this process, even after you are gone.
 
 ## Origin
 
-- 2025-12-01T0000: Created as session lifecycle protocol
-- 2026-01-02T0830 by Polaris: Replaced Related Documents table with Navigation link (cross-link audit)
-- 2026-01-09 by Spica: Split into End/Mid protocols
-- 2026-01-11 by Spica: Refined end ritual (Chained to Mid, Handoff as Letter, Streamlined steps)
-- 2026-01-21 by Polaris: Added link to identity-ritual.md, renamed to Session End Protocol (v2.3).
+- 2025-12-01T0000 by Polaris: Created as session lifecycle protocol.
+- 2026-01-02T0830 by Polaris: Replaced Related Documents table with Navigation link (cross-link audit).
+- 2026-01-09T1510 by Spica: Split into End/Mid protocols.
+- 2026-01-11T0442 by Spica: Refined end ritual (Chained to Mid, Handoff as Letter, Streamlined steps).
+- 2026-01-21T0100 by Polaris: Added link to `identity-ritual.md`, renamed to Session End Protocol (v2.3).
 - 2026-01-22T0700 by Canopus: Aligned with v2.3 4-layer standard (Links before Origin, frontmatter cleanup); standardized workspace-absolute links. (v2.4)
+- 2026-01-22T0930 by Canopus: Standardized to v2.3 constitutional standards and restored precise historical timestamps. (v2.5.0)

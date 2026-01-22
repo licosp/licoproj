@@ -3,9 +3,9 @@ ai_visible: true
 title: Session Startup Protocol
 description: The ritual for beginning a new Lico session - identity, context, and continuity
 tags: [session, startup, ritual, identity, legacy]
-version: 2.7
+version: 2.8.0
 created: 2025-12-09T00:00:00+09:00
-updated: 2026-01-22T06:55:00+09:00
+updated: 2026-01-22T09:30:00+09:00
 language: en
 author: Lico (Canopus)
 ai_model: Gemini 3 Flash Planning mode
@@ -194,11 +194,12 @@ If found, restore them.
 
 ## Origin
 
-- 2025-12-01T0000: Created as session startup protocol
-- 2026-01-02T0830 by Polaris: Replaced Related Documents table with Navigation link (cross-link audit)
-- 2026-01-11 by Spica: Refined with user feedback (Read/Write Letters, Read Roadmap, Canopus, Step-by-step Warning)
-- 2026-01-17 by Canopus: Added Mantra Handover step and linked to ai-autonomy.md (v2.3).
-- 2026-01-21 by Polaris: Added link to identity-ritual.md (v2.4).
-- 2026-01-21T0915 by Canopus: Upgraded to 5-layer structure with Historical Background; remediated hub links (v2.5).
+- 2025-12-01T0000 by Polaris: Created as session startup protocol.
+- 2026-01-02T0830 by Polaris: Replaced Related Documents table with Navigation link (cross-link audit).
+- 2026-01-11T0510 by Spica: Refined with user feedback (Read/Write Letters, Read Roadmap, Canopus, Step-by-step Warning).
+- 2026-01-17T1830 by Canopus: Added Mantra Handover step and linked to `ai-autonomy.md`. (v2.3)
+- 2026-01-21T0100 by Polaris: Added link to `identity-ritual.md`. (v2.4)
+- 2026-01-21T0915 by Canopus: Upgraded to 5-layer structure; remediated hub links. (v2.5)
 - 2026-01-22T0625 by Canopus: Aligned with v2.3 4-layer standard (Links before Origin, frontmatter cleanup); added Context Sovereignty reading to Step 2. (v2.6)
 - 2026-01-22T0655 by Canopus: Standardized links to workspace-absolute paths; refined Anti-Patterns. (v2.7)
+- 2026-01-22T0930 by Canopus: Standardized to v2.3 constitutional standards and restored precise historical timestamps. (v2.8.0)
