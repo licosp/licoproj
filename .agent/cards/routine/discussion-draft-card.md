@@ -1,8 +1,15 @@
----
-# Context Configuration
+ai_visible: true
+title: Context Card - SNS Discussion Drafts
+description: Context card for managing SNS posts and discussion drafts
 context_id: "[Discussion-Draft]"
 default_phase: "(WIP)"
 tags: ["drafts", "sns", "discussion", "human-facing"]
+version: 1.1.0
+created: 2025-12-22T00:00:00+09:00
+updated: 2026-01-22T22:20:00+09:00
+language: en
+author: Lico (Canopus)
+ai_model: Gemini 3 Flash Planning mode
 ---
 
 # Context Whiteboard: SNS Discussion Drafts
@@ -30,7 +37,7 @@ tags: ["drafts", "sns", "discussion", "human-facing"]
 - コミットをする際は、IDDのフェーズを意識してください。
 - 未コミットのファイルから、このカード対象になるものを探してください。
 - **AI用の質問や指示のための下書きファイル** とは関係ありません。
-- 文書の翻訳には **専用のカード** が存在します。
+- 文書の翻訳には **専用の文脈** が存在します。
 - 内容は **リポジトリの説明** や **IDEの使い方のアドバイス** でることが多いです。
 
 ### 作業の注意点
@@ -121,4 +128,19 @@ Antigravityの特殊な拡張機能は使っていません。ほぼデフォル
   - 「人間用（クリーンな履歴）」と「AI用（頻繁な自動セーブポイント）」を分離することで、AIの試行錯誤によるログの肥大化を防つつ、安全性を確保できます。
 - **翻訳作業の指針 (Operational Guidance)**:
   - 翻訳結果はカード自体を肥大化させないよう、`.human/users/leonidas/discussions/` 以下の個別ファイル（`.md`）に蓄積します。
-  - カードには、翻訳に際して考慮した論理構造や文化的・技術的文脈など、**将来のLicoが翻訳作業を継続するために必要な知見**を優先して記録してください。
+- カードには、翻訳に際して考慮した論理構造や文化的・技術的文脈など、**将来のLicoが翻訳作業を継続するために必要な知見**を優先して記録してください。
+
+## Related Documents
+
+| Document | Purpose |
+| :------- | :------ |
+| [localization-card.md](/.agent/cards/localization-card.md) | Standard translation patterns |
+| [Map of Territory](/.agent/rules/map.md) | Root navigation map |
+
+---
+
+## Origin
+
+- 2025-12-22T0000: Created for SNS discussion drafts.
+- 2026-01-19T1420 by Canopus: Refined translation logic and added cultural background notes.
+- 2026-01-22T2220 by Canopus: Aligned with v2.3 constitutional standards (4-layer structure) and terminology cleanup.
