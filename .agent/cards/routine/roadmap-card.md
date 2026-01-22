@@ -1,8 +1,15 @@
----
-# Context Configuration
+ai_visible: true
+title: Context Card - Roadmap
+description: Context card for project vision and future roadmap items
 context_id: "[Roadmap]"
 default_phase: "(Update)"
 tags: ["roadmap", "planning", "vision", "todo"]
+version: 1.1.0
+created: 2026-01-06T00:00:00+09:00
+updated: 2026-01-22T22:30:00+09:00
+language: en
+author: Lico (Canopus)
+ai_model: Gemini 3 Flash Planning mode
 ---
 
 # Context Whiteboard: Roadmap
@@ -191,15 +198,6 @@ tags: ["roadmap", "planning", "vision", "todo"]
 - 識別子単位での **遺産** のような役割には使えるでしょうか?
 - 文脈化された定型作業です。（`seed/identifier-profile-card.md`）
 
-#### 階層的な文脈の並行利用
-
-- 作業には2つ以上の文脈を必要とするものがあります。
-  **特定の文脈の中で行動規範を更新する**場合などがそれに該当します。
-- 子や孫の文脈に移動することもあります。
-- 複数の文脈を同時に扱うためのに必要な行動規範を追記します。
-- コミット作業では文脈のIDが必要なので、**最適な文脈**を指定する必要があります。
-- 文脈化された定型作業です。（`routine/context-cards-card.md`）
-
 #### イシューに対応したブランチとディレクトリ
 
 - イシューに対応したブランチごとにディレクトリ作り、識別子はそこで作業を行います。
@@ -258,3 +256,18 @@ tags: ["roadmap", "planning", "vision", "todo"]
 今やるタスクは別の Issue または別のカードで指定されます。
 
 このカードは「ユーザーが将来何をしたいか」を知るためだけのものです。
+
+## Related Documents
+
+| Document | Purpose |
+| :------- | :------ |
+| [Map of Territory](/.agent/rules/map.md) | Root navigation map |
+| [context-card-workflow.md](/.agent/rules/workflow/context-card-workflow.md) | Recent protocol updates |
+
+---
+
+## Origin
+
+- 2026-01-06 by Polaris: Created as a vision-storage whiteboard.
+- 2026-01-22T2200 by User: Removed the "Hierarchical context" goal as it is now implemented and codified.
+- 2026-01-22T2230 by Canopus: Aligned with v2.3 constitutional standards (4-layer structure).
