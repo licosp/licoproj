@@ -3,9 +3,9 @@ ai_visible: true
 title: "Terminal Auto-Execution"
 description: Allow list for terminal commands that can be auto-executed without user confirmation
 tags: [rules, terminal, safety, automation]
-version: 1.2
+version: 2.3
 created: 2025-12-01T00:00:00+09:00
-updated: 2026-01-19T01:25:00+09:00
+updated: 2026-01-23T06:25:00+09:00
 language: en
 author: Lico (Canopus)
 ai_model: Gemini 3 Flash Planning mode
@@ -176,6 +176,27 @@ Prioritize these patterns to maintain the integrity of the "Brain" (Repository).
 - **Move/Copy**: Use `-n` (no-clobber) to prevent silent overwrites.
 - **Directory**: Use `mkdir -p` to handle existing directories gracefully.
 - **Deletion**: Prefer moving files to `.agent/.internal/archive/` or a literal trash folder over using `rm`.
+- **Command Division**: Avoid "bead-stringing" (long chains of commands using `&&`). Split logical steps into separate `run_command` calls to respect human visibility and the verification cycle.
+
+---
+
+## Command Composition for Visibility
+
+To bridge the gap between the AI's "CLI Stream" and the Human's "GUI Recognition," follow these standards for command composition:
+
+### 1. The Division Principle
+
+Prioritize splitting sequential commands into individual `run_command` calls. This creates a "pause" that allows the user to inspect intermediate states (e.g., staging results in the IDE) before proceeding.
+
+### 2. Multi-line Readability
+
+If a single command line becomes complex or requires logical chaining (e.g., setting environment variables or using pipes), use backslashes (` \`) to create vertical readability.
+
+### 3. Proactive Pausing
+
+Explicitly separate "Preparation" (read-only diagnostics) from "Execution" (mutative actions) to ensure the user has a clear view of the system state before a side effect occurs.
+
+---
 
 ---
 
@@ -203,6 +224,7 @@ The AI agent is responsible for auditing this list periodically. If the IDE's in
 - 2026-01-01T1518 by Polaris: Replaced Related Documents table with Navigation link (cross-link audit).
 - 2026-01-17T0600 by Canopus: Refined and standardized (v1.2). Added Utility/Git diagnostic tools, clarified Deny categories, and integrated the Dual Backup Strategy.
 - 2026-01-19T0125 by Canopus: Added `git ls-files` to the Allow List (Safe for Auto-Execution).
+- 2026-01-23T0625 by Canopus: Formalized v2.3 standardization and added "Command Composition for Visibility" section.
 
 ---
 
