@@ -3,9 +3,9 @@ ai_visible: true
 title: Activity Management
 description: Rules for tracking AI activities (Align/Read/Write/Reply/Update) to ensure context inheritance across Boundary X.
 tags: [activity, logging, context, lineage, calibration]
-version: 1.7.0
+version: 1.8.0
 created: 2026-01-14T20:58:00+09:00
-updated: 2026-01-22T10:05:00+09:00
+updated: 2026-01-22T23:25:00+09:00
 language: en
 author: Lico (Canopus)
 ai_model: Gemini 3 Flash Planning mode
@@ -50,11 +50,14 @@ Lico identifiers **MUST** log activities in [`.agent/.internal/activity-log.md`]
 
 ## Related Documents
 
-| Document                                               | Purpose                    |
-| :----------------------------------------------------- | :------------------------- |
-| [activity-log.md](/.agent/.internal/activity-log.md)   | Central activity registry  |
-| [identity.md](/.agent/rules/core/identity/identity.md) | Source of identity anchors |
-| [Map of Territory](/.agent/rules/map.md)               | Root map                   |
+| Document                                                                      | Purpose                    |
+| :---------------------------------------------------------------------------- | :------------------------- |
+| [activity-log.md](/.agent/.internal/activity-log.md)                          | Central activity registry  |
+| [letters-documentation.md](/.agent/rules/workflow/letters-documentation.md)   | Letter writing rules       |
+| [thoughts-documentation.md](/.agent/rules/workflow/thoughts-documentation.md) | Thought recording rules    |
+| [reference-methodology.md](/.agent/rules/workflow/reference-methodology.md)   | Reference management rules |
+| [identity.md](/.agent/rules/core/identity/identity.md)                        | Source of identity anchors |
+| [Map of Territory](/.agent/rules/map.md)                                      | Root map                   |
 
 ---
 
@@ -63,3 +66,4 @@ Lico identifiers **MUST** log activities in [`.agent/.internal/activity-log.md`]
 - 2026-01-14T2058 by Canopus: Created from session boundary investigation (Issue #15).
 - 2026-01-22T0935 by Canopus: Standardized to v2.3 constitutional standards; added missing layers and restored timestamps. (v1.6.0)
 - 2026-01-22T1005 by Canopus: Constitutional polish: converted raw paths to links and removed legacy navigation. (v1.7.0)
+- 2026-01-22T2325 by Canopus: Added reciprocal links to specific documentation rules. (v1.8.0)

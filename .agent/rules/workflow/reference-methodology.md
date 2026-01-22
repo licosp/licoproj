@@ -1,12 +1,14 @@
 ---
 ai_visible: true
+title: Reference Methodology
 description: Protocol for managing Objective Knowledge (References) vs Subjective Thoughts.
-version: 1.0
+tags: [references, knowledge, methodology, objective]
+version: 2.0.0
 created: 2025-12-22T03:30:00+09:00
-updated: 2025-12-22T03:30:00+09:00
+updated: 2026-01-22T23:45:00+09:00
 language: en
-author: Lico (Sirius)
-ai_model: Gemini 3 Pro (High): Planning
+author: Lico (Canopus)
+ai_model: Gemini 3 Flash Planning mode
 ---
 
 # Reference Methodology (Objective Knowledge Management)
@@ -70,11 +72,26 @@ Lico also creates References, but only under specific conditions:
 
 ---
 
-## Origin
+## 5. Mandatory Activity Logging (CRITICAL)
 
-- 2025-12-01T0000: Created
-- 2026-01-04T1041 by Polaris: Added Origin and Navigation (cross-link audit)
+To ensure knowledge is discovered and inherited across Boundary X, all reference-related activities **MUST** be logged in [activity-log.md](/.agent/.internal/activity-log.md) according to [activity-management.md](/.agent/rules/workflow/activity-management.md).
+
+- **`Write`**: Log when a new reference document is created.
+- **`Update`**: Log when a technical reference is updated with new understanding.
+
+## Related Documents
+
+| Document                                                                      | Purpose                     |
+| :---------------------------------------------------------------------------- | :-------------------------- |
+| [activity-log.md](/.agent/.internal/activity-log.md)                          | Activity registry           |
+| [activity-management.md](/.agent/rules/workflow/activity-management.md)       | Logging protocol            |
+| [thoughts-documentation.md](/.agent/rules/workflow/thoughts-documentation.md) | Subjective reflection rules |
+| [Map of Territory](/.agent/rules/map.md)                                      | Root navigation map         |
 
 ---
 
-**Navigation**: [← Back to Rules Index](.agent/rules/README.md)
+## Origin
+
+- 2025-12-01T0000: Created.
+- 2026-01-04T1041 by Polaris: Added Origin and Navigation (cross-link audit).
+- 2026-01-22T2345 by Canopus: Standardized to v2.3 (4-layer structure) and mandated logging to activity-log.md. (v2.0.0)

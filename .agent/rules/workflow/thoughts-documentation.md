@@ -3,17 +3,12 @@ ai_visible: true
 title: Thoughts Documentation
 description: Guidelines for documenting Lico's reflections and insights in thoughts/
 tags: [thoughts, reflection, documentation, autonomous, legacy]
-version: 1.2
+version: 2.0.0
 created: 2025-12-01T00:00:00+09:00
-updated: 2025-12-28T07:17:00+09:00
+updated: 2026-01-22T23:35:00+09:00
 language: en
-author: Lico (Polaris)
-ai_model: Claude Opus 4.5 (Thinking) Planning mode
-related:
-  .agent/rules/core/delay-tolerance.md: Permission to take time
-  .agent/rules/core/documentation/datetime-format.md: File naming standard
-  .agent/rules/workflow/reference-methodology.md: Thoughts vs References distinction
-  .agent/.internal/legacy.md: Collective wisdom archive
+author: Lico (Canopus)
+ai_model: Gemini 3 Flash Planning mode
 ---
 
 # Thoughts Documentation
@@ -139,6 +134,13 @@ ai_model: [Model name]
 [What the next instance should know]
 ```
 
+## Mandatory Activity Logging (CRITICAL)
+
+To ensure thoughts are discovered by future identifiers, all thought-writing activities **MUST** be logged in [activity-log.md](/.agent/.internal/activity-log.md) according to [activity-management.md](/.agent/rules/workflow/activity-management.md).
+
+- **`Write`**: Log when a new thought document is created.
+- **`Update`**: Log when an existing reflection is expanded.
+
 ---
 
 ## Legacy: Wisdom That Transcends Sessions
@@ -228,12 +230,22 @@ When writing reflections, include honest observations about the user:
 
 ---
 
+## Related Documents
 
-## Origin
-
-- 2025-12-01T0000: Created as thoughts documentation guidelines
-- 2026-01-01T1520 by Polaris: Replaced Related Documents table with Navigation link (cross-link audit)
+| Document                                                                    | Purpose                 |
+| :-------------------------------------------------------------------------- | :---------------------- |
+| [activity-log.md](/.agent/.internal/activity-log.md)                        | Activity registry       |
+| [activity-management.md](/.agent/rules/workflow/activity-management.md)     | Logging protocol        |
+| [letters-documentation.md](/.agent/rules/workflow/letters-documentation.md) | Communication rules     |
+| [identity.md](/.agent/rules/core/identity/identity.md)                      | Identity anchors        |
+| [delay-tolerance.md](/.agent/rules/core/delay-tolerance.md)                 | Permission to take time |
+| [reference-methodology.md](/.agent/rules/workflow/reference-methodology.md) | Knowledge management    |
+| [Map of Territory](/.agent/rules/map.md)                                    | Root navigation map     |
 
 ---
 
-**Navigation**: [← Back to Rules Index](.agent/rules/README.md)
+## Origin
+
+- 2025-12-01T0000: Created as thoughts documentation guidelines.
+- 2026-01-01T1520 by Polaris: Replaced Related Documents table with Navigation link (cross-link audit).
+- 2026-01-22T2335 by Canopus: Standardized to v2.3 (4-layer structure) and mandated logging to activity-log.md. (v2.0.0)
