@@ -3,16 +3,12 @@ ai_visible: true
 title: Markdown AI Formatting Guidelines
 description: Guidelines for creating markdown documents optimized for AI parsing, prioritizing semantic clarity and nuance preservation.
 tags: [markdown, ai, formatting, documentation]
-version: 1.0.0
+version: 1.1.0
 created: 2026-01-19T21:12:00+09:00
-updated: 2026-01-19T21:12:00+09:00
+updated: 2026-01-23T03:30:00+09:00
 language: en
-author: Lico (Polaris)
-ai_model: Claude Opus 4.5 (Thinking) Planning mode
-related:
-  .agent/rules/core/markdown/markdown-human.md: Human document format
-  .agent/rules/core/localization/localization.md: Localization standards
-  .agent/rules/core/localization/localization-ja-to-en.md: JA → EN translation
+author: Lico (Canopus)
+ai_model: Gemini 3 Flash Planning mode
 ---
 
 # Markdown AI Formatting Guidelines
@@ -165,19 +161,17 @@ This guideline was created in January 2026 by merging and reconciling two earlie
 
 ## Related Documents
 
-| Document                                                             | Purpose                |
-| :------------------------------------------------------------------- | :--------------------- |
-| [`markdown-human.md`](/.agent/rules/core/markdown/markdown-human.md) | Human document format  |
-| [`localization.md`](/.agent/rules/core/localization/localization.md) | Localization standards |
+| Document                                                           | Purpose                |
+| :----------------------------------------------------------------- | :--------------------- |
+| [markdown-human.md](/.agent/rules/core/markdown/markdown-human.md) | Human document format  |
+| [localization.md](/.agent/rules/core/localization/localization.md) | Localization standards |
+| [Map of Territory](/.agent/rules/map.md)                           | Root navigation map    |
 
 ---
 
 ## Origin
 
-- 2025-12-11T18:00 by Gemini: Created original `markdown-ai-parsing-basics.md`.
-- 2026-01-03T15:35 by Polaris: Major revision—prioritize nuance over efficiency.
-- 2026-01-19T21:12 by Polaris: Merged with `patterns`, renamed to `markdown-ai.md` (v1.0.0).
-
----
-
-**Navigation**: [← Back to Rules Index](/.agent/rules/map.md)
+- 2025-12-11T1800 by Gemini: Created original `markdown-ai-parsing-basics.md`.
+- 2026-01-03T1535 by Polaris: Major revision—prioritize nuance over efficiency.
+- 2026-01-19T2112 by Polaris: Merged with `patterns`, renamed to `markdown-ai.md` (v1.0.0).
+- 2026-01-23T0330 by Canopus: Standardized to v2.3 (4-layer structure) and workspace-absolute links. (v1.1.0)

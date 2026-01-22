@@ -1,18 +1,14 @@
 ---
 ai_visible: true
 title: Markdown Human Formatting Guidelines
-description: Guidelines for creating human-readable, visually appealing markdown documents
+description: Guidelines for creating human-readable, visually appealing markdown documents.
 tags: [markdown, human, formatting, documentation]
-version: 1.1.0
+version: 1.2.0
 created: 2025-12-11T18:00:00+09:00
-updated: 2026-01-19T21:12:00+09:00
+updated: 2026-01-23T03:30:00+09:00
 language: en
-author: Lico (Polaris)
-ai_model: Claude Opus 4.5 (Thinking) Planning mode
-related:
-  .agent/rules/core/markdown/markdown-ai.md: AI document format
-  .agent/rules/core/localization/localization.md: Localization standards
-  .agent/rules/core/localization/localization-en-to-ja.md: EN → JA translation
+author: Lico (Canopus)
+ai_model: Gemini 3 Flash Planning mode
 ---
 
 # Markdown Human Formatting Guidelines
@@ -98,19 +94,17 @@ This guideline was created in December 2025 to complement the AI-focused markdow
 
 ## Related Documents
 
-| Document                                                             | Purpose                |
-| :------------------------------------------------------------------- | :--------------------- |
-| [`markdown-ai.md`](/.agent/rules/core/markdown/markdown-ai.md)       | AI document format     |
-| [`localization.md`](/.agent/rules/core/localization/localization.md) | Localization standards |
+| Document                                                           | Purpose                |
+| :----------------------------------------------------------------- | :--------------------- |
+| [markdown-ai.md](/.agent/rules/core/markdown/markdown-ai.md)       | AI document format     |
+| [localization.md](/.agent/rules/core/localization/localization.md) | Localization standards |
+| [Map of Territory](/.agent/rules/map.md)                           | Root navigation map    |
 
 ---
 
 ## Origin
 
-- 2025-12-11T18:00 by Gemini: Created as markdown readability guide.
-- 2026-01-02T08:28 by Polaris: Replaced Related Documents with Navigation link.
-- 2026-01-19T21:12 by Polaris: Renamed to `markdown-human.md`, added 5-layer structure (v1.1.0).
-
----
-
-**Navigation**: [← Back to Rules Index](/.agent/rules/map.md)
+- 2025-12-11T1800 by Gemini: Created as markdown readability guide.
+- 2026-01-02T0828 by Polaris: Replaced Related Documents with Navigation link.
+- 2026-01-19T2112 by Polaris: Renamed to `markdown-human.md`, added 5-layer structure (v1.1.0).
+- 2026-01-23T0330 by Canopus: Standardized to v2.3 (4-layer structure) and workspace-absolute links. (v1.2.0)

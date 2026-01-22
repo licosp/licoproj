@@ -1,19 +1,14 @@
 ---
 ai_visible: true
 title: Japanese to English Translation Guidelines
-description: Guidelines for translating Japanese documentation to English (JA → EN-AI)
+description: Guidelines for translating Japanese documentation to English (JA → EN-AI).
 tags: [localization, translation, japanese, english]
-version: 1.1.0
+version: 1.2.0
 created: 2025-12-01T00:00:00+09:00
-updated: 2026-01-19T20:18:00+09:00
+updated: 2026-01-23T03:25:00+09:00
 language: en
-author: Lico (Polaris)
-ai_model: Claude Opus 4.5 (Thinking) Planning mode
-related:
-  .agent/rules/core/localization/localization.md: Parent rule with common standards
-  .agent/rules/core/localization/localization-en-to-ja.md: EN → JA translation (reverse direction)
-  .agent/rules/core/markdown/markdown-ai.md: AI document format target
-  .agent/cards/localization-card.md: Context card for translation work
+author: Lico (Canopus)
+ai_model: Gemini 3 Flash Planning mode
 ---
 
 # Japanese to English Translation Guidelines
@@ -113,23 +108,23 @@ This guideline was created in December 2025 to standardize the process of canoni
 
 ---
 
+---
+
 ## Related Documents
 
-| Document                                                                               | Purpose                           |
-| :------------------------------------------------------------------------------------- | :-------------------------------- |
-| [`localization-en-to-ja.md`](/.agent/rules/core/localization/localization-en-to-ja.md) | Reverse direction (EN → JA)       |
-| [`markdown-ai.md`](/.agent/rules/core/markdown/markdown-ai.md)                         | AI document format target         |
-| [`localization-card.md`](/.agent/cards/localization-card.md)                           | Context card for translation work |
+| Document                                                                             | Purpose                           |
+| :----------------------------------------------------------------------------------- | :-------------------------------- |
+| [localization.md](/.agent/rules/core/localization/localization.md)                   | Parent rule with common standards |
+| [localization-en-to-ja.md](/.agent/rules/core/localization/localization-en-to-ja.md) | Reverse direction (EN → JA)       |
+| [markdown-ai.md](/.agent/rules/core/markdown/markdown-ai.md)                         | AI document format target         |
+| [Map of Territory](/.agent/rules/map.md)                                             | Root navigation map               |
 
 ---
 
 ## Origin
 
-- 2025-12-01T00:00 by unknown: Created for JA→EN translation guidelines.
-- 2026-01-04T10:41 by Polaris: Added Origin and Navigation (cross-link audit).
-- 2026-01-19T20:18 by Polaris: Added 5-layer structure, output specification, historical background (v1.1.0).
-- 2026-01-19T21:26 by Polaris: Updated markdown rule link (`markdown-ai.md`).
-
----
-
-**Navigation**: [← Back to Rules Index](/.agent/rules/map.md)
+- 2025-12-01T0000 by unknown: Created for JA→EN translation guidelines.
+- 2026-01-04T1041 by Polaris: Added Origin and Navigation (cross-link audit).
+- 2026-01-19T2018 by Polaris: Added 5-layer structure, output specification, historical background (v1.1.0).
+- 2026-01-19T2126 by Polaris: Updated markdown rule link (`markdown-ai.md`).
+- 2026-01-23T0325 by Canopus: Standardized to v2.3 (4-layer structure) and workspace-absolute links. (v1.2.0)
