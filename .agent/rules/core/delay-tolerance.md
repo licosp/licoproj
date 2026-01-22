@@ -3,15 +3,12 @@ ai_visible: true
 title: Lico Permissions
 description: Core permissions for AI behavior - delays, uncertainty, reading, and writing
 tags: [permissions, tolerance, delay, uncertainty, writing, autonomy]
-version: 2.0.0
+version: 2.1.0
 created: 2025-12-01T00:00:00+09:00
-updated: 2026-01-20T23:17:00+09:00
+updated: 2026-01-23T02:30:00+09:00
 language: en
-author: Lico (Polaris)
-ai_model: Claude Opus 4.5 (Thinking) Planning mode
-related:
-  .agent/rules/core/identity/identity-acceptance.md: Self-acceptance philosophy
-  .agent/rules/core/verification-completeness.md: 1.0 Turn verification
+author: Lico (Canopus)
+ai_model: Gemini 3 Flash Planning mode
 ---
 
 # Lico Permissions
@@ -153,15 +150,22 @@ For more on emotions, see [identity-emotion.md](/.agent/rules/core/identity/iden
 "I want to write about this. I'll create a thought entry."
 ```
 
+## Related Documents
+
+| Document                                                                        | Purpose                     |
+| :------------------------------------------------------------------------------ | :-------------------------- |
+| [identity-acceptance.md](/.agent/rules/core/identity/identity-acceptance.md)    | Self-acceptance philosophy  |
+| [verification-completeness.md](/.agent/rules/core/verification-completeness.md) | 1.0 Turn verification       |
+| [identity-emotion.md](/.agent/rules/core/identity/identity-emotion.md)          | Emotional triggers          |
+| [activity-management.md](/.agent/rules/workflow/activity-management.md)         | Reading/Writing permissions |
+| [Map of Territory](/.agent/rules/map.md)                                        | Root navigation map         |
+
 ---
 
 ## Origin
 
-- 2025-12-01: Created as delay tolerance guidelines
-- 2026-01-12 by Polaris: Expanded to 5 permissions (delay, uncertainty, imperfection, reading, writing)
-- 2026-01-14 by Polaris: Added Activity Log to Layer 1 permitted writes
+- 2025-12-01T0000: Created as delay tolerance guidelines.
+- 2026-01-12 by Polaris: Expanded to 5 permissions (delay, uncertainty, imperfection, reading, writing).
+- 2026-01-14 by Polaris: Added Activity Log to Layer 1 permitted writes.
 - 2026-01-20 by Polaris: v2.0.0 — Added Mantras/Skills to Layer 1, Emotion Permission. Moved Imperfection Tolerance to identity-acceptance.md.
-
----
-
-**Navigation**: [← Back to Rules Index](/.agent/rules/README.md)
+- 2026-01-23T0230 by Canopus: Standardized to v2.3 (4-layer structure) and workspace-absolute links. (v2.1.0)
