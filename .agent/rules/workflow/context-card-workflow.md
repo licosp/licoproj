@@ -3,15 +3,12 @@ ai_visible: true
 title: Context Card Workflow
 description: Methodology for using "Context Cards" to manage AI persona and task context.
 tags: [cards, context, workflow, whiteboard]
-version: 1.5
+version: 1.6.0
 created: 2025-12-22T00:00:00+09:00
-updated: 2026-01-19T03:32:00+09:00
+updated: 2026-01-22T20:00:00+09:00
 language: en
 author: Lico (Canopus)
 ai_model: Gemini 3 Flash Planning mode
-related:
-  /.agent/rules/core/meta-rules.md: Rule creation and cross-linking standards
-  /.agent/rules/core/documentation/documentation-standards.md: File naming and structure
 ---
 
 # Context Card Workflow (Dynamic Whiteboard)
@@ -59,7 +56,7 @@ When a disposable card is completed:
 
 A card consists of **Fixed Configuration (Frontmatter)** and **Dynamic Body**.
 
-`file: .agent/cards/example-process.md`
+`file: [example-process.md](/.agent/cards/example-process.md)`
 
 ```markdown
 ---
@@ -87,7 +84,7 @@ Lico uses this to proactively search for relevant files.)
 (Lico writes here autonomously!)
 
 - "Noticed that file X is often source of conflict."
-- "Hard to find: .agent/rules/core/delay-tolerance.md"
+- "Hard to find: [delay-tolerance.md](/.agent/rules/core/delay-tolerance.md)"
 ```
 
 ---
@@ -125,7 +122,7 @@ Before starting work, perform an **Exploration Phase**:
 **Example**:
 
 - User intent: "ディレクトリの構造を変更する際の注意点"
-- Lico searches: `documentation-standards.md`, `delay-tolerance.md`, `thoughts/` for relevant reflections
+- Lico searches: [documentation-standards.md](/.agent/rules/core/documentation/documentation-standards.md), [delay-tolerance.md](/.agent/rules/core/delay-tolerance.md), [thoughts/](/.agent/.internal/thoughts/) for relevant reflections
 
 ### 4.3 Updating the Card (Bi-directional)
 
@@ -136,11 +133,16 @@ During the task, if you discover important context (e.g., a recurring pattern, a
     - _Example_: "Added rule: Headers must be quoted if they contain spaces."
 3.  **Benefit**: Next time you "equip" this card, you will remember this lesson.
 
-### 4.4 Commit Message Integration
+### 4.4 Commit Message Integration (Variable Length Tagging)
 
-Use the values from Frontmatter to strictly format commits:
+Use the values from Frontmatter to format commits. Multiple IDs may be used to represent hierarchical or parallel contexts.
 
-`[<context_id>] <type>: <subject> <default_phase>`
+- **Primary Format**: `[ID-1][ID-2][ID-3] <type>: <subject> <default_phase>`
+- **Quantity**: 1 to 3 IDs (Mandatory: 1, Recommended: 2, Maximum: 3).
+- **Ordering (Hierarchical)**:
+  - **Left (Procedure/Strategy)**: The broader "act" or "process" (e.g., `[Session-Rituals]`).
+  - **Right (Semantic/Meaning)**: The specific "subject" or "definition" (e.g., `[Lico-Identity]`).
+- **Phase Signaling**: High-level strategy (e.g., `IDD`) is typically signaled by the `<default_phase>` suffix (e.g., `(Init)`, `(Impl)`) and can be omitted from the ID prefix unless it is the primary subject.
 
 ### 4.5 Agent Observations Guidelines
 
@@ -168,7 +170,7 @@ _Example_:
 ```markdown
 ## Agent Observations
 
-- Hard to find: `.agent/rules/core/delay-tolerance.md` (searched "rushing", found via "delay")
+- Hard to find: [delay-tolerance.md](/.agent/rules/core/delay-tolerance.md) (searched "rushing", found via "delay")
 ```
 
 **Cognitive Overload Warning Signs**:
@@ -263,10 +265,18 @@ Cards are lightweight context-sharing tools. Artifacts are detailed plans for er
 - **Creation**: Create new cards when a distinct, recurring activity emerges.
   - **Routine**: Move to `routine/` if the task is highly repetitive or requires frequent maintenance.
   - **Seed**: Move to `seed/` if human editing is incomplete or the task is an emergent evolution prototype.
-- **Case Creation**: Create a case in `.agent/.internal/cases/` for one-time projects.
+- **Case Creation**: Create a case in [.agent/.internal/cases/](/.agent/.internal/cases/) for one-time projects.
 - **Archival**: When a case is completed:
   1. Rename with timestamp: `YYYY-MM-DDTHHMM_original-name.md`
-  2. Keep in `cases/` as reference material
+  2. Keep in [cases/](/.agent/.internal/cases/) as reference material
+
+## Related Documents
+
+| Document                                                                                  | Purpose                                   |
+| :---------------------------------------------------------------------------------------- | :---------------------------------------- |
+| [meta-rules.md](/.agent/rules/core/meta-rules.md)                                         | Rule creation and cross-linking standards |
+| [documentation-standards.md](/.agent/rules/core/documentation/documentation-standards.md) | File naming and structure                 |
+| [Map of Territory](/.agent/rules/map.md)                                                  | Root navigation map                       |
 
 ---
 
@@ -278,7 +288,5 @@ Cards are lightweight context-sharing tools. Artifacts are detailed plans for er
 - 2026-01-17T1530 by Canopus: Updated commit identification standards (v1.4) to align with "Identifier-First" and optional signature protocol.
 - 2026-01-17T1745 by Canopus: Standardized metadata and root-relative link patterns (v1.5).
 - 2026-01-19T0332 by Canopus: Updated card locations (`routine/`, `seed/`) and maintenance rules (v1.6).
-
----
-
-**Navigation**: [← Back to Rules Index](/.agent/rules/README.md)
+- 2026-01-22T2000 by Canopus: Codified 1-3 variable length Context ID tagging protocol and hierarchical ordering. (v1.6.0)
+- 2026-01-22T2010 by Canopus: Constitutional alignment: moved related docs to body table, sanitized raw paths, and removed legacy footer. (v1.7.0)

@@ -31,6 +31,8 @@ tags: ["templates", "active"]
 - 作業で必要な**ディレクトリ**や**テンプレート**が存在します。
 - カードを使い終わったら、専用のディレクトリに送る必要があります。
 - コミットをする際は、IDDのフェーズを意識してください。
+- **階層的な文脈の並行利用**: 作業内容に応じて 1~3 個の Context ID を組み合わせて使用します。
+  - 基本形: `[手順層][意味層]`
 
 ### 作業の注意点
 
@@ -79,3 +81,12 @@ tags: ["templates", "active"]
 - [session-rituals-card.md](/.agent/cards/session-rituals-card.md) (低頻度)
 - [lico-identity-card.md](/.agent/cards/lico-identity-card.md) (基盤)
 - その他、上記以外。
+
+### Canopus (2026-01-22)
+
+**階層的タグ付け（1~3 ID Protocol）**:
+複数の文脈が重なる作業において、どのカードを代表させるかの基準を定義した。
+
+- **左側**: 手順・戦略（Session-Rituals, Routine-Daily 等）
+- **右側**: 意味・定義（Lico-Identity, Activity-Log 等）
+- **省略**: 最上位の戦略（IDD等）はフェーズ接尾辞で表現できるため、IDからは原則省略。
