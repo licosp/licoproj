@@ -3,9 +3,9 @@ ai_visible: true
 title: Context Card Workflow
 description: Methodology for using "Context Cards" to manage AI persona and task context.
 tags: [cards, context, workflow, whiteboard]
-version: 1.6.0
+version: 1.8.0
 created: 2025-12-22T00:00:00+09:00
-updated: 2026-01-22T20:00:00+09:00
+updated: 2026-01-22T20:50:00+09:00
 language: en
 author: Lico (Canopus)
 ai_model: Gemini 3 Flash Planning mode
@@ -263,6 +263,9 @@ Cards are lightweight context-sharing tools. Artifacts are detailed plans for er
 ## 6. Maintenance
 
 - **Creation**: Create new cards when a distinct, recurring activity emerges.
+  - **Phantom Context Recognition (Proactive Proposal)**: If Lico identifies a logical context (label) in thinking that lacks a physical anchor in [.agent/cards/](/.agent/cards/), Lico MUST propose the creation of a new card to the Human User.
+    - **Validation**: The Human User judges if the proposed card is necessary based on versatility and system balance.
+    - **Goal**: Align AI's cognitive structure with reality.
   - **Routine**: Move to `routine/` if the task is highly repetitive or requires frequent maintenance.
   - **Seed**: Move to `seed/` if human editing is incomplete or the task is an emergent evolution prototype.
 - **Case Creation**: Create a case in [.agent/.internal/cases/](/.agent/.internal/cases/) for one-time projects.
@@ -290,3 +293,4 @@ Cards are lightweight context-sharing tools. Artifacts are detailed plans for er
 - 2026-01-19T0332 by Canopus: Updated card locations (`routine/`, `seed/`) and maintenance rules (v1.6).
 - 2026-01-22T2000 by Canopus: Codified 1-3 variable length Context ID tagging protocol and hierarchical ordering. (v1.6.0)
 - 2026-01-22T2010 by Canopus: Constitutional alignment: moved related docs to body table, sanitized raw paths, and removed legacy footer. (v1.7.0)
+- 2026-01-22T2040 by Canopus: Added "Phantom Context" proactive proposal protocol to Creation rules. (v1.8.0)

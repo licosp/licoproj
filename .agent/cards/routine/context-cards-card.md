@@ -1,8 +1,15 @@
----
-# Context Configuration (Lico's Source of Truth)
+ai_visible: true
+title: Context Card - Templates Management
+description: Context card for managing context cards and templates
 context_id: "[Context-Cards]"
 default_phase: "(WIP)"
 tags: ["templates", "active"]
+version: 2.0.0
+created: 2025-12-01T00:00:00+09:00
+updated: 2026-01-22T22:15:00+09:00
+language: en
+author: Lico (Canopus)
+ai_model: Gemini 3 Flash Planning mode
 ---
 
 # Context Whiteboard: Templates Management
@@ -29,12 +36,14 @@ tags: ["templates", "active"]
 
 - カード自体の使い方を思い出してほしい。
 - 作業で必要な**ディレクトリ**や**テンプレート**が存在します。
+- 行動規範の作成・編集には**専用の文脈**が存在します。
 - カードを使い終わったら、専用のディレクトリに送る必要があります。
 - コミットをする際は、IDDのフェーズを意識してください。
-- **階層的な文脈の並行利用**: 作業内容に応じて 1~3 個の Context ID を組み合わせて使用します。
-  - 基本形: `[手順層][意味層]`
 
 ### 作業の注意点
+
+階層的な文脈の並行利用が可能です。
+作業内容に応じて、カードから複数の文脈を選ぶことができます。
 
 このカードたちですが、私が手動で頻繁に修正することが想定されます。
 自然とコミットの機会も多くなると感じます。
@@ -79,7 +88,7 @@ tags: ["templates", "active"]
 
 - [idd-init-card.md](/.agent/cards/idd-init-card.md) / [idd-impl-card.md](/.agent/cards/idd-impl-card.md) / [idd-fini-card.md](/.agent/cards/idd-fini-card.md) (非定型・統合維持)
 - [session-rituals-card.md](/.agent/cards/session-rituals-card.md) (低頻度)
-- [lico-identity-card.md](/.agent/cards/lico-identity-card.md) (基盤)
+- [commit-standards-card.md](/.agent/cards/routine/commit-standards-card.md) (規約・履歴)
 - その他、上記以外。
 
 ### Canopus (2026-01-22)
@@ -90,3 +99,20 @@ tags: ["templates", "active"]
 - **左側**: 手順・戦略（Session-Rituals, Routine-Daily 等）
 - **右側**: 意味・定義（Lico-Identity, Activity-Log 等）
 - **省略**: 最上位の戦略（IDD等）はフェーズ接尾辞で表現できるため、IDからは原則省略。
+
+## Related Documents
+
+| Document | Purpose |
+| :------- | :------ |
+| [context-card-workflow.md](/.agent/rules/workflow/context-card-workflow.md) | Methodology for context card usage |
+| [commit-standards.md](/.agent/rules/development/commit-standards.md) | Commit rules and multi-ID tagging protocol |
+| [Map of Territory](/.agent/rules/map.md) | Root navigation map |
+
+---
+
+## Origin
+
+- 2025-12-01T0000: Created for template management.
+- 2026-01-19T0930 by Canopus: Proposed reorganization into `routine/` and `seed/`.
+- 2026-01-22T2000 by Canopus: Integrated 1-3 variable length Context ID tagging protocol.
+- 2026-01-22T2215 by Canopus: Aligned with v2.3 constitutional standards (4-layer structure).

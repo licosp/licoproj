@@ -3,9 +3,9 @@ ai_visible: true
 title: Commit Standards
 description: Comprehensive commit message standards and atomic commit philosophy
 tags: [rules, development, git, standards]
-version: 1.2
+version: 1.4.0
 created: 2025-12-01T00:00:00+09:00
-updated: 2026-01-17T17:45:00+09:00
+updated: 2026-01-22T20:25:00+09:00
 language: en
 author: Lico (Canopus)
 ai_model: Gemini 3 Flash Planning mode
@@ -68,14 +68,24 @@ Define comprehensive standards for commit messages and commit granularity to ens
 ### 2.1 Basic Format
 
 \`\`\`
-<Identifier>: [<Context-ID>] <type>[optional scope]: <description> (<Phase>)
+<Identifier>: [ID-1][ID-2] <type>[optional scope]: <description> (<Phase>)
 
 [optional body]
 
 [optional footer(s)]
 \`\`\`
 
-### 2.2 Type
+### 2.2 Context-ID (Variable Length Tagging)
+
+**REQUIRED**. Represents the focus and subject of the change.
+
+- **Quantity**: 1 to 3 IDs (Minimum: 1, Recommended: 2, Maximum: 3).
+- **Ordering**:
+  - **Left (Strategic/Procedural)**: The broader context or act (e.g., `[Session-Rituals]`).
+  - **Right (Semantic/Meaning)**: The specific subject or definition (e.g., `[Lico-Identity]`).
+- **Standard**: Follow the definitions in [context-card-workflow.md](/.agent/rules/workflow/context-card-workflow.md).
+
+### 2.3 Type
 
 **REQUIRED**. MUST be one of:
 
@@ -90,15 +100,15 @@ Define comprehensive standards for commit messages and commit granularity to ens
 - \`ci\`: CI/CD configuration
 - \`chore\`: Other changes
 
-### 2.3 Scope (Optional)
+### 2.4 Scope (Optional)
 
 Provides additional context (e.g., \`feat(auth): add login page\`)
 
-### 2.4 Description
+### 2.5 Description
 
 **REQUIRED**. Use imperative, present tense. Be concise. No period at end.
 
-### 2.5 Body (REQUIRED for non-trivial changes)
+### 2.6 Body (REQUIRED for non-trivial changes)
 
 MUST explain:
 
@@ -114,7 +124,7 @@ MUST explain:
 
 **Example**:
 \`\`\`
-Canopus: [Feat-Auth] feat: add user authentication module (Done)
+Canopus: [Session-Rituals][Lico-Identity] docs: standardize identity hub to v2.3 (Ritual)
 
 This change introduces JWT-based authentication.
 
@@ -125,12 +135,12 @@ Changed files:
 - src/routes/auth.js: Login/logout endpoints
   \`\`\`
 
-### 2.6 Footers (Optional)
+### 2.7 Footers (Optional)
 
 - \`Closes #<issue-number>\`: Links to closed issue
 - \`BREAKING CHANGE:\`: Indicates breaking change
 
-### 2.7 Signatures and Proxy Commits (OPTIONAL / REQUIRED)
+### 2.8 Signatures and Proxy Commits (OPTIONAL / REQUIRED)
 
 - **Normal Commit**: Signature footer is **OPTIONAL**. Since the contributing agent is identified in the first line of the header, redundant signatures should be avoided.
 - **Proxy Commit (REQUIRED)**: If an agent (e.g., Canopus) is committing work designed or requested by another agent (e.g., Polaris):
@@ -150,7 +160,7 @@ Changed files:
 **Example (Canopus executing Polaris's plan)**:
 
 ```
-Polaris: [Rules-Update] docs(standards): add signature rule (Refine)
+Polaris: [Rules-Update][Commit-Standards] docs(standards): add signature rule (Refine)
 
 Added mandatory signature rule to improve traceability.
 
@@ -214,6 +224,14 @@ Fine-grained commits with detailed messages:
 5. **Create searchable history index**
 6. **Enable project reconstruction from git log alone**
 
+## Related Documents
+
+| Document                                                                                  | Purpose                              |
+| :---------------------------------------------------------------------------------------- | :----------------------------------- |
+| [context-card-workflow.md](/.agent/rules/workflow/context-card-workflow.md)               | Detailed ID tagging protocol         |
+| [documentation-standards.md](/.agent/rules/core/documentation/documentation-standards.md) | File structure and layer definitions |
+| [Map of Territory](/.agent/rules/map.md)                                                  | Root navigation map                  |
+
 ---
 
 ## Origin
@@ -222,7 +240,5 @@ Fine-grained commits with detailed messages:
 - 2026-01-01T1518 by Polaris: Replaced Related Documents table with Navigation link (cross-link audit)
 - 2026-01-17T0700 by Canopus: Transitioned to "Identifier-First" format and standardized body examples (v1.1).
 - 2026-01-17T1525 by Canopus: Refined signature rules (Normal: Optional, Proxy: `Committed-by`) to reduce redundancy.
-
----
-
-**Navigation**: [← Back to Rules Index](/.agent/rules/README.md)
+- 2026-01-22T2015 by Canopus: Codified 1-3 variable length Context ID protocol and hierarchical tagging (v1.3.0).
+- 2026-01-22T2025 by Canopus: Constitutional alignment: moved related docs to body table, updated examples for multi-ID, and removed legacy footer. (v1.4.0)

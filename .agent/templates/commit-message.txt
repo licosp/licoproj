@@ -1,4 +1,4 @@
-<Identifier>: [<Context-ID>] <Type>: <Subject> (<Phase>)
+<Identifier>: [ID-1][ID-2] <Type>: <Subject> (<Phase>)
 
 # <body>: Detailed list of changes.
 # - Use bullet points.
