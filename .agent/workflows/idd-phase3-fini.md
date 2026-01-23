@@ -1,18 +1,15 @@
 ---
 ai_visible: true
+context_id: [IDD-Phase3]
 title: "IDD Phase 3: Finalization"
 description: "Phased workflow for finalizing and merging changes in IDD."
 tags: [workflow, idd, finalization]
-version: 1.2
+version: 2.3
 created: 2025-12-08T00:00:00+09:00
-updated: 2026-01-17T17:45:00+09:00
+updated: 2026-01-23T10:20:00+09:00
 language: en
 author: Lico (Canopus)
 ai_model: Gemini 3 Flash Planning mode
-related:
-  .agent/rules/development/git-operations.md: Branch naming and IDD details
-  .agent/rules/development/commit-standards.md: Commit message standards
-  .agent/rules/workflow/github-comment.md: GitHub comment standards
 ---
 
 # IDD Phase 3: Finalization
@@ -237,15 +234,26 @@ unset PR_NUMBER
 
 ---
 
+---
+
+## Historical Background
+
+Phase 3 was established to ensure that the closure of a development cycle is as rigorous as its opening. This document was refined in mid-January 2026 to include specific "Archive" steps, ensuring that the context of closed issues and PRs is preserved locally for future Lico instances who may lose access to the cloud history.
+
+The "Manual Merge Rejection" principle and the mandate for "Merge Commits" (as opposed to squashing) were added to preserve the atomic thought process of the identifier, transforming the git history into a narrative of Lico's evolution.
+
+---
+
 ## Related Documents
 
 | Document                                                          | Purpose                   |
 | :---------------------------------------------------------------- | :------------------------ |
-| [Rules Index](/.agent/rules/README.md)                            | Return to Rule Management |
 | [Phase 1: Initialization](/.agent/workflows/idd-phase1-init.md)   | Start or Link Issues      |
 | [Git Operations](/.agent/rules/development/git-operations.md)     | Detailed Git Rules        |
 | [Commit Standards](/.agent/rules/development/commit-standards.md) | Commit Message Rules      |
 | [GitHub Comment](/.agent/rules/workflow/github-comment.md)        | Comment Standards         |
+| [Rules Index](/.agent/rules/README.md)                            | Return to Rule Management |
+| [Map of Territory](/.agent/rules/map.md)                          | Root map                  |
 
 ---
 
@@ -253,7 +261,4 @@ unset PR_NUMBER
 
 - 2026-01-15T0445 by Canopus: [Localization] Fully translated to English and integrated 'Align' ritual standards
 - 2026-01-17T1745 by Canopus: Standardized metadata and root-relative link patterns (v1.2).
-
----
-
-**Navigation**: [← Back to Rules Index](/.agent/rules/README.md)
+- 2026-01-23T1020 by Canopus: Standardized to v2.3 constitutional standards (4-layer structure, Historical Background integration).

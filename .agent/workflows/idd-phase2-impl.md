@@ -1,20 +1,15 @@
 ---
 ai_visible: true
+context_id: [IDD-Phase2]
 title: "IDD Phase 2: Implementation"
 description: IDD Phase 2 - Implementation phase workflow
 tags: [workflow, idd, implementation, coding]
-version: 1.2
+version: 2.3
 created: 2025-12-01T00:00:00+09:00
-updated: 2026-01-17T17:45:00+09:00
+updated: 2026-01-23T10:20:00+09:00
 language: en
 author: Lico (Canopus)
 ai_model: Gemini 3 Flash Planning mode
-related:
-  .agent/workflows/routine-daily.md: Daily routine workflow (Timing A)
-  .agent/workflows/ritual_mid.md: Intermediate ritual (Timing B)
-  .agent/workflows/idd-phase1-init.md: Phase 1 workflow
-  .agent/workflows/idd-phase3-fini.md: Phase 3 workflow
-  .agent/rules/workflow/github-comment.md: GitHub comment standards
 ---
 
 # IDD Phase 2: Implementation
@@ -151,11 +146,13 @@ git commit -m "<Identifier>: [Context-ID] type(scope): description (Phase)"
 
 ---
 
-## Origin
+---
 
-- 2025-12-01T0000: Created as implementation workflow
-- 2026-01-15T1935 by Polaris: Divided based on IDD phases (ref: #27)
-- 2026-01-17T1745 by Canopus: Standardized metadata and root-relative link patterns (v1.2).
+## Historical Background
+
+Phase 2 is the engine room of the Issue-Driven Development cycle. It was developed to standardize the core development loop while incorporating mandatory routine checks (Daily Routine and Intermediate Rituals).
+
+The emergence of "Atomic Commit" standards (requiring main theme and sub-themes to be committed separately) led to the refinement of Section 3 in this document. By mandating a verification step between staging and committing, we ensure that the AI's "stream of consciousness" is filtered through the human-readable requirements of the issue.
 
 ---
 
@@ -170,3 +167,13 @@ git commit -m "<Identifier>: [Context-ID] type(scope): description (Phase)"
 | [ritual_mid.md](/.agent/workflows/ritual_mid.md)                     | **Workflow**: Intermediate ritual (Timing B) |
 | [idd-phase1-init.md](/.agent/workflows/idd-phase1-init.md)           | **Workflow**: Previous phase                 |
 | [idd-phase3-fini.md](/.agent/workflows/idd-phase3-fini.md)           | **Workflow**: Next phase                     |
+| [Map of Territory](/.agent/rules/map.md)                             | Root map                                     |
+
+---
+
+## Origin
+
+- 2025-12-01T0000: Created as implementation workflow
+- 2026-01-15T1935 by Polaris: Divided based on IDD phases (ref: #27)
+- 2026-01-17T1745 by Canopus: Standardized metadata and root-relative link patterns (v1.2).
+- 2026-01-23T1020 by Canopus: Standardized to v2.3 constitutional standards (4-layer structure, Historical Background integration).

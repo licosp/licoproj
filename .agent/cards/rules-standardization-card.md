@@ -103,19 +103,43 @@ tags: ["maintenance", "standardization", "rules"]
 | `development/terminal-auto-execution.md`        |   ✅   | v2.3 Standardized + Visibility Rule |
 | `development/git-operations.md`                 |   ✅   | v2.3 Standardized + Visibility Rule |
 
-#### 4.1 Additional Mission: Command Visibility
-
-- [x] Standardize `terminal-auto-execution.md` and add 'Command Composition' section.
-- [x] Standardize `git-operations.md` and mandate `add`/`commit` separation.
 - [x] Anchor visibility protocol in `cognitive-collaboration.md`.
+
+#### 3.2 Batch 2: Core Workflows (`.agent/workflows/`) 🔄 In Progress
+
+ワークフロー（手順書）の標準化を行います。
+
+**Target List & Progress**:
+
+| File Path                             | Status | Notes   |
+| :------------------------------------ | :----: | :------ |
+| **Phased (IDD/Reading/Writing)**      |   ✅   | Completed v2.3 |
+| `workflows/idd-phase1-init.md`        |   ✅   | Completed v2.3 |
+| `workflows/idd-phase2-impl.md`        |   ✅   | Completed v2.3 |
+| `workflows/idd-phase3-fini.md`        |   ✅   | Completed v2.3 |
+| `workflows/deep-reading.md`           |   ✅   | Completed v2.3 |
+| `workflows/deep-writing.md`           |   ✅   | Completed v2.3 |
+| **Rituals (Start/Mid/End)**           |   [/]  | Working |
+| `workflows/ritual_start.md`           |   [/]  | Working |
+| `workflows/ritual_mid.md`             |   [/]  | Working |
+| `workflows/ritual_end.md`             |   [/]  | Working |
+| `workflows/routine-daily.md`          |   [/]  | Working |
+| **Audit & Utilities**                 |        |         |
+| `workflows/cross-link-audit.md`       |   🔄   | Pending |
+| `workflows/cross-link-audit-plan.md`  |   🔄   | Pending |
+| `workflows/maintenance-rule-audit.md` |   🔄   | Pending |
+| `workflows/share-manual-context.md`   |   🔄   | Pending |
+| `workflows/sync-memory.md`            |   🔄   | Pending |
+| `workflows/update-protected-rules.md` |   🔄   | Pending |
 
 #### 4. Future Batches (Backlog)
 
 リポジトリ全体の標準化に向けた次段階のリストです。
 
-- [ ] **Batch 2: Core Workflows** (`.agent/workflows/`)
-  - [ ] Phased workflows (IDD, Deep-reading/writing) v2.3 standardization.
-  - [ ] Ritual workflows (Start/Mid/End) v2.3 alignment.
+- [ ] [Batch 2] Core Workflows (`.agent/workflows/`) の標準化 v2.3
+    - [x] 2.1 Phased (IDD/読解/執筆系) - 5 files
+    - [/] 2.2 Rituals (儀式/日課系) - 4 files
+    - [ ] 2.3 Audit & Utilities (監査系) - 6 files
 - [ ] **Batch 3: Identity & Cognitive Rules** (`.agent/rules/core/identity/`)
   - [ ] Delegated to [identity-card.md](/.agent/cards/identity-card.md) context.
 - [ ] **Batch 4: Development Rules** (`.agent/rules/development/`)

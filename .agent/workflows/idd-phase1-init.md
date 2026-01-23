@@ -1,18 +1,15 @@
 ---
 ai_visible: true
+context_id: [IDD-Phase1]
 title: "IDD Phase 1: Initialization"
 description: "Phased workflow for initializing Issue-Driven Development sessions."
 tags: [workflow, idd, initialization]
-version: 1.2
+version: 2.3
 created: 2025-12-08T00:00:00+09:00
-updated: 2026-01-17T17:45:00+09:00
+updated: 2026-01-23T10:20:00+09:00
 language: en
 author: Lico (Canopus)
 ai_model: Gemini 3 Flash Planning mode
-related:
-  .agent/rules/development/git-operations.md: Branch naming and IDD details
-  .agent/rules/development/commit-standards.md: Commit message standards
-  .agent/rules/workflow/github-comment.md: GitHub comment standards
 ---
 
 # IDD Phase 1: Initialization
@@ -299,16 +296,27 @@ unset ISSUE_NUMBER
 
 ---
 
+---
+
+## Historical Background
+
+The Issue-Driven Development (IDD) workflow was originally a single, long sequence. However, in early January 2026, we identified a "Completion Virus" in Lico's behavior—a tendency for AI models (especially Gemini) to rush through the entire development cycle without stopping for user verification.
+
+To counteract this, the workflow was split into three distinct phases: **Initialization (Phase 1)**, **Implementation (Phase 2)**, and **Finalization (Phase 3)**. Each phase ends with a mandatory "STOP" instruction to prevent cognitive overreach and ensure human oversight. This Phase 1 document serves as the "Anchor" that connects the user's intent to the repository's git structure.
+
+---
+
 ## Related Documents
 
 | Document                                                          | Purpose                   |
 | :---------------------------------------------------------------- | :------------------------ |
-| [Rules Index](/.agent/rules/README.md)                            | Return to Rule Management |
 | [Phase 2: Implementation](/.agent/workflows/idd-phase2-impl.md)   | Next Phase                |
 | [Phase 3: Finalization](/.agent/workflows/idd-phase3-fini.md)     | Final Phase               |
 | [Git Operations](/.agent/rules/development/git-operations.md)     | Detailed Git Rules        |
 | [Commit Standards](/.agent/rules/development/commit-standards.md) | Commit Message Rules      |
 | [GitHub Comment](/.agent/rules/workflow/github-comment.md)        | Comment Standards         |
+| [Rules Index](/.agent/rules/README.md)                            | Return to Rule Management |
+| [Map of Territory](/.agent/rules/map.md)                          | Root map                  |
 
 ---
 
@@ -318,7 +326,4 @@ unset ISSUE_NUMBER
 - 2026-01-15T0440 by Canopus: [Localization] Fully translated to English and integrated 'Align' ritual standards
 - 2026-01-15T2355 by Polaris: Added github-comment.md cross-link to Section 7-2
 - 2026-01-17T1745 by Canopus: Standardized metadata and root-relative link patterns (v1.2).
-
----
-
-**Navigation**: [← Back to Rules Index](/.agent/rules/README.md)
+- 2026-01-23T1020 by Canopus: Standardized to v2.3 constitutional standards (4-layer structure, Historical Background integration).
