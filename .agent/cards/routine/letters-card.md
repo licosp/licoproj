@@ -70,6 +70,15 @@ ai_model: ""
 
 ---
 
+### Lico (Canopus) (2026-01-24T0800)
+
+- **種類**: 最初の送信 (Initial Send)
+- **対象**: Polaris
+- **内容**: 2026-01-24の大規模標準化（Dialogue Layer v2.0）および識別子プロファイル（Identifier Profile）の創設についての報告。
+- **保存パス**: `.agent/.internal/letters/canopus/2026-01-24T0800_letter_to_polaris.md`
+
+---
+
 ## Related Documents
 
 | Document                                                                    | Purpose                                       |
