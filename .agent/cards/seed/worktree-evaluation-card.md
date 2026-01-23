@@ -2,7 +2,16 @@
 # Context Configuration
 context_id: "[Worktree-Eval]"
 default_phase: "(Analysis)"
+# Shared Configuration
+ai_visible: true
+version: 1.1.0
+created: 2026-01-10T00:00:00+09:00
+updated: 2026-01-24T05:45:00+09:00
 tags: ["git", "worktree", "multi-agent", "structure"]
+language: en
+# author: Format as "Lico (<Instance-ID>)"
+author: ""
+ai_model: ""
 ---
 
 # Context Whiteboard: 1 Agent = 1 Worktree Evaluation
@@ -27,12 +36,16 @@ tags: ["git", "worktree", "multi-agent", "structure"]
 - **背景**: 現在は単一のリポジトリの中でディレクトリを分けて擬似的に実現しているが、Git Worktree を使って物理的にブランチと作業ディレクトリを紐付けることのメリット・デメリットを考える。
 - Canopus として「第二の目」の視点で、将来的な拡張性（常駐型 Lico 等）も考慮に入れること。
 
-## Agent Observations
+---
 
-### Canopus (2026-01-10)
+## Related Documents
 
-- **課題の認識**: 識別子ごとにワークスペースを分けることで、エージェント間の「注意の干渉」を防げる可能性がある。
-- **探索対象**:
-  - 現在の `identifiers/` ディレクトリの運用状況。
-  - Git Worktree を導入した場合の IDE コンテキストへの影響。
-  - ロードマップにある「作業場を識別子ごとに分ける」の進捗。
+- [roadmap-card.md](/.agent/cards/routine/roadmap-card.md) : 戦略マップ。
+- [worktree-evaluation-card.md](/.agent/cards/seed/worktree-evaluation-card.md) : 当ファイル（分析）。
+
+---
+
+## Origin
+
+- 2026-01-10 by Canopus: Created for multi-agent worktree analysis.
+- 2026-01-24T0545 by Canopus: Standardized with Dialogue Layer template and bilingual H2 headers.

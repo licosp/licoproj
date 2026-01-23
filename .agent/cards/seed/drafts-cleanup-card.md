@@ -2,7 +2,16 @@
 # Context Configuration
 context_id: "[Drafts-Cleanup]"
 default_phase: "(WIP)"
+# Shared Configuration
+ai_visible: true
+version: 1.1.0
+created: 2025-12-03T00:00:00+09:00
+updated: 2026-01-24T05:45:00+09:00
 tags: ["human-usage", "header", "2025-12-03", "part1"]
+language: en
+# author: Format as "Lico (<Instance-ID>)"
+author: ""
+ai_model: ""
 ---
 
 # Context Whiteboard: Drafts Cleanup
@@ -47,8 +56,16 @@ tags: ["human-usage", "header", "2025-12-03", "part1"]
 サブプロジェクトの1つとして形になるのが理想。
 時系列での人間側の発言が見れるようなビューアーなどを考えています。
 
-## Agent Observations
+---
 
-### Sirius
+## Related Documents
 
-- (Initial setup)
+- [draft-maintenance.md](/.agent/rules/workflow/draft-maintenance.md) : 下書き管理の規約。
+- [drafts-daily-card.md](/.agent/cards/routine/drafts-daily-card.md) : 当ファイル。
+
+---
+
+## Origin
+
+- 2025-12-03: Created as drafts cleanup context.
+- 2026-01-24T0545 by Canopus: Standardized with Dialogue Layer template and bilingual H2 headers.

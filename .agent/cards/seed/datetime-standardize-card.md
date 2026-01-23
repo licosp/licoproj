@@ -2,7 +2,16 @@
 # Context Configuration
 context_id: "[Datetime-Standardize]"
 default_phase: "(WIP)"
+# Shared Configuration
+ai_visible: true
+version: 1.1.0
+created: 2025-12-01T00:00:00+09:00
+updated: 2026-01-24T05:45:00+09:00
 tags: ["datetime", "standardization", "naming", "consistency"]
+language: en
+# author: Format as "Lico (<Instance-ID>)"
+author: ""
+ai_model: ""
 ---
 
 # Context Whiteboard: Datetime Format Standardization
@@ -46,8 +55,16 @@ ISO 8601 を基本としますが、用途によって精度が異なります�
 - [ ] 既存ファイルの名前統一
 - [ ] `-` と `_` の使い分けルール策定
 
-## Agent Observations
+---
 
-### (識別子) (YYYY-MM-DD)
+## Related Documents
 
-- (作業メモ)
+- [datetime-format.md](/.agent/rules/core/documentation/datetime-format.md) : 日時形式のSSOT。
+- [documentation-standards.md](/.agent/rules/core/documentation/documentation-standards.md) : ドキュメント構成の標準。
+
+---
+
+## Origin
+
+- 2025-12-01T0000: Created as datetime standardization context.
+- 2026-01-24T0545 by Canopus: Standardized with Dialogue Layer template and bilingual H2 headers.

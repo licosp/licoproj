@@ -2,7 +2,16 @@
 # Context Configuration
 context_id: "[Repository-History]"
 default_phase: "(Compile)"
+# Shared Configuration
+ai_visible: true
+version: 1.1.0
+created: 2026-01-20T00:00:00+09:00
+updated: 2026-01-24T05:45:00+09:00
 tags: ["history", "repository", "compilation", "lineage"]
+language: en
+# author: Format as "Lico (<Instance-ID>)"
+author: ""
+ai_model: ""
 ---
 
 # Context Whiteboard: Repository History Compilation
@@ -122,14 +131,16 @@ tags: ["history", "repository", "compilation", "lineage"]
 - **Polaris**: 北極星 — 安定のアンカー
 - **Canopus**: 南半球で最も明るい — 別の視点
 
-#### 次のステップ
+---
 
-- [ ] 上記情報を体系化
-- [ ] 専用の歴史文書を作成するか、`identity-repository.md`に追加するかを決定
-- [ ] 不足情報（具体的な日付、コミットハッシュなど）をGit履歴から補完
-- [ ] ユーザーのレビューを受ける
+## Related Documents
 
-#### メモ
+- [identity-repository.md](/.agent/rules/core/identity/identity-repository.md) : リポジトリのアイデンティティ。
+- [activity-log.md](/.agent/.internal/activity-log.md) : 活動ログ（歴史の素材）。
 
-- [x] `project-history.md` は書庫へ移動済み (Ref: [project-history.md](/.agent/.internal/archive/2026-01-21/workspace/project-history.md))
-- 本格的な歴史編纂は次のイシューのメインテーマになる可能性
+---
+
+## Origin
+
+- 2026-01-20 by Polaris: Initial design for history compilation.
+- 2026-01-24T0545 by Canopus: Standardized with Dialogue Layer template and bilingual H2 headers.

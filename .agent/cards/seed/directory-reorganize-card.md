@@ -2,7 +2,16 @@
 # Context Configuration
 context_id: "[Directory-Reorganize]"
 default_phase: "(Plan)"
+# Shared Configuration
+ai_visible: true
+version: 1.1.0
+created: 2025-12-31T00:00:00+09:00
+updated: 2026-01-24T05:45:00+09:00
 tags: ["reorganization", "structure", "cleanup"]
+language: en
+# author: Format as "Lico (<Instance-ID>)"
+author: ""
+ai_model: ""
 ---
 
 # Context Whiteboard: Default Directory Reorganization
@@ -69,13 +78,18 @@ Antigravityのデフォルトディレクトリ（`rules/`, `workflows/`, `scrip
 
 2025-12-31〜2026-01-01の対話で Polaris とユーザーが議論：
 
-- 手順書と行動規範のフォーマット差異
-- ユーザーがスラッシュコマンドを使わない事実
-- デフォルトディレクトリの存在理由
+---
 
-### 次のステップ
+## Related Documents
 
-- [ ] 詳細な移行計画を作成
-- [ ] 既存の手順書のフロントマターを更新
-- [ ] ディレクトリ構造を変更
-- [ ] READMEを更新
+| Document                                                                | Purpose                |
+| :---------------------------------------------------------------------- | :--------------------- |
+| [Map of Territory](/.agent/rules/map.md)                                | Navigation reference   |
+| [repository-philosophy.md](/.agent/rules/core/repository-philosophy.md) | The "Brain" philosophy |
+
+---
+
+## Origin
+
+- 2025-12-31 by Polaris: Initial discussion from seed.
+- 2026-01-24T0545 by Canopus: Standardized with Dialogue Layer template and bilingual H2 headers.
