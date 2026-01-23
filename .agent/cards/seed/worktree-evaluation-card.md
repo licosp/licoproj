@@ -1,4 +1,5 @@
 ---
+# Context Configuration
 context_id: "[Worktree-Eval]"
 default_phase: "(Analysis)"
 tags: ["git", "worktree", "multi-agent", "structure"]

@@ -1,5 +1,5 @@
 ---
-# Context Configuration (Lico's Source of Truth)
+# Context Configuration
 context_id: "[Drafts-Cleanup]"
 default_phase: "(WIP)"
 tags: ["human-usage", "header", "2025-12-03", "part1"]
