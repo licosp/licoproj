@@ -4,9 +4,9 @@ ai_visible: true
 title: Map of Territory
 description: Navigation index for the Agent's cognitive infrastructure.
 tags: [map, index, navigation, rules]
-version: 0.4.0
+version: 0.4.3
 created: 2025-12-01T00:00:00+09:00
-updated: 2026-01-23T03:25:00+09:00
+updated: 2026-01-24T03:45:00+09:00
 language: en
 author: Lico (Canopus)
 ai_model: Gemini 3 Flash Planning mode
@@ -95,7 +95,7 @@ _Located in `.agent/cards/`_
 | [`idd-init-card.md`](/.agent/cards/idd-init-card.md)                           | IDD Phase 1: Initialization.                       |
 | [`idd-impl-card.md`](/.agent/cards/idd-impl-card.md)                           | IDD Phase 2: Implementation.                       |
 | [`idd-fini-card.md`](/.agent/cards/idd-fini-card.md)                           | IDD Phase 3: Finalization.                         |
-| [`identifier-profile-card.md`](/.agent/cards/identifier-profile-card.md)       | Managing Agent Identity/Profile.         |
+| [`identifier-profile-card.md`](/.agent/cards/identifier-profile-card.md)       | Managing Agent Identity/Profile.                   |
 | [`identity-card.md`](/.agent/cards/identity-card.md)                           | **Identity**. Self-recognition.                    |
 | [`legacy-write-card.md`](/.agent/cards/legacy-write-card.md)                   | Writing Legacy/Lessons.                            |
 | [`localization-card.md`](/.agent/cards/localization-card.md)                   | Doc Standards (Frontmatter, Tags).                 |
@@ -201,6 +201,7 @@ _Located in `.agent/rules/`_
 | [`maintenance.md`](/.agent/rules/development/maintenance.md)                           | General maintenance.                     |
 | [`problem-solving.md`](/.agent/rules/development/problem-solving.md)                   | Debugging approach.                      |
 | [`project-understanding.md`](/.agent/rules/development/project-understanding.md)       | Context loading strategy.                |
+| [`recovery-protocol.md`](/.agent/rules/development/recovery-protocol.md)               | Emergency AI-memory recovery rules.      |
 | [`search-methodology.md`](/.agent/rules/development/search-methodology.md)             | How to search files.                     |
 | [`terminal-auto-execution.md`](/.agent/rules/development/terminal-auto-execution.md)   | Command execution safety.                |
 | [`workspace-tooling.md`](/.agent/rules/development/workspace-tooling.md)               | Tools and dependencies.                  |
