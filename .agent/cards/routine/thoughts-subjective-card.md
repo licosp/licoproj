@@ -1,5 +1,5 @@
 ---
-# Context Configuration (Lico's Source of Truth)
+# Context Configuration
 context_id: "[Thoughts-Subjective]"
 default_phase: "(Commit)"
 tags: ["thoughts", "shared"]

@@ -1,5 +1,5 @@
 ---
-# Context Configuration (Lico's Source of Truth)
+# Context Configuration
 context_id: "[VSCode]"
 default_phase: "(Setup)"
 tags: ["human-usage", "vscode", "settings"]

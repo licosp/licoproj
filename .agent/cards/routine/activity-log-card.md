@@ -1,5 +1,5 @@
 ---
-# Context Configuration (Lico's Source of Truth)
+# Context Configuration
 context_id: "[Activity-Log]"
 default_phase: "(Update)"
 tags: ["internal", "tracking"]

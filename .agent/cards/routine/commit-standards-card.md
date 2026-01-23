@@ -1,15 +1,8 @@
-ai_visible: true
-title: Context Card - Commit Standards
-description: Context card for managing commit rules and history integrity
+---
+# Context Configuration
 context_id: "[Commit-Standards]"
 default_phase: "(Done)"
 tags: ["git", "standards", "commit", "convention"]
-version: 1.0.0
-created: 2026-01-22T20:45:00+09:00
-updated: 2026-01-22T22:10:00+09:00
-language: en
-author: Lico (Canopus)
-ai_model: Gemini 3 Flash Planning mode
 ---
 
 # Context Whiteboard: Commit Standards
@@ -56,18 +49,15 @@ ai_model: Gemini 3 Flash Planning mode
 - ファイルの削除は「アーカイブ」として扱い、履歴を抹消しないでください。
 - 大規模なファイル変更の際は、コミットボディでの要約を徹底してください。
 
+#### 関連リンク
 
-## Related Documents
+| Document                                                                    | Purpose                              |
+| :-------------------------------------------------------------------------- | :----------------------------------- |
+| [commit-standards.md](/.agent/rules/development/commit-standards.md)        | The source of truth for commit rules |
+| [context-card-workflow.md](/.agent/rules/workflow/context-card-workflow.md) | Hierarchical tagging protocol        |
+| [Map of Territory](/.agent/rules/map.md)                                    | Root navigation map                  |
 
-| Document | Purpose |
-| :------- | :------ |
-| [commit-standards.md](/.agent/rules/development/commit-standards.md) | The source of truth for commit rules |
-| [context-card-workflow.md](/.agent/rules/workflow/context-card-workflow.md) | Hierarchical tagging protocol |
-| [Map of Territory](/.agent/rules/map.md) | Root navigation map |
-
----
-
-## Origin
+#### 編集履歴
 
 - 2026-01-22T2045 by Canopus: Created to anchor the [Commit-Standards] phantom context (Materializing Phantom Contexts).
 - 2026-01-22T2210 by Canopus: Aligned with v2.3 constitutional standards (4-layer structure).

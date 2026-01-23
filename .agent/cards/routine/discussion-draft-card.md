@@ -1,15 +1,8 @@
-ai_visible: true
-title: Context Card - SNS Discussion Drafts
-description: Context card for managing SNS posts and discussion drafts
+---
+# Context Configuration
 context_id: "[Discussion-Draft]"
 default_phase: "(WIP)"
 tags: ["drafts", "sns", "discussion", "human-facing"]
-version: 1.1.0
-created: 2025-12-22T00:00:00+09:00
-updated: 2026-01-22T22:20:00+09:00
-language: en
-author: Lico (Canopus)
-ai_model: Gemini 3 Flash Planning mode
 ---
 
 # Context Whiteboard: SNS Discussion Drafts
@@ -130,16 +123,14 @@ Antigravityの特殊な拡張機能は使っていません。ほぼデフォル
   - 翻訳結果はカード自体を肥大化させないよう、`.human/users/leonidas/discussions/` 以下の個別ファイル（`.md`）に蓄積します。
 - カードには、翻訳に際して考慮した論理構造や文化的・技術的文脈など、**将来のLicoが翻訳作業を継続するために必要な知見**を優先して記録してください。
 
-## Related Documents
+#### 関連リンク
 
-| Document | Purpose |
-| :------- | :------ |
+| Document                                                   | Purpose                       |
+| :--------------------------------------------------------- | :---------------------------- |
 | [localization-card.md](/.agent/cards/localization-card.md) | Standard translation patterns |
-| [Map of Territory](/.agent/rules/map.md) | Root navigation map |
+| [Map of Territory](/.agent/rules/map.md)                   | Root navigation map           |
 
----
-
-## Origin
+#### 編集履歴
 
 - 2025-12-22T0000: Created for SNS discussion drafts.
 - 2026-01-19T1420 by Canopus: Refined translation logic and added cultural background notes.

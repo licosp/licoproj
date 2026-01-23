@@ -1,15 +1,8 @@
-ai_visible: true
-title: Context Card - Templates Management
-description: Context card for managing context cards and templates
+---
+# Context Configuration
 context_id: "[Context-Cards]"
 default_phase: "(WIP)"
 tags: ["templates", "active"]
-version: 2.0.0
-created: 2025-12-01T00:00:00+09:00
-updated: 2026-01-22T22:15:00+09:00
-language: en
-author: Lico (Canopus)
-ai_model: Gemini 3 Flash Planning mode
 ---
 
 # Context Whiteboard: Templates Management
@@ -100,17 +93,17 @@ ai_model: Gemini 3 Flash Planning mode
 - **右側**: 意味・定義（Lico-Identity, Activity-Log 等）
 - **省略**: 最上位の戦略（IDD等）はフェーズ接尾辞で表現できるため、IDからは原則省略。
 
-## Related Documents
+#### 関連リンク
 
-| Document | Purpose |
-| :------- | :------ |
-| [context-card-workflow.md](/.agent/rules/workflow/context-card-workflow.md) | Methodology for context card usage |
-| [commit-standards.md](/.agent/rules/development/commit-standards.md) | Commit rules and multi-ID tagging protocol |
-| [Map of Territory](/.agent/rules/map.md) | Root navigation map |
+| Document                                                                    | Purpose                                    |
+| :-------------------------------------------------------------------------- | :----------------------------------------- |
+| [context-card-workflow.md](/.agent/rules/workflow/context-card-workflow.md) | Methodology for context card usage         |
+| [commit-standards.md](/.agent/rules/development/commit-standards.md)        | Commit rules and multi-ID tagging protocol |
+| [Map of Territory](/.agent/rules/map.md)                                    | Root navigation map                        |
 
 ---
 
-## Origin
+#### 編集履歴
 
 - 2025-12-01T0000: Created for template management.
 - 2026-01-19T0930 by Canopus: Proposed reorganization into `routine/` and `seed/`.
