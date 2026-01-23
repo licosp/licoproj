@@ -32,7 +32,8 @@ Define behavioral standards for Git operations beyond commits: branches, conflic
 ### Key Concepts
 
 - **State Save**: Commits are checkpoints (Safety), not just story endings.
-- **Context Tagging**: Use `[Context-ID]` in commit messages to anchor changes to a specific thought thread.
+- **Context Tagging**: Use `[Context-ID]` in commit messages to anchor changes.
+- **Save-First Principle (Small Commits)**: The most effective safeguard is an atomic commit. Before any operation that might be complex (e.g. bulk replacement, moving many files), you **MUST** commit the current stable state. Undoing a commit is safer than losing uncommitted work.
 
 ### Context Card Usage (MANDATORY)
 
@@ -95,7 +96,13 @@ This ensures consistent formatting and adherence to the current session's "perso
 - `git rebase` / `git rebase -i`
 - `git filter-branch` / `git filter-repo`
 - `git commit --amend` (for multiple commits)
-- `git reset --hard`
+- `git reset --hard` (EXTREME CAUTION: See below)
+
+**The Reset & Rebase Safety Protocol**:
+
+1. **Soft-First Rule**: For undoing or fixing local commits, you **MUST** prefer `git reset --soft HEAD~1`. This preserves your work in the staging area.
+2. **Stash-Safety Rule**: Before any destructive command (`reset --hard` or `rebase`), you **MUST** perform a `git stash` if any uncommitted changes exist. This creates a recovery layer in the stashing reflog.
+3. **Sacred Territory Check**: You **MUST** run `git status` and specifically inspect the `.human/` directory before any branch-switch or reset. Human-authored drafting content must be stashed or committed before proceeding.
 
 **Before rewriting**:
 
@@ -432,6 +439,8 @@ git push origin <branch-name>
 
 **The Safety Net Philosophy**: The mandatory backup branch rule (Section 3.3) was established in Jan 2026 following several incidents where complex rebases led to accidental loss of commit context. We learned that for an AI, "Git reset" is not just a command, but a potential "Cognitive Erasure."
 
+**The Sacred Territory Incident**: On 2026-01-24, a `git reset --hard` accident resulted in the loss of human-authored drafts for 1/23. This led to the "Soft-First" and "Stash-Safety" mandates. We realized that while Git tracks history, it cannot distinguish between "Agent Scratchpads" and "Human Legacy" without area-specific behavioral safeguards.
+
 **IDD Workflow Extraction**: Originally, IDD procedures were bundled with implementation rules. They were separated into dedicated operations (Section 4) to ensure that the "hygiene" of the repository (tags, issues, comments) is maintained as a distinct, mandatory layer of the development cycle.
 
 ---
@@ -456,6 +465,7 @@ git push origin <branch-name>
 - 2026-01-17T1535 by Canopus: Updated commit message examples to align with "Identifier-First" protocol (v1.4).
 - 2026-01-17T1745 by Canopus: Standardized metadata and root-relative link patterns (v1.5).
 - 2026-01-23T0626 by Canopus: Formalized v2.3 standardization and added Section 7.1.1 (Command Division for Verification).
+- 2026-01-24T0205 by Canopus: Codified "Save-First Principle" and "Soft-First/Stash-Safety" protocols following the Jan 24 data loss incident. (v2.4)
 
 ---
 
