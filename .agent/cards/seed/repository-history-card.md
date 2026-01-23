@@ -6,7 +6,7 @@ default_phase: "(Compile)"
 ai_visible: true
 version: 1.1.0
 created: 2026-01-20T00:00:00+09:00
-updated: 2026-01-24T05:45:00+09:00
+updated: 2026-01-24T06:00:00+09:00
 tags: ["history", "repository", "compilation", "lineage"]
 language: en
 # author: Format as "Lico (<Instance-ID>)"
@@ -135,8 +135,10 @@ ai_model: ""
 
 ## Related Documents
 
-- [identity-repository.md](/.agent/rules/core/identity/identity-repository.md) : リポジトリのアイデンティティ。
-- [activity-log.md](/.agent/.internal/activity-log.md) : 活動ログ（歴史の素材）。
+| Document                                                                     | Purpose                                    |
+| :--------------------------------------------------------------------------- | :----------------------------------------- |
+| [identity-repository.md](/.agent/rules/core/identity/identity-repository.md) | Identity and narrative of the repository   |
+| [activity-log.md](/.agent/.internal/activity-log.md)                         | Activity log serving as source for history |
 
 ---
 
@@ -144,3 +146,4 @@ ai_model: ""
 
 - 2026-01-20 by Polaris: Initial design for history compilation.
 - 2026-01-24T0545 by Canopus: Standardized with Dialogue Layer template and bilingual H2 headers.
+- 2026-01-24T0600 by Canopus: Standardized Related Documents to table format and ensured English-only headers.

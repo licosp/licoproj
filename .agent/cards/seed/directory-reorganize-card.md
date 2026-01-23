@@ -6,7 +6,7 @@ default_phase: "(Plan)"
 ai_visible: true
 version: 1.1.0
 created: 2025-12-31T00:00:00+09:00
-updated: 2026-01-24T05:45:00+09:00
+updated: 2026-01-24T06:00:00+09:00
 tags: ["reorganization", "structure", "cleanup"]
 language: en
 # author: Format as "Lico (<Instance-ID>)"
@@ -93,3 +93,4 @@ Antigravityのデフォルトディレクトリ（`rules/`, `workflows/`, `scrip
 
 - 2025-12-31 by Polaris: Initial discussion from seed.
 - 2026-01-24T0545 by Canopus: Standardized with Dialogue Layer template and bilingual H2 headers.
+- 2026-01-24T0600 by Canopus: Standardized Related Documents to table format and ensured English-only headers.

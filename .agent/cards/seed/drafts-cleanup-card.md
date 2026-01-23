@@ -6,7 +6,7 @@ default_phase: "(WIP)"
 ai_visible: true
 version: 1.1.0
 created: 2025-12-03T00:00:00+09:00
-updated: 2026-01-24T05:45:00+09:00
+updated: 2026-01-24T06:00:00+09:00
 tags: ["human-usage", "header", "2025-12-03", "part1"]
 language: en
 # author: Format as "Lico (<Instance-ID>)"
@@ -60,8 +60,10 @@ ai_model: ""
 
 ## Related Documents
 
-- [draft-maintenance.md](/.agent/rules/workflow/draft-maintenance.md) : 下書き管理の規約。
-- [drafts-daily-card.md](/.agent/cards/routine/drafts-daily-card.md) : 当ファイル。
+| Document                                                            | Purpose                          |
+| :------------------------------------------------------------------ | :------------------------------- |
+| [draft-maintenance.md](/.agent/rules/workflow/draft-maintenance.md) | Conventions for draft management |
+| [drafts-daily-card.md](/.agent/cards/routine/drafts-daily-card.md)  | Reference card for daily drafts  |
 
 ---
 
@@ -69,3 +71,4 @@ ai_model: ""
 
 - 2025-12-03: Created as drafts cleanup context.
 - 2026-01-24T0545 by Canopus: Standardized with Dialogue Layer template and bilingual H2 headers.
+- 2026-01-24T0600 by Canopus: Standardized Related Documents to table format and ensured English-only headers.

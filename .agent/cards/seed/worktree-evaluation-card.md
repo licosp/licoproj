@@ -6,7 +6,7 @@ default_phase: "(Analysis)"
 ai_visible: true
 version: 1.1.0
 created: 2026-01-10T00:00:00+09:00
-updated: 2026-01-24T05:45:00+09:00
+updated: 2026-01-24T06:00:00+09:00
 tags: ["git", "worktree", "multi-agent", "structure"]
 language: en
 # author: Format as "Lico (<Instance-ID>)"
@@ -40,8 +40,10 @@ ai_model: ""
 
 ## Related Documents
 
-- [roadmap-card.md](/.agent/cards/routine/roadmap-card.md) : 戦略マップ。
-- [worktree-evaluation-card.md](/.agent/cards/seed/worktree-evaluation-card.md) : 当ファイル（分析）。
+| Document                                                                      | Purpose                            |
+| :---------------------------------------------------------------------------- | :--------------------------------- |
+| [roadmap-card.md](/.agent/cards/routine/roadmap-card.md)                      | Strategic goals and vision roadmap |
+| [worktree-evaluation-card.md](/.agent/cards/seed/worktree-evaluation-card.md) | This analysis card itself          |
 
 ---
 
@@ -49,3 +51,4 @@ ai_model: ""
 
 - 2026-01-10 by Canopus: Created for multi-agent worktree analysis.
 - 2026-01-24T0545 by Canopus: Standardized with Dialogue Layer template and bilingual H2 headers.
+- 2026-01-24T0600 by Canopus: Standardized Related Documents to table format and ensured English-only headers.
