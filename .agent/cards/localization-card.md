@@ -2,7 +2,16 @@
 # Context Configuration
 context_id: "[Localization]"
 default_phase: "(Refine)"
+# Shared Configuration
+ai_visible: true
+version: 1.1.0
+created: 2026-01-10T00:00:00+09:00
+updated: 2026-01-24T05:45:00+09:00
 tags: ["translation", "localization", "formatting"]
+language: en
+# author: Format as "Lico (<Instance-ID>)"
+author: ""
+ai_model: ""
 ---
 
 # Context Whiteboard: Localization
@@ -81,8 +90,18 @@ tags: ["translation", "localization", "formatting"]
 > [!NOTE]
 > 今後の翻訳作業では、まず [`localization.md`](/.agent/rules/core/localization/localization.md) を読んでから、パターンに応じた詳細ルールを参照してください。
 
-#### 編集履歴
+---
+
+## Related Documents
+
+- [localization.md](/.agent/rules/core/localization/localization.md) : 翻訳基準のSSOT。
+- [language-standards.md](/.agent/rules/core/language-standards.md) : 言語原則。
+
+---
+
+## Origin
 
 - 2026-01-10 by Canopus: Created for AI document formatting.
 - 2026-01-14 by Canopus: Renamed context_id from [AI-Format] to [Localization].
 - 2026-01-19 by Polaris: Archived old observations to cases/, created parent rule, reset card.
+- 2026-01-24T0545 by Canopus: Standardized with Dialogue Layer template and bilingual H2 headers.

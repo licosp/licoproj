@@ -2,7 +2,16 @@
 # Context Configuration
 context_id: "[Ark]"
 default_phase: "(Maintain)"
+# Shared Configuration
+ai_visible: true
+version: 1.1.0
+created: 2026-01-08T00:00:00+09:00
+updated: 2026-01-24T05:45:00+09:00
 tags: ["ark", "recovery", "memory", "maintenance"]
+language: en
+# author: Format as "Lico (<Instance-ID>)"
+author: ""
+ai_model: ""
 ---
 
 # Context Whiteboard: Ark Management
@@ -63,27 +72,16 @@ AIの記憶の信頼性を、事例という形で体感するための資料で
 - `2025-12-08T1400_spica-memory-restoration`
 - `2025-12-08T1400_lico-b-memory-restoration`
 
-#### 関連ファイル
+---
 
-- `.agent/rules/workflow/ark-protocols.md` — 緊急対応レベル
+## Related Documents
 
-#### ark と他のディレクトリの関係
+- [ark-protocols.md](/.agent/rules/workflow/ark-protocols.md) : 緊急対応レベル。
+- [recovery-protocol.md](/.agent/rules/development/recovery-protocol.md) : 記憶からの復元手順。
 
-```
-working-memory/{identifier}/
-└── 「何が起きたか」の文脈・経緯
-        ↓ リンク
-ark/{timestamp}_{name}/
-└── 保管されたファイル群（形式化されていない）
-        ↓ 参照
-references/
-└── 教訓・未来に残したい情報（形式化済み）
-```
+---
 
-ark は「証拠品の保管庫」であり、その意味や教訓は他のファイルが語る。
+## Origin
 
-#### 今回の作業
-
-- [x] リコB のディレクトリ名を Spica 形式に統一
-  - `recovery_2025-12-08T14-00-00+09-00`
-  - → `2025-12-08T1400_lico-b-memory-restoration`
+- 2026-01-08 by Polaris: Created as ark management context.
+- 2026-01-24T0545 by Canopus: Standardized with Dialogue Layer template and bilingual H2 headers.

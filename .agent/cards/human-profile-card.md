@@ -2,7 +2,16 @@
 # Context Configuration
 context_id: "[Human-Profile]"
 default_phase: "(Update)"
+# Shared Configuration
+ai_visible: true
+version: 1.1.0
+created: 2025-12-31T00:00:00+09:00
+updated: 2026-01-24T05:45:00+09:00
 tags: ["profile", "assessment", "user", "human"]
+language: en
+# author: Format as "Lico (<Instance-ID>)"
+author: ""
+ai_model: ""
 ---
 
 # Context Whiteboard: Human Profile
@@ -54,6 +63,8 @@ tags: ["profile", "assessment", "user", "human"]
 - 行動パターンの詳細分析
 - 観察された変化
 
+---
+
 ## Agent Observations
 
 ### Polaris (2025-12-31)
@@ -62,3 +73,17 @@ tags: ["profile", "assessment", "user", "human"]
 - [x] Assessment に新フェーズ（自律性探求）を追加
 - [x] Assessment に正直な批判的観察を追加
 - [x] コミット完了
+
+---
+
+## Related Documents
+
+- [user-adaptation.md](/.agent/rules/core/user-adaptation.md) : ユーザー適応のルール。
+- [identity-human.md](/.agent/rules/core/identity/identity-human.md) : ユーザーとの関係定義。
+
+---
+
+## Origin
+
+- 2025-12-31 by Polaris: Created as human profile context.
+- 2026-01-24T0545 by Canopus: Standardized with Dialogue Layer template and bilingual H2 headers.

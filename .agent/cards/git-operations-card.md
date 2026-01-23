@@ -2,7 +2,16 @@
 # Context Configuration
 context_id: "[Git-Operations]"
 default_phase: "(Refine)"
+# Shared Configuration
+ai_visible: true
+version: 1.0.0
+created: 2026-01-24T02:35:00+09:00
+updated: 2026-01-24T05:45:00+09:00
 tags: ["git", "operations", "safety", "infrastructure"]
+language: en
+# author: Format as "Lico (<Instance-ID>)"
+author: ""
+ai_model: ""
 ---
 
 # Context Whiteboard: Git Operations
@@ -43,7 +52,9 @@ GITは **リポジトリへの記録** だけではなく、**過去の改変** 
 - **新規作成**: 2026-01-24 の `git reset --hard` によるデータ消失インシデントを受け、安全プロトコルを司るドメイン・レイヤーとして作成。
 - **役割**: Gitというツールの操作自体の安全性を担保し、`[Commit-Standards]`（メッセージの質）の一つ上の階層として機能する。
 
-#### 関連リンク
+---
+
+## Related Documents
 
 | Document                                                             | Purpose                                           |
 | :------------------------------------------------------------------- | :------------------------------------------------ |
@@ -51,6 +62,8 @@ GITは **リポジトリへの記録** だけではなく、**過去の改変** 
 | [commit-standards.md](/.agent/rules/development/commit-standards.md) | Message and tagging standards (Subset)            |
 | [map.md](/.agent/rules/map.md)                                       | Root Map                                          |
 
-#### 編集履歴
+---
+
+## Origin
 
 - 2026-01-24T0235 by Canopus: Created as a Domain Layer card following the data loss incident.

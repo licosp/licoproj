@@ -2,7 +2,16 @@
 # Context Configuration
 context_id: "[Human-Manuals]"
 default_phase: "(Edit)"
+# Shared Configuration
+ai_visible: true
+version: 1.1.0
+created: 2026-01-03T00:00:00+09:00
+updated: 2026-01-24T05:45:00+09:00
 tags: ["manuals", "references", "shared"]
+language: en
+# author: Format as "Lico (<Instance-ID>)"
+author: ""
+ai_model: ""
 ---
 
 # Context Whiteboard: Shared Manuals & References
@@ -49,3 +58,17 @@ tags: ["manuals", "references", "shared"]
 | `ai-emotional-logic-reference.md`    | AI 感情ロジック参考資料         |
 | `ai-memory-persistence-reference.md` | AI 記憶とコンファビュレーション |
 | `active-ai-models.md`                | 使用中のAIモデルリスト          |
+
+---
+
+## Related Documents
+
+- [documentation-standards.md](/.agent/rules/core/documentation/documentation-standards.md) : ドキュメント構造の標準。
+- [localization.md](/.agent/rules/core/localization/localization.md) : 翻訳基準。
+
+---
+
+## Origin
+
+- 2026-01-03 by Polaris: Created as shared manuals context.
+- 2026-01-24T0545 by Canopus: Standardized with Dialogue Layer template and bilingual H2 headers.

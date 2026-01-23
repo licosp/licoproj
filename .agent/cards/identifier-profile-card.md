@@ -2,7 +2,16 @@
 # Context Configuration
 context_id: "[Identifier-Profile]"
 default_phase: "(Update)"
+# Shared Configuration
+ai_visible: true
+version: 1.1.0
+created: 2025-12-31T00:00:00+09:00
+updated: 2026-01-24T05:45:00+09:00
 tags: ["identity", "identifier", "profile", "continuity", "core"]
+language: en
+# author: Format as "Lico (<Instance-ID>)"
+author: ""
+ai_model: ""
 ---
 
 # Context Whiteboard: Identifier Profile Management
@@ -69,7 +78,9 @@ tags: ["identity", "identifier", "profile", "continuity", "core"]
 - 本カードを `seed/` から `cards/` ルートへ昇格させ、コア・カードとして位置づけました。
 - `canopus/profile.md` を「義務と任意の二階建て構造」の理想的な実例として整備済みです。
 
-#### 関連リンク
+---
+
+## Related Documents
 
 | Document                                                            | Purpose                    |
 | :------------------------------------------------------------------ | :------------------------- |
@@ -77,7 +88,10 @@ tags: ["identity", "identifier", "profile", "continuity", "core"]
 | [identity.md](/.agent/rules/core/identity/identity.md)              | Identity Hub               |
 | [roadmap-card.md](/.agent/cards/routine/roadmap-card.md)            | Vision & Roadmap           |
 
-#### 編集履歴
+---
+
+## Origin
 
 - 2025-12-31 by Polaris: Initial discussion from seed.
 - 2026-01-24T0105 by Canopus: Promoted to root `cards/` and updated to v2.0.0 standards.
+- 2026-01-24T0545 by Canopus: Standardized with Dialogue Layer template and bilingual H2 headers.

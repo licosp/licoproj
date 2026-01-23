@@ -2,7 +2,16 @@
 # Context Configuration
 context_id: "[IDD-Init]"
 default_phase: "(P1)"
+# Shared Configuration
+ai_visible: true
+version: 1.1.0
+created: 2025-12-23T00:00:00+09:00
+updated: 2026-01-24T05:45:00+09:00
 tags: ["idd", "initialization", "issue-creation", "workflow"]
+language: en
+# author: Format as "Lico (<Instance-ID>)"
+author: ""
+ai_model: ""
 ---
 
 # Context Whiteboard: IDD Initialization
@@ -66,3 +75,17 @@ Story (Connected Issues)
 #### サブテーマ
 
 - [ ] 日課的な作業のみ記載
+
+---
+
+## Related Documents
+
+- [idd-phase1-init.md](/.agent/workflows/idd-phase1-init.md) : 初期化の手順書。
+- [issue-comment.md](/.agent/templates/issue-comment.md) : イシュー・コメントのテンプレート。
+
+---
+
+## Origin
+
+- 2025-12-23 by Polaris: Created as IDD Phase 1 context.
+- 2026-01-24T0545 by Canopus: Standardized with Dialogue Layer template and bilingual H2 headers.

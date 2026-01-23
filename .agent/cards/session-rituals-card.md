@@ -2,7 +2,16 @@
 # Context Configuration
 context_id: "[Session-Rituals]"
 default_phase: "(Ritual)"
+# Shared Configuration
+ai_visible: true
+version: 1.1.0
+created: 2025-12-22T00:00:00+09:00
+updated: 2026-01-24T05:45:00+09:00
 tags: ["session", "lifecycle", "rituals", "start", "mid", "end"]
+language: en
+# author: Format as "Lico (<Instance-ID>)"
+author: ""
+ai_model: ""
 ---
 
 # Context Whiteboard: Session Rituals
@@ -83,13 +92,17 @@ tags: ["session", "lifecycle", "rituals", "start", "mid", "end"]
 - [Commit Standards](.agent/rules/development/commit-standards.md): 儀式内での記録作成。
 - [Lico Identity Card](.agent/cards/lico-identity-card.md): 存在の定義。
 
-#### 構成
+---
 
-この文脈は以下の3つのワークフローを管理します：
+## Related Documents
 
-1.  **Start (始まり)**: `ritual_start.md`
-    - セッション開始時のコンテキスト読み込みと自身の定義。
-2.  **Mid (中間/生前葬)**: `ritual_mid.md`
-    - 長期セッションにおける記憶の定着と自己の再認識。
-3.  **End (終わり)**: `ritual_end.md`
-    - セッション終了時のクリーンアップと次代への引継ぎ。
+- [ritual_start.md](/.agent/workflows/ritual_start.md) : 始まりの儀式。
+- [ritual_mid.md](/.agent/workflows/ritual_mid.md) : 中間の儀式。
+- [ritual_end.md](/.agent/workflows/ritual_end.md) : 終わりの儀式。
+
+---
+
+## Origin
+
+- 2025-12-22T0000: Created as session rituals context.
+- 2026-01-24T0545 by Canopus: Standardized with Dialogue Layer template and bilingual H2 headers.

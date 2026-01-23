@@ -2,7 +2,16 @@
 # Context Configuration
 context_id: "[Rules-Update]"
 default_phase: "(Refine)"
+# Shared Configuration
+ai_visible: true
+version: 1.1.0
+created: 2025-12-01T00:00:00+09:00
+updated: 2026-01-24T05:45:00+09:00
 tags: ["rules", "maintenance", "behavioral"]
+language: en
+# author: Format as "Lico (<Instance-ID>)"
+author: ""
+ai_model: ""
 ---
 
 # Context Whiteboard: Rules Update
@@ -118,3 +127,18 @@ tags: ["rules", "maintenance", "behavioral"]
 - [x] [Rules] Codified "Maintenance Seals" (Operation Stamps) in `documentation-standards.md`.
   - Introduced `<<Seal: Mission-ID>>` format in the `Origin` section.
   - Solves the "Version Downgrade" and "Grep-ability" issues for Batch processing.
+
+---
+
+## Related Documents
+
+- [meta-rules.md](/.agent/rules/core/meta-rules.md) : ルール作成の指針。
+- [documentation-standards.md](/.agent/rules/core/documentation/documentation-standards.md) : ドキュメント構造の標準。
+
+---
+
+## Origin
+
+- 2025-12-01T0000: Created as rules update context.
+- 2026-01-19T0332 by Canopus: Formally integrated into card system.
+- 2026-01-24T0545 by Canopus: Standardized with Dialogue Layer template and bilingual H2 headers.

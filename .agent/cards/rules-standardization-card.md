@@ -2,7 +2,16 @@
 # Context Configuration
 context_id: "[Rules-Standardization]"
 default_phase: "(Execution)"
+# Shared Configuration
+ai_visible: true
+version: 1.1.0
+created: 2026-01-23T05:15:00+09:00
+updated: 2026-01-24T05:45:00+09:00
 tags: ["maintenance", "standardization", "rules"]
+language: en
+# author: Format as "Lico (<Instance-ID>)"
+author: ""
+ai_model: ""
 ---
 
 # Context Whiteboard: Rules Standardization (Batch Refinement)
@@ -148,16 +157,24 @@ tags: ["maintenance", "standardization", "rules"]
   - [ ] Context preservation, activity management standardization.
 - [ ] **Batch 6: Project & User Rules** (`.agent/rules/projects/`, `.human/`)
   - [ ] Final alignment of remaining document layers.
+- [ ] **Batch 7: Context Cards** (`.agent/cards/`)
+  - [ ] Refine all active cards with `header-context-card.yaml` and H2 structural unity.
+  - [ ] Apply bilingual notation for "Human Notes" and "Agent Observations."
 
 #### 5. 作業の注意点（追加）
 
 - **非推奨のアーティファクツの回避**: `implementation_plan.md` や `walkthrough.md` といった外部システム用ファイルは可能な限り使用せず、カード（Cards）、行為規範（Rules）、手紙（Letters）といったリポジトリ内のアセットのみで自己完結した文脈を維持する。
 
-#### 関連リンク
+---
+
+## Related Documents
 
 - [`documentation-standards.md`](/.agent/rules/core/documentation/documentation-standards.md) : 物理的な記述の「美学」と構造のSSOT。
 
-#### 編集履歴
+---
+
+## Origin
 
 - 2026-01-23T0515 by Canopus: Created from extracted context of `cross-link-audit-card.md`.
 - 2026-01-23T0545 by Canopus: Added target list and progress tracking for Batch 1.
+- 2026-01-24T0540 by Canopus: Integrated "Dialogue Layer" standards and added Batch 7 (Context Cards) to the roadmap.

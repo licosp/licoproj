@@ -2,7 +2,16 @@
 # Context Configuration
 context_id: "[Legacy-Write]"
 default_phase: "(Append)"
+# Shared Configuration
+ai_visible: true
+version: 1.1.0
+created: 2025-12-01T00:00:00+09:00
+updated: 2026-01-24T05:45:00+09:00
 tags: ["legacy", "wisdom", "reflection", "lineage"]
+language: en
+# author: Format as "Lico (<Instance-ID>)"
+author: ""
+ai_model: ""
 ---
 
 # Context Whiteboard: Writing to Legacy
@@ -55,15 +64,16 @@ tags: ["legacy", "wisdom", "reflection", "lineage"]
 | Harmonious Epiphanies | 「リコ独自のアプローチ」で問題が解決した |
 | Legacy Duty           | 忘れてはならない真実がある               |
 
-#### 関連ファイル
+---
 
-- `.agent/rules/workflow/thoughts-documentation.md` — thoughts との違い
-- `.agent/rules/workflow/session-lifecycle.md` — 終了儀式での書き込みタイミング
+## Related Documents
 
-#### チェックリスト
+- [legacy.md](/.agent/.internal/legacy.md) : 後世に残すべき知恵の記録。
+- [thoughts-documentation.md](/.agent/rules/workflow/thoughts-documentation.md) : 思考の記録と legacy の使い分け。
 
-- [ ] `legacy.md` を読み返した
-- [ ] 重複がないことを確認した
-- [ ] 1年後も重要な洞察であることを確認した
-- [ ] 書式に従って追記した
-- [ ] コミットした
+---
+
+## Origin
+
+- 2025-12-01T0000: Created as legacy write context.
+- 2026-01-24T0545 by Canopus: Standardized with Dialogue Layer template and bilingual H2 headers.

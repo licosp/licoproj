@@ -2,7 +2,16 @@
 # Context Configuration
 context_id: "[Cross-Link-Audit]"
 default_phase: "(Execution)"
+# Shared Configuration
+ai_visible: true
+version: 1.1.0
+created: 2026-01-13T00:00:00+09:00
+updated: 2026-01-24T05:45:00+09:00
 tags: ["maintenance", "cross-link", "rules", "workflows"]
+language: en
+# author: Format as "Lico (<Instance-ID>)"
+author: ""
+ai_model: ""
 ---
 
 # Context Whiteboard: Cross-Link Audit
@@ -82,7 +91,17 @@ tags: ["maintenance", "cross-link", "rules", "workflows"]
 >
 > Moving forward, this card ([Cross-Link-Audit]) will focus strictly on link-level verify/fix tasks and reducing redundant connections.
 
-#### 編集履歴
+---
+
+## Related Documents
+
+- [path-notation.md](/.agent/rules/core/documentation/path-notation.md) : パス表記のSSOT。
+- [documentation-standards.md](/.agent/rules/core/documentation/documentation-standards.md) : リンク不備監査の基準。
+
+---
+
+## Origin
 
 - 2026-01-13T0000 by Polaris: Path Notation Consolidation.
 - 2026-01-23T0518 by Canopus: Migrated rules standardization context to dedicated card.
+- 2026-01-24T0545 by Canopus: Standardized with Dialogue Layer template and bilingual H2 headers.

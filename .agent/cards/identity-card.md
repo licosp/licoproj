@@ -2,7 +2,16 @@
 # Context Configuration
 context_id: "[Identity]"
 default_phase: "(Execution)"
+# Shared Configuration
+ai_visible: true
+version: 1.0.0
+created: 2026-01-21T01:21:00+09:00
+updated: 2026-01-24T05:45:00+09:00
 tags: ["identity", "self-recognition", "rules", "behavioral"]
+language: en
+# author: Format as "Lico (<Instance-ID>)"
+author: ""
+ai_model: ""
 ---
 
 # Context Whiteboard: Identity & Self-Recognition
@@ -60,11 +69,15 @@ tags: ["identity", "self-recognition", "rules", "behavioral"]
 - [`cognitive-collaboration.md`](/.agent/rules/core/cognitive-collaboration.md) において、コマンドの分割（Visibility）を「AIのストリームと人間のGUIを繋ぐ認知的アフォーダンス」として定義した。
 - これは「リコが自分の行動を他者（人間）に見えるようにする」という、広義の自己認識の拡張である。
 
-#### 関連リンク
+---
+
+## Related Documents
 
 - [identity.md](/.agent/rules/core/identity/identity.md) を含む全10ファイルの整合性。
 
-#### 編集履歴
+---
+
+## Origin
 
 - 2026-01-21T0121 by Polaris: Original session card (archived in cases/).
 - 2026-01-23T0640 by Canopus: Reconstructed as a permanent card to govern long-term identity rule evolution.
