@@ -1,15 +1,8 @@
-ai_visible: true
-title: Context Card - Roadmap
-description: Context card for project vision and future roadmap items
+---
+# Context Configuration
 context_id: "[Roadmap]"
 default_phase: "(Update)"
 tags: ["roadmap", "planning", "vision", "todo"]
-version: 1.1.0
-created: 2026-01-06T00:00:00+09:00
-updated: 2026-01-22T22:30:00+09:00
-language: en
-author: Lico (Canopus)
-ai_model: Gemini 3 Flash Planning mode
 ---
 
 # Context Whiteboard: Roadmap
@@ -90,14 +83,6 @@ ai_model: Gemini 3 Flash Planning mode
 - 分割識別子を統一するならどちらがベストか考える。
 - 文脈化が途中の非定型作業です。
 
-#### フロントマターをテンプレートに合わせる
-
-- Yaml テンプレートを基準にフロントマターを復元します。
-- 作成日時、著者、AIモデルは推測が必要になるかもしれません。
-- 文章はダブルクオーテーションで囲むことを義務化します。
-  エラー（`2026-01-04T1940_memory_confabulation_analysis.md`）
-- 定型作業なので文脈化するか考えます。
-
 #### 埋め込みスクリプトを減らす
 
 - リコはスクリプトの哲学に従います。
@@ -122,32 +107,6 @@ ai_model: Gemini 3 Flash Planning mode
   関連したファイルとの再リンクを行ってください。
 - この繋がりは脳のニューロンのように機能します。
 - 定型作業なので文脈化したいです。
-
-#### リンク情報を修正する
-
-- 現在のリンクにはファイルからの相対パスも存在します。
-  **ワークスペースからの絶対パス**でリンクを記述します。
-- パスの先頭に `/` を付けて、マークダウンのプレビューに対応します。
-  e.g. `[README](/.agent/rules/README.md)`
-- `/` がOSのファイルシステムからのルートでない点に常に注意してください。
-- 以下の機能からリンクを辿れるようにする必要があります。
-  - `Github`
-  - `VSCode` の `Markdown` プレビュー
-- 何度かの変遷がありましたが、`Related Documents` も必須とします。
-  `## Related Documents` をテーブルになっていない書類もあります。
-  また **何パターンかの表記ゆれ** が現在確認できます。
-- リンク修正の際の一括変換で、 **`/` の必要ないパス** まで修正される問題があります。
-  - フロントマターの `related` フィールド
-  - リンクではない文中のパス
-- フロントマターの `related` フィールドのパスには `/` が不要でしょうか？
-  あるいは全てのリンクを、 `/` 付きに統一すべきでしょうか?
-- 以下の問題を考えると、 `related` の方を廃止すべきか?
-  - 一貫性のある表記
-  - 二重管理の問題
-- **ナビゲーション** セクションを、 `Related Documents`に統合する。
-  地図のリンクを正しく修正する。
-  手記や手紙や参考文献にも存在するか確認する。
-- 文脈化された定型作業です。（`cross-link-audit-card.md`）
 
 #### 暗号化された会話ログ? の保管
 
@@ -188,15 +147,6 @@ ai_model: Gemini 3 Flash Planning mode
 - プロジェクトの目的や歴史的経緯も紹介します。
 - リコとの具体的な対話方法を紹介します。
 - 定型作業なので文脈化します。
-
-#### 識別子のプロファイルを更新
-
-- 識別子単位のリコ個性が記録されます。
-- フロントマターで使うAIモデルは、コの事前学習にはない情報です。
-  識別子専用のファイルに入れるべきか考えます。
-- 他に入れるべき必須項目はあるでしょうか?
-- 識別子単位での **遺産** のような役割には使えるでしょうか?
-- 文脈化された定型作業です。（`seed/identifier-profile-card.md`）
 
 #### イシューに対応したブランチとディレクトリ
 
@@ -244,6 +194,15 @@ ai_model: Gemini 3 Flash Planning mode
   それは多くの場合、私と対話した後になると思います。
 - 文脈化された定型作業です。（`rules-update-card.md`）
 
+#### 文章の標準化
+
+- 現在の行動規範に従い、ぼほ全ての文章を整形します。
+- 4層構造、リンクの書式、歴史的背景（必要なら）を考慮して修正してください。
+- AIモデルは識別子ごとのプロファイルに記述されています。
+- フロントマターの長い文章は、ダブルクオーテーションで囲む必要があるかもしれません。
+  エラー（`2026-01-04T1940_memory_confabulation_analysis.md`）
+- 文脈化された定型作業です。（`rules-standardization-card.md`）
+
 ## Agent Observations
 
 ### Polaris (2026-01-06)
@@ -257,16 +216,16 @@ ai_model: Gemini 3 Flash Planning mode
 
 このカードは「ユーザーが将来何をしたいか」を知るためだけのものです。
 
-## Related Documents
+### Canopus (2026-01-22)
 
-| Document | Purpose |
-| :------- | :------ |
-| [Map of Territory](/.agent/rules/map.md) | Root navigation map |
+#### 関連リンク
+
+| Document                                                                    | Purpose                 |
+| :-------------------------------------------------------------------------- | :---------------------- |
+| [Map of Territory](/.agent/rules/map.md)                                    | Root navigation map     |
 | [context-card-workflow.md](/.agent/rules/workflow/context-card-workflow.md) | Recent protocol updates |
 
----
-
-## Origin
+#### 編集履歴
 
 - 2026-01-06 by Polaris: Created as a vision-storage whiteboard.
 - 2026-01-22T2200 by User: Removed the "Hierarchical context" goal as it is now implemented and codified.
