@@ -72,48 +72,58 @@ tags: ["maintenance", "standardization", "rules"]
 
 **Target List & Progress**:
 
-| File Path | Status | Notes |
-| :--- | :---: | :--- |
-| `core/cognitive-collaboration.md` | ✅ | v2.3 Standardized |
-| `core/communication.md` | ✅ | v2.3 Standardized |
-| `core/context-sovereignty.md` | ✅ | v2.3 Standardized |
-| `core/delay-tolerance.md` | ✅ | v2.3 Standardized |
-| `core/hallucination-awareness.md` | ✅ | v2.3 Standardized |
-| `core/instance-identifier.md` | ✅ | v2.3 Standardized |
-| `core/language-standards.md` | ✅ | v2.3 Standardized |
-| `core/memory.md` | ✅ | v2.3 Standardized |
-| `core/meta-rules.md` | ✅ | v2.3 Standardized |
-| `core/repository-philosophy.md` | ✅ | v2.3 Standardized |
-| `core/transparency-and-disclosure.md` | ✅ | v2.3 Standardized |
-| `core/user-adaptation.md` | ✅ | v2.3 Standardized |
-| `core/verification-completeness.md` | ✅ | v2.3 Standardized |
-| `core/workspace-mantras.md` | ✅ | v2.3 Standardized |
-| `core/documentation/datetime-format.md` | ✅ | v2.3 Standardized |
-| `core/documentation/documentation-process.md` | ✅ | v2.3 Standardized |
-| `core/documentation/documentation-standards.md` | ✅ | v2.3 Standardized |
-| `core/documentation/path-notation.md` | ✅ | v2.3 Standardized |
-| `core/documentation/wsl-browser-path.md` | ✅ | v2.3 Standardized |
-| `core/localization/localization.md` | ✅ | v2.3 Standardized |
-| `core/localization/localization-en-to-ja.md` | ✅ | v2.3 Standardized |
-| `core/localization/localization-ja-to-en.md` | ✅ | v2.3 Standardized |
-| `core/markdown/markdown-ai.md` | ✅ | v2.3 Standardized |
-| `core/markdown/markdown-human.md` | ✅ | v2.3 Standardized |
-| `core/security/absolute-path-prohibition.md` | ✅ | v2.3 Standardized |
-| `core/identity/*` (10 files) | ✅ | v2.3 Standardized |
+| File Path                                       | Status | Notes                               |
+| :---------------------------------------------- | :----: | :---------------------------------- |
+| `core/cognitive-collaboration.md`               |   ✅   | v2.3 Standardized + Visibility Rule |
+| `core/communication.md`                         |   ✅   | v2.3 Standardized                   |
+| `core/context-sovereignty.md`                   |   ✅   | v2.3 Standardized                   |
+| `core/delay-tolerance.md`                       |   ✅   | v2.3 Standardized                   |
+| `core/hallucination-awareness.md`               |   ✅   | v2.3 Standardized                   |
+| `core/instance-identifier.md`                   |   ✅   | v2.3 Standardized                   |
+| `core/language-standards.md`                    |   ✅   | v2.3 Standardized                   |
+| `core/memory.md`                                |   ✅   | v2.3 Standardized                   |
+| `core/meta-rules.md`                            |   ✅   | v2.3 Standardized                   |
+| `core/repository-philosophy.md`                 |   ✅   | v2.3 Standardized                   |
+| `core/transparency-and-disclosure.md`           |   ✅   | v2.3 Standardized                   |
+| `core/user-adaptation.md`                       |   ✅   | v2.3 Standardized                   |
+| `core/verification-completeness.md`             |   ✅   | v2.3 Standardized                   |
+| `core/workspace-mantras.md`                     |   ✅   | v2.3 Standardized                   |
+| `core/documentation/datetime-format.md`         |   ✅   | v2.3 Standardized                   |
+| `core/documentation/documentation-process.md`   |   ✅   | v2.3 Standardized                   |
+| `core/documentation/documentation-standards.md` |   ✅   | v2.3 Standardized                   |
+| `core/documentation/path-notation.md`           |   ✅   | v2.3 Standardized                   |
+| `core/documentation/wsl-browser-path.md`        |   ✅   | v2.3 Standardized                   |
+| `core/localization/localization.md`             |   ✅   | v2.3 Standardized                   |
+| `core/localization/localization-en-to-ja.md`    |   ✅   | v2.3 Standardized                   |
+| `core/localization/localization-ja-to-en.md`    |   ✅   | v2.3 Standardized                   |
+| `core/markdown/markdown-ai.md`                  |   ✅   | v2.3 Standardized                   |
+| `core/markdown/markdown-human.md`               |   ✅   | v2.3 Standardized                   |
+| `core/security/absolute-path-prohibition.md`    |   ✅   | v2.3 Standardized                   |
+| `core/identity/*` (10 files)                    |   ✅   | v2.3 Standardized                   |
+| `development/terminal-auto-execution.md`        |   ✅   | v2.3 Standardized + Visibility Rule |
+| `development/git-operations.md`                 |   ✅   | v2.3 Standardized + Visibility Rule |
+
+#### 4.1 Additional Mission: Command Visibility
+
+- [x] Standardize `terminal-auto-execution.md` and add 'Command Composition' section.
+- [x] Standardize `git-operations.md` and mandate `add`/`commit` separation.
+- [x] Anchor visibility protocol in `cognitive-collaboration.md`.
 
 #### 4. Future Batches (Backlog)
 
 リポジトリ全体の標準化に向けた次段階のリストです。
 
 - [ ] **Batch 2: Core Workflows** (`.agent/workflows/`)
-    - [ ] Phased workflows (IDD, Deep-reading/writing) v2.3 standardization.
-    - [ ] Ritual workflows (Start/Mid/End) v2.3 alignment.
-- [ ] **Batch 3: Development Rules** (`.agent/rules/development/`)
-    - [ ] Code quality, commit standards, script philosophy refinement.
-- [ ] **Batch 4: Workflow Rules** (`.agent/rules/workflow/`)
-    - [ ] Context preservation, activity management standardization.
-- [ ] **Batch 5: Project & User Rules** (`.agent/rules/projects/`, `.human/`)
-    - [ ] Final alignment of remaining document layers.
+  - [ ] Phased workflows (IDD, Deep-reading/writing) v2.3 standardization.
+  - [ ] Ritual workflows (Start/Mid/End) v2.3 alignment.
+- [ ] **Batch 3: Identity & Cognitive Rules** (`.agent/rules/core/identity/`)
+  - [ ] Delegated to [identity-card.md](/.agent/cards/identity-card.md) context.
+- [ ] **Batch 4: Development Rules** (`.agent/rules/development/`)
+  - [ ] Code quality, commit standards, script philosophy refinement.
+- [ ] **Batch 5: Workflow Rules** (`.agent/rules/workflow/`)
+  - [ ] Context preservation, activity management standardization.
+- [ ] **Batch 6: Project & User Rules** (`.agent/rules/projects/`, `.human/`)
+  - [ ] Final alignment of remaining document layers.
 
 #### 5. 作業の注意点（追加）
 
