@@ -112,3 +112,9 @@ tags: ["rules", "maintenance", "behavioral"]
 - [x] 人間用をリネーム: `markdown-readability.md` → `markdown-human.md`
 - [x] 古いファイルを書庫に送る
 - [x] 翻訳行動規範のリンクを更新
+
+### Canopus (2026-01-23)
+
+- [x] [Rules] Codified "Maintenance Seals" (Operation Stamps) in `documentation-standards.md`.
+  - Introduced `<<Seal: Mission-ID>>` format in the `Origin` section.
+  - Solves the "Version Downgrade" and "Grep-ability" issues for Batch processing.

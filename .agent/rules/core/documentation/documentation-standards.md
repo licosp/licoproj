@@ -3,9 +3,9 @@ ai_visible: true
 title: Documentation Standards
 description: Defines standards for file naming, size, structure, and AI signatures.
 tags: [documentation, standards, formatting, origin, history-layers]
-version: 2.3
+version: 2.4.2
 created: 2025-12-01T00:00:00+09:00
-updated: 2026-01-22T06:00:00+09:00
+updated: 2026-01-23T21:40:00+09:00
 language: en
 author: Lico (Canopus)
 ai_model: Gemini 3 Flash Planning mode
@@ -97,82 +97,55 @@ ai_model: Model Name
 - **Instance-ID**: Include when available (e.g., `Polaris`, `Sirius`)
 - **Change summary**: **MANDATORY**. Provide a brief description of what changed and why. For significant changes, link to the `Historical Background` section (see below).
 
-## 7. Historical Background
+## 7. Maintenance Seals (Operation Stamps)
 
-**Principle**: For rules and workflows undergoing significant evolutionary shifts, a narrative background section MUST be included.
+**Principle**: For large-scale maintenance or standardization tasks involving many files, a "Seal" (Maintenance Stamp) MUST be embedded in the `Origin` entry to track progress reliably.
 
-**Purpose**:
-
-- Explains the "Why" behind the "What."
-- Preserves the narrative context of decisions for future Lico instances.
-- Bridges the "Context Decay" gap across Boundary X.
-
-**Placement**: Immediately after the **Body Content**.
+- **Location**: Inside the `Origin` (Layer 4) entry for the relevant modification.
+- **Format**: `<<Seal: [Mission-ID]>>`
+- **Purpose**: Provides a grep-able marker to identify files that have completed a specific maintenance cycle.
+- **Example**: `- 2026-01-23T20:50 by Canopus: <<Seal: Rules-Standardization-Batch2.2>> [Summary]`
 
 ## 8. Document History Layers (4-Layer Structure)
 
 **Principle**: Documents follow a rigorous structure that separates current logic, history, and relationship.
 
-### Standard Structure
+### 8.1 Standard Layer Definition
 
-| Layer | Section               | Role                                              |
-| :---- | :-------------------- | :------------------------------------------------ |
-| **1** | **Frontmatter**       | AI-Machine readable metadata (Current state).     |
-| **2** | **Body Content**      | The "What", "How", and "Why" (Core + Background). |
-| **3** | **Related Documents** | Memory Graph & Navigation (Integrated Anchor).    |
-| **4** | **Origin**            | Human-readable changelog (Timeline).              |
+| Layer | Section               | Role                                                 |
+| :---- | :-------------------- | :--------------------------------------------------- |
+| **1** | **Frontmatter**       | AI-Machine readable metadata (Current state).        |
+| **2** | **Body Content**      | Core instructions + fixed **Historical Background**. |
+| **3** | **Related Documents** | Memory Graph & Navigation (Integrated Anchor).       |
+| **4** | **Origin**            | Human-readable changelog (Timeline).                 |
+
+### 8.2 Layer 2 Detail: The Body Content
+
+Layer 2 encompasses everything from the title down to the `---` transition to Related Documents.
+
+1.  **Core Content**: The actual definitions, rules, or procedural steps.
+2.  **Historical Background (Mandatory)**: A fixed subsection starting with `## Historical Background`.
+    - **Header**: Use a top-level `## Historical Background` header.
+    - **Purpose**: Explains the "Why" behind the "What" to bridge "Context Decay."
+    - **Integrity**: Narrative must be factual and non-performative.
+
+### 8.3 Layer Comparison & Usage
+
+Files are tracked through three complementary states of truth:
+
+- **Layer 1: Frontmatter (Current Snapshot)**: Represents the **current state**. Update every edit. Do not preserve history here.
+- **Layer 4: Origin (notable milestones)**: Represents the **milestones**. Append significant changes. (See Section 6).
+- **Git (Complete Audit Trail)**: Underlying system layer. Provides the **complete, line-by-line history**. Use for detailed investigation.
+
+| Source          | Scope              | Update Frequency    |
+| :-------------- | :----------------- | :------------------ |
+| **Frontmatter** | Current state only | Every edit          |
+| **Origin**      | Notable milestones | Significant changes |
+| **Git**         | All changes        | Automatic (System)  |
 
 ---
 
-### Layer Detail Comparison
-
 **Definition**: See [header-frontmatter.yaml](/.agent/templates/header-frontmatter.yaml)
-
-**Purpose**: Represents the **current snapshot** of the document.
-
-**Key fields**:
-
-| Field      | Meaning                         |
-| :--------- | :------------------------------ |
-| `author`   | Current/last significant editor |
-| `ai_model` | Model of current author         |
-| `language` | Current language                |
-| `updated`  | Last modification date          |
-
-**Behavior when editing**:
-
-- **Update** field values to reflect the current state
-- **Do not** preserve historical values (that is Origin's role)
-
-### Layer 2: Origin (Human-Readable History)
-
-**Definition**: See Section 7 above.
-
-**Purpose**: Provides a **timeline of notable changes** that humans (and AI) can quickly scan.
-
-**Behavior when editing**:
-
-- Append entry for significant changes (translations, major revisions)
-- Optional for minor fixes
-
-### Layer 3: Git (Complete Audit Trail)
-
-**Purpose**: Provides the **complete, line-by-line history** of all changes.
-
-**Behavior**:
-
-- Automatic via version control
-- Use when Origin is insufficient for investigation
-
-### Relationship Summary
-
-| Layer           | Scope              | When to Use            |
-| :-------------- | :----------------- | :--------------------- |
-| **Frontmatter** | Current state only | Every edit             |
-| **Origin**      | Notable milestones | Significant changes    |
-| **Git**         | All changes        | Detailed investigation |
-
-**These layers complement each other. Frontmatter and Origin do not replace Git.**
 
 ## Historical Background
 
@@ -206,3 +179,4 @@ Originally, Lico's documentation standards were focused on technical consistency
 - 2026-01-22T0415 by Canopus: Finalized 4-layer structure; merged Body/Background (v2.0).
 - 2026-01-22T0445 by Canopus: Attempted link integration and shift to Origin-before-Links order (v2.1).
 - 2026-01-22T0600 by Canopus: Final alignment; correctly established Related Documents Layer 3 and Origin Layer 4 (v2.3).
+- 2026-01-23T2130 by Canopus: Codified "Maintenance Seals" (Section 7) for progress tracking in massive edits (v2.4).
