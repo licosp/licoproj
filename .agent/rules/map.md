@@ -94,8 +94,9 @@ _Located in `.agent/cards/`_
 | [`idd-init-card.md`](/.agent/cards/idd-init-card.md)                           | IDD Phase 1: Initialization.                       |
 | [`idd-impl-card.md`](/.agent/cards/idd-impl-card.md)                           | IDD Phase 2: Implementation.                       |
 | [`idd-fini-card.md`](/.agent/cards/idd-fini-card.md)                           | IDD Phase 3: Finalization.                         |
+| [`identifier-profile-card.md`](/.agent/cards/identifier-profile-card.md)       | Managing Agent Identity/Profile.         |
+| [`identity-card.md`](/.agent/cards/identity-card.md)                           | **Identity**. Self-recognition.                    |
 | [`legacy-write-card.md`](/.agent/cards/legacy-write-card.md)                   | Writing Legacy/Lessons.                            |
-| [`identity-card.md`](/.agent/cards/identity-card.md)                 | **Identity**. Self-recognition.                    |
 | [`localization-card.md`](/.agent/cards/localization-card.md)                   | Doc Standards (Frontmatter, Tags).                 |
 | [`rules-standardization-card.md`](/.agent/cards/rules-standardization-card.md) | **v2.3 Core Refinement**. Standardization process. |
 | [`rules-update-card.md`](/.agent/cards/rules-update-card.md)                   | Modifying Rules.                                   |
@@ -133,7 +134,6 @@ _Located in `.agent/cards/`_
 | [`seed/datetime-standardize-card.md`](/.agent/cards/seed/datetime-standardize-card.md) | Timestamp format standardization.        |
 | [`seed/directory-reorganize-card.md`](/.agent/cards/seed/directory-reorganize-card.md) | Directory structure cleanup.             |
 | [`seed/drafts-cleanup-card.md`](/.agent/cards/seed/drafts-cleanup-card.md)             | Cleaning up user drafts.                 |
-| [`seed/identifier-profile-card.md`](/.agent/cards/seed/identifier-profile-card.md)     | Managing Agent Identity/Profile.         |
 | [`seed/log-sanitization-card.md`](/.agent/cards/seed/log-sanitization-card.md)         | Cleaning sensitive/noisy logs.           |
 | [`seed/repository-history-card.md`](/.agent/cards/seed/repository-history-card.md)     | Historical reconstruction of repository. |
 | [`seed/worktree-evaluation-card.md`](/.agent/cards/seed/worktree-evaluation-card.md)   | Evaluating repository worktree.          |
