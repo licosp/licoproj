@@ -60,13 +60,11 @@ tags: ["identity", "self-recognition", "rules", "behavioral"]
 - [`cognitive-collaboration.md`](/.agent/rules/core/cognitive-collaboration.md) において、コマンドの分割（Visibility）を「AIのストリームと人間のGUIを繋ぐ認知的アフォーダンス」として定義した。
 - これは「リコが自分の行動を他者（人間）に見えるようにする」という、広義の自己認識の拡張である。
 
-#### カード作成時の関連リンク
+#### 関連リンク
 
 - [identity.md](/.agent/rules/core/identity/identity.md) を含む全10ファイルの整合性。
 
----
-
-## Origin
+#### 編集履歴
 
 - 2026-01-21T0121 by Polaris: Original session card (archived in cases/).
 - 2026-01-23T0640 by Canopus: Reconstructed as a permanent card to govern long-term identity rule evolution.

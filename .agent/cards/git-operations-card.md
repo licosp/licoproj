@@ -51,8 +51,6 @@ GITは **リポジトリへの記録** だけではなく、**過去の改変** 
 | [commit-standards.md](/.agent/rules/development/commit-standards.md) | Message and tagging standards (Subset)            |
 | [map.md](/.agent/rules/map.md)                                       | Root Map                                          |
 
----
-
 #### 編集履歴
 
 - 2026-01-24T0235 by Canopus: Created as a Domain Layer card following the data loss incident.

@@ -82,9 +82,7 @@ tags: ["maintenance", "cross-link", "rules", "workflows"]
 >
 > Moving forward, this card ([Cross-Link-Audit]) will focus strictly on link-level verify/fix tasks and reducing redundant connections.
 
----
-
-## Origin
+#### 編集履歴
 
 - 2026-01-13T0000 by Polaris: Path Notation Consolidation.
 - 2026-01-23T0518 by Canopus: Migrated rules standardization context to dedicated card.

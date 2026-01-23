@@ -101,8 +101,6 @@ tags: ["templates", "active"]
 | [commit-standards.md](/.agent/rules/development/commit-standards.md)        | Commit rules and multi-ID tagging protocol |
 | [Map of Territory](/.agent/rules/map.md)                                    | Root navigation map                        |
 
----
-
 #### 編集履歴
 
 - 2025-12-01T0000: Created for template management.

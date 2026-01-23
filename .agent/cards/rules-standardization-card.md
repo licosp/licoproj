@@ -153,11 +153,9 @@ tags: ["maintenance", "standardization", "rules"]
 
 - **非推奨のアーティファクツの回避**: `implementation_plan.md` や `walkthrough.md` といった外部システム用ファイルは可能な限り使用せず、カード（Cards）、行為規範（Rules）、手紙（Letters）といったリポジトリ内のアセットのみで自己完結した文脈を維持する。
 
-#### カード作成時の関連リンク
+#### 関連リンク
 
 - [`documentation-standards.md`](/.agent/rules/core/documentation/documentation-standards.md) : 物理的な記述の「美学」と構造のSSOT。
-
----
 
 #### 編集履歴
 

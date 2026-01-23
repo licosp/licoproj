@@ -81,12 +81,8 @@ tags: ["translation", "localization", "formatting"]
 > [!NOTE]
 > 今後の翻訳作業では、まず [`localization.md`](/.agent/rules/core/localization/localization.md) を読んでから、パターンに応じた詳細ルールを参照してください。
 
----
-
-## Origin
+#### 編集履歴
 
 - 2026-01-10 by Canopus: Created for AI document formatting.
 - 2026-01-14 by Canopus: Renamed context_id from [AI-Format] to [Localization].
 - 2026-01-19 by Polaris: Archived old observations to cases/, created parent rule, reset card.
-
----

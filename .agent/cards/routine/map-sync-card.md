@@ -227,11 +227,7 @@ tags: ["map", "maintenance", "map-sync"]
 - Repository is clean.
 - All "deleted" files are preserved in `.agent/.internal/archive/2026-01-04/`.
 
----
-
-## Origin
+#### 編集履歴
 
 - 2026-01-02T0000 by Spica: Create and Post-Sync.
 - 2026-01-03T0658 by leonidas: Edit "Human Notes".
-
----
