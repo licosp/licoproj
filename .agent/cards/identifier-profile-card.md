@@ -3,8 +3,6 @@
 context_id: "[Identifier-Profile]"
 default_phase: "(Update)"
 tags: ["identity", "identifier", "profile", "continuity", "core"]
-version: 1.1.0
-updated: 2026-01-24T01:05:00+09:00
 ---
 
 # Context Whiteboard: Identifier Profile Management
@@ -71,7 +69,7 @@ updated: 2026-01-24T01:05:00+09:00
 - 本カードを `seed/` から `cards/` ルートへ昇格させ、コア・カードとして位置づけました。
 - `canopus/profile.md` を「義務と任意の二階建て構造」の理想的な実例として整備済みです。
 
-## Related Documents
+#### 関連リンク
 
 | Document                                                            | Purpose                    |
 | :------------------------------------------------------------------ | :------------------------- |
@@ -79,9 +77,7 @@ updated: 2026-01-24T01:05:00+09:00
 | [identity.md](/.agent/rules/core/identity/identity.md)              | Identity Hub               |
 | [roadmap-card.md](/.agent/cards/routine/roadmap-card.md)            | Vision & Roadmap           |
 
----
-
-## Origin
+#### 編集履歴
 
 - 2025-12-31 by Polaris: Initial discussion from seed.
 - 2026-01-24T0105 by Canopus: Promoted to root `cards/` and updated to v2.0.0 standards.

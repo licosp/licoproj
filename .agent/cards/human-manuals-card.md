@@ -1,5 +1,5 @@
 ---
-# Context Configuration (Lico's Source of Truth)
+# Context Configuration
 context_id: "[Human-Manuals]"
 default_phase: "(Edit)"
 tags: ["manuals", "references", "shared"]
