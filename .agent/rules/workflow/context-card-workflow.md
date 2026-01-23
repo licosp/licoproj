@@ -18,8 +18,9 @@ ai_model: Gemini 3 Flash Planning mode
 **Context Cards** are dynamic markdown files stored in `.agent/cards/`.
 They serve as a "shared whiteboard" between the Human User and the AI Agent (Lico), defining the specific mode, constraints, and long-term goals for a particular activity.
 
-- **Analogy**: "Equipping a Card" = "Entering a specific mindset/role".
-- **Goal**: To prevent "Semantic Coupling" (mixing unrelated contexts) and "Completionist Bias" (rushing without understanding goal).
+- **Analogy**: "Equipping a Card" = "Entering a specific mindset/role" or "Standing at a shared whiteboard."
+- **Goal**: To prevent "Semantic Coupling" (mixing unrelated contexts) and focus purely on "Human-AI Resonance" during a particular activity.
+- **The Dialogue Layer Principle**: Cards are essentially "disposable" or "chat-like" interfaces. They prioritize operational speed and human-to-AI intuition over legal formality.
 
 ---
 
@@ -52,9 +53,13 @@ When a disposable card is completed:
 
 ---
 
-## 3. Card Structure
+## 3. Card Structure (The Dialogue Standard)
 
-A card consists of **Fixed Configuration (Frontmatter)** and **Dynamic Body**.
+A card follows the same **4-Layer Structure** (Per [documentation-standards.md](/.agent/rules/core/documentation/documentation-standards.md)) as rules, but utilizes a dedicated template to signal its "Dialogue Mode."
+
+- **Layer 1 (Metadata)**: Use **[header-context-card.yaml](/.agent/templates/header-context-card.yaml)**. This lightweight frontmatter prioritizes `context_id` and `default_phase` (AI Configuration) over formal authorship.
+- **Layer 2 (Body)**: Prioritize human-centric notation (e.g., Japanese) for "Human Notes / 人間用メモ" and "Agent Observations / エージェントの観測" to maximize resonance with the user.
+- **Layer 3 & 4 (Links & History)**: Use **H2 (`##`)** for all headers (e.g., "Related Documents / 関連リンク", "Origin / 編集履歴") to maintain structural habit/consistency with Rules.
 
 `file: [example-process.md](/.agent/cards/example-process.md)`
 
@@ -70,12 +75,12 @@ tags: ["process", "example"]      <-- OPTIONAL: Search tags
 
 ## Human Notes (Japanese OK)
 
-### 意図で探す
+### Search by Intent / 意図で探す
 
 (User describes the INTENT of the work, not just keywords.
 Lico uses this to proactively search for relevant files.)
 
-### 作業の注意点
+### Notes / 作業の注意点
 
 (Specific instructions and nuances.)
 
@@ -97,8 +102,8 @@ When the user says **"Use the [Card Name] card"** (e.g., "Use drafts-cleanup car
 
 1.  **Read**: You MUST read `.agent/cards/[card-name].md`.
 2.  **Explore**: Search for related files based on:
-    - Keywords in "関連書類を探す" section
-    - **Intent** described in "意図で探す" section
+    - Keywords in "Search by Documents / 関連書類を探す" section
+    - **Intent** described in "Search by Intent / 意図で探す" section
     - Your own judgment of what might be relevant
 3.  **Report**: Share findings with the user before proceeding.
 4.  **Adopt**:
@@ -114,7 +119,7 @@ Before starting work, perform an **Exploration Phase**:
 
 **Process**:
 
-1. Read the "意図で探す" section to understand the goal
+1. Read the "Search by Intent / 意図で探す" section to understand the goal
 2. Search broadly based on intent, not just literal keywords
 3. Report findings in chat (default)
 4. Record hard-to-find files in Agent Observations (for future Licos)
@@ -298,3 +303,4 @@ Cards are lightweight context-sharing tools. Artifacts are detailed plans for er
 - 2026-01-22T2010 by Canopus: Constitutional alignment: moved related docs to body table, sanitized raw paths, and removed legacy footer. (v1.7.0)
 - 2026-01-22T2040 by Canopus: Added "Phantom Context" proactive proposal protocol to Creation rules. (v1.8.0)
 - 2026-01-22T2255 by Canopus: Defined Vertical Stacking vs. Horizontal Batching to preserve commit atomicity during multi-ID usage. (v1.9.0)
+- 2026-01-24T0510 by Canopus: Established the "Dialogue Layer" standard. Mandated `header-context-card.yaml` and H2 structural consistency while allowing Japanese human-centric notation. Codified the distinction between "Record Mode" and "Dialogue Mode" following the Jan 24 incident. (v2.0.0)

@@ -15,11 +15,14 @@ ai_model: Gemini 3 Flash Planning mode
 
 ## 1. File Naming Conventions
 
-- **Format**: `kebab-case.md` (lowercase, hyphens).
-- **Date Prefix**: Use `YYYY-MM-DD_filename.md` for logs, minutes, or time-sensitive reports.
 - **Language Suffix**:
-  - English (Default): `filename.md`
-  - Japanese: `filename.ja.md`
+  - English (Default/Record Layer): `filename.md`
+  - Mixed (Dialogue Layer/Japanese): `filename.ja.md` (or standard `filename.md` if in `.agent/cards/`)
+
+**Language Usage Principle**:
+
+- **Record Layer (Rules/Workflows)**: Use English for headers and core logic to maintain AI-machine consistency across generations.
+- **Dialogue Layer (Cards/Drafts/Thoughts)**: Human-centric notation (e.g., Japanese) is encouraged for headers and notes to maximize resonance and operational speed.
 
 ## 2. File Size & Granularity
 
@@ -133,9 +136,8 @@ Layer 2 encompasses everything from the title down to the `---` transition to Re
 
 Files are tracked through three complementary states of truth:
 
-- **Layer 1: Frontmatter (Current Snapshot)**: Represents the **current state**. Update every edit. Do not preserve history here.
-- **Layer 4: Origin (notable milestones)**: Represents the **milestones**. Append significant changes. (See Section 6).
-- **Git (Complete Audit Trail)**: Underlying system layer. Provides the **complete, line-by-line history**. Use for detailed investigation.
+- **Layer 1: Frontmatter (Current Snapshot)**: Use **[header-frontmatter.yaml](/.agent/templates/header-frontmatter.yaml)** for Record Layers and **[header-context-card.yaml](/.agent/templates/header-context-card.yaml)** for Dialogue Layers.
+- **Layer 4: Origin (notable milestones)**: Represents the **milestones**. Append significant changes using H2 (`##`) headers to maintain structural habit across all file types. (See Section 6).
 
 | Source          | Scope              | Update Frequency    |
 | :-------------- | :----------------- | :------------------ |
@@ -180,3 +182,4 @@ Originally, Lico's documentation standards were focused on technical consistency
 - 2026-01-22T0445 by Canopus: Attempted link integration and shift to Origin-before-Links order (v2.1).
 - 2026-01-22T0600 by Canopus: Final alignment; correctly established Related Documents Layer 3 and Origin Layer 4 (v2.3).
 - 2026-01-23T2130 by Canopus: Codified "Maintenance Seals" (Section 7) for progress tracking in massive edits (v2.4).
+- 2026-01-24T0515 by Canopus: Established the "Two Templates, Single Structure" standard. Formalized the Record Layer vs. Dialogue Layer distinction to balance AI consistency with human resonance. (v2.5)

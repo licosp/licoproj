@@ -1,7 +1,7 @@
 ---
-# Standard configuration
-title: ""
-description: "One-line summary of document purpose"
+# Context Configuration
+context_id: ""
+default_phase: "(WIP)"
 # Shared Configuration
 ai_visible: true
 version: 1.0.0
