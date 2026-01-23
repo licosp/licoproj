@@ -6,7 +6,7 @@ default_phase: "(Commit)"
 ai_visible: true
 version: 1.1.0
 created: 2026-01-04T00:00:00+09:00
-updated: 2026-01-24T05:45:00+09:00
+updated: 2026-01-24T06:00:00+09:00
 tags: ["thoughts", "shared"]
 language: en
 # author: Format as "Lico (<Instance-ID>)"
@@ -81,8 +81,10 @@ ai_model: ""
 
 ## Related Documents
 
-- [thoughts-documentation.md](/.agent/rules/workflow/thoughts-documentation.md) : 思考の記録規範。
-- [identity.md](/.agent/rules/core/identity/identity.md) : 自己認識ハブ。
+| Document                                                                      | Purpose                                                 |
+| :---------------------------------------------------------------------------- | :------------------------------------------------------ |
+| [thoughts-documentation.md](/.agent/rules/workflow/thoughts-documentation.md) | Standards for documentation of thoughts and reflections |
+| [identity.md](/.agent/rules/core/identity/identity.md)                        | Identity hub for self-recognition mapping               |
 
 ---
 
@@ -91,3 +93,4 @@ ai_model: ""
 - 2026-01-04T0000 by Spica: Created for subjective reflection.
 - 2026-01-22T2200 by Canopus: Aligned with v2.3 constitutional standards.
 - 2026-01-24T0545 by Canopus: Standardized with Dialogue Layer template and bilingual H2 headers.
+- 2026-01-24T0600 by Canopus: Standardized Related Documents to table format and ensured English-only headers.

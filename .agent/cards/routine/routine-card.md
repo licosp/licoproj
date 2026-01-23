@@ -6,7 +6,7 @@ default_phase: "(Daily)"
 ai_visible: true
 version: 1.1.0
 created: 2026-01-14T23:20:00+09:00
-updated: 2026-01-24T05:45:00+09:00
+updated: 2026-01-24T06:00:00+09:00
 tags: ["routine", "daily", "日課", "maintenance"]
 language: en
 # author: Format as "Lico (<Instance-ID>)"
@@ -83,12 +83,12 @@ ai_model: ""
 
 ## Related Documents
 
-| ワークフロー     | 説明                        |
-| :--------------- | :-------------------------- |
-| `/routine-daily` | 日課ワークフロー（本体）    |
-| `/ritual_start`  | セッション開始の儀式        |
-| `/ritual_mid`    | 中間儀式（+10,000行で実行） |
-| `/ritual_end`    | セッション終了の儀式        |
+| Document                                               | Purpose                             |
+| :----------------------------------------------------- | :---------------------------------- |
+| [routine-daily.md](/.agent/workflows/routine-daily.md) | Main daily routine workflow         |
+| [ritual_start.md](/.agent/workflows/ritual_start.md)   | Session start ritual                |
+| [ritual_mid.md](/.agent/workflows/ritual_mid.md)       | Intermediate ritual (+10,000 lines) |
+| [ritual_end.md](/.agent/workflows/ritual_end.md)       | Session end ritual                  |
 
 ---
 
@@ -96,3 +96,4 @@ ai_model: ""
 
 - 2026-01-14T2320 by Polaris: Created for daily entrance.
 - 2026-01-24T0545 by Canopus: Standardized with Dialogue Layer template and bilingual H2 headers.
+- 2026-01-24T0600 by Canopus: Standardized Related Documents to table format and ensured English-only headers.

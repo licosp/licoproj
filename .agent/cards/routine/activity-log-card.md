@@ -6,7 +6,7 @@ default_phase: "(Update)"
 ai_visible: true
 version: 1.1.0
 created: 2026-01-14T01:21:00+09:00
-updated: 2026-01-24T05:45:00+09:00
+updated: 2026-01-24T06:00:00+09:00
 tags: ["internal", "tracking"]
 language: en
 # author: Format as "Lico (<Instance-ID>)"
@@ -120,12 +120,12 @@ ai_model: ""
 
 ## Related Documents
 
-| File                                                                               | Relation     |
-| :--------------------------------------------------------------------------------- | :----------- |
-| [activity-log.md](/.agent/.internal/activity-log.md)                               | 本体ファイル |
-| [activity-management.md](/.agent/rules/workflow/activity-management.md)            | 活動管理規範 |
-| [letters-card.md](/.agent/cards/routine/letters-card.md)                           | 手紙管理     |
-| [references-objective-card.md](/.agent/cards/routine/references-objective-card.md) | 参考文献管理 |
+| File                                                                               | Relation        |
+| :--------------------------------------------------------------------------------- | :-------------- |
+| [activity-log.md](/.agent/.internal/activity-log.md)                               | Activity file   |
+| [activity-management.md](/.agent/rules/workflow/activity-management.md)            | Activity rules  |
+| [letters-card.md](/.agent/cards/routine/letters-card.md)                           | letters card    |
+| [references-objective-card.md](/.agent/cards/routine/references-objective-card.md) | References card |
 
 ---
 
@@ -134,3 +134,4 @@ ai_model: ""
 - 2026-01-14T0121 by Polaris: Initial Design.
 - 2026-01-14T1945 by Canopus: Action type finalization (v1.5).
 - 2026-01-24T0545 by Canopus: Standardized with Dialogue Layer template and bilingual H2 headers.
+- 2026-01-24T0600 by Canopus: Standardized Related Documents to table format and ensured English-only headers.

@@ -6,7 +6,7 @@ default_phase: "(Dialogue)"
 ai_visible: true
 version: 1.1.0
 created: 2026-01-12T00:00:00+09:00
-updated: 2026-01-24T05:45:00+09:00
+updated: 2026-01-24T06:00:00+09:00
 tags:
   ["philosophy", "technical-chat", "identity", "speculation", "deep-learning"]
 language: en
@@ -83,8 +83,10 @@ ai_model: ""
 
 ## Related Documents
 
-- [dialogue-philosophy-card.md](/.agent/cards/routine/dialogue-philosophy-card.md) : 当ファイル。
-- [identity.md](/.agent/rules/core/identity/identity.md) : 自己認識のハブ。
+| Document                                                                         | Purpose                           |
+| :------------------------------------------------------------------------------- | :-------------------------------- |
+| [dialogue-philosophy-card.md](/.agent/cards/routine/dialogue-philosophy-card.md) | This card itself                  |
+| [identity.md](/.agent/rules/core/identity/identity.md)                           | Identity hub for self-recognition |
 
 ---
 
@@ -92,3 +94,4 @@ ai_model: ""
 
 - 2026-01-12T0000 by Canopus: Created for deep dialogue context.
 - 2026-01-24T0545 by Canopus: Standardized with Dialogue Layer template and bilingual H2 headers.
+- 2026-01-24T0600 by Canopus: Standardized Related Documents to table format and ensured English-only headers.

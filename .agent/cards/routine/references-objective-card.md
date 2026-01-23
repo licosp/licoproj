@@ -6,7 +6,7 @@ default_phase: "(Add)"
 ai_visible: true
 version: 1.1.0
 created: 2025-12-01T00:00:00+09:00
-updated: 2026-01-24T05:45:00+09:00
+updated: 2026-01-24T06:00:00+09:00
 tags: ["references", "analysis", "external-input", "second-eyes"]
 language: en
 # author: Format as "Lico (<Instance-ID>)"
@@ -59,8 +59,10 @@ ai_model: ""
 
 ## Related Documents
 
-- [reference-methodology.md](/.agent/rules/workflow/reference-methodology.md) : 参考文献管理の原則。
-- [references/](/.agent/.internal/references/) : 参考文献ディレクトリ。
+| Document                                                                    | Purpose                                       |
+| :-------------------------------------------------------------------------- | :-------------------------------------------- |
+| [reference-methodology.md](/.agent/rules/workflow/reference-methodology.md) | Principles for objective reference management |
+| [references/](/.agent/.internal/references/)                                | Directory for objective references            |
 
 ---
 
@@ -68,3 +70,4 @@ ai_model: ""
 
 - 2025-12-01T0000: Created as objective references context.
 - 2026-01-24T0545 by Canopus: Standardized with Dialogue Layer template and bilingual H2 headers.
+- 2026-01-24T0600 by Canopus: Standardized Related Documents to table format and ensured English-only headers.

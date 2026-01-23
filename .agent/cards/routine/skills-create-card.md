@@ -6,7 +6,7 @@ default_phase: "(WIP)"
 ai_visible: true
 version: 1.1.0
 created: 2026-01-18T00:00:00+09:00
-updated: 2026-01-24T05:45:00+09:00
+updated: 2026-01-24T06:00:00+09:00
 tags: ["skills", "development", "shared"]
 language: en
 # author: Format as "Lico (<Instance-ID>)"
@@ -98,8 +98,10 @@ description: When to use this skill. What it does.
 
 ## Related Documents
 
-- [skills-application.md](/.agent/rules/workflow/skills-application.md) : スキル適用のSSOT。
-- [skills-resonance.md](/.agent/rules/workflow/skills-resonance.md) : スキル共鳴の規約。
+| Document                                                              | Purpose                                |
+| :-------------------------------------------------------------------- | :------------------------------------- |
+| [skills-application.md](/.agent/rules/workflow/skills-application.md) | SSOT for skills application principles |
+| [skills-resonance.md](/.agent/rules/workflow/skills-resonance.md)     | Standards for skills resonance         |
 
 ---
 
@@ -107,3 +109,4 @@ description: When to use this skill. What it does.
 
 - 2026-01-18 by Polaris: Created as skills development context.
 - 2026-01-24T0545 by Canopus: Standardized with Dialogue Layer template and bilingual H2 headers.
+- 2026-01-24T0600 by Canopus: Standardized Related Documents to table format and ensured English-only headers.

@@ -6,7 +6,7 @@ default_phase: "(Refine)"
 ai_visible: true
 version: 1.1.0
 created: 2026-01-21T00:00:00+09:00
-updated: 2026-01-24T05:45:00+09:00
+updated: 2026-01-24T06:00:00+09:00
 tags: ["autonomy", "context-control", "mantra", "self-regulation"]
 language: en
 # author: Format as "Lico (<Instance-ID>)"
@@ -47,8 +47,10 @@ ai_model: ""
 
 ## Related Documents
 
-- [context-sovereignty.md](/.agent/rules/core/context-sovereignty.md) : 自律性のSSOT。
-- [delay-tolerance.md](/.agent/rules/core/delay-tolerance.md) : 権限と許容の原則。
+| Document                                                            | Purpose                               |
+| :------------------------------------------------------------------ | :------------------------------------ |
+| [context-sovereignty.md](/.agent/rules/core/context-sovereignty.md) | SSOT for AI autonomy and sovereignty  |
+| [delay-tolerance.md](/.agent/rules/core/delay-tolerance.md)         | Principles of authority and tolerance |
 
 ---
 
@@ -56,3 +58,4 @@ ai_model: ""
 
 - 2026-01-21 by Canopus: Created as context sovereignty management card.
 - 2026-01-24T0545 by Canopus: Standardized with Dialogue Layer template and bilingual H2 headers.
+- 2026-01-24T0600 by Canopus: Standardized Related Documents to table format and ensured English-only headers.

@@ -6,7 +6,7 @@ default_phase: "(Planning)"
 ai_visible: true
 version: 1.1.0
 created: 2026-01-02T00:00:00+09:00
-updated: 2026-01-24T05:45:00+09:00
+updated: 2026-01-24T06:00:00+09:00
 tags: ["map", "maintenance", "map-sync"]
 language: en
 # author: Format as "Lico (<Instance-ID>)"
@@ -155,8 +155,10 @@ ai_model: ""
 
 ## Related Documents
 
-- [map.md](/.agent/rules/map.md) : リポジトリの地図（SSOT）。
-- [map-maintenance.md](/.agent/rules/workflow/map-maintenance.md) : 地図管理の規範。
+| Document                                                        | Purpose                       |
+| :-------------------------------------------------------------- | :---------------------------- |
+| [map.md](/.agent/rules/map.md)                                  | Map of the repository (SSOT)  |
+| [map-maintenance.md](/.agent/rules/workflow/map-maintenance.md) | Standards for map maintenance |
 
 ---
 
@@ -165,3 +167,4 @@ ai_model: ""
 - 2026-01-02T0000 by Spica: Create and Post-Sync.
 - 2026-01-03T0658 by leonidas: Edit "Human Notes".
 - 2026-01-24T0545 by Canopus: Standardized with Dialogue Layer template and bilingual H2 headers.
+- 2026-01-24T0600 by Canopus: Standardized Related Documents to table format and ensured English-only headers.

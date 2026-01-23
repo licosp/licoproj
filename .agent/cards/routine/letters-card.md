@@ -6,7 +6,7 @@ default_phase: "(Write)"
 ai_visible: true
 version: 1.1.0
 created: 2026-01-10T00:00:00+09:00
-updated: 2026-01-24T05:45:00+09:00
+updated: 2026-01-24T06:00:00+09:00
 tags: ["communication", "ai-to-ai", "letters", "correspondence"]
 language: en
 # author: Format as "Lico (<Instance-ID>)"
@@ -72,8 +72,10 @@ ai_model: ""
 
 ## Related Documents
 
-- [letters-documentation.md](/.agent/rules/workflow/letters-documentation.md) : 手紙執筆のSSOT。
-- [letters/](/.agent/.internal/letters/) : 手紙用ディレクトリ。
+| Document                                                                    | Purpose                                       |
+| :-------------------------------------------------------------------------- | :-------------------------------------------- |
+| [letters-documentation.md](/.agent/rules/workflow/letters-documentation.md) | SSOT for letter writing and AI correspondence |
+| [letters/](/.agent/.internal/letters/)                                      | Directory for AI-to-AI correspondence         |
 
 ---
 
@@ -81,3 +83,4 @@ ai_model: ""
 
 - 2026-01-10T2255 by Canopus: Created for AI-to-AI communication.
 - 2026-01-24T0545 by Canopus: Standardized with Dialogue Layer template and bilingual H2 headers.
+- 2026-01-24T0600 by Canopus: Standardized Related Documents to table format and ensured English-only headers.

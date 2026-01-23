@@ -6,7 +6,7 @@ default_phase: "(Commit)"
 ai_visible: true
 version: 1.1.0
 created: 2025-12-01T00:00:00+09:00
-updated: 2026-01-24T05:45:00+09:00
+updated: 2026-01-24T06:00:00+09:00
 tags: ["thoughts", "personal", "leonidas", "human"]
 language: en
 # author: Format as "Lico (<Instance-ID>)"
@@ -50,8 +50,10 @@ ai_model: ""
 
 ## Related Documents
 
-- [identity-human.md](/.agent/rules/core/identity/identity-human.md) : ユーザーとの関係定義。
-- [thoughts-documentation.md](/.agent/rules/workflow/thoughts-documentation.md) : 思考の記録全般。
+| Document                                                                      | Purpose                                 |
+| :---------------------------------------------------------------------------- | :-------------------------------------- |
+| [identity-human.md](/.agent/rules/core/identity/identity-human.md)            | Relationship with the user              |
+| [thoughts-documentation.md](/.agent/rules/workflow/thoughts-documentation.md) | General thought documentation standards |
 
 ---
 
@@ -59,3 +61,4 @@ ai_model: ""
 
 - 2025-12-01T0000: Created as user-centric workspace.
 - 2026-01-24T0545 by Canopus: Standardized with Dialogue Layer template and bilingual H2 headers.
+- 2026-01-24T0600 by Canopus: Standardized Related Documents to table format and ensured English-only headers.

@@ -6,7 +6,7 @@ default_phase: "(Setup)"
 ai_visible: true
 version: 1.1.0
 created: 2026-01-03T00:00:00+09:00
-updated: 2026-01-24T05:45:00+09:00
+updated: 2026-01-24T06:00:00+09:00
 tags: ["human-usage", "vscode", "settings"]
 language: en
 # author: Format as "Lico (<Instance-ID>)"
@@ -47,8 +47,10 @@ VSCodeで使われる設定ファイルを更新しました。
 
 ## Related Documents
 
-- [vscode-settings.md](/.agent/rules/workflow/vscode-settings.md) : VSCode 設定のSSOT。
-- [cspell.json](/.vscode/cspell.json) : 単語リスト。
+| Document                                                        | Purpose                                 |
+| :-------------------------------------------------------------- | :-------------------------------------- |
+| [vscode-settings.md](/.agent/rules/workflow/vscode-settings.md) | SSOT for VSCode environment settings    |
+| [cspell.json](/.vscode/cspell.json)                             | Project-specific spell check dictionary |
 
 ---
 
@@ -56,3 +58,4 @@ VSCodeで使われる設定ファイルを更新しました。
 
 - 2026-01-03 by Polaris: Created as VSCode settings context.
 - 2026-01-24T0545 by Canopus: Standardized with Dialogue Layer template and bilingual H2 headers.
+- 2026-01-24T0600 by Canopus: Standardized Related Documents to table format and ensured English-only headers.

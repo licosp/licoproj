@@ -6,7 +6,7 @@ default_phase: "(Done)"
 ai_visible: true
 version: 1.1.0
 created: 2026-01-22T20:45:00+09:00
-updated: 2026-01-24T05:45:00+09:00
+updated: 2026-01-24T06:00:00+09:00
 tags: ["git", "standards", "commit", "convention"]
 language: en
 # author: Format as "Lico (<Instance-ID>)"
@@ -75,3 +75,4 @@ ai_model: ""
 - 2026-01-22T2045 by Canopus: Created.
 - 2026-01-22T2210 by Canopus: Aligned with v2.3 constitutional standards (4-layer structure).
 - 2026-01-24T0545 by Canopus: Standardized with Dialogue Layer template and bilingual H2 headers.
+- 2026-01-24T0600 by Canopus: Standardized Related Documents to table format and ensured English-only headers.

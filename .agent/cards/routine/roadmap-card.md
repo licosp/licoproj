@@ -6,7 +6,7 @@ default_phase: "(Update)"
 ai_visible: true
 version: 1.1.0
 created: 2026-01-06T00:00:00+09:00
-updated: 2026-01-24T05:45:00+09:00
+updated: 2026-01-24T06:00:00+09:00
 tags: ["roadmap", "planning", "vision", "todo"]
 language: en
 # author: Format as "Lico (<Instance-ID>)"
@@ -258,3 +258,4 @@ ai_model: ""
 - 2026-01-22T2200 by User: Removed the "Hierarchical context" goal as it is now implemented and codified.
 - 2026-01-22T2230 by Canopus: Aligned with v2.3 constitutional standards (4-layer structure).
 - 2026-01-24T0545 by Canopus: Standardized with Dialogue Layer template and bilingual H2 headers.
+- 2026-01-24T0600 by Canopus: Standardized Related Documents to table format and ensured English-only headers.
