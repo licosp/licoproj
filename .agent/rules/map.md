@@ -89,6 +89,7 @@ _Located in `.agent/cards/`_
 | :----------------------------------------------------------------------------- | :------------------------------------------------- |
 | [`ark-card.md`](/.agent/cards/ark-card.md)                                     | **Ark Protocols**. Save/Restore state.             |
 | [`cross-link-audit-card.md`](/.agent/cards/cross-link-audit-card.md)           | Link Integrity Project.                            |
+| [`git-operations-card.md`](/.agent/cards/git-operations-card.md)               | Repository Infrastructure & Safety.                |
 | [`human-manuals-card.md`](/.agent/cards/human-manuals-card.md)                 | Index of Human Manuals.                            |
 | [`human-profile-card.md`](/.agent/cards/human-profile-card.md)                 | User Profile and Preferences.                      |
 | [`idd-init-card.md`](/.agent/cards/idd-init-card.md)                           | IDD Phase 1: Initialization.                       |
