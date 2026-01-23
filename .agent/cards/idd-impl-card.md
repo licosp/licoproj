@@ -6,7 +6,7 @@ default_phase: "(P2)"
 ai_visible: true
 version: 1.1.0
 created: 2026-01-09T00:00:00+09:00
-updated: 2026-01-24T05:45:00+09:00
+updated: 2026-01-24T06:00:00+09:00
 tags: ["idd", "implementation", "coding", "routine"]
 language: en
 # author: Format as "Lico (<Instance-ID>)"
@@ -85,8 +85,10 @@ IDDの手順に従い、メインテーマやサブテーマの実装を作っ�
 
 ## Related Documents
 
-- [idd-phase2-impl.md](/.agent/workflows/idd-phase2-impl.md) : 実装の手順書。
-- [commit-standards.md](/.agent/rules/development/commit-standards.md) : コミット規約。
+| Document                                                             | Purpose                                      |
+| :------------------------------------------------------------------- | :------------------------------------------- |
+| [idd-phase2-impl.md](/.agent/workflows/idd-phase2-impl.md)           | Workflow for implementation and coding phase |
+| [commit-standards.md](/.agent/rules/development/commit-standards.md) | Rules for commits and message quality        |
 
 ---
 
@@ -94,3 +96,4 @@ IDDの手順に従い、メインテーマやサブテーマの実装を作っ�
 
 - 2026-01-09 by Spica: Created for implementation phase context.
 - 2026-01-24T0545 by Canopus: Standardized with Dialogue Layer template and bilingual H2 headers.
+- 2026-01-24T0600 by Canopus: Standardized Related Documents to table format and ensured English-only headers.

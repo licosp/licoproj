@@ -6,7 +6,7 @@ default_phase: "(Execution)"
 ai_visible: true
 version: 1.0.0
 created: 2026-01-21T01:21:00+09:00
-updated: 2026-01-24T05:45:00+09:00
+updated: 2026-01-24T06:00:00+09:00
 tags: ["identity", "self-recognition", "rules", "behavioral"]
 language: en
 # author: Format as "Lico (<Instance-ID>)"
@@ -73,7 +73,9 @@ ai_model: ""
 
 ## Related Documents
 
-- [identity.md](/.agent/rules/core/identity/identity.md) を含む全10ファイルの整合性。
+| Document                                               | Purpose                            |
+| :----------------------------------------------------- | :--------------------------------- |
+| [identity.md](/.agent/rules/core/identity/identity.md) | Integrity of all 10 identity files |
 
 ---
 

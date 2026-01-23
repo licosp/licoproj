@@ -6,7 +6,7 @@ default_phase: "(Refine)"
 ai_visible: true
 version: 1.1.0
 created: 2026-01-10T00:00:00+09:00
-updated: 2026-01-24T05:45:00+09:00
+updated: 2026-01-24T06:00:00+09:00
 tags: ["translation", "localization", "formatting"]
 language: en
 # author: Format as "Lico (<Instance-ID>)"
@@ -94,8 +94,10 @@ ai_model: ""
 
 ## Related Documents
 
-- [localization.md](/.agent/rules/core/localization/localization.md) : 翻訳基準のSSOT。
-- [language-standards.md](/.agent/rules/core/language-standards.md) : 言語原則。
+| Document                                                           | Purpose                                          |
+| :----------------------------------------------------------------- | :----------------------------------------------- |
+| [localization.md](/.agent/rules/core/localization/localization.md) | Single Source of Truth for translation standards |
+| [language-standards.md](/.agent/rules/core/language-standards.md)  | Core principles for linguistic standards         |
 
 ---
 
@@ -105,3 +107,4 @@ ai_model: ""
 - 2026-01-14 by Canopus: Renamed context_id from [AI-Format] to [Localization].
 - 2026-01-19 by Polaris: Archived old observations to cases/, created parent rule, reset card.
 - 2026-01-24T0545 by Canopus: Standardized with Dialogue Layer template and bilingual H2 headers.
+- 2026-01-24T0600 by Canopus: Standardized Related Documents to table format and ensured English-only headers.

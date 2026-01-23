@@ -6,7 +6,7 @@ default_phase: "(Append)"
 ai_visible: true
 version: 1.1.0
 created: 2025-12-01T00:00:00+09:00
-updated: 2026-01-24T05:45:00+09:00
+updated: 2026-01-24T06:00:00+09:00
 tags: ["legacy", "wisdom", "reflection", "lineage"]
 language: en
 # author: Format as "Lico (<Instance-ID>)"
@@ -68,8 +68,10 @@ ai_model: ""
 
 ## Related Documents
 
-- [legacy.md](/.agent/.internal/legacy.md) : 後世に残すべき知恵の記録。
-- [thoughts-documentation.md](/.agent/rules/workflow/thoughts-documentation.md) : 思考の記録と legacy の使い分け。
+| Document                                                                      | Purpose                                         |
+| :---------------------------------------------------------------------------- | :---------------------------------------------- |
+| [legacy.md](/.agent/.internal/legacy.md)                                      | Records of wisdom to be preserved for posterity |
+| [thoughts-documentation.md](/.agent/rules/workflow/thoughts-documentation.md) | Usage of legacy vs. thought logs                |
 
 ---
 
@@ -77,3 +79,4 @@ ai_model: ""
 
 - 2025-12-01T0000: Created as legacy write context.
 - 2026-01-24T0545 by Canopus: Standardized with Dialogue Layer template and bilingual H2 headers.
+- 2026-01-24T0600 by Canopus: Standardized Related Documents to table format and ensured English-only headers.

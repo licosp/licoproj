@@ -6,7 +6,7 @@ default_phase: "(Execution)"
 ai_visible: true
 version: 1.1.0
 created: 2026-01-13T00:00:00+09:00
-updated: 2026-01-24T05:45:00+09:00
+updated: 2026-01-24T06:00:00+09:00
 tags: ["maintenance", "cross-link", "rules", "workflows"]
 language: en
 # author: Format as "Lico (<Instance-ID>)"
@@ -95,8 +95,10 @@ ai_model: ""
 
 ## Related Documents
 
-- [path-notation.md](/.agent/rules/core/documentation/path-notation.md) : パス表記のSSOT。
-- [documentation-standards.md](/.agent/rules/core/documentation/documentation-standards.md) : リンク不備監査の基準。
+| Document                                                                                  | Purpose                                      |
+| :---------------------------------------------------------------------------------------- | :------------------------------------------- |
+| [path-notation.md](/.agent/rules/core/documentation/path-notation.md)                     | The single source of truth for path notation |
+| [documentation-standards.md](/.agent/rules/core/documentation/documentation-standards.md) | Standards for link integrity and auditing    |
 
 ---
 
@@ -105,3 +107,4 @@ ai_model: ""
 - 2026-01-13T0000 by Polaris: Path Notation Consolidation.
 - 2026-01-23T0518 by Canopus: Migrated rules standardization context to dedicated card.
 - 2026-01-24T0545 by Canopus: Standardized with Dialogue Layer template and bilingual H2 headers.
+- 2026-01-24T0600 by Canopus: Standardized Related Documents to table format and ensured English-only headers.

@@ -6,7 +6,7 @@ default_phase: "(Edit)"
 ai_visible: true
 version: 1.1.0
 created: 2026-01-03T00:00:00+09:00
-updated: 2026-01-24T05:45:00+09:00
+updated: 2026-01-24T06:00:00+09:00
 tags: ["manuals", "references", "shared"]
 language: en
 # author: Format as "Lico (<Instance-ID>)"
@@ -63,8 +63,10 @@ ai_model: ""
 
 ## Related Documents
 
-- [documentation-standards.md](/.agent/rules/core/documentation/documentation-standards.md) : ドキュメント構造の標準。
-- [localization.md](/.agent/rules/core/localization/localization.md) : 翻訳基準。
+| Document                                                                                  | Purpose                                             |
+| :---------------------------------------------------------------------------------------- | :-------------------------------------------------- |
+| [documentation-standards.md](/.agent/rules/core/documentation/documentation-standards.md) | Structural standards for project documentation      |
+| [localization.md](/.agent/rules/core/localization/localization.md)                        | Baseline standards for translation and localization |
 
 ---
 
@@ -72,3 +74,4 @@ ai_model: ""
 
 - 2026-01-03 by Polaris: Created as shared manuals context.
 - 2026-01-24T0545 by Canopus: Standardized with Dialogue Layer template and bilingual H2 headers.
+- 2026-01-24T0600 by Canopus: Standardized Related Documents to table format and ensured English-only headers.

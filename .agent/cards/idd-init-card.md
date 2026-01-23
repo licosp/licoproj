@@ -6,7 +6,7 @@ default_phase: "(P1)"
 ai_visible: true
 version: 1.1.0
 created: 2025-12-23T00:00:00+09:00
-updated: 2026-01-24T05:45:00+09:00
+updated: 2026-01-24T06:00:00+09:00
 tags: ["idd", "initialization", "issue-creation", "workflow"]
 language: en
 # author: Format as "Lico (<Instance-ID>)"
@@ -80,8 +80,10 @@ Story (Connected Issues)
 
 ## Related Documents
 
-- [idd-phase1-init.md](/.agent/workflows/idd-phase1-init.md) : 初期化の手順書。
-- [issue-comment.md](/.agent/templates/issue-comment.md) : イシュー・コメントのテンプレート。
+| Document                                                   | Purpose                                |
+| :--------------------------------------------------------- | :------------------------------------- |
+| [idd-phase1-init.md](/.agent/workflows/idd-phase1-init.md) | Workflow for initializing new issues   |
+| [issue-comment.md](/.agent/templates/issue-comment.md)     | Template for initial issue description |
 
 ---
 
@@ -89,3 +91,4 @@ Story (Connected Issues)
 
 - 2025-12-23 by Polaris: Created as IDD Phase 1 context.
 - 2026-01-24T0545 by Canopus: Standardized with Dialogue Layer template and bilingual H2 headers.
+- 2026-01-24T0600 by Canopus: Standardized Related Documents to table format and ensured English-only headers.

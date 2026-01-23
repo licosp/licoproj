@@ -6,7 +6,7 @@ default_phase: "(Refine)"
 ai_visible: true
 version: 1.1.0
 created: 2025-12-01T00:00:00+09:00
-updated: 2026-01-24T05:45:00+09:00
+updated: 2026-01-24T06:00:00+09:00
 tags: ["rules", "maintenance", "behavioral"]
 language: en
 # author: Format as "Lico (<Instance-ID>)"
@@ -132,8 +132,10 @@ ai_model: ""
 
 ## Related Documents
 
-- [meta-rules.md](/.agent/rules/core/meta-rules.md) : ルール作成の指針。
-- [documentation-standards.md](/.agent/rules/core/documentation/documentation-standards.md) : ドキュメント構造の標準。
+| Document                                                                                  | Purpose                          |
+| :---------------------------------------------------------------------------------------- | :------------------------------- |
+| [meta-rules.md](/.agent/rules/core/meta-rules.md)                                         | Guidelines for rule creation     |
+| [documentation-standards.md](/.agent/rules/core/documentation/documentation-standards.md) | Standards for document structure |
 
 ---
 
@@ -142,3 +144,4 @@ ai_model: ""
 - 2025-12-01T0000: Created as rules update context.
 - 2026-01-19T0332 by Canopus: Formally integrated into card system.
 - 2026-01-24T0545 by Canopus: Standardized with Dialogue Layer template and bilingual H2 headers.
+- 2026-01-24T0600 by Canopus: Standardized Related Documents to table format and ensured English-only headers.

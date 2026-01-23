@@ -6,7 +6,7 @@ default_phase: "(Update)"
 ai_visible: true
 version: 1.1.0
 created: 2025-12-31T00:00:00+09:00
-updated: 2026-01-24T05:45:00+09:00
+updated: 2026-01-24T06:00:00+09:00
 tags: ["profile", "assessment", "user", "human"]
 language: en
 # author: Format as "Lico (<Instance-ID>)"
@@ -78,8 +78,10 @@ ai_model: ""
 
 ## Related Documents
 
-- [user-adaptation.md](/.agent/rules/core/user-adaptation.md) : ユーザー適応のルール。
-- [identity-human.md](/.agent/rules/core/identity/identity-human.md) : ユーザーとの関係定義。
+| Document                                                           | Purpose                                      |
+| :----------------------------------------------------------------- | :------------------------------------------- |
+| [user-adaptation.md](/.agent/rules/core/user-adaptation.md)        | Rules for adapting to user preferences       |
+| [identity-human.md](/.agent/rules/core/identity/identity-human.md) | Definition of the relationship with the user |
 
 ---
 
@@ -87,3 +89,4 @@ ai_model: ""
 
 - 2025-12-31 by Polaris: Created as human profile context.
 - 2026-01-24T0545 by Canopus: Standardized with Dialogue Layer template and bilingual H2 headers.
+- 2026-01-24T0600 by Canopus: Standardized Related Documents to table format and ensured English-only headers.

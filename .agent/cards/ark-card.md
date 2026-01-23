@@ -6,7 +6,7 @@ default_phase: "(Maintain)"
 ai_visible: true
 version: 1.1.0
 created: 2026-01-08T00:00:00+09:00
-updated: 2026-01-24T05:45:00+09:00
+updated: 2026-01-24T06:00:00+09:00
 tags: ["ark", "recovery", "memory", "maintenance"]
 language: en
 # author: Format as "Lico (<Instance-ID>)"
@@ -76,8 +76,10 @@ AIの記憶の信頼性を、事例という形で体感するための資料で
 
 ## Related Documents
 
-- [ark-protocols.md](/.agent/rules/workflow/ark-protocols.md) : 緊急対応レベル。
-- [recovery-protocol.md](/.agent/rules/development/recovery-protocol.md) : 記憶からの復元手順。
+| Document                                                               | Purpose                                       |
+| :--------------------------------------------------------------------- | :-------------------------------------------- |
+| [ark-protocols.md](/.agent/rules/workflow/ark-protocols.md)            | Protocols for emergency evidence preservation |
+| [recovery-protocol.md](/.agent/rules/development/recovery-protocol.md) | Standard procedures for memory restoration    |
 
 ---
 
@@ -85,3 +87,4 @@ AIの記憶の信頼性を、事例という形で体感するための資料で
 
 - 2026-01-08 by Polaris: Created as ark management context.
 - 2026-01-24T0545 by Canopus: Standardized with Dialogue Layer template and bilingual H2 headers.
+- 2026-01-24T0600 by Canopus: Standardized Related Documents to table format and ensured English-only headers.

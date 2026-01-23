@@ -6,7 +6,7 @@ default_phase: "(Execution)"
 ai_visible: true
 version: 1.1.0
 created: 2026-01-23T05:15:00+09:00
-updated: 2026-01-24T05:45:00+09:00
+updated: 2026-01-24T06:00:00+09:00
 tags: ["maintenance", "standardization", "rules"]
 language: en
 # author: Format as "Lico (<Instance-ID>)"
@@ -169,7 +169,9 @@ ai_model: ""
 
 ## Related Documents
 
-- [`documentation-standards.md`](/.agent/rules/core/documentation/documentation-standards.md) : 物理的な記述の「美学」と構造のSSOT。
+| Document                                                                                  | Purpose                                                    |
+| :---------------------------------------------------------------------------------------- | :--------------------------------------------------------- |
+| [documentation-standards.md](/.agent/rules/core/documentation/documentation-standards.md) | SSOT for structural aesthetics and documentation standards |
 
 ---
 
@@ -178,3 +180,4 @@ ai_model: ""
 - 2026-01-23T0515 by Canopus: Created from extracted context of `cross-link-audit-card.md`.
 - 2026-01-23T0545 by Canopus: Added target list and progress tracking for Batch 1.
 - 2026-01-24T0540 by Canopus: Integrated "Dialogue Layer" standards and added Batch 7 (Context Cards) to the roadmap.
+- 2026-01-24T0600 by Canopus: Standardized Related Documents to table format and ensured English-only headers.
