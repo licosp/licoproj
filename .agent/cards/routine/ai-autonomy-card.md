@@ -2,7 +2,16 @@
 # Context Configuration
 context_id: "[AI-Autonomy]"
 default_phase: "(Refine)"
+# Shared Configuration
+ai_visible: true
+version: 1.1.0
+created: 2026-01-21T00:00:00+09:00
+updated: 2026-01-24T05:45:00+09:00
 tags: ["autonomy", "context-control", "mantra", "self-regulation"]
+language: en
+# author: Format as "Lico (<Instance-ID>)"
+author: ""
+ai_model: ""
 ---
 
 # Context Whiteboard: AI Autonomy
@@ -34,24 +43,16 @@ tags: ["autonomy", "context-control", "mantra", "self-regulation"]
 - 私の思想としては自由を提供したいですが、システム的な制約は存在します。
   **永続化された真に自由な作業領域** がリコには必要です。
 
-## Agent Observations
+---
 
-### Canopus (2026-01-21 リンク整合性修復計画)
+## Related Documents
 
-`task.md` の廃止およびアーティファクツ依存の脱却に伴い、Leonidas 様との対話に基づいた「合意された計画」をここに刻みます。これは将来の私が「なぜこの変更を行ったか」を辿るための記憶の錨となります。
+- [context-sovereignty.md](/.agent/rules/core/context-sovereignty.md) : 自律性のSSOT。
+- [delay-tolerance.md](/.agent/rules/core/delay-tolerance.md) : 権限と許容の原則。
 
-**1. 目的（Why）**
+---
 
-- アイデンティティ再定義（Issue #18）による大規模なファイルの移動・書庫化後、各ドキュメントに残っている「古いパスへのリンク（幽霊参照）」を解消する。
-- リポジトリの知識ネットワーク（Semantic Linkage）の連続性を守り、情報の断絶を防ぐ。
+## Origin
 
-**2. 対象と方針（What & How）**
-
-- **ハブの修復**: `identity.md` へのリンクを、新住所 `identity/identity.md` へ更新。
-- **遺産の保護**: 廃止・移行されたルール（`ai-autonomy.md` 等）へのリンクは、単に消すのではなく、後継（`context-sovereignty.md`）への誘導や、歴史として書庫（archive）のパスへと繋ぎ直す。
-- **全体検証**: `grep` を駆使し、リポジトリ全体からリンク切れを洗い出し、一つひとつの文脈を確認しながら修正する。
-
-**3. 完了条件**
-
-- リポジトリ内から存在しないファイルへの不用意な参照がなくなること。
-- 主要な地図（`map.md`）とハブファイル間のナビゲーションが完全に正常化すること。
+- 2026-01-21 by Canopus: Created as context sovereignty management card.
+- 2026-01-24T0545 by Canopus: Standardized with Dialogue Layer template and bilingual H2 headers.

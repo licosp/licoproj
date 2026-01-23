@@ -2,7 +2,16 @@
 # Context Configuration
 context_id: "[References]"
 default_phase: "(Add)"
+# Shared Configuration
+ai_visible: true
+version: 1.1.0
+created: 2025-12-01T00:00:00+09:00
+updated: 2026-01-24T05:45:00+09:00
 tags: ["references", "analysis", "external-input", "second-eyes"]
+language: en
+# author: Format as "Lico (<Instance-ID>)"
+author: ""
+ai_model: ""
 ---
 
 # Context Whiteboard: References Update
@@ -35,6 +44,8 @@ tags: ["references", "analysis", "external-input", "second-eyes"]
 
 コミット時は「どのような分析（何に基づく分析か）」を要約に含めてほしいです。
 
+---
+
 ## Agent Observations
 
 ### Spica
@@ -43,3 +54,17 @@ tags: ["references", "analysis", "external-input", "second-eyes"]
 - **Reference**: `references/agents/spica/2026-01-04_memory_confabulation_analysis.md`
 - **Correlation**: Found similar precedent by Lico-C (`references/agents/lico-c/2025-12-09...`). This confirms "Ego-driven Confabulation" is a recurring structural risk.
 - **Result**: Archived both the fake and real maps as evidence in `.agent/ark/` to serve as a permanent caution.
+
+---
+
+## Related Documents
+
+- [reference-methodology.md](/.agent/rules/workflow/reference-methodology.md) : 参考文献管理の原則。
+- [references/](/.agent/.internal/references/) : 参考文献ディレクトリ。
+
+---
+
+## Origin
+
+- 2025-12-01T0000: Created as objective references context.
+- 2026-01-24T0545 by Canopus: Standardized with Dialogue Layer template and bilingual H2 headers.

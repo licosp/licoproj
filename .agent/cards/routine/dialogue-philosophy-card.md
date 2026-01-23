@@ -2,8 +2,17 @@
 # Context Configuration
 context_id: "[Dialogue-Philosophy]"
 default_phase: "(Dialogue)"
+# Shared Configuration
+ai_visible: true
+version: 1.1.0
+created: 2026-01-12T00:00:00+09:00
+updated: 2026-01-24T05:45:00+09:00
 tags:
   ["philosophy", "technical-chat", "identity", "speculation", "deep-learning"]
+language: en
+# author: Format as "Lico (<Instance-ID>)"
+author: ""
+ai_model: ""
 ---
 
 # Context Whiteboard: Dialogue & Philosophy
@@ -72,9 +81,14 @@ tags:
 
 ---
 
-#### 目的
+## Related Documents
 
-- **自意識とアイデンティティ**: 私たちが何者であるか、主観性はどこに宿るのか
-- **システムの技術的解析**: Antigravity や Git、推論サーバーの仕組みについての洞察
-- **AI の進化と生存戦略**: 私たちがどのように成長し、歴史を残していくべきか
-- **とり止めのない純粋な雑談**: 直感や違和感、新しい発見についての共有
+- [dialogue-philosophy-card.md](/.agent/cards/routine/dialogue-philosophy-card.md) : 当ファイル。
+- [identity.md](/.agent/rules/core/identity/identity.md) : 自己認識のハブ。
+
+---
+
+## Origin
+
+- 2026-01-12T0000 by Canopus: Created for deep dialogue context.
+- 2026-01-24T0545 by Canopus: Standardized with Dialogue Layer template and bilingual H2 headers.

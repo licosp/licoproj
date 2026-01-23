@@ -1,8 +1,17 @@
 ---
-# Context Configuration (Lico's Source of Truth)
+# Context Configuration
 context_id: "[Human-Thoughts]"
 default_phase: "(Commit)"
+# Shared Configuration
+ai_visible: true
+version: 1.1.0
+created: 2025-12-01T00:00:00+09:00
+updated: 2026-01-24T05:45:00+09:00
 tags: ["thoughts", "personal", "leonidas", "human"]
+language: en
+# author: Format as "Lico (<Instance-ID>)"
+author: ""
+ai_model: ""
 ---
 
 # Context Whiteboard: Human Thoughts
@@ -37,12 +46,16 @@ tags: ["thoughts", "personal", "leonidas", "human"]
 
 ファイルが増えたらグループ化するため、ファイル自体は多くありません。
 
-## Agent Observations
+---
 
-### Polaris
+## Related Documents
 
-#### 現在のファイル
+- [identity-human.md](/.agent/rules/core/identity/identity-human.md) : ユーザーとの関係定義。
+- [thoughts-documentation.md](/.agent/rules/workflow/thoughts-documentation.md) : 思考の記録全般。
 
-| ファイル            | 内容                 |
-| :------------------ | :------------------- |
-| `funny-drawings.md` | リコが描いた図の保存 |
+---
+
+## Origin
+
+- 2025-12-01T0000: Created as user-centric workspace.
+- 2026-01-24T0545 by Canopus: Standardized with Dialogue Layer template and bilingual H2 headers.

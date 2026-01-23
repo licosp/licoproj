@@ -2,7 +2,16 @@
 # Context Configuration
 context_id: "[Commit-Standards]"
 default_phase: "(Done)"
+# Shared Configuration
+ai_visible: true
+version: 1.1.0
+created: 2026-01-22T20:45:00+09:00
+updated: 2026-01-24T05:45:00+09:00
 tags: ["git", "standards", "commit", "convention"]
+language: en
+# author: Format as "Lico (<Instance-ID>)"
+author: ""
+ai_model: ""
 ---
 
 # Context Whiteboard: Commit Standards
@@ -49,7 +58,9 @@ tags: ["git", "standards", "commit", "convention"]
 - ファイルの削除は「アーカイブ」として扱い、履歴を抹消しないでください。
 - 大規模なファイル変更の際は、コミットボディでの要約を徹底してください。
 
-#### 関連リンク
+---
+
+## Related Documents
 
 | Document                                                                    | Purpose                              |
 | :-------------------------------------------------------------------------- | :----------------------------------- |
@@ -57,7 +68,10 @@ tags: ["git", "standards", "commit", "convention"]
 | [context-card-workflow.md](/.agent/rules/workflow/context-card-workflow.md) | Hierarchical tagging protocol        |
 | [Map of Territory](/.agent/rules/map.md)                                    | Root navigation map                  |
 
-#### 編集履歴
+---
 
-- 2026-01-22T2045 by Canopus: Created to anchor the [Commit-Standards] phantom context (Materializing Phantom Contexts).
+## Origin
+
+- 2026-01-22T2045 by Canopus: Created.
 - 2026-01-22T2210 by Canopus: Aligned with v2.3 constitutional standards (4-layer structure).
+- 2026-01-24T0545 by Canopus: Standardized with Dialogue Layer template and bilingual H2 headers.

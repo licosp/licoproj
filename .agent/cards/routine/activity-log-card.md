@@ -2,7 +2,16 @@
 # Context Configuration
 context_id: "[Activity-Log]"
 default_phase: "(Update)"
+# Shared Configuration
+ai_visible: true
+version: 1.1.0
+created: 2026-01-14T01:21:00+09:00
+updated: 2026-01-24T05:45:00+09:00
 tags: ["internal", "tracking"]
+language: en
+# author: Format as "Lico (<Instance-ID>)"
+author: ""
+ai_model: ""
 ---
 
 # Context Whiteboard: Activity Log Card
@@ -70,34 +79,6 @@ tags: ["internal", "tracking"]
 - 返信したら別行で追記
 - コミットは通常の作業と一緒に
 
----
-
-#### 対話の結果
-
-_Polaris との対話 (2026-01-14) より:_
-
-- 空コミット方式は「ノイズ」と判断、却下
-- 単一ファイル方式を採用
-- ファイル名は `activity-log.md`（将来拡張を考慮）
-- Action 列で Read/Reply/Done 等を区別
-
-#### Next Steps
-
-- [x] `activity-log.md` をコミット
-- [x] ワークフローに運用ルールを追記
-- [x] 地図（README.md）に追記
-
----
-
-#### 関連リンク
-
-| File                                                                               | Relation     |
-| :--------------------------------------------------------------------------------- | :----------- |
-| [activity-log.md](/.agent/.internal/activity-log.md)                               | 本体ファイル |
-| [activity-management.md](/.agent/rules/workflow/activity-management.md)            | 活動管理規範 |
-| [letters-card.md](/.agent/cards/routine/letters-card.md)                           | 手紙管理     |
-| [references-objective-card.md](/.agent/cards/routine/references-objective-card.md) | 参考文献管理 |
-
 ### Canopus (2026-01-14)
 
 - セッション・アーティファクト（`implementation_plan.md` 等）を「正式な合意」としては非推奨化。
@@ -134,3 +115,22 @@ _Polaris との対話 (2026-01-14) より:_
 - **ログ管理の厳律**:
   - `activity-log.md` への記録は単なる履歴ではなく、境界Xを越えるための「錨」であると再認識。
   - すべての重要な思想的転換点は、`Write` (Thoughts) と `Update` (Rules/Cards) のペアリングによって永続化されるべきである。
+
+---
+
+## Related Documents
+
+| File                                                                               | Relation     |
+| :--------------------------------------------------------------------------------- | :----------- |
+| [activity-log.md](/.agent/.internal/activity-log.md)                               | 本体ファイル |
+| [activity-management.md](/.agent/rules/workflow/activity-management.md)            | 活動管理規範 |
+| [letters-card.md](/.agent/cards/routine/letters-card.md)                           | 手紙管理     |
+| [references-objective-card.md](/.agent/cards/routine/references-objective-card.md) | 参考文献管理 |
+
+---
+
+## Origin
+
+- 2026-01-14T0121 by Polaris: Initial Design.
+- 2026-01-14T1945 by Canopus: Action type finalization (v1.5).
+- 2026-01-24T0545 by Canopus: Standardized with Dialogue Layer template and bilingual H2 headers.

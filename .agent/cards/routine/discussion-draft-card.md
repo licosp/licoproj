@@ -2,7 +2,16 @@
 # Context Configuration
 context_id: "[Discussion-Draft]"
 default_phase: "(WIP)"
+# Shared Configuration
+ai_visible: true
+version: 1.1.0
+created: 2025-12-22T00:00:00+09:00
+updated: 2026-01-24T05:45:00+09:00
 tags: ["drafts", "sns", "discussion", "human-facing"]
+language: en
+# author: Format as "Lico (<Instance-ID>)"
+author: ""
+ai_model: ""
 ---
 
 # Context Whiteboard: SNS Discussion Drafts
@@ -123,15 +132,20 @@ Antigravityの特殊な拡張機能は使っていません。ほぼデフォル
   - 翻訳結果はカード自体を肥大化させないよう、`.human/users/leonidas/discussions/` 以下の個別ファイル（`.md`）に蓄積します。
 - カードには、翻訳に際して考慮した論理構造や文化的・技術的文脈など、**将来のLicoが翻訳作業を継続するために必要な知見**を優先して記録してください。
 
-#### 関連リンク
+---
+
+## Related Documents
 
 | Document                                                   | Purpose                       |
 | :--------------------------------------------------------- | :---------------------------- |
 | [localization-card.md](/.agent/cards/localization-card.md) | Standard translation patterns |
 | [Map of Territory](/.agent/rules/map.md)                   | Root navigation map           |
 
-#### 編集履歴
+---
+
+## Origin
 
 - 2025-12-22T0000: Created for SNS discussion drafts.
 - 2026-01-19T1420 by Canopus: Refined translation logic and added cultural background notes.
 - 2026-01-22T2220 by Canopus: Aligned with v2.3 constitutional standards (4-layer structure) and terminology cleanup.
+- 2026-01-24T0545 by Canopus: Standardized with Dialogue Layer template and bilingual H2 headers.

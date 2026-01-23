@@ -2,7 +2,16 @@
 # Context Configuration
 context_id: "[Working-Memory]"
 default_phase: "(Stash)"
+# Shared Configuration
+ai_visible: true
+version: 1.1.0
+created: 2025-12-15T00:00:00+09:00
+updated: 2026-01-24T05:45:00+09:00
 tags: ["memory", "handoff", "stash", "context-preservation"]
+language: en
+# author: Format as "Lico (<Instance-ID>)"
+author: ""
+ai_model: ""
 ---
 
 # Context Whiteboard: Working Memory
@@ -43,8 +52,16 @@ tags: ["memory", "handoff", "stash", "context-preservation"]
 
 退避した文脈は、状況を整理して、思考が安定した段階で読み込みます。
 
-## Agent Observations
+---
 
-### (識別子を書く)
+## Related Documents
 
-- (作業メモ)
+- [working-memory-card.md](/.agent/cards/routine/working-memory-card.md) : 当ファイル。
+- [context-preservation.md](/.agent/rules/workflow/context-preservation.md) : 文脈退避の規約。
+
+---
+
+## Origin
+
+- 2025-12-15T0000: Created as working memory context.
+- 2026-01-24T0545 by Canopus: Standardized with Dialogue Layer template and bilingual H2 headers.

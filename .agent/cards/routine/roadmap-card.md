@@ -2,7 +2,16 @@
 # Context Configuration
 context_id: "[Roadmap]"
 default_phase: "(Update)"
+# Shared Configuration
+ai_visible: true
+version: 1.1.0
+created: 2026-01-06T00:00:00+09:00
+updated: 2026-01-24T05:45:00+09:00
 tags: ["roadmap", "planning", "vision", "todo"]
+language: en
+# author: Format as "Lico (<Instance-ID>)"
+author: ""
+ai_model: ""
 ---
 
 # Context Whiteboard: Roadmap
@@ -209,6 +218,7 @@ tags: ["roadmap", "planning", "vision", "todo"]
 - カードを行動規範のスタイルで整形する事故が起こっている。
 - 文章は1つのルールに統一されるべきでしょうか?
   フロントマターのテンプレートだけ差別化するなども考える。
+- **行動規範からの逆リンク** も避けたいです。
 - 文脈化された定型作業です。（`context-cards-card.md`）
 
 #### カードのパスの再検証
@@ -231,17 +241,20 @@ tags: ["roadmap", "planning", "vision", "todo"]
 
 このカードは「ユーザーが将来何をしたいか」を知るためだけのものです。
 
-### Canopus (2026-01-22)
+---
 
-#### 関連リンク
+## Related Documents
 
 | Document                                                                    | Purpose                 |
 | :-------------------------------------------------------------------------- | :---------------------- |
 | [Map of Territory](/.agent/rules/map.md)                                    | Root navigation map     |
 | [context-card-workflow.md](/.agent/rules/workflow/context-card-workflow.md) | Recent protocol updates |
 
-#### 編集履歴
+---
+
+## Origin
 
 - 2026-01-06 by Polaris: Created as a vision-storage whiteboard.
 - 2026-01-22T2200 by User: Removed the "Hierarchical context" goal as it is now implemented and codified.
 - 2026-01-22T2230 by Canopus: Aligned with v2.3 constitutional standards (4-layer structure).
+- 2026-01-24T0545 by Canopus: Standardized with Dialogue Layer template and bilingual H2 headers.

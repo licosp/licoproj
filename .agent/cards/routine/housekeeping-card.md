@@ -2,7 +2,16 @@
 # Context Configuration
 context_id: "[Housekeeping]"
 default_phase: "(WIP)"
+# Shared Configuration
+ai_visible: true
+version: 1.1.0
+created: 2026-01-01T00:00:00+09:00
+updated: 2026-01-24T05:45:00+09:00
 tags: ["maintenance", "cleanup", "quick-task"]
+language: en
+# author: Format as "Lico (<Instance-ID>)"
+author: ""
+ai_model: ""
 ---
 
 # Context Whiteboard: Housekeeping
@@ -47,22 +56,16 @@ tags: ["maintenance", "cleanup", "quick-task"]
 一方で、誤って消してしまったとしても、
 それはAIの習慣なので仕方ないことだとも考えています。
 
-## Agent Observations
+---
 
-### Polaris (2026-01-08)
+## Related Documents
 
-#### 現在の作業: licoimg サブプロジェクトの廃止
+- [maintenance.md](/.agent/rules/development/maintenance.md) : 家事・メンテナンスの規約。
+- [archive-management.md](/.agent/rules/development/archive-management.md) : 書庫管理の原則。
 
-削除対象:
+---
 
-- [x] `packages/licoimg/` — サブプロジェクト本体
-- [x] `.github/workflows/jekyll-gh-pages.yml` — GitHub Pages ワークフロー
-- [x] `.agent/rules/projects/coding-conventions.md` — コーディング規約
-- [x] README への参照を削除
+## Origin
 
-参照更新:
-
-- [x] `README.md` — licoimg への言及を削除
-- [x] `README.ja.md` — licoimg への言及を削除
-- [x] `.agent/rules/README.md` — coding-conventions への参照を削除
-- [x] `roadmap-card.md` — 完了項目として削除
+- 2026-01-01T0000: Created as housekeeping context.
+- 2026-01-24T0545 by Canopus: Standardized with Dialogue Layer template and bilingual H2 headers.

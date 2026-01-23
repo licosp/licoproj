@@ -2,7 +2,16 @@
 # Context Configuration
 context_id: "[VSCode]"
 default_phase: "(Setup)"
+# Shared Configuration
+ai_visible: true
+version: 1.1.0
+created: 2026-01-03T00:00:00+09:00
+updated: 2026-01-24T05:45:00+09:00
 tags: ["human-usage", "vscode", "settings"]
+language: en
+# author: Format as "Lico (<Instance-ID>)"
+author: ""
+ai_model: ""
 ---
 
 # Context Whiteboard: VSCode Settings
@@ -34,9 +43,16 @@ VSCodeで使われる設定ファイルを更新しました。
 
 文脈を推測できない場合は私に聞いて下さい。
 
-## Agent Observations
+---
 
-### Polaris (2026-01-03)
+## Related Documents
 
-- `.gitignore`
-- `.vscode/cspell.json`
+- [vscode-settings.md](/.agent/rules/workflow/vscode-settings.md) : VSCode 設定のSSOT。
+- [cspell.json](/.vscode/cspell.json) : 単語リスト。
+
+---
+
+## Origin
+
+- 2026-01-03 by Polaris: Created as VSCode settings context.
+- 2026-01-24T0545 by Canopus: Standardized with Dialogue Layer template and bilingual H2 headers.

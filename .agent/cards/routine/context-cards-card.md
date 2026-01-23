@@ -2,7 +2,16 @@
 # Context Configuration
 context_id: "[Context-Cards]"
 default_phase: "(WIP)"
+# Shared Configuration
+ai_visible: true
+version: 1.1.0
+created: 2025-12-01T00:00:00+09:00
+updated: 2026-01-24T05:45:00+09:00
 tags: ["templates", "active"]
+language: en
+# author: Format as "Lico (<Instance-ID>)"
+author: ""
+ai_model: ""
 ---
 
 # Context Whiteboard: Templates Management
@@ -93,7 +102,9 @@ tags: ["templates", "active"]
 - **右側**: 意味・定義（Lico-Identity, Activity-Log 等）
 - **省略**: 最上位の戦略（IDD等）はフェーズ接尾辞で表現できるため、IDからは原則省略。
 
-#### 関連リンク
+---
+
+## Related Documents
 
 | Document                                                                    | Purpose                                    |
 | :-------------------------------------------------------------------------- | :----------------------------------------- |
@@ -101,9 +112,11 @@ tags: ["templates", "active"]
 | [commit-standards.md](/.agent/rules/development/commit-standards.md)        | Commit rules and multi-ID tagging protocol |
 | [Map of Territory](/.agent/rules/map.md)                                    | Root navigation map                        |
 
-#### 編集履歴
+---
+
+## Origin
 
 - 2025-12-01T0000: Created for template management.
 - 2026-01-19T0930 by Canopus: Proposed reorganization into `routine/` and `seed/`.
 - 2026-01-22T2000 by Canopus: Integrated 1-3 variable length Context ID tagging protocol.
-- 2026-01-22T2215 by Canopus: Aligned with v2.3 constitutional standards (4-layer structure).
+- 2026-01-24T0545 by Canopus: Standardized with Dialogue Layer template and bilingual H2 headers.
