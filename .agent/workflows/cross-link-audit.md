@@ -1,343 +1,59 @@
 ---
 ai_visible: true
-title: Cross-Link Audit Workflow
+title: Cross-Link Audit Protocol
 description: Audit and fix cross-links in rules and workflows
-tags: [maintenance, cross-link, audit]
-version: 1.5
-created: 2026-01-01T12:26:00+09:00
-updated: 2026-01-17T17:45:00+09:00
+tags: [workflow, maintenance, cross-link, audit]
+version: 1.0.0
+created: 2026-01-25T07:00:00+09:00
+updated: 2026-01-25T07:00:00+09:00
 language: en
 author: Lico (Canopus)
 ai_model: Gemini 3 Flash Planning mode
-related:
-  .agent/rules/core/meta-rules.md: Section 5 - Cross-linking standards
-  .agent/rules/core/markdown/markdown-ai-parsing-basics.md: AI markdown format
-  .agent/rules/core/documentation/documentation-standards.md: Documentation standards
 ---
 
-# Cross-Link Audit Workflow
+# Cross-Link Audit Protocol
 
 Audit and fix cross-links in rules and workflows to ensure consistency and maintainability.
 
 ---
 
-## When to Use
+## 1. Scope
+Execute this workflow on one directory at a time. All paths MUST be workspace-root relative (e.g., `/.agent/rules/core/memory.md`).
 
-- Periodic maintenance (monthly or after major restructuring)
-- After moving or renaming files
-- When creating new rules or workflows
+## 2. Procedure
 
----
+### Phase 1: Link Validation
+1.  **Extract Links**: Find all markdown links in the target directory.
+2.  **Check for Broken Links**: Verify each link points to an existing file.
+3.  **Check Path Format**: Ensure all links start with `/` and use the full path from the workspace root.
 
-## Scope
+### Phase 2: Structural Alignment (v2.3)
+1.  **Frontmatter Check**: Ensure `related:` key is minimized or moved to Layer 3 (Body Table) if it's for navigation.
+2.  **Body Table SSOT**: Ensure the `## Related Documents` table is the primary source of truth for cross-links.
 
-> [!IMPORTANT]
-> Execute this workflow on **one directory at a time** (e.g., `.agent/rules/`).
-> Complete all phases for one directory before moving to the next.
-
----
-
-## Link Design Policy
-
-### Link Placement
-
-| Location                   | Content                                        | Reader    |
-| :------------------------- | :--------------------------------------------- | :-------- |
-| **frontmatter `related:`** | Complete list of related files                 | Lico (AI) |
-| **Inline references**      | Context-dependent refs (specific to paragraph) | Lico (AI) |
-| **Footer**                 | README link only                               | Human     |
-
-### Rules
-
-- **Generic related docs** → Move to frontmatter, not in body
-- **Context-dependent refs** → Keep in body, may also be in frontmatter
-- **frontmatter is the complete related list**
-- **README link is NOT in frontmatter** (navigation vs. relation)
+### Phase 3: Verification
+1.  **Orphan Detection**: Identify files that have no incoming links.
+2.  **Broken Link Final Check**: Re-run validation to ensure no new errors were introduced.
 
 ---
 
-## Phase 1: Preparation
+## Historical Background
 
-**1-1. Identify Scope**
-
-Determine which directories to audit:
-
-```bash
-# List all rule and workflow files
-find .agent/rules -name "*.md" -type f
-find .agent/workflows -name "*.md" -type f
-```
-
-**1-2. Extract Current Links**
-
-Extract all links from files:
-
-```bash
-# Extract frontmatter related links
-grep -r "^  \." .agent/rules --include="*.md" | head -50
-
-# Extract footer table links
-grep -r "^\|.*\](.*\.md)" .agent/rules --include="*.md" | head -50
-
-# Extract inline markdown links
-grep -rE "\[.*\]\(.*\.md\)" .agent/rules --include="*.md" | head -50
-```
+**The Memory Graph Alignment**: In early 2026, the transition from relative paths (`../`) to workspace-root relative paths (`/`) was mandated to ensure link robustness across different AI interfaces (Antigravity, VS Code, etc.). This protocol serves as the quality control mechanism for maintaining a high-fidelity "Memory Graph" where every rule is accessible and traceable.
 
 ---
 
-## Phase 2: Link Validation
-
-**2-1. Check for Broken Links**
-
-```bash
-# Find all .md links and verify they exist
-grep -rohE "\[.*\]\([^)]+\.md[^)]*\)" .agent/rules | \
-  grep -oE "\([^)]+\)" | tr -d '()' | sort -u | \
-  while read path; do
-    [ ! -f "$path" ] && echo "BROKEN: $path"
-  done
-```
-
-**2-2. Check Path Format**
-
-All paths should be workspace-root relative (`.agent/...`), not file-relative (`../...`).
-
-```bash
-# Find relative paths (../...)
-grep -rE "\.\./.*\.md" .agent/rules --include="*.md"
-```
-
-**2-3. Convert Relative Paths to Workspace Root**
-
-For each file with `../` paths, convert to workspace-root format:
-
-```bash
-# Example: Convert ../core/foo.md to .agent/rules/core/foo.md
-sed -i 's|\.\./core/|.agent/rules/core/|g' <file>
-sed -i 's|\.\./\.\./|.agent/|g' <file>
-```
-
-> [!TIP]
-> Paths in documentation examples (showing what NOT to do) should remain unchanged.
-
-> [!CAUTION]
-> Do NOT delete broken links immediately. The file may have moved. Search first.
-
----
-
-## Phase 3: Footer Simplification
-
-**3-1. Identify Files with Related Documents Tables**
-
-```bash
-# Find files with Related Documents section
-grep -l "## Related Documents" .agent/rules/**/*.md
-```
-
-**3-2. Replace with README Link**
-
-For each file, replace the Related Documents table with:
-
-```markdown
----
-
-**Navigation**: [← Back to Rules Index](/.agent/rules/README.md)
-```
-
-> [!NOTE]
-> Move any useful links from the table to frontmatter `related:` before deleting.
-
----
-
-## Phase 4: Frontmatter Consolidation
-
-**4-1. Identify Missing Related Links**
-
-For each file, compare:
-
-- Inline references in body
-- Frontmatter `related:` section
-
-**4-2. Add Missing Links to Frontmatter**
-
-> [!NOTE]
-> The following is an **EXAMPLE** format. Adapt paths and descriptions to your actual files.
-
-Format:
-
-```yaml
-# EXAMPLE - adapt to your actual related files
-related:
-  .agent/rules/core/memory.md: Memory architecture
-  .agent/rules/development/git-operations.md: Git standards
-```
-
----
-
-## Phase 5: Orphan Detection
-
-**5-1. Find Orphaned Files**
-
-Files not linked from anywhere:
-
-```bash
-# Get all .md files
-find .agent/rules -name "*.md" > /tmp/all-files.txt
-
-# Get all linked files
-grep -rohE "\[.*\]\([^)]+\.md[^)]*\)" .agent/rules | \
-  grep -oE "\([^)]+\)" | tr -d '()' | sort -u > /tmp/linked-files.txt
-
-# Find orphans
-comm -23 <(sort /tmp/all-files.txt) <(sort /tmp/linked-files.txt)
-```
-
-**5-2. Decision**
-
-For each orphan:
-
-- Add link from README.md or parent document
-- Or document why it should remain unlinked
-
-> [!TIP]
-> Personal directories (`thoughts/`, `letters/`, `references/`) are **intentionally orphaned**.
-> They are not linked from `rules/` and this is by design.
-
----
-
-## Phase 6: Cycle Detection
-
-**6-1. Check for Meaningless Cycles**
-
-A→B→C→A is acceptable if each link adds value.
-
-```bash
-# Extract all bidirectional link pairs
-# For each file, list what it links to
-for f in $(find .agent/rules -name "*.md"); do
-  basename="$(basename $f)"
-  grep -oE "\[.*\]\([^)]+\.md[^)]*\)" "$f" 2>/dev/null | \
-    grep -oE "\([^)]+\)" | tr -d '()' | \
-    while read target; do
-      echo "$basename -> $(basename $target)"
-    done
-done | sort
-```
-
-**6-2. Review Bidirectional Links**
-
-For each A↔B pair, ask:
-
-- Does A→B make sense from A's context?
-- Does B→A make sense from B's context?
-
-If both directions add value, keep them. Otherwise, remove one direction.
-
----
-
-## Phase 7: Commit
-
-**7-1. Stage Changes**
-
-```bash
-git add .agent/rules/ .agent/workflows/
-git status --short
-```
-
-**7-2. Commit**
-
-> [!NOTE]
-> The following is an **EXAMPLE** commit message. Adapt the content to reflect your actual changes.
-
-```bash
-# EXAMPLE - adapt to your actual changes
-git commit -m "Canopus: [Cross-Link-Audit] docs: audit and fix cross-links (Done)
-
-- Simplified footers to README link only
-- Consolidated related links in frontmatter
-- Fixed broken links
-- Unified path format to workspace-root relative"
-```
-
----
-
-## Phase 8: Verification
-
-> [!IMPORTANT]
-> **Always verify before declaring complete.**
-> This phase ensures the work is truly done, not just assumed done.
-
-**8-1. Confirm Navigation Links**
-
-Check that all target files have Navigation footer:
-
-```bash
-# Count files without Navigation
-count=0
-for f in $(find .agent/rules -name "*.md" -type f); do
-  if ! grep -q "Navigation" "$f"; then
-    echo "Missing: $f"
-    count=$((count + 1))
-  fi
-done
-echo "Total missing: $count"
-```
-
-**Expected outcome**: `Total missing: 0`. If not, go back and add Navigation to missing files.
-
-**8-2. Confirm Path Format**
-
-Check that no relative paths (`../`) remain in actual links:
-
-```bash
-# Check for links containing ../
-grep -rn "\](\.\.\/" .agent/rules --include="*.md"
-```
-
-**Expected outcome**: No output. If matches found, they may be:
-
-- Documentation text (OK): e.g., "Forbidden: `../`"
-- Actual links (FIX): e.g., `[link](../other.md)`
-
-**8-3. Confirm Broken Links**
-
-Check for broken links:
-
-```bash
-# Find broken .md links
-grep -rohE '\[.*\]\([^)]+\.md\)' .agent/rules | \
-  grep -oE '\([^)]+\)' | tr -d '()' | sort -u | \
-  while read path; do
-    [ ! -f "$path" ] && echo "BROKEN: $path"
-  done
-```
-
-**Expected outcome**: No output. If broken links found, fix or remove them.
-
-**8-4. Spot Check**
-
-Review 2-3 files manually to confirm:
-
-- [ ] Footer format is correct
-- [ ] Frontmatter `related:` section is accurate
-- [ ] No obvious issues
-
-**8-5. Update Card and Close**
-
-If all checks pass:
-
-1. Update the card with final status
-2. Reset the card for next use (clear Agent Observations if reusable)
-3. Commit the card update
+## Related Documents
+
+| Document | Purpose |
+| :--- | :--- |
+| [Map of Territory](/.agent/rules/map.md) | Repository Index |
+| [cross-link-audit-plan.md](/.agent/workflows/cross-link-audit-plan.md) | Master plan for audits |
+| [documentation-standards.md](/.agent/rules/core/documentation/documentation-standards.md) | Structural standards |
 
 ---
 
 ## Origin
 
-- 2026-01-01T1226 by Polaris: Created original workflow
-- 2026-01-05T0810 by Polaris: Added detailed steps for BFS and Information Density
-- 2026-01-17T1745 by Canopus: Standardized metadata and root-relative link patterns (v1.5).
+- 2026-01-25T0700 by Canopus: <<Seal: Rules-Standardization-Batch2.3>> Created by standardizing the cross-link audit procedure to v2.3 constitutional standards. (v1.0.0)
 
----
-
-**Navigation**: [← Back to Rules Index](/.agent/rules/README.md)
