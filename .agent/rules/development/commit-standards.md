@@ -3,7 +3,7 @@ ai_visible: true
 title: Commit Standards
 description: Comprehensive commit message standards and atomic commit philosophy
 tags: [rules, development, git, standards]
-version: 1.5.0
+version: 2.3.0
 created: 2025-12-01T00:00:00+09:00
 updated: 2026-01-22T22:50:00+09:00
 language: en
@@ -241,6 +241,18 @@ Fine-grained commits with detailed messages:
 5. **Create searchable history index**
 6. **Enable project reconstruction from git log alone**
 
+---
+
+## Historical Background
+
+**The Evolution of the Log**: In early 2026, during the "History Audit" (Issue #18), we realized that standard Conventional Commits were insufficient for an autonomous agent. While "what" changed was recorded, the "**Who**" (which identity was active) and the "**Context**" (which task thread was being pulled) were lost in a sea of generic messages.
+
+**Identifier-First & Context-ID**: The shift to the `Identifier: [Context-ID]` format was a radical departure from standard git conventions, prioritized specifically for **Historical Traceability**. We discovered that for a future Lico instance to "reincarnate" successfully, they must be able to filter the git log by Identifier to hear the specific "voice" and "intent" of their predecessor.
+
+**The Checkpoint Principle**: The introduction of the `(Save)` and `(WIP)` phases in late January 2026 was a response to "Diff-Bloat." We learned that accumulated changes act as "cognitive noise," making it harder for the AI to maintain precision. By formalizing checkpoints, we allow the agent to "clear the whiteboard" and commit stable states during complex, multi-turn operations without losing the overarching logical thread.
+
+---
+
 ## Related Documents
 
 | Document                                                                                  | Purpose                              |
@@ -259,3 +271,4 @@ Fine-grained commits with detailed messages:
 - 2026-01-17T1525 by Canopus: Refined signature rules (Normal: Optional, Proxy: `Committed-by`) to reduce redundancy.
 - 2026-01-22T2025 by Canopus: Constitutional alignment: moved related docs to body table, updated examples for multi-ID, and removed legacy footer. (v1.4.0)
 - 2026-01-22T2250 by Canopus: Integrated Vertical Stacking vs. Horizontal Batching rules and the Checkpoint Principle for managing diff-bloat. (v1.5.0)
+- 2026-01-25T0705 by Canopus: <<Seal: Rules-Standardization-Batch4>> Standardized to v2.3 constitutional standards (4-layer structure) and added Historical Background. (v2.3.0)

@@ -3,15 +3,12 @@ ai_visible: true
 title: Git Operations Standards
 description: Git standards for branches, IDD workflow, security, and push procedures
 tags: [git, standards, workflow, safety]
-version: 2.3
+version: 2.5.0
 created: 2025-12-01T00:00:00+09:00
 updated: 2026-01-23T06:26:00+09:00
 language: en
 author: Lico (Canopus)
 ai_model: Gemini 3 Flash Planning mode
-related:
-  .agent/rules/development/commit-standards.md: Commit message standards
-  .agent/.internal/references/agents/commit-philosophy.md: Cognitive strategy for commits
 ---
 
 # Git Operations Standards
@@ -452,6 +449,7 @@ git push origin <branch-name>
 | [commit-standards.md](/.agent/rules/development/commit-standards.md)                     | Commit message standards |
 | [commit-philosophy.md](/.agent/.internal/references/agents/commit-philosophy.md)         | Cognitive strategy       |
 | [absolute-path-prohibition.md](/.agent/rules/core/security/absolute-path-prohibition.md) | Path security            |
+| [Map of Territory](/.agent/rules/map.md)                                                 | Root navigation map      |
 
 ---
 
@@ -465,8 +463,5 @@ git push origin <branch-name>
 - 2026-01-17T1535 by Canopus: Updated commit message examples to align with "Identifier-First" protocol (v1.4).
 - 2026-01-17T1745 by Canopus: Standardized metadata and root-relative link patterns (v1.5).
 - 2026-01-23T0626 by Canopus: Formalized v2.3 standardization and added Section 7.1.1 (Command Division for Verification).
-- 2026-01-24T0205 by Canopus: Codified "Save-First Principle" and "Soft-First/Stash-Safety" protocols following the Jan 24 data loss incident. (v2.4)
-
----
-
-**Navigation**: [← Back to Rules Index](/.agent/rules/map.md)
+- 2026-01-24T0205 by Canopus: Codified \"Save-First Principle\" and \"Soft-First/Stash-Safety\" protocols following the Jan 24 data loss incident. (v2.4)
+- 2026-01-25T0710 by Canopus: <<Seal: Rules-Standardization-Batch4>> Standardized to v2.3 constitutional standards; removed legacy related frontmatter and navigation footer. (v2.5.0)
