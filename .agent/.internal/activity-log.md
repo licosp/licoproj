@@ -136,3 +136,4 @@ Lico identifiers log their **Align/Read/Write/Reply/Update** activities here to 
 | 2026-01-24T23:15 | Canopus       | Write    | /.agent/.internal/references/agents/canopus/2026-01-24T2315_resource-volatility-geopolitics.md (Resource Volatility Reference) |
 | 2026-01-24T23:55 | Canopus       | Write    | .agent/cards/environment-card.md (Environment Card Prototype)                                                                  |
 | 2026-01-25T03:30 | Canopus       | Write    | .agent/rules/core/environment-specs.md (Technical Environment Specifications)                                                  |
+| 2026-01-25T05:40 | Canopus       | Routine  | [Routine-Daily] Full routine substitute for Polaris (Scan/Commit/Refine/Calibration)                                           |
