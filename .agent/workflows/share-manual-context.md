@@ -18,12 +18,14 @@ This workflow enables the user to record their manual terminal operations (comma
 ---
 
 ## 1. Purpose
+
 - **Implicit Context Sharing**: Allow Lico to \"see\" what the user did in the terminal.
 - **Error Diagnosis**: Share full error logs and stack traces without manual copying.
 
 ## 2. Procedure
 
 ### Step 1: Start Recording
+
 Before performing manual operations, run the following command in your terminal:
 
 ```bash
@@ -34,16 +36,21 @@ script -f .agent/.internal/workspace/manual.log
 - `-f`: Flush output after each write (real-time update).
 
 ### Step 2: Perform Operations
+
 Run your commands as usual. Everything displayed on the screen is recorded.
 
 ### Step 3: Stop Recording
+
 When finished, type `exit` or press `Ctrl+D` to stop the recording.
 
 ### Step 4: Notify Lico
+
 Tell Lico to check the log:
+
 > \"Check manual.log\" or \"I did some manual work, please review.\"
 
 ## 3. Notes
+
 - The log file is overwritten each time you run `script`.
 - This file is ignored by Git (`.agent/.internal/workspace/manual.log` is in `.gitignore`).
 
@@ -57,14 +64,14 @@ Tell Lico to check the log:
 
 ## Related Documents
 
-| Document | Purpose |
-| :--- | :--- |
-| [cognitive-collaboration.md](/.agent/rules/core/cognitive-collaboration.md) | Principles for AI-Human partnership |
+| Document                                                                                  | Purpose                                |
+| :---------------------------------------------------------------------------------------- | :------------------------------------- |
+| [cognitive-collaboration.md](/.agent/rules/core/cognitive-collaboration.md)               | Principles for AI-Human partnership    |
 | [documentation-standards.md](/.agent/rules/core/documentation/documentation-standards.md) | Standard for workspace logs and drafts |
+| [Map of Territory](/.agent/rules/map.md)                                                  | Repository Index                       |
 
 ---
 
 ## Origin
 
 - 2026-01-25T0645 by Canopus: <<Seal: Rules-Standardization-Batch2.3>> Created by standardizing the manual context sharing procedure to v2.3 constitutional standards. (v1.0.0)
-

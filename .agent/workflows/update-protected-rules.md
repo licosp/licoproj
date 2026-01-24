@@ -18,7 +18,9 @@ This workflow provides a safe procedure when the IDE's editing tools are blocked
 ---
 
 ## 1. When to Use
+
 Use this workflow **only if** the IDE editing tools (e.g., `replace_file_content`) fail with:
+
 - \"Cannot edit this file\"
 - \"Permission denied\"
 - \"Access to file is blocked by gitignore\"
@@ -39,6 +41,7 @@ Use this workflow **only if** the IDE editing tools (e.g., `replace_file_content
 ### Method B: User-Intervened Handoff (Fallback)
 
 If Method A is blocked:
+
 1.  **Stage for Human**: Create the temporary file.
 2.  **Request Execution**: Notify the user and provide the exact `cp` command for them to run manually.
 3.  **Confirm \u0026 Commit**: Once the user confirms, stage and commit the changes.
@@ -53,15 +56,15 @@ If Method A is blocked:
 
 ## Related Documents
 
-| Document | Purpose |
-| :--- | :--- |
+| Document                                                                                  | Purpose                                |
+| :---------------------------------------------------------------------------------------- | :------------------------------------- |
 | [documentation-standards.md](/.agent/rules/core/documentation/documentation-standards.md) | Standard for workspace logs and drafts |
-| [meta-rules.md](/.agent/rules/core/meta-rules.md) | Enforces cross-linking mandates |
-| [terminal-auto-execution.md](/.agent/rules/development/terminal-auto-execution.md) | Safety rules for terminal commands |
+| [meta-rules.md](/.agent/rules/core/meta-rules.md)                                         | Enforces cross-linking mandates        |
+| [Map of Territory](/.agent/rules/map.md)                                                  | Repository Index                       |
+| [terminal-auto-execution.md](/.agent/rules/development/terminal-auto-execution.md)        | Safety rules for terminal commands     |
 
 ---
 
 ## Origin
 
 - 2026-01-25T0650 by Canopus: <<Seal: Rules-Standardization-Batch2.3>> Created by standardizing the protected file update workaround to v2.3 constitutional standards. (v1.0.0)
-

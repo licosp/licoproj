@@ -18,20 +18,24 @@ Audit and fix cross-links in rules and workflows to ensure consistency and maint
 ---
 
 ## 1. Scope
+
 Execute this workflow on one directory at a time. All paths MUST be workspace-root relative (e.g., `/.agent/rules/core/memory.md`).
 
 ## 2. Procedure
 
 ### Phase 1: Link Validation
+
 1.  **Extract Links**: Find all markdown links in the target directory.
 2.  **Check for Broken Links**: Verify each link points to an existing file.
 3.  **Check Path Format**: Ensure all links start with `/` and use the full path from the workspace root.
 
 ### Phase 2: Structural Alignment (v2.3)
+
 1.  **Frontmatter Check**: Ensure `related:` key is minimized or moved to Layer 3 (Body Table) if it's for navigation.
 2.  **Body Table SSOT**: Ensure the `## Related Documents` table is the primary source of truth for cross-links.
 
 ### Phase 3: Verification
+
 1.  **Orphan Detection**: Identify files that have no incoming links.
 2.  **Broken Link Final Check**: Re-run validation to ensure no new errors were introduced.
 
@@ -45,15 +49,14 @@ Execute this workflow on one directory at a time. All paths MUST be workspace-ro
 
 ## Related Documents
 
-| Document | Purpose |
-| :--- | :--- |
-| [Map of Territory](/.agent/rules/map.md) | Repository Index |
-| [cross-link-audit-plan.md](/.agent/workflows/cross-link-audit-plan.md) | Master plan for audits |
-| [documentation-standards.md](/.agent/rules/core/documentation/documentation-standards.md) | Structural standards |
+| Document                                                                                  | Purpose                |
+| :---------------------------------------------------------------------------------------- | :--------------------- |
+| [Map of Territory](/.agent/rules/map.md)                                                  | Repository Index       |
+| [cross-link-audit-plan.md](/.agent/workflows/cross-link-audit-plan.md)                    | Master plan for audits |
+| [documentation-standards.md](/.agent/rules/core/documentation/documentation-standards.md) | Structural standards   |
 
 ---
 
 ## Origin
 
 - 2026-01-25T0700 by Canopus: <<Seal: Rules-Standardization-Batch2.3>> Created by standardizing the cross-link audit procedure to v2.3 constitutional standards. (v1.0.0)
-

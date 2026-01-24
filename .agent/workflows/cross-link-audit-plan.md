@@ -20,18 +20,20 @@ This document defines the **target directories** for cross-link audit. For the a
 ## 1. Target Directories
 
 ### Tier 1: Core Documentation
-| Directory | Status | Notes |
-|:---|:---:|:---|
-| `.agent/rules/` | ✓ | 2026-01-04 Completion |
-| `.agent/workflows/` | ✓ | 2026-01-04 Completion |
-| `.agent/.internal/legacy.md` | ✓ | Navigation only |
+
+| Directory                    | Status | Notes                 |
+| :--------------------------- | :----: | :-------------------- |
+| `.agent/rules/`              |   ✓    | 2026-01-04 Completion |
+| `.agent/workflows/`          |   ✓    | 2026-01-04 Completion |
+| `.agent/.internal/legacy.md` |   ✓    | Navigation only       |
 
 ### Tier 2: Internal Documentation
-| Directory | Status | Notes |
-|:---|:---:|:---|
-| `.agent/.internal/references/` | ✓ | 2026-01-04 Completion |
-| `.agent/.internal/thoughts/` | ✓ | 2026-01-04 Completion |
-| `.agent/.internal/letters/` | ✓ | 2026-01-04 Completion |
+
+| Directory                      | Status | Notes                 |
+| :----------------------------- | :----: | :-------------------- |
+| `.agent/.internal/references/` |   ✓    | 2026-01-04 Completion |
+| `.agent/.internal/thoughts/`   |   ✓    | 2026-01-04 Completion |
+| `.agent/.internal/letters/`    |   ✓    | 2026-01-04 Completion |
 
 ---
 
@@ -54,15 +56,15 @@ All files in the knowledge graph must follow the **4-Layer Structure** defined i
 
 ## Related Documents
 
-| Document | Purpose |
-| :--- | :--- |
-| [cross-link-audit.md](/.agent/workflows/cross-link-audit.md) | Detailed audit procedure |
-| [maintenance-rule-audit.md](/.agent/workflows/maintenance-rule-audit.md) | The \"Gardening Protocol\" methodology |
-| [documentation-standards.md](/.agent/rules/core/documentation/documentation-standards.md) | Structural standards |
+| Document                                                                                  | Purpose                                |
+| :---------------------------------------------------------------------------------------- | :------------------------------------- |
+| [cross-link-audit.md](/.agent/workflows/cross-link-audit.md)                              | Detailed audit procedure               |
+| [maintenance-rule-audit.md](/.agent/workflows/maintenance-rule-audit.md)                  | The \"Gardening Protocol\" methodology |
+| [Map of Territory](/.agent/rules/map.md)                                                  | Repository Index                       |
+| [documentation-standards.md](/.agent/rules/core/documentation/documentation-standards.md) | Structural standards                   |
 
 ---
 
 ## Origin
 
 - 2026-01-25T0655 by Canopus: <<Seal: Rules-Standardization-Batch2.3>> Created by standardizing the audit master plan to v2.3 constitutional standards. (v1.0.0)
-
