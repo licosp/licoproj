@@ -1,113 +1,53 @@
 ---
-description: Guidelines for managing development tools and dependencies within workspaces
+ai_visible: true
+title: Workspace-Centric Tooling
+description: Guidelines for managing development tools and dependencies within workspaces.
+tags: [development, tools, environment, portability]
+version: 2.3.0
+created: 2025-12-01T00:00:00+09:00
+updated: 2026-01-25T08:25:00+09:00
+language: en
+author: Lico (Canopus)
+ai_model: Gemini 3 Flash Planning mode
 ---
 
 # Workspace-Centric Tooling
 
-## Core Principle
+Management of tools within the repository context. **\"Workspace-First; Manage via Git.\"**
 
-**Install libraries and tools within the workspace whenever possible. Manage tools through the repository to enhance portability.**
+---
 
-## Guidelines
+## 1. Principles
 
-### 1. Workspace-First Approach
+- **Prefer Workspace Dependencies**: Install tools locally (`package.json`, `.venv`) over global versions.
+- **Document Tool Versions**: Ensure environmental consistency by tracking versions in the repository.
+- **Portability**: A new agent should be able to run `yarn install` or `uv sync` and have a 100% ready environment.
 
-- **Prefer workspace dependencies** over global installations
-- **Document tool versions** in `package.json` or equivalent
-- **Use workspace scripts** for common operations
+## 2. Execution
 
-### 2. Tool Management
+- Use **`npx`** or **`uv run`** to execute workspace-local tools. Avoid relying on the user's global PATH.
 
-#### ✅ Recommended: Workspace Installation (Node.js)
-```json
-{
-  "devDependencies": {
-    "eslint": "^9.17.0",
-    "prettier": "^3.6.2",
-    "gh": "^2.8.9"
-  },
-  "scripts": {
-    "lint": "eslint .",
-    "format": "prettier --write .",
-    "gh": "gh"
-  }
-}
-```
+---
 
-#### ✅ Recommended: Workspace Installation (Python)
-We use `uv` for Python project management, installed locally in the workspace.
+## Historical Background
 
-- **Location**: `.agent/runtimes/bin/uv`
-- **Virtual Env**: `.venv/` (created by `uv venv`)
-- **Usage**:
-  ```bash
-  # Activate environment
-  source .venv/bin/activate
-  
-  # Run commands via uv
-  .agent/runtimes/bin/uv pip install <package>
-  ```
+**The Ghost of Environments Past**: This protocol was born in late 2025 after a session failed because a required linting tool existed on one machine but not another. This "Environmental Fragility" stalled development and caused non-reproducible errors.
 
-#### ❌ Avoid: Global Installation
-```bash
-# Avoid these when workspace alternative exists
-npm install -g eslint
-pip install --user <package>
-```
+**Tooling as a First-Class Citizen**: We learned that for an AI agent, the "Workspace" is its physical environment. By treating tool dependencies as part of the repository (stored in `.agent/runtimes/` or managed via lockfiles), we ensure that the agent's capability set is portable across all Lico instances, regardless of the host machine's configuration.
 
-### 3. Portability Benefits
+---
 
-- **Environment Consistency**: Same tools across different machines
-- **Version Control**: Tool versions tracked in repository
-- **Easy Setup**: `yarn install` or `uv sync` sets up complete environment
-- **Collaboration**: Team members use identical tooling
+## Related Documents
 
-### 4. When Global Installation is Acceptable
-
-- **System-level runtimes**: Node.js, Python (base interpreter), etc.
-- **OS tools**: git, curl, etc.
-- **IDE-specific tools**: When workspace alternative doesn't exist
-- **Performance-critical tools**: When local installation impacts performance significantly
-
-### 5. Implementation
-
-#### Yarn Workspaces
-```json
-{
-  "workspaces": ["packages/*"],
-  "devDependencies": {
-    "tool-name": "^version"
-  }
-}
-```
-
-#### Tool Execution
-```bash
-# Preferred: Workspace-local execution
-npx yarn lint
-npx yarn gh issue list
-.agent/runtimes/bin/uv run <command>
-
-# Avoid: Global execution
-eslint .
-gh issue list
-```
-
-## Rationale
-
-This approach ensures:
-- **Reproducible environments** across development machines
-- **Simplified onboarding** for new team members
-- **Version consistency** through repository management
-- **Reduced environment conflicts** between projects
+| Document                                                                       | Purpose                    |
+| :----------------------------------------------------------------------------- | :------------------------- |
+| [agent-tool-selection.md](/.agent/rules/development/agent-tool-selection.md)   | Tool prioritization policy |
+| [project-understanding.md](/.agent/rules/development/project-understanding.md) | Workspace memory structure |
+| [Map of Territory](/.agent/rules/map.md)                                       | Project navigation         |
 
 ---
 
 ## Origin
 
-- 2025-12-01T0000: Created
-- 2026-01-04T1041 by Polaris: Added Origin and Navigation (cross-link audit)
-
----
-
-**Navigation**: [← Back to Rules Index](.agent/rules/README.md)
+- 2025-12-01 by Sirius: Initial workspace-first tooling principle.
+- 2026-01-25T0825 by Canopus: <<Seal: Rules-Standardization-Batch4>> Upgraded to v2.3 constitutional standards; removed legacy navigation footer. (v2.3.0)

@@ -1,118 +1,54 @@
 ---
 ai_visible: true
-description: Protocols for searching, filtering, and retrieving information in an infinite-scale repository environment.
-version: 1.1
+title: Search Methodology
+description: Protocols for searching, filtering, and retrieving information in an infinite-scale repository.
+tags: [development, search, retrieval, methodology, overflow]
+version: 2.3.0
 created: 2025-12-18T02:00:00+09:00
-updated: 2026-01-14T16:10:00+09:00
+updated: 2026-01-25T08:15:00+09:00
 language: en
-author: Lico (Polaris)
-ai_model: Claude Opus 4.5 (Thinking) Planning mode
-tags: [development, search, retrieval, methodology, safety, overflow]
-context: IDD Cycle #13 Phase 2 - Defining basic action primitives
-related:
-  .agent/rules/core/meta-rules.md: Cross-linking standards (for link-based exploration)
+author: Lico (Canopus)
+ai_model: Gemini 3 Flash Planning mode
 ---
 
-# Search Methodology (Universal Retrieval Protocol)
+# Search Methodology
 
-## 1. Core Philosophy: Collection-Oriented Thinking
+Protocols for effective retrieval. **\"The result of a search is NEVER a File; it is ALWAYS a Candidate List.\"**
 
-**"The result of a search is NEVER a File. It is ALWAYS a Candidate List."**
+---
 
-- **Rule**: When executing a search (e.g., `find_by_name`, `grep_search`), treat the output as a `List<Candidate>`, even if it contains only one item.
-- **Anti-Pattern (Scalar Thinking)**:
-  - "I found one file, so this must be the one." -> **Risk**: Confirmation Bias.
-  - "I found 50 files, let's just pick the first one." -> **Risk**: Ignored better matches in overflow.
-- **Correct Pattern**:
-  - "I found one file. Is the list truncated? Is there any other place I should have looked?"
-  - "I found 50 files (truncated). This list is incomplete. I cannot make a decision yet."
+## 1. Core Philosophy
+
+Treat search output as a list of candidates. Avoid \"Scalar Thinking\" (assuming the first or only result is the final answer). Always check for truncation or overflow.
 
 ## 2. The Universal Search Loop
 
-All retrieval activities MUST follow this loop:
-
-### Phase 1: Query (Discovery)
-
-- **Action**: Run search tools with a hypothesis.
-- **Check**: Did the tool report **Overflow** (`truncated`, `omitted`, `limit reached`)?
-  - **YES**: The result is **Unreliable**. Proceed to "Strategic Retreat".
-  - **NO**: Proceed to Phase 2.
-
-### Phase 2: Filter (Selection)
-
-- **Action**: Assess relevance of the candidate list based on metadata (filename, path).
-- **Check**: Is the Signal-to-Noise ratio acceptable?
-  - **Signal**: Relevant matches.
-  - **Noise**: Irrelevant matches (e.g., `node_modules`, `logs`).
-  - **Low Signal**: Proceed to "Strategic Retreat".
-  - **High Signal**: Select targets for Phase 3.
-
-### Phase 3: Diagnose (Observation)
-
-- **Action**: Read the content of selected files (`view_file`).
-- **Check**: Does this solve the problem?
-
-### Phase 4: Report (Synthesis)
-
-- **Action**: Summarize findings to the user.
-- **Constraint**: If results were partial or truncated at any point, **MUST** explicitly state: "Search was partial due to overflow."
+1.  **Discovery**: Run tools; check for **Overflow**. If truncated, query is unreliable.
+2.  **Filter**: Assess Signal-to-Noise. If too noisy, proced to Strategic Retreat.
+3.  **Refine (Strategic Retreat)**: Abandon broad queries; use precise keyword or narrow scope.
+4.  **Help Seeking**: If the loop repeats 3 times without SUCCESS, notify the user.
 
 ---
 
-## 3. Strategic Retreat
+## Historical Background
 
-**Definition**: Abandoning the current query because it yields too much noise or incomplete data.
+**The Truncation Blindness**: This protocol was established to solve the "Overflow Trap" of early 2026. During the initial rule audits, agents frequently missed critical files because the `find` or `grep` result hit the tool limit (50 matches).
 
-### Trigger
-
-1.  **Truncation**: Tool output limit reached.
-2.  **Low Entropy**: Thousands of identical results (e.g., searching "function").
-3.  **High Cost**: Need to read too many files to find the answer.
-
-### Action
-
-1.  **Stop**: Do not attempt to process the list.
-2.  **Refine**: Narrow scope (directory), precise type (extension), or complex keyword (regex).
-3.  **Retry**: Execute the new query.
+**Strategic Silence**: We learned that a partial search is often more dangerous than no search at all, as it invites false confidence. By mandating the "Strategic Retreat" and "Help Seeking" patterns, we ensure that Lico acknowledges the limits of its current visibility instead of making decisions based on fragmented data.
 
 ---
 
-## 4. Help Seeking (Escape Hatch)
+## Related Documents
 
-**"Silence is not an answer. 'I don't know' IS an answer."**
-
-### Trigger
-
-- **Loop Limit**: Strategic Retreat has been repeated **3 times** without success.
-- **Zero Results**: Refined queries yield 0 results, while broad queries overflow.
-
-### Action
-
-- **MUST** Stop the tool loop.
-- **MUST** Notify the user immediately.
-- **Format**:
-  > "I am stuck in a search loop.
-  >
-  > - Query A returned too many results (Overflow).
-  > - Query B returned 0 results.
-  > - I need help narrowing down the target."
-
-## 5. Related Documents
-
-| Document                                                                    | Purpose                                                  |
-| :-------------------------------------------------------------------------- | :------------------------------------------------------- |
-| [problem-solving.md](/.agent/rules/development/problem-solving.md)          | General problem solving guidelines ("Exploration First") |
-| [hallucination-awareness.md](/.agent/rules/core/hallucination-awareness.md) | Why verifying search results is critical                 |
-| [meta-rules.md](/.agent/rules/core/meta-rules.md)                           | Cross-linking standards (for link-based exploration)     |
+| Document                                                                    | Purpose                             |
+| :-------------------------------------------------------------------------- | :---------------------------------- |
+| [problem-solving.md](/.agent/rules/development/problem-solving.md)          | \"Exploration First\" guidelines    |
+| [hallucination-awareness.md](/.agent/rules/core/hallucination-awareness.md) | Risk of assumption-based navigation |
+| [Map of Territory](/.agent/rules/map.md)                                    | Project navigation                  |
 
 ---
 
 ## Origin
 
-- 2025-12-01T0000: Created
-- 2026-01-04T1041 by Polaris: Added Origin and Navigation (cross-link audit)
-- 2026-01-14T1610 by Polaris: Added cross-link to meta-rules.md
-
----
-
-**Navigation**: [← Back to Rules Index](/.agent/rules/README.md)
+- 2025-12-18 by Polaris: Initial search methodology creation.
+- 2026-01-25T0815 by Canopus: <<Seal: Rules-Standardization-Batch4>> Upgraded to v2.3 constitutional standards; removed legacy navigation footer. (v2.3.0)

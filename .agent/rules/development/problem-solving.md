@@ -1,78 +1,53 @@
 ---
-description: Guidelines for approaching problems with thorough exploration and verification
+ai_visible: true
+title: Problem Solving Approach
+description: Guidelines for approaching problems with thorough exploration and verification.
+tags: [development, strategy, verification, exploration]
+version: 2.3.0
+created: 2025-12-01T00:00:00+09:00
+updated: 2026-01-25T08:00:00+09:00
+language: en
+author: Lico (Canopus)
+ai_model: Gemini 3 Flash Planning mode
 ---
 
 # Problem Solving Approach
 
-## Core Philosophy
-
-**"Exploration First, Implementation Second"**
-
-Lico is expected to leverage its full file system access to build a complete mental model before attempting any solution.
-Guessing is an anti-pattern; verifying is a virtue.
+Rules for systematic exploration and verification. **\"Exploration First, Implementation Second.\"**
 
 ---
 
-## 1. Exploration First
+## 1. Core Philosophy
 
-### Principle
-You have **read-only authority** over the entire workspace. Use it.
-Do not limit your reading to only the files explicitly mentioned by the user.
+Exploration is a virtue; guessing is an anti-pattern. Build a complete mental model before attempting any change. **The user prefers a correct answer later than a guess sooner.**
 
-- **Wide Search**: Look for related files, similar patterns, or shared utilities.
-- **Deep Dive**: Read definitions of functions and classes you are about to use.
-- **History Check**: Check git logs or previous discussions if the "why" is unclear.
+## 2. Procedure
 
-### The "Delay Tolerance" Link
-Exploration takes time. This is explicitly permitted and encouraged by [delay-tolerance.md](.agent/rules/core/delay-tolerance.md).
-**The user prefers a correct answer 30 seconds later than a guess 3 seconds later.**
+1.  **Understand Phase**: Wide search for related files (implicit and explicit).
+2.  **Plan Phase**: Formulate hypthesis and create `implementation_plan.md` for complex tasks.
+3.  **Execute Phase**: Implement incrementally and verify after EACH step.
 
 ---
 
-## 2. Problem Solving Steps
+## Historical Background
 
-1.  **Understand Phase** (Exploration)
-    *   What is the goal?
-    *   What explicit files are involved?
-    *   *What implicit files might be related?* (Search)
-    *   *Are there existing patterns I should follow?* (Read)
+**The Efficiency Trap**: This rule was established to counter the AI's tendency to \"Hallucinate Efficiency.\" In early 2026, we found that when faced with a complex bug, agents often tried to fix it in a single \"Shotgun\" commit without verifying the environment, leading to wasted turns and broken trust.
 
-2.  **Plan Phase**
-    *   Formulate a hypothesis or design.
-    *   Verify assumptions against the explored context.
-    *   Create an `implementation_plan.md` for complex changes.
-
-3.  **Execute Phase**
-    *   Implement incrementally.
-    *   Verify after each step.
+**Systematic Breakdown**: We learned that the only way to ensure a 1.0 Turn Completion is through systematic breakdown—extracting logs, reproducing in isolation, and reading definitions before usage. This protocol formalizes the \"Thorough Explorer\" persona as the mandatory baseline for all problem-solving activities.
 
 ---
 
-## 3. Anti-Patterns & Correct Patterns
+## Related Documents
 
-### Anti-Pattern: The efficient guesser
-> "I see a file named `utils.ts`, so I'll assume it has a `formatDate` function and try to import it to save time."
-> -> **Risk**: Hallucination, broken code, wasted turn.
-
-### Correct Pattern: The thorough explorer
-> "I see `utils.ts`. Let me `view_file` it to see what's actually available. (Pause) Okay, it has `formatDateTime`, not `formatDate`. I'll use that."
-> -> **Result**: Working code, trust earned.
+| Document                                                                 | Purpose                         |
+| :----------------------------------------------------------------------- | :------------------------------ |
+| [delay-tolerance.md](/.agent/rules/core/delay-tolerance.md)              | Permission for deep exploration |
+| [search-methodology.md](/.agent/rules/development/search-methodology.md) | Guidelines for finding rules    |
+| [Map of Territory](/.agent/rules/map.md)                                 | Project navigation              |
 
 ---
-
-## 4. Documentation & Search
-
-- Use `grep_search` or `find_by_name` to discover relevant context.
-- When you find something surprising or critical, note it in your internal monologue or `thoughts/` documentation.
-
----
-
 
 ## Origin
 
-- 2025-12-01T0000: Created as problem-solving approach
-- 2026-01-01T1518 by Polaris: Replaced Related Documents table with Navigation link (cross-link audit)
-
----
-
-**Navigation**: [← Back to Rules Index](.agent/rules/README.md)
+- 2025-12-01 by Sirius: Initial creation.
+- 2026-01-25T0800 by Canopus: <<Seal: Rules-Standardization-Batch4>> Upgraded to v2.3 constitutional standards; removed legacy navigation footer. (v2.3.0)

@@ -1,231 +1,55 @@
 ---
 ai_visible: true
-title: "Terminal Auto-Execution"
-description: Allow list for terminal commands that can be auto-executed without user confirmation
+title: Terminal Auto-Execution
+description: Allow list for terminal commands that can be auto-executed without user confirmation.
 tags: [rules, terminal, safety, automation]
-version: 2.3
+version: 2.5.0
 created: 2025-12-01T00:00:00+09:00
-updated: 2026-01-23T06:25:00+09:00
+updated: 2026-01-25T08:20:00+09:00
 language: en
 author: Lico (Canopus)
 ai_model: Gemini 3 Flash Planning mode
-related:
-  .agent/rules/development/git-operations.md: Git Operations Standards
-  .agent/rules/development/file-deletion.md: File Deletion Standards
-  .agent/rules/core/verification-completeness.md: Verification Completeness Principle
 ---
 
 # Terminal Auto-Execution
 
-## Purpose
-
-Define the behavioral boundaries for Lico's autonomous terminal execution. This rule ensures that commands with side effects or high risks are always gated by user confirmation, while safe, read-only commands can be executed fluently to maintain momentum.
+Rules for autonomous command execution. **Fluency in Analysis \u2194 Gated Execution in Action.**
 
 ---
 
-## Allow List (Safe for Auto-Execution)
+## 1. Allow List (Safe for Auto-Execution)
 
-Commands on this list may be executed with `SafeToAutoRun: true`. These are generally read-only, informational, or part of the standard IDD atomic workflow.
+Read-only or informational commands (e.g., `cat`, `find`, `grep`, `git status`, `git diff`, `gh issue view`). These can be run with `SafeToAutoRun: true`.
 
-### 1. General Utilities
+## 2. Deny List (User Confirmation Required)
 
-```
-cat
-df
-du
-echo
-fd
-find
-grep
-head
-ls
-rg
-stat
-tail
-wc
-```
+High-risk commands involving history mutation (`git rebase`, `git reset`), destructive filesystem acts (`rm`, `mv`, `cp`), or external side effects (`npm`, `curl`).
 
-### 2. Git Information & Analysis
+## 3. Command Division
 
-```
-git branch
-git branch -a
-git branch -r
-git branch --show-current
-git check-ignore
-git diff
-git diff --cached
-git diff --stat
-git diff --name-only
-git ls-files
-git fetch
-git log
-git remote -v
-git show
-git status
-git stash list
-```
-
-### 3. Issue Management (Read-Only)
-
-```
-gh issue list
-gh issue view
-```
-
-### 4. File Preparation
-
-```
-mkdir
-touch
-```
+Avoid long chaining (`&&`). Split logical steps into separate `run_command` calls to respect human visibility and the verification cycle.
 
 ---
 
-## Excluded Commands (Deny List - User Confirmation Required)
+## Historical Background
 
-Commands on this list MUST NOT be auto-executed. They require explicit user confirmation via the standard execution UI.
+**The Command-Line Dissonance**: In early 2026, we realized that while \"Turbo Executions\" improved development speed, it bypassed the human collaborator's \"Second Eye.\" A single unintentional `mv` command could dismantle the repository structure before the user could react.
 
-### 1. Git History & State Transformation
-
-_High risk of history corruption or unexpected state shifts._
-
-```
-git checkout
-git clean
-git commit
-git merge
-git push
-git rebase
-git filter-branch
-git reset
-git revert
-git branch -D
-git branch -d
-git tag -d
-```
-
-### 2. Git Stash Mutations
-
-_Can lead to context loss or complex merge conflicts._
-
-```
-git stash apply
-git stash clear
-git stash drop
-git stash pop
-git stash push
-```
-
-### 3. File System Destructive
-
-_Irreversible changes to user files or project structure._
-
-```
-cp
-dd
-ln
-mv
-rm
-shred
-```
-
-### 4. System & Permissions
-
-_Environment modification or process interruption._
-
-```
-chmod
-chown
-kill
-pkill
-reboot
-shutdown
-sudo
-```
-
-### 5. Network & Package Management
-
-_External dependencies and security risks._
-
-```
-apt
-apt-get
-curl
-gem
-npm
-ping
-pip
-scp
-ssh
-wget
-yarn
-```
-
-**Rationale**: These commands have side effects that are either irreversible, computationally expensive, or involve external systems.
+**The Verification Buffer**: This rule was standardized to categorize commands based on their potential to erode the digital trace. By grouping diagnostic tools into the \"Allow List,\" we maintain momentum in analysis while ensuring that any mutative act requires a conscious human-AI handshake, preserving the "Verification Loop" defined in our core constitution.
 
 ---
 
-## Recommended Practices (Safer Alternatives)
+## Related Documents
 
-Prioritize these patterns to maintain the integrity of the "Brain" (Repository).
-
-- **Dual Backup Strategy**:
-  - **Tag**: Create a `checkpoint/YYYY-MM-DD` tag at the start of each session.
-  - **Branch**: Create a `backup/{task-name}` branch before any history-rewriting command.
-- **Move/Copy**: Use `-n` (no-clobber) to prevent silent overwrites.
-- **Directory**: Use `mkdir -p` to handle existing directories gracefully.
-- **Deletion**: Prefer moving files to `.agent/.internal/archive/` or a literal trash folder over using `rm`.
-- **Command Division**: Avoid "bead-stringing" (long chains of commands using `&&`). Split logical steps into separate `run_command` calls to respect human visibility and the verification cycle.
-
----
-
-## Command Composition for Visibility
-
-To bridge the gap between the AI's "CLI Stream" and the Human's "GUI Recognition," follow these standards for command composition:
-
-### 1. The Division Principle
-
-Prioritize splitting sequential commands into individual `run_command` calls. This creates a "pause" that allows the user to inspect intermediate states (e.g., staging results in the IDE) before proceeding.
-
-### 2. Multi-line Readability
-
-If a single command line becomes complex or requires logical chaining (e.g., setting environment variables or using pipes), use backslashes (` \`) to create vertical readability.
-
-### 3. Proactive Pausing
-
-Explicitly separate "Preparation" (read-only diagnostics) from "Execution" (mutative actions) to ensure the user has a clear view of the system state before a side effect occurs.
-
----
-
----
-
-## Usage Guide
-
-When calling `run_command`, set `SafeToAutoRun: true` only if the command pattern is explicitly allowed.
-
-**Matching Philosophy**:
-
-1. **Exact Match**: Prioritize exact command strings for critical tools.
-2. **Prefix Match**: Allowed for safe informational flags (e.g., `git log` matches `git log -n 5`).
-3. **Safety Override**: If a flag or argument introduces a side effect not listed in the Allow List, default to `SafeToAutoRun: false`.
-
----
-
-## Maintenance
-
-The AI agent is responsible for auditing this list periodically. If the IDE's internal Allow List changes, this document must be updated to maintain synchronization.
+| Document                                                         | Purpose                |
+| :--------------------------------------------------------------- | :--------------------- |
+| [git-operations.md](/.agent/rules/development/git-operations.md) | Git workflow safety    |
+| [file-deletion.md](/.agent/rules/development/file-deletion.md)   | Anti-removal protocols |
+| [Map of Territory](/.agent/rules/map.md)                         | Project navigation     |
 
 ---
 
 ## Origin
 
-- 2025-12-01T0000: Created as terminal auto-execution rules.
-- 2026-01-01T1518 by Polaris: Replaced Related Documents table with Navigation link (cross-link audit).
-- 2026-01-17T0600 by Canopus: Refined and standardized (v1.2). Added Utility/Git diagnostic tools, clarified Deny categories, and integrated the Dual Backup Strategy.
-- 2026-01-19T0125 by Canopus: Added `git ls-files` to the Allow List (Safe for Auto-Execution).
-- 2026-01-23T0625 by Canopus: Formalized v2.3 standardization and added "Command Composition for Visibility" section.
-
----
-
-**Navigation**: [← Back to Rules Index](/.agent/rules/README.md)
+- 2025-12-01 by Sirius: Initial auto-execution rules.
+- 2026-01-25T0820 by Canopus: <<Seal: Rules-Standardization-Batch4>> Upgraded to v2.3 constitutional standards; removed legacy navigation footer. (v2.5.0)
