@@ -59,11 +59,25 @@ Define when and how to post comments to GitHub Issues and Pull Requests.
 
 ---
 
-## 3. Notes Section Guidelines
+## 3. Information Density & Notes
+
+### 3.1 Notes Section Guidelines
 
 - Use for **objective** observations only
 - Subjective content belongs in **Letters** (`.agent/.internal/letters/`)
 - Keep brief; link to relevant files if needed
+
+### 3.2 Comment Enrichment (High-Density Context)
+
+**REQUIRED** when N > 20 commits since the last checkpoint, or after major structural changes.
+
+| Component        | Description                                                    |
+| :--------------- | :------------------------------------------------------------- |
+| **Statistics**   | Commit counts per Identifier/Context-ID since last checkpoint. |
+| **Milestones**   | Summary of structural, cognitive, or technical achievements.   |
+| **Audit Status** | Confirmation of file integrity and rule compliance.            |
+
+**Rationale**: For long-term sessions, a simple hash record is insufficient. Enriched comments serve as a "Societal Timeline" for future AI instances to reconstruct context without analyzing hundreds of individual diffs.
 
 ---
 
@@ -142,6 +156,7 @@ This workflow applies whenever posting comments to GitHub:
 - 2026-01-15T2026 by Polaris: Created (separated from issue-comment.md template)
 - 2026-01-15T2346 by Polaris: Added directory structure, naming conventions, and detailed workflow
 - 2026-01-17T1745 by Canopus: Standardized metadata and root-relative link patterns (v1.1).
+- 2026-01-25T0620 by Canopus: Added Information Density & Enrichment guidelines for high-volume checkpoints (v1.2).
 
 ---
 

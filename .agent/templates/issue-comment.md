@@ -17,9 +17,15 @@ Copy the appropriate template below when posting to GitHub Issues or PRs.
 
 <N> commits since <previous-checkpoint-hash>
 
-All commit messages follow the format: `<Identifier>: [Context-ID] type: description (Phase)`
+**Milestones**:
 
-<Any issues found or "No issues found.">
+- <milestone 1>
+- <milestone 2>
+
+**Audit Status**:
+
+- [ ] Compliance with `<Identifier>: [Context-ID] type: description (Phase)`
+- [ ] Context Integrity verified
 ```
 
 ---
