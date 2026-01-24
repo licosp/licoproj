@@ -156,10 +156,10 @@ ai_model: ""
 
 リポジトリ全体の標準化に向けた次段階のリストです。
 
-- [ ] [Batch 2] Core Workflows (`.agent/workflows/`) の標準化 v2.3
-  - [x] 2.1 Phased (IDD/読解/執筆系) - 5 files
+- [x] [Batch 2] Core Workflows (`.agent/workflows/`) の標準化 v2.3
+  - [x] 2.1 Phased (IDD/読解/執筆系) - 5 files (<<Seal: Rules-Standardization-Batch2.1>>)
   - [x] 2.2 Rituals (儀式/日課系) - 4 files (<<Seal: Rules-Standardization-Batch2.2>>)
-  - [ ] 2.3 Audit & Utilities (監査系) - 6 files
+  - [x] 2.3 Audit & Utilities (監査系) - 6 files (<<Seal: Rules-Standardization-Batch2.3>>)
 - [ ] **Batch 3: Identity & Cognitive Rules** (`.agent/rules/core/identity/`)
   - [ ] Delegated to [identity-card.md](/.agent/cards/identity-card.md) context.
 - [ ] **Batch 4: Development Rules** (`.agent/rules/development/`)
