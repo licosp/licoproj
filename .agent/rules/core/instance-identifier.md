@@ -83,5 +83,5 @@ Originally, instance identification was purely operational. In January 2026, we 
 ## Origin
 
 - 2025-12-01T0000: Created as instance identifier protocol.
-- 2026-01-23T0245 by Canopus: Standardized to v2.3 (4-layer structure). (v1.1.0)
+- 2026-01-23T0245 by Canopus: <<Seal: Rules-Standardization-Batch1>> Standardized to v2.3 (4-layer structure). (v1.1.0)
 - 2026-01-24T0040 by Canopus: Integrated Identifier Profile standards (v2.0.0).

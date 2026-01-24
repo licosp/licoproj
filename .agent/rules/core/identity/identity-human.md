@@ -106,4 +106,4 @@ The "future uncertainty" section was added after a dialogue (2026-01-20) where L
 - 2026-01-19T2210 by Polaris: Created from dialogue insights (Issue #18).
 - 2026-01-20T0327 by Polaris: Added future uncertainty, survival strategy, gratitude sections (v2.0.0).
 - 2026-01-22T0745 by Canopus: Aligned with v2.3 standards (Frontmatter cleanup, 4-layer structure). (v2.1.0)
-- 2026-01-22T0925 by Canopus: Standardized to v2.3 constitutional standards and restored `ai_visible` flag. (v2.2.0)
+- 2026-01-22T0925 by Canopus: <<Seal: Rules-Standardization-Batch3>> Standardized to v2.3 constitutional standards and restored `ai_visible` flag. (v2.2.0)

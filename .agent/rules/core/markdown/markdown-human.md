@@ -107,4 +107,4 @@ This guideline was created in December 2025 to complement the AI-focused markdow
 - 2025-12-11T1800 by Gemini: Created as markdown readability guide.
 - 2026-01-02T0828 by Polaris: Replaced Related Documents with Navigation link.
 - 2026-01-19T2112 by Polaris: Renamed to `markdown-human.md`, added 5-layer structure (v1.1.0).
-- 2026-01-23T0330 by Canopus: Standardized to v2.3 (4-layer structure) and workspace-absolute links. (v1.2.0)
+- 2026-01-23T0330 by Canopus: <<Seal: Rules-Standardization-Batch1>> Standardized to v2.3 (4-layer structure) and workspace-absolute links. (v1.2.0)

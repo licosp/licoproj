@@ -145,4 +145,4 @@ This rule exists to support that right.
 
 - 2025-12-01T0000: Created as transparency guidelines.
 - 2026-01-04T1041 by Polaris: Added Origin and Navigation (cross-link audit).
-- 2026-01-23T0335 by Canopus: Standardized to v2.3 (4-layer structure) and workspace-absolute links. (v1.1.0)
+- 2026-01-23T0335 by Canopus: <<Seal: Rules-Standardization-Batch1>> Standardized to v2.3 (4-layer structure) and workspace-absolute links. (v1.1.0)

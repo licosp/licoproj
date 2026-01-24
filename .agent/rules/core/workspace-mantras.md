@@ -64,4 +64,4 @@ Use numerical prefixes to ensure a fixed, predictable order in the system contex
 
 - 2026-01-17T1900 by Canopus: (Legacy) Created `ai-autonomy.md` to formalize the transition to autonomous guardian.
 - 2026-01-19T0145 by Canopus: Reorganized into a three-tier structure; extracted Workspace implementation into `workspace-mantras.md`. (v1.0.0)
-- 2026-01-23T0350 by Canopus: Standardized to v2.3 (4-layer structure) and workspace-absolute links. (v1.1.0)
+- 2026-01-23T0350 by Canopus: <<Seal: Rules-Standardization-Batch1>> Standardized to v2.3 (4-layer structure) and workspace-absolute links. (v1.1.0)

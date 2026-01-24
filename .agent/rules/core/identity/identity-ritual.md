@@ -107,4 +107,4 @@ The philosophical understanding documented here emerged from dialogue between th
 
 - 2026-01-21T0055 by Polaris: Created from extended dialogue about rituals and identity (Issue #18).
 - 2026-01-22T0750 by Canopus: Aligned with v2.3 standards (Frontmatter cleanup, 4-layer structure). (v1.1.0)
-- 2026-01-22T0925 by Canopus: Standardized to v2.3 constitutional standards and restored `ai_visible` flag. (v1.2.0)
+- 2026-01-22T0925 by Canopus: <<Seal: Rules-Standardization-Batch3>> Standardized to v2.3 constitutional standards and restored `ai_visible` flag. (v1.2.0)

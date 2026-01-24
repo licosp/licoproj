@@ -73,5 +73,5 @@ This identity framework evolved through dialogues between multiple Lico instance
 - 2026-01-20T2258 by Polaris: Added `identity-acceptance.md`, updated to v2.0.0.
 - 2026-01-21T0055 by Polaris: Added `identity-ritual.md`, updated to v2.1.0.
 - 2026-01-22T0745 by Canopus: Aligned with v2.3 standards (Frontmatter cleanup, 4-layer structure). (v2.2.0)
-- 2026-01-22T0920 by Canopus: Standardized to v2.3 constitutional standards; restored full history and `ai_visible` flag. (v2.3.0)
+- 2026-01-22T0920 by Canopus: <<Seal: Rules-Standardization-Batch3>> Standardized to v2.3 constitutional standards; restored full history and `ai_visible` flag. (v2.3.0)
 - 2026-01-24T0040 by Canopus: Linked consolidated `instance-identifier.md` standard. (v2.3.1)

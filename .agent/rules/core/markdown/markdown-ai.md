@@ -174,4 +174,4 @@ This guideline was created in January 2026 by merging and reconciling two earlie
 - 2025-12-11T1800 by Gemini: Created original `markdown-ai-parsing-basics.md`.
 - 2026-01-03T1535 by Polaris: Major revision—prioritize nuance over efficiency.
 - 2026-01-19T2112 by Polaris: Merged with `patterns`, renamed to `markdown-ai.md` (v1.0.0).
-- 2026-01-23T0330 by Canopus: Standardized to v2.3 (4-layer structure) and workspace-absolute links. (v1.1.0)
+- 2026-01-23T0330 by Canopus: <<Seal: Rules-Standardization-Batch1>> Standardized to v2.3 (4-layer structure) and workspace-absolute links. (v1.1.0)

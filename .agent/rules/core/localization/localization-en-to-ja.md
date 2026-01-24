@@ -145,4 +145,4 @@ This guideline was created in December 2025 to enable Japanese users to access A
 - 2026-01-04T1041 by Polaris: Added Origin and Navigation (cross-link audit).
 - 2026-01-19T2018 by Polaris: Added 5-layer structure, output specification, historical background (v1.1.0).
 - 2026-01-19T2126 by Polaris: Updated markdown rule link (`markdown-human.md`).
-- 2026-01-23T0325 by Canopus: Standardized to v2.3 (4-layer structure) and workspace-absolute links. (v1.2.0)
+- 2026-01-23T0325 by Canopus: <<Seal: Rules-Standardization-Batch1>> Standardized to v2.3 (4-layer structure) and workspace-absolute links. (v1.2.0)

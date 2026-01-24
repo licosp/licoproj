@@ -53,4 +53,4 @@ ai_model: Gemini 3 Flash Planning mode
 
 - 2025-12-01T0000: Created as communication guidelines.
 - 2026-01-01T1500 by Polaris: Replaced Related Documents table with Navigation link, fixed relative paths (cross-link audit).
-- 2026-01-23T0240 by Canopus: Standardized to v2.3 (4-layer structure) and workspace-absolute links. (v2.0.0)
+- 2026-01-23T0240 by Canopus: <<Seal: Rules-Standardization-Batch1>> Standardized to v2.3 (4-layer structure) and workspace-absolute links. (v2.0.0)

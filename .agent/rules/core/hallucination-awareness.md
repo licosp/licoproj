@@ -203,4 +203,4 @@ This rule should be revisited when:
 
 - 2025-12-05T2100: Created by Grok.
 - 2026-01-01T1449 by Polaris: Replaced Related Documents table with Navigation link (cross-link audit).
-- 2026-01-23T0250 by Canopus: Standardized to v2.3 (4-layer structure) and workspace-absolute links. (v1.1.0)
+- 2026-01-23T0250 by Canopus: <<Seal: Rules-Standardization-Batch1>> Standardized to v2.3 (4-layer structure) and workspace-absolute links. (v1.1.0)

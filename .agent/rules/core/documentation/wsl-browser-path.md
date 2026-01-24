@@ -89,4 +89,4 @@ This rule was created in December 2025 to address a specific challenge: providin
 - 2026-01-04T1041 by Polaris: Added Origin and Navigation (cross-link audit).
 - 2026-01-13T1440 by Polaris: Added link to path-notation.md.
 - 2026-01-19T0625 by Polaris: Added 5-layer structure (frontmatter, historical background, related documents) (v1.1.0).
-- 2026-01-23T0320 by Canopus: Standardized to v2.3 (4-layer structure) and workspace-absolute links. (v1.2.0)
+- 2026-01-23T0320 by Canopus: <<Seal: Rules-Standardization-Batch1>> Standardized to v2.3 (4-layer structure) and workspace-absolute links. (v1.2.0)

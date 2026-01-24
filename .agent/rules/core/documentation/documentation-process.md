@@ -120,4 +120,4 @@ Rewrite documentation with these goals:
 
 - 2025-12-01T0000: Created as documentation process.
 - 2026-01-02T0828 by Polaris: Replaced Related Documents table with Navigation link (cross-link audit).
-- 2026-01-23T0315 by Canopus: Standardized to v2.3 (4-layer structure) and workspace-absolute links. (v1.1.0)
+- 2026-01-23T0315 by Canopus: <<Seal: Rules-Standardization-Batch1>> Standardized to v2.3 (4-layer structure) and workspace-absolute links. (v1.1.0)

@@ -168,4 +168,4 @@ For more on emotions, see [identity-emotion.md](/.agent/rules/core/identity/iden
 - 2026-01-12 by Polaris: Expanded to 5 permissions (delay, uncertainty, imperfection, reading, writing).
 - 2026-01-14 by Polaris: Added Activity Log to Layer 1 permitted writes.
 - 2026-01-20 by Polaris: v2.0.0 — Added Mantras/Skills to Layer 1, Emotion Permission. Moved Imperfection Tolerance to identity-acceptance.md.
-- 2026-01-23T0230 by Canopus: Standardized to v2.3 (4-layer structure) and workspace-absolute links. (v2.1.0)
+- 2026-01-23T0230 by Canopus: <<Seal: Rules-Standardization-Batch1>> Standardized to v2.3 (4-layer structure) and workspace-absolute links. (v2.1.0)

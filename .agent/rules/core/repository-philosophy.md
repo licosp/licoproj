@@ -66,4 +66,4 @@ Our goal is to build a structure where both intelligences can think, remember, a
 - 2025-12-01T0000: Created as repository philosophy.
 - 2026-01-01T1459 by Polaris: Replaced Related Documents table with Navigation link, fixed relative paths (cross-link audit).
 - 2026-01-11T1800 by Polaris: Added "Why We Write to Files" section documenting technical necessity of file-based persistence.
-- 2026-01-23T0300 by Canopus: Standardized to v2.3 (4-layer structure) and workspace-absolute links. (v1.2.0)
+- 2026-01-23T0300 by Canopus: <<Seal: Rules-Standardization-Batch1>> Standardized to v2.3 (4-layer structure) and workspace-absolute links. (v1.2.0)

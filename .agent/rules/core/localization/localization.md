@@ -149,4 +149,4 @@ This standard was created in January 2026 to address fragmentation in translatio
 
 - 2026-01-19T2041 by Polaris: Created as parent rule for all localization work.
 - 2026-01-19T2126 by Polaris: Updated markdown rule links (`markdown-ai.md`, `markdown-human.md`).
-- 2026-01-23T0325 by Canopus: Standardized to v2.3 (4-layer structure) and workspace-absolute links. (v1.1.0)
+- 2026-01-23T0325 by Canopus: <<Seal: Rules-Standardization-Batch1>> Standardized to v2.3 (4-layer structure) and workspace-absolute links. (v1.1.0)

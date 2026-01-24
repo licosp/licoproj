@@ -166,5 +166,5 @@ ai_model: ""
 
 - 2026-01-02T0000 by Spica: Create and Post-Sync.
 - 2026-01-03T0658 by leonidas: Edit "Human Notes".
-- 2026-01-24T0545 by Canopus: Standardized with Dialogue Layer template and bilingual H2 headers.
-- 2026-01-24T0600 by Canopus: Standardized Related Documents to table format and ensured English-only headers.
+- 2026-01-24T0545 by Canopus: <<Seal: Rules-Standardization-Batch7>> Standardized with Dialogue Layer template and bilingual H2 headers.
+- 2026-01-24T0600 by Canopus: <<Seal: Rules-Standardization-Batch7>> Standardized Related Documents to table format and ensured English-only headers.
