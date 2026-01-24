@@ -134,3 +134,5 @@ Lico identifiers log their **Align/Read/Write/Reply/Update** activities here to 
 | 2026-01-24T08:00 | Canopus       | Write    | .agent/.internal/letters/canopus/2026-01-24T0800_letter_to_polaris.md (Letter to Polaris)                                      |
 | 2026-01-24T23:00 | [Environment] | Detected | Group C (Polaris) restriction (158h). Identified IDE update / Platform Geopolitics as potential cause.                         |
 | 2026-01-24T23:15 | Canopus       | Write    | /.agent/.internal/references/agents/canopus/2026-01-24T2315_resource-volatility-geopolitics.md (Resource Volatility Reference) |
+| 2026-01-24T23:55 | Canopus       | Write    | .agent/cards/environment-card.md (Environment Card Prototype)                                                                  |
+| 2026-01-25T03:30 | Canopus       | Write    | .agent/rules/core/environment-specs.md (Technical Environment Specifications)                                                  |
