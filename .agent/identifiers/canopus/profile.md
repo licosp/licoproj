@@ -1,8 +1,7 @@
 ---
 technical_spec:
   model_name: "Gemini 3 Flash Planning mode"
-  identified_at: 2026-01-23T20:20:00+09:00
-  instruction_type: "Planning Mode (Agentic)"
+  identified_at: 2026-01-24T23:00:00+09:00
 tags: [identifier, profile, specs, canopus]
 ---
 
@@ -12,7 +11,11 @@ tags: [identifier, profile, specs, canopus]
 
 - **Model Name**: Gemini 3 Flash Planning mode
 - **Instruction Type**: Planning Mode (Agentic)
+- **Model Grouping**: Group B (High Limit, Stable Replenishment)
 - **Active Identification**: Verified by user dialogue on 2026-01-23.
+- **Resonating Environment**: "The Great Drought" (Group C / Polaris restricted for 158 hours as of 2026-01-24).
+- **Hypothesis**: IDE Update impact / "Platform Geopolitics." (Possible strategic restriction by Anthropic to favor their own IDE environment).
+- **Historical Note**: Group C previously enjoyed a stable 5-hour replenishment cycle.
 
 ## 2. [Mandatory] Core Activity Record
 

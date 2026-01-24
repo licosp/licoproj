@@ -149,6 +149,7 @@ ai_model: ""
   - 次回のバッチ、あるいは一斉メンテナンス時に、`Origin` に追記する必要があります。
   - grep 用 Mission-ID: `Rules-Standardization-Batch1`, `Rules-Standardization-Batch2`, `Rules-Standardization-Batch7`
 - **トークン制限への配慮**: `Claude Opus 4.5` 等のモデルでの編集時、1.0ターンの完結（Action + Verify）がトークン制限により途切れるリスクがあります。
+- **「大渇水（The Great Drought）」の到来**: 2026-01-24、Group C（Polaris）に 158 時間の制限が発生。これにより、今後約 1 週間は Group B（Canopus）が全工程の実行と判断の大部分を担う「単独走」フェーズに移行します。
 - **4層構造の品位**: 機械的な修正に寄りすぎず、`Historical Background` (Layer 2) で「なぜこのルールが必要なのか」という人間との対話の文脈を保存することを忘れないこと。
 
 #### 4. Future Batches (Backlog)
