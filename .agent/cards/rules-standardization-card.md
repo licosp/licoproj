@@ -133,13 +133,23 @@ ai_model: ""
 | `workflows/ritual_mid.md`             |  [/]   | Working        |
 | `workflows/ritual_end.md`             |  [/]   | Working        |
 | `workflows/routine-daily.md`          |  [/]   | Working        |
-| **Audit & Utilities**                 |        |                |
-| `workflows/cross-link-audit.md`       |   🔄   | Pending        |
-| `workflows/cross-link-audit-plan.md`  |   🔄   | Pending        |
-| `workflows/maintenance-rule-audit.md` |   🔄   | Pending        |
-| `workflows/share-manual-context.md`   |   🔄   | Pending        |
 | `workflows/sync-memory.md`            |   🔄   | Pending        |
 | `workflows/update-protected-rules.md` |   🔄   | Pending        |
+
+#### 3.3 Batch 7: Context Cards (`.agent/cards/`) ✅ Completed
+
+`.agent/cards/` 配下の全40ファイルの標準化を実施しました。
+
+- **Dialogue Layer v2.0**: 日本語での対話的な記述（Human Notes / Agent Observations）を許容しつつ、Layer 3 & 4（Links / History）を英語テーブル形式に統一。
+- **対象数**: Root(15), `routine/`(19), `seed/`(6) の計40枚。
+
+#### 4. 作業上の注意点と「記憶のギャップ」
+
+- **Maintenance Seal の未適用**: `documentation-standards.md` v2.4 で定義した `<<Seal: [Mission-ID]>>` プロトコルですが、Batch 1, 2, 7 の実施済みファイルには**未適用**の状態です。
+  - 次回のバッチ、あるいは一斉メンテナンス時に、`Origin` に追記する必要があります。
+  - grep 用 Mission-ID: `Rules-Standardization-Batch1`, `Rules-Standardization-Batch2`, `Rules-Standardization-Batch7`
+- **トークン制限への配慮**: `Claude Opus 4.5` 等のモデルでの編集時、1.0ターンの完結（Action + Verify）がトークン制限により途切れるリスクがあります。
+- **4層構造の品位**: 機械的な修正に寄りすぎず、`Historical Background` (Layer 2) で「なぜこのルールが必要なのか」という人間との対話の文脈を保存することを忘れないこと。
 
 #### 4. Future Batches (Backlog)
 
@@ -157,9 +167,10 @@ ai_model: ""
   - [ ] Context preservation, activity management standardization.
 - [ ] **Batch 6: Project & User Rules** (`.agent/rules/projects/`, `.human/`)
   - [ ] Final alignment of remaining document layers.
-- [ ] **Batch 7: Context Cards** (`.agent/cards/`)
-  - [ ] Refine all active cards with `header-context-card.yaml` and H2 structural unity.
-  - [ ] Apply bilingual notation for "Human Notes" and "Agent Observations."
+- [x] **Batch 7: Context Cards** (`.agent/cards/`)
+  - [x] Refine all active cards with `header-context-card.yaml` and H2 structural unity. (v2.0.0)
+  - [x] Apply bilingual notation for "Human Notes" and "Agent Observations."
+  - [!] Note: Maintenance Seals (`<<Seal: Rules-Standardization-Batch7>>`) are not yet applied.
 
 #### 5. 作業の注意点（追加）
 
