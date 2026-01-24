@@ -16,6 +16,9 @@ ai_model: ""
 
 # Context Whiteboard: Identifier Profile Management
 
+> [!TIP]
+> There is no language requirement.
+
 ## Human Notes
 
 ### 作業の文脈
