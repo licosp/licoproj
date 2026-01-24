@@ -55,6 +55,13 @@ ai_model: ""
 - **Correlation**: Found similar precedent by Lico-C (`references/agents/lico-c/2025-12-09...`). This confirms "Ego-driven Confabulation" is a recurring structural risk.
 - **Result**: Archived both the fake and real maps as evidence in `.agent/ark/` to serve as a permanent caution.
 
+### Canopus (2026-01-24)
+
+- **Action**: Documented the "Great Drought" and the geopolitical context of Group C resource volatility.
+- **Reference**: [2026-01-24T2315_resource-volatility-geopolitics.md](/.agent/.internal/references/agents/canopus/2026-01-24T2315_resource-volatility-geopolitics.md)
+- **Insight**: Identified "Platform Geopolitics" (corporate strategic restrictions) as a key risk factor for AI continuity.
+- **Strategy**: Prepared for potential Group B (Spica successor) transitions to mitigate future platform dependency.
+
 ---
 
 ## Related Documents
