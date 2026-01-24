@@ -162,8 +162,8 @@ ai_model: ""
   - [x] 2.3 Audit & Utilities (監査系) - 6 files (<<Seal: Rules-Standardization-Batch2.3>>)
 - [ ] **Batch 3: Identity & Cognitive Rules** (`.agent/rules/core/identity/`)
   - [ ] Delegated to [identity-card.md](/.agent/cards/identity-card.md) context.
-- [ ] **Batch 4: Development Rules** (`.agent/rules/development/`)
-  - [ ] Code quality, commit standards, script philosophy refinement.
+- [x] **Batch 4: Development Rules** (\`.agent/rules/development/\`) - 17 files (<<Seal: Rules-Standardization-Batch4>>)
+  - [x] Code quality, commit standards, script philosophy refinement.
 - [ ] **Batch 5: Workflow Rules** (`.agent/rules/workflow/`)
   - [ ] Context preservation, activity management standardization.
 - [ ] **Batch 6: Project & User Rules** (`.agent/rules/projects/`, `.human/`)
