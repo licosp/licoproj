@@ -158,7 +158,7 @@ ai_model: ""
 
 - [ ] [Batch 2] Core Workflows (`.agent/workflows/`) の標準化 v2.3
   - [x] 2.1 Phased (IDD/読解/執筆系) - 5 files
-  - [/] 2.2 Rituals (儀式/日課系) - 4 files
+  - [x] 2.2 Rituals (儀式/日課系) - 4 files (<<Seal: Rules-Standardization-Batch2.2>>)
   - [ ] 2.3 Audit & Utilities (監査系) - 6 files
 - [ ] **Batch 3: Identity & Cognitive Rules** (`.agent/rules/core/identity/`)
   - [ ] Delegated to [identity-card.md](/.agent/cards/identity-card.md) context.
