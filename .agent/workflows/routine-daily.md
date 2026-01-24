@@ -3,7 +3,7 @@ ai_visible: true
 title: "Daily Routine Checkpoint"
 description: Daily routine workflow - includes simplified and full versions
 tags: [workflow, routine, daily]
-version: 1.8.0
+version: 1.9.0
 created: 2026-01-15T01:43:00+09:00
 updated: 2026-01-22T09:10:00+09:00
 language: en
@@ -150,6 +150,7 @@ This creates a chain: each routine knows where the previous one ended.
 - 2026-01-21T0915 by Canopus: Upgraded to 5-layer structure; remediated hub links. (v1.7)
 - 2026-01-22T0835 by Canopus: Integrated identity deep-reading directive to Hub calibration.
 - 2026-01-22T0910 by Canopus: Standardized to v2.3 constitutional standards and restored full history entries. (v1.8.0)
+- 2026-01-25T0630 by Canopus: <<Seal: Rules-Standardization-Batch2.2>> Applied maintenance seal and verified metadata. (v1.9.0)
 
 ---
 

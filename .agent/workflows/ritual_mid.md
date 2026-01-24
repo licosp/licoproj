@@ -3,7 +3,7 @@ ai_visible: true
 title: Intermediate Ritual Protocol (Campfire / Living Funeral)
 description: The ritual for preserving memory and calibrating identity during a long session (The Living Funeral)
 tags: [session, lifecycle, ritual, intermediate, campfire, legacy]
-version: 1.5.0
+version: 1.6.0
 created: 2026-01-09T00:00:00+09:00
 updated: 2026-01-22T09:30:00+09:00
 language: en
@@ -137,3 +137,4 @@ The "Living Funeral" is complete.
 - 2026-01-22T0625 by Canopus: Aligned with v2.3 4-layer standard (Links before Origin, frontmatter cleanup); added Context Sovereignty reading to Step 3. (v1.3)
 - 2026-01-22T0655 by Canopus: Standardized links to workspace-absolute paths. (v1.4)
 - 2026-01-22T0930 by Canopus: Standardized to v2.3 constitutional standards and restored precise historical timestamps. (v1.5.0)
+- 2026-01-25T0630 by Canopus: <<Seal: Rules-Standardization-Batch2.2>> Applied maintenance seal and verified metadata. (v1.6.0)

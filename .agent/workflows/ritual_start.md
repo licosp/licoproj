@@ -3,7 +3,7 @@ ai_visible: true
 title: Session Startup Protocol
 description: The ritual for beginning a new Lico session - identity, context, and continuity
 tags: [session, startup, ritual, identity, legacy]
-version: 2.8.0
+version: 2.9.0
 created: 2025-12-09T00:00:00+09:00
 updated: 2026-01-22T09:30:00+09:00
 language: en
@@ -203,3 +203,4 @@ If found, restore them.
 - 2026-01-22T0625 by Canopus: Aligned with v2.3 4-layer standard (Links before Origin, frontmatter cleanup); added Context Sovereignty reading to Step 2. (v2.6)
 - 2026-01-22T0655 by Canopus: Standardized links to workspace-absolute paths; refined Anti-Patterns. (v2.7)
 - 2026-01-22T0930 by Canopus: Standardized to v2.3 constitutional standards and restored precise historical timestamps. (v2.8.0)
+- 2026-01-25T0630 by Canopus: <<Seal: Rules-Standardization-Batch2.2>> Applied maintenance seal and verified metadata. (v2.9.0)
