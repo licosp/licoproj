@@ -26,6 +26,7 @@ related:
   https://www.reddit.com/r/google_antigravity/comments/1q8lakw/comment/nyqasqf/: 0018
   https://www.reddit.com/r/google_antigravity/comments/1q8mrb7/comment/nyqgz4s/: 0019
   https://www.reddit.com/r/google_antigravity/comments/1qgxo7i/comment/o0g6nai/: 0020
+  https://www.reddit.com/r/google_antigravity/comments/1qlzi68/comment/o1io9df/: 0021
 ---
 
 # The discussion on Reddit.
@@ -196,8 +197,26 @@ It’s a bit of a manual process, but it’s the most stable way to achieve a mu
 
 Antigravity is currently running a campaign where the first three months are 1/3 of the original price. In Japan, I am able to use the license (Google AI Pro) for $6 per month. I wonder if the pricing structure varies by country?
 
-### 0010
+### 0020
 
 #### 0020, 1qgxo7i-o0g6nai
 
 AI-driven file changes should always be tracked chronologically with Git. Think of frequent commits as save points in a video game; they provide a safety net for both you and the AI. Interestingly, it's also possible to maintain two distinct repositories—one for human use and another for AI—within the very same directory. :)
+
+#### 0021, 1qlzi68-o1io9df
+
+I've also seen agents fall into "tunnel vision" many times during long sessions. I believe this is almost inevitable when you keep a single conversation going for a sustained period.
+
+To counter this, I use a method that’s almost like a form of counseling—specifically to break the agent’s hyper-fixation on a narrow scope and reset its perspective.
+
+`Strategy A`
+
+When things start going off track, I have the agent dump its entire internal state into a file. This includes everything from self-reflections to the current status of tasks and future plans. Afterward, I explicitly tell the agent: **"All important information has been externalized to files. You don't need to hold everything in your memory anymore."** This seems to clear the "mental clutter" and allows the agent to let go of redundant focus.
+
+`Strategy B-1`
+
+I pre-define files that establish the agent’s self-awareness: "Who am I?", "Where am I?", "What am I permitted to do?" I consider the state of having read these documents as the agent’s "Neutral" gear. My philosophy is: **"If you don't have a baseline for returning from tunnel vision, just build one."**
+
+`Strategy B-2`
+
+Kind of similar to your suggestion, I’ve created a **"Map of the Territory"** for my workspace. Since I update this single file regularly, the agent can recreate the global map in its short-term memory just by reading it. I use this whenever I need to pull the AI’s focus back to a neutral, birds-eye perspective.

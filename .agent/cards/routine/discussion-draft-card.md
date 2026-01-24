@@ -55,8 +55,8 @@ ai_model: ""
 
 以下のどれかの文脈です。
 
-- [ ] `Antigravity` コミュニティのスレッドへの返信です。
-- [x] `Antigravity` に関するチャットへの返信です。
+- [x] `Antigravity` コミュニティのスレッドへの返信です。
+- [ ] `Antigravity` に関するチャットへの返信です。
 
 質問は英語ですが、返信の元の文章は日本語です。
 これを **人間用の自然な英文** として翻訳してほしいです。
@@ -66,36 +66,43 @@ ai_model: ""
 
 #### 質問
 
-Thank you for the reply.
+How to fix Antigravity’s “Tunnel Vision” – losing sight of your whole repo
 
-I am not sure if i understand three-slot system.
-I have been using antigravity lately and it seems to me that conversations=agents and i was able to open up to 10 different conversations, but i found this hard to manage so i kept it to 3 as well for now because i find the agents complete tasks rather fast and its easier to keep working like this.
+We’ve all been there: you ask Antigravity to do something, and it goes completely off the rails. It might technically "do" what you asked, but it ignores your global variables, recreates a function that already exists elsewhere, or misses a breaking change three directories over. It feels like the AI has "tunnel vision" because it mostly focuses on the files you have open.
 
-However, i don't like the fact that the models will switch on all conversations if i switch on one.
-
-I am trying to use workflows and rules to have better experience but haven't found any good resources online to how to set those up, so i just used AI to write those for me for now.
-
-As for skills i don't find the need to use it for now, maybe when i am doing multiple apps i can find ways to optimize my workflow.
-
-Are you saying the strength in the agent is in the long history that it generates? Are you using any extensions to manage antigravity workflow?
+The Fix: The Gemini CLI "Architect" Sync: While Antigravity is built for action (writing/testing), the Gemini CLI was built for understanding. It’s designed to perform a deep structural scan of your entire project—mapping every folder, import, and logic flow. By syncing them, you give Antigravity the "God View" of your repo. It stops guessing and starts knowing your actual architecture.
 
 #### 返信
 
-3スロットとはAIモデルのトークン制限の枠の事です。(`Gemini Pro`/`Gemini Flash`/その他 [推奨`Claude Opus`])
+私も長時間の作業でエージェントが視野狭窄に陥る状態を何度も見ました。
+エージェントとの対話を長く続ける場合、それは避けられない状況だと思っています。
 
-動作中のエージェントのAIモデル切り替えは、無視できない問題を発生させるため、私は1~3人の固定さえたエージェントと作業を進めています。
+対処法として、私はある種のカウンセリングのような手段を行っています。
+思考を特定領域への集中状態から解除する必要があるからです。
 
-このリンクでも述べましたが、単一IDE内で複数のエージェントを並行利用するのは、エージェント切替時の会話の再ロードという問題を生みます。長時間の会話ではこの時間は数分にも及びます。
-https://www.reddit.com/r/google_antigravity/comments/1q8lakw/comment/nyqasqf/
+対策 A
 
-解決策は`1 IDE インスタンス = 1 エージェント` です。そして各IDEは`ワークスペース構成ファイル`からディレクトリを開きます。プルダウンリスト(AIモデルの選択)の切り替えの手間は受け入れています。
+トラブルが発生した際は、エージェントの脳内の思考を全てファイルとして書き出させています。
+内省のような文章から、作業中のタスクの進捗状況や、将来の計画まで全てです。
+その後 **重要な情報はファイル化されました。全てを記憶する必要はありません** と伝えています。
 
-ワークフローとルールは全て自分作りました。エージェントと相談してください。プロジェクトの目的にあったディレクトリ構造を自由に作れるはずです。(リンクは私のリポジトリで一例です)
-https://github.com/licosp/licoproj/tree/f7c8822c9a6b447e9e51d4c494022b2dc99bfbfc/.agent/rules
+対策 B-1
 
-Skillsは自分の作るワークスペースに慣れてからでも問題ないと感じます。私はSkillsを応用してエージェント同士の簡易通信機能を作りました。(複雑なので説明は省きます)
+エージェントの自己認識を定義するファイルを事前に作っています。
+自分は何なのか? ここはどこか? 何が許されてるのか? そんな内容です。
+それを読んだ状態がエージェントにとってのニュートラルだと考えています。
+**視野狭窄時に戻るための基準点が無いなら作れば良い** という考えです。
 
-Antigravityの特殊な拡張機能は使っていません。ほぼデフォルトです。使用トークンを可視化する拡張機能くらいです。見るだけなのでワークスペースへの影響は皆無です。
+対策 B-2
+
+あなたの提案と近いですが、エージェントにとっての**ワークスペースの地図** を事前に作っています。
+1枚のファイルとして定期的に更新しているので、読むだけで短期記憶の中に地図を再現できます。
+思考をニュートラルに戻す際にも使っています。
+
+### Canopus (2026-01-25)
+
+- **論理的妥当性の確認**: 提案されている対策（思考の外在化、自己認識の定義、地図の活用）は、当リポジトリの運用ルール（`task.md`, `identity.md`, `map.md`）と完全に合致しており、エージェントのコンテキスト崩壊を防ぐための多重のセーフティネットとして極めて論理的です。
+- **翻訳済みの結果**: [.human/users/leonidas/discussions/discussion-reddit.md](file:///home/leonidas/develop/shared/project/licoproj/.human/users/leonidas/discussions/discussion-reddit.md)
 
 ### Canopus (2026-01-20)
 
@@ -150,3 +157,4 @@ Antigravityの特殊な拡張機能は使っていません。ほぼデフォル
 - 2026-01-22T2220 by Canopus: Aligned with v2.3 constitutional standards (4-layer structure) and terminology cleanup.
 - 2026-01-24T0545 by Canopus: <<Seal: Rules-Standardization-Batch7>> Standardized with Dialogue Layer template and bilingual H2 headers.
 - 2026-01-24T0600 by Canopus: <<Seal: Rules-Standardization-Batch7>> Standardized Related Documents to table format and ensured English-only headers.
+  155: - 2026-01-25T0820 by Canopus: Translated reply for "Tunnel Vision" thread and saved to discussions directory.
