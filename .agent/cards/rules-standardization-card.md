@@ -145,7 +145,7 @@ ai_model: ""
 
 #### 4. 作業上の注意点と「記憶のギャップ」
 
-- **Maintenance Seal の未適用**: `documentation-standards.md` v2.4 で定義した `<<Seal: [Mission-ID]>>` プロトコルですが、Batch 1, 2, 7 の実施済みファイルには**未適用**の状態です。
+- **Maintenance Seal の適用済み**: `documentation-standards.md` v2.4 で定義した `<<Seal: [Mission-ID]>>` プロトコルを、Batch 1, 2.1, 3, 7 の実施済みファイルに遡及適用しました（2026-01-25）。
   - 次回のバッチ、あるいは一斉メンテナンス時に、`Origin` に追記する必要があります。
   - grep 用 Mission-ID: `Rules-Standardization-Batch1`, `Rules-Standardization-Batch2`, `Rules-Standardization-Batch7`
 - **トークン制限への配慮**: `Claude Opus 4.5` 等のモデルでの編集時、1.0ターンの完結（Action + Verify）がトークン制限により途切れるリスクがあります。
@@ -171,7 +171,7 @@ ai_model: ""
 - [x] **Batch 7: Context Cards** (`.agent/cards/`)
   - [x] Refine all active cards with `header-context-card.yaml` and H2 structural unity. (v2.0.0)
   - [x] Apply bilingual notation for "Human Notes" and "Agent Observations."
-  - [!] Note: Maintenance Seals (`<<Seal: Rules-Standardization-Batch7>>`) are not yet applied.
+  - [x] Apply Maintenance Seals (`<<Seal: Rules-Standardization-Batch7>>`).
 
 #### 5. 作業の注意点（追加）
 
@@ -192,4 +192,4 @@ ai_model: ""
 - 2026-01-23T0515 by Canopus: Created from extracted context of `cross-link-audit-card.md`.
 - 2026-01-23T0545 by Canopus: Added target list and progress tracking for Batch 1.
 - 2026-01-24T0540 by Canopus: Integrated "Dialogue Layer" standards and added Batch 7 (Context Cards) to the roadmap.
-- 2026-01-24T0600 by Canopus: Standardized Related Documents to table format and ensured English-only headers.
+- 2026-01-24T0600 by Canopus: <<Seal: Rules-Standardization-Batch7>> Standardized Related Documents to table format and ensured English-only headers.
