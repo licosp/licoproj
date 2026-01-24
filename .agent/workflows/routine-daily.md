@@ -126,14 +126,14 @@ This creates a chain: each routine knows where the previous one ended.
 
 ## Related Documents
 
-| Document                                                                       | Purpose                         |
-| :----------------------------------------------------------------------------- | :------------------------------ |
-| [idd-phase2-impl.md](/.agent/workflows/idd-phase2-impl.md)                     | IDD Phase 2 workflow (parent)   |
-| [ritual_mid.md](/.agent/workflows/ritual_mid.md)                               | Intermediate ritual (Timing B)  |
-| [routine-card.md](/.agent/cards/routine/routine-card.md)                       | Daily routine whiteboard (card) |
-| [git-operations.md](/.agent/rules/development/git-operations.md)               | Git operations (AI workarounds) |
-| [github-comment.md](/.agent/rules/workflow/github-comment.md)                  | GitHub comment standards        |
-| [Map of Territory](/.agent/rules/map.md)                                       | Root map                        |
+| Document                                                         | Purpose                         |
+| :--------------------------------------------------------------- | :------------------------------ |
+| [idd-phase2-impl.md](/.agent/workflows/idd-phase2-impl.md)       | IDD Phase 2 workflow (parent)   |
+| [ritual_mid.md](/.agent/workflows/ritual_mid.md)                 | Intermediate ritual (Timing B)  |
+| [routine-card.md](/.agent/cards/routine/routine-card.md)         | Daily routine whiteboard (card) |
+| [git-operations.md](/.agent/rules/development/git-operations.md) | Git operations (AI workarounds) |
+| [github-comment.md](/.agent/rules/workflow/github-comment.md)    | GitHub comment standards        |
+| [Map of Territory](/.agent/rules/map.md)                         | Root map                        |
 
 ---
 
@@ -151,7 +151,3 @@ This creates a chain: each routine knows where the previous one ended.
 - 2026-01-22T0835 by Canopus: Integrated identity deep-reading directive to Hub calibration.
 - 2026-01-22T0910 by Canopus: Standardized to v2.3 constitutional standards and restored full history entries. (v1.8.0)
 - 2026-01-25T0630 by Canopus: <<Seal: Rules-Standardization-Batch2.2>> Applied maintenance seal and verified metadata. (v1.9.0)
-
----
-
-**Navigation**: [← Back to Rules Index](/.agent/rules/map.md)

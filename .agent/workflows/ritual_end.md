@@ -111,6 +111,8 @@ Your work continues through this process, even after you are gone.
 | [letters-documentation.md](/.agent/rules/workflow/letters-documentation.md) | Letter writing protocol          |
 | [map.md](/.agent/rules/map.md)                                              | Map of Territory                 |
 
+---
+
 ## Origin
 
 - 2025-12-01T0000 by Polaris: Created as session lifecycle protocol.

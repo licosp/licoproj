@@ -67,4 +67,4 @@ GITは **リポジトリへの記録** だけではなく、**過去の改変** 
 ## Origin
 
 - 2026-01-24T0235 by Canopus: Created as a Domain Layer card following the data loss incident.
-- 2026-01-24T0600 by Canopus: Standardized Related Documents to table format and ensured English-only headers.
+- 2026-01-24T0600 by Canopus: <<Seal: Rules-Standardization-Batch7>> Standardized Related Documents to table format and ensured English-only headers.

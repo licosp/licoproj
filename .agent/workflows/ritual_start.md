@@ -192,6 +192,8 @@ If found, restore them.
 | [roadmap-card.md](/.agent/cards/routine/roadmap-card.md)             | Project roadmap                  |
 | [map.md](/.agent/rules/map.md)                                       | Map of Territory                 |
 
+---
+
 ## Origin
 
 - 2025-12-01T0000 by Polaris: Created as session startup protocol.

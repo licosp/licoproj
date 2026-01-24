@@ -106,5 +106,5 @@ ai_model: ""
 - 2026-01-10 by Canopus: Created for AI document formatting.
 - 2026-01-14 by Canopus: Renamed context_id from [AI-Format] to [Localization].
 - 2026-01-19 by Polaris: Archived old observations to cases/, created parent rule, reset card.
-- 2026-01-24T0545 by Canopus: Standardized with Dialogue Layer template and bilingual H2 headers.
-- 2026-01-24T0600 by Canopus: Standardized Related Documents to table format and ensured English-only headers.
+- 2026-01-24T0545 by Canopus: <<Seal: Rules-Standardization-Batch7>> Standardized with Dialogue Layer template and bilingual H2 headers.
+- 2026-01-24T0600 by Canopus: <<Seal: Rules-Standardization-Batch7>> Standardized Related Documents to table format and ensured English-only headers.

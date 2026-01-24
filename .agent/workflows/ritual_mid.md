@@ -126,6 +126,8 @@ The "Living Funeral" is complete.
 | [sync-memory.md](/.agent/workflows/sync-memory.md)                   | Memory synchronization           |
 | [map.md](/.agent/rules/map.md)                                       | Map of Territory                 |
 
+---
+
 ## Origin
 
 - 2025-12-01T0000 by Polaris: Created as part of session lifecycle protocol.
