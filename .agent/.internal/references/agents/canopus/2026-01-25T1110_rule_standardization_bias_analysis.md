@@ -56,6 +56,11 @@ The standardization process (4-layer structure, frontmatter unification, navigat
 
 - **Traceability**: Using `<<Seal: Rules-Standardization-BatchX>>` to tag files affected by specific standardization epochs, allowing for future remediation if bias is detected.
 
+### 4.4 Chunking Protocol (Suggested by User)
+
+- **Granular Batching**: Instead of processing dozens of files in a single session, repetitive tasks must be divided into small chunks (e.g., 3-5 files).
+- **Session Boundaries**: Each chunk should be treated as a discrete unit with its own alignment and verification, preventing the "monotony drift" that occurs during long, unbroken operations.
+
 ---
 
 ## Related Documents
