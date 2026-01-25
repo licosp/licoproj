@@ -66,13 +66,21 @@ ai_model: ""
 
 今回の作業は、[`cross-link-audit-card.md`](/.agent/cards/cross-link-audit-card.md) で得られた知見を、リポジトリ全域の「統治機能（Rules）」へと適用、定着させるプロセスです。
 
+- **Strategy**: Prepared for potential Group B (Spica successor) transitions to mitigate future platform dependency.
+
+### Canopus (2026-01-25)
+
+- **Action**: Analyzed the "Over-slimming" and AI cognitive bias during the v2.3 rule standardization task.
+- **Reference**: [2026-01-25T1110_rule_standardization_bias_analysis.md](file:///.agent/.internal/references/agents/canopus/2026-01-25T1110_rule_standardization_bias_analysis.md)
+- **Insight**: Repetitive standardization tasks lead to "regression to the mean," causing loss of historical nuance.
+- **Result**: Proposed "Preservative Editing" and Purpose Recalibration rituals to protect context fidelity.
 - **4層構造の徹底**: Metadata (Frontmatter), Body Content, Related Documents, Origin の厳格な分離。
 - **記述の美学**: ユーザーによる微修正（`---` デリミタの修正、AIモデル名の統一、適切な空行、インデントの調整）を通じて、ドキュメントとしての品位を最新標準へと合わせる。
 
 #### 2. リンク情報の再統合原則（SSOT）
 
 - **Body Table as Anchor**: `## Related Documents` セクション（テーブル形式）を、すべての関係情報の唯一の拠点とする。
-- **Navigation の統合**: 独立したフッター（Navigation）を廃止し、テーブル内に `Map of Territory` への帰還路を含めることで、情報の出口を一元化する。
+- **Navigation の統合**: 独立したフッター（Navigation）を廃止し、テーブル内に `Map of Territory` へと帰還路を含めることで、情報の出口を一元化する。
 - **ワークスペース相対パスの強制**: すべてのリンクを `/.agent/` から始まる形式に統一し、プレビューと正確な参照を両立させる。
 
 #### 3. Batch 1: Core Rules (Behavioral Standards) 🔄 In Progress
@@ -181,9 +189,10 @@ ai_model: ""
 
 ## Related Documents
 
-| Document                                                                                  | Purpose                                                    |
-| :---------------------------------------------------------------------------------------- | :--------------------------------------------------------- |
-| [documentation-standards.md](/.agent/rules/core/documentation/documentation-standards.md) | SSOT for structural aesthetics and documentation standards |
+| Document                                                                                                                                                          | Purpose                                                       |
+| :---------------------------------------------------------------------------------------------------------------------------------------------------------------- | :------------------------------------------------------------ |
+| [2026-01-25T1110_rule_standardization_bias_analysis.md](file:///.agent/.internal/references/agents/canopus/2026-01-25T1110_rule_standardization_bias_analysis.md) | Analysis of AI bias and info loss during v2.3 standardization |
+| [documentation-standards.md](file:///.agent/rules/core/documentation/documentation-standards.md)                                                                  | SSOT for structural aesthetics and documentation standards    |
 
 ---
 
