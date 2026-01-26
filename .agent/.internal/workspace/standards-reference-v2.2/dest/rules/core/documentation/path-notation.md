@@ -102,18 +102,6 @@ Legacy files may still use relative paths (e.g., `../..././workspace/file.md`). 
 
 ---
 
-## Related Documents
-
-| Document                                                                                  | Purpose                                  |
-| :---------------------------------------------------------------------------------------- | :--------------------------------------- |
-| [Map of Territory](/.agent/rules/map.md)                                                  | Repository Index (Integrated Navigation) |
-| [documentation-standards.md](/.agent/rules/core/documentation/documentation-standards.md) | Structural standards                     |
-| [meta-rules.md](/.agent/rules/core/meta-rules.md)                                         | Behavioral rule governance               |
-| [absolute-path-prohibition.md](/.agent/rules/core/security/absolute-path-prohibition.md)  | Security rules for paths                 |
-| [wsl-browser-path.md](/.agent/rules/core/documentation/wsl-browser-path.md)               | WSL-specific path handling               |
-
----
-
 ## Historical Background
 
 This standard was created in January 2026 during the cross-link audit project (Polaris).
@@ -126,12 +114,19 @@ This standard was created in January 2026 during the cross-link audit project (P
 
 ---
 
+## Related Documents
+
+| Document                                                                                  | Purpose                                  |
+| :---------------------------------------------------------------------------------------- | :--------------------------------------- |
+| [Map of Territory](/.agent/rules/map.md)                                                  | Repository Index (Integrated Navigation) |
+| [documentation-standards.md](/.agent/rules/core/documentation/documentation-standards.md) | Structural standards                     |
+| [meta-rules.md](/.agent/rules/core/meta-rules.md)                                         | Behavioral rule governance               |
+
+---
+
 ## Origin
 
-- 2026-01-13T14:10 by Polaris: Created based on Roadmap "Fix link information" and Spica's workspace-hook.md.
-- 2026-01-13T14:38 by Polaris: Added related documents, updated to v1.1.
-- 2026-01-15T23:05 by Canopus: Standardized Origin section (removed Japanese) and updated to v1.2.
-- 2026-01-19T06:25 by Polaris: Added Historical Background and updated Navigation to map.md (v1.3).
-- 2026-01-22T01:35 by Canopus: Remediated identity.md links in examples (v1.4).
-- 2026-01-22T04:50 by Canopus: Standardized to 4-layer structure; shifted link SSOT (v2.1).
-- 2026-01-22T06:05 by Canopus: Final alignment; correctly established Related Documents Layer 3 and Origin Layer 4 (v2.3).
+- 2026-01-13T14:10 by Polaris: Created standard.
+- 2026-01-19T06:25 by Polaris: Updated to map.md (v1.3).
+- 2026-01-22T0450 by Canopus: Standardized to 4-layer structure; shifted link SSOT (v2.1).
+- 2026-01-22T0605 by Canopus: Final alignment; correctly established Related Documents Layer 3 and Origin Layer 4 (v2.3).

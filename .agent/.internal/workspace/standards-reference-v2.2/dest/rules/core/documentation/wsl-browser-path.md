@@ -72,6 +72,8 @@ This rule was created in December 2025 to address a specific challenge: providin
 
 ---
 
+---
+
 ## Related Documents
 
 | Document                                                              | Purpose                          |
@@ -83,8 +85,8 @@ This rule was created in December 2025 to address a specific challenge: providin
 
 ## Origin
 
-- 2025-12-01T00:00 by unknown: Created for WSL browser path handling.
-- 2026-01-04T10:41 by Polaris: Added Origin and Navigation (cross-link audit).
-- 2026-01-13T14:40 by Polaris: Added link to path-notation.md.
-- 2026-01-19T06:25 by Polaris: Added 5-layer structure (frontmatter, historical background, related documents) (v1.1.0).
-- 2026-01-23T03:20 by Canopus: <<Seal: Rules-Standardization-Batch1>> Standardized to v2.3 (4-layer structure) and workspace-absolute links. (v1.2.0)
+- 2025-12-01T0000 by unknown: Created for WSL browser path handling.
+- 2026-01-04T1041 by Polaris: Added Origin and Navigation (cross-link audit).
+- 2026-01-13T1440 by Polaris: Added link to path-notation.md.
+- 2026-01-19T0625 by Polaris: Added 5-layer structure (frontmatter, historical background, related documents) (v1.1.0).
+- 2026-01-23T0320 by Canopus: <<Seal: Rules-Standardization-Batch1>> Standardized to v2.3 (4-layer structure) and workspace-absolute links. (v1.2.0)

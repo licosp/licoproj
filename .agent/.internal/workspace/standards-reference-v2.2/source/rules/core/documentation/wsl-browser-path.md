@@ -1,14 +1,16 @@
 ---
 ai_visible: true
 title: WSL Browser Path Construction
-description: Guidelines for constructing browser-accessible URLs for WSL files.
+description: Guidelines for constructing browser-accessible URLs for WSL files
 tags: [documentation, paths, wsl, browser]
-version: 1.2.0
+version: 1.1.0
 created: 2025-12-01T00:00:00+09:00
-updated: 2026-01-23T03:20:00+09:00
+updated: 2026-01-19T06:25:00+09:00
 language: en
-author: Lico (Canopus)
-ai_model: Gemini 3 Flash Planning mode
+author: Lico (Polaris)
+ai_model: Claude Opus 4.5 (Thinking) Planning mode
+related:
+  .agent/rules/core/documentation/path-notation.md: Standard path notation for Markdown links
 ---
 
 # WSL Browser Path Construction
@@ -74,10 +76,9 @@ This rule was created in December 2025 to address a specific challenge: providin
 
 ## Related Documents
 
-| Document                                                              | Purpose                          |
-| :-------------------------------------------------------------------- | :------------------------------- |
-| [path-notation.md](/.agent/rules/core/documentation/path-notation.md) | Standard path notation for links |
-| [Map of Territory](/.agent/rules/map.md)                              | Root navigation map              |
+| Document                                                                | Purpose                          |
+| :---------------------------------------------------------------------- | :------------------------------- |
+| [`path-notation.md`](/.agent/rules/core/documentation/path-notation.md) | Standard path notation for links |
 
 ---
 
@@ -87,4 +88,7 @@ This rule was created in December 2025 to address a specific challenge: providin
 - 2026-01-04T10:41 by Polaris: Added Origin and Navigation (cross-link audit).
 - 2026-01-13T14:40 by Polaris: Added link to path-notation.md.
 - 2026-01-19T06:25 by Polaris: Added 5-layer structure (frontmatter, historical background, related documents) (v1.1.0).
-- 2026-01-23T03:20 by Canopus: <<Seal: Rules-Standardization-Batch1>> Standardized to v2.3 (4-layer structure) and workspace-absolute links. (v1.2.0)
+
+---
+
+**Navigation**: [← Back to Rules Index](/.agent/rules/map.md)
