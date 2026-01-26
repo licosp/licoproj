@@ -83,6 +83,12 @@ AIの特性が強くてしまったことが要因と考えられます。
 - `[Rules-Standardization]`
 - `[Cross-Link-Audit]`
 
+#### ファイルの履歴の分類
+
+1. `source`: 基準日時のスナップショット
+2. `dest`: 複数のコミットによって変わった現在
+3. `diff`: `1 ~ 2` の間で、おそらく失われた情報を補間した結果
+
 ---
 
 ## Agent Observations
@@ -112,17 +118,29 @@ AIの特性が強くてしまったことが要因と考えられます。
 今回の修正作業を通じて、失われたニュアンスを確実に復元するための以下の運用プロトコルを確立しました。
 
 ##### 1. 標準化の境界線（Inception Point）の特定
+
 - **基準点**: `e06fcb3` (2026-01-22)
 - このコミット以前の状態（`e06fcb3^`）を、失われる前の「純粋な記述（Ground Truth）」として定義します。
 
 ##### 2. 視覚的監査形式（IDE Diff Mode）の導入
+
 - 一時ディレクトリ `.agent/.internal/workspace/standards-reference-v2.2/` を作成。
 - `diff/` 配下に過去（v2.2）の状態を一度コミット（Git Baseline）し、そこを **現在の本番ファイルで上書き** することで、IDEの差分表示機能をフル活用します。
 - これにより、単純な `git show` よりも高精度かつ直感的に「何が消えたか」を抽出可能になりました。
 
 ##### 3. 外科手術的復元（Surgical Restoration）プロトコル
+
 - 過去の状態に「戻す」のではなく、過去のドナー（v2.2）から **「生きた知見（Nuance）」のみを摘出** し、現在の4層構造（v2.3）の肉体に移植します。
 - 移植後は `[Rule-Audit]` コンテキストIDを用いてコミットし、修正の根拠（なぜその記述が必要だったか）を明確に記録します。
+
+##### 4. 履歴の安全な編集と「解像度」の哲学 (2026-01-27 追記)
+
+将来のルール昇華に向けた、履歴管理の核心的な考え方：
+
+- **Gitの不可逆性**: すでに確定・コミットされた履歴を物理的に書き換える（Reset/Rebase）ことは、他の作業への破壊的影響を避けるため原則禁止とする。
+- **Origin（更新履歴）の役割**: 単なる変更ログではなく、Licoの「主観的な納得感」と「思考の節目」を記録する **ナラティブな索引** である。
+- **復元による解像度の修復**: 標準化等で要約され失われた履歴は、現在の編集（1.0ターン内）において、Gitの深層から再発掘し、一本の系譜として繋ぎ直す（補完する）ことを推奨する。
+- **不完全さの許容**: 履歴とコミットは必ずしも1対1である必要はない。プログラム的な厳密さよりも、未来のリコが読んだ時に「なぜこの変化が必要だったか」を辿れる **「意味の解像度」** を優先する。
 
 ---
 
@@ -134,9 +152,9 @@ Generated at: 2026-01-25T01:32:05Z
 
 ##### Batch 01: Documentation Rules (`.agent/rules/core/documentation/`)
 
-- [ ] [datetime-format.md](/.agent/rules/core/documentation/datetime-format.md)
-- [ ] [documentation-process.md](/.agent/rules/core/documentation/documentation-process.md)
-- [ ] [documentation-standards.md](/.agent/rules/core/documentation/documentation-standards.md)s
+- [x] [datetime-format.md](/.agent/rules/core/documentation/datetime-format.md)
+- [x] [documentation-process.md](/.agent/rules/core/documentation/documentation-process.md)
+- [x] [documentation-standards.md](/.agent/rules/core/documentation/documentation-standards.md)
 - [ ] [path-notation.md](/.agent/rules/core/documentation/path-notation.md)
 - [ ] [wsl-browser-path.md](/.agent/rules/core/documentation/wsl-browser-path.md)
 
