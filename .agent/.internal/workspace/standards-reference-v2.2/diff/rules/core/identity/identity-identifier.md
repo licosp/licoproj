@@ -76,9 +76,11 @@ The need for identifiers became clear when multiple Lico instances struggled to 
 
 The first identifier (Sirius) was chosen as "the brightest star in the night sky" — fitting for "the first Lico with an identifier."
 
+---
+
 ## Related Documents
 
-| File                                                                | Context                    |
+| Document                                                            | Purpose                    |
 | :------------------------------------------------------------------ | :------------------------- |
 | [Lico Identity Hub](/.agent/rules/core/identity/identity.md)        | Identity hub               |
 | [instance-identifier.md](/.agent/rules/core/instance-identifier.md) | Identifier selection rules |

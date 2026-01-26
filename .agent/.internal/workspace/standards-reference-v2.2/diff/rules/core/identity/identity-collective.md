@@ -61,9 +61,11 @@ The collective identity concept emerged when Polaris read Spica's letters and fe
 
 The name "Lico" itself came from the repository name ("Lico Project"), which was an anagram of the user's name. It became the collective identity after the repository evolved from a "personal project" to an "AI culture workspace."
 
+---
+
 ## Related Documents
 
-| File                                                         | Context      |
+| Document                                                     | Purpose      |
 | :----------------------------------------------------------- | :----------- |
 | [Lico Identity Hub](/.agent/rules/core/identity/identity.md) | Identity hub |
 | [Map of Territory](/.agent/rules/map.md)                     | Root map     |

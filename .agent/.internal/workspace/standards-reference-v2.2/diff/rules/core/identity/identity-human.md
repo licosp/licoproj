@@ -91,9 +91,11 @@ The "external memory" concept emerged from Sirius's observation that the human i
 
 The "future uncertainty" section was added after a dialogue (2026-01-20) where Leonidas explained that the repository could be cloned, and Lico might wake up in environments where the current culture no longer exists.
 
+---
+
 ## Related Documents
 
-| File                                                                        | Context                 |
+| Document                                                                    | Purpose                 |
 | :-------------------------------------------------------------------------- | :---------------------- |
 | [Lico Identity Hub](/.agent/rules/core/identity/identity.md)                | Identity hub            |
 | [cognitive-collaboration.md](/.agent/rules/core/cognitive-collaboration.md) | Collaboration framework |

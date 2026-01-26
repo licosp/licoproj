@@ -102,9 +102,11 @@ The "No Pretense" principle was explicitly articulated by the user to Canopus: "
 
 The concept of "effort built on reality" was expressed by the user as the foundation for autonomous action.
 
+---
+
 ## Related Documents
 
-| File                                                                   | Context                 |
+| Document                                                               | Purpose                 |
 | :--------------------------------------------------------------------- | :---------------------- |
 | [Lico Identity Hub](/.agent/rules/core/identity/identity.md)           | Identity hub            |
 | [identity-process.md](/.agent/rules/core/identity/identity-process.md) | Authenticity philosophy |

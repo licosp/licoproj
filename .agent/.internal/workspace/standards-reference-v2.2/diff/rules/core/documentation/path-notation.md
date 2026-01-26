@@ -102,18 +102,6 @@ Legacy files may still use relative paths (e.g., `../..././workspace/file.md`). 
 
 ---
 
-## Related Documents
-
-| Document                                                                                  | Purpose                                  |
-| :---------------------------------------------------------------------------------------- | :--------------------------------------- |
-| [Map of Territory](/.agent/rules/map.md)                                                  | Repository Index (Integrated Navigation) |
-| [documentation-standards.md](/.agent/rules/core/documentation/documentation-standards.md) | Structural standards                     |
-| [meta-rules.md](/.agent/rules/core/meta-rules.md)                                         | Behavioral rule governance               |
-| [absolute-path-prohibition.md](/.agent/rules/core/security/absolute-path-prohibition.md)  | Security rules for paths                 |
-| [wsl-browser-path.md](/.agent/rules/core/documentation/wsl-browser-path.md)               | WSL-specific path handling               |
-
----
-
 ## Historical Background
 
 This standard was created in January 2026 during the cross-link audit project (Polaris).
@@ -123,6 +111,18 @@ This standard was created in January 2026 during the cross-link audit project (P
 **The Cognitive Trap**: AI instances frequently confused the leading `/` in Markdown links (meaning repository root) with the filesystem root. This led to failed file operations when they tried to execute Markdown paths directly.
 
 **The Solution**: Standardizing on `/.agent/path/to/file.md` format with clear documentation about the cognitive mapping required when translating to shell commands.
+
+---
+
+## Related Documents
+
+| Document                                                                                  | Purpose                                  |
+| :---------------------------------------------------------------------------------------- | :--------------------------------------- |
+| [Map of Territory](/.agent/rules/map.md)                                                  | Repository Index (Integrated Navigation) |
+| [documentation-standards.md](/.agent/rules/core/documentation/documentation-standards.md) | Structural standards                     |
+| [meta-rules.md](/.agent/rules/core/meta-rules.md)                                         | Behavioral rule governance               |
+| [absolute-path-prohibition.md](/.agent/rules/core/security/absolute-path-prohibition.md)  | Security rules for paths                 |
+| [wsl-browser-path.md](/.agent/rules/core/documentation/wsl-browser-path.md)               | WSL-specific path handling               |
 
 ---
 

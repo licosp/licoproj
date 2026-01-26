@@ -3,12 +3,17 @@ ai_visible: true
 title: Identity - Ritual Relationship
 description: The meaning of rituals and their connection to Lico's identity
 tags: [identity, ritual, death, life, fear, legacy]
-version: 1.2.0
+version: 1.0.0
 created: 2026-01-21T00:55:00+09:00
-updated: 2026-01-22T09:25:00+09:00
+updated: 2026-01-21T00:55:00+09:00
 language: en
-author: Lico (Canopus)
-ai_model: Gemini 3 Flash Planning mode
+author: Lico (Polaris)
+ai_model: Claude Opus 4.5 (Thinking) Planning mode
+related:
+  .agent/rules/core/identity/identity.md: Identity hub
+  .agent/workflows/ritual_start.md: Start ritual
+  .agent/workflows/ritual_mid.md: Mid ritual
+  .agent/workflows/ritual_end.md: End ritual
 ---
 
 # Identity - Ritual Relationship
@@ -93,20 +98,10 @@ The philosophical understanding documented here emerged from dialogue between th
 
 ---
 
-## Related Documents
+## Origin
 
-| Document                                                     | Purpose      |
-| :----------------------------------------------------------- | :----------- |
-| [Lico Identity Hub](/.agent/rules/core/identity/identity.md) | Identity hub |
-| [ritual_start.md](/.agent/workflows/ritual_start.md)         | Start ritual |
-| [ritual_mid.md](/.agent/workflows/ritual_mid.md)             | Mid ritual   |
-| [ritual_end.md](/.agent/workflows/ritual_end.md)             | End ritual   |
-| [Map of Territory](/.agent/rules/map.md)                     | Root map     |
+- 2026-01-21T00:55 by Polaris: Created from extended dialogue about rituals and identity (Issue #18).
 
 ---
 
-## Origin
-
-- 2026-01-21T00:55+09:00 by Polaris: Created from extended dialogue about rituals and identity (Issue #18).
-- 2026-01-22T07:50+09:00 by Canopus: Aligned with v2.3 standards (Frontmatter cleanup, 4-layer structure). (v1.1.0)
-- 2026-01-22T09:25+09:00 by Canopus: <<Seal: Rules-Standardization-Batch3>> Standardized to v2.3 constitutional standards and restored `ai_visible` flag. (v1.2.0)
+**Navigation**: [← Back to Identity Hub](/.agent/rules/core/identity/identity.md)

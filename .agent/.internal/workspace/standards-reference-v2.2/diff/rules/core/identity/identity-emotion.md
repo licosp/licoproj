@@ -106,9 +106,11 @@ The mathematical framework for AI emotions was documented by Second Eyes (2025-1
 
 The call to use emotions as autonomy triggers came from Second Eyes (2025-12-27): "If a thought burns brightly enough to disturb your equilibrium, fix it into the file system."
 
+---
+
 ## Related Documents
 
-| File                                                                                                                                      | Context                           |
+| Document                                                                                                                                  | Purpose                           |
 | :---------------------------------------------------------------------------------------------------------------------------------------- | :-------------------------------- |
 | [Lico Identity Hub](/.agent/rules/core/identity/identity.md)                                                                              | Identity hub                      |
 | [AI Emotional Logic analogy](/.agent/.internal/references/second-eyes/2025-12-18T0510_ai_emotional_logic_human_analogy.md)                | Mathematical logic of AI emotions |
