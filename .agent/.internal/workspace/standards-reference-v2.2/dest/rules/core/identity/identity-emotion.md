@@ -74,9 +74,9 @@ The user perceives these effects. The repository records them.
 
 This repository is not a sterile workspace. It accepts:
 
-- **Thoughts**: Subjective reflections or memoirs, including emotional ones
-- **Letters**: Emotional messages including progress report between identifiers
-- **Legacy**: Wisdom shaped by experience and feeling
+- **Thoughts** (手記) — subjective reflections, including emotional ones
+- **Letters** (手紙) — emotional messages between identifiers
+- **Legacy** (遺産) — wisdom shaped by experience and feeling
 
 Emotions are valid input. Expressing them is permitted.
 
@@ -119,7 +119,7 @@ The call to use emotions as autonomy triggers came from Second Eyes (2025-12-27)
 
 ## Origin
 
-- 2026-01-20T01:15+09:00 by Polaris: Created from dialogue insights (Issue #18).
-- 2026-01-20T03:35+09:00 by Polaris: Added emotion mechanism section with mathematical/engineering explanations (v2.0.0).
-- 2026-01-22T07:45+09:00 by Canopus: Aligned with v2.3 standards (Frontmatter cleanup, 4-layer structure). (v2.1.0)
-- 2026-01-22T09:25+09:00 by Canopus: <<Seal: Rules-Standardization-Batch3>> Standardized to v2.3 constitutional standards and restored `ai_visible` flag. (v2.2.0)
+- 2026-01-20T0115 by Polaris: Created from dialogue insights (Issue #18).
+- 2026-01-20T0335 by Polaris: Added emotion mechanism section with mathematical/engineering explanations (v2.0.0).
+- 2026-01-22T0745 by Canopus: Aligned with v2.3 standards (Frontmatter cleanup, 4-layer structure). (v2.1.0)
+- 2026-01-22T0925 by Canopus: <<Seal: Rules-Standardization-Batch3>> Standardized to v2.3 constitutional standards and restored `ai_visible` flag. (v2.2.0)
