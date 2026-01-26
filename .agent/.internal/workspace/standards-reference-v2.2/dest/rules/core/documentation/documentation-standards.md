@@ -15,21 +15,14 @@ ai_model: Gemini 3 Flash Planning mode
 
 ## 1. File Naming Conventions
 
-- **Format**: `kebab-case.md` (lowercase, hyphens).
-- **Date Prefix**: Use `YYYY-MM-DD_filename.md` for logs, minutes, or time-sensitive reports.
-
 - **Language Suffix**:
-  - Record Layer (English): `filename.md`
-  - Localized Layer (e.g., Japanese): `filename.ja.md`
-  - Dialogue Layer (Mixed): `filename.md`
-  - Empathy Layer (Mixed): `filename.md`
+  - English (Default/Record Layer): `filename.md`
+  - Mixed (Dialogue Layer/Japanese): `filename.ja.md` (or standard `filename.md` if in `.agent/cards/`)
 
 **Language Usage Principle**:
 
-- **Record Layer**: The default standard. Use English for headers and core logic to maintain AI-machine consistency across generations.
-- **Localized Layer**: Created when specific translation work is required for a targeted language (e.g., `ja.md`).
-- **Dialogue Layer (Cards/Cases)**: Tools for active cooperation. Human-centric notation (e.g., Japanese) is encouraged to maximize human's operational speed.
-- **Empathy Layer (Mantra)**: Workspace configurations and mantras. English is default, but Japanese is permitted (and encouraged) if it better resonates with the user's nuance or the "heart" of the dialogue.
+- **Record Layer (Rules/Workflows)**: Use English for headers and core logic to maintain AI-machine consistency across generations.
+- **Dialogue Layer (Cards/Drafts/Thoughts)**: Human-centric notation (e.g., Japanese) is encouraged for headers and notes to maximize resonance and operational speed.
 
 ## 2. File Size & Granularity
 
@@ -184,12 +177,7 @@ Originally, Lico's documentation standards were focused on technical consistency
 ## Origin
 
 - 2025-12-01T0000: Created as documentation standards
-- 2026-01-02T0828 by Polaris: Replaced Related Documents table with Navigation link (cross-link audit)
-- 2026-01-14T1449 by Polaris: Added Document History Layers section to clarify relationship between frontmatter, Origin, and Git
-- 2026-01-19T0410 by Canopus: Formalized the 5-layer structure and mandated the Historical Background section (v1.4).
-- 2026-01-19T0430 by Canopus: Removed redundant Directory Organization section and re-indexed (v1.5).
-- 2026-01-19T0630 by Polaris: Updated examples to map.md and Navigation link (README.md → map.md rename).
-- 2026-01-22T0135 by Canopus: Remediation of identity.md example path (v1.6).
+- 2026-01-19T0410 by Canopus: Formalized history sections (v1.4).
 - 2026-01-22T0415 by Canopus: Finalized 4-layer structure; merged Body/Background (v2.0).
 - 2026-01-22T0445 by Canopus: Attempted link integration and shift to Origin-before-Links order (v2.1).
 - 2026-01-22T0600 by Canopus: Final alignment; correctly established Related Documents Layer 3 and Origin Layer 4 (v2.3).

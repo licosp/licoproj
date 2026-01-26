@@ -26,8 +26,7 @@ Timestamps appear in multiple contexts (frontmatter, filenames, commit messages)
 1. **User Base**: User (lyouta) is based in Japan.
 2. **Mental Model**: Consistent with user's work hours and context.
 3. **Primary Operator**: Reflects the primary operator's timezone.
-
-_Note: This does NOT prevent collaboration in other timezones; the explicit offset makes conversion trivial._
+   _Note: This does NOT prevent collaboration in other timezones; the explicit offset makes conversion trivial._
 
 ---
 
@@ -96,6 +95,6 @@ updated: 2025-12-11T01:30:00+09:00
 
 ## Origin
 
-- 2025-12-01T0000: Created as datetime format standards
-- 2026-01-02T0828 by Polaris: Replaced Related Documents table with Navigation link (cross-link audit)
+- 2025-12-01T0000: Created as datetime format standards.
+- 2026-01-02T0828 by Polaris: Replaced Related Documents table with Navigation link (cross-link audit).
 - 2026-01-23T0315 by Canopus: <<Seal: Rules-Standardization-Batch1>> Standardized to v2.3 (4-layer structure) and workspace-absolute links. (v1.1.0)
