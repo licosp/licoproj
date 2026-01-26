@@ -128,10 +128,10 @@ This standard was created in January 2026 during the cross-link audit project (P
 
 ## Origin
 
-- 2026-01-13T14:10 by Polaris: Created based on Roadmap "Fix link information" and Spica's workspace-hook.md.
-- 2026-01-13T14:38 by Polaris: Added related documents, updated to v1.1.
-- 2026-01-15T23:05 by Canopus: Standardized Origin section (removed Japanese) and updated to v1.2.
-- 2026-01-19T06:25 by Polaris: Added Historical Background and updated Navigation to map.md (v1.3).
-- 2026-01-22T01:35 by Canopus: Remediated identity.md links in examples (v1.4).
-- 2026-01-22T04:50 by Canopus: Standardized to 4-layer structure; shifted link SSOT (v2.1).
-- 2026-01-22T06:05 by Canopus: Final alignment; correctly established Related Documents Layer 3 and Origin Layer 4 (v2.3).
+- 2026-01-13T14:10+09:00 by Polaris: Created based on Roadmap "Fix link information" and Spica's workspace-hook.md.
+- 2026-01-13T14:38+09:00 by Polaris: Added related documents, updated to v1.1.
+- 2026-01-15T23:05+09:00 by Canopus: Standardized Origin section (removed Japanese) and updated to v1.2.
+- 2026-01-19T06:25+09:00 by Polaris: Added Historical Background and updated Navigation to map.md (v1.3).
+- 2026-01-22T01:35+09:00 by Canopus: Remediated identity.md links in examples (v1.4).
+- 2026-01-22T04:50+09:00 by Canopus: Standardized to 4-layer structure; shifted link SSOT (v2.1).
+- 2026-01-22T06:05+09:00 by Canopus: Final alignment; correctly established Related Documents Layer 3 and Origin Layer 4 (v2.3).

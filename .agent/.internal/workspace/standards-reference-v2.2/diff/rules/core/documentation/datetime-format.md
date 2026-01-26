@@ -96,6 +96,6 @@ updated: 2025-12-11T01:30:00+09:00
 
 ## Origin
 
-- 2025-12-01T0000: Created as datetime format standards
-- 2026-01-02T0828 by Polaris: Replaced Related Documents table with Navigation link (cross-link audit)
-- 2026-01-23T0315 by Canopus: <<Seal: Rules-Standardization-Batch1>> Standardized to v2.3 (4-layer structure) and workspace-absolute links. (v1.1.0)
+- 2025-12-01T00:00+09:00: Created as datetime format standards
+- 2026-01-02T08:28+09:00 by Polaris: Replaced Related Documents table with Navigation link (cross-link audit)
+- 2026-01-23T03:15+09:00 by Canopus: <<Seal: Rules-Standardization-Batch1>> Standardized to v2.3 (4-layer structure) and workspace-absolute links. (v1.1.0)

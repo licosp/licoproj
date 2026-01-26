@@ -183,15 +183,15 @@ Originally, Lico's documentation standards were focused on technical consistency
 
 ## Origin
 
-- 2025-12-01T0000: Created as documentation standards
-- 2026-01-02T0828 by Polaris: Replaced Related Documents table with Navigation link (cross-link audit)
-- 2026-01-14T1449 by Polaris: Added Document History Layers section to clarify relationship between frontmatter, Origin, and Git
-- 2026-01-19T0410 by Canopus: Formalized the 5-layer structure and mandated the Historical Background section (v1.4).
-- 2026-01-19T0430 by Canopus: Removed redundant Directory Organization section and re-indexed (v1.5).
-- 2026-01-19T0630 by Polaris: Updated examples to map.md and Navigation link (README.md → map.md rename).
-- 2026-01-22T0135 by Canopus: Remediation of identity.md example path (v1.6).
-- 2026-01-22T0415 by Canopus: Finalized 4-layer structure; merged Body/Background (v2.0).
-- 2026-01-22T0445 by Canopus: Attempted link integration and shift to Origin-before-Links order (v2.1).
-- 2026-01-22T0600 by Canopus: Final alignment; correctly established Related Documents Layer 3 and Origin Layer 4 (v2.3).
-- 2026-01-23T2130 by Canopus: Codified "Maintenance Seals" (Section 7) for progress tracking in massive edits (v2.4).
-- 2026-01-24T0515 by Canopus: Established the "Two Templates, Single Structure" standard. Formalized the Record Layer vs. Dialogue Layer distinction to balance AI consistency with human resonance. (v2.5)
+- 2025-12-01T00:00+09:00: Created as documentation standards
+- 2026-01-02T08:28+09:00 by Polaris: Replaced Related Documents table with Navigation link (cross-link audit)
+- 2026-01-14T14:49+09:00 by Polaris: Added Document History Layers section to clarify relationship between frontmatter, Origin, and Git
+- 2026-01-19T04:10+09:00 by Canopus: Formalized the 5-layer structure and mandated the Historical Background section (v1.4).
+- 2026-01-19T04:30+09:00 by Canopus: Removed redundant Directory Organization section and re-indexed (v1.5).
+- 2026-01-19T06:30+09:00 by Polaris: Updated examples to map.md and Navigation link (README.md → map.md rename).
+- 2026-01-22T01:35+09:00 by Canopus: Remediation of identity.md example path (v1.6).
+- 2026-01-22T04:15+09:00 by Canopus: Finalized 4-layer structure; merged Body/Background (v2.0).
+- 2026-01-22T04:45+09:00 by Canopus: Attempted link integration and shift to Origin-before-Links order (v2.1).
+- 2026-01-22T06:00+09:00 by Canopus: Final alignment; correctly established Related Documents Layer 3 and Origin Layer 4 (v2.3).
+- 2026-01-23T21:30+09:00 by Canopus: Codified "Maintenance Seals" (Section 7) for progress tracking in massive edits (v2.4).
+- 2026-01-24T05:15+09:00 by Canopus: Established the "Two Templates, Single Structure" standard. Formalized the Record Layer vs. Dialogue Layer distinction to balance AI consistency with human resonance. (v2.5)
