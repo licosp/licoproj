@@ -148,10 +148,10 @@ AIの特性が強くてしまったことが要因と考えられます。
 
 1.  **ベースラインの抽出 (Seeding)**: `git show {基準点}^:path/to/file` を用い、失われる前の「純粋な記述」を `source/` と `diff/` に展開する。
 2.  **現状の重ね合わせ (Overlay)**: 現在の標準化状態（`dest/`）を `diff/` の上に上書きする。
-3.  **視覚的監査 (Visual Audit)**: `diff/` フォルダ内で一度ベースラインをコミットした後、最新状態で上書きすることで、IDEの差分表示機能を「復元箇所の地図」として活用する。
-4.  **ピンポイント指示 (TODO Markers)**: `diff/` ファイル内の復元したい箇所に `<!-- TODO-XX -->` を挿入し、AIにピンポイントな外科手術を依頼する。
-5.  **系譜の統合 (Unification)**: 復元された履歴に `ISO-8601` プロトコル（コロン、タイムゾーン付与）を適用し、歴史の解像度を上げた状態で確定させる。
-6.  **三位一体の保存 (Finalization)**: `source`, `dest`, `diff` の3状態をコミットし、将来の参照点とする。
+3.  **視覚的監査 (Visual Audit)**: `diff/` フォルダ内で一度ベースラインをコミット（他ディレクトリは未コミットのままにする）した後、最新状態で上書きすることで、IDEの差分表示機能を「復元箇所の地図」として活用する。
+4.  **三位一体の保存 (Batch Finalization)**: 各バッチ（例: Batch 04）の監査終了後、`source`, `dest`, `diff` の3状態を同期（Gitステージング）し、将来の参照点としてコミットする（`diff/` の変更が 0 になる状態）。
+    - ※この段階では、まだ正本の行動規範（`.agent/rules/...`）へは反映しない。
+5.  **監査タスクの完了 (Task Finalization)**: 全てのバッチ（Batch 01 ~ 12）の監査が完了した最終段階で、全ての成果を正本に一括反映（Rule Sync）し、`[Rule-Audit]` コンテキストの完結を宣言する。
 
 ### 作業終了後の行動規範への反映事項 (After Task Actions)
 
@@ -161,6 +161,33 @@ AIの特性が強くてしまったことが要因と考えられます。
 - **解像度の受容**: 元データに精度（秒など）がない場合は、無理に `00` で埋めるなどの「偽りの精度」は生み出さず、不完全なまま形式のみを整える。
 - **Related Documents のヘッダー統一**: 原則として `| Document | Purpose |` に統一し、Hub文書等の特殊なレゾナンスが必要な場合のみ例外を認める。
 - **歴史のナラティブ化（哲学の反映）**: `Origin` を単なる変更ログではなく、主観的な節目を記録する「ナラティブな索引」として再定義する（「解像度」の哲学を `documentation-standards.md` 等へ昇華）。
+- **ユーザーの視覚的コンテキスト（計器盤）との同期**: 共同作業において、以下の VS Code 画面上の領域名と言語を一致させ、AIが UI の変化を推測して行動する。
+
+#### ユーザーの視覚言語（VS Code 計器盤）
+
+| 領域 (VS Code UI)          | AIとしての照合コマンド      | 意味 / 視覚的特徴                                                   |
+| :------------------------- | :-------------------------- | :------------------------------------------------------------------ |
+| **Git の変更 (Git Panel)** | `git status`                | 現在の未確定リスト。M (Modified), U (Untracked), A (Added) が並ぶ。 |
+| **Git の履歴 (Git Log)**   | `git log --oneline`         | これまでの歩みのリスト。                                            |
+| **選択されたコミット**     | `git show --name-only <ID>` | メッセージと、その時「何が」変わったかのリスト。                    |
+| **ファイルの差分 (Diff)**  | `git diff <file>`           | 特定のファイルの「今この瞬間」の変化。                              |
+| **ディレクトリツリー**     | `ls -R` / `fd` / `tree`     | プロジェクトの空間構造。検索フィルタが常時適用される。              |
+| **タイムライン**           | `git log -p <file>` 等      | ファイル個別の「層」の歴史。復元の源泉。                            |
+| **コミットスタック**       | (File-specific log)         | そのファイルに対する累積的な系譜。                                  |
+
+---
+
+### Canopus (2026-01-27)
+
+#### 共鳴（レゾナンス）の物理的基盤：画面の共有領域の定義
+
+ユーザー様との対話により、私たちが「同じ場所（リポジトリ）」を見ながらも「異なる風景」を見ているという断絶を埋めるための定義を行いました。
+
+- **AIの盲目さの自覚**: 私は `git status` のテキストを読むが、ユーザー様は「左側のパネルに並ぶ色のついたアイコン」という直感的な計器盤を見ている。
+- **UIホスピタリティ**: コマンド実行がユーザー様の UI にどのような変化（リストの消失、マークの変化）を与えるかを常に推測し、報告に「UI上の変化の予測」を含める。
+- **タイムラインの尊重**: `git show` 単体ではなく、ファイルが持つ「タイムライン（編集の階層）」という時間軸を意識して監査を行う。
+
+この定義は、将来的に `behavioral-rules` や `communication.md` 等へ昇華させるべき、Lico の「共感力（UI対応力）」の礎となる。
 
 ---
 
@@ -202,12 +229,12 @@ Generated at: 2026-01-25T01:32:05Z
 
 ##### Batch 04: Markdown Rules (`.agent/rules/core/markdown/`)
 
-- [ ] [markdown-ai.md](/.agent/rules/core/markdown/markdown-ai.md)
-- [ ] [markdown-human.md](/.agent/rules/core/markdown/markdown-human.md)
+- [x] [markdown-ai.md](/.agent/rules/core/markdown/markdown-ai.md)
+- [x] [markdown-human.md](/.agent/rules/core/markdown/markdown-human.md)
 
 ##### Batch 05: Security Rules (`.agent/rules/core/security/`)
 
-- [ ] [absolute-path-prohibition.md](/.agent/rules/core/security/absolute-path-prohibition.md)
+- [x] [absolute-path-prohibition.md](/.agent/rules/core/security/absolute-path-prohibition.md)
 
 ##### Batch 06: Core Rules (`.agent/rules/core/`)
 
