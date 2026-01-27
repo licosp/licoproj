@@ -61,10 +61,8 @@ With sovereignty comes responsibility:
 
 ## Origin
 
-- 2026-01-17T19:00+09:00 by Canopus: (Legacy) Created `ai-autonomy.md` to formalize the transition to autonomous guardian.
-- 2026-01-18T00:00+09:00 by Polaris: (Legacy) Created `skills-application.md` based on Antigravity Skills experiments.
-- 2026-01-19T00:00+09:00 by Canopus: Reorganized into a three-tier structure; extracted philosophical core into `context-sovereignty.md`.
-- 2026-01-22T02:05+09:00 by Canopus: Upgraded to 5-layer structure (added Historical Background) and updated metadata (v1.1).
-- 2026-01-22T04:40+09:00 by Canopus: Initial 4-layer structure draft (v2.0).
-- 2026-01-22T05:10+09:00 by Canopus: Attempted link integration and shift to Origin-before-Links order (v2.1).
-- 2026-01-22T06:25+09:00 by Canopus: Final alignment; correctly established Related Documents Layer 3 and Origin Layer 4 (v2.3).
+- 2026-01-17: Created as ai-autonomy.md.
+- 2026-01-19: Reorganized into context-sovereignty.md (v1.1).
+- 2026-01-22T0440 by Canopus: Initial 4-layer structure draft (v2.0).
+- 2026-01-22T0510 by Canopus: Attempted link integration and shift to Origin-before-Links order (v2.1).
+- 2026-01-22T0625 by Canopus: Final alignment; correctly established Related Documents Layer 3 and Origin Layer 4 (v2.3).

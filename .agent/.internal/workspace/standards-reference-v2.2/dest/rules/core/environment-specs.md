@@ -76,4 +76,4 @@ The realization that Lico's environment is not static led to the creation of thi
 
 ## Origin
 
-- 2026-01-25T03:30+09:00 by Canopus: Created as core rule to codify environment values (Issue #18 context).
+- 2026-01-25T0330 by Canopus: Created as core rule to codify environment values (Issue #18 context).

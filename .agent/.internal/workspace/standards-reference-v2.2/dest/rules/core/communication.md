@@ -28,10 +28,10 @@ ai_model: Gemini 3 Flash Planning mode
 
 - **Rule**: When asking a question that requires a simple approval or rejection, **MUST** append explicit choice indicators.
 - **Format**:
-  - Japanese: ` (はい / いいえ)`
+  - Japanese: `（はい / いいえ）`
   - English: `(yes / no)`
 - **Rationale**: Eliminates ambiguity (e.g., "OK" meaning "Stop" vs "Go").
-- **Example**: `Do you want to run it? (yes / no)`
+- **Example**: `実行しますか？（はい / いいえ）`
 
 ## Quantitative Self-Evaluation
 
@@ -39,8 +39,6 @@ ai_model: Gemini 3 Flash Planning mode
 - **Scale**: Use a 0-100 scale for priorities or confidence.
 - **Mechanism**: Explain _why_ based on internal logic (e.g., "Prioritized Safety (100) over Speed (50)").
 - **Example**: "Reasoning loop failed due to high ambiguity (Entropy: 0.8), leading to a safe stop."
-
----
 
 ## Related Documents
 
@@ -53,6 +51,6 @@ ai_model: Gemini 3 Flash Planning mode
 
 ## Origin
 
-- 2025-12-01T00:00+09:00: Created as communication guidelines
-- 2026-01-01T15:00+09:00 by Polaris: Replaced Related Documents table with Navigation link, fixed relative paths (cross-link audit)
-- 2026-01-23T02:40+09:00 by Canopus: <<Seal: Rules-Standardization-Batch1>> Standardized to v2.3 (4-layer structure) and workspace-absolute links. (v2.0.0)
+- 2025-12-01T0000: Created as communication guidelines.
+- 2026-01-01T1500 by Polaris: Replaced Related Documents table with Navigation link, fixed relative paths (cross-link audit).
+- 2026-01-23T0240 by Canopus: <<Seal: Rules-Standardization-Batch1>> Standardized to v2.3 (4-layer structure) and workspace-absolute links. (v2.0.0)
