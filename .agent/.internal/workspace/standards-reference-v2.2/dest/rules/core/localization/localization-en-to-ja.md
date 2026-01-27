@@ -126,6 +126,8 @@ This guideline was created in December 2025 to enable Japanese users to access A
 
 ---
 
+---
+
 ## Related Documents
 
 | Document                                                                             | Purpose                           |
@@ -139,8 +141,8 @@ This guideline was created in December 2025 to enable Japanese users to access A
 
 ## Origin
 
-- 2025-12-01T00:00+09:00 by unknown: Created for EN→JA translation guidelines.
-- 2026-01-04T10:41+09:00 by Polaris: Added Origin and Navigation (cross-link audit).
-- 2026-01-19T20:18+09:00 by Polaris: Added 5-layer structure, output specification, historical background (v1.1.0).
-- 2026-01-19T21:26+09:00 by Polaris: Updated markdown rule link (`markdown-human.md`).
-- 2026-01-23T03:25+09:00 by Canopus: <<Seal: Rules-Standardization-Batch1>> Standardized to v2.3 (4-layer structure) and workspace-absolute links. (v1.2.0)
+- 2025-12-01T0000 by unknown: Created for EN→JA translation guidelines.
+- 2026-01-04T1041 by Polaris: Added Origin and Navigation (cross-link audit).
+- 2026-01-19T2018 by Polaris: Added 5-layer structure, output specification, historical background (v1.1.0).
+- 2026-01-19T2126 by Polaris: Updated markdown rule link (`markdown-human.md`).
+- 2026-01-23T0325 by Canopus: <<Seal: Rules-Standardization-Batch1>> Standardized to v2.3 (4-layer structure) and workspace-absolute links. (v1.2.0)

@@ -1,14 +1,19 @@
 ---
 ai_visible: true
 title: Localization Standards
-description: Common standards and patterns for translation work across all directions.
+description: Common standards and patterns for translation work across all directions
 tags: [localization, translation, standards]
-version: 1.1.0
+version: 1.0.0
 created: 2026-01-19T20:41:00+09:00
-updated: 2026-01-23T03:25:00+09:00
+updated: 2026-01-19T20:41:00+09:00
 language: en
-author: Lico (Canopus)
-ai_model: Gemini 3 Flash Planning mode
+author: Lico (Polaris)
+ai_model: Claude Opus 4.5 (Thinking) Planning mode
+related:
+  .agent/rules/core/localization/localization-ja-to-en.md: JA → EN translation
+  .agent/rules/core/localization/localization-en-to-ja.md: EN → JA translation
+  .agent/rules/core/markdown/markdown-human.md: Human document format
+  .agent/cards/localization-card.md: Context card for translation work
 ---
 
 # Localization Standards
@@ -32,10 +37,10 @@ Translation work is defined by two axes: **Language** (EN ↔ JA) and **Audience
 
 ### Pattern Matrix
 
-|              |  AI   | Human |
-| :----------- | :---: | :---: |
-| **English**  | EN-AI | EN-HU |
-| **Japanese** | JA-AI | JA-HU |
+|            |  AI   | Human |
+| :--------- | :---: | :---: |
+| **英語**   | EN-AI | EN-HU |
+| **日本語** | JA-AI | JA-HU |
 
 ### Practical Patterns (3 Common)
 
@@ -133,18 +138,21 @@ This standard was created in January 2026 to address fragmentation in translatio
 
 ## Related Documents
 
-| Document                                                                             | Purpose                           |
-| :----------------------------------------------------------------------------------- | :-------------------------------- |
-| [localization-ja-to-en.md](/.agent/rules/core/localization/localization-ja-to-en.md) | JA → EN translation details       |
-| [localization-en-to-ja.md](/.agent/rules/core/localization/localization-en-to-ja.md) | EN → JA translation details       |
-| [markdown-human.md](/.agent/rules/core/markdown/markdown-human.md)                   | Human document format (Pattern 2) |
-| [markdown-ai.md](/.agent/rules/core/markdown/markdown-ai.md)                         | AI document format target         |
-| [Map of Territory](/.agent/rules/map.md)                                             | Root navigation map               |
+| Document                                                                               | Purpose                           |
+| :------------------------------------------------------------------------------------- | :-------------------------------- |
+| [`localization-ja-to-en.md`](/.agent/rules/core/localization/localization-ja-to-en.md) | JA → EN translation details       |
+| [`localization-en-to-ja.md`](/.agent/rules/core/localization/localization-en-to-ja.md) | EN → JA translation details       |
+| [`markdown-human.md`](/.agent/rules/core/markdown/markdown-human.md)                   | Human document format (Pattern 2) |
+| [`markdown-ai.md`](/.agent/rules/core/markdown/markdown-ai.md)                         | AI document format target         |
+| [`localization-card.md`](/.agent/cards/localization-card.md)                           | Context card for translation work |
 
 ---
 
 ## Origin
 
-- 2026-01-19T20:41+09:00 by Polaris: Created as parent rule for all localization work.
-- 2026-01-19T21:26+09:00 by Polaris: Updated markdown rule links (`markdown-ai.md`, `markdown-human.md`).
-- 2026-01-23T03:25+09:00 by Canopus: <<Seal: Rules-Standardization-Batch1>> Standardized to v2.3 (4-layer structure) and workspace-absolute links. (v1.1.0)
+- 2026-01-19T20:41 by Polaris: Created as parent rule for all localization work.
+- 2026-01-19T21:26 by Polaris: Updated markdown rule links (`markdown-ai.md`, `markdown-human.md`).
+
+---
+
+**Navigation**: [← Back to Rules Index](/.agent/rules/map.md)

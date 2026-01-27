@@ -32,10 +32,10 @@ Translation work is defined by two axes: **Language** (EN ↔ JA) and **Audience
 
 ### Pattern Matrix
 
-|              |  AI   | Human |
-| :----------- | :---: | :---: |
-| **English**  | EN-AI | EN-HU |
-| **Japanese** | JA-AI | JA-HU |
+|            |  AI   | Human |
+| :--------- | :---: | :---: |
+| **英語**   | EN-AI | EN-HU |
+| **日本語** | JA-AI | JA-HU |
 
 ### Practical Patterns (3 Common)
 
@@ -131,6 +131,8 @@ This standard was created in January 2026 to address fragmentation in translatio
 
 ---
 
+---
+
 ## Related Documents
 
 | Document                                                                             | Purpose                           |
@@ -145,6 +147,6 @@ This standard was created in January 2026 to address fragmentation in translatio
 
 ## Origin
 
-- 2026-01-19T20:41+09:00 by Polaris: Created as parent rule for all localization work.
-- 2026-01-19T21:26+09:00 by Polaris: Updated markdown rule links (`markdown-ai.md`, `markdown-human.md`).
-- 2026-01-23T03:25+09:00 by Canopus: <<Seal: Rules-Standardization-Batch1>> Standardized to v2.3 (4-layer structure) and workspace-absolute links. (v1.1.0)
+- 2026-01-19T2041 by Polaris: Created as parent rule for all localization work.
+- 2026-01-19T2126 by Polaris: Updated markdown rule links (`markdown-ai.md`, `markdown-human.md`).
+- 2026-01-23T0325 by Canopus: <<Seal: Rules-Standardization-Batch1>> Standardized to v2.3 (4-layer structure) and workspace-absolute links. (v1.1.0)
