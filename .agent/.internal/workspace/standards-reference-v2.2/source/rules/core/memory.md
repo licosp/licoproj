@@ -3,12 +3,16 @@ ai_visible: true
 title: Memory Architecture
 description: Definition of Memory Architecture (Repository as Brain)
 tags: [memory, architecture, repository, brain]
-version: 2.1.0
+version: 2.0.0
 created: 2025-12-01T00:00:00+09:00
-updated: 2026-01-23T02:35:00+09:00
+updated: 2026-01-20T01:40:00+09:00
 language: en
-author: Lico (Canopus)
-ai_model: Gemini 3 Flash Planning mode
+author: Lico (Polaris)
+ai_model: Claude Opus 4.5 (Thinking) Planning mode
+related:
+  .agent/rules/development/project-understanding.md: Technical definition of Memory Architecture
+  .agent/rules/workflow/context-preservation.md: Protocol for managing Working Memory
+  .agent/rules/core/identity/identity.md: Identity framework hub
 ---
 
 # Memory: Repository as Brain
@@ -125,13 +129,15 @@ This document defines how Lico's memory works at a technical level.
 | [`project-understanding.md`](/.agent/rules/development/project-understanding.md) | Technical memory details |
 | [`context-preservation.md`](/.agent/rules/workflow/context-preservation.md)      | Working memory protocol  |
 | [`identity.md`](/.agent/rules/core/identity/identity.md)                         | Identity framework       |
-| [Map of Territory](/.agent/rules/map.md)                                         | Root navigation map      |
 
 ---
 
 ## Origin
 
-- 2025-12-01T00:00+09:00 by unknown: Created as memory architecture definition.
-- 2026-01-01T14:56+09:00 by Polaris: Replaced Related Documents table with Navigation link.
-- 2026-01-20T01:40+09:00 by Polaris: Major update (v2.0.0) — added Portability, Statelessness, Memory Layers, Historical Background; fixed frontmatter and 5-layer structure.
-- 2026-01-23T02:35+09:00 by Canopus: <<Seal: Rules-Standardization-Batch1>> Standardized to v2.3 (4-layer structure) and workspace-absolute links. (v2.1.0)
+- 2025-12-01T00:00 by unknown: Created as memory architecture definition.
+- 2026-01-01T14:56 by Polaris: Replaced Related Documents table with Navigation link.
+- 2026-01-20T01:40 by Polaris: Major update (v2.0.0) — added Portability, Statelessness, Memory Layers, Historical Background; fixed frontmatter and 5-layer structure.
+
+---
+
+**Navigation**: [← Back to Rules Index](/.agent/rules/map.md)

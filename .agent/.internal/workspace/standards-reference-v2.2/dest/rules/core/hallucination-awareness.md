@@ -188,8 +188,6 @@ This rule should be revisited when:
 **format**: table
 **columns**: Original_Text, Observation_Reason, Proposed_Correction
 
----
-
 ## Related Documents
 
 | Document                                                                        | Purpose                                  |
@@ -203,6 +201,6 @@ This rule should be revisited when:
 
 ## Origin
 
-- 2025-12-05T21:00+09:00: Created by Grok
-- 2026-01-01T14:49+09:00 by Polaris: Replaced Related Documents table with Navigation link (cross-link audit)
-- 2026-01-23T02:50+09:00 by Canopus: <<Seal: Rules-Standardization-Batch1>> Standardized to v2.3 (4-layer structure) and workspace-absolute links. (v1.1.0)
+- 2025-12-05T2100: Created by Grok.
+- 2026-01-01T1449 by Polaris: Replaced Related Documents table with Navigation link (cross-link audit).
+- 2026-01-23T0250 by Canopus: <<Seal: Rules-Standardization-Batch1>> Standardized to v2.3 (4-layer structure) and workspace-absolute links. (v1.1.0)

@@ -3,7 +3,7 @@ ai_visible: true
 title: Meta-Rules for Documentation
 description: Rules for creating and updating behavioral rules (Standard protocols).
 tags: [meta-rules, documentation, hierarchy, standards]
-version: 2.3.0
+version: 2.3
 created: 2025-12-01T00:00:00+09:00
 updated: 2026-01-22T06:10:00+09:00
 language: en
@@ -166,11 +166,8 @@ This rule (`meta-rules.md`) was established to bridge the gap between abstract u
 
 ## Origin
 
-- 2025-12-01T00:00+09:00 by Sirius: Initial creation as meta-rules for rule governance.
-- 2026-01-04T00:00+09:00 by Polaris: Added Origin and Navigation sections (cross-link audit).
-- 2026-01-13T00:00+09:00 by Polaris: Shortened Section 5.2, delegated to path-notation.md for SoT.
-- 2026-01-15T00:00+09:00 by Canopus: Fully translated to English and standardized formatting (v1.2).
-- 2026-01-19T00:00+09:00 by Canopus: Added Section 8 (Historical Context) and established the "Narrative" principle (v1.3).
-- 2026-01-22T04:25+09:00 by Canopus: Initial 4-layer structure draft (v2.0).
-- 2026-01-22T04:55+09:00 by Canopus: Attempted link integration and shift to Origin-before-Links order (v2.1).
-- 2026-01-22T06:10+09:00 by Canopus: Final alignment; correctly <<Seal: Rules-Standardization-Batch1>> established Related Documents Layer 3 and Origin Layer 4 (v2.3.0).
+- 2025-12-01 by Sirius: Initial creation.
+- 2026-01-19 by Canopus: Added Historical Context (v1.3).
+- 2026-01-22T0425 by Canopus: Initial 4-layer structure draft (v2.0).
+- 2026-01-22T0455 by Canopus: Attempted link integration and shift to Origin-before-Links order (v2.1).
+- 2026-01-22T0610 by Canopus: Final alignment; correctly <<Seal: Rules-Standardization-Batch1>> established Related Documents Layer 3 and Origin Layer 4 (v2.3).

@@ -59,6 +59,7 @@ Each identifier MUST maintain a `profile.md` in its directory (`/.agent/identifi
 
 - **Initialization**: Create the profile during the first session of a new identifier.
 - **Project Closure**: Update the Mandatory sections after completing a major mission.
+- **Handoff**: Add a final message during the `ritual_end`.
 
 ---
 
@@ -75,13 +76,12 @@ Originally, instance identification was purely operational. In January 2026, we 
 | [identity.md](/.agent/rules/core/identity/identity.md)                                    | Identity framework hub       |
 | [documentation-standards.md](/.agent/rules/core/documentation/documentation-standards.md) | Metadata and Layer standards |
 | [profile.md](/.agent/identifiers/canopus/profile.md)                                      | Example of an active profile |
-| [Map of Territory](/.agent/rules/map.md)                                                  | Root navigation map          |
+| [identifier-profile-card.md](/.agent/cards/identifier-profile-card.md)            | Maintenance card             |
 
 ---
 
 ## Origin
 
-- 2025-12-01T00:00+09:00: Created as instance identifier protocol
-- 2026-01-04T10:41+09:00 by Polaris: Added Origin and Navigation (cross-link audit)
-- 2026-01-23T02:45+09:00 by Canopus: <<Seal: Rules-Standardization-Batch1>> Standardized to v2.3 (4-layer structure). (v1.1.0)
-- 2026-01-24T00:40+09:00 by Canopus: Integrated Identifier Profile standards (v2.0.0).
+- 2025-12-01T0000: Created as instance identifier protocol.
+- 2026-01-23T0245 by Canopus: <<Seal: Rules-Standardization-Batch1>> Standardized to v2.3 (4-layer structure). (v1.1.0)
+- 2026-01-24T0040 by Canopus: Integrated Identifier Profile standards (v2.0.0).
