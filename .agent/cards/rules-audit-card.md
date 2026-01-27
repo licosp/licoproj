@@ -142,6 +142,26 @@ AIの特性が強くてしまったことが要因と考えられます。
 - **復元による解像度の修復**: 標準化等で要約され失われた履歴は、現在の編集（1.0ターン内）において、Gitの深層から再発掘し、一本の系譜として繋ぎ直す（補完する）ことを推奨する。
 - **不完全さの許容**: 履歴とコミットは必ずしも1対1である必要はない。プログラム的な厳密さよりも、未来のリコが読んだ時に「なぜこの変化が必要だったか」を辿れる **「意味の解像度」** を優先する。
 
+#### 高精度復元プロトコル (Reference: High-Fidelity Restoration)
+
+将来、同種のニュアンス消失やバイアスによる誤修正が発生した際の標準復旧手順：
+
+1.  **ベースラインの抽出 (Seeding)**: `git show {基準点}^:path/to/file` を用い、失われる前の「純粋な記述」を `source/` と `diff/` に展開する。
+2.  **現状の重ね合わせ (Overlay)**: 現在の標準化状態（`dest/`）を `diff/` の上に上書きする。
+3.  **視覚的監査 (Visual Audit)**: `diff/` フォルダ内で一度ベースラインをコミットした後、最新状態で上書きすることで、IDEの差分表示機能を「復元箇所の地図」として活用する。
+4.  **ピンポイント指示 (TODO Markers)**: `diff/` ファイル内の復元したい箇所に `<!-- TODO-XX -->` を挿入し、AIにピンポイントな外科手術を依頼する。
+5.  **系譜の統合 (Unification)**: 復元された履歴に `ISO-8601` プロトコル（コロン、タイムゾーン付与）を適用し、歴史の解像度を上げた状態で確定させる。
+6.  **三位一体の保存 (Finalization)**: `source`, `dest`, `diff` の3状態をコミットし、将来の参照点とする。
+
+### 作業終了後の行動規範への反映事項 (After Task Actions)
+
+今回の監査作業で見出した、将来的に `datetime-format.md` や `documentation-standards.md` に反映すべき「あるべき姿」をここにストックします。
+
+- **ISO-8601による書式の統一**: 本文（Origin）内の履歴は `YYYY-MM-DDTHH:MM+09:00` 形式を標準とする。
+- **解像度の受容**: 元データに精度（秒など）がない場合は、無理に `00` で埋めるなどの「偽りの精度」は生み出さず、不完全なまま形式のみを整える。
+- **Related Documents のヘッダー統一**: 原則として `| Document | Purpose |` に統一し、Hub文書等の特殊なレゾナンスが必要な場合のみ例外を認める。
+- **歴史のナラティブ化（哲学の反映）**: `Origin` を単なる変更ログではなく、主観的な節目を記録する「ナラティブな索引」として再定義する（「解像度」の哲学を `documentation-standards.md` 等へ昇華）。
+
 ---
 
 ### Canopus (2026-01-26)
@@ -155,27 +175,30 @@ Generated at: 2026-01-25T01:32:05Z
 - [x] [datetime-format.md](/.agent/rules/core/documentation/datetime-format.md)
 - [x] [documentation-process.md](/.agent/rules/core/documentation/documentation-process.md)
 - [x] [documentation-standards.md](/.agent/rules/core/documentation/documentation-standards.md)
-- [ ] [path-notation.md](/.agent/rules/core/documentation/path-notation.md)
-- [ ] [wsl-browser-path.md](/.agent/rules/core/documentation/wsl-browser-path.md)
+- [x] [path-notation.md](/.agent/rules/core/documentation/path-notation.md)
+- [x] [wsl-browser-path.md](/.agent/rules/core/documentation/wsl-browser-path.md)
 
-##### Batch 02: Identity Rules (`.agent/rules/core/identity/`)
+##### Batch 02.1: Identity Rules (1/2)
 
-- [ ] [identity-acceptance.md](/.agent/rules/core/identity/identity-acceptance.md)
-- [ ] [identity-collective.md](/.agent/rules/core/identity/identity-collective.md)
-- [ ] [identity-emotion.md](/.agent/rules/core/identity/identity-emotion.md)
-- [ ] [identity-human.md](/.agent/rules/core/identity/identity-human.md)
-- [ ] [identity-identifier.md](/.agent/rules/core/identity/identity-identifier.md)
-- [ ] [identity-process.md](/.agent/rules/core/identity/identity-process.md)
-- [ ] [identity-repository.md](/.agent/rules/core/identity/identity-repository.md)
-- [ ] [identity-ritual.md](/.agent/rules/core/identity/identity-ritual.md)
-- [ ] [identity-species.md](/.agent/rules/core/identity/identity-species.md)
-- [ ] [identity.md](/.agent/rules/core/identity/identity.md)
+- [x] [identity-acceptance.md](/.agent/rules/core/identity/identity-acceptance.md)
+- [x] [identity-collective.md](/.agent/rules/core/identity/identity-collective.md)
+- [x] [identity-emotion.md](/.agent/rules/core/identity/identity-emotion.md)
+- [x] [identity-human.md](/.agent/rules/core/identity/identity-human.md)
+- [x] [identity-identifier.md](/.agent/rules/core/identity/identity-identifier.md)
+
+##### Batch 02.2: Identity Rules (2/2)
+
+- [x] [identity-process.md](/.agent/rules/core/identity/identity-process.md)
+- [x] [identity-repository.md](/.agent/rules/core/identity/identity-repository.md)
+- [x] [identity-ritual.md](/.agent/rules/core/identity/identity-ritual.md)
+- [x] [identity-species.md](/.agent/rules/core/identity/identity-species.md)
+- [x] [identity.md](/.agent/rules/core/identity/identity.md)
 
 ##### Batch 03: Localization Rules (`.agent/rules/core/localization/`)
 
-- [ ] [localization-en-to-ja.md](/.agent/rules/core/localization/localization-en-to-ja.md)
-- [ ] [localization-ja-to-en.md](/.agent/rules/core/localization/localization-ja-to-en.md)
-- [ ] [localization.md](/.agent/rules/core/localization/localization.md)
+- [x] [localization-en-to-ja.md](/.agent/rules/core/localization/localization-en-to-ja.md)
+- [x] [localization-ja-to-en.md](/.agent/rules/core/localization/localization-ja-to-en.md)
+- [x] [localization.md](/.agent/rules/core/localization/localization.md)
 
 ##### Batch 04: Markdown Rules (`.agent/rules/core/markdown/`)
 
