@@ -238,11 +238,11 @@ Generated at: 2026-01-25T01:32:05Z
 
 ##### Batch 06: Core Rules (`.agent/rules/core/`)
 
-- [ ] [cognitive-collaboration.md](/.agent/rules/core/cognitive-collaboration.md)
-- [ ] [communication.md](/.agent/rules/core/communication.md)
-- [ ] [context-sovereignty.md](/.agent/rules/core/context-sovereignty.md)
-- [ ] [delay-tolerance.md](/.agent/rules/core/delay-tolerance.md)
-- [ ] [environment-specs.md](/.agent/rules/core/environment-specs.md)
+- [x] [cognitive-collaboration.md](/.agent/rules/core/cognitive-collaboration.md)
+- [x] [communication.md](/.agent/rules/core/communication.md)
+- [x] [context-sovereignty.md](/.agent/rules/core/context-sovereignty.md)
+- [x] [delay-tolerance.md](/.agent/rules/core/delay-tolerance.md)
+- [x] [environment-specs.md](/.agent/rules/core/environment-specs.md)
 - [ ] [hallucination-awareness.md](/.agent/rules/core/hallucination-awareness.md)
 - [ ] [instance-identifier.md](/.agent/rules/core/instance-identifier.md)
 - [ ] [language-standards.md](/.agent/rules/core/language-standards.md)
