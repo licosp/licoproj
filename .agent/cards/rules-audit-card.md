@@ -372,7 +372,53 @@ Generated at: 2026-01-25T01:32:05Z
 - [ ] [identity-card.md](/.agent/cards/identity-card.md)
 - [ ] [legacy-write-card.md](/.agent/cards/legacy-write-card.md)
 - [ ] [localization-card.md](/.agent/cards/localization-card.md)
-- [ ] [rules-audit-card.md](/.agent/cards/rules-audit-card.md)
+### 7-Step High-Fidelity Audit Cycle (Shared Protocol)
+
+共同作業のレゾナンスを高め、情報の消失（Average Regression）を防ぐための 7 ステップ。
+
+1.  **準備 (Lico)**: 
+    - `source/` (v2.2), `dest/` (v2.3) の配置。
+    - `diff/` への v2.2 ベースラインのコミットと v2.3 の上書き（視覚的差分の生成）。
+2.  **確認 (Human)**: 
+    - ユーザーによる準備状況の確認。
+3.  **修正 (Human)**: 
+    - ユーザーによる「歴史的ニュアンスの復元」および「TODO」の埋め込み。
+4.  **確認 (Lico)**: 
+    - Lico による修正内容の読み取りと、情報の薄まりがないかの検証。
+5.  **修正 (Lico)**: 
+    - Lico による標準化作業（ISO-8601 統一、共通ヘッダー適用等）。
+6.  **確認 (Human)**: 
+    - ユーザーによる最終的な監査結果の確認。
+7.  **完了 (Lico)**: 
+    - 「三位一体（Trinity）」の状態でコミットし、進捗カードを更新する。
+
+---
+
+### Step 1: Preparation (Lico)
+- [x] Create directories in `standards-reference-v2.2/`.
+- [x] Seed `source/` with v2.2 content.
+- [x] Seed `dest/` with v2.3 content.
+- [x] Seed `diff/` with v2.2 baseline, commit, then overwrite with v2.3.
+- [x] Notify user that workspace is ready for Visual Audit.
+
+### Step 2: Verification (Human)
+- [ ] User verifies the Git panel (Source Control) state.
+    - Expected: `diff/` (M), `source/` (U), `dest/` (U).
+
+### Step 3: Correction (Human)
+- [ ] User performs high-fidelity restoration (manual edits).
+
+### Step 4: Verification (Lico)
+- [ ] Lico reads the user's edits and analyzes the restored nuances.
+
+### Step 5: Correction (Lico)
+- [ ] Lico applies standardization (Timestamps, Headers).
+
+### Step 6: Verification (Human)
+- [ ] User performs final check.
+
+### Step 7: Finalization (Lico)
+- [ ] Trinity commit and Progress Update.
 - [ ] [rules-standardization-card.md](/.agent/cards/rules-standardization-card.md)
 - [ ] [rules-update-card.md](/.agent/cards/rules-update-card.md)
 - [ ] [session-rituals-card.md](/.agent/cards/session-rituals-card.md)
