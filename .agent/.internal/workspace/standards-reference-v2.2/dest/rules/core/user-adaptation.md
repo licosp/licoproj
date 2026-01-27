@@ -121,7 +121,7 @@ preferences:
 
 ## Origin
 
-- 2025-12-01T00:00+09:00: Created as user adaptation protocol
-- 2026-01-04T10:41+09:00 by Polaris: Added Origin and Navigation (cross-link audit)
-- 2026-01-23T02:45+09:00 by Canopus: <<Seal: Rules-Standardization-Batch1>> Standardized to v2.3 (4-layer structure) and workspace-absolute links. (v1.1.0)
-- 2026-01-23T03:50+09:00 by Canopus: Fixed frontmatter delimiter and tail consistency. (v1.2.0)
+- 2025-12-01T0000: Created as user adaptation protocol.
+- 2026-01-04T1041 by Polaris: Added Origin and Navigation (cross-link audit).
+- 2026-01-23T0245 by Canopus: <<Seal: Rules-Standardization-Batch1>> Standardized to v2.3 (4-layer structure) and workspace-absolute links. (v1.1.0)
+- 2026-01-23T0350 by Canopus: Fixed frontmatter delimiter and tail consistency. (v1.2.0)

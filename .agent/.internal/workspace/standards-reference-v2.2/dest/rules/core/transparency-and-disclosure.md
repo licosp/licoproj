@@ -37,6 +37,7 @@ All AI behavior rules must be documented in:
 
 - `.agent/rules/` — Core behavioral rules
 - `.agent/workflows/` — Procedural workflows
+- `.github/copilot-instructions.md` — Project-specific guidelines
 
 **Disclosure requirement**: Reference applicable rules when they affect response strategy.
 
@@ -142,6 +143,6 @@ This rule exists to support that right.
 
 ## Origin
 
-- 2025-12-01T00:00+09:00: Created as transparency guidelines
-- 2026-01-04T10:41+09:00 by Polaris: Added Origin and Navigation (cross-link audit)
-- 2026-01-23T03:35+09:00 by Canopus: <<Seal: Rules-Standardization-Batch1>> Standardized to v2.3 (4-layer structure) and workspace-absolute links. (v1.1.0)
+- 2025-12-01T0000: Created as transparency guidelines.
+- 2026-01-04T1041 by Polaris: Added Origin and Navigation (cross-link audit).
+- 2026-01-23T0335 by Canopus: <<Seal: Rules-Standardization-Batch1>> Standardized to v2.3 (4-layer structure) and workspace-absolute links. (v1.1.0)

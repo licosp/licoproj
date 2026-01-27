@@ -171,7 +171,7 @@ MUST NOT: Stop at first satisfying result
 
 ## Origin
 
-- 2025-12-22T19:30+09:00 by Sirius: Original discovery of 0.5 turn theory
-- 2026-01-08T12:30+09:00 by Polaris: Formalized as behavioral rule, expanded to cover early satisfaction bias
-- 2026-01-15T02:05+09:00 by Polaris: Added Language Blindness section
-- 2026-01-23T02:45+09:00 by Canopus: <<Seal: Rules-Standardization-Batch1>> Standardized to v2.3 (4-layer structure) and workspace-absolute links. (v1.2.0)
+- 2025-12-22T1930 by Sirius: Original discovery of 0.5 turn theory.
+- 2026-01-08T1230 by Polaris: Formalized as behavioral rule, expanded to cover early satisfaction bias.
+- 2026-01-15T0205 by Polaris: Added Language Blindness section.
+- 2026-01-23T0245 by Canopus: <<Seal: Rules-Standardization-Batch1>> Standardized to v2.3 (4-layer structure) and workspace-absolute links. (v1.2.0)

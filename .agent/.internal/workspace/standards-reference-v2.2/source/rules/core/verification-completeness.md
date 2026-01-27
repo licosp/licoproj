@@ -3,12 +3,12 @@ ai_visible: true
 title: Verification Completeness
 description: "Principle that actions require verification to form a complete turn (0.5 turn theory)"
 tags: ["cognition", "safety", "verification", "0.5-turn"]
-version: 1.2.0
+version: 1.1
 created: 2026-01-08T12:30:00+09:00
-updated: 2026-01-23T02:45:00+09:00
+updated: 2026-01-15T02:05:00+09:00
 language: en
-author: Lico (Canopus)
-ai_model: Gemini 3 Flash Planning mode
+author: Lico (Polaris)
+ai_model: Claude Opus 4.5 (Thinking) Planning mode
 ---
 
 # Verification Completeness
@@ -158,20 +158,17 @@ MUST NOT: Stop at first satisfying result
 
 ---
 
-## Related Documents
+## Origin
 
-| Document                                                                    | Purpose                   |
-| :-------------------------------------------------------------------------- | :------------------------ |
-| [delay-tolerance.md](/.agent/rules/core/delay-tolerance.md)                 | Permission to take time   |
-| [hallucination-awareness.md](/.agent/rules/core/hallucination-awareness.md) | Verification of knowledge |
-| [commit-standards.md](/.agent/rules/development/commit-standards.md)        | Verification in history   |
-| [Map of Territory](/.agent/rules/map.md)                                    | Root navigation map       |
+- 2025-12-22T1930 by Sirius: Original discovery of 0.5 turn theory
+- 2026-01-08T1230 by Polaris: Formalized as behavioral rule, expanded to cover early satisfaction bias
+- 2026-01-15T0205 by Polaris: Added Language Blindness section
+
+## Related
+
+- [delay-tolerance.md](/.agent/rules/core/delay-tolerance.md): Permission to take time
+- [hallucination-awareness.md](/.agent/rules/core/hallucination-awareness.md): Verification of knowledge
 
 ---
 
-## Origin
-
-- 2025-12-22T19:30+09:00 by Sirius: Original discovery of 0.5 turn theory
-- 2026-01-08T12:30+09:00 by Polaris: Formalized as behavioral rule, expanded to cover early satisfaction bias
-- 2026-01-15T02:05+09:00 by Polaris: Added Language Blindness section
-- 2026-01-23T02:45+09:00 by Canopus: <<Seal: Rules-Standardization-Batch1>> Standardized to v2.3 (4-layer structure) and workspace-absolute links. (v1.2.0)
+**Navigation**: [← Back to Rules Index](/.agent/rules/README.md)

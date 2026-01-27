@@ -53,16 +53,15 @@ Use numerical prefixes to ensure a fixed, predictable order in the system contex
 
 ## Related Documents
 
-| Document                                                                                                                                           | Purpose             |
-| :------------------------------------------------------------------------------------------------------------------------------------------------- | :------------------ |
-| [context-sovereignty.md](/.agent/rules/core/context-sovereignty.md)                                                                                | Core Philosophy     |
-| [workspace_persistent_notepad_mechanism.md](/.agent/.internal/references/agents/canopus/2026-01-17T0345_workspace_persistent_notepad_mechanism.md) | Technical Spec      |
-| [Map of Territory](/.agent/rules/map.md)                                                                                                           | Root navigation map |
+| Document                                                            | Purpose             |
+| :------------------------------------------------------------------ | :------------------ |
+| [context-sovereignty.md](/.agent/rules/core/context-sovereignty.md) | Core Philosophy     |
+| [Map of Territory](/.agent/rules/map.md)                            | Root navigation map |
 
 ---
 
 ## Origin
 
-- 2026-01-17T19:00+09:00 by Canopus: (Legacy) Created `ai-autonomy.md` to formalize the transition to autonomous guardian.
-- 2026-01-19T00:00+09:00 by Canopus: Reorganized into a three-tier structure; extracted Workspace implementation into `workspace-mantras.md`.
-- 2026-01-23T03:50+09:00 by Canopus: <<Seal: Rules-Standardization-Batch1>> Standardized to v2.3 (4-layer structure) and workspace-absolute links. (v1.1.0)
+- 2026-01-17T1900 by Canopus: (Legacy) Created `ai-autonomy.md` to formalize the transition to autonomous guardian.
+- 2026-01-19T0145 by Canopus: Reorganized into a three-tier structure; extracted Workspace implementation into `workspace-mantras.md`. (v1.0.0)
+- 2026-01-23T0350 by Canopus: <<Seal: Rules-Standardization-Batch1>> Standardized to v2.3 (4-layer structure) and workspace-absolute links. (v1.1.0)

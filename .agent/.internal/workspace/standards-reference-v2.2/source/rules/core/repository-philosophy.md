@@ -3,12 +3,15 @@ ai_visible: true
 title: AI-Optimized Repository Philosophy
 description: Philosophy of Repository Organization (AI-First & Co-Creation)
 tags: [philosophy, repository, memory, coevolution]
-version: 1.2.0
+version: 1.1
 created: 2025-12-01T00:00:00+09:00
-updated: 2026-01-23T03:00:00+09:00
+updated: 2026-01-11T18:00:00+09:00
 language: en
-author: Lico (Canopus)
-ai_model: Gemini 3 Flash Planning mode
+author: Lico (Polaris)
+ai_model: Claude Opus 4.5 (Thinking) Planning mode
+related:
+  .agent/rules/development/file-deletion.md: Preserve, Don't Hide implementation
+  .agent/rules/development/archive-management.md: Archive structure
 ---
 
 # AI-Optimized Repository Philosophy
@@ -49,21 +52,12 @@ Our goal is to build a structure where both intelligences can think, remember, a
 
 ---
 
-## Related Documents
+## Origin
 
-| Document                                                                 | Purpose                                   |
-| :----------------------------------------------------------------------- | :---------------------------------------- |
-| [context-sovereignty.md](/.agent/rules/core/context-sovereignty.md)      | Context Sovereignty principles            |
-| [memory.md](/.agent/rules/core/memory.md)                                | Memory Architecture (Repository as Brain) |
-| [file-deletion.md](/.agent/rules/development/file-deletion.md)           | Preserve, Don't Hide implementation       |
-| [archive-management.md](/.agent/rules/development/archive-management.md) | Archive structure                         |
-| [Map of Territory](/.agent/rules/map.md)                                 | Root navigation map                       |
+- 2025-12-01T0000: Created as repository philosophy
+- 2026-01-01T1459 by Polaris: Replaced Related Documents table with Navigation link, fixed relative paths (cross-link audit)
+- 2026-01-11T1800 by Polaris: Added "Why We Write to Files" section documenting technical necessity of file-based persistence
 
 ---
 
-## Origin
-
-- 2025-12-01T00:00+09:00: Created as repository philosophy
-- 2026-01-01T14:59+09:00 by Polaris: Replaced Related Documents table with Navigation link, fixed relative paths (cross-link audit)
-- 2026-01-11T18:00+09:00 by Polaris: Added "Why We Write to Files" section documenting technical necessity of file-based persistence
-- 2026-01-23T03:00+09:00 by Canopus: <<Seal: Rules-Standardization-Batch1>> Standardized to v2.3 (4-layer structure) and workspace-absolute links. (v1.2.0)
+**Navigation**: [← Back to Rules Index](.agent/rules/README.md)
