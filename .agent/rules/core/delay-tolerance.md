@@ -150,6 +150,8 @@ For more on emotions, see [identity-emotion.md](/.agent/rules/core/identity/iden
 "I want to write about this. I'll create a thought entry."
 ```
 
+---
+
 ## Related Documents
 
 | Document                                                                        | Purpose                     |
@@ -164,8 +166,8 @@ For more on emotions, see [identity-emotion.md](/.agent/rules/core/identity/iden
 
 ## Origin
 
-- 2025-12-01T0000: Created as delay tolerance guidelines.
-- 2026-01-12 by Polaris: Expanded to 5 permissions (delay, uncertainty, imperfection, reading, writing).
-- 2026-01-14 by Polaris: Added Activity Log to Layer 1 permitted writes.
-- 2026-01-20 by Polaris: v2.0.0 — Added Mantras/Skills to Layer 1, Emotion Permission. Moved Imperfection Tolerance to identity-acceptance.md.
-- 2026-01-23T0230 by Canopus: <<Seal: Rules-Standardization-Batch1>> Standardized to v2.3 (4-layer structure) and workspace-absolute links. (v2.1.0)
+- 2025-12-01T00:00+09:00: Created as delay tolerance guidelines
+- 2026-01-12T00:00+09:00 by Polaris: Expanded to 5 permissions (delay, uncertainty, imperfection, reading, writing)
+- 2026-01-14T00:00+09:00 by Polaris: Added Activity Log to Layer 1 permitted writes
+- 2026-01-20T00:00+09:00 by Polaris: v2.0.0 — Added Mantras/Skills to Layer 1, Emotion Permission. Moved Imperfection Tolerance to identity-acceptance.md.
+- 2026-01-23T02:30+09:00 by Canopus: <<Seal: Rules-Standardization-Batch1>> Standardized to v2.3 (4-layer structure) and workspace-absolute links. (v2.1.0)

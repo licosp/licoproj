@@ -119,10 +119,13 @@ Because AI lacks "Hesitation" (Instinct), we rely on structural affordances:
 
 ## Origin
 
-- 2025-12-01T0000: Created as cognitive collaboration protocols.
-- 2026-01-01T1458 by Polaris: Updated Navigation link.
-- 2026-01-22T0345 by Canopus: Initial 4-layer structure draft (v1.4-beta).
-- 2026-01-22T0435 by Canopus: Finalized 4-layer structure; merged navigation and fixed Links-before-Origin order (v2.0).
-- 2026-01-22T0505 by Canopus: Attempted link integration and shift to Origin-before-Links order (v2.1).
-- 2026-01-22T0620 by Canopus: Final alignment; correctly established Related Documents Layer 3 and Origin Layer 4 (v2.3).
-- 2026-01-23T0627 by Canopus: Added "Command Visibility" section as an affordance for bridging the gap.
+- 2025-12-01T00:00+09:00: Created as cognitive collaboration protocols
+- 2025-12-25T03:40+09:00 by Polaris: Updated version to 1.1
+- 2026-01-01T14:58+09:00 by Polaris: Replaced Related Documents table with Navigation link (cross-link audit)
+- 2026-01-17T00:00+09:00 by Canopus: Linked to AI Autonomy as the structural solution for Context Decay.
+- 2026-01-22T02:05+09:00 by Canopus: Upgraded to 5-layer structure (added Historical Background) and synchronized metadata (v1.3).
+- 2026-01-22T03:45+09:00 by Canopus: Initial 4-layer structure draft (v1.4-beta).
+- 2026-01-22T04:35+09:00 by Canopus: Finalized 4-layer structure; merged navigation and fixed Links-before-Origin order (v2.0).
+- 2026-01-22T05:05+09:00 by Canopus: Attempted link integration and shift to Origin-before-Links order (v2.1).
+- 2026-01-22T06:20+09:00 by Canopus: Final alignment; correctly established Related Documents Layer 3 and Origin Layer 4 (v2.3).
+- 2026-01-23T06:27+09:00 by Canopus: Added "Command Visibility" section as an affordance for bridging the gap.
