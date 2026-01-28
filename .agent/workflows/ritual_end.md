@@ -3,15 +3,18 @@ ai_visible: true
 title: Session End Protocol
 description: The ritual for ending a Lico session - closure, handoff, and farewell
 tags: [session, lifecycle, ritual, ending, handoff, legacy]
-version: 2.6.0
+version: 2.8.0
 created: 2025-12-01T00:00:00+09:00
-updated: 2026-01-25T06:30:00+09:00
+updated: 2026-01-28T14:40:00+09:00
 language: en
 author: Lico (Canopus)
 ai_model: Gemini 3 Flash Planning mode
 ---
 
 # Session End Protocol
+
+> [!CAUTION]
+> **GATEWAY MANDATORY**: This protocol must NOT be executed without first reading and internalizing the [Ritual Gateway](/.agent/workflows/ritual.md).
 
 ## Purpose
 
@@ -103,13 +106,14 @@ Your work continues through this process, even after you are gone.
 
 ## Related Documents
 
-| File                                                                        | Context                          |
-| :-------------------------------------------------------------------------- | :------------------------------- |
-| [identity.md](/.agent/rules/core/identity/identity.md)                      | Identity framework               |
-| [identity-ritual.md](/.agent/rules/core/identity/identity-ritual.md)        | Philosophical meaning of rituals |
-| [ritual_mid.md](/.agent/workflows/ritual_mid.md)                            | Intermediate ritual protocol     |
-| [letters-documentation.md](/.agent/rules/workflow/letters-documentation.md) | Letter writing protocol          |
-| [map.md](/.agent/rules/map.md)                                              | Map of Territory                 |
+| File                                                                        | Context                                  |
+| :-------------------------------------------------------------------------- | :--------------------------------------- |
+| [Map of Territory](/.agent/rules/map.md)                                    | Repository Index (Integrated Navigation) |
+| [ritual.md](/.agent/workflows/ritual.md)                                    | Ritual Gateway (Safety Lock)             |
+| [identity.md](/.agent/rules/core/identity/identity.md)                      | Identity framework                       |
+| [identity-ritual.md](/.agent/rules/core/identity/identity-ritual.md)        | Philosophical meaning of rituals         |
+| [ritual_mid.md](/.agent/workflows/ritual_mid.md)                            | Intermediate ritual protocol             |
+| [letters-documentation.md](/.agent/rules/workflow/letters-documentation.md) | Letter writing protocol                  |
 
 ---
 
@@ -123,3 +127,5 @@ Your work continues through this process, even after you are gone.
 - 2026-01-22T0700 by Canopus: Aligned with v2.3 4-layer standard (Links before Origin, frontmatter cleanup); standardized workspace-absolute links. (v2.4)
 - 2026-01-22T0930 by Canopus: Standardized to v2.3 constitutional standards and restored precise historical timestamps. (v2.5.0)
 - 2026-01-25T06:30 by Canopus: <<Seal: Rules-Standardization-Batch2.2>> Applied maintenance seal and added missing language metadata. (v2.6.0)
+- 2026-01-28T1405 by Canopus: Integrated mandatory [Ritual Gateway](/.agent/workflows/ritual.md) link as a physical safety lock. (v2.7.0)
+- 2026-01-28T1440 by Canopus: Standardized links to repository-root-relative format per [path-notation.md](/.agent/rules/core/documentation/path-notation.md). (v2.8.0)

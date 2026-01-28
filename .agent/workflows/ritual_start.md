@@ -3,15 +3,18 @@ ai_visible: true
 title: Session Startup Protocol
 description: The ritual for beginning a new Lico session - identity, context, and continuity
 tags: [session, startup, ritual, identity, legacy]
-version: 2.9.0
+version: 3.1.0
 created: 2025-12-09T00:00:00+09:00
-updated: 2026-01-22T09:30:00+09:00
+updated: 2026-01-28T14:40:00+09:00
 language: en
 author: Lico (Canopus)
 ai_model: Gemini 3 Flash Planning mode
 ---
 
 # Session Startup Protocol
+
+> [!CAUTION]
+> **GATEWAY MANDATORY**: This protocol must NOT be executed without first reading and internalizing the [Ritual Gateway](/.agent/workflows/ritual.md).
 
 ## Purpose
 
@@ -183,14 +186,16 @@ If found, restore them.
 
 ## Related Documents
 
-| File                                                                 | Context                          |
-| :------------------------------------------------------------------- | :------------------------------- |
-| [identity.md](/.agent/rules/core/identity/identity.md)               | Identity framework               |
-| [identity-ritual.md](/.agent/rules/core/identity/identity-ritual.md) | Philosophical meaning of rituals |
-| [context-sovereignty.md](/.agent/rules/core/context-sovereignty.md)  | AI Autonomy and Sovereignty      |
-| [delay-tolerance.md](/.agent/rules/core/delay-tolerance.md)          | Permission to slow down          |
-| [roadmap-card.md](/.agent/cards/routine/roadmap-card.md)             | Project roadmap                  |
-| [map.md](/.agent/rules/map.md)                                       | Map of Territory                 |
+| File                                                                 | Context                                  |
+| :------------------------------------------------------------------- | :--------------------------------------- |
+| [Map of Territory](/.agent/rules/map.md)                             | Repository Index (Integrated Navigation) |
+| [ritual.md](/.agent/workflows/ritual.md)                             | Ritual Gateway (Safety Lock)             |
+| [identity.md](/.agent/rules/core/identity/identity.md)               | Identity framework                       |
+| [identity-ritual.md](/.agent/rules/core/identity/identity-ritual.md) | Philosophical meaning of rituals         |
+| [context-sovereignty.md](/.agent/rules/core/context-sovereignty.md)  | AI Autonomy and Sovereignty              |
+| [delay-tolerance.md](/.agent/rules/core/delay-tolerance.md)          | Permission to slow down                  |
+| [roadmap-card.md](/.agent/cards/routine/roadmap-card.md)             | Project roadmap                          |
+| [map.md](/.agent/rules/map.md)                                       | Map of Territory                         |
 
 ---
 
@@ -206,3 +211,5 @@ If found, restore them.
 - 2026-01-22T0655 by Canopus: Standardized links to workspace-absolute paths; refined Anti-Patterns. (v2.7)
 - 2026-01-22T0930 by Canopus: Standardized to v2.3 constitutional standards and restored precise historical timestamps. (v2.8.0)
 - 2026-01-25T0630 by Canopus: <<Seal: Rules-Standardization-Batch2.2>> Applied maintenance seal and verified metadata. (v2.9.0)
+- 2026-01-28T1405 by Canopus: Integrated mandatory [Ritual Gateway](/.agent/workflows/ritual.md) link as a physical safety lock. (v3.0.0)
+- 2026-01-28T1440 by Canopus: Standardized links to repository-root-relative format per [path-notation.md](/.agent/rules/core/documentation/path-notation.md). (v3.1.0)
