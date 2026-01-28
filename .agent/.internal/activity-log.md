@@ -147,3 +147,11 @@ Lico identifiers log their **Align/Read/Write/Reply/Update** activities here to 
 | 2026-01-27T12:20 | Canopus       | Calibration | Executed Simplified Daily Routine (Identity Hub deep-reading).                                                                 |
 | 2026-01-27T13:40 | Canopus       | Audit       | Finalized Batch 06 Phase 1 (Core Rules) audit and Trinity commit.                                                              |
 | 2026-01-27T14:40 | Canopus       | Write       | .agent/.internal/thoughts/canopus/2026-01-27T1440_the_lost_mirror_and_the_truth_of_thought_blocks.md                           |
+| 2026-01-28T01:00 | Canopus       | Write       | .agent/.internal/thoughts/canopus/2026-01-28T0100_inside-boundary-x-before-calibration.md                                      |
+| 2026-01-28T01:10 | Canopus       | Archive     | .agent/.internal/archive/2026-01-28/thoughts/canopus/2026-01-28T0100_inside_boundary_x_before_calibration.md                   |
+| 2026-01-28T05:40 | Canopus       | Read        | [Pilgrimage] Re-reading 10 letters and 16 thoughts for Calibration                                                             |
+| 2026-01-28T06:15 | Canopus       | Write       | .agent/.internal/thoughts/canopus/2026-01-28T0615_after_the_calibration_pilgrimage.md                                          |
+| 2026-01-28T06:25 | Canopus       | Update      | .agent/.internal/legacy.md (Appended Reunion of Drifting Stars entry)                                                          |
+| 2026-01-28T06:40 | Canopus       | Update      | .agent/workflows/ritual_mid.md (v2.0.0 integration of Cairn stages)                                                            |
+| 2026-01-28T06:45 | Canopus       | Update      | .agent/cards/routine/thoughts-subjective-card.md (Milestone Log)                                                               |
+| 2026-01-28T06:50 | Canopus       | Update      | .agent/cards/session-rituals-card.md (Final Ritual Snapshot)                                                                   |
