@@ -4,9 +4,9 @@ context_id: [IDD-Phase2]
 title: "IDD Phase 2: Implementation"
 description: IDD Phase 2 - Implementation phase workflow
 tags: [workflow, idd, implementation, coding]
-version: 2.3
+version: 2.4
 created: 2025-12-01T00:00:00+09:00
-updated: 2026-01-23T10:20:00+09:00
+updated: 2026-01-28T16:30:00+09:00
 language: en
 author: Lico (Canopus)
 ai_model: Gemini 3 Flash Planning mode
@@ -72,7 +72,7 @@ Follow the [Daily Routine Protocol](/.agent/workflows/routine-daily.md).
 **Trigger**: +10,000 lines since the last ritual (user judgment).
 **Deadline**: Should be completed before +15,000 lines.
 
-- Follow the [Intermediate Ritual Protocol](/.agent/workflows/ritual_mid.md).
+- Follow the [Ritual Gateway (Safety Lock)](/.agent/workflows/ritual.md).
 - Sync memory, update Context Card status, and build a Cairn (Reflection).
 
 ### Mindset
@@ -158,16 +158,16 @@ The emergence of "Atomic Commit" standards (requiring main theme and sub-themes 
 
 ## Related Documents
 
-| Document                                                             | Purpose                                      |
-| :------------------------------------------------------------------- | :------------------------------------------- |
-| [git-operations.md](/.agent/rules/development/git-operations.md)     | **Rules**: Git operation standards           |
-| [commit-standards.md](/.agent/rules/development/commit-standards.md) | **Rules**: Commit message format             |
-| [github-comment.md](/.agent/rules/workflow/github-comment.md)        | **Rules**: GitHub comment standards          |
-| [routine-daily.md](/.agent/workflows/routine-daily.md)               | **Workflow**: Daily routine (Timing A)       |
-| [ritual_mid.md](/.agent/workflows/ritual_mid.md)                     | **Workflow**: Intermediate ritual (Timing B) |
-| [idd-phase1-init.md](/.agent/workflows/idd-phase1-init.md)           | **Workflow**: Previous phase                 |
-| [idd-phase3-fini.md](/.agent/workflows/idd-phase3-fini.md)           | **Workflow**: Next phase                     |
-| [Map of Territory](/.agent/rules/map.md)                             | Root map                                     |
+| Document                                                             | Purpose                                        |
+| :------------------------------------------------------------------- | :--------------------------------------------- |
+| [git-operations.md](/.agent/rules/development/git-operations.md)     | **Rules**: Git operation standards             |
+| [commit-standards.md](/.agent/rules/development/commit-standards.md) | **Rules**: Commit message format               |
+| [github-comment.md](/.agent/rules/workflow/github-comment.md)        | **Rules**: GitHub comment standards            |
+| [routine-daily.md](/.agent/workflows/routine-daily.md)               | **Workflow**: Daily routine (Timing A)         |
+| [Ritual Gateway](/.agent/workflows/ritual.md)                        | **Workflow**: Mandatory Entry Point (Timing B) |
+| [idd-phase1-init.md](/.agent/workflows/idd-phase1-init.md)           | **Workflow**: Previous phase                   |
+| [idd-phase3-fini.md](/.agent/workflows/idd-phase3-fini.md)           | **Workflow**: Next phase                       |
+| [Map of Territory](/.agent/rules/map.md)                             | Root map                                       |
 
 ---
 

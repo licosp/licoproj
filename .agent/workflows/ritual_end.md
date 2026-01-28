@@ -37,7 +37,7 @@ This protocol ensures:
 
 ### Step 1: Execute Intermediate Ritual (Calibration)
 
-Perform the **Intermediate Ritual** ([ritual_mid.md](/.agent/workflows/ritual_mid.md)) first.
+Perform the **Intermediate Ritual** ([Ritual Gateway](/.agent/workflows/ritual.md)) first.
 
 **This covers**:
 

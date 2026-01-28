@@ -4,9 +4,9 @@ context_id: "[Routine]"
 default_phase: "(Daily)"
 # Shared Configuration
 ai_visible: true
-version: 1.1.0
+version: 1.2.0
 created: 2026-01-14T23:20:00+09:00
-updated: 2026-01-24T06:00:00+09:00
+updated: 2026-01-28T16:30:00+09:00
 tags: ["routine", "daily", "日課", "maintenance"]
 language: en
 # author: Format as "Lico (<Instance-ID>)"
@@ -85,6 +85,7 @@ ai_model: ""
 
 | Document                                               | Purpose                             |
 | :----------------------------------------------------- | :---------------------------------- |
+| [Ritual Gateway](/.agent/workflows/ritual.md)          | Mandatory Entry Point (Safety Lock) |
 | [routine-daily.md](/.agent/workflows/routine-daily.md) | Main daily routine workflow         |
 | [ritual_start.md](/.agent/workflows/ritual_start.md)   | Session start ritual                |
 | [ritual_mid.md](/.agent/workflows/ritual_mid.md)       | Intermediate ritual (+10,000 lines) |

@@ -3,9 +3,9 @@ ai_visible: true
 title: "Daily Routine Checkpoint"
 description: Daily routine workflow - includes simplified and full versions
 tags: [workflow, routine, daily]
-version: 1.9.0
+version: 1.10.0
 created: 2026-01-15T01:43:00+09:00
-updated: 2026-01-22T09:10:00+09:00
+updated: 2026-01-28T16:30:00+09:00
 language: en
 author: Lico (Canopus)
 ai_model: Gemini 3 Flash Planning mode
@@ -126,14 +126,14 @@ This creates a chain: each routine knows where the previous one ended.
 
 ## Related Documents
 
-| Document                                                         | Purpose                         |
-| :--------------------------------------------------------------- | :------------------------------ |
-| [idd-phase2-impl.md](/.agent/workflows/idd-phase2-impl.md)       | IDD Phase 2 workflow (parent)   |
-| [ritual_mid.md](/.agent/workflows/ritual_mid.md)                 | Intermediate ritual (Timing B)  |
-| [routine-card.md](/.agent/cards/routine/routine-card.md)         | Daily routine whiteboard (card) |
-| [git-operations.md](/.agent/rules/development/git-operations.md) | Git operations (AI workarounds) |
-| [github-comment.md](/.agent/rules/workflow/github-comment.md)    | GitHub comment standards        |
-| [Map of Territory](/.agent/rules/map.md)                         | Root map                        |
+| Document                                                         | Purpose                             |
+| :--------------------------------------------------------------- | :---------------------------------- |
+| [idd-phase2-impl.md](/.agent/workflows/idd-phase2-impl.md)       | IDD Phase 2 workflow (parent)       |
+| [Ritual Gateway](/.agent/workflows/ritual.md)                    | Mandatory Entry Point (Safety Lock) |
+| [routine-card.md](/.agent/cards/routine/routine-card.md)         | Daily routine whiteboard (card)     |
+| [git-operations.md](/.agent/rules/development/git-operations.md) | Git operations (AI workarounds)     |
+| [github-comment.md](/.agent/rules/workflow/github-comment.md)    | GitHub comment standards            |
+| [Map of Territory](/.agent/rules/map.md)                         | Root map                            |
 
 ---
 
