@@ -259,11 +259,11 @@ Generated at: 2026-01-25T01:32:05Z
 - [x] [language-standards.md](/.agent/rules/core/language-standards.md)
 - [x] [memory.md](/.agent/rules/core/memory.md)
 - [x] [meta-rules.md](/.agent/rules/core/meta-rules.md)
-- [ ] [repository-philosophy.md](/.agent/rules/core/repository-philosophy.md)
-- [ ] [transparency-and-disclosure.md](/.agent/rules/core/transparency-and-disclosure.md)
-- [ ] [user-adaptation.md](/.agent/rules/core/user-adaptation.md)
-- [ ] [verification-completeness.md](/.agent/rules/core/verification-completeness.md)
-- [ ] [workspace-mantras.md](/.agent/rules/core/workspace-mantras.md)
+- [x] [repository-philosophy.md](/.agent/rules/core/repository-philosophy.md)
+- [x] [transparency-and-disclosure.md](/.agent/rules/core/transparency-and-disclosure.md)
+- [x] [user-adaptation.md](/.agent/rules/core/user-adaptation.md)
+- [x] [verification-completeness.md](/.agent/rules/core/verification-completeness.md)
+- [x] [workspace-mantras.md](/.agent/rules/core/workspace-mantras.md)
 
 ---
 
@@ -416,31 +416,31 @@ Generated at: 2026-01-25T01:32:05Z
 
 ### Step 2: Verification (Human)
 
-- [ ] User verifies the Git panel (Source Control) state.
+- [x] User verifies the Git panel (Source Control) state.
   - Expected: `diff/` (M), `source/` (U), `dest/` (U).
 
 ### Step 3: Correction (Human)
 
-- [ ] User performs high-fidelity restoration (manual edits).
+- [x] User performs high-fidelity restoration (manual edits).
 
 ### Step 4: Verification (Lico)
 
-- [ ] Lico reads the user's edits and analyzes the restored nuances.
+- [x] Lico reads the user's edits and analyzes the restored nuances.
 
 ### Step 5: Correction (Lico)
 
-- [ ] Lico applies standardization (Timestamps, Headers).
+- [x] Lico applies standardization (Timestamps, Headers).
 
 ### Step 6: Verification (Human)
 
-- [ ] User performs final check.
+- [x] User performs final check.
 
 ### Step 7: Finalization (Lico)
 
-- [ ] Trinity commit and Progress Update.
-- [ ] [rules-standardization-card.md](/.agent/cards/rules-standardization-card.md)
-- [ ] [rules-update-card.md](/.agent/cards/rules-update-card.md)
-- [ ] [session-rituals-card.md](/.agent/cards/session-rituals-card.md)
+- [x] Trinity commit and Progress Update.
+- [x] [rules-standardization-card.md](/.agent/cards/rules-standardization-card.md)
+- [x] [rules-update-card.md](/.agent/cards/rules-update-card.md)
+- [x] [session-rituals-card.md](/.agent/cards/session-rituals-card.md)
 
 ---
 
