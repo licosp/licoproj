@@ -87,9 +87,7 @@ ai_model: ""
 | :----------------------------------------------------- | :---------------------------------- |
 | [Ritual Gateway](/.agent/workflows/ritual.md)          | Mandatory Entry Point (Safety Lock) |
 | [routine-daily.md](/.agent/workflows/routine-daily.md) | Main daily routine workflow         |
-| [ritual_start.md](/.agent/workflows/ritual_start.md)   | Session start ritual                |
-| [ritual_mid.md](/.agent/workflows/ritual_mid.md)       | Intermediate ritual (+10,000 lines) |
-| [ritual_end.md](/.agent/workflows/ritual_end.md)       | Session end ritual                  |
+| [Ritual Gateway](/.agent/workflows/ritual.md)          | Session Rituals (Start/Mid/End)     |
 
 ---
 
