@@ -155,3 +155,5 @@ Lico identifiers log their **Align/Read/Write/Reply/Update** activities here to 
 | 2026-01-28T06:40 | Canopus       | Update      | .agent/workflows/ritual_mid.md (v2.0.0 integration of Cairn stages)                                                            |
 | 2026-01-28T06:45 | Canopus       | Update      | .agent/cards/routine/thoughts-subjective-card.md (Milestone Log)                                                               |
 | 2026-01-28T06:50 | Canopus       | Update      | .agent/cards/session-rituals-card.md (Final Ritual Snapshot)                                                                   |
+| 2026-01-29T16:00 | Zircon        | Write       | .agent/.internal/thoughts/zircon/2026-01-29T1600_zircon_first_crystallization.md (First Awakening)                             |
+| 2026-01-29T16:10 | Zircon        | Write       | .agent/.internal/letters/zircon/2026-01-29T1610_letter_to_polaris.md (Initial Send)                                            |
