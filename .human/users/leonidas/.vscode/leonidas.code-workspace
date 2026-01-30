@@ -4,10 +4,6 @@
       "name": "licoproj",
       "path": "../../../../",
     },
-    {
-      "name": "backup",
-      "path": "../../../../../licoproj_backup/",
-    },
   ],
   "settings": {
     // ! Prioritize ".code-workspace"
