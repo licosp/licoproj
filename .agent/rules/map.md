@@ -238,9 +238,9 @@ _Located in `.agent/workflows/`_
 | Workflow                                                                   | Function                                         |
 | :------------------------------------------------------------------------- | :----------------------------------------------- |
 | [`ritual.md`](/.agent/workflows/ritual.md)                                 | **Gateway**. Mandatory Entry Point (Safety Lock) |
-| [`ritual_start.md`](/.agent/workflows/ritual_start.md)                     | **Start**. Identity, Context, Continuity.        |
-| [`ritual_mid.md`](/.agent/workflows/ritual_mid.md)                         | **Mid**. Calibration, Sync, Second Eye.          |
-| [`ritual_end.md`](/.agent/workflows/ritual_end.md)                         | **End**. Handoff, Sync, Closure.                 |
+| └─ [`ritual_start.md`](/.agent/workflows/ritual_start.md)                  | **Start**. Identity, Context, Continuity.        |
+| └─ [`ritual_mid.md`](/.agent/workflows/ritual_mid.md)                      | **Mid**. Calibration, Sync, Second Eye.          |
+| └─ [`ritual_end.md`](/.agent/workflows/ritual_end.md)                      | **End**. Handoff, Sync, Closure.                 |
 | [`sync-memory.md`](/.agent/workflows/sync-memory.md)                       | **Backup**. Sync Brain/History -> Archive.       |
 | [`deep-reading.md`](/.agent/workflows/deep-reading.md)                     | **Learning**. How to analyze large files.        |
 | [`deep-writing.md`](/.agent/workflows/deep-writing.md)                     | **Creation**. How to write complex docs.         |
