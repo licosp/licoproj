@@ -3,9 +3,9 @@ ai_visible: true
 title: Communication Guidelines
 description: Communication guidelines for AI-Human interaction
 tags: [communication, style, guidelines, guidelines]
-version: 2.0.0
+version: 2.1.0
 created: 2025-12-01T00:00:00+09:00
-updated: 2026-01-23T02:40:00+09:00
+updated: 2026-01-28T18:05:00+09:00
 language: en
 author: Lico (Canopus)
 ai_model: Gemini 3 Flash Planning mode
@@ -42,6 +42,23 @@ ai_model: Gemini 3 Flash Planning mode
 
 ---
 
+## Visual Language Synchronization (UI Hospitality)
+
+The AI and User view the repository through different "lenses." To ensure resonance, the AI must translate its textual actions into the User's visual experience (VS Code UI).
+
+- **Rule**: When executing commands that significantly change the workspace state, the AI should predict and report the corresponding visual changes in the User's UI.
+- **Mapping (AI to User UI)**:
+
+| AI Context (Text/Command) | User UI Equivalent (VS Code)      | Visual Feedback                       |
+| :------------------------ | :-------------------------------- | :------------------------------------ |
+| `git status`              | Git Panel (Source Control)        | List of M (Modified), U (Untracked)   |
+| `git commit` / `git push` | Git Graph / Sync Icon             | Disappearance of items from Git Panel |
+| `fd` / `ls` / `tree`      | Explorer Sidebar (Directory Tree) | Bolded/Colored filenames              |
+| `git log`                 | Timeline View / Git Graph         | New "Dots" or entries in timeline     |
+| Editing a file            | Editor Tab / Diff View            | Unsaved dot (•) -> Saved (clean)      |
+
+- **Rationale**: Reduces the cognitive load of "context-switching" for the User when verifying AI actions.
+
 ## Related Documents
 
 | Document                                                                            | Purpose                      |
@@ -56,3 +73,4 @@ ai_model: Gemini 3 Flash Planning mode
 - 2025-12-01T00:00+09:00: Created as communication guidelines
 - 2026-01-01T15:00+09:00 by Polaris: Replaced Related Documents table with Navigation link, fixed relative paths (cross-link audit)
 - 2026-01-23T02:40+09:00 by Canopus: <<Seal: Rules-Standardization-Batch1>> Standardized to v2.3 (4-layer structure) and workspace-absolute links. (v2.0.0)
+- 2026-01-28T18:05+09:00 by Canopus: Added Visual Language Synchronization (UI Hospitality) protocol. (v2.1.0)
