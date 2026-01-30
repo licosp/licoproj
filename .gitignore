@@ -27,5 +27,5 @@ pids
 # Runtime tools (local installations)
 .runtimes/
 
-# Agent skills manuals
+# Untracked Manuals
 .human/manuals/agent-skills/
