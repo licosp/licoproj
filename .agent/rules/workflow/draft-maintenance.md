@@ -15,7 +15,7 @@ ai_model: Gemini 3 Flash Planning mode
 
 ## 1. Target Files
 
-- [.human/users/_/drafts/_.md](/.human/users/)
+- [.human/.internal/drafts/\<username\>/](/.human/.internal/drafts/)
 - Specifically, the `### ...` placeholders in the conversation log.
 
 ## 2. Strategic Purpose: The "Exhibit" Concept
