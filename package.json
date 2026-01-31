@@ -6,42 +6,15 @@
   "workspaces": [
     "packages/*"
   ],
-  "scripts": {
-    "dev": "vite packages/licoimg",
-    "build": "vite build packages/licoimg",
-    "preview": "vite preview packages/licoimg",
-    "lint": "eslint . --ext .js,.ts,.jsx,.tsx",
-    "lint:fix": "eslint . --ext .js,.ts,.jsx,.tsx --fix",
-    "format": "prettier --write .",
-    "test": "vitest",
-    "test:ui": "vitest --ui",
-    "commit": "cz",
-    "gh": "gh"
-  },
-  "config": {
-    "commitizen": {
-      "path": "cz-conventional-changelog"
-    }
-  },
+  "dependencies": {},
   "devDependencies": {
-    "@commitlint/cli": "^19.5.0",
-    "@commitlint/config-conventional": "^19.5.0",
-    "@eslint/js": "^9.17.0",
-    "@google/gemini-cli": "^0.18.4",
-    "@types/node": "^22.9.1",
-    "@vitejs/plugin-vue": "^5.2.1",
-    "commitizen": "^4.3.1",
-    "cspell": "^8.17.1",
-    "cz-conventional-changelog": "^3.3.0",
-    "eslint": "^9.17.0",
-    "gh": "^2.8.9",
-    "husky": "^9.1.6",
-    "lint-staged": "^15.2.10",
-    "prettier-plugin-toml": "^2.0.1",
-    "prettier": "^3.6.2",
-    "typescript": "^5.7.2",
-    "vite": "^7.2.4",
-    "vitest": "^2.1.5",
-    "yarn": "^1.22.22"
+    "cspell": "^9.6.2",
+    "markdownlint-cli2": "^0.20.0",
+    "npm": "^11.8.0",
+    "prettier": "^3.8.1",
+    "prettier-plugin-toml": "^2.0.6",
+    "textlint": "^15.5.1",
+    "textlint-rule-preset-ja-spacing": "^2.4.3",
+    "textlint-rule-preset-japanese": "^10.0.4"
   }
 }

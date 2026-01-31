@@ -21,6 +21,7 @@
     "editor.minimap.enabled": false,
     "editor.renderWhitespace": "all",
     "editor.rulers": [79],
+    "scm.diffDecorations": "none",
 
     // Save
     "editor.codeActionsOnSave": {
@@ -36,7 +37,7 @@
     "python.analysis.typeCheckingMode": "strict",
 
     // Prettier
-    "prettier.configPath": ".vscode/.prettierrc.toml",
+    "prettier.configPath": ".vscode/.prettierrc.yaml",
     "prettier.ignorePath": ".vscode/.prettierignore",
     "prettier.requireConfig": true,
 
@@ -133,5 +134,15 @@
 
     // Ruff
     "ruff.configuration": "pyproject.toml",
+
+    // Markdownlint
+    "markdownlint.configFile": ".vscode/.markdownlint.yaml",
+    "markdownlint.run": "onType",
+
+    // Textlint
+    "textlint.autoFixOnSave": true,
+    "textlint.configPath": ".vscode/.textlintrc.json",
+    "textlint.nodePath": ".runtimes/node-v22.12.0-linux-x64/bin/node",
+    "textlint.run": "onType",
   },
 }
