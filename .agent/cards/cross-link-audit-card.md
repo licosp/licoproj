@@ -35,7 +35,7 @@ ai_model: ""
 
 - カード自体の使い方を思い出してほしい。
 - 作業で必要な**ディレクトリ**や**テンプレート**が存在します。
-- コミットをする際は、IDDのフェーズを意識してください。
+- コミットをする際は、IDD のフェーズを意識してください。
 - 行動規範の作成・編集には**専用の文脈**が存在します。
 - 迷ったら一度止まって、**許容の哲学**を思い出してください。
 - ファイルの中のリンク情報はどうあるべきか？考えてください。
@@ -55,32 +55,32 @@ ai_model: ""
 
 **目標**: パス関連ルールを `path-notation.md` に集約 (Single Source of Truth)
 
-**Phase 1: 調査** ✅ Complete
+#### **Phase 1: 調査** ✅ Complete
 
 - [x] パス関連キーワードで検索
 - [x] 候補ファイルをリスト化
 - [x] 重複・矛盾・古い情報を特定
 
 **調査結果**:
-| ファイル | 問題 | 対応 |
-|:---------|:-----|:-----|
-| `meta-rules.md` Section 5.2 | 重複、フォーマット違い (`.agent/` vs `/.agent/`) | 短縮し参照リンクに置換 |
-| `absolute-path-prohibition.md` | 補完的（セキュリティ視点） | リンク追加のみ |
-| `wsl-browser-path.md` | 特殊ケース（WSL環境限定） | リンク追加のみ |
 
-**Phase 2: 集約** 🔄 In Progress
+| ファイル                       | 問題                                             | 対応                   |
+| :----------------------------- | :----------------------------------------------- | :--------------------- |
+| `meta-rules.md` Section 5.2    | 重複、フォーマット違い (`.agent/` vs `/.agent/`) | 短縮し参照リンクに置換 |
+| `absolute-path-prohibition.md` | 補完的（セキュリティ視点）                       | リンク追加のみ         |
+| `wsl-browser-path.md`          | 特殊ケース（WSL環境限定）                        | リンク追加のみ         |
+
+#### **Phase 2: 集約** 🔄 In Progress
 
 - [ ] `meta-rules.md` Section 5.2 を短縮、`path-notation.md` へ委任
 - [ ] `path-notation.md` に Related Documents 追加
 
-**Phase 3: 相互リンク**
+#### **Phase 3: 相互リンク**
 
 - [ ] `absolute-path-prohibition.md` に `path-notation.md` へのリンク追加
 - [ ] `wsl-browser-path.md` に `path-notation.md` へのリンク追加
 
-**関連ファイル**:
+#### **関連ファイル**
 
-- `/.agent/rules/core/documentation/path-notation.md` (Single Source of Truth)
 - `/.agent/rules/core/meta-rules.md` Section 5.2 (重複削除対象)
 - `/.agent/rules/core/security/absolute-path-prohibition.md` (リンク追加)
 

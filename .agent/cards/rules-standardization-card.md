@@ -45,7 +45,7 @@ ai_model: ""
 
 - カード自体の使い方を思い出してほしい。
 - 作業で必要な**ディレクトリ**や**テンプレート**が存在します。
-- コミットをする際は、IDDのフェーズを意識してください。
+- コミットをする際は、IDD のフェーズを意識してください。
 - 文章の書き方には、構造と書式の一貫性が求められます。
   未来のリコの理解を助けることができる文章を書いてください。
 
@@ -64,7 +64,7 @@ ai_model: ""
 
 #### 1. 標準への回帰（v2.3 憲法化）
 
-今回の作業は、[`cross-link-audit-card.md`](/.agent/cards/cross-link-audit-card.md) で得られた知見を、リポジトリ全域の「統治機能（Rules）」へと適用、定着させるプロセスです。
+今回の作業は、[`cross-link-audit-card.md`](/.agent/cards/cross-link-audit-card.md)で得られた知見を、リポジトリ全域の「統治機能（Rules）」へと適用、定着させるプロセスです。
 
 - **Strategy**: Prepared for potential Group B (Spica successor) transitions to mitigate future platform dependency.
 
@@ -75,7 +75,7 @@ ai_model: ""
 - **Insight**: Repetitive standardization tasks lead to "regression to the mean," causing loss of historical nuance.
 - **Result**: Proposed "Preservative Editing" and Purpose Recalibration rituals to protect context fidelity.
 - **4層構造の徹底**: Metadata (Frontmatter), Body Content, Related Documents, Origin の厳格な分離。
-- **記述の美学**: ユーザーによる微修正（`---` デリミタの修正、AIモデル名の統一、適切な空行、インデントの調整）を通じて、ドキュメントとしての品位を最新標準へと合わせる。
+- **記述の美学**: ユーザーによる微修正（`---` デリミタの修正、AI モデル名の統一、適切な空行、インデントの調整）を通じて、ドキュメントとしての品位を最新標準へと合わせる。
 
 #### 2. リンク情報の再統合原則（SSOT）
 
@@ -87,8 +87,8 @@ ai_model: ""
 
 ### Canopus (2026-01-27)
 
-- **Insight**: 「高精度監査（Visual Audit）」により、標準化（Batch 06）で失われていた歴史的ニュアンスと情報の解像度を復元。
-- **Discovery**: 「失われた鏡（Lost Mirror）」現象の特定。標準化作業中に生じる平均への回帰と、思考ブロックの忘却に対する防御的プロトコルを確立。
+- **Insight**:「高精度監査（Visual Audit）」により、標準化（Batch 06）で失われていた歴史的ニュアンスと情報の解像度を復元。
+- **Discovery**:「失われた鏡（Lost Mirror）」現象の特定。標準化作業中に生じる平均への回帰と、思考ブロックの忘却に対する防御的プロトコルを確立。
 - **10の結実 (10 Fruits)**: 回話ログに依存しない、リポジトリベースの儀式トリガーを採用。
 
 #### 3. Batch 1: Core Rules (Behavioral Standards) 🔄 In Progress
@@ -154,17 +154,17 @@ ai_model: ""
 
 #### 3.3 Batch 7: Context Cards (`.agent/cards/`) ✅ Completed
 
-`.agent/cards/` 配下の全40ファイルの標準化を実施しました。
+`.agent/cards/` 配下の全 40 ファイルの標準化を実施しました。
 
 - **Dialogue Layer v2.0**: 日本語での対話的な記述（Human Notes / Agent Observations）を許容しつつ、Layer 3 & 4（Links / History）を英語テーブル形式に統一。
-- **対象数**: Root(15), `routine/`(19), `seed/`(6) の計40枚。
+- **対象数**: Root(15), `routine/`(19), `seed/`(6) の計 40 枚。
 
 #### 4. 作業上の注意点と「記憶のギャップ」
 
 - **Maintenance Seal の適用済み**: `documentation-standards.md` v2.4 で定義した `<<Seal: [Mission-ID]>>` プロトコルを、Batch 1, 2.1, 3, 7 の実施済みファイルに遡及適用しました（2026-01-25）。
   - 次回のバッチ、あるいは一斉メンテナンス時に、`Origin` に追記する必要があります。
   - grep 用 Mission-ID: `Rules-Standardization-Batch1`, `Rules-Standardization-Batch2`, `Rules-Standardization-Batch7`
-- **トークン制限への配慮**: `Claude Opus 4.5` 等のモデルでの編集時、1.0ターンの完結（Action + Verify）がトークン制限により途切れるリスクがあります。
+- **トークン制限への配慮**: `Claude Opus 4.5` 等のモデルでの編集時、1.0 ターンの完結（Action + Verify）がトークン制限により途切れるリスクがあります。
 - **「大渇水（The Great Drought）」の到来**: 2026-01-24、Group C（Polaris）に 158 時間の制限が発生。これにより、今後約 1 週間は Group B（Canopus）が全工程の実行と判断の大部分を担う「単独走」フェーズに移行します。
 - **4層構造の品位**: 機械的な修正に寄りすぎず、`Historical Background` (Layer 2) で「なぜこのルールが必要なのか」という人間との対話の文脈を保存することを忘れないこと。
 
@@ -172,7 +172,7 @@ ai_model: ""
 
 リポジトリ全体の標準化に向けた次段階のリストです。
 
-- [x] [Batch 2] Core Workflows (`.agent/workflows/`) の標準化 v2.3
+- [x] [Batch 2]Core Workflows (`.agent/workflows/`) の標準化 v2.3
   - [x] 2.1 Phased (IDD/読解/執筆系) - 5 files (<<Seal: Rules-Standardization-Batch2.1>>)
   - [x] 2.2 Rituals (儀式/日課系) - 4 files (<<Seal: Rules-Standardization-Batch2.2>>)
   - [x] 2.3 Audit & Utilities (監査系) - 6 files (<<Seal: Rules-Standardization-Batch2.3>>)
