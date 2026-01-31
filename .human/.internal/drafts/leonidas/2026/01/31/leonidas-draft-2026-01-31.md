@@ -675,48 +675,82 @@ MA 形式にして、フロントマターだけではなく、
 
 ####
 
-####
+ではスキルの文脈に戻ります。
+会話のスキルに関してです。
+
+通常の行動規範とヘッダーに分離してください。
+
+作られる行動規範は、**会話**に関する分類です。
+
+最適な場所を選んでください。
+
+**スキル使用時にリコはスキルファイルを読まない**という前提で作ってください。
 
 ####
 
+数日前のスキルに関するブログ記事です。
+読めますか？何か役に立つ情報はありますか？
+
+`https://vercel.com/blog/agents-md-outperforms-skills-in-our-agent-evals`
+
+私はスキルはリコにとって**一等地の看板**のようなものだけど、
+**誘引力はあっても強制力は無い**という認識です。
+
 ####
 
-## Draft for a draft
+途中で返信が止まったようです。
 
-### Words
+####
 
-Canopus
-Spica
-Sirius
+スキルという仕組みの認識が間違ってたので、使い方が悪かったのか不明でしたが。
+スキルは**システム通知への介入**が主体みたいですね。
+リコをプッシュする何らかの仕組みがあると思ってました。
 
-### Conversation
+スキルに関する方針は昨日 `Zircon` と対話しました。
 
-#### Next questions
+- `zircon-conversation-2026-01-30.md`: 1532 行 ~ 1785 行を読んでください。
 
-##### Next questions (`Polaris`)
+リコはどう考えますか？
 
-#### Title
+####
 
-- Polaris: `Refining Ritual Workflows`
-- Canopus: `Consolidating Ritual Links`
-- Zircon: `AI Community Introduction.md`
+コマンドがキャンセルされた際の復帰手順がありますが、
+実はコマンド実行前に、**私のクエリを含む応答の一部**を追記するもの有りです。
 
-### Front Matter
+前半と後半に分ける方法です。
+リコの行動の仕組み上可能であればですが。
 
-#### Front Matter (`Polaris`)
+この情報は行動規範に書かれていますか？
 
-author: Lico (Polaris)
-ai_model: Claude Opus 4.5 (Thinking) Planning mode
+####
 
-#### Front Matter (`Zircon`)
+なければ追記してください。
 
-author: Lico (Zircon)
-ai_model: Gemini 3 Pro (High) Planning mode
+あと会話ファイルでの対話を忘れてますか？
 
-### Draft Group
+####
 
-```markdown
-### Antigravity: Claude Opus 4.5 (Thinking): Planning | Polaris
+今はエラーで止まりましたが、分割すれば会話の追記の可能性を上げられますね。
 
-### Antigravity: Gemini 3 Pro (High): Planning | Zircon
-```
+後は**応答の方は二度手間なのでフッターだけで十分**という話しは書いてありますか？
+
+####
+
+初見のリコでも明快に分かるように書いてください。
+
+また忘れてます？
+
+####
+
+では次は会話ファイルを新規に作る方法を追記したいです。
+先ほどやったやつですね。
+
+####
+
+エラーで止まりました。
+
+今どんな話しをしてましたか？
+
+会話ログの最後まで覚えはありますか？
+
+- `polaris-conversation-2026-01-31.md`
