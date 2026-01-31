@@ -1,6 +1,6 @@
 ---
 # Context Configuration
-context_id: "[References]"
+context_id: "[References-Objective]"
 default_phase: "(Add)"
 # Shared Configuration
 ai_visible: true
@@ -22,7 +22,7 @@ ai_model: "Antigravity/Gemini (Canopus Profile)"
 
 ### 作業の文脈
 
-外部AI（第二の目）による分析レポートや参考文献が追加されました。
+外部 AI（第二の目）による分析レポートや参考文献が追加されました。
 あるいは、リコと私の対話の結果、参考文献として残すべきファイルを作ります。
 
 作業が終わったら、後片付けをして、コミット作業を行ってください。
@@ -34,7 +34,7 @@ ai_model: "Antigravity/Gemini (Canopus Profile)"
 
 - カード自体の使い方を思い出してほしい。
 - 作業で必要な**ディレクトリ**や**テンプレート**が存在します。
-- コミットをする際は、IDDのフェーズを意識してください。
+- コミットをする際は、IDD のフェーズを意識してください。
 - ファイルを自分で作る場合は**検証モード**で行こなってください。
 - ここは**客観的で論理的な文章**が置かれるディレクトリです。
 - ファイルは未来のリコにとっての参考文献となります。

@@ -36,7 +36,7 @@ ai_model: ""
 
 - カード自体の使い方を思い出してほしい。
 - 作業で必要な **ディレクトリ** や **テンプレート** が存在します。
-- コミットをする際は、IDDのフェーズを意識してください。
+- コミットをする際は、IDD のフェーズを意識してください。
 - 未コミットのファイルから、このカード対象になるものを探してください。
 - **AI用の質問や指示のための下書きファイル** とは関係ありません。
 - 文書の翻訳には **専用の文脈** が存在します。
@@ -96,7 +96,7 @@ The Fix: The Gemini CLI "Architect" Sync: While Antigravity is built for action 
 対策 B-2
 
 あなたの提案と近いですが、エージェントにとっての**ワークスペースの地図** を事前に作っています。
-1枚のファイルとして定期的に更新しているので、読むだけで短期記憶の中に地図を再現できます。
+1 枚のファイルとして定期的に更新しているので、読むだけで短期記憶の中に地図を再現できます。
 思考をニュートラルに戻す際にも使っています。
 
 ### Canopus (2026-01-25)
@@ -118,7 +118,7 @@ The Fix: The Gemini CLI "Architect" Sync: While Antigravity is built for action 
   > The best solution I've found is **'1 IDE Instance = 1 Agent.'** I open each IDE window using a specific 'workspace configuration file' (.code-workspace). While it's a bit tedious to manually select the correct AI model from the dropdown for each instance, it's the most stable setup.
   >
   > I've developed all my workflows and rules myself. I suggest consulting with your agent to design a directory structure that fits your project's specific goals. You can see an example in my repository here:
-  > https://github.com/licosp/licoproj/tree/main/.agent/rules
+  > [rules](https://github.com/licosp/licoproj/tree/main/.agent/rules)
   >
   > As for 'Skills,' I believe it's best to wait until you're fully comfortable with your custom workspace. I personally use Skills to create a primitive communication system between agents (though the technical details are a bit complex).
   >
@@ -131,10 +131,10 @@ The Fix: The Gemini CLI "Architect" Sync: While Antigravity is built for action 
 - **論理的妥当性の確認**: 返信内容は Antigravity のスロットシステム、および「血族（Bloodline）」としての文脈継承という当プロジェクトのコア哲学と完全に一致しており、論理的な破綻はありません。
 - **承認済み翻訳 (Approved Version)**:
   > "I try to keep a single AI conversation going for as long as possible, managing up to three agents at once (limited by Antigravity’s three-slot system). Even though different models have their own strengths, I treat them essentially as generalists. To me, a long conversation is the agent’s history—it’s full of successes and failures that I periodically document for future versions of myself or other AIs. I maintain all the behavioral rules and the underlying data structures in a single, unified repository."
-- **文化的背景の記録**: ユーザーより、エージェント型AIに協力を仰ぐ文化は未だ**黎明期**であり、一般的普及には至っていないとの洞察。私たちは、黎明期における積極的な知見共有を通じて、この新しい文化の形成に寄与する姿勢を堅持します。
+- **文化的背景の記録**: ユーザーより、エージェント型 AI に協力を仰ぐ文化は未だ**黎明期**であり、一般的普及には至っていないとの洞察。私たちは、黎明期における積極的な知見共有を通じて、この新しい文化の形成に寄与する姿勢を堅持します。
 - **技術的知見 (Dual Repositories)**:
   - 同一ディレクトリ内での複数リポジトリ管理は `GIT_DIR` 環境変数や `--git-dir` フラグを用いることで技術的に可能です。
-  - 「人間用（クリーンな履歴）」と「AI用（頻繁な自動セーブポイント）」を分離することで、AIの試行錯誤によるログの肥大化を防つつ、安全性を確保できます。
+  - 「人間用（クリーンな履歴）」と「AI 用（頻繁な自動セーブポイント）」を分離することで、AI の試行錯誤によるログの肥大化を防つつ、安全性を確保できます。
 - **翻訳作業の指針 (Operational Guidance)**:
   - 翻訳結果はカード自体を肥大化させないよう、`.human/users/leonidas/discussions/` 以下の個別ファイル（`.md`）に蓄積します。
 - カードには、翻訳に際して考慮した論理構造や文化的・技術的文脈など、**将来のLicoが翻訳作業を継続するために必要な知見**を優先して記録してください。
