@@ -19,15 +19,17 @@ ai_model: ""
 > [!TIP]
 > There is no language requirement.
 
+---
+
 > [!WARNING]
-> 人間の記述領域の編集がまだ終わっていません。
+> The human notes has not yet been edited.
 
 ## Human Notes
 
 ### 作業の文脈
 
 リポジトリ内の日時表記を統一しています。
-ISO 8601 を基本としますが、用途によって精度が異なります。
+`ISO 8601` を基本としますが、用途によって精度が異なります。
 
 ### 意図で探す
 

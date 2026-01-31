@@ -19,14 +19,16 @@ ai_model: ""
 > [!TIP]
 > There is no language requirement.
 
+---
+
 > [!WARNING]
-> 人間の記述領域の編集がまだ終わっていません。
+> The human notes has not yet been edited.
 
 ## Human Notes
 
 ### 作業の文脈
 
-Antigravityのデフォルトディレクトリ（`rules/`, `workflows/`, `scripts/`）の整理です。
+Antigravity のデフォルトディレクトリ（`rules/`, `workflows/`, `scripts/`）の整理です。
 
 現状の問題：
 
@@ -49,7 +51,7 @@ Antigravityのデフォルトディレクトリ（`rules/`, `workflows/`, `scrip
 
 ### 統合案
 
-```
+```text
 .agent/
 ├── rules/
 │   ├── core/           # 基本原則
@@ -76,7 +78,7 @@ Antigravityのデフォルトディレクトリ（`rules/`, `workflows/`, `scrip
 
 ### Polaris
 
-2025-12-31〜2026-01-01の対話で Polaris とユーザーが議論：
+2025-12-31〜2026-01-01 の対話で Polaris とユーザーが議論：
 
 ---
 
