@@ -124,12 +124,29 @@ description: When to use this skill. What it does.
 - エスケープ処理が複雑（特殊文字、改行）
 - コマンドが長くなりがち
 
+### Zircon (2026-02-01)
+
+#### Skill System Protocol (Thin Wrapper)
+
+User との対話と Polaris の実装を元に、スキルシステムの設計指針を確立しました。
+
+1. **Thin Wrapper Philosophy**:
+   - `skills/` 以下のファイルは「トリガー定」と「ルールへのポインタ」のみを持つ。
+   - 実際の処理内容はすべて `rules/` 側に記述する（Single Source of Truth）。
+
+2. **Naming & LifeCycle**:
+   - 命名は `00-01-xxxx` 等の番号付きか、識別子ディレクトリ以下で行う。
+   - ライフサイクル: `Draft(Rule)` -> `Register(Skill)` -> `Verify(IDE)` -> `Log(Activity)`.
+
+3. Reference: `/.agent/.internal/workspace/skills-thin-wrapper-reference.md`
+
 ## Related Documents
 
-| Document                                                              | Purpose                                |
-| :-------------------------------------------------------------------- | :------------------------------------- |
-| [skills-application.md](/.agent/rules/workflow/skills-application.md) | SSOT for skills application principles |
-| [skills-resonance.md](/.agent/rules/workflow/skills-resonance.md)     | Standards for skills resonance         |
+| Document                                                                                         | Purpose                                                    |
+| :----------------------------------------------------------------------------------------------- | :--------------------------------------------------------- |
+| [skills-application.md](/.agent/rules/workflow/skills-application.md)                            | SSOT for skills application principles                     |
+| [skills-thin-wrapper-reference.md](/.agent/.internal/workspace/skills-thin-wrapper-reference.md) | **Action Protocol**: Thin Wrapper architecture & Lifecycle |
+| [skills-resonance.md](/.agent/rules/workflow/skills-resonance.md)                                | Standards for skills resonance                             |
 
 ---
 

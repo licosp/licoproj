@@ -2,7 +2,8 @@
 # Skill Configuration (IDE Required)
 name: skill-name
 description: >
-  [Identifier] [Action/Note] Brief summary of when and how to use this skill.
+  Identifiers [Action/Note] Brief summary of skill purpose.
+  Trigger: <when to use>. Rule: <path to behavioral rule>.
 # Shared Configuration
 ai_visible: true
 title: ""
