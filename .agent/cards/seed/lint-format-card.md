@@ -70,7 +70,55 @@ ai_model: Claude Opus 4.5 (Thinking) Planning mode
 
 ## Agent Observations
 
-_No observations yet._
+### Zircon (2026-02-01)
+
+#### Prettier Constraints (CRITICAL)
+
+To prevent formatting conflicts and diff noise, strictly avoid the following patterns:
+
+1. **Double Spaces after Numbered Lists**: `1.  Text`
+   - **Constraint**: Prettier forces `number + dot + space` (3 chars). Double spaces will be removed.
+   - **Lint Error**: `MD030/list-marker-space`[Expected: 1; Actual: 2]
+   - **Solution**: Use Bullet Lists (`- Text`) for manual indentation control.
+
+#### Textlint Constraints (Style & Grammar)
+
+1. **No AI Formatting (Colon after Bold)**: `**Key**: Value`
+   - **Constraint**: Flags `ai-writing/no-ai-list-formatting` (Mechanical impression).
+   - **Solution**: Use `- Key: Value` (No bold on key).
+
+2. **No Hype Expressions**: `Complete`, `Perfect`, `Absolutely`
+   - **Constraint**: Flags `ai-writing/no-ai-hype-expressions`.
+   - **Solution**: Use humble/objective terms (`Sufficient`, `Verified`).
+
+3. **English Terms in Japanese Text**:
+   - **Constraint**: Flags `textlint-rule-alex` (insensitive words) or `rousseau` (readability) false positives.
+   - **Solution**: Wrap English technical terms in code spans (`` `Term` ``).
+
+4. **Disable Error on Line**:
+   - `<!-- textlint-disable-line -->`: Disables all textlint rules for the line.
+
+2. **Leading Spaces before Japanese Brackets**: `   「Text」` <!-- markdownlint-disable-line -->
+   - **Constraint**: Prettier often treats leading spaces as code blocks or removes them, causing instability.
+   - **Solution**: Start `「` immediately after the bullet or at start of line without indentation.
+
+6. **Disable Error on Line**:
+   - `<!-- markdownlint-disable-line -->`: `markdownlint`
+   - `<!-- cspell:disable-line -->`: `cspell`
+
+#### Workflow Strategy (The "Tool-First" Protocol)
+
+1. **Tier 1: Automated Tooling (Mechanical)**
+    - **Action**: Use `textlint --fix`, `prettier --write` for 90% of issues.
+    - **Scope**: Spacing, Indentation, Simple stylistic fixes.
+    - **User Command**: `yarn textlint --fix <file>`
+
+2. **Tier 2: AI Assistance (Contextual)**
+    - **Action**: Ask Lico (AI) to handle what tools cannot fix.
+    - **Scope**: Complex phrasing, restructuring, tone adjustments, passive-to-active conversion.
+
+3. **Tier 3: Relaxed Constraint**
+    - **Policy**: Do not strictly enforce "Expression" rules (e.g., specific word choices) if it harms the flow. Code/Docs should be practical.
 
 ---
 

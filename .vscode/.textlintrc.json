@@ -2,7 +2,7 @@
   "rules": {
     "preset-ja-spacing": {
       "ja-nakaguro-or-halfwidth-space-between-katakana": true,
-      "ja-no-space-around-parentheses": true,
+      "ja-no-space-around-parentheses": false,
       "ja-no-space-between-full-width": true,
       "ja-space-after-exclamation": true,
       "ja-space-after-question": true,

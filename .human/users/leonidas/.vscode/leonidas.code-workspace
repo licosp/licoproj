@@ -57,6 +57,11 @@
     // Prettier
     "editor.defaultFormatter": "esbenp.prettier-vscode",
 
+    // Markdownlint
+    "[markdown]": {
+      "editor.defaultFormatter": "DavidAnson.vscode-markdownlint",
+    },
+
     // Docker
     "[dockerfile]": {
       "editor.defaultFormatter": "ms-azuretools.vscode-containers",
