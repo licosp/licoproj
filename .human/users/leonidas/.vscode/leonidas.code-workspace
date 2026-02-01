@@ -4,6 +4,10 @@
       "name": "licoproj",
       "path": "../../../../",
     },
+    {
+      "name": "licoproj-secure",
+      "path": "../../../.internal/secure/",
+    },
   ],
   "settings": {
     // ! Prioritize ".code-workspace"
@@ -59,6 +63,7 @@
 
     // Markdownlint
     "[markdown]": {
+      "editor.formatOnSave": true,
       "editor.defaultFormatter": "DavidAnson.vscode-markdownlint",
     },
 
