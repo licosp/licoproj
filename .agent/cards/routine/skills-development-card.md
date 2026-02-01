@@ -140,6 +140,13 @@ User との対話と Polaris の実装を元に、スキルシステムの設計
 
 3. Reference: `/.agent/.internal/workspace/skills-thin-wrapper-reference.md`
 
+4. **Workflow Insight (Fix Forward)**:
+    - **Issue**: "Git Reset/Undo" is dangerous in the Conversation File workflow.
+    - **Reason**: Canceling a commit disconnects the linear conversation log from reality. Rebuilding context from short-term memory is error-prone.
+    - **Policy**: Always "Fix Forward" (Correct errors with new commits) to preserve the integrity of the history and context.
+    - **Exception**: Destructive commands (e.g., `rm`, overwrite) are hard to reverse. These warrant a Stop/Cancel. Commits are inherently reversible, making them safe for Fix Forward.
+    - **Tactic (Amend)**: `git commit --amend` is permitted for immediate fixes (e.g., adding forgotten files) as it modifies the tip without breaking the linear narrative significantly.
+
 ## Related Documents
 
 | Document                                                                                         | Purpose                                                    |
