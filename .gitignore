@@ -29,3 +29,6 @@ pids
 
 # Untracked Manuals
 .human/manuals/agent-skills/
+
+# Shadow Repository
+.human/.internal/secure/
