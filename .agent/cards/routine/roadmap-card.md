@@ -109,6 +109,10 @@ ai_model: ""
 
 ---
 
+#### [conversations](/.agent/cards/routine/conversations.md)
+
+---
+
 #### [dialogue-philosophy](/.agent/cards/routine/dialogue-philosophy-card.md)
 
 ##### 作業中に無関係なファイルのコミットが頻発
@@ -154,12 +158,6 @@ ai_model: ""
 ---
 
 #### [skills-development](/.agent/cards/routine/skills-development-card.md)
-
-##### 会話 のスキルファイルの編集
-
-- 本文を行動規範に分離する
-- 承認の必要なコマンドの実行前に会話を追記する
-  分割して会話を追記する際の手順を定義する
 
 ---
 
