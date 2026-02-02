@@ -14,6 +14,9 @@ ai_model: ""
 
 # Chat Conversation
 
+> [!NOTE]
+> This log carries over from `../**/**.md`.
+
 ---
 
 ## Conversation group: 0000-0009
@@ -35,3 +38,5 @@ ai_model: ""
 - [filename](/path/to/file)
 
 > [2026-01-31T00:00+09:00: <`Identifier`>]
+
+---
