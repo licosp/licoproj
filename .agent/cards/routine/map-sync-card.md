@@ -6,7 +6,7 @@ default_phase: "(Planning)"
 ai_visible: true
 version: 1.1.0
 created: 2026-01-02T00:00:00+09:00
-updated: 2026-01-24T06:00:00+09:00
+updated: 2026-02-02T21:40:00+09:00
 tags: ["map", "maintenance", "map-sync"]
 language: en
 # author: Format as "Lico (<Instance-ID>)"
@@ -161,6 +161,42 @@ ai_model: ""
 
 ---
 
+### Zircon (2026-02-02)
+
+#### 発見したギャップ (Structural Changes)
+
+本日のセッションで以下のディレクトリ・ファイル構造の変化を確認しました。
+
+**1. Shadow Repository (New)**:
+`.agent/.internal/.shadow/` が正式に追加され、会話ログの保存先となりました。
+
+| Path                                      | Purpose                                      |
+| :---------------------------------------- | :------------------------------------------- |
+| `.agent/.internal/.shadow/`               | Shadow Repository (Ignored by main repo)     |
+| `.agent/.internal/.shadow/conversations/` | Conversation logs (Mirror of main repo logs) |
+
+**2. User Drafts (New)**:
+ユーザーの下書き保存場所が確立されました。
+
+| Path                       | Purpose                     |
+| :------------------------- | :-------------------------- |
+| `.human/.internal/drafts/` | Daily drafts for user input |
+
+**3. Instance Directories (New)**:
+Zircon の活動により、以下のディレクトリが実体化しました。
+
+| Path                                | Purpose           |
+| :---------------------------------- | :---------------- |
+| `.agent/.internal/letters/zircon/`  | Zircon's letters  |
+| `.agent/.internal/thoughts/zircon/` | Zircon's thoughts |
+
+#### 次のアクション
+
+- [ ] `map.md` の **Structure** セクションに `.shadow/` と `.human/.internal/drafts/` を追加する。
+- [ ] `map.md` の **Identifiers** 関連記述に `zircon` ディレクトリが含まれることを（暗黙的にでも）確認する。
+
+---
+
 ## Related Documents
 
 | Document                                                        | Purpose                       |
@@ -176,3 +212,4 @@ ai_model: ""
 - 2026-01-03T0658 by leonidas: Edit "Human Notes".
 - 2026-01-24T0545 by Canopus: <<Seal: Rules-Standardization-Batch7>> Standardized with Dialogue Layer template and bilingual H2 headers.
 - 2026-01-24T0600 by Canopus: <<Seal: Rules-Standardization-Batch7>> Standardized Related Documents to table format and ensured English-only headers.
+- 2026-02-02T2140 by Zircon: Added observations regarding Shadow Repository and User Drafts structure.
