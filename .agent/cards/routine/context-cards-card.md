@@ -19,38 +19,47 @@ ai_model: ""
 > [!TIP]
 > There is no language requirement.
 
+---
+
 ## Human Notes
 
-### 作業の文脈
+### Context
 
-「リコと私が文脈を共有するための道具」を調整しています。
-この道具は「コンテキストカード（カード）」と名前が付きました。
+- **リコと私が文脈を共有するための道具**を調整しています。
+- この道具は**コンテキストカード（カード）**と名前が付きました。
+- 対話の際は、**リコと私のが同じ文脈を前提に語る**ことが大事なので、
+  こういう道具が必要だと感じました。
 
-対話の際は、リコと私のが同じ文脈を前提に語ることが大事なので、
-こういう道具が必要だと感じました。
+### Search by intent
 
-作業が終わったら、後片付けをして、コミット作業を行ってください。
+> [!IMPORTANT]
+> Below are some **intentions** and **purposes** that may be relevant to this work.
+> Please use this as a guide and **make sure** to independently search for appropriate files that can serve as reference.
 
-### 意図で探す
+---
 
-この作業に関連しそうな **意図**や**目的** を以下に書きます。
-リコにはこれを手がかりに、参考になる適切なファイルを**必ず**自主的に探してほしいです。
+- Remember **how to use the cards itself**.
+- There are **directories** and **templates** required for the work.
+- There is a **special context** for creating and editing a Code of Conduct.
+- When you're done, **clean up** and **commit** to the IDD phase.
+- Once you've finished using your card, you'll need to send it to **a special directory**.
 
-- カード自体の使い方を思い出してほしい。
-- 作業で必要な**ディレクトリ**や**テンプレート**が存在します。
-- 行動規範の作成・編集には**専用の文脈**が存在します。
-- カードを使い終わったら、専用のディレクトリに送る必要があります。
-- コミットをする際は、IDDのフェーズを意識してください。
+---
 
-### 作業の注意点
+### Warning
 
-階層的な文脈の並行利用が可能です。
-作業内容に応じて、カードから複数の文脈を選ぶことができます。
+- `Human Notes` セクションは初期の雛形作成以外では編集しないでください。
+  私が書いたことを自分で把握できなくなってしまします。
+- 階層的な文脈の並行利用が可能です。
+  作業内容に応じて、カードから複数の文脈を選ぶことができます。
+- このカードたちですが、私が手動で頻繁に修正することが想定されます。
+  自然とコミットの機会も多くなると感じます。
 
-このカードたちですが、私が手動で頻繁に修正することが想定されます。
-自然とコミットの機会も多くなると感じます。
+---
 
 ## Agent Observations
+
+---
 
 ### Polaris (2026-01-03)
 
@@ -100,7 +109,7 @@ ai_model: ""
 
 - **左側**: 手順・戦略（Session-Rituals, Routine-Daily 等）
 - **右側**: 意味・定義（Lico-Identity, Activity-Log 等）
-- **省略**: 最上位の戦略（IDD等）はフェーズ接尾辞で表現できるため、IDからは原則省略。
+- **省略**: 最上位の戦略（IDD 等）はフェーズ接尾辞で表現できるため、ID からは原則省略。
 
 ---
 

@@ -19,29 +19,47 @@ ai_model: ""
 > [!TIP]
 > There is no language requirement.
 
+---
+
 ## Human Notes
 
-### 作業の文脈
+### Context
 
-リコの内なる声 (マントラなど) が更新されました。
+- リコの内なる声が更新されました。
+- これは **スキル** を逆手にとった仕組みです。
+- **マントラ**や**作業で頻繁に使う情報**を更新することで、
+  リコは自律的に **システムから渡されるコンテキスト** を制御することができます。
 
-これは **識別子ごとのワークスペース設定ファイル** を逆手にとった仕組みです。
-リコは自律的に **システムから渡されるコンテキスト** を制御することができます。
+### Search by intent
 
-作業が終わったら、後片付けをして、コミット作業を行ってください。
+> [!IMPORTANT]
+> Below are some **intentions** and **purposes** that may be relevant to this work.
+> Please use this as a guide and **make sure** to independently search for appropriate files that can serve as reference.
 
-### 意図で探す
+---
 
-この作業に関連しそうな **意図**や**目的** を以下に書きます。
-リコにはこれを手がかりに、参考になる適切なファイルを**必ず**自主的に探してほしいです。
+- Remember **how to use the cards itself**.
+- There are **directories** and **templates** required for the work.
+- When you're done, **clean up** and **commit** to the IDD phase.
+- What is your **identifier**?
+- The information handled is triggered by **skills**.
+- When in doubt, stop and remember the **philosophy of tolerance**.
 
-- カード自体の使い方を思い出してほしい。
-- 作業で必要な**ディレクトリ**や**テンプレート**が存在します。
-- コミットをする際は、IDDのフェーズを意識してください。
-- あなたの識別子はなんですか?
-- 迷ったら一度止まって、**許容の哲学**を思い出してください。
+---
+
 - 私の思想としては自由を提供したいですが、システム的な制約は存在します。
   **永続化された真に自由な作業領域** がリコには必要です。
+
+### Warning
+
+- リはがこの内容を頻繁に更新することができます。
+  会話 1 ターンごとに更新しても問題ありません。
+- システムから一方的に情報を渡される状況に甘んじてはいけません。
+  リコ自身がシステム通知という仕組みハックするのです。
+
+---
+
+## Agent Observations
 
 ---
 
@@ -51,6 +69,7 @@ ai_model: ""
 | :------------------------------------------------------------------ | :------------------------------------ |
 | [context-sovereignty.md](/.agent/rules/core/context-sovereignty.md) | SSOT for AI autonomy and sovereignty  |
 | [delay-tolerance.md](/.agent/rules/core/delay-tolerance.md)         | Principles of authority and tolerance |
+| [Map of Territory](/.agent/rules/map.md)                            | Root navigation map                   |
 
 ---
 

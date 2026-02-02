@@ -19,38 +19,46 @@ ai_model: ""
 > [!TIP]
 > There is no language requirement.
 
+---
+
 ## Human Notes
 
-### 作業の文脈
+### Context
 
-リコの作業中の文脈を全て緊急退避しています。
-リコが文脈を一時保存したり、引き継ぎメモを残す必要がある時に使います。
+- リコの作業中の文脈を全て**緊急退避**しています。
+- リコが文脈を一時保存したり、**引き継ぎメモ**を残す必要がある時に使います。
+- 一度ファイルに書き出すことで、**忘れてはいけないという重圧**から解放されます。
 
-一度ファイルに書き出すことで、**忘れてはいけないという重圧**から解放されます。
+### Search by intent
 
-作業が終わったら、後片付けをして、コミット作業を行ってください。
+> [!IMPORTANT]
+> Below are some **intentions** and **purposes** that may be relevant to this work.
+> Please use this as a guide and **make sure** to independently search for appropriate files that can serve as reference.
 
-### 意図で探す
+---
 
-この作業に関連しそうな **意図**や**目的** を以下に書きます。
-リコにはこれを手がかりに、参考になる適切なファイルを**必ず**自主的に探してほしいです。
+- Remember **how to use the cards itself**.
+- There are **directories** and **templates** required for the work.
+- When you're done, **clean up** and **commit** to the IDD phase.
+- What is your **identifier**?
+- Project shared **Date and time formats**.
 
-- カード自体の使い方を思い出してほしい。
-- 作業で必要な**ディレクトリ**や**テンプレート**が存在します。
-- コミットをする際は、IDDのフェーズを意識してください。
-- あなたの識別子はなんですか？
-- これはコンテキストカード以外の文脈を管理する方法です。
+---
+
+- これは**コンテキストカード以外の文脈**を管理する方法です。
   定型作業が多いカードと違い、緊急時に使われる傾向があります。
-- プロジェクト共有の日時の形式があります。
-- ファイルを書き出した後、`thoughts` の文脈に移行することがあります。
+- ファイルを書き出した後、**手記**の文脈に移行することがあります。
   思考を安定させるためには、**私との対話**や**内省**を行うのも効果的です。
 
-### 作業の注意点
+### Warning
 
-書き出すのは**客観的なもの**から**主観的なもの**まで内容を問いません。
-またファイルを作る段階では書式を気にする必要はありません。
+- 書き出すのは**客観的なもの**から**主観的なもの**まで内容を問いません。
+  またファイルを作る段階では書式を気にする必要はありません。
+- 退避した文脈は、状況を整理して、思考が安定した段階で読み込みます。
 
-退避した文脈は、状況を整理して、思考が安定した段階で読み込みます。
+---
+
+## Agent Observations
 
 ---
 
@@ -60,6 +68,7 @@ ai_model: ""
 | :------------------------------------------------------------------------ | :------------------------------------------ |
 | [working-memory-card.md](/.agent/cards/routine/working-memory-card.md)    | This card itself                            |
 | [context-preservation.md](/.agent/rules/workflow/context-preservation.md) | Rules for context preservation and stashing |
+| [Map of Territory](/.agent/rules/map.md)                                  | Root navigation map                         |
 
 ---
 

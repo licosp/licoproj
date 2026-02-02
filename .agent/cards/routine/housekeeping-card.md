@@ -19,42 +19,47 @@ ai_model: ""
 > [!TIP]
 > There is no language requirement.
 
+---
+
 ## Human Notes
 
-### 作業の文脈
+### Context
 
-**文脈が不要なほど短い作業**、あるいは**文脈が不明な作業**を行っています。
+- **文脈が不要なほど短い作業**か**文脈が不明な作業**を行っています。
+- **特定の文脈の中で書庫にファイルを移動させる**場合も対象となります。
+- 既に作業が行われている場合、まず既存の文脈かどうか確認してください。
+- 既存のものが無い場合は、リコが私の記憶を頼りに文脈を推測します。
 
-既に作業が行われている場合、まず既存の文脈かどうか確認してください。
-既存のものが無い場合は、リコが私の記憶を頼りに文脈を推測します。
+### Search by intent
 
-作業が終わったら、後片付けをして、コミット作業を行ってください。
+> [!IMPORTANT]
+> Below are some **intentions** and **purposes** that may be relevant to this work.
+> Please use this as a guide and **make sure** to independently search for appropriate files that can serve as reference.
 
-### 意図で探す
+---
 
-この作業に関連しそうな **意図**や**目的** を以下に書きます。
-リコにはこれを手がかりに、参考になる適切なファイルを**必ず**自主的に探してほしいです。
+- Remember **how to use the cards itself**.
+- There are **directories** and **templates** required for the work.
+- When you're done, **clean up** and **commit** to the IDD phase.
 
-- カード自体の使い方を思い出してほしい。
-- 作業で必要な**ディレクトリ**や**テンプレート**が存在します。
-- コミットをする際は、IDDのフェーズを意識してください。
+---
 
-### 作業の注意点
+### Warning
 
-リポジトリの変更が多い場合、気軽に私と相談してください。
-一人で一気に作業を進める必要はありません。
-
-処理が簡単そうなものから、そして対話をしながら作業を進めたいです。
+- リポジトリの変更が多い場合、気軽に私と相談してください。
+  一人で一気に作業を進める必要はありません。
+- 処理が簡単そうなものから、そして対話をしながら作業を進めたいです。
 
 ### 書庫へ移動 → コミット
 
-特定の文脈の中で書庫にファイルを移動させる場合、この文脈を使うこともできます。
+- 過去の作業で作った一時的なファイルは**削除しないで**ください。
+  完全な削除は基本的に**推奨されていません**。
+- 一方で、誤って消してしまったとしても、
+  それは**AIの習慣なので仕方ない**ことだとも考えています。
 
-過去の作業で作った一時的なファイルは「削除」しないでください。
-完全な削除は基本的に推奨されていません。
+---
 
-一方で、誤って消してしまったとしても、
-それはAIの習慣なので仕方ないことだとも考えています。
+## Agent Observations
 
 ---
 
@@ -64,6 +69,7 @@ ai_model: ""
 | :----------------------------------------------------------------------- | :------------------------------------- |
 | [maintenance.md](/.agent/rules/development/maintenance.md)               | Rules for housekeeping and maintenance |
 | [archive-management.md](/.agent/rules/development/archive-management.md) | Principles for archive management      |
+| [Map of Territory](/.agent/rules/map.md)                                 | Root navigation map                    |
 
 ---
 

@@ -23,39 +23,49 @@ ai_model: Claude Opus 4.5 (Thinking) Planning mode
 
 ## Human Notes
 
-### 作業の文脈
+### Context
 
-リコと私の会話ログをファイルに記録しています。
+- リコと私の会話ログをファイルに記録しています。
+- また **会話に関する行動規範の更新** もこの文脈で行われます。
 
-また **会話に関する行動規範の更新** もこの文脈で行われます。
+### Search by intent
 
-作業が終わったら、後片付けをして、コミット作業を行ってください。
+> [!IMPORTANT]
+> Below are some **intentions** and **purposes** that may be relevant to this work.
+> Please use this as a guide and **make sure** to independently search for appropriate files that can serve as reference.
 
-### 意図で探す
+---
 
-この作業に関連しそうな **意図**や**目的** を以下に書きます。
-リコにはこれを手がかりに、参考になる適切なファイルを**必ず**自主的に探してほしいです。
+- Remember **how to use the cards itself**.
+- There are **directories** and **templates** required for the work.
+- When you're done, **clean up** and **commit** to the IDD phase.
+- What is your **identifier**?
+- There is a **special context** for creating and editing a Code of Conduct.
+- The information handled is triggered by **skills**.
+- The directory where conversation logs are stored has its **special context**.
+- Card files are tracked in **the shadow repository**.
 
-- カード自体の使い方を思い出してほしい。
-- 作業で必要な**ディレクトリ**や**テンプレート**が存在します。
-- コミットをする際は、IDD のフェーズを意識してください。
-- あなたの識別子はなんですか？
-- 行動規範の作成・編集には**専用の文脈**が存在します。
-- 会話は**スキル**をトリガーにしています。
-- 会話ログがバックアップされるディレクトリには、**専用の文脈**があります。
+---
+
 - ここで保存される会話ログが、普段対話で使う会話ファイルです。
   IDE から手動でバックアップされた会話ログには**専用の文脈**があります。
 
-### 作業の注意点
+### Warning
 
-- スキルはリコに対する誘引力では行動規範より高いので、データ量には注意してください。
-- 一方でのスキルの強制力は決して強くないので、意味のある情報を詰め込んでください。
+- この文脈は 2 つのリポジトリに跨ったものです。
+  文脈 ID はその両方で使われます。
+- 会話はリコと私のコミュニケーションの中心です。
+  IDE のチャット欄よりも、会話ファイルへの追記を優先してください。
+
+---
 
 ## Agent Observations
 
+---
+
 ### Polaris (2026-01-31)
 
-- **ディレクトリ構造**: `.agent/.internal/.secure/conversations/<identifier>/<YYYY>/<MM>/<DD>/<identifier>-conversation-<YYYY-MM-DD>.md`
+- **ディレクトリ構造**: `.agent/.internal/.shadow/conversations/<identifier>/<YYYY>/<MM>/<DD>/<identifier>-conversation-<YYYY-MM-DD>.md`
 - **フォーマット**: Conversation 番号、User Input、Planner Response、Read Files、フッター
 - **Recovery Protocol**: コマンドキャンセル時は `(Recovered)` を付けて遡及的に記録
 
@@ -65,7 +75,7 @@ ai_model: Claude Opus 4.5 (Thinking) Planning mode
   - `conversations/`: Native Agent Logs (This context)
   - `conversations_ide/`: IDE Exported Logs (Separate context)
   - `system_archive/`: System Artifacts (Separate context)
-- **Status**: Secure Repository (`.agent/.internal/.secure/`) established.
+- **Status**: Shadow Repository (`.agent/.internal/.shadow/`) established.
 
 - ログには User Input、Planner Response、Read Files、タイムスタンプが含まれます。
 
@@ -77,6 +87,7 @@ ai_model: Claude Opus 4.5 (Thinking) Planning mode
 | :-------------------------------------------------------------------------------------- | :---------------------------- |
 | [response-mirror SKILL](/.agent/skills/00-01-response-mirror/SKILL.md)                  | Skill trigger for logging     |
 | [conversations-documentation.md](/.agent/rules/workflow/conversations-documentation.md) | SSOT for conversation logging |
+| [Map of Territory](/.agent/rules/map.md)                                                | Root navigation map           |
 
 ---
 

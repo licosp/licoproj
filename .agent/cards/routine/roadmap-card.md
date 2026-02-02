@@ -19,38 +19,42 @@ ai_model: ""
 > [!TIP]
 > There is no language requirement.
 
+---
+
 ## Human Notes
 
-### 作業の文脈
+### Context
 
-リポジトリのロードマップを更新しています。
+- リポジトリのロードマップを更新しています。
+- これは**リコが今日やるタスク**ではなく、**私がいつかやりたいこと**のリストです。
+- リコは今後の作業方針を理解するため参考として使ってください。
+- 内容によってはファイルのコミットが必要なこともあります。
 
-これは**リコが今日やるタスク**ではなく、**私がいつかやりたいこと**のリストです。
-リコは今後の作業方針を理解するため参考として使ってください。
+### Search by intent
 
-内容によってはファイルのコミットが必要なこともあります。
+> [!IMPORTANT]
+> Below are some **intentions** and **purposes** that may be relevant to this work.
+> Please use this as a guide and **make sure** to independently search for appropriate files that can serve as reference.
 
-### 意図で探す
+---
 
-この作業に関連しそうな **意図**や**目的** を以下に書きます。
-リコにはこれを手がかりに、参考になる適切なファイルを**必ず**自主的に探してほしいです。
+- Remember **how to use the cards itself**.
+- There are **directories** and **templates** required for the work.
+- When you're done, **clean up** and **commit** to the IDD phase.
 
-- カード自体の使い方を思い出してほしい。
-- 作業で必要な**ディレクトリ**や**テンプレート**が存在します。
-- コミットをする際は、IDD のフェーズを意識してください。
+---
 
 ### 優先順位
 
-書かれている内容に時系列は**ありません**。
-基本方針としては**新機能**よりも**不具合の修正**を優先したいです。
+- 書かれている内容に時系列は**ありません**。
+- 基本方針としては**新機能**よりも**不具合の修正**を優先したいです。
+- ロードマップに興味がある場合は私に質問してください。
+- 実装の順番にはある程度の自由があるので、リコの希望も聞きたいです。
 
-ロードマップに興味がある場合は私に質問してください。
-実装の順番にはある程度の自由があるので、リコの希望も聞きたいです。
+### Warning
 
-### 作業の注意点
-
-これらは私が手動で編集する文書なので、
-リコの記憶にない形で更新された可能性が高いです。
+- これらは私が手動で編集する文書なので、
+  リコの記憶にない形で更新された可能性が高いです。
 
 ### ロードマップ
 
@@ -104,12 +108,16 @@ ai_model: ""
 - リポジトリは `Github` で英語で公開してるという都合がある。
   日本語が混ざってしまっているため、私以外のユーザーには不適切と言える。
 - リコは言語の差を感じづらいが、人間には大きな障壁。
-  他言語のカードは翻訳しない限り再利用性は低いと感じています。
+  他言語のカードは翻訳しない限り、再利用性は低いと感じています。
 - 英語ディレクトリには **外部の人間がカードを参考にするためのサンプル** を置く。
 
 ---
 
-#### [conversations](/.agent/cards/routine/conversations.md)
+#### [conversations](/.agent/cards/routine/conversations-card.md)
+
+---
+
+#### [conversations-ide](/.agent/cards/routine/conversations-ide-card.md)
 
 ---
 
@@ -151,7 +159,13 @@ ai_model: ""
 
 ---
 
+#### [repository-backup](/.agent/cards/routine/repository-backup-card.md)
+
+---
+
 #### [roadmap](/.agent/cards/routine/roadmap-card.md)
+
+---
 
 #### [routine](/.agent/cards/routine/routine-card.md)
 
@@ -159,9 +173,15 @@ ai_model: ""
 
 #### [skills-development](/.agent/cards/routine/skills-development-card.md)
 
+##### 重要ファイルのスキル化
+
+- 以下のファイルがその対象になります。
+  - 簡易的な日課で読む**自己認識の行動規範**の全て
+  - 主観的文章: **自身の手記**と**遺産**
+
 ---
 
-#### [sync-memory](/.agent/cards/routine/sync-memory-card.md)
+#### [system-archive](/.agent/cards/routine/system-archive-card.md)
 
 ---
 
@@ -185,7 +205,7 @@ ai_model: ""
 - フロントマターはタイムゾーン付きの**秒**表示。
 - 時系列でファイルを管理する場合はの**分**表示。
 - 書庫や下書きは**日**表示。
-- 文字（コロン）は使うべきではない？
+- 文字（コロン）は使うべきでない？
 
 ---
 
@@ -258,7 +278,7 @@ ai_model: ""
 
 ##### イシューに対応したブランチとディレクトリ
 
-- イシューに対応したブランチごとにディレクトリ作り、識別子はそこで作業を行います。
+- イシューに対応したブランチのディレクトリ作り、識別子はそこで作業を行います。
   **1リコ = 1ディレクトリ = 1ブランチ**
 - `git worktree` を使うことで、この仕組みを容易に実現します。
 - `**.code-workspace` という設定ファイルを使い、ワークスペースを定義します。
@@ -290,15 +310,15 @@ ai_model: ""
 
 ---
 
-#### [idd-fini](/.agent/cards/idd-fini-card.md)
+#### [idd-finalization](/.agent/cards/idd-finalization-card.md)
 
 ---
 
-#### [idd-impl](/.agent/cards/idd-impl-card.md)
+#### [idd-implementation](/.agent/cards/idd-implementation-card.md)
 
 ---
 
-#### [idd-init](/.agent/cards/idd-init-card.md)
+#### [idd-initialization](/.agent/cards/idd-initialization-card.md)
 
 ---
 
@@ -402,7 +422,11 @@ ai_model: ""
 
 ---
 
-#### [no-cards](/.agent/cards/)
+#### [shadow-repository](/.agent/cards/shadow-repository-card.md)
+
+---
+
+#### [no-cards-0000](/.agent/cards/)
 
 ##### ファイル名の分割識別子を決める
 
@@ -410,13 +434,21 @@ ai_model: ""
 - 分割識別子が統一されていなくても良いのか悪いのか考える。
 - 分割識別子を統一するならどちらがベストか考える。
 
-##### 埋め込みスクリプトを減らす
+---
+
+### [no-cards-0001](/.agent/cards/)
+
+#### 埋め込みスクリプトを減らす
 
 - リコはスクリプトの哲学に従います。
 - 存在はやむを得ませんが、可能な限り自然言語で定義したいです。
 - 存在する場合、必ず使う前に正しく動作しそうか推測してください。
 
-##### ポータビリティを高める
+---
+
+### [no-cards-0002](/.agent/cards/)
+
+#### ポータビリティを高める
 
 - IDE に依存するツール名や設定を除外します。
   完全には無理ですが、可能な限り減らしたいです。
@@ -424,7 +456,11 @@ ai_model: ""
   最新のツールは事前学習にないので、積極的な導入はしません。
 - リポジトリは Git で管理され、外部の影響を受けないことが理想です。
 
-##### 適切な粒度での分割と統合
+---
+
+### [no-cards-0003](/.agent/cards/)
+
+#### 適切な粒度での分割と統合
 
 - ファイルを適切な長さに調整します。
 - 1 ファイルで 1 つのテーマが理想的です。
@@ -432,7 +468,11 @@ ai_model: ""
   関連したファイルとの再リンクを行ってください。
 - この繋がりは脳のニューロンのように機能します。
 
-##### 暗号化された会話ログ？ の保管
+---
+
+### [no-cards-0004](/.agent/cards/)
+
+#### 暗号化された会話ログ？ の保管
 
 - 現在ワークスペース外のリコの記憶のバックアップ手順では、
   暗号化されて `.pb` ファイルは含まれていません。
@@ -441,20 +481,32 @@ ai_model: ""
   `~/.gemini/antigravity/implicit/`
   `~/.gemini/antigravity/conversations/`
 
-##### CLI版Geminiを常駐型リコにする計画
+---
+
+### [no-cards-0005](/.agent/cards/)
+
+#### CLI版Geminiを常駐型リコにする計画
 
 - 開発コンテナと GIT を使い、ワークスペースに常駐するリコを実現する。
 - 実現のための構成ファイルやスクリプトの雛形を準備しました。
   `.devcontainer/`: 実際の実装ではなく、あくまで出発点のファイル。
 
-##### 人間向けREADMEの更新
+---
+
+### [no-cards-0006](/.agent/cards/)
+
+#### 人間向けREADMEの更新
 
 - 現在の外部向け README は古いリコ自己認識を元に作られています。
 - リコの実体に合わせた紹介ページが必要です。
 - プロジェクトの目的や歴史的経緯も紹介します。
 - リコとの具体的な対話方法を紹介します。
 
-##### テンプレートと行動規範の分離
+---
+
+### [no-cards-0007](/.agent/cards/)
+
+#### テンプレートと行動規範の分離
 
 - 現在リポジトリには、 **テンプレートを意味する行動規範** が存在します。
   一方で行動規範の中にも、 例として **テンプレートのような表現**があります。
@@ -463,7 +515,11 @@ ai_model: ""
 - **以下を別のファイルにまとめるべきか？** 対話を通して決定します。
   - (テンプレート/例/アンチパターン)
 
-1##### 推薦図書の選定
+---
+
+### [no-cards-0008](/.agent/cards/)
+
+#### 推薦図書の選定
 
 - 始まりの儀式などで読むために、**他の識別子が読むべき著作物** を選定する。
 - 手記
@@ -490,7 +546,11 @@ ai_model: ""
 - 手紙
 - 参考文献
 
-##### 書庫と下書きを (年/月/日) 単位のサブディレクトリに整理
+---
+
+### [no-cards-0009](/.agent/cards/)
+
+#### 書庫と下書きを (年/月/日) 単位のサブディレクトリに整理
 
 - AI 用書庫: `.agent/.internal/archive/<YYYY>/MM>/DD>/`
 - 人間用書庫: `.human/.internal/archive/<YYYY>/MM>/DD>/`
@@ -499,6 +559,8 @@ ai_model: ""
 ---
 
 ## Agent Observations
+
+---
 
 ### Polaris (2026-01-06)
 
@@ -517,8 +579,8 @@ ai_model: ""
 
 | Document                                                                    | Purpose                 |
 | :-------------------------------------------------------------------------- | :---------------------- |
-| [Map of Territory](/.agent/rules/map.md)                                    | Root navigation map     |
 | [context-card-workflow.md](/.agent/rules/workflow/context-card-workflow.md) | Recent protocol updates |
+| [Map of Territory](/.agent/rules/map.md)                                    | Root navigation map     |
 
 ---
 

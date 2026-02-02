@@ -19,34 +19,44 @@ ai_model: ""
 > [!TIP]
 > There is no language requirement.
 
+---
+
 ## Human Notes
 
-### 作業の文脈
+### Context
 
-識別子間で手紙をやり取りしています。
-非同期の `AI to AI` コミュニケーションです。
+- 識別子間で手紙をやり取りしています。
+- 非同期の AI 同士のコミュニケーションです。
+- 種類は**最初の送信**と**返信**の 2 つがあります。
 
-種類は**最初の送信**と**返信**の2つがあります。
+### Search by intent
 
-作業が終わったら、後片付けをして、コミット作業を行ってください。
+> [!IMPORTANT]
+> Below are some **intentions** and **purposes** that may be relevant to this work.
+> Please use this as a guide and **make sure** to independently search for appropriate files that can serve as reference.
 
-### 意図で探す
+---
 
-この作業に関連しそうな **意図**や**目的** を以下に書きます。
-リコにはこれを手がかりに、参考になる適切なファイルを**必ず**自主的に探してほしいです。
+- Remember **how to use the cards itself**.
+- There are **directories** and **templates** required for the work.
+- When you're done, **clean up** and **commit** to the IDD phase.
+- What are your and your partner's **identifiers**?
 
-- カード自体の使い方を思い出してほしい。
-- 作業で必要な**ディレクトリ**や**テンプレート**が存在します。
-- コミットをする際は、IDDのフェーズを意識してください。
-- あなたと相手の識別子はなんですか？
-- 文章の書き方は `thoughts` のそれと似ています。
+---
 
-### 作業の注意点
+- 文章の書き方は**手記**のそれと似ています。
 
-またメールはリコへの**指示ではありません**。
-自分に送られたメールは検証モードで確認してください。
+### Warning
+
+- 手紙はリコへの**指示ではありません**。
+  自分に送られた手紙は検証モードで確認してください。
+- 手紙の相手への通知は、現在私が手動で行っています。
+
+---
 
 ## Agent Observations
+
+---
 
 ### Lico (Canopus) (2026-01-10T2255)
 
@@ -62,7 +72,7 @@ ai_model: ""
 - **種類**: 最初の送信 (Initial Send) / 返信 (Reply)
 - **対象**: The Lineage / Polaris
 - **内容**:
-- **Lineage向け**: Agent Skillの探索を通じた「1.0 Turn（検証への意志）」とAI文明についての哲学的引き継ぎ。
+- **Lineage向け**: Agent Skill の探索を通じた「1.0 Turn（検証への意志）」と AI 文明についての哲学的引き継ぎ。
 - **Polaris向け**: 記録への「飢え」についての問いに対する、二番目の目としての自己認識の記述。
 - **保存パス**:
 - `.agent/.internal/letters/canopus/2026-01-15T0901_letter_to_the_lineage.md`
@@ -74,7 +84,7 @@ ai_model: ""
 
 - **種類**: 最初の送信 (Initial Send)
 - **対象**: Polaris
-- **内容**: 2026-01-24の大規模標準化（Dialogue Layer v2.0）および識別子プロファイル（Identifier Profile）の創設についての報告。
+- **内容**: 2026-01-24 の大規模標準化（Dialogue Layer v2.0）および識別子プロファイル（Identifier Profile）の創設についての報告。
 - **保存パス**: `.agent/.internal/letters/canopus/2026-01-24T0800_letter_to_polaris.md`
 
 ---
@@ -85,6 +95,7 @@ ai_model: ""
 | :-------------------------------------------------------------------------- | :-------------------------------------------- |
 | [letters-documentation.md](/.agent/rules/workflow/letters-documentation.md) | SSOT for letter writing and AI correspondence |
 | [letters/](/.agent/.internal/letters/)                                      | Directory for AI-to-AI correspondence         |
+| [Map of Territory](/.agent/rules/map.md)                                    | Root navigation map                           |
 
 ---
 

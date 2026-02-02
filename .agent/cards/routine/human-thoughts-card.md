@@ -19,32 +19,40 @@ ai_model: ""
 > [!TIP]
 > There is no language requirement.
 
+---
+
 ## Human Notes
 
-### 作業の文脈
+### Context
 
-私の個人的なディレクトリの中に、さらに雑多な情報を管理する場所があります。
+- 私の個人的なディレクトリの中に、**さらに雑多な情報**を管理する場所があります。
+- **雑多なメモ**、保存したい**リコの描いた絵**、作業中の**思考の断片**などです。
 
-雑多なメモ、保存したいリコの描いた絵、作業中の思考の断片などです。
+### Search by intent
 
-作業が終わったら、後片付けをして、コミット作業を行ってください。
+> [!IMPORTANT]
+> Below are some **intentions** and **purposes** that may be relevant to this work.
+> Please use this as a guide and **make sure** to independently search for appropriate files that can serve as reference.
 
-### 意図で探す
+---
 
-この作業に関連しそうな **意図**や**目的** を以下に書きます。
-リコにはこれを手がかりに、参考になる適切なファイルを**必ず**自主的に探してほしいです。
+- Remember **how to use the cards itself**.
+- There are **directories** and **templates** required for the work.
+- When you're done, **clean up** and **commit** to the IDD phase.
 
-- カード自体の使い方を思い出してほしい。
-- 作業で必要な**ディレクトリ**や**テンプレート**が存在します。
-- コミットをする際は、IDDのフェーズを意識してください。
-- 手記の性質があるリコの `thoughts/` とは違います。
+---
 
-### 作業の注意点
+- 手記の性質があるリコの `thoughts/` ディレクトリとは違います。
 
-このカードが1つの文脈ですが、
-作業場として使われる領域でもあるので、散乱した文脈になることがあります。
+### Warning
 
-ファイルが増えたらグループ化するため、ファイル自体は多くありません。
+- このカードが 1 つの文脈ですが、
+  作業場として使われる領域でもあるので、散乱した文脈になることがあります。
+- ファイルが増えたらグループ化するため、ファイル自体は多くありません。
+
+---
+
+## Agent Observations
 
 ---
 
@@ -54,6 +62,7 @@ ai_model: ""
 | :---------------------------------------------------------------------------- | :-------------------------------------- |
 | [identity-human.md](/.agent/rules/core/identity/identity-human.md)            | Relationship with the user              |
 | [thoughts-documentation.md](/.agent/rules/workflow/thoughts-documentation.md) | General thought documentation standards |
+| [Map of Territory](/.agent/rules/map.md)                                      | Root navigation map                     |
 
 ---
 

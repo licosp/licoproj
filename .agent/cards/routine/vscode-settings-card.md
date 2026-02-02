@@ -19,29 +19,40 @@ ai_model: ""
 > [!TIP]
 > There is no language requirement.
 
+---
+
 ## Human Notes
 
-### 作業の文脈
+### Context
 
-VSCodeで使われる設定ファイルを更新しました。
-変更分のコミットが必要です。
+- `VSCode` で使われる設定ファイルを更新しました。
+- 対象となファイルは雑多で、リポジトリの変更がから探す必要があります。
 
-### 意図で探す
+### Search by intent
 
-この作業に関連しそうな **意図**や**目的** を以下に書きます。
-リコにはこれを手がかりに、参考になる適切なファイルを**必ず**自主的に探してほしいです。
+> [!IMPORTANT]
+> Below are some **intentions** and **purposes** that may be relevant to this work.
+> Please use this as a guide and **make sure** to independently search for appropriate files that can serve as reference.
 
-- カード自体の使い方を思い出してほしい。
-- 作業で必要な**ディレクトリ**や**テンプレート**が存在します。
-- コミットをする際は、IDDのフェーズを意識してください。
+---
+
+- Remember **how to use the cards itself**.
+- There are **directories** and **templates** required for the work.
+- When you're done, **clean up** and **commit** to the IDD phase.
+
+---
+
 - 人間用のファイルが多いですが、フォーマッターなどはリコも使うかもしれません。
 
-### 作業の注意点
+### Warning
 
-これらは人間の使う設定ファイルなので、
-リコが記憶にない形で私が手動で更新した可能性が高いです。
+- これらは人間の使う設定ファイルなので、
+  リコが記憶にない形で私が手動で更新した可能性が高いです。
+- 文脈を推測できない場合は私に聞いて下さい。
 
-文脈を推測できない場合は私に聞いて下さい。
+---
+
+## Agent Observations
 
 ---
 
@@ -51,6 +62,7 @@ VSCodeで使われる設定ファイルを更新しました。
 | :-------------------------------------------------------------- | :-------------------------------------- |
 | [vscode-settings.md](/.agent/rules/workflow/vscode-settings.md) | SSOT for VSCode environment settings    |
 | [cspell.json](/.vscode/cspell.json)                             | Project-specific spell check dictionary |
+| [Map of Territory](/.agent/rules/map.md)                        | Root navigation map                     |
 
 ---
 

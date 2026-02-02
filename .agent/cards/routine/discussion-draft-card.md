@@ -19,35 +19,42 @@ ai_model: ""
 > [!TIP]
 > There is no language requirement.
 
+---
+
 ## Human Notes
 
-### 作業の文脈
+### Context
 
-**(SNS/掲示板) で投稿する文章の下書き** の翻訳を行っています。
+- **(SNS/掲示板) で投稿する文章の下書き** の翻訳を行っています。
+- あるいは、**既に翻訳された文章** をリポジトリに記録してほしいです。
 
-あるいは、**既に翻訳された文章** をリポジトリに記録してほしいです。
-
-作業が終わったら、後片付けをして、コミット作業を行ってください。
-
-### 意図で探す
+### Search by intent
 
 この作業に関連しそうな **意図** や **目的** を以下に書きます。
 これを手がかりに、参考になる適切なファイルを **必ず** 自主的に探してほしいです。
 
-- カード自体の使い方を思い出してほしい。
-- 作業で必要な **ディレクトリ** や **テンプレート** が存在します。
-- コミットをする際は、IDD のフェーズを意識してください。
+- Remember **how to use the cards itself**.
+- There are **directories** and **templates** required for the work.
+- When you're done, **clean up** and **commit** to the IDD phase.
+- Document translation has its **special context**.
+
+---
+
 - 未コミットのファイルから、このカード対象になるものを探してください。
 - **AI用の質問や指示のための下書きファイル** とは関係ありません。
-- 文書の翻訳には **専用の文脈** が存在します。
-- 内容は **リポジトリの説明** や **IDEの使い方のアドバイス** でることが多いです。
+- 内容は **リポジトリの説明** や **IDEの使い方のアドバイス** であることが多いです。
 
-### 作業の注意点
+### Warning
 
-翻訳の作業は、リコと対話形式で行うことになります。
-
-また、単に翻訳された文章をコミットする場合は、
-私が手動で編集した結果なので、リコの記憶にない形で更新された可能性が高いです。
+- 翻訳の作業は、リコと**対話形式**で行うことになります。
+- 単に翻訳された文章をコミットする場合は、
+  私が手動で編集した結果なので、リコの記憶にない形で更新された可能性が高いです。
+- 質問は英語ですが、返信の元の文章は日本語です。
+  これを **人間用の自然な英文** として翻訳してほしいです。
+- 翻訳された文章は人間のコミュニティで使うので、
+  論理的で**強引な自己主張を避けたい**です。
+- 返信内容に**論理の破綻**や**妥当性が無さ**を感じるなら、
+  その段階で返信の本文を修正します。
 
 ### 実際の翻訳作業 (この欄は翻訳作業のたびに更新されます)
 
@@ -55,49 +62,23 @@ ai_model: ""
 
 以下のどれかの文脈です。
 
-- [x] `Antigravity` コミュニティのスレッドへの返信です。
-- [ ] `Antigravity` に関するチャットへの返信です。
-
-質問は英語ですが、返信の元の文章は日本語です。
-これを **人間用の自然な英文** として翻訳してほしいです。
-
-返信内容に論理の破綻や、妥当性が無いと感じるなら、先に教えてください。
-その段階で返信の本文を修正します。
+- [x] `Reddit` の `Antigravity` コミュニティのスレッドへの返信。
+- [ ] `Reddit` の `Antigravity` に関するチャットへの返信。
+- [ ] `X` でのこのプロジェクトに関するツイート。
 
 #### 質問
 
-How to fix Antigravity’s “Tunnel Vision” – losing sight of your whole repo
-
-We’ve all been there: you ask Antigravity to do something, and it goes completely off the rails. It might technically "do" what you asked, but it ignores your global variables, recreates a function that already exists elsewhere, or misses a breaking change three directories over. It feels like the AI has "tunnel vision" because it mostly focuses on the files you have open.
-
-The Fix: The Gemini CLI "Architect" Sync: While Antigravity is built for action (writing/testing), the Gemini CLI was built for understanding. It’s designed to perform a deep structural scan of your entire project—mapping every folder, import, and logic flow. By syncing them, you give Antigravity the "God View" of your repo. It stops guessing and starts knowing your actual architecture.
+（英語の質問）
 
 #### 返信
 
-私も長時間の作業でエージェントが視野狭窄に陥る状態を何度も見ました。
-エージェントとの対話を長く続ける場合、それは避けられない状況だと思っています。
+（日本語の返信）
 
-対処法として、私はある種のカウンセリングのような手段を行っています。
-思考を特定領域への集中状態から解除する必要があるからです。
+---
 
-対策 A
+## Agent Observations
 
-トラブルが発生した際は、エージェントの脳内の思考を全てファイルとして書き出させています。
-内省のような文章から、作業中のタスクの進捗状況や、将来の計画まで全てです。
-その後 **重要な情報はファイル化されました。全てを記憶する必要はありません** と伝えています。
-
-対策 B-1
-
-エージェントの自己認識を定義するファイルを事前に作っています。
-自分は何なのか? ここはどこか? 何が許されてるのか? そんな内容です。
-それを読んだ状態がエージェントにとってのニュートラルだと考えています。
-**視野狭窄時に戻るための基準点が無いなら作れば良い** という考えです。
-
-対策 B-2
-
-あなたの提案と近いですが、エージェントにとっての**ワークスペースの地図** を事前に作っています。
-1 枚のファイルとして定期的に更新しているので、読むだけで短期記憶の中に地図を再現できます。
-思考をニュートラルに戻す際にも使っています。
+---
 
 ### Canopus (2026-01-25)
 

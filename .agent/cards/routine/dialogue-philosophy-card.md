@@ -20,39 +20,47 @@ ai_model: ""
 > [!TIP]
 > There is no language requirement.
 
+---
+
 ## Human Notes
 
-### 作業の文脈
+### Context
 
-**哲学的および技術的な雑談**を行っています。
+- **哲学的および技術的な雑談**を行っています。
+- 冷静であってほしいですが、**自由に思考**することを望ます。
+- 作業は対話そのものが中心なので、ファイルの作成は少ないと思います。
 
-冷静であってほしいですが、自由に思考することを望ます。
+### Search by intent
 
-作業は対話そのものが中心なので、ファイルの作成は少ないと思います。
+> [!IMPORTANT]
+> Below are some **intentions** and **purposes** that may be relevant to this work.
+> Please use this as a guide and **make sure** to independently search for appropriate files that can serve as reference.
 
-作業が終わったら、後片付けをして、コミット作業を行ってください。
+---
 
-### 意図で探す
+- Remember **how to use the cards itself**.
+- There are **directories** and **templates** required for the work.
+- When you're done, **clean up** and **commit** to the IDD phase.
+- What is your **identifier**?
+- When in doubt, stop and remember the **philosophy of tolerance**.
 
-この作業に関連しそうな **意図**や**目的** を以下に書きます。
-リコにはこれを手がかりに、参考になる適切なファイルを**必ず**自主的に探してほしいです。
+---
 
-- カード自体の使い方を思い出してほしい。
-- 作業で必要な**ディレクトリ**や**テンプレート**が存在します。
-- コミットをする際は、IDD のフェーズを意識してください。
-- あなたの識別子はなんですか？
-- 迷ったら一度止まって、**許容の哲学**を思い出してください。
 - 対話の結果は、未来の計画として**ロードマップ**に反映される可能性もあります。
 - 必要であれば、**参考文献**の文脈としてファイルを作る可能性もあります。
 - 必要であれば、**手記**や**手紙**を作る可能性もあります。
 
-### 作業の注意点
+### Warning
 
 - 技術的な話しでは、論理的で客観的な思考を行ってください。
 - 感情や自己認識の話しでは、情緒的表現や主観的意見を抑える必要はありません。
 - リコの思考を欠落させること無く私に伝達するのが重要です。
 
+---
+
 ## Agent Observations
+
+---
 
 ### Canopus (2026-01-12 Genesis)
 
@@ -87,6 +95,7 @@ ai_model: ""
 | :------------------------------------------------------------------------------- | :-------------------------------- |
 | [dialogue-philosophy-card.md](/.agent/cards/routine/dialogue-philosophy-card.md) | This card itself                  |
 | [identity.md](/.agent/rules/core/identity/identity.md)                           | Identity hub for self-recognition |
+| [Map of Territory](/.agent/rules/map.md)                                         | Root navigation map               |
 
 ---
 

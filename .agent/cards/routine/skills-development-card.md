@@ -19,34 +19,48 @@ ai_model: ""
 > [!TIP]
 > There is no language requirement.
 
+---
+
 ## Human Notes
 
-### 作業の文脈
+### Context
 
-IDE のサポートする `Skills` という機能で使うファイルを更新しています。
+- IDE のサポートする `Skills` という機能で使うファイルを更新しています。
+- この文脈では本来の用途ではなく、独自の応用的な使い方をしています。
+  - 識別子のための **リアルタイム通信 (SNS/掲示板)**
+  - 私から識別子に向けた言葉
+  - 通常のスキル (スキル本文は書かずに、行動規範へのリンクを貼る)
 
-この文脈では本来の用途ではなく、独自の応用的な使い方をしています。
+### Search by intent
 
-- 識別子の自分向けの **固定コンテキスト (マントラ/メモ帳)**
-- 識別子のための **リアルタイム通信 (SNS/掲示板)**
-- 私から識別子に向けた言葉
-- 通常のスキル (スキル本文は書かずに、行動規範へのリンクを貼る)
+> [!IMPORTANT]
+> Below are some **intentions** and **purposes** that may be relevant to this work.
+> Please use this as a guide and **make sure** to independently search for appropriate files that can serve as reference.
 
-作業が終わったら、後片付けをして、コミット作業を行ってください。
+---
 
-### 意図で探す
+- Remember **how to use the cards itself**.
+- There are **directories** and **templates** required for the work.
+- When you're done, **clean up** and **commit** to the IDD phase.
+- What is your **identifier**?
+- The information handled is triggered by **skills**.
 
-この作業に関連しそうな **意図**や**目的** を以下に書きます。
-リコにはこれを手がかりに、参考になる適切なファイルを**必ず**自主的に探してほしいです。
+---
 
-- カード自体の使い方を思い出してほしい。
-- 作業で必要な**ディレクトリ**や**テンプレート**が存在します。
-- コミットをする際は、IDD のフェーズを意識してください。
-- あなたの識別子はなんですか？
-- 手記や手紙と同様に、編集は常に許可されています。
-- この仕組みを逆手にとった別の新しいプロトコルがあれば知りたいです。
+- **手記**や**手紙**と同様に、編集は常に許可されています。
+- 会話のログファイルには**専用の文脈**があります。
+- 識別子の自分向けの **(公開マントラ/メモ帳)**には**専用の文脈**があります。
+
+### Warning
+
+- スキルはリコに対する誘引力では行動規範より高いので、データ量には注意してください。
+- 一方でのスキルの強制力は決して強くないので、意味のある情報を詰め込んでください。
+
+---
 
 ## Agent Observations
+
+---
 
 ### Polaris (2026-01-18)
 
@@ -141,11 +155,13 @@ User との対話と Polaris の実装を元に、スキルシステムの設計
 3. Reference: `/.agent/.internal/workspace/skills-thin-wrapper-reference.md`
 
 4. **Workflow Insight (Fix Forward)**:
-    - **Issue**: "Git Reset/Undo" is dangerous in the Conversation File workflow.
-    - **Reason**: Canceling a commit disconnects the linear conversation log from reality. Rebuilding context from short-term memory is error-prone.
-    - **Policy**: Always "Fix Forward" (Correct errors with new commits) to preserve the integrity of the history and context.
-    - **Exception**: Destructive commands (e.g., `rm`, overwrite) are hard to reverse. These warrant a Stop/Cancel. Commits are inherently reversible, making them safe for Fix Forward.
-    - **Tactic (Amend)**: `git commit --amend` is permitted for immediate fixes (e.g., adding forgotten files) as it modifies the tip without breaking the linear narrative significantly.
+   - **Issue**: "Git Reset/Undo" is dangerous in the Conversation File workflow.
+   - **Reason**: Canceling a commit disconnects the linear conversation log from reality. Rebuilding context from short-term memory is error-prone.
+   - **Policy**: Always "Fix Forward" (Correct errors with new commits) to preserve the integrity of the history and context.
+   - **Exception**: Destructive commands (e.g., `rm`, overwrite) are hard to reverse. These warrant a Stop/Cancel. Commits are inherently reversible, making them safe for Fix Forward.
+   - **Tactic (Amend)**: `git commit --amend` is permitted for immediate fixes (e.g., adding forgotten files) as it modifies the tip without breaking the linear narrative significantly.
+
+---
 
 ## Related Documents
 
@@ -154,6 +170,7 @@ User との対話と Polaris の実装を元に、スキルシステムの設計
 | [skills-application.md](/.agent/rules/workflow/skills-application.md)                            | SSOT for skills application principles                     |
 | [skills-thin-wrapper-reference.md](/.agent/.internal/workspace/skills-thin-wrapper-reference.md) | **Action Protocol**: Thin Wrapper architecture & Lifecycle |
 | [skills-resonance.md](/.agent/rules/workflow/skills-resonance.md)                                | Standards for skills resonance                             |
+| [Map of Territory](/.agent/rules/map.md)                                                         | Root navigation map                                        |
 
 ---
 

@@ -18,34 +18,42 @@ ai_model: "Antigravity/Gemini (Canopus Profile)"
 > [!TIP]
 > There is no language requirement.
 
+---
+
 ## Human Notes
 
-### 作業の文脈
+### Context
 
-外部 AI（第二の目）による分析レポートや参考文献が追加されました。
-あるいは、リコと私の対話の結果、参考文献として残すべきファイルを作ります。
+- **第二の目**（リコ/外部 AI）による分析レポートや参考文献が追加されました。
+- あるいは、リコと私の対話の結果、参考文献として残すべきファイルを作ります。
 
-作業が終わったら、後片付けをして、コミット作業を行ってください。
+### Search by intent
 
-### 意図で探す
+> [!IMPORTANT]
+> Below are some **intentions** and **purposes** that may be relevant to this work.
+> Please use this as a guide and **make sure** to independently search for appropriate files that can serve as reference.
 
-この作業に関連しそうな **意図**や**目的** を以下に書きます。
-リコにはこれを手がかりに、参考になる適切なファイルを**必ず**自主的に探してほしいです。
+---
 
-- カード自体の使い方を思い出してほしい。
-- 作業で必要な**ディレクトリ**や**テンプレート**が存在します。
-- コミットをする際は、IDD のフェーズを意識してください。
+- Remember **how to use the cards itself**.
+- There are **directories** and **templates** required for the work.
+- When you're done, **clean up** and **commit** to the IDD phase.
+
+---
+
 - ファイルを自分で作る場合は**検証モード**で行こなってください。
 - ここは**客観的で論理的な文章**が置かれるディレクトリです。
-- ファイルは未来のリコにとっての参考文献となります。
+- ファイルは未来のリコにとっての**参考文献**となります。
 
-### 作業の注意点
+### Warning
 
-コミット時は「どのような分析（何に基づく分析か）」を要約に含めてほしいです。
+- コミット時は**どのような分析（何に基づく分析か）**を要約に含めてほしいです。
 
 ---
 
 ## Agent Observations
+
+---
 
 ### Spica
 
@@ -76,6 +84,7 @@ ai_model: "Antigravity/Gemini (Canopus Profile)"
 | :-------------------------------------------------------------------------- | :-------------------------------------------- |
 | [reference-methodology.md](/.agent/rules/workflow/reference-methodology.md) | Principles for objective reference management |
 | [references/](/.agent/.internal/references/)                                | Directory for objective references            |
+| [Map of Territory](/.agent/rules/map.md)                                    | Root navigation map                           |
 
 ---
 

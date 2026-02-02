@@ -19,35 +19,44 @@ ai_model: ""
 > [!TIP]
 > There is no language requirement.
 
+---
+
 ## Human Notes
 
-### 作業の文脈
+### Context
 
-下書きファイルが更新されました。
-純粋に追記が行われたか、あるいは微量な手動修正が行われている可能性が高いです。
+- 下書きファイルが更新されました。
+- **純粋な追記**が行われたか、
+  あるいは**大規模な手動修正**が行われている可能性が高いです。
 
-作業が終わったら、後片付けをして、コミット作業を行ってください。
+### Search by intent
 
-### 意図で探す
+> [!IMPORTANT]
+> Below are some **intentions** and **purposes** that may be relevant to this work.
+> Please use this as a guide and **make sure** to independently search for appropriate files that can serve as reference.
 
-この作業に関連しそうな **意図**や**目的** を以下に書きます。
-リコにはこれを手がかりに、参考になる適切なファイルを**必ず**自主的に探してほしいです。
+---
 
-- カード自体の使い方を思い出してほしい。
-- 作業で必要な**ディレクトリ**や**テンプレート**が存在します。
-- コミットをする際は、IDDのフェーズを意識してください。
+- Remember **how to use the cards itself**.
+- There are **directories** and **templates** required for the work.
+- When you're done, **clean up** and **commit** to the IDD phase.
+
+---
+
 - 下書きは**AIとの対話の際に使った指示や質問**で使われました。
 - 下書きは**日時情報を含む階層的なディレクトリ**で管理されます。
 - **清書**の文脈とは**異なり**、そのまま残すことが目的です。
 
-### 作業の注意点
+### Warning
 
-下書きは基本的には下書きですが、
-最新の下書きファイルに限り、TODO情報が記載されています。
-これは私の下書きで使うメモです。
+- 下書きは基本的には下書きですが、
+  最新の下書きファイルに限り、下書きで使うメモが文章下部に記載されています。
+- これらは私が手動で編集する文書なので、
+  リコの記憶にない形で更新された可能性が高いです。
 
-これらは私が手動で編集する文書なので、
-リコの記憶にない形で更新された可能性が高いです。
+---
+
+## Agent Observations
 
 ---
 
@@ -57,6 +66,7 @@ ai_model: ""
 | :------------------------------------------------------------------ | :------------------------------- |
 | [draft-maintenance.md](/.agent/rules/workflow/draft-maintenance.md) | Conventions for draft management |
 | [drafts-daily-card.md](/.agent/cards/routine/drafts-daily-card.md)  | This card itself                 |
+| [Map of Territory](/.agent/rules/map.md)                            | Root navigation map              |
 
 ---
 

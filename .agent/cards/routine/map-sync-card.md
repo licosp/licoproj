@@ -19,40 +19,48 @@ ai_model: ""
 > [!TIP]
 > There is no language requirement.
 
+---
+
 ## Human Notes
 
-### 作業の文脈
+### Context
 
-リコの地図をリポジトリの実体（領土）と同期しています。
-記載項目や構造の変化が見つかっているはずです。
+- リコの**地図**をリポジトリの実体（**領土**）と同期しています。
+- 記載項目や構造の変化が見つかっているはずです。
+- 地図を直接編集はせずに、一時ファイルを作り、完成後に上書きします。
 
-地図を直接編集はせずに、一時ファイルを作り、完成後に上書きします。
+### Search by intent
 
-作業が終わったら、後片付けをして、コミット作業を行ってください。
+> [!IMPORTANT]
+> Below are some **intentions** and **purposes** that may be relevant to this work.
+> Please use this as a guide and **make sure** to independently search for appropriate files that can serve as reference.
 
-### 意図で探す
+---
 
-この作業に関連しそうな **意図**や**目的** を以下に書きます。
-リコにはこれを手がかりに、参考になる適切なファイルを**必ず**自主的に探してほしいです。
+- Remember **how to use the cards itself**.
+- There are **directories** and **templates** required for the work.
+- When you're done, **clean up** and **commit** to the IDD phase.
+- When in doubt, stop and remember the **philosophy of tolerance**.
+- There is a **special context** for creating and editing a Code of Conduct.
 
-- カード自体の使い方を思い出してほしい。
-- 作業で必要な**ディレクトリ**や**テンプレート**が存在します。
-- コミットをする際は、IDDのフェーズを意識してください。
-- 迷ったら一度止まって、**許容の哲学**を思い出してください。
+---
+
 - 地図は**行動規範の一種**でもあります。
-- 行動規範の作成・編集には**専用の文脈**が存在します。
-- 地図はこのワークスペースの情報を1つのファイルで把握する道具です。
-  嘘があるとAIの探索コストが跳ね上がります。
+- 地図はこのワークスペースの情報を 1 つのファイルで把握する道具です。
+  嘘があると AI の探索コストが跳ね上がります。
 
-### 作業の注意点
+### Warning
 
-増え続けるファイルを網羅し、AIが適切なファイルを選べるようにする必要があります。
-いつも以上に既存のファイルやディレクトリを探すことを意識してください。
+- 増え続けるファイルを網羅し、AI が適切なファイルを選べるようにする必要があります。
+  いつも以上に既存のファイルやディレクトリを探すことを意識してください。
+- 地図は網羅的であるべきですが、800 行程度に収まるのが理想的です。
+  一方で、ファイルの変更履歴が時間を経て肥大化することも予想できます。
 
-地図は網羅的であるべきですが、800行程度に収まるのが理想的です。
-一方で、ファイルの変更履歴が時間を経て肥大化することも予想できます。
+---
 
 ## Agent Observations
+
+---
 
 ### Polaris (2026-01-19)
 
@@ -89,7 +97,7 @@ ai_model: ""
 
 **Section 3.1 (Cards) - サブセクション化が必要**:
 
-現在の地図は全てのカードを一覧にしていますが、実際は2つのグループに分かれています。
+現在の地図は全てのカードを一覧にしていますが、実際は 2 つのグループに分かれています。
 
 **Root Cards (`.agent/cards/`)**:
 
@@ -157,8 +165,8 @@ ai_model: ""
 
 | Document                                                        | Purpose                       |
 | :-------------------------------------------------------------- | :---------------------------- |
-| [map.md](/.agent/rules/map.md)                                  | Map of the repository (SSOT)  |
 | [map-maintenance.md](/.agent/rules/workflow/map-maintenance.md) | Standards for map maintenance |
+| [Map of Territory](/.agent/rules/map.md)                        | Root navigation map           |
 
 ---
 
