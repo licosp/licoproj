@@ -3,26 +3,19 @@
 node_modules/
 
 # Runtime data
-pids
 *.pid
 *.seed
 *.pid.lock
 
 # IDE/Editor files
-.idea/
 *.swp
 *.swo
-*~
 
 # Yarn Integrity file
 .yarn-integrity
+
 # Allow agent rules documentation
 !/.agent/rules/**/*.md
-!/.agent/rules/proposals/
-
-# Lico memory archives (local only, not tracked)
-.agent/.internal/memory_archive/
-.agent/.internal/session_archive/
 
 # Runtime tools (local installations)
 .runtimes/
@@ -31,4 +24,4 @@ pids
 .human/manuals/agent-skills/
 
 # Shadow Repository
-.human/.internal/secure/
+.agent/.internal/.shadow/
