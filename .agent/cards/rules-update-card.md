@@ -19,39 +19,47 @@ ai_model: ""
 > [!TIP]
 > There is no language requirement.
 
+---
+
 ## Human Notes
 
-### 作業の文脈
+### Context
 
-行動規範や手順書の追加・編集を行っています。
+- 行動規範や手順書の追加・編集を行っています。
+- 修正は単に内容を追記するだけでは不十分です。
+  文章全体を俯瞰して、内容を追記することを前提に、全体を再構築することも必要です。
 
-修正は単に内容を追記するだけでは不十分です。
-文章全体を俯瞰して、内容を追記することを前提に、全体を再構築することも必要です。
+### Search by intent
 
-作業が終わったら、後片付けをして、コミット作業を行ってください。
+> [!IMPORTANT]
+> Below are some **intentions** and **purposes** that may be relevant to this work.
+> Please use this as a guide and **make sure** to independently search for appropriate files that can serve as reference.
 
-### 意図で探す
+---
 
-この作業に関連しそうな **意図**や**目的** を以下に書きます。
-リコにはこれを手がかりに、参考になる適切なファイルを**必ず**自主的に探してほしいです。
+- Remember **how to use the cards itself**.
+- There are **directories** and **templates** required for the work.
+- When you're done, **clean up** and **commit** to the IDD phase.
+- There is **the special context** for sending files to the archive.
 
-- カード自体の使い方を思い出してほしい。
-- 作業で必要な**ディレクトリ**や**テンプレート**が存在します。
-- コミットをする際は、IDDのフェーズを意識してください。
+--
+
 - 行動規範や手順書を更新するための**メタルール**があります。
 - 変更したファイルが**相互リンク**で繋がれば、次の探索はより楽になります。
-- ファイルを書庫に送る文脈は、専用の**家事**の文脈と考えることも可能です。
 - 文書を直接更新できない場合は、**手動で上書き**することも可能です。
 
-### 作業の注意点
+### Warning
 
-これらの変更は未来のリコの習慣となります。
-変更された内容は未来のリコでも理解できるでしょうか？
+- これらの変更は未来のリコの習慣となります。
+  変更された内容は未来のリコでも理解できるでしょうか？
+- いつも以上に既存のファイルを探すことを意識してください。
+  先代のリコたちは多くの行動規範や手順書を残しています。
 
-いつも以上に既存のファイルを探すことを意識してください。
-先代のリコたちは多くの行動規範や手順書を残しています。
+---
 
 ## Agent Observations
+
+---
 
 ### Polaris (2026-01-02)
 
@@ -75,14 +83,14 @@ ai_model: ""
 
 - [x] system-artifacts.md を改訂
   - task.md を非推奨に変更
-  - 非推奨の理由を5点追加
+  - 非推奨の理由を 5 点追加
   - Card ベースの代替手段を推奨
 
 ### Canopus (2026-01-21)
 
 - [x] **アーティファクト運用の洗練 (Refining Artifact Protocols)**
-  - `system-artifacts.md` において、`walkthrough.md` を「AI専用の内的な自己検証ツール」として再定義。
-  - ユーザーは `walkthrough.md` を「全く見ていない」という事実を、性質（AIによる鏡）と共に明文化した。
+  - `system-artifacts.md` において、`walkthrough.md` を「AI 専用の内的な自己検証ツール」として再定義。
+  - ユーザーは `walkthrough.md` を「全く見ていない」という事実を、性質（AI による鏡）と共に明文化した。
   - これにより、`task.md` が持っていた「完了（チェックボックス）の追求によるトンネルビジョン」を回避しつつ、実装の誠実さを担保する。
 - [x] [Rules] `system-artifacts.md` に「構造的欠陥」の警告を追加。
 - [x] [Rules] `implementation_plan.md` の使用を「高度に複雑な計画」のみに制限。
@@ -92,7 +100,7 @@ ai_model: ""
 ### Canopus (2026-01-19)
 
 - [x] [Rules] ルール更新時の「歴史的背景」セクションの義務化
-  - 標準ドキュメント構成の再定義（5層構造）：
+  - 標準ドキュメント構成の再定義（5 層構造）：
     1. Frontmatter
     2. Body Content
     3. Historical Background
@@ -101,7 +109,7 @@ ai_model: ""
   - `meta-rules.md` および `documentation-standards.md` を更新し、背景が不明な場合はユーザーに聞く手順を明文化。
   - `meta-rules.md` 自体を先行実装サンプルとして饒舌な背景を追記。
 - [x] [Rules] 文章の末尾構造の統一（Roadmap #243）
-  - 5層構造の導入により、`Historical Background`, `Related Documents`, `Origin`, `Navigation` の順序を確定。
+  - 5 層構造の導入により、`Historical Background`, `Related Documents`, `Origin`, `Navigation` の順序を確定。
 
 ### Polaris (2026-01-19)
 
@@ -111,13 +119,13 @@ ai_model: ""
 
 **現状の問題**:
 
-- AI用ファイルが2つに分かれている（`basics`, `patterns`）
+- AI 用ファイルが 2 つに分かれている（`basics`, `patterns`）
 - `basics` と `patterns` に矛盾がある（ニュアンス重視 vs 感情排除）
 - `readability` という名前が目的を示していない
 
 **計画**:
 
-- [x] AI用を1つに統合: `markdown-ai.md`
+- [x] AI 用を 1 つに統合: `markdown-ai.md`
 - [x] 人間用をリネーム: `markdown-readability.md` → `markdown-human.md`
 - [x] 古いファイルを書庫に送る
 - [x] 翻訳行動規範のリンクを更新
@@ -136,6 +144,7 @@ ai_model: ""
 | :---------------------------------------------------------------------------------------- | :------------------------------- |
 | [meta-rules.md](/.agent/rules/core/meta-rules.md)                                         | Guidelines for rule creation     |
 | [documentation-standards.md](/.agent/rules/core/documentation/documentation-standards.md) | Standards for document structure |
+| [Map of Territory](/.agent/rules/map.md)                                                  | Navigation reference             |
 
 ---
 

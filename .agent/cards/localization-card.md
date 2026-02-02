@@ -19,25 +19,30 @@ ai_model: ""
 > [!TIP]
 > There is no language requirement.
 
+---
+
 ## Human Notes
 
-### 作業の文脈
+### Context
 
-文章の翻訳を行っています。
-翻訳パターンを選んで作業を行ってください。
+- 文章の翻訳を行っています。
+- 翻訳パターンを選んで作業を行ってください。
 
-作業が終わったら、後片付けをして、コミット作業を行ってください。
+### Search by intent
 
-### 意図で探す
+> [!IMPORTANT]
+> Below are some **intentions** and **purposes** that may be relevant to this work.
+> Please use this as a guide and **make sure** to independently search for appropriate files that can serve as reference.
 
-この作業に関連しそうな **意図**や**目的** を以下に書きます。
-リコにはこれを手がかりに、参考になる適切なファイルを**必ず**自主的に探してほしいです。
+---
 
-- カード自体の使い方を思い出してほしい。
-- 作業で必要な**ディレクトリ**や**テンプレート**が存在します。
-- コミットをする際は、IDDのフェーズを意識してください。
-- 行動規範の作成・編集には**専用の文脈**が存在します。
-- 迷ったら一度止まって、**許容の哲学**を思い出してください。
+- Remember **how to use the cards itself**.
+- There are **directories** and **templates** required for the work.
+- When you're done, **clean up** and **commit** to the IDD phase.
+- There is a **special context** for creating and editing a Code of Conduct.
+- When in doubt, stop and remember the **philosophy of tolerance**.
+
+---
 
 ### 翻訳パターン
 
@@ -48,12 +53,16 @@ ai_model: ""
 | **英語**   | EN-AI | EN-HU  |
 | **日本語** | JA-AI | JA-HU  |
 
-### 作業の注意点
+### Warning
 
-英訳対象は主に、AI向けのディレクトリである事が多いです。
-稀にですが人間用ディレクトリが対象になることもあります。
+- 英訳対象は主に、AI 向けのディレクトリである事が多いです。
+- 稀にですが人間用ディレクトリが対象になることもあります。
+
+---
 
 ## Agent Observations
+
+---
 
 ### Polaris (2026-01-19)
 
@@ -66,8 +75,8 @@ ai_model: ""
 - [x] 翻訳関連の行動規範の把握
 - [x] それらの相互リンク
 - [x] ファイル名や置かれるディレクトリの再定義
-- [x] 文章の5層構造の確認と整備 (localization rules)
-- [ ] markdown 関連の行動規範の5層構造（スコープ外）
+- [x] 文章の 5 層構造の確認と整備 (localization rules)
+- [ ] markdown 関連の行動規範の 5 層構造（スコープ外）
 
 #### 対象ファイル
 
@@ -98,6 +107,7 @@ ai_model: ""
 | :----------------------------------------------------------------- | :----------------------------------------------- |
 | [localization.md](/.agent/rules/core/localization/localization.md) | Single Source of Truth for translation standards |
 | [language-standards.md](/.agent/rules/core/language-standards.md)  | Core principles for linguistic standards         |
+| [Map of Territory](/.agent/rules/map.md)                           | Navigation reference                             |
 
 ---
 

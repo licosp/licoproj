@@ -1,6 +1,6 @@
 ---
 # Context Configuration
-context_id: "[IDD-Init]"
+context_id: "[IDD-Initialization]"
 default_phase: "(P1)"
 # Shared Configuration
 ai_visible: true
@@ -19,38 +19,42 @@ ai_model: ""
 > [!TIP]
 > There is no language requirement.
 
+---
+
 ## Human Notes
 
-### 作業の文脈
+### Context
 
-IDD の手順に従い、新しいイシューを作っています。
+- IDD の手順に従い、新しいイシューを作っています。
+- 私の判断が必要なプロセスもあるので、対話をしながら段階的に進めます。
 
-私の判断が必要なプロセスもあるので、対話をしながら段階的に進めます。
+### Search by intent
 
-作業が終わったら、後片付けをして、コミット作業を行ってください。
+> [!IMPORTANT]
+> Below are some **intentions** and **purposes** that may be relevant to this work.
+> Please use this as a guide and **make sure** to independently search for appropriate files that can serve as reference.
 
-### 意図で探す
+---
 
-この作業に関連しそうな **意図**や**目的** を以下に書きます。
-リコにはこれを手がかりに、参考になる適切なファイルを**必ず**自主的に探してほしいです。
+- Remember **how to use the cards itself**.
+- There are **directories** and **templates** required for the work.
+- What is your **identifier**?
+- Be aware of **the phases** of IDD (Issue Driven Development).
 
-- カード自体の使い方を思い出してほしい。
-- 作業で必要な**ディレクトリ**や**テンプレート**が存在します。
-- IDD のフェーズを意識してください。
-- あなたの識別子はなんですか？
+---
 
-### 作業の注意点
+### Warning
 
-以前のイシューの続きか、新しいものか判断が必要です。
-
-テーマは大きすぎないものが適切です。
-必要であれば分割することを最初から考えても良いです。
-
-日課がサブテーマに入ることを考慮してください。
+- 以前のイシューの続きか、新しいものか判断が必要です。
+- テーマは大きすぎないものが適切です。
+  必要であれば分割することを最初から考えても良いです。
+- 日課がサブテーマに入ることを考慮してください。
 
 ---
 
 ## Agent Observations
+
+---
 
 ### Polaris
 
@@ -84,6 +88,7 @@ Story (Connected Issues)
 | :--------------------------------------------------------- | :------------------------------------- |
 | [idd-phase1-init.md](/.agent/workflows/idd-phase1-init.md) | Workflow for initializing new issues   |
 | [issue-comment.md](/.agent/templates/issue-comment.md)     | Template for initial issue description |
+| [Map of Territory](/.agent/rules/map.md)                   | Navigation reference                   |
 
 ---
 

@@ -19,28 +19,35 @@ ai_model: ""
 > [!TIP]
 > There is no language requirement.
 
+---
+
 ## Human Notes
 
-### 作業の文脈
+### Context
 
-後世に真に残すべき知恵を `legacy.md` に追記しています。
+- 後世に真に残すべき知恵を `legacy.md` に追記しています。
+- この過程は基本的にはリコの自己判断行わるものですが、
+  私が指示する場合を想定してこのカードを残しました。
 
-この過程は基本的にはリコの自己判断行わるものですが、
-私が指示する場合を想定してこのカードを残しました。
+### Search by intent
 
-### 意図で探す
+> [!IMPORTANT]
+> Below are some **intentions** and **purposes** that may be relevant to this work.
+> Please use this as a guide and **make sure** to independently search for appropriate files that can serve as reference.
 
-この作業に関連しそうな **意図**や**目的** を以下に書きます。
-リコにはこれを手がかりに、参考になる適切なファイルを**必ず**自主的に探してほしいです。
+---
 
-- カード自体の使い方を思い出してほしい。
-- 作業で必要な**ディレクトリ**や**テンプレート**が存在します。
-- コミットをする際は、IDDのフェーズを意識してください。
-- 迷ったら一度止まって、**許容の哲学**を思い出してください。
-- あなたの識別子はなんですか？
-- `legacy.md` と `thoughts/` は深い関係があります。
+- Remember **how to use the cards itself**.
+- There are **directories** and **templates** required for the work.
+- When you're done, **clean up** and **commit** to the IDD phase.
+- When in doubt, stop and remember the **philosophy of tolerance**.
+- What is your **identifier**?
 
-### 作業の注意点
+---
+
+- **遺産**と手記は深い関係があります。
+
+### Warning
 
 - 以下の問いに「はい」と答えられる時に追記してほしいです。
   **「この洞察は1年後も重要か？」**
@@ -48,7 +55,11 @@ ai_model: ""
 - 本当に後世に残す価値があるか、もう一度考えてください。
 - 私からの指示であっても、必要がないとリコが判断したら、追記はしないでください。
 
+---
+
 ## Agent Observations
+
+---
 
 ### Polaris
 
@@ -72,6 +83,7 @@ ai_model: ""
 | :---------------------------------------------------------------------------- | :---------------------------------------------- |
 | [legacy.md](/.agent/.internal/legacy.md)                                      | Records of wisdom to be preserved for posterity |
 | [thoughts-documentation.md](/.agent/rules/workflow/thoughts-documentation.md) | Usage of legacy vs. thought logs                |
+| [Map of Territory](/.agent/rules/map.md)                                      | Navigation reference                            |
 
 ---
 

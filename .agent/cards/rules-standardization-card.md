@@ -19,14 +19,14 @@ ai_model: ""
 > [!TIP]
 > There is no language requirement.
 
+---
+
 ## Human Notes
 
-### 作業の文脈
+### Context
 
-ワークスペース下の文章に関して、
-その内容を **文章作成の行動規範** に合わせて確認・修正しています。
-
-作業が終わったら、後片付けをして、コミット作業を行ってください。
+- ワークスペース下の文章に関して、
+  その内容を **文章作成の行動規範** に合わせて確認・修正しています。
 
 ### 修正対象
 
@@ -38,27 +38,32 @@ ai_model: ""
 - リンクの書式
 - 情報の `SSOT (Single Source of Truth)` 対応
 
-### 意図で探す
+### Search by intent
 
-この作業に関連しそうな **意図**や**目的** を以下に書きます。
-リコにはこれを手がかりに、参考になる適切なファイルを**必ず**自主的に探してほしいです。
+> [!IMPORTANT]
+> Below are some **intentions** and **purposes** that may be relevant to this work.
+> Please use this as a guide and **make sure** to independently search for appropriate files that can serve as reference.
 
-- カード自体の使い方を思い出してほしい。
-- 作業で必要な**ディレクトリ**や**テンプレート**が存在します。
-- コミットをする際は、IDD のフェーズを意識してください。
-- 文章の書き方には、構造と書式の一貫性が求められます。
-  未来のリコの理解を助けることができる文章を書いてください。
+---
 
-### 作業の注意点
+- Remember **how to use the cards itself**.
+- There are **directories** and **templates** required for the work.
+- When you're done, **clean up** and **commit** to the IDD phase.
+- Your writing style should be consistent in **structure and format**.
 
-修正対象となるファイルは、私との対話で決まります。
+---
 
-数が多くなることが予想できるので、**段階的な修正とコミット** が必要になるはずです。
-**修正対象のリスト** や **作業の文脈の詳細** を、積極的にカードに追記してください。
+### Warning
+
+- 修正対象となるファイルは、私との対話で決まります。
+- 数が多くなることが予想できるので、**段階的な修正とコミット** が必要になるはずです。
+- **修正対象のリスト** や **作業の文脈の詳細** を、積極的にカードに追記してください。
 
 ---
 
 ## Agent Observations
+
+---
 
 ### Canopus (2026-01-23)
 
@@ -201,6 +206,7 @@ ai_model: ""
 | :---------------------------------------------------------------------------------------------------------------------------------------------------------------- | :------------------------------------------------------------ |
 | [2026-01-25T1110_rule_standardization_bias_analysis.md](file:///.agent/.internal/references/agents/canopus/2026-01-25T1110_rule_standardization_bias_analysis.md) | Analysis of AI bias and info loss during v2.3 standardization |
 | [documentation-standards.md](file:///.agent/rules/core/documentation/documentation-standards.md)                                                                  | SSOT for structural aesthetics and documentation standards    |
+| [Map of Territory](/.agent/rules/map.md)                                                                                                                          | Navigation reference                                          |
 
 ---
 

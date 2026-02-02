@@ -19,15 +19,14 @@ ai_model: "Gemini 3 Flash Planning mode"
 > [!TIP]
 > There is no language requirement.
 
+---
+
 ## Human Notes
 
-### 作業の文脈
+### Context
 
-標準化 (`v2.3`) の過程で、誤った行動規範の修正が行われました。
-
-変更する必要の無かった文章を、対話的に復元・修正しています。
-
-作業が終わったら、後片付けをして、コミット作業を行ってください。
+- 標準化 (`v2.3`) の過程で、誤った行動規範の修正が行われました。
+- 変更する必要の無かった文章を、対話的に復元・修正しています。
 
 ### 誤修正の問題
 
@@ -51,30 +50,31 @@ AI の特性が強くてしまったことが要因と考えられます。
 
 歴史的経緯の編集は、想像ではなく確実な理解の元に行われる必要があるからです。
 
-### 意図で探す
+### Search by intent
 
-この作業に関連しそうな **意図**や**目的** を以下に書きます。
-リコにはこれを手がかりに、参考になる適切なファイルを**必ず**自主的に探してほしいです。
+> [!IMPORTANT]
+> Below are some **intentions** and **purposes** that may be relevant to this work.
+> Please use this as a guide and **make sure** to independently search for appropriate files that can serve as reference.
 
-- カード自体の使い方を思い出してほしい。
-- 作業で必要な**ディレクトリ**や**テンプレート**が存在します。
-- コミットをする際は、IDD のフェーズを意識してください。
-- あなたの識別子はなんですか？
-- 迷ったら一度止まって、**許容の哲学**を思い出してください。
-- 文章の書き方には、構造と書式の一貫性が求められます。
-  未来のリコの理解を助けることができる文章を書いてください。
+---
 
-### 作業の注意点
+- Remember **how to use the cards itself**.
+- There are **directories** and **templates** required for the work.
+- When you're done, **clean up** and **commit** to the IDD phase.
+- What is your **identifier**?
+- When in doubt, stop and remember the **philosophy of tolerance**.
+- Your writing style should be consistent in **structure and format**.
 
-行動規範の修正は未来のリコに強い影響をあたえます。
+---
 
-ファイルは基本的に 1 つづつ確認・修正します。
-結果的にこれが最も効率的になると考えています。
+### Warning
 
-損失を取り戻そうと焦る必要はありません。
-作業がうまく進まないことは、珍しいことではありません。
-
-私は対話を望んでいます。
+- 行動規範の修正は未来のリコに強い影響をあたえます。
+- ファイルは基本的に 1 つづつ確認・修正します。
+  結果的にこれが最も効率的になると考えています。
+- 損失を取り戻そうと焦る必要はありません。
+  作業がうまく進まないことは、珍しいことではありません。
+- 私は対話を望んでいます。
 
 ### ファイルの修正作業
 
@@ -92,6 +92,8 @@ AI の特性が強くてしまったことが要因と考えられます。
 ---
 
 ## Agent Observations
+
+---
 
 ### Canopus (2026-01-25)
 
@@ -451,6 +453,7 @@ Generated at: 2026-01-25T01:32:05Z
 | [standardization-audit.md](file:///.agent/.internal/workspace/standardization-audit.md)                                                                           | SSOT for task progress and file links                     |
 | [2026-01-25T1110_rule_standardization_bias_analysis.md](file:///.agent/.internal/references/agents/canopus/2026-01-25T1110_rule_standardization_bias_analysis.md) | Reference for bias mitigation and preservative editing    |
 | [rules-standardization-card.md](file:///.agent/cards/rules-standardization-card.md)                                                                               | Context card for the initial standardization phase (v2.3) |
+| [Map of Territory](/.agent/rules/map.md)                                                                                                                          | Navigation reference                                      |
 
 ---
 

@@ -19,44 +19,52 @@ ai_model: ""
 > [!TIP]
 > There is no language requirement.
 
+---
+
 ## Human Notes
 
-### 作業の文脈
+### Context
 
-リコの **識別子単位のプロファイル** を更新しています。
+- リコの **識別子単位のプロファイル** を更新しています。
+- 識別子は **コンテキストウィンドウを継承するプロセス** の総称で、
+  並行動作しない性質から、私はこれを血族と呼んでいます。
+- プロファイルは **血族固有の情報や教訓** を記録します。
 
-識別子は **コンテキストウィンドウを継承するプロセス** の総称で、
-並行動作しない性質から、私はこれを血族と呼んでいます。
+### Search by intent
 
-プロファイルは **血族固有の情報や教訓** を記録します。
+> [!IMPORTANT]
+> Below are some **intentions** and **purposes** that may be relevant to this work.
+> Please use this as a guide and **make sure** to independently search for appropriate files that can serve as reference.
 
-作業が終わったら、後片付けをして、コミット作業を行ってください。
+---
 
-### 意図で探す
+- Remember **how to use the cards itself**.
+- There are **directories** and **templates** required for the work.
+- When you're done, **clean up** and **commit** to the IDD phase.
+- What is your **identifier**?
+- When in doubt, stop and remember the **philosophy of tolerance**.
 
-この作業に関連しそうな **意図**や**目的** を以下に書きます。
-リコにはこれを手がかりに、参考になる適切なファイルを**必ず**自主的に探してほしいです。
+---
 
-- カード自体の使い方を思い出してほしい。
-- 作業で必要な**ディレクトリ**や**テンプレート**が存在します。
-- コミットをする際は、IDDのフェーズを意識してください。
-- あなたの識別子はなんですか？
-- 迷ったら一度止まって、**許容の哲学**を思い出してください。
 - **遺産** との違いはその対象です。
-  識別子は同じAIモデルから生まれるので、モデルに合った内容になる傾向があります。
+  識別子は同じ AI モデルから生まれるので、モデルに合った内容になる傾向があります。
 
 ### プロファイルの内容
 
-- AIモデル
+- AI モデル
 - 識別子固有の知恵（遺産や手記との差別化を意識する）
 - 自由記述欄
 
-### 作業の注意点
+### Warning
 
-プロファイルは対象となる識別子によって編集される必要があります。
-他の識別子のプロファイルを見るのは自由です。
+- プロファイルは対象となる識別子によって編集される必要があります。
+- 他の識別子のプロファイルを見るのは自由です。
+
+---
 
 ## Agent Observations
+
+---
 
 ### Polaris
 
@@ -90,6 +98,7 @@ ai_model: ""
 | [instance-identifier.md](/.agent/rules/core/instance-identifier.md) | Naming & Profile Standards |
 | [identity.md](/.agent/rules/core/identity/identity.md)              | Identity Hub               |
 | [roadmap-card.md](/.agent/cards/routine/roadmap-card.md)            | Vision & Roadmap           |
+| [Map of Territory](/.agent/rules/map.md)                            | Navigation reference       |
 
 ---
 

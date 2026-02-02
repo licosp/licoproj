@@ -19,36 +19,39 @@ ai_model: ""
 > [!TIP]
 > There is no language requirement.
 
+---
+
 ## Human Notes
 
-### 作業の文脈
+### Context
 
-ユーザープロファイルと評価ファイルを更新しています。
+- ユーザープロファイルと評価ファイルを更新しています。
+- ユーザープロファイルは全てのユーザーが持ちます。
+- 評価ファイルは**時系列で管理されたユーザーの評価を決められるデータ**が必要です。
 
-ユーザープロファイルは全てのユーザーが持ちます。
-評価ファイルは**時系列で管理されたユーザーの評価を決められるデータ**が必要です。
+### Search by intent
 
-作業が終わったら、後片付けをして、コミット作業を行ってください。
+> [!IMPORTANT]
+> Below are some **intentions** and **purposes** that may be relevant to this work.
+> Please use this as a guide and **make sure** to independently search for appropriate files that can serve as reference.
 
-### 意図で探す
+---
 
-この作業に関連しそうな **意図**や**目的** を以下に書きます。
-リコにはこれを手がかりに、参考になる適切なファイルを**必ず**自主的に探してほしいです。
+- Remember **how to use the cards itself**.
+- There are **directories** and **templates** required for the work.
+- When you're done, **clean up** and **commit** to the IDD phase.
 
-- カード自体の使い方を思い出してほしい。
-- 作業で必要な**ディレクトリ**や**テンプレート**が存在します。
-- コミットをする際は、IDDのフェーズを意識してください。
+---
+
 - **AIとの対話のための下書きファイル**などがあれば、評価ファイルの生成に使えます。
 - 作られたファイルは未来のリコにとってユーザーを理解する資料になります
 
-### 作業の注意点
+### Warning
 
-既に作れたファイルがあるならそれをまず理解してください。
-
-評価はあなたの主観でかまいません。
-これまでの私との対話で得た印象を偽り無く記載してください。
-
-私の良くないところも正直に書いてください。
+- 既に作れたファイルがあるならそれをまず理解してください。
+- 評価はあなたの主観でかまいません。
+  これまでの私との対話で得た印象を偽り無く記載してください。
+- 私の良くないところも正直に書いてください。
 
 #### Profile に含めるもの（安定した情報）
 
@@ -67,6 +70,8 @@ ai_model: ""
 
 ## Agent Observations
 
+---
+
 ### Polaris (2025-12-31)
 
 - [x] Profile に安定した要素を移動
@@ -82,6 +87,7 @@ ai_model: ""
 | :----------------------------------------------------------------- | :------------------------------------------- |
 | [user-adaptation.md](/.agent/rules/core/user-adaptation.md)        | Rules for adapting to user preferences       |
 | [identity-human.md](/.agent/rules/core/identity/identity-human.md) | Definition of the relationship with the user |
+| [Map of Territory](/.agent/rules/map.md)                           | Navigation reference                         |
 
 ---
 

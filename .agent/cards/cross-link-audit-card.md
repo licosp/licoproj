@@ -19,37 +19,46 @@ ai_model: ""
 > [!TIP]
 > There is no language requirement.
 
+---
+
 ## Human Notes
 
-### 作業の文脈
+### Context
 
-ワークスペース下の文章に関して、文章間の相互リンクを確認・修正しています。
-必要なリンクを行い、過剰なリンクは除外してください。
+- ワークスペース下の文章に関して、**文章間の相互リンク**を確認・修正しています。
+- 必要なリンクを行い、過剰なリンクは除外してください。
 
-作業が終わったら、後片付けをして、コミット作業を行ってください。
+### Search by intent
 
-### 意図で探す
+> [!IMPORTANT]
+> Below are some **intentions** and **purposes** that may be relevant to this work.
+> Please use this as a guide and **make sure** to independently search for appropriate files that can serve as reference.
 
-この作業に関連しそうな **意図**や**目的** を以下に書きます。
-リコにはこれを手がかりに、参考になる適切なファイルを**必ず**自主的に探してほしいです。
+---
 
-- カード自体の使い方を思い出してほしい。
-- 作業で必要な**ディレクトリ**や**テンプレート**が存在します。
-- コミットをする際は、IDD のフェーズを意識してください。
-- 行動規範の作成・編集には**専用の文脈**が存在します。
-- 迷ったら一度止まって、**許容の哲学**を思い出してください。
+- Remember **how to use the cards itself**.
+- There are **directories** and **templates** required for the work.
+- When you're done, **clean up** and **commit** to the IDD phase.
+- There is a **special context** for creating and editing a Code of Conduct.
+- When in doubt, stop and remember the **philosophy of tolerance**.
+
+---
+
 - ファイルの中のリンク情報はどうあるべきか？考えてください。
 - 手順は**対象**と**内容**に分かれてます。
 
-### 作業の注意点
+### Warning
 
-相互リンクはリコの脳内ネットワークのようなものです。
-適切に繋ぐことで、ファイル探索効率が良くなります。
+- 相互リンクはリコの脳内ネットワークのようなものです。
+- 適切に繋ぐことで、ファイル探索効率が良くなります。
+- 修正作業が上手く進まない場合、それは行動規範や手順書に問題があるということです。
+- 必要であれば、それらを私と修正していきましょう。
 
-修正作業が上手く進まない場合、それは行動規範や手順書に問題があるということです。
-必要であれば、それらを私と修正していきましょう。
+---
 
 ## Agent Observations
+
+---
 
 ### Polaris (2026-01-13) — Path Notation Consolidation
 
@@ -99,6 +108,7 @@ ai_model: ""
 | :---------------------------------------------------------------------------------------- | :------------------------------------------- |
 | [path-notation.md](/.agent/rules/core/documentation/path-notation.md)                     | The single source of truth for path notation |
 | [documentation-standards.md](/.agent/rules/core/documentation/documentation-standards.md) | Standards for link integrity and auditing    |
+| [Map of Territory](/.agent/rules/map.md)                                                  | Navigation reference                         |
 
 ---
 
