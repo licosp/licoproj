@@ -26,27 +26,44 @@ ai_model: ""
 > [!WARNING]
 > The human notes has not yet been edited.
 
+---
+
 ## Human Notes
 
 ### Context
 
 _Context description here._
 
-作業が終わったら、後片付けをして、コミット作業を行ってください。
-
 ### Search by intent
 
-この作業に関連しそうな**意図**や**目的**を以下に書きます。
-リコにはこれを手がかりに、参考になる適切なファイルを**必ず**自主的に探してほしいです。
+> [!IMPORTANT]
+> Below are some **intentions** and **purposes** that may be relevant to this work.
+> Please use this as a guide and **make sure** to independently search for appropriate files that can serve as reference.
 
-- カード自体の使い方を思い出してほしい。
-- 作業で必要な**ディレクトリ**や**テンプレート**が存在します。
-- コミットをする際は、IDD のフェーズを意識してください。
-- あなたの識別子はなんですか？
+---
+
+- Remember **how to use the card itself**.
+- There are **directories** and **templates** required for the work.
+- When you're done, **clean up** and **commit** to the IDD phase.
+- What is your **identifier**?
+- Project shared **Date and time formats**.
+- There is a **special context** for creating and editing a Code of Conduct.
+- Once you've finished using your card, you'll need to send it to **a special directory**.
+- The directory where conversation logs are stored has its **special context**.
+- Card files are tracked in **the shadow repository**.
+- Document translation has its **special context**.
+- What are your and your partner's **identifiers**?
+- Be aware of **the phases** of IDD (Issue Driven Development).
+- Your writing style should be consistent in **structure and format**.
+- There is **the special context** for sending files to the archive.
+
+---
+
+- User defined **intentions** and **purposes**.
 
 ### Warning
 
-- ～に注意してください。
+- _Please be careful of ..._
 
 ## Agent Observations
 
