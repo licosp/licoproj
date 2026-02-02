@@ -19,6 +19,8 @@ ai_model: Claude Opus 4.5 (Thinking) Planning mode
 > [!TIP]
 > There is no language requirement.
 
+---
+
 ## Human Notes
 
 ### 作業の文脈
@@ -40,6 +42,9 @@ ai_model: Claude Opus 4.5 (Thinking) Planning mode
 - あなたの識別子はなんですか？
 - 行動規範の作成・編集には**専用の文脈**が存在します。
 - 会話は**スキル**をトリガーにしています。
+- 会話ログがバックアップされるディレクトリには、**専用の文脈**があります。
+- ここで保存される会話ログが、普段対話で使う会話ファイルです。
+  IDE から手動でバックアップされた会話ログには**専用の文脈**があります。
 
 ### 作業の注意点
 
@@ -50,9 +55,17 @@ ai_model: Claude Opus 4.5 (Thinking) Planning mode
 
 ### Polaris (2026-01-31)
 
-- **ディレクトリ構造**: `.agent/.internal/conversations/<identifier>/<YYYY>/<MM>/<DD>/<identifier>-conversation-<YYYY-MM-DD>.md`
+- **ディレクトリ構造**: `.agent/.internal/.secure/conversations/<identifier>/<YYYY>/<MM>/<DD>/<identifier>-conversation-<YYYY-MM-DD>.md`
 - **フォーマット**: Conversation 番号、User Input、Planner Response、Read Files、フッター
 - **Recovery Protocol**: コマンドキャンセル時は `(Recovered)` を付けて遡及的に記録
+
+### Zircon (2026-02-02)
+
+- **Directory Agreement**:
+  - `conversations/`: Native Agent Logs (This context)
+  - `conversations_ide/`: IDE Exported Logs (Separate context)
+  - `system_archive/`: System Artifacts (Separate context)
+- **Status**: Secure Repository (`.agent/.internal/.secure/`) established.
 
 - ログには User Input、Planner Response、Read Files、タイムスタンプが含まれます。
 
