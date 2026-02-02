@@ -24,24 +24,29 @@ ai_model: ""
 > [!WARNING]
 > The human notes has not yet been edited.
 
+---
+
 ## Human Notes
 
-### 作業の文脈
+### Context
 
 私の AI 向けの指示や質問の際の下書きファイル、
 これの清書を行っています。
 
-### 関連書類を探す
+### Search by intent
 
-以下の項目に関す行動規範や手順書を探して参考にしてください。
-他にも必要そうなものがあれば自主的に探してください。
+> [!IMPORTANT]
+> Below are some **intentions** and **purposes** that may be relevant to this work.
+> Please use this as a guide and **make sure** to independently search for appropriate files that can serve as reference.
+
+---
 
 - 下書き
 - 遅延の許容
 - IDD（フェーズ 2）
 - カード
 
-### 作業の注意点
+### Warning
 
 1 ファイルづつ丁寧に作業します。
 「リコによる修正 → 私の確認」このサイクルを意識してほしいです。
@@ -60,12 +65,17 @@ ai_model: ""
 
 ---
 
+## Agent Observations
+
+---
+
 ## Related Documents
 
 | Document                                                            | Purpose                          |
 | :------------------------------------------------------------------ | :------------------------------- |
 | [draft-maintenance.md](/.agent/rules/workflow/draft-maintenance.md) | Conventions for draft management |
 | [drafts-daily-card.md](/.agent/cards/routine/drafts-daily-card.md)  | Reference card for daily drafts  |
+| [Map of Territory](/.agent/rules/map.md)                            | Navigation reference             |
 
 ---
 

@@ -24,19 +24,31 @@ ai_model: ""
 > [!WARNING]
 > The human notes has not yet been edited.
 
+---
+
 ## Human Notes
 
-### 意図で探す
+### Search by intent
+
+> [!IMPORTANT]
+> Below are some **intentions** and **purposes** that may be relevant to this work.
+> Please use this as a guide and **make sure** to independently search for appropriate files that can serve as reference.
+
+---
 
 - 現在のディレクトリ構成：`licoproj`, `.agent/identifiers/canopus`, `.human/users/leonidas`
 - ロードマップの項目：`#### 作業場を識別子ごとに分ける`
 - Git Worktree の仕組みと、Antigravity (IDE) でのマルチエージェント動作の親和性。
 
-### 作業の注意点
+### Warning
 
 - **目的**: 複数の AI エージェント（Canopus, Spica, Polaris 等）が並行して作業する場合に、ファイル衝突を避け、それぞれの独立したコンテキストを維持するための最適な構造を提案・検証すること。
 - **背景**: 現在は単一のリポジトリの中でディレクトリを分けて擬似的に実現しているが、Git Worktree を使って物理的にブランチと作業ディレクトリを紐付けることのメリット・デメリットを考える。
 - Canopus として「第二の目」の視点で、将来的な拡張性（常駐型 Lico 等）も考慮に入れること。
+
+---
+
+## Agent Observations
 
 ---
 
@@ -46,6 +58,7 @@ ai_model: ""
 | :---------------------------------------------------------------------------- | :--------------------------------- |
 | [roadmap-card.md](/.agent/cards/routine/roadmap-card.md)                      | Strategic goals and vision roadmap |
 | [worktree-evaluation-card.md](/.agent/cards/seed/worktree-evaluation-card.md) | This analysis card itself          |
+| [Map of Territory](/.agent/rules/map.md)                                      | Navigation reference               |
 
 ---
 

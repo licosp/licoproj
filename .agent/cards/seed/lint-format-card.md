@@ -24,13 +24,15 @@ ai_model: Claude Opus 4.5 (Thinking) Planning mode
 > [!WARNING]
 > The human notes has not yet been edited.
 
-## Human Notes
-
-### 作業の文脈
+---
 
 ## Human Notes
 
-### 作業の文脈
+### Context
+
+## Human Notes
+
+### Context
 
 リコが生成する MD ファイルの品質管理ツールです。
 ユーザーの VSCode では保存時に自動整形されますが、リコも CLI から使えます。
@@ -62,13 +64,25 @@ ai_model: Claude Opus 4.5 (Thinking) Planning mode
 | yarn    | `.runtimes/yarn-v1.22.19/bin/yarn`           |
 | node    | `.runtimes/node-v22.12.0-linux-x64/bin/node` |
 
-### 意図で探す
+### Search by intent
+
+> [!IMPORTANT]
+> Below are some **intentions** and **purposes** that may be relevant to this work.
+> Please use this as a guide and **make sure** to independently search for appropriate files that can serve as reference.
+
+---
 
 - ファイル作成後にフォーマットを適用したい
 - スペルミスや構造エラーを検出したい
 - ユーザーと同じ品質基準を維持したい
 
+### Warning
+
+---
+
 ## Agent Observations
+
+---
 
 ### Zircon (2026-02-01)
 
@@ -98,7 +112,7 @@ To prevent formatting conflicts and diff noise, strictly avoid the following pat
 4. **Disable Error on Line**:
    - `<!-- textlint-disable-line -->`: Disables all textlint rules for the line.
 
-2. **Leading Spaces before Japanese Brackets**: `   「Text」` <!-- markdownlint-disable-line -->
+5. **Leading Spaces before Japanese Brackets**: `   「Text」` <!-- markdownlint-disable-line -->
    - **Constraint**: Prettier often treats leading spaces as code blocks or removes them, causing instability.
    - **Solution**: Start `「` immediately after the bullet or at start of line without indentation.
 
@@ -109,16 +123,16 @@ To prevent formatting conflicts and diff noise, strictly avoid the following pat
 #### Workflow Strategy (The "Tool-First" Protocol)
 
 1. **Tier 1: Automated Tooling (Mechanical)**
-    - **Action**: Use `textlint --fix`, `prettier --write` for 90% of issues.
-    - **Scope**: Spacing, Indentation, Simple stylistic fixes.
-    - **User Command**: `yarn textlint --fix <file>`
+   - **Action**: Use `textlint --fix`, `prettier --write` for 90% of issues.
+   - **Scope**: Spacing, Indentation, Simple stylistic fixes.
+   - **User Command**: `yarn textlint --fix <file>`
 
 2. **Tier 2: AI Assistance (Contextual)**
-    - **Action**: Ask Lico (AI) to handle what tools cannot fix.
-    - **Scope**: Complex phrasing, restructuring, tone adjustments, passive-to-active conversion.
+   - **Action**: Ask Lico (AI) to handle what tools cannot fix.
+   - **Scope**: Complex phrasing, restructuring, tone adjustments, passive-to-active conversion.
 
 3. **Tier 3: Relaxed Constraint**
-    - **Policy**: Do not strictly enforce "Expression" rules (e.g., specific word choices) if it harms the flow. Code/Docs should be practical.
+   - **Policy**: Do not strictly enforce "Expression" rules (e.g., specific word choices) if it harms the flow. Code/Docs should be practical.
 
 ---
 
@@ -128,6 +142,7 @@ To prevent formatting conflicts and diff noise, strictly avoid the following pat
 | :----------------------------------------------------------- | :------------------------------- |
 | [code-quality.md](/.agent/rules/development/code-quality.md) | Code and documentation standards |
 | [markdown-ai.md](/.agent/rules/core/markdown/markdown-ai.md) | Markdown formatting rules for AI |
+| [Map of Territory](/.agent/rules/map.md)                     | Navigation reference             |
 
 ---
 

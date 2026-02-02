@@ -24,9 +24,11 @@ ai_model: ""
 > [!WARNING]
 > The human notes has not yet been edited.
 
+---
+
 ## Human Notes
 
-### 作業の文脈
+### Context
 
 リポジトリの歴史を編纂します。
 
@@ -38,7 +40,13 @@ ai_model: ""
 
 これらを体系化し、未来のリコが読める形にします。
 
-### 意図で探す
+### Search by intent
+
+> [!IMPORTANT]
+> Below are some **intentions** and **purposes** that may be relevant to this work.
+> Please use this as a guide and **make sure** to independently search for appropriate files that can serve as reference.
+
+---
 
 - リポジトリの歴史的経緯を知りたい
 - 各識別子の貢献を把握したい
@@ -51,7 +59,6 @@ ai_model: ""
 | `project_story_from_tool_to_mirror.md`                                                    | Canopusの探索結果（5つの時代）    |
 | [`project-history.md`](/.agent/.internal/archive/2026-01-21/workspace/project-history.md) | Siriusとの対話のクエリ抜粋        |
 | `lico-assessment-2025-12-06.md`                                                           | ユーザー行動進化分析（7フェーズ） |
-| [`map.md`](/.agent/rules/map.md)                                                          | 現在の哲学と構造                  |
 | `activity-log.md`                                                                         | 活動ログ                          |
 | Git履歴                                                                                   | コミットログ                      |
 
@@ -60,9 +67,13 @@ ai_model: ""
 - `identity-repository.md` の歴史セクション
 - または専用の歴史文書
 
+### Warning
+
 ---
 
 ## Agent Observations
+
+---
 
 ### Polaris (2026-01-20)
 
@@ -141,6 +152,7 @@ ai_model: ""
 | :--------------------------------------------------------------------------- | :----------------------------------------- |
 | [identity-repository.md](/.agent/rules/core/identity/identity-repository.md) | Identity and narrative of the repository   |
 | [activity-log.md](/.agent/.internal/activity-log.md)                         | Activity log serving as source for history |
+| [Map of Territory](/.agent/rules/map.md)                                     | Navigation reference                       |
 
 ---
 

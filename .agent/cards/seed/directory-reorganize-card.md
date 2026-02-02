@@ -24,9 +24,11 @@ ai_model: ""
 > [!WARNING]
 > The human notes has not yet been edited.
 
+---
+
 ## Human Notes
 
-### 作業の文脈
+### Context
 
 Antigravity のデフォルトディレクトリ（`rules/`, `workflows/`, `scripts/`）の整理です。
 
@@ -36,7 +38,13 @@ Antigravity のデフォルトディレクトリ（`rules/`, `workflows/`, `scri
 - `workflows/` と `rules/` のフロントマターが異なる
 - 両方ともリコだけが読むものなのに、フォーマットが違う
 
-### 意図で探す
+### Search by intent
+
+> [!IMPORTANT]
+> Below are some **intentions** and **purposes** that may be relevant to this work.
+> Please use this as a guide and **make sure** to independently search for appropriate files that can serve as reference.
+
+---
 
 - カード自体の使い方を思い出してほしい
 - スクリプトの使い捨て哲学に関する行動規範がある
@@ -68,9 +76,15 @@ Antigravity のデフォルトディレクトリ（`rules/`, `workflows/`, `scri
 1. `scripts/` ディレクトリの廃止検討
 2. `workflows/` の `rules/procedures/` への統合
 3. 全手順書のフォントマターを行動規範と統一
-4. ドキュメント標準の明文化
+4. ドキュメント標準の明文化---
+
+### Warning
+
+---
 
 ## Agent Observations
+
+---
 
 ### Spica
 
@@ -86,8 +100,8 @@ Antigravity のデフォルトディレクトリ（`rules/`, `workflows/`, `scri
 
 | Document                                                                | Purpose                |
 | :---------------------------------------------------------------------- | :--------------------- |
-| [Map of Territory](/.agent/rules/map.md)                                | Navigation reference   |
 | [repository-philosophy.md](/.agent/rules/core/repository-philosophy.md) | The "Brain" philosophy |
+| [Map of Territory](/.agent/rules/map.md)                                | Root navigation map    |
 
 ---
 

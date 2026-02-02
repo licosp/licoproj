@@ -24,14 +24,22 @@ ai_model: ""
 > [!WARNING]
 > The human notes has not yet been edited.
 
+---
+
 ## Human Notes
 
-### 作業の文脈
+### Context
 
-リポジトリ内の日時表記を統一しています。
-`ISO 8601` を基本としますが、用途によって精度が異なります。
+- リポジトリ内の日時表記を統一しています。
+- `ISO 8601` を基本としますが、用途によって精度が異なります。
 
-### 意図で探す
+### Search by intent
+
+> [!IMPORTANT]
+> Below are some **intentions** and **purposes** that may be relevant to this work.
+> Please use this as a guide and **make sure** to independently search for appropriate files that can serve as reference.
+
+---
 
 - 日時の行動規範を思い出してください。
 - ファイル名やディレクトリ名の命名規則があります。
@@ -39,9 +47,9 @@ ai_model: ""
 
 ### 現状の課題
 
-1. **精度の不統一**: 秒あり/なし、タイムゾーンあり/なし
-2. **区切り文字の混在**: `-` と `_` の使い分け
-3. **ファイル名での `:` の問題**: OS によって使えない
+- 精度の不統一: 秒あり/なし、タイムゾーンあり/なし
+- 区切り文字の混在: `-` と `_` の使い分け
+- ファイル名での `:` の問題: OS によって使えない
 
 ### 提案されたカテゴリ
 
@@ -57,6 +65,12 @@ ai_model: ""
 - [ ] 既存ファイルの名前統一
 - [ ] `-` と `_` の使い分けルール策定
 
+### Warning
+
+---
+
+## Agent Observations
+
 ---
 
 ## Related Documents
@@ -65,6 +79,7 @@ ai_model: ""
 | :---------------------------------------------------------------------------------------- | :--------------------------------------------- |
 | [datetime-format.md](/.agent/rules/core/documentation/datetime-format.md)                 | SSOT for date and time formatting standards    |
 | [documentation-standards.md](/.agent/rules/core/documentation/documentation-standards.md) | Structural standards for project documentation |
+| [Map of Territory](/.agent/rules/map.md)                                                  | Root navigation map                            |
 
 ---
 
