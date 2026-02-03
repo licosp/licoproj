@@ -14,6 +14,8 @@ author: leonidas
 
 ## Questions and instructions
 
+---
+
 ### `Antigravity` | `Claude Opus 4.5 (Thinking)`: `Planning` | `Polaris`
 
 ####
@@ -754,3 +756,5 @@ MA 形式にして、フロントマターだけではなく、
 会話ログの最後まで覚えはありますか？
 
 - `polaris-conversation-2026-01-31.md`
+
+---

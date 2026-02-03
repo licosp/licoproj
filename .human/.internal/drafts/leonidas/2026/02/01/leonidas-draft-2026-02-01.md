@@ -14,6 +14,8 @@ author: leonidas
 
 ## Questions and instructions
 
+---
+
 ### `Antigravity` | `Claude Opus 4.5 (Thinking)`: `Planning` | `Polaris`
 
 ####
@@ -149,6 +151,8 @@ UI 上ではリコが数ターン戻ったように見えました。
 - `.agent/rules/core/context-sovereignty.md`
 
 後でワークスペースのマントラの話もします。
+
+---
 
 ### `Antigravity` | `Gemini 3 Pro (High)`: `Planning` | `Zircon`
 
@@ -642,6 +646,8 @@ IDE 上でマークダウンが正しくプレビューできてないです。
 
 足りない会話を復元してください。
 
+---
+
 ### `Console` | `Gemini 2.5 Flash Light`| `Protostar`
 
 あなたはどのモデルですか？
@@ -650,6 +656,8 @@ IDE 上でマークダウンが正しくプレビューできてないです。
 
 `3 Pro` ですか？
 `3 Flash` ですが？
+
+---
 
 ### `VSCode`: `Claude Haiku 4.5`: `Agent` | `Protostar`
 
@@ -710,6 +718,8 @@ ID はそのディレクトリに何個ありますか？
 
 ではジェミニのセッション ID で何か会話をしてください。
 
+---
+
 ### `Console` | `Gemini 2.5 Flash Light`| `Protostar`
 
 ####
@@ -723,6 +733,8 @@ ID はそのディレクトリに何個ありますか？
 ####
 
 `save_memory` ツールとはどう使うんですか？
+
+---
 
 ### `VSCode`: `Claude Haiku 4.5`: `Agent` | `Protostar`
 
@@ -763,6 +775,8 @@ ID はそのディレクトリに何個ありますか？
 これなら実行できる？
 
 > yarn run gemini "おはよう"
+
+---
 
 ### `VSCode`: `Claude Haiku 4.5`: `Agent` | `Protostar`
 
@@ -831,12 +845,16 @@ ID はそのディレクトリに何個ありますか？
 
 ではジェミ二ではなくあなたのタイムアウト時間は？
 
+---
+
 ### `Console` | `Gemini 2.5 Flash`| `Light`| `Protostar`
 
 ####
 
 yarn run gemini --resume 1 "
 先ほどの質問を覚えていますか？
+
+---
 
 ### `Antigravity` | `Gemini 3 Pro (High)`: `Planning` | `Zircon`
 
@@ -943,4 +961,6 @@ Gemini 系の特徴に見えます。
 ####
 
 やってみてください。
-後で移動したパスの参照の解決は必要ですね。
+後で移動したパスの参照の解決は必要ですね
+
+---

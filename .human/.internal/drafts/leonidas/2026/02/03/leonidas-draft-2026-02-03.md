@@ -14,6 +14,8 @@ author: leonidas
 
 ## Questions and instructions
 
+---
+
 ### `CLI` | `gemini-3-pro-preview`| `Agate`
 
 ####
@@ -426,6 +428,8 @@ CLI のエージェントはインタラクティブモードの AI の対話相
 
 終わったら報告します。
 
+---
+
 ### `CLI` | `gemini-3-pro-preview`| `Alexandrite`
 
 ####
@@ -563,6 +567,8 @@ CLI のエージェントはインタラクティブモードの AI の対話相
 では、この後私が `/resume` で対話相手を `Agate` に切り替えるとします。
 どうなっていると思いますか？
 
+---
+
 ### `CLI` | `gemini-3-pro-preview`| `Agate`
 
 ####
@@ -624,6 +630,8 @@ UI 上で `Agate` と `Alexandrite` の会話の履歴が見えます。
 `resume` の切り替えは、会話の追記される？
 あるいは再起動と同じ？
 
+---
+
 ### `VSCode` | `Gemini Code Assist` | `gemini-3-pro`| `?`
 
 ####
@@ -642,6 +650,8 @@ UI 上で `Agate` と `Alexandrite` の会話の履歴が見えます。
 
 - `yarn run gemini -v`
 
+---
+
 ### `CLI` | `gemini-3-flash-preview`| `Alexandrite`
 
 ####
@@ -650,6 +660,8 @@ UI 上で `Agate` と `Alexandrite` の会話の履歴が見えます。
 それを相手側がログファイルから反映させるには `resume` が必要でした。
 
 `resume 2` で戻ってきた結果、あなたは `Agate` からの会話を受け取っていました。
+
+---
 
 ### `CLI` | `gemini-3-flash-preview`| `Agate`
 
@@ -811,6 +823,8 @@ UI 上で `Agate` と `Alexandrite` の会話の履歴が見えます。
 
 やはりシステム通知に介入できるのはパスだけと言えるかもしれません。
 あなたの視界を私は共有できないので、なんとも言えませんが。
+
+---
 
 ### `Antigravity` | `Gemini 3 Pro (High)`: `Planning` | `Zircon`
 
@@ -1174,6 +1188,8 @@ UI 上で `Agate` と `Alexandrite` の会話の履歴が見えます。
 
   コミット対象を推測してください。
 
+---
+
 ### `CLI` | `gemini-3-(pro/flash)-preview`| `Agate`
 
 ####
@@ -1499,3 +1515,5 @@ Current memory content from 3 file(s):
 - その中のあなた（`Agate`）
 
 これで自分が誰か常に分かるでしょうか？
+
+---
