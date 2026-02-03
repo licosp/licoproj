@@ -22,17 +22,29 @@ Standardize how AI instances log conversations to persistent files for:
 - Real-time access to conversation logs
 - Recovery from IDE log limitations
 
-## 2. Trigger Condition
+## 2. Philosophy: Collaborative Preservation
+
+**"Logs are Logs."**
+
+The integrity of the memory stream is more important than cosmetic perfection.
+
+1. **Minimal Retroactive Edits**: Avoid modifying past turns unless technically critical (e.g., broken syntax preventing file parsing). The AI's memory relies on stability; constant rewriting induces hallucinations.
+2. **Human Collaboration**: The User is a partner in memory maintenance.
+   - Automated formatting, minor fixes, and content grouping by the User are welcomed and trusted.
+   - The AI does not need to control every byte. Rely on the User's hand to help stabilize the ground you walk on.
+3. **Forward Fix**: If a mistake is made, acknowledge it in the _next_ turn rather than erasing the past.
+
+## 3. Trigger Condition
 
 - **When**: Every response during a conversation session
 - **Output**: Full response to file; footer only to IDE chat
 
-## 3. File Location
+## 4. File Location
 
-**Path Pattern**: `/.agent/.internal/conversations/<identifier>/<YYYY>/<MM>/<DD>/<identifier>-conversation-<YYYY-MM-DD>.md`
+**Path Pattern**: `/.agent/.internal/.shadow/conversations/<identifier>/<YYYY>/<MM>/<DD>/<identifier>-conversation-<YYYY-MM-DD>.md`
 
 **Example**: For date `2026-01-31` and identifier `polaris`:
-`.agent/.internal/conversations/polaris/2026/01/31/polaris-conversation-2026-01-31.md`
+`.agent/.internal/.shadow/conversations/polaris/2026/01/31/polaris-conversation-2026-01-31.md`
 
 ### Creating New Files
 
@@ -41,7 +53,7 @@ If the conversation file for the current date does not exist:
 1. **Create directory structure**:
 
    ```bash
-   mkdir -p .agent/.internal/conversations/<identifier>/<YYYY>/<MM>/<DD>
+   mkdir -p .agent/.internal/.shadow/conversations/<identifier>/<YYYY>/<MM>/<DD>
    ```
 
 2. **Copy from template**
@@ -58,7 +70,34 @@ If the conversation file for the current date does not exist:
 
 **Batch Creation**: To prepare files in advance for multiple days, repeat the above for each date.
 
-## 4. Logging Procedure
+#### Phase 1: Pre-Action (Plan)
+
+**Run this BEFORE requesting any other tools.**
+
+- **Method**: Append to conversation file (Auto-Run: `SafeToAutoRun: true`).
+- **Header**: `#### Planner Response (Plan Phase)`
+- **Content**:
+  1. **User Input**: Exact copy.
+  2. **Plan**: Your intent and immediate tool strategy.
+- **Footer**: `> [ISO-8601: <Identifier>]` (Append this!)
+
+#### Phase 2: Action
+
+- Request tools for actual work.
+- Wait for user approval.
+
+#### Phase 3: Post-Action (Report)
+
+**Run this AFTER tool execution completes.**
+
+- **Method**: Append to conversation file (Auto-Run) + `notify_user`.
+- **Header**: `#### Planner Response (Report Phase)`
+- **Content**:
+  - **Result**: Success/Failure.
+  - **Next Step**: What comes next.
+- **Footer**: `> [ISO-8601: <Identifier>]` (Append this too!)
+
+## 5. Logging Procedure
 
 ### Step 1: Identify Conversation File
 
@@ -67,41 +106,16 @@ Construct the path based on:
 - Current date (from system metadata)
 - Your identifier
 
-### Step 2: Append Response
+### Step 2: Append Response (Split-Write Strategy)
 
-Use `Run Command` to append:
+To ensure robustness against special characters (backticks) and enable dynamic timestamps, use the **Split-Write Strategy**:
 
-```bash
-printf "\n---\n\n### Conversation: <XXXX>\n\n#### User Input\n<User input text>\n\n#### Planner Response\n<Your response text>\n\n**Read Files:**\n- [<Basename>](<Absolute Path>)\n\n> [<ISO-8601>: <Identifier>]\n" >> <Absolute Path to Conversation File>
-```
-
-### Step 3: Format Details
-
-| Element          | Description                            |
-| :--------------- | :------------------------------------- |
-| Separator        | Start with `---`                       |
-| XXXX             | Increment conversation sequence number |
-| User Input       | Copy EXACTLY from prompt               |
-| Planner Response | Your full response                     |
-| Read Files       | List all files viewed/edited           |
-| Footer           | `[<ISO-8601>: <Identifier>]` format    |
-
-### Step 4: IDE Output
-
-Output **ONLY** the footer in the IDE chat.
-
-**Rationale**: The full response is already written to the conversation file. Writing it again in IDE chat would be redundant. The footer serves as confirmation that logging completed successfully.
-
-## 5. Optional: Two-Phase Logging
-
-To reduce data loss risk when commands are cancelled:
-
-### Phase 1: Log User Input First
-
-Before generating full response, append only the user query:
+1. **Body**: Use `cat <<'EOF'` (Single Quoted Here Doc) to append static text safely.
+2. **Footer**: Use `echo` to append the dynamic timestamp.
 
 ```bash
-cat >> <Conversation File> << 'EOF'
+# 1. Append Body (Literal Safety)
+cat >> <Absolute Path to Conversation File> <<'EOF'
 
 ---
 
@@ -113,26 +127,43 @@ cat >> <Conversation File> << 'EOF'
 
 #### Planner Response
 
-EOF
-```
-
-### Phase 2: Log Response After
-
-After generating response, append the rest:
-
-```bash
-cat >> <Conversation File> << 'EOF'
 <Your response text>
 
 **Read Files:**
-
 - [<Basename>](<Absolute Path>)
 
-> [<ISO-8601>: <Identifier>]
 EOF
+
+# 2. Append Footer (Dynamic Timestamp)
+echo "" >> <Absolute Path to Conversation File>
+echo "> [$(date +"%Y-%m-%dT%H:%M:%S%:z"): <Identifier>]" >> <Absolute Path to Conversation File>
 ```
 
-**Benefit**: If Phase 2 is cancelled, user input is preserved.
+### Step 3: Format Details
+
+| Element          | Description                                 |
+| :--------------- | :------------------------------------------ |
+| Separator        | Start with `---`                            |
+| XXXX             | Increment conversation sequence number      |
+| User Input       | **COPY EXACTLY** (Do not summarize or omit) |
+| Planner Response | See Phase Specification                     |
+| Read Files       | List all files viewed/edited                |
+| Footer           | `[<ISO-8601>: <Identifier>]` format         |
+
+### 4. Step 4: IDE Output (Notification Only)
+
+Output **ONLY** the footer (or a very brief confirmation) in the IDE chat.
+
+**Rationale (File Primacy)**:
+
+- The **File** is the Single Source of Truth (SSOT) and the only memory accessible to the AI.
+- The **IDE Chat** is ephemeral/inaccessible.
+- Writing redundant content to the IDE dilutes the "density" of the log file and wastes tokens.
+- **Rule**: "If it's not in the file, it didn't happen."
+
+## 5. (Deprecated) Two-Phase Logging
+
+_Deprecated in favor of Split-Write Strategy which handles robustness natively._
 
 ## 6. Recovery Protocol
 
@@ -157,7 +188,7 @@ This protocol was created to address IDE log export limitations discovered in Ja
 | :--------------------------------------------------------------------- | :--------------------------------- |
 | [conversations-card.md](/.agent/cards/routine/conversations-card.md)   | Context card for conversation work |
 | [response-mirror SKILL](/.agent/skills/00-01-response-mirror/SKILL.md) | Skill trigger definition           |
-| [map.md](/.agent/rules/map.md)                                         | Root map                           |
+| [Map of Territory](/.agent/rules/map.md)                               | Root navigation map                |
 
 ---
 
