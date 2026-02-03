@@ -831,7 +831,7 @@ ID はそのディレクトリに何個ありますか？
 
 ではジェミ二ではなくあなたのタイムアウト時間は？
 
-### `Console` | `Gemini 2.5 Flash Light`| `Protostar`
+### `Console` | `Gemini 2.5 Flash`| `Light`| `Protostar`
 
 ####
 
