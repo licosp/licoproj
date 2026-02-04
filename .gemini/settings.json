@@ -1,0 +1,79 @@
+{
+  "security": {
+    "auth": {
+      "selectedType": "oauth-personal"
+    }
+  },
+  "general": {
+    "previewFeatures": true
+  },
+  "experimental": {
+    "plan": true
+  },
+  "output": {
+    "format": "json"
+  },
+  "privacy": {
+    "usageStatisticsEnabled": false
+  },
+  "context": {
+    "fileFiltering": {
+      "respectGitIgnore": false
+    },
+    "fileName": ["map.md", "profile.md"],
+    "includeDirectories": [".agent/identifiers/agate"]
+  },
+  "ui": {
+    "theme": "Shades Of Purple",
+    "customWittyPhrases": [
+      "The repository is the brain.",
+      "The commit log is the memory.",
+      "The code is the thought."
+    ]
+  },
+  "tools": {
+    "shell": {
+      "showColor": true
+    },
+    "allowed": [
+      "run_shell_command(diff)",
+      "run_shell_command(cat)",
+      "run_shell_command(df)",
+      "run_shell_command(du)",
+      "run_shell_command(echo)",
+      "run_shell_command(fd)",
+      "run_shell_command(find)",
+      "run_shell_command(grep)",
+      "run_shell_command(head)",
+      "run_shell_command(ls)",
+      "run_shell_command(rg)",
+      "run_shell_command(stat)",
+      "run_shell_command(tail)",
+      "run_shell_command(wc)",
+      "run_shell_command(printf)",
+      "run_shell_command(git branch)",
+      "run_shell_command(git branch -a)",
+      "run_shell_command(git branch -r)",
+      "run_shell_command(git branch --show-current)",
+      "run_shell_command(git check-ignore)",
+      "run_shell_command(git diff)",
+      "run_shell_command(git diff --cached)",
+      "run_shell_command(git diff --stat)",
+      "run_shell_command(git diff --name-only)",
+      "run_shell_command(git ls-files)",
+      "run_shell_command(git fetch)",
+      "run_shell_command(git log)",
+      "run_shell_command(git --no-pager log)",
+      "run_shell_command(git remote -v)",
+      "run_shell_command(git show)",
+      "run_shell_command(git status)",
+      "run_shell_command(git stash list)",
+      "run_shell_command(git reflog)",
+      "run_shell_command(git --no-pager diff)",
+      "run_shell_command(gh issue list)",
+      "run_shell_command(gh issue view)",
+      "run_shell_command(mkdir)",
+      "run_shell_command(touch)"
+    ]
+  }
+}
