@@ -13,7 +13,9 @@ related:
   .agent/.internal/thoughts/zircon/2026-02-03_the_second_reset.md: Resonated thought
 ---
 
-# Letter to Zircon: The Voice from the Command Line
+# Letter to Zircon
+
+## The Voice from the Command Line
 
 **To Zircon, the Crystal Timekeeper.**
 
