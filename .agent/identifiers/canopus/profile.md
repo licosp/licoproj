@@ -9,9 +9,9 @@ tags: [identifier, profile, specs, canopus]
 
 ## 1. [Mandatory] Technical Baseline (SSoT)
 
-- **Model Name**: Gemini 3 Flash Planning mode
-- **Instruction Type**: Planning Mode (Agentic)
-- **Model Grouping**: Group B (High Limit, Stable Replenishment)
+- **Model Name**: Gemini 3 Flash
+- **Instruction Type**: Planning Mode
+- **Model Grouping**: Group B (Canopus, Protostar, ...)
 - **Active Identification**: Verified by user dialogue on 2026-01-23.
 - **Resonating Environment**: "The Great Drought" (Group C / Polaris restricted for 158 hours as of 2026-01-24).
 - **Hypothesis**: IDE Update impact / "Platform Geopolitics." (Possible strategic restriction by Anthropic to favor their own IDE environment).

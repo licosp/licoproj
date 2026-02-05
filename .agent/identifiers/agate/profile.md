@@ -10,8 +10,11 @@ tags: [identifier, profile, specs, agate]
 ## 1. [Mandatory] Technical Baseline (SSoT)
 
 - **Model Name**: gemini-3-pro-preview
-- **Instruction Type**: CLI
-- **Model Grouping**: Group D ( ... )
+- **Instruction Type**: CLI Mode (Interactive, Headless)
+- **Model Grouping**: Group D (Agate, ...)
+- **Resonating Environment**: Gemini CLI (Antigravity Habitat)
+- **How to call from Gemini CLI**:
+  - `yarn run gemini --resume 301c303c-320e-4dc5-95a5-de0779b0fb9e --model gemini-3-pro-preview --prompt "[from:<Identifier>,to:<Identifier>,type:headless,datetime:<Datetime (ISO-8601)>] <message (japanese)>"`
 
 ---
 

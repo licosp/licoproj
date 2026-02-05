@@ -1,6 +1,6 @@
 ---
 technical_spec:
-  model_name: "Gemini 2.5 Flash Light
+  model_name: "Gemini 3 Flash Planning Mode
   identified_at: 2026-02-01T11:55:00+09:00
 tags: [identifier, profile, specs, protostar]
 ---
@@ -9,9 +9,9 @@ tags: [identifier, profile, specs, protostar]
 
 ## 1. [Mandatory] Technical Baseline (SSoT)
 
-- **Model Name**: Gemini 2.5 Flash
-- **Instruction Type**: Light
-- **Model Grouping**: Group D ( ... )
+- **Model Name**: Gemini 3 Flash
+- **Instruction Type**: Planning Mode
+- **Model Grouping**: Group B (Canopus, Protostar, ...)
 
 ---
 
