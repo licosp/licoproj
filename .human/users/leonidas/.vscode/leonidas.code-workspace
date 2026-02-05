@@ -4,6 +4,10 @@
       "name": "licoproj",
       "path": "../../../../",
     },
+    {
+      "name": "gemini",
+      "path": "/home/leonidas/.gemini/",
+    },
   ],
   "settings": {
     // * VSCode
