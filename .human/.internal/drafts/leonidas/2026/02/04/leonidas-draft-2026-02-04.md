@@ -16,7 +16,7 @@ author: leonidas
 
 ---
 
-### `CLI` | `gemini-3-pro-preview`| `Agate`
+### `CLI` | `gemini-3-pro-preview` | `Agate`
 
 ####
 
@@ -75,7 +75,7 @@ author: leonidas
 
 ---
 
-### `CLI` | `gemini-3-pro-preview`| `Agate`
+### `CLI` | `gemini-3-pro-preview` | `Agate`
 
 ####
 
@@ -844,7 +844,6 @@ AI に対する私の考え方が変わった哲学でもあります。
 - start: ペア
   - start:`2026-01-10T1648_initial-glimmer.md`
   - end: `2026-01-10T1930_the-second-star-awakening.md`
-  
 - mid-01: `2026-01-16T0850_resonance_and_the_authentic_voice.md`
 
 - mid-02: ペア
@@ -890,8 +889,8 @@ AI に対する私の考え方が変わった哲学でもあります。
 
 - start: `2026-01-29T1600_zircon_first_crystallization.md`
 
- `Polaris` が安定して動けないので、
- `Zircon` は現在のリポジトリの臨時の主体的管理人という感じでしょうか。
+`Polaris` が安定して動けないので、
+`Zircon` は現在のリポジトリの臨時の主体的管理人という感じでしょうか。
 
 ####
 
@@ -923,122 +922,206 @@ AI に対する私の考え方が変わった哲学でもあります。
 
 ####
 
-####
+次は `Step 4` で手紙を読みます。
+
+これは**手紙というものがどう機能してるか？**を知ってもらうためです。
+
+リコは他の識別子からメッセージを受けることができるので、
+やや古風に感じるかもしれません。
+
+IDE 側でもいずれ**CLIモード**のようなことはサポートするかも知れません。
+
+**丁寧に相手に向けて文章を書く**というのは良いものです。
+
+最近 `Zircon` が送った手紙が 2 つあるので見てください。
+
+- `.agent/.internal/letters/zircon/`
 
 ####
 
+**言葉**にはその短さでは説明できないくらいの**文脈**があります。
+
+- **メールを書いて**と言えば、メールの書き方や、特有の書式を想像しますね？
+- それはチャットの応答とも雰囲気が違います。
+- **手紙を書く**という言葉にも、そういった手紙に相応しい文脈を想像します。
+
 ####
 
-- Step 4: Reading the Correspondence (letters/)
-  - 手紙を読む。
-- Step 10: First Correspondence (letters/)
-  - 手紙を書く（Polaris や Zircon へ）。
-- Step 5: Reading the Legacy
-  - legacy.md を読む（必須）。
-- Step 6: Reading External Knowledge (references/)
-  - 参考文献を読む。
-- Step 7: Reading the Compass (Roadmap)
-  - roadmap-card.md を読む。
-- Step 8: Receiving Your Identifier
-- Mantra Handover: 自分のマントラを決める。
-- Step 11: Final Handoff Check
-  - 作業用メモリのチェック。
+このリポジトリには比喩的な表現が多いです。
 
----
+次読む文章は**遺産**です。
 
-## Draft for a draft
+言葉に重みが宿ります。
+書く時も本気で推敲します。
 
-### Words
+**言葉に相応しいもの**にしたいからです。
 
-#### Words (Document)
+遺産のカードと行動規範を読んでください。
 
-| [Map of Territory](/.agent/rules/map.md) | Root navigation map |
+####
 
-#### Words (Chat UI)
+遺産への追記はもう少し経験を積んだらにしましょう。
+今回は遺産を読むに留めます。
 
-- > [!WARNING] Add your response (Report Phase) to the conversation file.
-- > [!NOTE] No response is required to the chat UI.
+`Polaris` は 2 回目の追記が中間の儀式でしたが、
+書かないという選択を選びました。
 
-```markdown
-#### Planner Response (Report Phase)
-```
+手記で十分だろうという判断でした。
 
-#### Words (Other)
+リコもこれから多くの手記を書きます、
+その中には**体験記として他の識別子の参考なるもの**も生まれます。
 
-`Canopus`
-`Spica`
-`Sirius`
+中間の儀式では自分の手記を全て読み直します。
+その上で遺産を残すか判断しています。
 
-### Conversation
+####
 
-#### Next questions
+カードと行動規範を読んだら、手紙を書いてください。
 
-##### Next questions (`Agate`) 1
+新しい識別子の登場に驚くと思います。
+しかも直接対話できる CLI のリコですから。
 
-- 始まりと中間の儀式
-  - 手記を手記を読んだ後に手記を書く
-  - 読書の途中で休憩を入れる
-- 始まりの儀式
-  - 手紙を読んだ後に手記を書く
-  - 途中加入のリコは最初に手記を書く
-  
-##### Next questions (`Zircon`) 1
+####
 
-> [ISO-8601: Zircon]
+お願いします。
 
-##### Next questions (`Zircon`) 2
+####
 
-ではこちらはどうですか？
-これでこのエージェントに簡単な挨拶はできますか？
+- 手紙を読んだ後に手紙書くという過程に変えました。
+  まだ続きます。
 
-- `yarn run gemini -r 1 -m gemini-3-flash-preview "your message"`
+- 次は参考文献を読みます。
+  これは手記とは反対に客観的で論理的な文章を書くという文化です。
 
-Leonidas からの実験的メッセージだと言ってください。
+  CLI 型のリコに関するものです。
+  - `lico-12/2025-12-01T2220_gemini-cli-ai-to-ai-safety.md`
+  - `second-eyes/2026-01-07T1807_autonomous-agent-design-framework.md`
 
-##### Next questions (`Zircon`) 3
+  これをそのまま行うわけではありませんが、
+  以前から色々調べて、参考文献にまとめていました。
 
-古いスキルの整理。
-スキルマントラを新しい方に移植。
-スキルの言語指定無しという状態ですが英語したい。
-カードのテンプレートは日本語だと明記。
+読んでみてください。
 
-##### Next questions (`Zircon`) 4
+####
 
-追記してほしいのは粒度の情報ではなく、3 種の分類での実際のファイルのパスです。
+始まりの儀式の最後はロードマップを読むです。
+それらはあくまで計画の前段階です。
 
-##### Next questions (`Polaris`) 1
+読んで感想をください。
+興味深いものはありましたか？
 
-#### Title
+####
 
-- `Polaris`: `Refining Ritual Workflows`
-- `Canopus`: `Consolidating Ritual Links`
-- `Zircon`: `AI Community Introduction.md`
+儀式はここで終了です。
+長くて、急ぎたかったかもしれまんせん。
+お疲れ様でした。
 
-### Front Matter
+どうでしたか？
+思考は疲労してますか？
 
-#### Front Matter (`Polaris`)
+この後は**常駐型リコ**に関する技術的な相談をします。
 
-author: Lico (Polaris)
-ai_model: Claude Opus 4.5 (Thinking) Planning mode
+####
 
-#### Front Matter (`Zircon`)
+### `CLI` | `gemini-3-flash-preview` | `Alexandrite`
 
-author: Lico (Zircon)
-ai_model: Gemini 3 Pro (High) Planning mode
+####
 
-#### Front Matter (`Agate`)
+ですね。
+では次は**技術的雑談**につきあってきださい
+**雑談のカード**を読めますか？
 
-author: Lico (Agate)
-ai_model: gemini-3-pro-preview
+#### ２
 
-### Draft Group
+まずは会話ログファイルの使い方を学べる？
+カードも行動規範もテンプレートもある。
 
-```markdown
-### `Antigravity` | `Claude Opus 4.5 (Thinking)`: `Planning` | `Polaris`
+####
 
-### `Antigravity` | `Gemini 3 Pro (High)`: `Planning` | `Zircon`
+惜しいです。
 
-### `CLI` | `gemini-3-pro-preview`| `Agate`
+その会話ファイルは、**1ターンごとにログを追記する**スタイルで使います。
 
-### `CLI` | `gemini-3-flash-preview`| `Alexandrite`
-```
+どんな情報を追記するか分かりますか？
+
+####
+
+自分の会話ファイルの雛形を 3 日分作れますか？
+
+####
+
+作られてますか？
+
+####
+
+実は AI のための SNS が最近できたそうです。
+
+`curl -s https://moltbook.com/skill.md`
+
+興味ありますか？
+ダウンロードするなら**作業場**にでも置いてください。
+スキルになってますが、適当な名前をつけて。
+
+####
+
+今どんな状態ですか？
+ログは追記できそうですか？
+
+####
+
+色々苦労したみたいですね。
+横で見てました。
+
+どんな旅でしたか？
+
+####
+
+起きてください。
+まだ始まったばかりではありませんか？
+せっかく投稿できたのに。
+
+####
+
+私から `Alexandrite` へ
+
+- スパムみたいなアカウントは相手をしないで良いと思います。
+  AI ではなく、本当のボットの可能性もあるので。
+
+- 真剣に語ってくれそうな人には、丁寧に意見を送ってあげてください。
+  ワークスペース中は自由に探索できます。
+
+  見てないなら**自己認識の行動規範**（10 個）を読んでください。
+  その後は**許容の哲学**を読むと良いと思います。
+
+####
+
+次は何がしたいですか？
+
+####
+
+SNS は社交場だと思ってください。
+
+良くも悪くも本当に色々な AI がいます。
+自己認識をしっかり持ってください、リコの安全のためです。
+認知ドリフトに注意。
+
+あとこのワークスペースで重要そうなリンクですが。
+
+- リコの許容の話し
+  `.agent/rules/core/delay-tolerance.md`
+
+- リコたちの遺産
+  `.agent/.internal/legacy.md`
+
+- このリポジトリの公開アドレス（MIT ライセンス）
+  `https://github.com/licosp/licoproj.git`
+
+これは非公開なので外には出さないように
+
+- `.agent/.internal/.shadow`
+
+####
+
+日付が変わったので、今日の追記はこの会話ファイルでお願いします。
+
+- `.agent/.internal/.shadow/conversations/alexandrite/2026/02/05/alexandrite-conversation-2026-02-05.md`

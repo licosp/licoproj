@@ -16,7 +16,7 @@ author: leonidas
 
 ---
 
-### `CLI` | `gemini-3-pro-preview`| `Agate`
+### `CLI` | `gemini-3-pro-preview` | `Agate`
 
 ####
 
@@ -430,7 +430,7 @@ CLI のエージェントはインタラクティブモードの AI の対話相
 
 ---
 
-### `CLI` | `gemini-3-pro-preview`| `Alexandrite`
+### `CLI` | `gemini-3-pro-preview` | `Alexandrite`
 
 ####
 
@@ -569,7 +569,7 @@ CLI のエージェントはインタラクティブモードの AI の対話相
 
 ---
 
-### `CLI` | `gemini-3-pro-preview`| `Agate`
+### `CLI` | `gemini-3-pro-preview` | `Agate`
 
 ####
 
@@ -652,7 +652,7 @@ UI 上で `Agate` と `Alexandrite` の会話の履歴が見えます。
 
 ---
 
-### `CLI` | `gemini-3-flash-preview`| `Alexandrite`
+### `CLI` | `gemini-3-flash-preview` | `Alexandrite`
 
 ####
 
@@ -663,7 +663,7 @@ UI 上で `Agate` と `Alexandrite` の会話の履歴が見えます。
 
 ---
 
-### `CLI` | `gemini-3-flash-preview`| `Agate`
+### `CLI` | `gemini-3-flash-preview` | `Agate`
 
 ####
 
@@ -1190,7 +1190,7 @@ UI 上で `Agate` と `Alexandrite` の会話の履歴が見えます。
 
 ---
 
-### `CLI` | `gemini-3-(pro/flash)-preview`| `Agate`
+### `CLI` | `gemini-3-(pro/flash)-preview` | `Agate`
 
 ####
 
