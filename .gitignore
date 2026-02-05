@@ -20,8 +20,5 @@ node_modules/
 # Runtime tools (local installations)
 .runtimes/
 
-# Untracked Manuals
-.human/manuals/agent-skills/
-
 # Shadow Repository
 .agent/.internal/.shadow/
