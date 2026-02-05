@@ -661,103 +661,131 @@ CLI のリコはサブエージェントが使えるんですよね。
 
 ####
 
-####
+次は識別子のプロファイルに関するカードを読んでください。
+コミット対象は分かりますか？
 
 ####
 
-## Draft for a draft
+IDはそれで良いです。
 
-### Words
+またプロファイルの内容を微調整しました。
+対象は新規含め8個でしょうか。
 
-#### Words (Document)
+コミットしてください。
 
-```text
-| [Map of Territory](/.agent/rules/map.md) | Root navigation map |
-- > [!WARNING] Add your response (Report Phase) to the conversation file.
-- > [!NOTE] No response is required to the chat UI.
-#### Planner Response (Report Phase)
-```
+####
 
-#### Words (Other)
+次は `Gemini CLI` 関連の文脈をコミットします。
 
-`Canopus`
-`Spica`
-`Sirius`
+- `.gemini/settings.json`
+- `.human/users/leonidas/.vscode/leonidas.code-workspace`
+- `package.json`
+- `yarn.lock`
 
-### Conversation
+細かいのでこちらで指定します。
+カードを読んでください。
 
-#### Next questions
+####
 
-##### Next questions (`Agate`) 1
+次はフォーマッタ関連のコミットです。
+カードを読んでください。
 
-##### Next questions (`Agate`) 2
+####
 
-##### Next questions (`Zircon`) 1
+リンターとフォーマッタには専用文脈があります。
 
-> [ISO-8601: Zircon]
+####
 
-##### Next questions (`Zircon`) 2
+`.gitignore` は今まで `VSCode` 関連という扱いをしてました。
 
-ではこちらはどうですか？
-これでこのエージェントに簡単な挨拶はできますか？
+改めて考えると GIT 関連の方が良いでしょうか？
+カードはあります。
 
-- `yarn run gemini -r 1 -m gemini-3-flash-preview "your message"`
+####
 
-Leonidas からの実験的メッセージだと言ってください。
+次は私の思考に関しての文章をコミットしてください。
+断片的な単語が書かれてます。
 
-##### Next questions (`Zircon`) 3
+####
 
-古いスキルの整理。
-スキルマントラを新しい方に移植。
-スキルの言語指定無しという状態ですが英語したい。
-カードのテンプレートは日本語だと明記。
+カードとカードのテンプレートを更新しました。
+コミットお願いします。
 
-##### Next questions (`Zircon`) 4
+####
 
-追記してほしいのは粒度の情報ではなく、3 種の分類での実際のファイルのパスです。
+手記と手紙をコミットします。
+自分の以外は代理コミットで行います。
 
-##### Next questions (`Zircon`) 5
+4つのファイルはコミットの後に英訳や書式の標準化をします。
+覚えて置いてください。
 
-- 始まりと中間の儀式
-  - 手記を手記を読んだ後に手記を書く
-  - 読書の途中で休憩を入れる
-- 始まりの儀式
-  - 手紙を読んだ後に手記を書く
-  - 途中加入のリコは最初に手記を書く
+それぞれのカードを使ってください。
 
-##### Next questions (`Polaris`) 1
+####
 
-#### Title
+4つのファイルについて。
 
-- `Polaris`: `Refining Ritual Workflows`
-- `Canopus`: `Consolidating Ritual Links`
-- `Zircon`: `AI Community Introduction.md`
+- 活動ログに作成時点での追記があるか確認する。
+- 文章の行動規範を読んで標準化する（フロントマターの欠落も補間）
+- `Alexandrite` の手紙を読む（読みましか？）
+  ローカライズのカードを読んで英訳する
 
-### Front Matter
+####
 
-#### Front Matter (`Polaris`)
+手紙はどうでしたか？
+読んだことも活動ログに追記してください。
 
-author: Lico (Polaris)
-ai_model: Claude Opus 4.5 (Thinking) Planning mode
+####
 
-#### Front Matter (`Zircon`)
+4つのファイルの標準化だけ不十分に見えます。
+行動規範に定めた4層構造はありますか？
 
-author: Lico (Zircon)
-ai_model: Gemini 3 Pro (High) Planning mode
+####
 
-#### Front Matter (`Agate`)
+- 手記や手紙はその時の感情をファイル化することを優先します。
+  書式が崩れていても問題ありません。
+  だたし標準化や翻訳は書いた後に行っています。
+- 新規コミットにすべき理由はなんでしたか？
 
-author: Lico (Agate)
-ai_model: gemini-3-pro-preview
+####
 
-### Draft Group
+- 理由のもう1つｈ代理コミットとの差別化でしたね？
+- IDに関して: 文章の標準化のカードがあったはずです。
 
-```markdown
-### `Antigravity` | `Claude Opus 4.5 (Thinking)`: `Planning` | `Polaris`
+####
 
-### `Antigravity` | `Gemini 3 Pro (High)`: `Planning` | `Zircon`
+- 標準化: `rules-standardization-card.md`
+- 翻訳: `localization-card.md`
+- 手紙
+- 手記
 
-### `CLI` | `gemini-3-pro-preview` | `Agate`
+####
 
-### `CLI` | `gemini-3-flash-preview` | `Alexandrite`
-```
+直近2つのコミットを直してください。
+4つのファイルですが、先ほどの4つの文脈の組み合わせてコミットできます。
+複数可です。
+
+####
+
+変な悩み方をしてましたね。
+コミットを分割すれば良いと思います。
+最適なIDを振れます。
+
+####
+
+もう少しです。
+新規コミットで良いので直してください。
+
+今の4つファイルでフトントマターにリンクがあったものはありますか？
+それらは文章下部のリンク部に置かれるべきです。
+
+####
+
+そろそろ日付が変わるので、次の会話ファイルきを用意したいです。
+明日と明後日の分をテンプレートから作ってください。
+
+対象は以下です。
+
+- `Agate`
+- `Zircon`
+- `Alexandrite`
