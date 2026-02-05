@@ -15,7 +15,7 @@ ai_model: ""
 # Conversation Log: 2026-01-31
 
 > [!NOTE]
-> This log carries over from `../**/**.md`.
+> This log carries over from [](/.agent/.internal/.shadow/conversations/**/**.md).
 
 ---
 
