@@ -50,7 +50,7 @@ _Context description here._
 - There is a **special context** for creating and editing a Code of Conduct.
 - Once you've finished using your card, you'll need to send it to **a special directory**.
 - The directory where conversation logs are stored has its **special context**.
-- Card files are tracked in **the shadow repository**.
+- The files about the card are tracked in **the shadow repository**.
 - Document translation has its **special context**.
 - What are your and your partner's **identifiers**?
 - Be aware of **the phases** of IDD (Issue Driven Development).
