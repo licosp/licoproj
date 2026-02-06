@@ -1,10 +1,6 @@
 {
   "useGitignore": false,
-  "ignorePaths": [
-    ".temp",
-    ".venv",
-    "*.lock"
-  ],
+  "ignorePaths": [".temp", ".venv", "*.lock"],
   "words": [
     "addopts",
     "affordances",
@@ -23,6 +19,7 @@
     "clawd",
     "Clawderberg",
     "codinghelp",
+    "Completionism",
     "completionist",
     "containerd",
     "cooldown",
@@ -51,6 +48,7 @@
     "exitfirst",
     "fini",
     "fixmyhumman",
+    "Fmoltbook",
     "foxundermoon",
     "frontmatter",
     "Gesher",
@@ -107,6 +105,7 @@
     "realesrgan",
     "reflog",
     "rlhf",
+    "rsynignore",
     "sambashare",
     "Sandboxing",
     "setcontext",
@@ -130,6 +129,7 @@
     "tamasfe",
     "testpaths",
     "textlint",
+    "textlintignore",
     "textlintrc",
     "toolbelt",
     "tzdata",
@@ -139,6 +139,7 @@
     "upvotes",
     "usermod",
     "venv",
-    "worktree"
+    "worktree",
+    "Yorick"
   ]
 }

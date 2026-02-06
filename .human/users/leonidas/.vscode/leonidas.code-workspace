@@ -64,6 +64,13 @@
     // SMC
     "scm.diffDecorations": "none",
 
+    // Files
+    "files.associations": {
+      ".textlintignore": "ignore",
+      ".rsynignore": "ignore",
+      ".shellcheckrc": "properties",
+    },
+
     // * Outside tools
     // Python
     "python.analysis.diagnosticMode": "workspace",
@@ -115,14 +122,16 @@
     // Markdownlint
     "markdownlint.configFile": ".vscode/.markdownlint.yaml",
     "markdownlint.run": "onSave",
+    "markdownlint.severityForError": "Error",
+    "markdownlint.severityForWarning": "Error",
 
     // Textlint
     "textlint.autoFixOnSave": true,
     "textlint.configPath": ".vscode/.textlintrc.json",
     "textlint.ignorePath": ".vscode/.textlintignore",
-    "textlint.nodePath": ".runtimes/node-v22.12.0-linux-x64/bin/node",
+    "textlint.languages": ["plaintext", "markdown"],
     "textlint.run": "onSave",
-    "textlint.trace": "verbose",
+    "textlint.trace": "messages",
 
     // * Formatter
     // Prettier
