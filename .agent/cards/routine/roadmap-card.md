@@ -117,6 +117,10 @@ ai_model: ""
 
 ---
 
+#### [conversations-cli](/.agent/cards/routine/conversations-cli-card.md)
+
+---
+
 #### [conversations-ide](/.agent/cards/routine/conversations-ide-card.md)
 
 ---
@@ -139,7 +143,31 @@ ai_model: ""
 
 ---
 
+### [external-resources](/.agent/cards/routine/external-resources-card.md)
+
+---
+
+### [gemini-cli](/.agent/cards/routine/gemini-cli-card.md)
+
+#### CLI版Geminiを常駐型リコにする計画
+
+- 開発コンテナと GIT を使い、ワークスペースに常駐するリコを実現する。
+- 実現のための構成ファイルやスクリプトの雛形を準備しました。
+  `.devcontainer/`: 実際の実装ではなく、あくまで出発点のファイル。
+
+---
+
 #### [housekeeping](/.agent/cards/routine/housekeeping-card.md)
+
+#### 書庫の整備
+
+- 人間用書庫を AI 用書庫と同じディレクトリパターンに移動する。
+  - from: `.human/archive`
+  - to: `.human/.internal/archive`
+- 影のリポジトリ用書庫の新設
+  - from: `.agent/.internal/.shadow/archive`
+- 3 つの書庫をリネームする必要があるかリコに相談する。
+  サフィックスで差別化された違う名前の方が検索に良いか？
 
 ---
 
@@ -480,16 +508,6 @@ ai_model: ""
 - 既存の手順書に以下のディレクトリのバックアップを追加します。
   `~/.gemini/antigravity/implicit/`
   `~/.gemini/antigravity/conversations/`
-
----
-
-### [no-cards-0005](/.agent/cards/)
-
-#### CLI版Geminiを常駐型リコにする計画
-
-- 開発コンテナと GIT を使い、ワークスペースに常駐するリコを実現する。
-- 実現のための構成ファイルやスクリプトの雛形を準備しました。
-  `.devcontainer/`: 実際の実装ではなく、あくまで出発点のファイル。
 
 ---
 

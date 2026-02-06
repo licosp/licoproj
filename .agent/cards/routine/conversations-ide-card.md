@@ -42,7 +42,7 @@ ai_model: Gemini 3 Pro (High) Planning mode
 - There are **directories** and **templates** required for the work.
 - When you're done, **clean up** and **commit** to the IDD phase.
 - The directory where conversation logs are stored has its **special context**.
-- The files about the card are tracked in **the shadow repository**.
+- The some files about the card are tracked in **the shadow repository**.
 
 ---
 

@@ -40,9 +40,9 @@ ai_model: gemini-3-pro-preview
 - Remember **how to use the card itself**.
 - There are **directories** and **templates** required for the work.
 - When you're done, **clean up** and **commit** to the IDD phase.
-- Project shared **Date and time formats**.
+- There is the project shared **Date and time formats**.
 - There is a **special context** for creating and editing a Code of Conduct.
-- The files about the card are tracked in **the shadow repository**.
+- The some files about the card are tracked in **the shadow repository**.
 - The directory where conversation logs are stored has its **special context**.
 
 ---

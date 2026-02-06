@@ -27,7 +27,7 @@ ai_model: gemini-3-pro-preview
 
 - 外部サイトから以下の情報をダウンロードしています。
   - ツールのマニュアル
-  - リポジトリのREADME
+  - リポジトリの README
   - エージェント用スキル
 - 他者の著作物であることが多いので、影のリポジトリで管理すべきです。
 - ディレクトリ内のサブディレクトリの構成は、サイトごとに変わるので自由形式です。
@@ -43,13 +43,13 @@ ai_model: gemini-3-pro-preview
 - Remember **how to use the card itself**.
 - There are **directories** and **templates** required for the work.
 - When you're done, **clean up** and **commit** to the IDD phase.
-- Project shared **Date and time formats**.
+- There is the project shared **Date and time formats**.
 - There is a **special context** for creating and editing a Code of Conduct.
-- The files about the card are tracked in **the shadow repository**.
+- The some files about the card are tracked in **the shadow repository**.
 
 ---
 
-- 新しいWEBサイトからデータをダウンロードする時は、
+- 新しい WEB サイトからデータをダウンロードする時は、
   専用のサブディレクトリを作ってください。
 - ダウンロードしたスキルやスクリプトは、使い捨てにしてください。
 

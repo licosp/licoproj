@@ -40,7 +40,7 @@ ai_model: ""
 - Remember **how to use the cards itself**.
 - There are **directories** and **templates** required for the work.
 - When you're done, **clean up** and **commit** to the IDD phase.
-- Project shared **Date and time formats**.
+- There is the project shared **Date and time formats**.
 
 ---
 

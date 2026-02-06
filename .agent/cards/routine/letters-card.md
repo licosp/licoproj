@@ -40,7 +40,7 @@ ai_model: ""
 - Remember **how to use the cards itself**.
 - There are **directories** and **templates** required for the work.
 - When you're done, **clean up** and **commit** to the IDD phase.
-- What are your and your partner's **identifiers**?
+- What is the identifier of **your interlocutor**?
 
 ---
 

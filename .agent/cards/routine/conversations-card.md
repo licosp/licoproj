@@ -43,7 +43,7 @@ ai_model: Claude Opus 4.5 (Thinking) Planning mode
 - There is a **special context** for creating and editing a Code of Conduct.
 - The information handled is triggered by **skills**.
 - The directory where conversation logs are stored has its **special context**.
-- The files about the card are tracked in **the shadow repository**.
+- The some files about the card are tracked in **the shadow repository**.
 
 ---
 
