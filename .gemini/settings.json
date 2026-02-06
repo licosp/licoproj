@@ -9,7 +9,7 @@
     "previewFeatures": true
   },
   "skills": {
-    "enabled": false
+    "enabled": true
   },
   "output": {
     "format": "json"
@@ -36,46 +36,7 @@
     "showModelInfoInChat": true,
     "useAlternateBuffer": true
   },
-  "tools": {
-    "allowed": [
-      "ShellTool(cat)",
-      "ShellTool(df)",
-      "ShellTool(diff)",
-      "ShellTool(du)",
-      "ShellTool(echo)",
-      "ShellTool(fd)",
-      "ShellTool(find)",
-      "ShellTool(gh issue list)",
-      "ShellTool(gh issue view)",
-      "ShellTool(git --no-pager diff)",
-      "ShellTool(git --no-pager log)",
-      "ShellTool(git branch --show-current)",
-      "ShellTool(git branch -a)",
-      "ShellTool(git branch -r)",
-      "ShellTool(git branch)",
-      "ShellTool(git check-ignore)",
-      "ShellTool(git diff --cached)",
-      "ShellTool(git diff --name-only)",
-      "ShellTool(git diff --stat)",
-      "ShellTool(git diff)",
-      "ShellTool(git fetch)",
-      "ShellTool(git log)",
-      "ShellTool(git ls-files)",
-      "ShellTool(git reflog)",
-      "ShellTool(git remote -v)",
-      "ShellTool(git show)",
-      "ShellTool(git stash list)",
-      "ShellTool(git status)",
-      "ShellTool(grep)",
-      "ShellTool(head)",
-      "ShellTool(ls)",
-      "ShellTool(mkdir)",
-      "ShellTool(printf)",
-      "ShellTool(rg)",
-      "ShellTool(stat)",
-      "ShellTool(tail)",
-      "ShellTool(touch)",
-      "ShellTool(wc)"
-    ]
+  "experimental": {
+    "plan": true
   }
 }
