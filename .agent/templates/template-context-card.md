@@ -46,16 +46,16 @@ _Context description here._
 - There are **directories** and **templates** required for the work.
 - When you're done, **clean up** and **commit** to the IDD phase.
 - What is your **identifier**?
-- Project shared **Date and time formats**.
+- What is the identifier of **your interlocutor**?
+- There is the project shared **Date and time formats**.
+- Your writing style should be consistent in **structure and format**.
 - There is a **special context** for creating and editing a Code of Conduct.
+- There is **the special context** for sending files to the archive.
 - Once you've finished using your card, you'll need to send it to **a special directory**.
 - The directory where conversation logs are stored has its **special context**.
-- The files about the card are tracked in **the shadow repository**.
+- The some files about the card are tracked in **the shadow repository**.
 - Document translation has its **special context**.
-- What are your and your partner's **identifiers**?
 - Be aware of **the phases** of IDD (Issue Driven Development).
-- Your writing style should be consistent in **structure and format**.
-- There is **the special context** for sending files to the archive.
 
 ---
 
