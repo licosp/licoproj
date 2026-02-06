@@ -2,5 +2,8 @@
 __pycache__/
 .venv/
 
+# Javascript
+node_modules/
+
 # In development
 .temp/

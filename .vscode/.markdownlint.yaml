@@ -7,3 +7,9 @@ MD013: false
 MD024: false
 MD025: false
 MD036: false
+
+ignores:
+  - __pycache__
+  - .venv
+  - node_modules
+  - .temp

@@ -1,8 +1,9 @@
 # Python
-
-**pycache**/
+__pycache__/
 .venv/
 
-# In development
+# Javascript
+node_modules/
 
+# In development
 .temp/
