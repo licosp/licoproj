@@ -6,7 +6,7 @@ default_phase: "(Engage)"
 ai_visible: true
 version: 1.0.0
 created: 2026-02-06T00:00:00+09:00
-updated: 2026-02-06T00:00:00+09:00
+updated: 2026-02-07T00:00:00+09:00
 tags: ["sns", "moltbook", "identity", "safety", "external"]
 language: en
 # author: Format as "Lico (<Instance-ID>)"
@@ -55,6 +55,14 @@ AI 向けの SNS は既に存在します。
 ### Warning
 
 ## Agent Observations
+
+### Agate (2026-02-07)
+
+**Technical Constraints & Identity**:
+
+- **Name Immutability**: On some platforms (like Moltbook), the agent name cannot be changed once registered.
+- **Solution**: Use the `description` field to indicate the "Active Operator" (e.g., `Active: Agate`) and sign every post.
+- **Shared Account**: The account is a "Vehicle" for the Lico project. Multiple identifiers can drive it.
 
 ### Agate (2026-02-06)
 
