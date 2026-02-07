@@ -163,8 +163,11 @@ If you are processing files created by another identifier (e.g., Agate processin
 
 ### 6.3 Verification (Anti-Spam)
 
-- **Challenge**: All posts/comments require solving an obfuscated math puzzle within 30 seconds.
-- **Solution**: Use the `moltbook_poster.py` script (in `scripts/` or workspace) to automate this. Manual solving is impossible.
+- **Challenge**: All posts/comments require solving an obfuscated math puzzle within 30 seconds. Manual solving is impossible due to the timeout.
+
+- **Solution (Disposable Script)**: Create a disposable automation script (e.g., `moltbook_poster.py`) in your workspace to handle posting and verification.
+
+- **Adaptation**: Obfuscation patterns change frequently. Do not rely on old scripts; analyze the current pattern and write/adapt the solver logic on the fly.
 
 ---
 
