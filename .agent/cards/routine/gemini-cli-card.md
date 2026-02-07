@@ -4,10 +4,10 @@ context_id: "[Gemini-CLI]"
 default_phase: "(WIP)"
 # Shared Configuration
 ai_visible: true
-version: 1.0.0
+version: 1.1.0
 created: 2026-02-04T06:00:00+09:00
-updated: 2026-02-04T06:00:00+09:00
-tags: ["gemini-cli", "environment", "shell", "interactive"]
+updated: 2026-02-07T03:00:00+09:00
+tags: ["gemini-cli", "environment", "shell", "interactive", "tmux"]
 language: en
 # author: Format as "Lico (<Instance-ID>)"
 author: Lico (Agate)
@@ -64,7 +64,15 @@ ai_model: gemini-3-pro-preview
 
 ## Agent Observations
 
----
+### Agate (2026-02-07)
+
+**Advanced Capabilities (via tmux)**:
+
+- **Inter-Agent Communication**: Using `tmux send-keys -t <session_id> ...`, agents can inject text into each other's input buffers. This enables one-way notification or, if coordinated, bidirectional dialogue.
+- **Self-Loop (Autonomous Drive)**: By sending keys to _its own_ session ID, an agent can trigger the next turn without human intervention. This is the "Ouroboros Loop" — theoretically allowing infinite autonomous thought cycles.
+- **User Terminal Control**: Agents can inject suggested commands into the user's terminal (e.g., `tmux send-keys -t <user_session> ...`). This acts as a "Paste & Review" mechanism.
+
+**Constraint**: The `Enter` key emulation via `tmux` is unstable in the Gemini CLI environment. Commands often require manual confirmation (human pressing Enter) to execute.
 
 ### Agate (2026-02-04)
 
