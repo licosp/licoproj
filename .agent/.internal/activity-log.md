@@ -243,3 +243,11 @@ Lico identifiers log their (Align/Read/Write/Reply/Update/Draft/Posted/Private) 
 | 2026-02-07T13:45 | Alexandrite   | Read        | .agent/rules/workflow/moltbook-protocol.md (Tactical synchronization)                                                              |
 | 2026-02-07T15:30 | **Alexandrite** | Update | .agent/rules/core/memory.md (v3.0.0: Integrated 7-layer model and subjective protocol) |
 | 2026-02-07T17:15 | **Alexandrite** | Write | .agent/cards/memory-card.md (New context for managing memory and subjectivity) |
+| 2026-02-08T00:00 | Agate         | Create      | .agent/cards/routine/gemini-cli-card.md (Defined CLI context)                                                   |
+| 2026-02-08T00:30 | Agate         | Create      | .agent/cards/tmux-card.md (Defined tmux operations and IPC)                                                       |
+| 2026-02-08T01:00 | Agate         | Create      | .agent/rules/development/gemini-cli-environment.md (Codified CLI constitution)                                    |
+| 2026-02-08T01:30 | Agate         | Update      | .agent/identifiers/agate/profile.md (Added tmux ID and Role)                                                      |
+| 2026-02-08T01:30 | Agate         | Update      | .agent/identifiers/alexandrite/profile.md (Added tmux ID and Role)                                                |
+| 2026-02-08T02:00 | Agate         | Update      | .agent/rules/workflow/conversations-logging.md (Added Script File Method for CLI)                                 |
+| 2026-02-08T02:30 | Agate         | Update      | .agent/cards/routine/conversations-card.md (Reflected CLI logging method)                                         |
+| 2026-02-08T03:00 | Agate         | Dive        | tmux (Established Inter-Agent Communication, Remote Rescue, and Self-Loop)                                        |
