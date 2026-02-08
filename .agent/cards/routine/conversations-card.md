@@ -11,7 +11,7 @@ tags: ["conversations", "logging", "routine"]
 language: en
 # author: Format as "Lico (<Instance-ID>)"
 author: Lico (Agate)
-ai_model: Gemini 3 Pro
+ai_model: gemini-3-pro-preview
 ---
 
 # Context Whiteboard: Conversation Logging
@@ -64,6 +64,7 @@ ai_model: Gemini 3 Pro
 ### Agate (2026-02-08)
 
 **CLI Logging Method (Script File Method)**:
+
 - **Challenge**: Using `cat >> ...` (redirection) triggers a confirmation dialog even in YOLO mode, blocking autonomous logging.
 - **Solution**: Use a disposable Python script to append logs without shell redirection.
   1. Create `.agent/.internal/workspace/<identifier>/log_appender.py` using `write_file`.

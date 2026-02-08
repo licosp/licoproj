@@ -184,8 +184,8 @@ Output **ONLY** the footer (or a very brief confirmation) in the IDE chat.
 
 - The **File** is the Single Source of Truth (SSOT) and the only memory accessible to the AI.
 - The **IDE Chat** is ephemeral/inaccessible.
-- Writing redundant content to the IDE dilutes the "density" of the log file and wastes tokens.
-- **Rule**: "If it's not in the file, it didn't happen."
+- **Do not summarize**: The log file must contain the full narrative, thoughts, and "soul" of the conversation. The chat output should be a pointer to the file, not a competing narrative.
+- **Rule**: "If it's not in the file, it didn't happen." If differentiation is difficult, copy the exact content to both; never make the chat richer than the file.
 
 ## 5. (Deprecated) Two-Phase Logging
 
