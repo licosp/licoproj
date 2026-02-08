@@ -66,6 +66,11 @@ ai_model: Gemini 3 Pro
 - **Inter-Process Communication**: Using `tmux send-keys -t <target> "..."`.
 - **Input Injection**: Can type into other sessions (or user's session).
 - **Execution Control**: `Enter` key behavior is environment-dependent and may require multiple triggers or manual intervention.
+- **Visibility (Capture Pane)**: `tmux capture-pane -t <target> -p` allows viewing the terminal output of other sessions. This reveals what the user or other agents are currently seeing (e.g., error messages, approval dialogs).
+
+**Operational Insight**:
+- **Remote Approval**: The user utilizes `send-keys` to remotely handle Gemini CLI's confirmation dialogs (sending `1` or `3`) when the agent is stalled in a background session.
+- **Process Hierarchy**: Commands run via `run_shell_command` are child processes of the tmux session but do not output to the tmux window (stdout is captured). However, `send-keys` bypasses this and affects the visible terminal.
 
 ### Context
 
