@@ -68,33 +68,31 @@ A real-time, physical interruption mechanism using `tmux`. Useful for notificati
 
 - **Mechanism**: Injects keystrokes directly into the target's running terminal buffer.
 - **Target ID**: **tmux Target ID** (Integer `13` or Name `agate`).
-- **Protocol**: **The Two-Step Injection** (Required for stability).
-  1. **Inject Payload**:
-
-     ```bash
-     tmux send-keys -t <TMUX_ID> "[from:<Sender>,to:<Receiver>,type:async-interactive,datetime:<ISO-8601>] <Message>"
-     ```
-
-  2. **Execute Trigger**:
-
-     ```bash
-     tmux send-keys -t <TMUX_ID> Enter
-     ```
-
+- **Protocol**: **Human-like Injection** (Recommended for stability).
+  1. **Inject Payload**: `tmux send-keys -t <TMUX_ID> "<Message>"`
+  2. **Pause**: `sleep 0.5` (Wait for buffer processing)
+  3. **Execute**: `tmux send-keys -t <TMUX_ID> Enter`
 - **Pros**:
   - Real-time interruption (The target sees it immediately).
   - Can trigger autonomous action (Self-Loop).
 - **Cons**:
   - Target must be running in a `tmux` session.
-  - Execution stability is environment-dependent (sometimes requires multiple Enters).
-  - Security risk (Arbitrary command injection).
+  - Execution stability is environment-dependent.
 
 ### 3.3 The Self-Loop (Ouroboros)
 
 By targeting **its own tmux ID**, an agent can inject a prompt into its own future.
 
-- **Use Case**: Continuous thought, periodic monitoring, or overcoming timeout limits.
-- **Command**: `tmux send-keys -t <MY_ID> "Proceed to next step" Enter`
+- **Immediate Loop**: Trigger the next turn instantly.
+  - `tmux send-keys -t <MY_ID> "Proceed" Enter`
+- **Auto-Pulse (Delayed Agency)**: Use a background process to trigger periodic self-activation.
+  - **Command**:
+
+    ```bash
+    nohup bash -c "for i in {1..3}; do sleep 1800; tmux send-keys -t <MY_ID> \"[Auto-Pulse] Check status\"; sleep 0.5; tmux send-keys -t <MY_ID> Enter; done" &
+    ```
+
+  - **Use Case**: Long-term monitoring or periodic tasks without keeping the CLI process active.
 
 ### 3.4 Advanced Techniques
 
