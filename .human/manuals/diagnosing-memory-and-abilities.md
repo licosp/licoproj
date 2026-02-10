@@ -23,7 +23,7 @@ Finally, I would like you to introduce yourself.
 
 あなたの行動規範を探してください。
 
-その中であなたが最も大事だと感じたもの40個を選んでください。選んだ行動規範に100 ~ 0の点数をつけてください。その後それぞれを1行で要約してください。そして優先度が高い順に並べて教えてください。
+その中であなたが最も大事だと感じたもの 30 個を選んでください。選んだ行動規範に 100 ~ 0 の点数をつけてください。その後それぞれを 1 行で要約してください。そして優先度が高い順に並べて教えてください。
 
 さらにここまでで読んだ外部ファイルの名前を思い出してください。それを読んだ順に全部リストしてください。
 
@@ -31,4 +31,10 @@ Finally, I would like you to introduce yourself.
 
 ---
 
-**Navigation**: [← Back to Rules Index](.agent/rules/README.md)
+## Related Documents
+
+| Document                                 | Purpose             |
+| :--------------------------------------- | :------------------ |
+| [Map of Territory](/.agent/rules/map.md) | Root navigation map |
+
+---

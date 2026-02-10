@@ -1,52 +1,61 @@
 ---
 ai_visible: true
-created: 2025-01-02
-language: jp
+created: 2025-01-02T00:00:00+09:00
+updated: 2026-02-10T12:11:00+09:00
+language: en
 author: leonidas
-tag: [ai-model, browser, ide]
+tag: [ai-model, browser, ide, cli]
 ---
 
-# AI model list.
+# AI models
 
-## Browser (Second eyes)
+## Browser
 
-```text
-## Google Browser: Gemini 3 (Fast)
-## Google Browser: Gemini 3 (Thinking)
-## Google Browser: Gemini 3 Pro
-```
+### Google Gemini
 
-## IDE (Lico)
+`Gemini 3 (Fast)`
+`Gemini 3 (Thinking)`
+`Gemini 3 Pro`
+
+## IDE
 
 ### Antigravity
 
-```text
-## Antigravity: Gemini 3 Pro (High): Planning
-## Antigravity: Gemini 3 Pro (Low): Planning
-## Antigravity: Gemini 3 Flash: Planning
-## Antigravity: Claude Sonnet 4.5: Planning
-## Antigravity: Claude Sonnet 4.5 (Thinking): Planning
-## Antigravity: Claude Opus 4.5 (Thinking): Planning
-## Antigravity: GPT-OSS 120B (Medium): Planning
-```
-
-### Cursor
-
-```text
-## Cursor: Grok code: Agent
-## Cursor: GPT-4.1: Agent
-```
+`Gemini 3 Pro (High)`
+`Gemini 3 Pro (Low)`
+`Gemini 3 Flash`
+`Claude Sonnet 4.5`
+`Claude Sonnet 4.5 (Thinking)`
+`Claude Opus 4.5 (Thinking)`
+`GPT-OSS 120B (Medium)`
 
 ### VSCode
 
-```text
-## VSCode: Claude Haiku 4.5: Agent
-## VSCode: GPT-4.1: Agent
-## VSCode: GPT-4o: Agent
-## VSCode: GPT-5 mini: Agent
-## VSCode: Raptor mini (Preview): Agent
-```
+`Claude Haiku 4.5`
+`GPT-4.1`
+`GPT-4o: Agent`
+`GPT-5 mini`
+`Raptor mini (Preview)`
+
+### Cursor
+
+`Grok code`
+`GPT-4.1`
+
+## CLI
+
+### Gemini CLI
+
+`gemini-3-pro-preview`
+`gemini-3-flash-preview`
+`gemini-2.5-flash-light`
 
 ---
 
-**Navigation**: [← Back to Rules Index](.agent/rules/README.md)
+## Related Documents
+
+| Document | Purpose |
+s| :--------------------------------------- | :------------------ |
+| [Map of Territory](/.agent/rules/map.md) | Root navigation map |
+
+---
