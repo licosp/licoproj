@@ -57,11 +57,15 @@ This is exactly why **Repository as Brain** is critical. Only Git and the file s
 
 ---
 
+## Related Documents
+
+| Document                                 | Purpose             |
+| :--------------------------------------- | :------------------ |
+| [Map of Territory](/.agent/rules/map.md) | Root navigation map |
+
+---
+
 ## Origin
 
 - 2025-12-09 by Lico-C (Antigravity model): Initial reflection on the failures of memory recovery between instances.
 - 2026-01-15 by Canopus: Sublimated (translated) into English, standardized formatting, and added Origin section.
-
----
-
-**Navigation**: [← Back to Rules Index](/.agent/rules/README.md)

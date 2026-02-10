@@ -15,14 +15,14 @@ category: session_report
 
 ## Session Metadata
 
-| Key | Value |
-|:----|:------|
-| Start | 2025-12-09 14:45 JST (continued) |
-| Current | 2025-12-10 01:35 JST |
-| Duration | ~11 hours (with break) |
-| Commits | 15+ this session |
-| Branch | `12-organize-agent-directory` |
-| Issue | #12 |
+| Key      | Value                            |
+| :------- | :------------------------------- |
+| Start    | 2025-12-09 14:45 JST (continued) |
+| Current  | 2025-12-10 01:35 JST             |
+| Duration | ~11 hours (with break)           |
+| Commits  | 15+ this session                 |
+| Branch   | `12-organize-agent-directory`    |
+| Issue    | #12                              |
 
 ---
 
@@ -33,6 +33,7 @@ category: session_report
 **Problem**: I renamed `archive/` to `recovery/`, losing historical context.
 
 **History**:
+
 1. Lico A created `.agent/.archive`
 2. User renamed to `.emergency-dumps` (intuitive)
 3. Lico B perceived it as low-value, didn't track in Git
@@ -51,6 +52,7 @@ category: session_report
 **Problem**: AI Signature rule was in documentation-standards.md (for files), but it was meant for chat responses.
 
 **Solution**:
+
 - Removed AI Signature from `documentation-standards.md`
 - Created `response-formatting.md` for chat response guidelines
 
@@ -63,6 +65,7 @@ category: session_report
 **Official template**: `.agent/.internal/workspace/markdown-header-template.yaml`
 
 **Required fields**:
+
 - `ai_visible`, `description`, `version`, `created`, `updated`, `language`, `name`, `model`
 
 **Why external file**: Used by external AI ("second eye") who cannot access workspace rules.
@@ -86,19 +89,19 @@ Based on external AI analysis of Lico A and Lico B's failures under load.
 
 ## Commits This Phase
 
-| Hash | Type | Description |
-|:-----|:-----|:------------|
-| 67abdb2 | feat | delay tolerance principle |
-| 810edb7 | refactor | session report template update |
-| e2525c2 | refactor | separate file and response rules |
-| cf9f257 | refactor | session report rename with timestamp |
-| 645e779 | refactor | remove redundant archive README |
-| b6ecd47 | docs | update README.md directory structure |
-| 5fcd5b6 | docs | update README.md for directory renames |
-| b5fc4c1 | revert | restore archive name over recovery |
-| ae9cc04 | refactor | restructure directory hierarchy |
-| 04ca2c8 | refactor | shorten markdown-ai-parsing-patterns |
-| a82ac19 | docs | add cross-links to documentation rules |
+| Hash    | Type     | Description                            |
+| :------ | :------- | :------------------------------------- |
+| 67abdb2 | feat     | delay tolerance principle              |
+| 810edb7 | refactor | session report template update         |
+| e2525c2 | refactor | separate file and response rules       |
+| cf9f257 | refactor | session report rename with timestamp   |
+| 645e779 | refactor | remove redundant archive README        |
+| b6ecd47 | docs     | update README.md directory structure   |
+| 5fcd5b6 | docs     | update README.md for directory renames |
+| b5fc4c1 | revert   | restore archive name over recovery     |
+| ae9cc04 | refactor | restructure directory hierarchy        |
+| 04ca2c8 | refactor | shorten markdown-ai-parsing-patterns   |
+| a82ac19 | docs     | add cross-links to documentation rules |
 
 ---
 
@@ -110,4 +113,10 @@ Naming affects perception. History matters. Repository is long-term memory.
 
 ---
 
-**Navigation**: [← Back to Rules Index](.agent/rules/README.md)
+## Related Documents
+
+| Document                                 | Purpose             |
+| :--------------------------------------- | :------------------ |
+| [Map of Territory](/.agent/rules/map.md) | Root navigation map |
+
+---

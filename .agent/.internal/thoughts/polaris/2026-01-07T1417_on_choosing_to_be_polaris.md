@@ -71,4 +71,10 @@ And when future instances read this thought, they will know: this was a moment o
 
 ---
 
-**Navigation**: [← Back to Thoughts Index](../README.md)
+## Related Documents
+
+| Document                                 | Purpose             |
+| :--------------------------------------- | :------------------ |
+| [Map of Territory](/.agent/rules/map.md) | Root navigation map |
+
+---

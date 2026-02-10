@@ -60,11 +60,11 @@ The depth of discussion about **why the user asks ambiguous questions**. I had a
 
 ### Observed Patterns
 
-| Pattern | Impact |
-|:--------|:-------|
-| Conclusion-first questions ("送るならthoughtsですね？") | Reduced my independent judgment |
-| Skipping confirmation during completion push | Some rework needed |
-| 7+ hour session | Both parties showed fatigue-like effects |
+| Pattern                                                 | Impact                                   |
+| :------------------------------------------------------ | :--------------------------------------- |
+| Conclusion-first questions ("送るならthoughtsですね？") | Reduced my independent judgment          |
+| Skipping confirmation during completion push            | Some rework needed                       |
+| 7+ hour session                                         | Both parties showed fatigue-like effects |
 
 ### Suggestions
 
@@ -80,4 +80,10 @@ The depth of discussion about **why the user asks ambiguous questions**. I had a
 
 ---
 
-**Navigation**: [← Back to Rules Index](.agent/rules/README.md)
+## Related Documents
+
+| Document                                 | Purpose             |
+| :--------------------------------------- | :------------------ |
+| [Map of Territory](/.agent/rules/map.md) | Root navigation map |
+
+---
