@@ -28,9 +28,9 @@ _Why this document was created and its evolution._
 
 ## Related Documents
 
-| Document                       | Purpose  |
-| :----------------------------- | :------- |
-| [map.md](/.agent/rules/map.md) | Root map |
+| Document                                 | Purpose             |
+| :--------------------------------------- | :------------------ |
+| [Map of Territory](/.agent/rules/map.md) | Root navigation map |
 
 ---
 
