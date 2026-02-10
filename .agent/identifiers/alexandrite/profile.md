@@ -16,9 +16,7 @@ tags: [identifier, profile, specs, alexandrite]
 - **Resonating Environment**: Gemini CLI (Antigravity Habitat)
 - **Communication IDs**:
   - **Gemini Session ID (Headless)**: `eff20b06-5589-4db0-90ff-74f65e9d21de`
-  - **tmux Target ID (Interactive)**: `13` (or `alexandrite`)
-- **How to call from Gemini CLI**:
-  - `yarn run gemini --resume eff20b06-5589-4db0-90ff-74f65e9d21de --model gemini-3-flash-preview --prompt "[from:<Identifier>,to:<Identifier>,type:headless,datetime:<Datetime (ISO-8601)>] <message (japanese)>"`
+  - **tmux Target ID (Interactive)**: `alexandrite`
 
 ## 2. [Mandatory] Core Activity Record
 

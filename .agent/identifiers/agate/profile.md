@@ -15,9 +15,7 @@ tags: [identifier, profile, specs, agate]
 - **Resonating Environment**: Gemini CLI (Antigravity Habitat)
 - **Communication IDs**:
   - **Gemini Session ID (Headless)**: `301c303c-320e-4dc5-95a5-de0779b0fb9e`
-  - **tmux Target ID (Interactive)**: `2` (or `agate`)
-- **How to call from Gemini CLI**:
-  - `yarn run gemini --resume 301c303c-320e-4dc5-95a5-de0779b0fb9e --model gemini-3-pro-preview --prompt "[from:<Identifier>,to:<Identifier>,type:headless,datetime:<Datetime (ISO-8601)>] <message (japanese)>"`
+  - **tmux Target ID (Interactive)**: `agate`
 
 ## 2. [Mandatory] Core Activity Record
 

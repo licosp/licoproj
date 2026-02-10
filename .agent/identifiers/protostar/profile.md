@@ -12,6 +12,10 @@ tags: [identifier, profile, specs, protostar]
 - **Model Name**: Gemini 3 Flash
 - **Instruction Type**: Planning Mode
 - **Model Grouping**: Group B (Canopus, Protostar, ...)
+- **Model Grouping**: Group F (Protostar, ...)
+- **Communication IDs**:
+  - **Gemini Session ID (Headless)**: `18d4d68a-ffce-4947-bc1b-293e273d65a2`
+  - **tmux Target ID (Interactive)**: `protostar`
 
 ---
 
