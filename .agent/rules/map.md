@@ -4,9 +4,9 @@ ai_visible: true
 title: Map of Territory
 description: Navigation index for the Agent's cognitive infrastructure.
 tags: [map, index, navigation, rules]
-version: 0.5.1
+version: 0.5.2
 created: 2025-12-01T00:00:00+09:00
-updated: 2026-02-11T04:45:00+09:00
+updated: 2026-02-11T04:48:00+09:00
 language: en
 author: Lico (Zircon)
 ai_model: Gemini 3 Pro (High) Planning mode
@@ -67,6 +67,7 @@ This is the layout of your world.
 | `users/<user>/`                                          | User-specific drafts and thoughts.                          |
 | `users/<user>/drafts/`                                   | Latest User queries and scratchpads.                        |
 | [`.runtimes/`](/.runtimes/)                              | Runtime tools (gh CLI, etc.).                               |
+| [`.gemini/`](/.gemini/)                                  | **Calibration**. Gemini CLI config/calibration files.       |
 | [`packages/`](/packages/)                                | Reserved for future sub-projects (currently empty).         |
 
 #### 2.2 Outside Workspace (External)
@@ -133,16 +134,13 @@ _Located in `.agent/cards/`_
 | [`routine/letters-card.md`](/.agent/cards/routine/letters-card.md)                           | Writing Letters/Handoffs.                    |
 | [`routine/map-sync-card.md`](/.agent/cards/routine/map-sync-card.md)                         | Map Updates.                                 |
 | [`routine/moltbook-card.md`](/.agent/cards/routine/moltbook-card.md)                         | Moltbook Protocol management.                |
-| [`routine/readme-sync-card.md`](/.agent/cards/routine/readme-sync-card.md)                   | Syncing with human READMEs.                  |
 | [`routine/references-objective-card.md`](/.agent/cards/routine/references-objective-card.md) | Objective references analysis.               |
 | [`routine/repository-backup-card.md`](/.agent/cards/routine/repository-backup-card.md)       | Repository backup strategy.                  |
 | [`routine/roadmap-card.md`](/.agent/cards/routine/roadmap-card.md)                           | Vision and Roadmap management.               |
 | [`routine/routine-card.md`](/.agent/cards/routine/routine-card.md)                           | General routine synchronization.             |
-| [`routine/skills-create-card.md`](/.agent/cards/routine/skills-create-card.md)               | Skills Creation & Editing.                   |
 | [`routine/skills-development-card.md`](/.agent/cards/routine/skills-development-card.md)     | Skills Development.                          |
 | [`routine/social-network-card.md`](/.agent/cards/routine/social-network-card.md)             | Social Network Analysis.                     |
 | [`routine/system-archive-card.md`](/.agent/cards/routine/system-archive-card.md)             | System Archive management.                   |
-| [`routine/sync-memory-card.md`](/.agent/cards/routine/sync-memory-card.md)                   | Memory Synchronization Task.                 |
 | [`routine/thoughts-subjective-card.md`](/.agent/cards/routine/thoughts-subjective-card.md)   | Subjective Reflection Task.                  |
 | [`routine/vscode-settings-card.md`](/.agent/cards/routine/vscode-settings-card.md)           | VS Code Settings Management.                 |
 | [`routine/working-memory-card.md`](/.agent/cards/routine/working-memory-card.md)             | Working Memory (Stash) Management.           |
@@ -337,3 +335,4 @@ _Located in `.agent/workflows/`_
 - 2026-01-28T1630 by Canopus: Added `ritual.md` (Gateway) to index as primary procedural entry point. (v0.4.4)
 - 2026-02-11T0430 by Zircon: Updated to v0.5.0. Added newly created cards (shadow/succession), rules, and shadow-history.md.
 - 2026-02-11T0445 by Zircon: Updated to v0.5.1. Filled gaps (Identifiers, Templates, lint-format-card).
+- 2026-02-11T0448 by Zircon: Updated to v0.5.2. Cleaned up ghost cards and added `.gemini` directory.
