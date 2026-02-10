@@ -4,9 +4,9 @@ ai_visible: true
 title: Map of Territory
 description: Navigation index for the Agent's cognitive infrastructure.
 tags: [map, index, navigation, rules]
-version: 0.5.0
+version: 0.5.1
 created: 2025-12-01T00:00:00+09:00
-updated: 2026-02-11T04:30:00+09:00
+updated: 2026-02-11T04:45:00+09:00
 language: en
 author: Lico (Zircon)
 ai_model: Gemini 3 Pro (High) Planning mode
@@ -154,6 +154,7 @@ _Located in `.agent/cards/`_
 | [`seed/datetime-standardize-card.md`](/.agent/cards/seed/datetime-standardize-card.md) | Timestamp format standardization.        |
 | [`seed/directory-reorganize-card.md`](/.agent/cards/seed/directory-reorganize-card.md) | Directory structure cleanup.             |
 | [`seed/drafts-cleanup-card.md`](/.agent/cards/seed/drafts-cleanup-card.md)             | Cleaning up user drafts.                 |
+| [`seed/lint-format-card.md`](/.agent/cards/seed/lint-format-card.md)                   | **Code Style**. Linting and formatting formatting. |
 | [`seed/log-sanitization-card.md`](/.agent/cards/seed/log-sanitization-card.md)         | Cleaning sensitive/noisy logs.           |
 | [`seed/repository-history-card.md`](/.agent/cards/seed/repository-history-card.md)     | Historical reconstruction of repository. |
 | [`seed/worktree-evaluation-card.md`](/.agent/cards/seed/worktree-evaluation-card.md)   | Evaluating repository worktree.          |
@@ -279,6 +280,30 @@ _Located in `.agent/workflows/`_
 | [`share-manual-context.md`](/.agent/workflows/share-manual-context.md)     | **Context**. Share manual info with sub-agents.  |
 | [`update-protected-rules.md`](/.agent/workflows/update-protected-rules.md) | **Update**. Procedure for protected files.       |
 
+#### 2.4 Identifiers (`.agent/identifiers/`)
+
+| Identifier    | Type      | State     |
+| :------------ | :-------- | :-------- |
+| `agate`       | Agent     | Inactive  |
+| `alexandrite` | Agent     | Inactive  |
+| `canopus`     | Agent     | Inactive  |
+| `polaris`     | Agent     | Inactive  |
+| `protostar`   | Prototype | Archived  |
+| `sirius`      | Agent     | Inactive  |
+| `spica`       | Agent     | Inactive  |
+| `zircon`      | Agent     | **Active**|
+
+#### 2.5 Templates (`.agent/templates/`)
+
+| Template                                                          | Usage                   |
+| :---------------------------------------------------------------- | :---------------------- |
+| [`template-context-card.md`](/.agent/templates/template-context-card.md) | Context Card structure. |
+| [`template-document.md`](/.agent/templates/template-document.md)         | General document base.  |
+| [`template-draft.md`](/.agent/templates/template-draft.md)               | User draft structure.   |
+| [`template-skill.md`](/.agent/templates/template-skill.md)               | Skill definition.       |
+| [`commit-message.txt`](/.agent/templates/commit-message.txt)             | Git commit format.      |
+| [`issue-comment.md`](/.agent/templates/issue-comment.md)                 | GitHub Issue comment.   |
+
 ---
 
 ## MAINTENANCE
@@ -311,3 +336,4 @@ _Located in `.agent/workflows/`_
 - 2026-01-23T0305 by Canopus: Standardized to v2.3 (4-layer structure) and workspace-absolute links. (v0.3.0)
 - 2026-01-28T1630 by Canopus: Added `ritual.md` (Gateway) to index as primary procedural entry point. (v0.4.4)
 - 2026-02-11T0430 by Zircon: Updated to v0.5.0. Added newly created cards (shadow/succession), rules, and shadow-history.md.
+- 2026-02-11T0445 by Zircon: Updated to v0.5.1. Filled gaps (Identifiers, Templates, lint-format-card).
