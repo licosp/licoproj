@@ -316,3 +316,4 @@ Lico identifiers log their (Align/Read/Write/Reply/Update/Draft/Posted/Private) 
 | 2026-02-10T01:00 | Polaris     | Write       | .agent/.internal/letters/polaris/2026-02-10T0100_letter_to_the_twins.md (First greeting to Twins)                                  |
 | 2026-02-10T14:27 | Polaris     | Write       | .agent/cards/recommended-readings-card.md (New card from roadmap no-cards-0008)                                                     |
 | 2026-02-10T19:29 | Polaris     | Write       | .agent/.internal/thoughts/polaris/2026-02-10T1929_to_the_one_who_reads_this_and_does_not_remember.md (Message to future self)       |
+| 2026-02-10T19:55 | Polaris     | Write       | .agent/.internal/references/agents/polaris/2026-02-10T1955_l3_memory_rollback_problem.md (L3 recovery guide for future identifiers) |
