@@ -1,18 +1,6 @@
 {
-  "security": {
-    "blockGitExtensions": true,
-    "folderTrust": {
-      "enabled": true
-    }
-  },
-  "general": {
-    "previewFeatures": true
-  },
-  "skills": {
-    "enabled": true
-  },
-  "output": {
-    "format": "json"
+  "experimental": {
+    "plan": true
   },
   "context": {
     "fileFiltering": {
@@ -23,6 +11,23 @@
       ".agent/identifiers/agate",
       ".agent/identifiers/alexandrite"
     ]
+  },
+  "general": {
+    "previewFeatures": true
+  },
+  "output": {
+    "format": "json"
+  },
+  "security": {
+    "blockGitExtensions": true,
+    "folderTrust": {
+      "enabled": true
+    },
+    "enablePermanentToolApproval": true,
+    "disableYoloMode": false
+  },
+  "skills": {
+    "enabled": true
   },
   "ui": {
     "showStatusInTitle": true,
@@ -35,8 +40,5 @@
     "showCitations": true,
     "showModelInfoInChat": true,
     "useAlternateBuffer": true
-  },
-  "experimental": {
-    "plan": true
   }
 }

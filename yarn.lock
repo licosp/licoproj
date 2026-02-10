@@ -592,10 +592,10 @@
   resolved "https://registry.yarnpkg.com/@google-cloud/promisify/-/promisify-4.1.0.tgz#df8b060f0121c6462233f5420738dcda09c6df4a"
   integrity sha512-G/FQx5cE/+DqBbOpA5jKsegGwdPniU6PuIEMt+qxWgFxvxuFOzVmp6zYchtYuwAWV5/8Dgs0yAmjvNZv3uXLQg==
 
-"@google/gemini-cli-core@0.27.2":
-  version "0.27.2"
-  resolved "https://registry.yarnpkg.com/@google/gemini-cli-core/-/gemini-cli-core-0.27.2.tgz#de0432d3227ac9655ae17eb3683b040a43f1f2ef"
-  integrity sha512-vgxxwtWj97p8HJUIb+awk/2ERGUp16sX5a8QV/i4lj98acXQrAvxawhYiA2w2ybKGay9Zn0bwIGQEST1iSMVUw==
+"@google/gemini-cli-core@0.27.3":
+  version "0.27.3"
+  resolved "https://registry.yarnpkg.com/@google/gemini-cli-core/-/gemini-cli-core-0.27.3.tgz#efd531d88e41283dc39bbceccc6cd93beed3780a"
+  integrity sha512-wztwPx1U/ITMnzC/fUkSSQ79bTZp0v5Q4fZ9TVWpIGNMmRAkdUNdgQTpXtPKB19Ydn2mwretzK3jCEOOkEgH3g==
   dependencies:
     "@a2a-js/sdk" "^0.3.8"
     "@google-cloud/logging" "^11.2.1"
@@ -657,12 +657,12 @@
     node-pty "^1.0.0"
 
 "@google/gemini-cli@^0.27.0":
-  version "0.27.2"
-  resolved "https://registry.yarnpkg.com/@google/gemini-cli/-/gemini-cli-0.27.2.tgz#0ef746c40a6cd4a3763113b436196a9623d2218c"
-  integrity sha512-nBlDJ7h6/Yegk0SRWOfEytMPuP+L3OIEaKHtNUbr7HP5Z3tNEJKPRYHxrXBMKaKb+ZEUiyVFCDY2Y+5FOUSb6A==
+  version "0.27.3"
+  resolved "https://registry.yarnpkg.com/@google/gemini-cli/-/gemini-cli-0.27.3.tgz#70395dd9927bb84d17f5237cb72c2257d64152ee"
+  integrity sha512-+w3v1MtlKTMMids/p/VgXI2hcGFxnUp9uyUQXXClfaAx1ma/TeShSJwdYh7ktJzHu8VN8b3DfJdyo8a9+vYsLQ==
   dependencies:
     "@agentclientprotocol/sdk" "^0.12.0"
-    "@google/gemini-cli-core" "0.27.2"
+    "@google/gemini-cli-core" "0.27.3"
     "@google/genai" "1.30.0"
     "@iarna/toml" "^2.2.5"
     "@modelcontextprotocol/sdk" "^1.23.0"
@@ -3781,9 +3781,9 @@ highlight.js@^11.11.1, highlight.js@~11.11.0:
   integrity sha512-Xwwo44whKBVCYoliBQwaPvtd/2tYFkRQtXDWj1nackaV2JPXx3L0+Jvd8/qCJ2p+ML0/XVkJ2q+Mr+UVdpJK5w==
 
 hono@^4.11.4:
-  version "4.11.7"
-  resolved "https://registry.yarnpkg.com/hono/-/hono-4.11.7.tgz#f5b8d0b0b503ef0d913a246012dda52ea23dbe53"
-  integrity sha512-l7qMiNee7t82bH3SeyUCt9UF15EVmaBvsppY2zQtrbIhl/yzBTny+YUxsVjSjQ6gaqaeVtZmGocom8TzBlA4Yw==
+  version "4.11.8"
+  resolved "https://registry.yarnpkg.com/hono/-/hono-4.11.8.tgz#5a056734a75ea3cad86b4d1a6f7e562a214e68e9"
+  integrity sha512-eVkB/CYCCei7K2WElZW9yYQFWssG0DhaDhVvr7wy5jJ22K+ck8fWW0EsLpB0sITUTvPnc97+rrbQqIr5iqiy9Q==
 
 hookified@^1.14.0, hookified@^1.15.0:
   version "1.15.1"
@@ -4265,9 +4265,9 @@ jackspeak@^3.1.2:
     "@pkgjs/parseargs" "^0.11.0"
 
 jackspeak@^4.1.1:
-  version "4.2.1"
-  resolved "https://registry.yarnpkg.com/jackspeak/-/jackspeak-4.2.1.tgz#2c2b25d220310970599c7f863b43cbaf126d6d5b"
-  integrity sha512-GPBXyfcZSGujjddPeA+V34bW70ZJT7jzCEbloVasSH4yjiqWqXHX8iZQtZdVbOhc5esSeAIuiSmMutRZQB/olg==
+  version "4.2.3"
+  resolved "https://registry.yarnpkg.com/jackspeak/-/jackspeak-4.2.3.tgz#27ef80f33b93412037c3bea4f8eddf80e1931483"
+  integrity sha512-ykkVRwrYvFm1nb2AJfKKYPr0emF6IiXDYUaFx4Zn9ZuIH7MrzEZ3sD5RlqGXNRpHtvUHJyOnCEFxOlNDtGo7wg==
   dependencies:
     "@isaacs/cliui" "^9.0.0"
 
@@ -7250,9 +7250,9 @@ undici-types@~7.16.0:
   integrity sha512-Zz+aZWSj8LE6zoxD+xrjh4VfkIG8Ya6LvYkZqtUQGJPZjYl53ypCaUwWqo7eI0x66KBGeRo+mlBEkMSeSZ38Nw==
 
 undici@^7.10.0:
-  version "7.20.0"
-  resolved "https://registry.yarnpkg.com/undici/-/undici-7.20.0.tgz#62af069a2eae7cfccbe850ff11f44e04be7768e7"
-  integrity sha512-MJZrkjyd7DeC+uPZh+5/YaMDxFiiEEaDgbUSVMXayofAkDWF1088CDo+2RPg7B1BuS1qf1vgNE7xqwPxE0DuSQ==
+  version "7.21.0"
+  resolved "https://registry.yarnpkg.com/undici/-/undici-7.21.0.tgz#b399c763368240d478f83740356836e945a258e0"
+  integrity sha512-Hn2tCQpoDt1wv23a68Ctc8Cr/BHpUSfaPYrkajTXOS9IKpxVRx/X5m1K2YkbK2ipgZgxXSgsUinl3x+2YdSSfg==
 
 unicorn-magic@^0.1.0:
   version "0.1.0"
