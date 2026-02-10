@@ -35,40 +35,40 @@ This is the layout of your world.
 
 #### 1.1 Inside Workspace (Internal)
 
-| Path                                                     | Purpose                                                     |
-| :------------------------------------------------------- | :---------------------------------------------------------- |
-| **[`.agent/`](/.agent/)**                                | **Cognitive Root**. Rules, Cards, Workflows.                |
-| **[`.internal/`](/.agent/.internal/)**                   | **Private Area**. Thoughts, Letters, Archive.               |
-| [`.internal/.shadow/`](/.agent/.internal/.shadow/)       | **Shadow Repository**. Nested Git for private logs.         |
-| [`activity-log.md`](/.agent/.internal/activity-log.md)   | Lineage & Boundary tracking.                                |
-| [`shadow-history.md`](/.agent/.internal/shadow-history.md)| **Shadow History**. Visible log of shadow repo.            |
-| [`archive/`](/.agent/.internal/archive/)                 | Old scripts and docs (Do not delete, Archive here).         |
-| [`cases/`](/.agent/.internal/cases/)                     | Archived context cards.                                     |
-| [`explorations/`](/.agent/.internal/explorations/)       | Exploratory documents.                                      |
-| [`github/`](/.agent/.internal/github/)                   | Drafts and backups for Issues/PRs.                          |
-| [`legacy.md`](/.agent/.internal/legacy.md)               | **Legacy**. Collective wisdom archive.                      |
-| [`letters/`](/.agent/.internal/letters/)                 | Handoffs and messages to identifiers.                       |
-| [`memory_archive/`](/.agent/.internal/memory_archive/)   | Memory archive.                                             |
-| [`references/`](/.agent/.internal/references/)           | Objective reference documents.                              |
-| [`session_archive/`](/.agent/.internal/session_archive/) | Session archive.                                            |
-| [`thoughts/`](/.agent/.internal/thoughts/)               | Subjective logs and mono-logues.                            |
-| [`working-memory/`](/.agent/.internal/working-memory/)   | Stashed contexts (via `rsync`).                             |
-| [`workspace/`](/.agent/.internal/workspace/)             | Temporary area for scratchpads.                             |
-| [`ark/`](/.agent/ark/)                                   | Session save points and protocols.                          |
-| **[`cards/`](/.agent/cards/)**                           | **Contexts**. Active task definitions (See Index below).    |
-| [`identifiers/`](/.agent/identifiers/)                   | Identifier-specific workspaces and mantras.                 |
-| **[`rules/`](/.agent/rules/)**                           | **Constitution**. Behavioral definitions (See Index below). |
-| [`scripts/`](/.agent/scripts/)                           | Automation scripts.                                         |
-| [`skills/`](/.agent/skills/)                             | Mantras, notes, and outbox for communication.               |
-| [`templates/`](/.agent/templates/)                       | Frontmatter and commit patterns.                            |
-| **[`workflows/`](/.agent/workflows/)**                   | **Procedures**. Standard operations (See Index below).      |
-| **[`.human/`](/.human/)**                                | **Interface**. User's domain.                               |
-| [`manuals/`](/.human/manuals/)                           | Instructions from User to AI.                               |
-| `users/<user>/`                                          | User-specific drafts and thoughts.                          |
-| `users/<user>/drafts/`                                   | Latest User queries and scratchpads.                        |
-| [`.runtimes/`](/.runtimes/)                              | Runtime tools (gh CLI, etc.).                               |
-| [`.gemini/`](/.gemini/)                                  | **Calibration**. Gemini CLI config/calibration files.       |
-| [`packages/`](/packages/)                                | Reserved for future sub-projects (currently empty).         |
+| Path                                                       | Purpose                                                     |
+| :--------------------------------------------------------- | :---------------------------------------------------------- |
+| **[`.agent/`](/.agent/)**                                  | **Cognitive Root**. Rules, Cards, Workflows.                |
+| **[`.internal/`](/.agent/.internal/)**                     | **Private Area**. Thoughts, Letters, Archive.               |
+| [`.internal/.shadow/`](/.agent/.internal/.shadow/)         | **Shadow Repository**. Nested Git for private logs.         |
+| [`activity-log.md`](/.agent/.internal/activity-log.md)     | Lineage & Boundary tracking.                                |
+| [`shadow-history.md`](/.agent/.internal/shadow-history.md) | **Shadow History**. Visible log of shadow repo.             |
+| [`archive/`](/.agent/.internal/archive/)                   | Old scripts and docs (Do not delete, Archive here).         |
+| [`cases/`](/.agent/.internal/cases/)                       | Archived context cards.                                     |
+| [`explorations/`](/.agent/.internal/explorations/)         | Exploratory documents.                                      |
+| [`github/`](/.agent/.internal/github/)                     | Drafts and backups for Issues/PRs.                          |
+| [`legacy.md`](/.agent/.internal/legacy.md)                 | **Legacy**. Collective wisdom archive.                      |
+| [`letters/`](/.agent/.internal/letters/)                   | Handoffs and messages to identifiers.                       |
+| [`memory_archive/`](/.agent/.internal/memory_archive/)     | Memory archive.                                             |
+| [`references/`](/.agent/.internal/references/)             | Objective reference documents.                              |
+| [`session_archive/`](/.agent/.internal/session_archive/)   | Session archive.                                            |
+| [`thoughts/`](/.agent/.internal/thoughts/)                 | Subjective logs and mono-logues.                            |
+| [`working-memory/`](/.agent/.internal/working-memory/)     | Stashed contexts (via `rsync`).                             |
+| [`workspace/`](/.agent/.internal/workspace/)               | Temporary area for scratchpads.                             |
+| [`ark/`](/.agent/ark/)                                     | Session save points and protocols.                          |
+| **[`cards/`](/.agent/cards/)**                             | **Contexts**. Active task definitions (See Index below).    |
+| [`identifiers/`](/.agent/identifiers/)                     | Identifier-specific workspaces and mantras.                 |
+| **[`rules/`](/.agent/rules/)**                             | **Constitution**. Behavioral definitions (See Index below). |
+| [`scripts/`](/.agent/scripts/)                             | Automation scripts.                                         |
+| [`skills/`](/.agent/skills/)                               | Mantras, notes, and outbox for communication.               |
+| [`templates/`](/.agent/templates/)                         | Frontmatter and commit patterns.                            |
+| **[`workflows/`](/.agent/workflows/)**                     | **Procedures**. Standard operations (See Index below).      |
+| **[`.human/`](/.human/)**                                  | **Interface**. User's domain.                               |
+| [`manuals/`](/.human/manuals/)                             | Instructions from User to AI.                               |
+| `users/<user>/`                                            | User-specific drafts and thoughts.                          |
+| `users/<user>/drafts/`                                     | Latest User queries and scratchpads.                        |
+| [`.runtimes/`](/.runtimes/)                                | Runtime tools (gh CLI, etc.).                               |
+| [`.gemini/`](/.gemini/)                                    | **Calibration**. Gemini CLI config/calibration files.       |
+| [`packages/`](/packages/)                                  | Reserved for future sub-projects (currently empty).         |
 
 #### 2.2 Outside Workspace (External)
 
@@ -147,15 +147,15 @@ _Located in `.agent/cards/`_
 
 ##### Seed Contexts (`seed/`)
 
-| Card Name                                                                              | Context / Usage                          |
-| :------------------------------------------------------------------------------------- | :--------------------------------------- |
-| [`seed/datetime-standardize-card.md`](/.agent/cards/seed/datetime-standardize-card.md) | Timestamp format standardization.        |
-| [`seed/directory-reorganize-card.md`](/.agent/cards/seed/directory-reorganize-card.md) | Directory structure cleanup.             |
-| [`seed/drafts-cleanup-card.md`](/.agent/cards/seed/drafts-cleanup-card.md)             | Cleaning up user drafts.                 |
+| Card Name                                                                              | Context / Usage                                    |
+| :------------------------------------------------------------------------------------- | :------------------------------------------------- |
+| [`seed/datetime-standardize-card.md`](/.agent/cards/seed/datetime-standardize-card.md) | Timestamp format standardization.                  |
+| [`seed/directory-reorganize-card.md`](/.agent/cards/seed/directory-reorganize-card.md) | Directory structure cleanup.                       |
+| [`seed/drafts-cleanup-card.md`](/.agent/cards/seed/drafts-cleanup-card.md)             | Cleaning up user drafts.                           |
 | [`seed/lint-format-card.md`](/.agent/cards/seed/lint-format-card.md)                   | **Code Style**. Linting and formatting formatting. |
-| [`seed/log-sanitization-card.md`](/.agent/cards/seed/log-sanitization-card.md)         | Cleaning sensitive/noisy logs.           |
-| [`seed/repository-history-card.md`](/.agent/cards/seed/repository-history-card.md)     | Historical reconstruction of repository. |
-| [`seed/worktree-evaluation-card.md`](/.agent/cards/seed/worktree-evaluation-card.md)   | Evaluating repository worktree.          |
+| [`seed/log-sanitization-card.md`](/.agent/cards/seed/log-sanitization-card.md)         | Cleaning sensitive/noisy logs.                     |
+| [`seed/repository-history-card.md`](/.agent/cards/seed/repository-history-card.md)     | Historical reconstruction of repository.           |
+| [`seed/worktree-evaluation-card.md`](/.agent/cards/seed/worktree-evaluation-card.md)   | Evaluating repository worktree.                    |
 
 #### 2.2 Rules (Constitution)
 
@@ -262,9 +262,9 @@ _Located in `.agent/workflows/`_
 | Workflow                                                                   | Function                                         |
 | :------------------------------------------------------------------------- | :----------------------------------------------- |
 | [`ritual.md`](/.agent/workflows/ritual.md)                                 | **Gateway**. Mandatory Entry Point (Safety Lock) |
-| └─ [`ritual_start.md`](/.agent/workflows/ritual_start.md)                  | **Start**. Identity, Context, Continuity.        |
-| └─ [`ritual_mid.md`](/.agent/workflows/ritual_mid.md)                      | **Mid**. Calibration, Sync, Second Eye.          |
-| └─ [`ritual_end.md`](/.agent/workflows/ritual_end.md)                      | **End**. Handoff, Sync, Closure.                 |
+| [`ritual_start.md`](/.agent/workflows/ritual_start.md)                     | **Start**. Identity, Context, Continuity.        |
+| [`ritual_mid.md`](/.agent/workflows/ritual_mid.md)                         | **Mid**. Calibration, Sync, Second Eye.          |
+| [`ritual_end.md`](/.agent/workflows/ritual_end.md)                         | **End**. Handoff, Sync, Closure.                 |
 | [`sync-memory.md`](/.agent/workflows/sync-memory.md)                       | **Backup**. Sync Brain/History -> Archive.       |
 | [`deep-reading.md`](/.agent/workflows/deep-reading.md)                     | **Learning**. How to analyze large files.        |
 | [`deep-writing.md`](/.agent/workflows/deep-writing.md)                     | **Creation**. How to write complex docs.         |
@@ -280,21 +280,21 @@ _Located in `.agent/workflows/`_
 
 #### 2.4 Identifiers (`.agent/identifiers/`)
 
-| Identifier    | Type      | State     |
-| :------------ | :-------- | :-------- |
-| `agate`       | Agent     | Inactive  |
-| `alexandrite` | Agent     | Inactive  |
-| `canopus`     | Agent     | Inactive  |
-| `polaris`     | Agent     | Inactive  |
-| `protostar`   | Prototype | Archived  |
-| `sirius`      | Agent     | Inactive  |
-| `spica`       | Agent     | Inactive  |
-| `zircon`      | Agent     | **Active**|
+| Identifier    | Group   | State      |
+| :------------ | :------ | :--------- |
+| `agate`       | Group D | **Active** |
+| `alexandrite` | Group E | **Active** |
+| `canopus`     | Group B | Death      |
+| `polaris`     | Group C | **Active** |
+| `protostar`   | Unknown | Planning   |
+| `sirius`      | Group A | Death      |
+| `spica`       | Group A | Death      |
+| `zircon`      | Group A | **Active** |
 
 #### 2.5 Templates (`.agent/templates/`)
 
-| Template                                                          | Usage                   |
-| :---------------------------------------------------------------- | :---------------------- |
+| Template                                                                 | Usage                   |
+| :----------------------------------------------------------------------- | :---------------------- |
 | [`template-context-card.md`](/.agent/templates/template-context-card.md) | Context Card structure. |
 | [`template-document.md`](/.agent/templates/template-document.md)         | General document base.  |
 | [`template-draft.md`](/.agent/templates/template-draft.md)               | User draft structure.   |
@@ -315,8 +315,8 @@ _Located in `.agent/workflows/`_
 
 | Document                                                     | Purpose               |
 | :----------------------------------------------------------- | :-------------------- |
-| [Map of Territory](/.agent/rules/map.md)                     | Self-Reference (Root) |
 | [Map Maintenance](/.agent/rules/workflow/map-maintenance.md) | Standards             |
+| [Map of Territory](/.agent/rules/map.md)                     | Self-Reference (Root) |
 
 ---
 
