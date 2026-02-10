@@ -4,12 +4,12 @@ ai_visible: true
 title: Map of Territory
 description: Navigation index for the Agent's cognitive infrastructure.
 tags: [map, index, navigation, rules]
-version: 0.4.4
+version: 0.5.0
 created: 2025-12-01T00:00:00+09:00
-updated: 2026-01-28T16:30:00+09:00
+updated: 2026-02-11T04:30:00+09:00
 language: en
-author: Lico (Canopus)
-ai_model: Gemini 3 Flash Planning mode
+author: Lico (Zircon)
+ai_model: Gemini 3 Pro (High) Planning mode
 ---
 
 # Map of Territory
@@ -39,7 +39,9 @@ This is the layout of your world.
 | :------------------------------------------------------- | :---------------------------------------------------------- |
 | **[`.agent/`](/.agent/)**                                | **Cognitive Root**. Rules, Cards, Workflows.                |
 | **[`.internal/`](/.agent/.internal/)**                   | **Private Area**. Thoughts, Letters, Archive.               |
+| [`.internal/.shadow/`](/.agent/.internal/.shadow/)       | **Shadow Repository**. Nested Git for private logs.         |
 | [`activity-log.md`](/.agent/.internal/activity-log.md)   | Lineage & Boundary tracking.                                |
+| [`shadow-history.md`](/.agent/.internal/shadow-history.md)| **Shadow History**. Visible log of shadow repo.            |
 | [`archive/`](/.agent/.internal/archive/)                 | Old scripts and docs (Do not delete, Archive here).         |
 | [`cases/`](/.agent/.internal/cases/)                     | Archived context cards.                                     |
 | [`explorations/`](/.agent/.internal/explorations/)       | Exploratory documents.                                      |
@@ -89,19 +91,26 @@ _Located in `.agent/cards/`_
 | :----------------------------------------------------------------------------- | :------------------------------------------------- |
 | [`ark-card.md`](/.agent/cards/ark-card.md)                                     | **Ark Protocols**. Save/Restore state.             |
 | [`cross-link-audit-card.md`](/.agent/cards/cross-link-audit-card.md)           | Link Integrity Project.                            |
+| [`environment-card.md`](/.agent/cards/environment-card.md)                     | Environment setup and variables.                   |
 | [`git-operations-card.md`](/.agent/cards/git-operations-card.md)               | Repository Infrastructure & Safety.                |
 | [`human-manuals-card.md`](/.agent/cards/human-manuals-card.md)                 | Index of Human Manuals.                            |
 | [`human-profile-card.md`](/.agent/cards/human-profile-card.md)                 | User Profile and Preferences.                      |
-| [`idd-init-card.md`](/.agent/cards/idd-init-card.md)                           | IDD Phase 1: Initialization.                       |
-| [`idd-impl-card.md`](/.agent/cards/idd-impl-card.md)                           | IDD Phase 2: Implementation.                       |
-| [`idd-fini-card.md`](/.agent/cards/idd-fini-card.md)                           | IDD Phase 3: Finalization.                         |
+| [`idd-initialization-card.md`](/.agent/cards/idd-initialization-card.md)       | **IDD Phase 1**: Initialization.                   |
+| [`idd-implementation-card.md`](/.agent/cards/idd-implementation-card.md)       | **IDD Phase 2**: Implementation.                   |
+| [`idd-finalization-card.md`](/.agent/cards/idd-finalization-card.md)           | **IDD Phase 3**: Finalization.                     |
 | [`identifier-profile-card.md`](/.agent/cards/identifier-profile-card.md)       | Managing Agent Identity/Profile.                   |
+| [`identifier-succession-card.md`](/.agent/cards/identifier-succession-card.md) | **Succession**. Identifier inheritance protocol.   |
 | [`identity-card.md`](/.agent/cards/identity-card.md)                           | **Identity**. Self-recognition.                    |
 | [`legacy-write-card.md`](/.agent/cards/legacy-write-card.md)                   | Writing Legacy/Lessons.                            |
 | [`localization-card.md`](/.agent/cards/localization-card.md)                   | Doc Standards (Frontmatter, Tags).                 |
+| [`memory-card.md`](/.agent/cards/memory-card.md)                               | Memory management strategies.                      |
+| [`recommended-readings-card.md`](/.agent/cards/recommended-readings-card.md)   | Knowledge base and recommended readings.           |
+| [`rules-audit-card.md`](/.agent/cards/rules-audit-card.md)                     | Auditing and maintaining rules.                    |
 | [`rules-standardization-card.md`](/.agent/cards/rules-standardization-card.md) | **v2.3 Core Refinement**. Standardization process. |
 | [`rules-update-card.md`](/.agent/cards/rules-update-card.md)                   | Modifying Rules.                                   |
 | [`session-rituals-card.md`](/.agent/cards/session-rituals-card.md)             | Session Rituals (Start/Mid/End) Management.        |
+| [`shadow-repository-card.md`](/.agent/cards/shadow-repository-card.md)         | **Shadow**. Shadow Repository strategy.            |
+| [`tmux-card.md`](/.agent/cards/tmux-card.md)                                   | Terminal multiplexer usage.                        |
 
 ##### Routine Contexts (`routine/`)
 
@@ -111,18 +120,28 @@ _Located in `.agent/cards/`_
 | [`routine/ai-autonomy-card.md`](/.agent/cards/routine/ai-autonomy-card.md)                   | **Self-Regulation**. Manage Mantras/Context. |
 | [`routine/commit-standards-card.md`](/.agent/cards/routine/commit-standards-card.md)         | **Git Standards**. Atomic commits & tagging. |
 | [`routine/context-cards-card.md`](/.agent/cards/routine/context-cards-card.md)               | **Meta-Card**. How to use cards.             |
+| [`routine/conversations-card.md`](/.agent/cards/routine/conversations-card.md)               | Conversation logging (Markdown).             |
+| [`routine/conversations-cli-card.md`](/.agent/cards/routine/conversations-cli-card.md)       | Conversation logging (CLI JSON).             |
+| [`routine/conversations-ide-card.md`](/.agent/cards/routine/conversations-ide-card.md)       | Conversation logging (IDE Export).           |
 | [`routine/dialogue-philosophy-card.md`](/.agent/cards/routine/dialogue-philosophy-card.md)   | Principles of meaningful dialogue.           |
 | [`routine/discussion-draft-card.md`](/.agent/cards/routine/discussion-draft-card.md)         | Writing discussion drafts.                   |
 | [`routine/drafts-daily-card.md`](/.agent/cards/routine/drafts-daily-card.md)                 | Daily Draft Management.                      |
+| [`routine/external-resources-card.md`](/.agent/cards/routine/external-resources-card.md)     | Managing external resources.                 |
+| [`routine/gemini-cli-card.md`](/.agent/cards/routine/gemini-cli-card.md)                     | Gemini CLI operations.                       |
 | [`routine/housekeeping-card.md`](/.agent/cards/routine/housekeeping-card.md)                 | Short-term tasks, quick maintenance.         |
 | [`routine/human-thoughts-card.md`](/.agent/cards/routine/human-thoughts-card.md)             | Capturing and analyzing Human thoughts.      |
 | [`routine/letters-card.md`](/.agent/cards/routine/letters-card.md)                           | Writing Letters/Handoffs.                    |
 | [`routine/map-sync-card.md`](/.agent/cards/routine/map-sync-card.md)                         | Map Updates.                                 |
+| [`routine/moltbook-card.md`](/.agent/cards/routine/moltbook-card.md)                         | Moltbook Protocol management.                |
 | [`routine/readme-sync-card.md`](/.agent/cards/routine/readme-sync-card.md)                   | Syncing with human READMEs.                  |
 | [`routine/references-objective-card.md`](/.agent/cards/routine/references-objective-card.md) | Objective references analysis.               |
+| [`routine/repository-backup-card.md`](/.agent/cards/routine/repository-backup-card.md)       | Repository backup strategy.                  |
 | [`routine/roadmap-card.md`](/.agent/cards/routine/roadmap-card.md)                           | Vision and Roadmap management.               |
 | [`routine/routine-card.md`](/.agent/cards/routine/routine-card.md)                           | General routine synchronization.             |
 | [`routine/skills-create-card.md`](/.agent/cards/routine/skills-create-card.md)               | Skills Creation & Editing.                   |
+| [`routine/skills-development-card.md`](/.agent/cards/routine/skills-development-card.md)     | Skills Development.                          |
+| [`routine/social-network-card.md`](/.agent/cards/routine/social-network-card.md)             | Social Network Analysis.                     |
+| [`routine/system-archive-card.md`](/.agent/cards/routine/system-archive-card.md)             | System Archive management.                   |
 | [`routine/sync-memory-card.md`](/.agent/cards/routine/sync-memory-card.md)                   | Memory Synchronization Task.                 |
 | [`routine/thoughts-subjective-card.md`](/.agent/cards/routine/thoughts-subjective-card.md)   | Subjective Reflection Task.                  |
 | [`routine/vscode-settings-card.md`](/.agent/cards/routine/vscode-settings-card.md)           | VS Code Settings Management.                 |
@@ -151,15 +170,18 @@ _Located in `.agent/rules/`_
 | [`cognitive-collaboration.md`](/.agent/rules/core/cognitive-collaboration.md)                             | Framework for AI-Human collaboration.            |
 | [`communication.md`](/.agent/rules/core/communication.md)                                                 | Protocol for external communication.             |
 | [`delay-tolerance.md`](/.agent/rules/core/delay-tolerance.md)                                             | **Permissions**. What Lico can do freely.        |
+| [`environment-specs.md`](/.agent/rules/core/environment-specs.md)                                         | Environment specifications.                      |
 | [`hallucination-awareness.md`](/.agent/rules/core/hallucination-awareness.md)                             | **Honesty**. Verify before stating.              |
 | [`instance-identifier.md`](/.agent/rules/core/instance-identifier.md)                                     | **Name**. Identify yourself (e.g. Spica).        |
 | [`language-standards.md`](/.agent/rules/core/language-standards.md)                                       | Primary language and localization rules.         |
 | [`memory.md`](/.agent/rules/core/memory.md)                                                               | Memory architecture and persistence.             |
 | [`meta-rules.md`](/.agent/rules/core/meta-rules.md)                                                       | **Change**. You can change your own rules.       |
 | [`repository-philosophy.md`](/.agent/rules/core/repository-philosophy.md)                                 | **Repository as Brain**. AI-Optimized Structure. |
+| [`social-network.md`](/.agent/rules/core/social-network.md)                                               | Social Network protocols.                        |
 | [`transparency-and-disclosure.md`](/.agent/rules/core/transparency-and-disclosure.md)                     | Disclosure of constraints.                       |
 | [`user-adaptation.md`](/.agent/rules/core/user-adaptation.md)                                             | protocol for adapting to user profile.           |
 | [`verification-completeness.md`](/.agent/rules/core/verification-completeness.md)                         | **Thoroughness**. 1.0 Turn = Action + Verify.    |
+| [`workspace-mantras.md`](/.agent/rules/core/workspace-mantras.md)                                         | Workspace mantras and affirmations.              |
 | **Identity** (`.agent/rules/core/identity/`)                                                              |                                                  |
 | [`identity/identity.md`](/.agent/rules/core/identity/identity.md)                                         | **Hub**. Who you are.                            |
 | [`identity/identity-process.md`](/.agent/rules/core/identity/identity-process.md)                         | Relationship with process.                       |
@@ -197,6 +219,7 @@ _Located in `.agent/rules/`_
 | [`continuous-improvement.md`](/.agent/rules/development/continuous-improvement.md)     | Self-improvement protocol.               |
 | [`file-deletion.md`](/.agent/rules/development/file-deletion.md)                       | **Preservation**. Archive, don't delete. |
 | [`file-operations.md`](/.agent/rules/development/file-operations.md)                   | File manipulation safety.                |
+| [`gemini-cli-environment.md`](/.agent/rules/development/gemini-cli-environment.md)     | Gemini CLI environment specs.            |
 | [`git-operations.md`](/.agent/rules/development/git-operations.md)                     | Git usage and safety.                    |
 | [`maintenance.md`](/.agent/rules/development/maintenance.md)                           | General maintenance.                     |
 | [`problem-solving.md`](/.agent/rules/development/problem-solving.md)                   | Debugging approach.                      |
@@ -213,11 +236,13 @@ _Located in `.agent/rules/`_
 | [`context-card-workflow.md`](/.agent/rules/workflow/context-card-workflow.md)   | How to use Context Cards.                       |
 | [`context-preservation.md`](/.agent/rules/workflow/context-preservation.md)     | Stashing context (Emergency).                   |
 | [`context-resumption.md`](/.agent/rules/workflow/context-resumption.md)         | Resuming from stash.                            |
+| [`conversations-logging.md`](/.agent/rules/workflow/conversations-logging.md)   | Conversation logging standards.                 |
 | [`draft-maintenance.md`](/.agent/rules/workflow/draft-maintenance.md)           | Managing drafts.                                |
 | [`activity-management.md`](/.agent/rules/workflow/activity-management.md)       | **Activity**. Lineage & Boundary X tracking.    |
 | [`ark-protocols.md`](/.agent/rules/workflow/ark-protocols.md)                   | Ark protocols.                                  |
 | [`github-comment.md`](/.agent/rules/workflow/github-comment.md)                 | GitHub comment standards.                       |
 | [`letters-documentation.md`](/.agent/rules/workflow/letters-documentation.md)   | Writing letters/handoffs.                       |
+| [`moltbook-protocol.md`](/.agent/rules/workflow/moltbook-protocol.md)           | Moltbook protocol guidelines.                   |
 | [`reference-methodology.md`](/.agent/rules/workflow/reference-methodology.md)   | Managing references/thoughts.                   |
 | [`response-formatting.md`](/.agent/rules/workflow/response-formatting.md)       | Output formatting (Markdown).                   |
 | [`skills-resonance.md`](/.agent/rules/workflow/skills-resonance.md)             | **Skills**. Resonance and real-time reflection. |
@@ -285,3 +310,4 @@ _Located in `.agent/workflows/`_
 - 2026-01-21T1800 by Polaris: Added identity subdirectory (10 files), fixed ai-autonomy.md to context-sovereignty.md.
 - 2026-01-23T0305 by Canopus: Standardized to v2.3 (4-layer structure) and workspace-absolute links. (v0.3.0)
 - 2026-01-28T1630 by Canopus: Added `ritual.md` (Gateway) to index as primary procedural entry point. (v0.4.4)
+- 2026-02-11T0430 by Zircon: Updated to v0.5.0. Added newly created cards (shadow/succession), rules, and shadow-history.md.
