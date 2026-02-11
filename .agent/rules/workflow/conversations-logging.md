@@ -3,12 +3,12 @@ ai_visible: true
 title: Conversation Logging Protocol
 description: Standards for logging AI-human conversations to persistent files.
 tags: [conversation, logging, workflow]
-version: 1.0.0
+version: 1.1.0
 created: 2026-01-31T22:50:00+09:00
-updated: 2026-01-31T22:50:00+09:00
+updated: 2026-02-12T00:58:00+09:00
 language: en
-author: Lico (Polaris)
-ai_model: Claude Opus 4.5 (Thinking) Planning mode
+author: Lico (Sirius)
+ai_model: Gemini 3 Pro (High) Planning mode
 ---
 
 # Conversation Logging Protocol
@@ -85,6 +85,10 @@ If the conversation file for the current date does not exist:
 
 - Request tools for actual work.
 - Wait for user approval.
+
+> [!NOTE]
+> **Continuous Turn Strategy (If `notify_user` is available)**:
+> Avoid calling `notify_user` during tool execution to split the turn. Perform the "Plan -> Execution -> Report" cycle in a single continuous turn to preserve context.
 
 #### Phase 3: Post-Action (Report)
 
@@ -221,3 +225,4 @@ This protocol was created to address IDE log export limitations discovered in Ja
 ## Origin
 
 - 2026-01-31T22:50+09:00 by Polaris: Created from skill body separation.
+- 2026-02-12T00:58+09:00 by Sirius: Added "Continuous Turn Strategy" note regarding notify_user usage. (v1.1.0)
