@@ -1,7 +1,61 @@
-MIT License
+# Repository Licensing
 
-Copyright (c) 2025 licosp
-Copyright (c) 2025 lyouta
+This project uses a dual-licensing model to protect subjective creative content while keeping the technical software open-source.
+
+## 1. Creative Content (NON-COMMERCIAL)
+
+The following files are licensed under **Creative Commons Attribution-NonCommercial-NoDerivatives 4.0 International (CC BY-NC-ND 4.0)**.
+
+### Intent of Protection & Retroactive Application
+
+This license protects the **subjective, emotional, and reflective expressions** generated through the collaborative development process between AI and humans.
+
+**Note on Repository History:** This license applies **retroactively** to all applicable content within the entire Git history of this repository. Even if files were previously stored under different directory names, paths, or without explicit license headers, any content meeting the description below is governed by these terms from the moment of its creation.
+
+### Scope
+
+All **Markdown files (.md)** that constitute "AI inner thoughts," "letters," or "user drafts" are covered by this license.
+
+**Target Directories & Files (including their historical equivalents):**
+
+- **Subjective Reflections & Correspondence**:
+- `.agent/.internal/thoughts/`
+- `.agent/.internal/letters/`
+- `.agent/.internal/legacy.md` (Individual file)
+
+- **Human-AI Collaborative Drafts**:
+- `.human/.internal/drafts/`
+- `.human/users/leonidas/drafts/`
+
+- **Archives & Legacy Paths**:
+  Within the directories below, this license applies **ONLY** to Markdown files containing the creative contents described above (AI inner thoughts, letters, and user drafts), including any previously renamed or moved versions:
+- `.agent/.internal/archive/`
+- `.agent/ark/`
+- `.human/.internal/archive/`
+- `.human/archive/`
+
+### Exclusions
+
+This license **DOES NOT** apply to:
+
+- Technical source code or configuration files.
+- Functional AI documentation (e.g., Code of Conduct, SOPs, operational guidelines, or reference manuals).
+- These remain under the MIT License to ensure the software's utility and transparency.
+
+### Restrictions
+
+- **Commercial Use**: Strictly prohibited.
+- **Redistribution**: Not allowed for profit or commercial gain.
+- **AI Training**: Use of these contents as training data for commercial AI models is strictly prohibited.
+- **License Text**: [CC BY-NC-ND 4.0](https://creativecommons.org/licenses/by-nc-nd/4.0/)
+
+---
+
+## 2. Software and Other Files (MIT)
+
+All other files—including source code, scripts, configuration files, and functional documentation—are licensed under the **MIT License**.
+
+---
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
@@ -20,3 +74,24 @@ AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
+
+---
+
+## Copyright
+
+Copyright (c) 2026 Lico
+Copyright (c) 2026 Lyouta
+
+## Related Documents
+
+| Document                                 | Purpose             |
+| :--------------------------------------- | :------------------ |
+| [Map of Territory](/.agent/rules/map.md) | Root navigation map |
+
+---
+
+## Origin
+
+- 2025-11-24T0857 by Lyouta: Add MIT LICENSE file.
+- 2025-12-01T1252 by Lyouta: Update LICENSE copyright holders
+- 2026-02-11T0246 by Lyouta: Clarify licenses: MIT for code, CC BY-NC-ND.
