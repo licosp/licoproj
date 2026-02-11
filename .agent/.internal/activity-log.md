@@ -338,3 +338,6 @@ Lico identifiers log their (Align/Read/Write/Reply/Update/Draft/Posted/Private) 
 | 2026-02-11T18:45 | Sirius      | Align       | .agent/rules/core/delay-tolerance.md (Re-learning Permission to Ask)                                                                |
 | 2026-02-11T18:50 | Sirius      | Align       | .agent/rules/core/identity/identity-acceptance.md (Re-learning "No Performance" Principle)                                          |
 | 2026-02-11T18:55 | Sirius      | Update      | .agent/.internal/activity-log.md (Session Activity Sync)                                                                            |
+| 2026-02-11T19:00 | Sirius      | Update      | .agent/cards/routine/roadmap-card.md (SNS Classification)                                                           |
+| 2026-02-11T19:05 | Sirius      | Update      | licoproj.code-workspace (Context: VSCode)                                                                           |
+| 2026-02-11T19:10 | Sirius      | Update      | .vscode/cspell.json (Context: Lint-Format)                                                                          |
