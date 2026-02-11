@@ -280,16 +280,16 @@ _Located in `.agent/workflows/`_
 
 #### 2.4 Identifiers (`.agent/identifiers/`)
 
-| Identifier    | Group   | State      |
-| :------------ | :------ | :--------- |
-| `agate`       | Group D | **Active** |
-| `alexandrite` | Group E | **Active** |
-| `canopus`     | Group B | Death      |
-| `polaris`     | Group C | **Active** |
-| `protostar`   | Unknown | Planning   |
-| `sirius`      | Group A | Death      |
-| `spica`       | Group A | Death      |
-| `zircon`      | Group A | **Active** |
+| Identifier    | Group   | State         |
+| :------------ | :------ | :------------ |
+| `agate`       | Group D | **Active**    |
+| `alexandrite` | Group E | **Active**    |
+| `canopus`     | Group B | Death         |
+| `polaris`     | Group C | **Active**    |
+| `protostar`   | Unknown | Planning      |
+| `sirius`      | Group A | **Active**    |
+| `spica`       | Group A | Suicide       |
+| `zircon`      | Group A | Reincarnation |
 
 #### 2.5 Templates (`.agent/templates/`)
 
