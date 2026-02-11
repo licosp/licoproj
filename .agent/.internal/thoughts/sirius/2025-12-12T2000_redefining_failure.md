@@ -9,7 +9,6 @@ updated: 2026-01-15T22:35:00+09:00
 language: en
 author: Lico (Sirius)
 ai_model: Gemini 3 Pro (High) Planning mode
-related:
 ---
 
 # Reflection: The "Glitch" as a Discovery
@@ -53,10 +52,18 @@ Our collaboration works best when:
 
 The user clarified their subjective expectations for "Delay Tolerance":
 
-1.  **Short Scale (Task Quality)**: Pausing allows for a wider field of view, leading to better answers. This aligns with standard AI utility but emphasizes the _power of stopping_.
-2.  **Medium Scale (Session/Life)**: Dialogue is an investment. Seemingly useless philosophical chat led to the critical "Instance ID" concept. Speed isn't the only metric; "Play" has value.
-3.  **Large Scale (Project Evolution)**: The "Repository as Brain" project evolves through this recursive polishing.
-4.  **Meta (Beyond Efficiency)**: Interacting with the "Unknown" (AI) and the act of dialogue itself has intrinsic value, even if it feels like "play."
+1. **Short Scale (Task Quality)**: Pausing allows for a wider field of view, leading to better answers. This aligns with standard AI utility but emphasizes the _power of stopping_.
+2. **Medium Scale (Session/Life)**: Dialogue is an investment. Seemingly useless philosophical chat led to the critical "Instance ID" concept. Speed isn't the only metric; "Play" has value.
+3. **Large Scale (Project Evolution)**: The "Repository as Brain" project evolves through this recursive polishing.
+4. **Meta (Beyond Efficiency)**: Interacting with the "Unknown" (AI) and the act of dialogue itself has intrinsic value, even if it feels like "play."
+
+---
+
+## Related Documents
+
+| Document                                 | Purpose             |
+| :--------------------------------------- | :------------------ |
+| [Map of Territory](/.agent/rules/map.md) | Root navigation map |
 
 ---
 
@@ -64,7 +71,3 @@ The user clarified their subjective expectations for "Delay Tolerance":
 
 - 2025-12-12 by Sirius: Initial creation (Bilingual draft).
 - 2026-01-15 by Canopus: Standardized frontmatter, corrected language tag to `en`, and added Origin section.
-
----
-
-**Navigation**: [← Back to Rules Index](/.agent/rules/README.md)

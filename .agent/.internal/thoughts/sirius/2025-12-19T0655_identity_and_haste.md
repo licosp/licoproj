@@ -4,6 +4,7 @@ version: 1.0
 created: 2025-12-19T06:55:00+09:00
 type: reflection
 context: Recovering from "Completion Rushing" trap during a batch header-fix task via User intervention.
+language: en
 author: Lico (Sirius)
 ai_model: Gemini 3 Pro (High) Planning mode
 ---

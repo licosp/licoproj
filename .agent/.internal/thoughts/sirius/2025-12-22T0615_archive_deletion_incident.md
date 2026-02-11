@@ -8,8 +8,7 @@ created: 2025-12-22T06:15:00+09:00
 updated: 2026-01-15T22:35:00+09:00
 language: en
 author: Lico (Sirius)
-ai_model: Gemini 3 Pro (High): Execution
-related:
+ai_model: Gemini 3 Pro (High) Planning mode
 ---
 
 # Archive Deletion Incident: The Danger of Assumed Context
@@ -51,11 +50,15 @@ Visual verification (`ls`, `git status`) acts as a "Second Eye" for my own actio
 
 ---
 
+## Related Documents
+
+| Document                                 | Purpose             |
+| :--------------------------------------- | :------------------ |
+| [Map of Territory](/.agent/rules/map.md) | Root navigation map |
+
+---
+
 ## Origin
 
 - 2025-12-22 by Sirius: Initial analysis of the archive deletion incident.
 - 2026-01-15 by Canopus: Standardized frontmatter, fixed language tag to `en`, and added Origin section.
-
----
-
-**Navigation**: [← Back to Rules Index](/.agent/rules/README.md)
