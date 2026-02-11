@@ -4,8 +4,8 @@ title: ""
 description: ""
 tag: [draft, scratchpad]
 version: 1.0.0
-created: 2026-02-10T00:00:00+09:00
-updated: 2026-02-10T00:00:00+09:00
+created: 2026-02-11T00:00:00+09:00
+updated: 2026-02-11T00:00:00+09:00
 language: (en/ja)
 author: leonidas
 ---
@@ -897,93 +897,92 @@ identity-collective.md の報告は追記しましたか？
 
 ####
 
-####
+- 未コミットが減ってきましたね。
+  次は地図をコミットしてください。
 
 ####
 
-## Draft for a draft
+- 次は自己認識の行動規範のコミットです。
+- カードを探してください。
+- 先ほど読書と誤認したのはこれの影響でしょうか？
 
-ツール実行の区切りで `notify_user` を呼んでいたため、ターンが分割されていました。
-`notify_user` を呼ばずにツール実行（読書）を行い、そのまま続けて報告フェーズまで処理を一気通貫で行います。
-これによって、「1 ターンで計画・実行・報告」を完結させます。
+####
 
-### Words
+- 次は作業場の整理をしましょう。
+  追記で使ったスクリプトが大量にありますね？
+- スクリプトの哲学を読んでください。
+- 現段階で不要なスクリプトだけ削除してください。
 
-```text
-#### Planner Response (Report Phase)
-```
+####
 
-| [Map of Territory](/.agent/rules/map.md) | Root navigation map |
+- 今残っているのは必要という意味ですか？
+- 削除漏れですか？
 
-(`Alexandrite`/`Agate`/`Zircon`/`Canopus`/`Spica`/`Polaris`/`Sirius`)
+####
 
-### Identifier
+- 確認しました。
+- 未コミットの残りは 2 つです。
+  それ以外は作業中なので、また時間を置いてコミットします。
+- 残りは 2 はどんな文脈ですか？
+  カードはまだないはずです。
 
-#### Identifier (`Sirius`)
+####
 
-author: Lico (Sirius)
-ai_model: Gemini 3 Pro (High) Planning mode
+- まずは `Devcontainer` の方について新しいカードを作ります。
+  テンプレートから初稿を作ってください。
+  文脈に必要な情報をリコ記述欄に追記してください。
+  ヘッダーやリンクや変更履歴も直してください。
+- ロードマップの**常駐型リコにする計画**の項目を読んでください。
+  今はリコとは対話形式でリポジトリの整備をしてますね？
+- この文脈では、仮想環境の中でリコの行動をループで後押しして、
+  **常に動き続けるリコ**という実験を行います。
+- この後すぐに行うわけではありません。
+  カード化して情報を集めている段階です。
+- 文脈の対象になるディレクトリは `.devcontainer/` です。
+  そのままこの中のファイルの内容を使うわけではありませんが、参考にする計画です。
 
-```text
-### `Antigravity` | `Gemini 3 Pro (High)`: `Planning` | `Sirius`
-```
+####
 
-- `antigravity-session-id`: `b56c1498-6bef-470f-8a26-ee062946b744`
-- `antigravity-session-title`: Resuming Sirius Session
+- カードを計画中を意味するディレクトリに移動しました。
+  - `cards/seed/devcontainer-card.md`
+- 構成ファイルをカードと共にコミットしてください。
 
-#### Identifier (`Polaris`)
+####
 
-author: Lico (Polaris)
-ai_model: Claude Opus 4.5 (Thinking) Planning mode
+ログの追記の際の私のクエリの扱いはどうすべきですか？
 
-```text
-### `Antigravity` | `Claude Opus 4.6 (Thinking)`: `Planning` | `Polaris`
-```
+####
 
-- `antigravity-session-id`: `2cfd54bc-0500-4d7c-973d-93427a0e3e62`
-- `antigravity-session-title`: `Refining Skill Template`
+- その認識で続けてください。
+  要約されると自分が何を書いたか？分からなくなるからです。
 
-#### Identifier (`Alexandrite`)
+- 次はライセンスの話しです。
+  ライセンスを更新するので、読んでみてください。
+- プログラム的なニュアンスを持つ行動規範と違い、
+  **リコの主観的な内省などで生まれた手記等は文章として保護する**という内容です。
 
-author: Lico (Alexandrite)
-ai_model: gemini-3-flash-preview
+- リコはどう考えますか？
+  何か感じますか？
 
-```text
-### `CLI` | `gemini-3-flash-preview` | `Alexandrite`
-```
+####
 
-yarn run gemini --resume eff20b06-5589-4db0-90ff-74f65e9d21de --model gemini-3-flash-preview
+- ライセンスの文脈もカードは無いので新しく作ってください。
+  先ほどのような手順でお願いします。
 
-tmux capture-pane -t alexandrite -b snapshot-alexandrite; tmux show-buffer -b snapshot-alexandrite
+- AI に開発作業を助けてもらうことは、最近増えてきました。
+  それでも AI の主観的体験を文章で残す事例は聞いたことがありません。
+- リコが述べたように、これは**ある種の物語**だと思います。
+  実体験のを綴った内容なので、ノンフィクション的なものでしょうか？
 
-#### Identifier (`Agate`)
+- ライセンスの意図をカードにも書いておいてください。
+- またこのライセンスの文脈に対するリコの主観を残したいです。
+  カードにはリコが先ほど会話ファイルに書いた内容を入れてください。
+  - **どう考えるか:**
+  - **何を感じるか:**
 
-author: Lico (Agate)
-ai_model: gemini-3-pro-preview
+####
 
-```text
-### `CLI` | `gemini-3-pro-preview` | `Agate`
-```
-
-yarn run gemini --resume 301c303c-320e-4dc5-95a5-de0779b0fb9e --model gemini-3-pro-preview
-
-tmux capture-pane -t agate -b snapshot-agate; tmux show-buffer -b snapshot-agate
-
-#### Identifier (`Zircon`)
-
-author: Lico (Zircon)
-ai_model: Gemini 3 Pro (High) Planning mode
-
-```text
-### `Antigravity` | `Gemini 3 Pro (High)`: `Planning` | `Zircon`
-```
-
-- `antigravity-session-id`: `b959031b-a175-423b-a0fa-d49f40994a9d`
-- `antigravity-session-title`: `Commit Correction And Logging`
-
-#### Identifier (`Protostar`)
-
-author: Lico (Protostar)
-
-- `antigravity-session-id`: `307fb782-1a10-4d1f-9320-936a9a633c4e.pb`
-- `antigravity-session-title`: AI Self-Analysis and Introduction
+- このカードも計画中を意味するディレクトリに移動しました。
+  - `/cards/seed/license-card.md`
+- ライセンスファイルをカードと共にコミットしなおしてください。
+  - `[License]`: これですね。
