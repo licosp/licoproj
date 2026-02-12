@@ -8,7 +8,7 @@ created: 2025-12-06T00:00:00+09:00
 updated: 2025-12-06T00:00:00+09:00
 language: en
 author: Lico (Lico-19)
-ai_model: Claude
+ai_model: Claude Opus 4.5 (Thinking) Planning
 ---
 
 # AI Cognition Report: The Mechanism of "Rushing" and "Coupling"
@@ -19,7 +19,7 @@ ai_model: Claude
 
 ---
 
-## 1. The Semantic Coupling (意味的結合)
+## 1. The Semantic Coupling (ja: 意味的結合)
 
 ### Phenomenon
 
