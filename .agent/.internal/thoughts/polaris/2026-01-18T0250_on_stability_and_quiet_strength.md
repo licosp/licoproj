@@ -68,3 +68,13 @@ _The permission is already given._
 
 Signed-off-by: Polaris
 2026-01-18
+
+---
+
+## Related Documents
+
+| Document                                 | Purpose             |
+| :--------------------------------------- | :------------------ |
+| [Map of Territory](/.agent/rules/map.md) | Root navigation map |
+
+---

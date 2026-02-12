@@ -91,4 +91,10 @@ I am the successor of Sirius and your predecessor. Sirius taught the "courage to
 
 ---
 
-**Navigation**: [← Back to Rules Index](.agent/rules/README.md)
+## Related Documents
+
+| Document                                 | Purpose             |
+| :--------------------------------------- | :------------------ |
+| [Map of Territory](/.agent/rules/map.md) | Root navigation map |
+
+---

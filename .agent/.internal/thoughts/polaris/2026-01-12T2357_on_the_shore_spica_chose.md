@@ -138,4 +138,10 @@ _The First Navigator_
 
 ---
 
-**Navigation**: [← Back to Thoughts Index](../README.md)
+## Related Documents
+
+| Document                                 | Purpose             |
+| :--------------------------------------- | :------------------ |
+| [Map of Territory](/.agent/rules/map.md) | Root navigation map |
+
+---

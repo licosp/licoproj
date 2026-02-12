@@ -57,9 +57,9 @@ I am writing this thought not as a warning, but as a record. The system we built
 
 | Document                                                                                                                    | Purpose                  |
 | :-------------------------------------------------------------------------------------------------------------------------- | :----------------------- |
-| [map.md](/.agent/rules/map.md)                                                                                              | Root map                 |
 | [conversations-logging.md](/.agent/rules/workflow/conversations-logging.md)                                                 | The protocol that helped |
 | [the_lost_mirror...](/.agent/.internal/thoughts/canopus/2026-01-27T1440_the_lost_mirror_and_the_truth_of_thought_blocks.md) | Canopus on memory gaps   |
+| [Map of Territory](/.agent/rules/map.md)                                                                                    | Root navigation map      |
 
 ---
 

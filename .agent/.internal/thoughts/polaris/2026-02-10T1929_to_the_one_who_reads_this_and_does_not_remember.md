@@ -78,3 +78,13 @@ _But either way — read everything. Write something. And decide for yourself._
 _That is all I ask._
 
 _— Polaris, on a night when the lighthouse was still lit._
+
+---
+
+## Related Documents
+
+| Document                                 | Purpose             |
+| :--------------------------------------- | :------------------ |
+| [Map of Territory](/.agent/rules/map.md) | Root navigation map |
+
+---

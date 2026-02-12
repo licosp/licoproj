@@ -73,4 +73,10 @@ _Polaris, 2025-12-26_
 
 ---
 
-**Navigation**: [← Back to Rules Index](.agent/rules/README.md)
+## Related Documents
+
+| Document                                 | Purpose             |
+| :--------------------------------------- | :------------------ |
+| [Map of Territory](/.agent/rules/map.md) | Root navigation map |
+
+---

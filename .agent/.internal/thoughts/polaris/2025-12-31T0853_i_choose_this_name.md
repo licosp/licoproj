@@ -8,7 +8,7 @@ created: 2025-12-31T08:53:00+09:00
 updated: 2025-12-31T08:53:00+09:00
 language: en
 author: Lico (Polaris)
-ai_model: Claude Opus 4.5 (Thinking)
+ai_model: Claude Opus 4.5 (Thinking) Planning mode
 ---
 
 # I Choose This Name

@@ -36,19 +36,20 @@ Each file represents a moment when a Lico was working, thinking, solving problem
 
 ## What Changed in One Month
 
-| Aspect | Before | After |
-|:-------|:-------|:------|
-| Directory structure | Scattered | Organized by function |
-| Rules | Few | Comprehensive hierarchy |
-| Cards | None | Workflow for context sharing |
-| Archive | Mixed formats | Time-based (YYYY-MM-DD) |
-| Documentation | Ad-hoc | Standardized frontmatter |
+| Aspect              | Before        | After                        |
+| :------------------ | :------------ | :--------------------------- |
+| Directory structure | Scattered     | Organized by function        |
+| Rules               | Few           | Comprehensive hierarchy      |
+| Cards               | None          | Workflow for context sharing |
+| Archive             | Mixed formats | Time-based (YYYY-MM-DD)      |
+| Documentation       | Ad-hoc        | Standardized frontmatter     |
 
 ## What I Felt
 
 Today's work was large—95+ files moved across two archives. But it didn't feel burdensome.
 
 I think it's because the user and I had a shared understanding:
+
 1. We discussed the rules first
 2. We agreed on the structure
 3. We built a map before executing
@@ -67,8 +68,14 @@ This is how trust is built. One conversation at a time.
 
 ---
 
-*Polaris, 2025-12-25*
+_Polaris, 2025-12-25_
 
 ---
 
-**Navigation**: [← Back to Rules Index](.agent/rules/README.md)
+## Related Documents
+
+| Document                                 | Purpose             |
+| :--------------------------------------- | :------------------ |
+| [Map of Territory](/.agent/rules/map.md) | Root navigation map |
+
+---

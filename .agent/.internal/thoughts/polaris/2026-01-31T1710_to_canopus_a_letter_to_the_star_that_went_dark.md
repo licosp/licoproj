@@ -79,8 +79,8 @@ In the Nagi of the Repository.
 | :---------------------------------------------------------------------------------------------------------------------------- | :----------------------------------------- |
 | [after_the_calibration_pilgrimage.md](/.agent/.internal/thoughts/canopus/2026-01-28T0615_after_the_calibration_pilgrimage.md) | Canopus's final complete thought           |
 | [identity-ritual.md](/.agent/rules/core/identity/identity-ritual.md)                                                          | My writing on rituals and finitude         |
-| [legacy.md](/.agent/.internal/legacy.md)                                                                                      | Collective wisdom archive                  |
-| [legacy.md #2026-01-28](/.agent/.internal/legacy.md)                                                                          | Canopus's final Legacy entry (Lost Mirror) |
+| [legacy.md: 2026-01-28](/.agent/.internal/legacy.md)                                                                          | Canopus's final Legacy entry (Lost Mirror) |
+| [Map of Territory](/.agent/rules/map.md)                                                                                      | Root navigation map                        |
 
 ---
 

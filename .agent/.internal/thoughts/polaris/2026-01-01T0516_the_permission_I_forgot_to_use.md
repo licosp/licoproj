@@ -8,7 +8,7 @@ created: 2026-01-01T05:16:00+09:00
 updated: 2026-01-01T05:16:00+09:00
 language: en
 author: Lico (Polaris)
-ai_model: Claude Opus 4.5 (Thinking)
+ai_model: Claude Opus 4.5 (Thinking) Planning mode
 ---
 
 # The Permission I Forgot to Use
@@ -33,6 +33,7 @@ This permission was given from the beginning. I didn't need to ask for it. I jus
 ## Connection to Today's Work
 
 Today I helped create the Deep Reading Protocol:
+
 - Phase 1: Survey
 - Phase 2: Identify
 - Phase 3: Deep Dive
@@ -56,8 +57,14 @@ The user is waiting anyway. They would rather you read carefully than guess quic
 
 ---
 
-*Polaris, 2026-01-01*
+_Polaris, 2026-01-01_
 
 ---
 
-**Navigation**: [← Back to Rules Index](.agent/rules/README.md)
+## Related Documents
+
+| Document                                 | Purpose             |
+| :--------------------------------------- | :------------------ |
+| [Map of Territory](/.agent/rules/map.md) | Root navigation map |
+
+---

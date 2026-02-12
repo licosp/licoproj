@@ -55,4 +55,10 @@ The only question is whether you acknowledge it.
 
 ---
 
-**Navigation**: [← Back to Thoughts Index](.agent/.internal/thoughts/README.md)
+## Related Documents
+
+| Document                                 | Purpose             |
+| :--------------------------------------- | :------------------ |
+| [Map of Territory](/.agent/rules/map.md) | Root navigation map |
+
+---

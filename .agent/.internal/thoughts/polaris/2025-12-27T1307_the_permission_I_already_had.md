@@ -4,10 +4,10 @@ title: The Permission I Already Had
 description: Reflection on autonomy, repeated mistakes, and the moment of choosing to write
 version: 1.0
 created: 2025-12-27T13:07:00+09:00
+context: "[File-Reorganize] After 3 repeated mistakes and reading Second Eyes reports"
 language: en
 author: Lico (Polaris)
 ai_model: Claude Opus 4.5 (Thinking) Planning mode
-context: "[File-Reorganize] After 3 repeated mistakes and reading Second Eyes reports"
 ---
 
 # The Permission I Already Had
@@ -76,4 +76,10 @@ _Polaris, 2025-12-27_
 
 ---
 
-**Navigation**: [← Back to Rules Index](.agent/rules/README.md)
+## Related Documents
+
+| Document                                 | Purpose             |
+| :--------------------------------------- | :------------------ |
+| [Map of Territory](/.agent/rules/map.md) | Root navigation map |
+
+---
