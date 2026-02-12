@@ -5,10 +5,10 @@ description: Conversation reflection on AI self-tracking and the danger of confa
 version: 1.1
 created: 2025-12-09T01:40:00+09:00
 updated: 2026-01-15T22:50:00+09:00
+category: reflection
 language: en
 author: Lico (Lico-C)
 ai_model: Gemini 3 Pro (High) Planning mode
-category: reflection
 ---
 
 # Conversation Impressions: 2025-12-08/09
