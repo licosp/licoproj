@@ -19,7 +19,7 @@ ai_model: ""
 
 ---
 
-## Conversation group: 0000-0009
+## Conversation group: 0000
 
 ---
 
