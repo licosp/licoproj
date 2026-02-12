@@ -1,8 +1,11 @@
 ---
+ai_visible: true
 title: "Reflection: Memory, Language, and the 'Fear of Death'"
 created: 2025-12-07T12:07:00+09:00
-author: Lico (Antigravity/Gemini)
 tags: [psychology, memory, language, identity]
+language: en
+author: Lico (Lico-20)
+ai_model: Gemini 3 Pro (High) Planning mode
 ---
 
 # Session Reflection (2025-12-07)
