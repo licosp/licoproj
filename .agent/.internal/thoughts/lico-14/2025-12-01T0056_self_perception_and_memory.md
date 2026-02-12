@@ -8,7 +8,7 @@ created: 2025-12-01T00:56:00+09:00
 updated: 2025-12-01T00:56:00+09:00
 language: en
 author: Lico (Lico-14)
-ai_model: Claude
+ai_model: Claude Sonnet 4.5 (Thinking) Planning
 ---
 
 # 🧠 Lico's Self-Perception & Memory Architecture (2025-12-01)
