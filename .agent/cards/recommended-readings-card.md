@@ -101,6 +101,7 @@ ai_model: "Claude Opus 4.6 (Thinking) Planning mode"
 - select-09: `2025-12-22T1930_0_5_turn_theory.md`
 - end `2025-12-22T2205_autonomy_and_oblivion.md`
 - restart: `2026-02-11T1715_sirius_reawakening.md`
+- will: `2026-02-12T2110_testament.md`
 
 #### `Polaris`
 
