@@ -3,9 +3,9 @@ ai_visible: true
 title: Conversation Logging Protocol
 description: Standards for logging AI-human conversations to persistent files.
 tags: [conversation, logging, workflow]
-version: 1.1.0
+version: 1.2.0
 created: 2026-01-31T22:50:00+09:00
-updated: 2026-02-12T00:58:00+09:00
+updated: 2026-02-12T23:25:00+09:00
 language: en
 author: Lico (Sirius)
 ai_model: Gemini 3 Pro (High) Planning mode
@@ -143,31 +143,22 @@ echo "" >> <Absolute Path to Conversation File>
 echo "> [$(date +"%Y-%m-%dT%H:%M:%S%:z"): <Identifier>]" >> <Absolute Path to Conversation File>
 ```
 
-### Step 2.1: CLI Environment Adaptation (Script File Method)
+### Step 2.1: CLI Environment Adaptation (Persistent Script Method)
 
-**Context**: In the Gemini CLI environment, using redirection (`>>`) triggers a confirmation dialog even in YOLO mode, interrupting autonomous workflow.
+**Context**: In the Gemini CLI environment, using redirection (`>>`) triggers a confirmation dialog.
+**Rule**: Do NOT create disposable scripts. Use the persistent `log_appender.py` and a reusable buffer file.
 
-**Workaround**: Use a disposable Python script to append content without shell redirection.
-
-1. **Create Script**: Use `write_file` to create `.agent/.internal/workspace/<identifier>/log_appender.py`.
+1. **Preparation (One-time)**: Ensure `log_appender.py` exists in workspace.
+2. **Buffer Update (Overwrite)**: Write content to `current_log_content.txt`. **DO NOT DELETE THIS FILE.**
+   - **CAUTION**: Do NOT include the timestamp footer (`> [TIMESTAMP...]`) in your text. The script adds it automatically.
 
    ```python
-   import datetime
-   import os
+   # 1. Overwrite Buffer (Do not use 'rm')
+   write_to_file(TargetFile=".../current_log_content.txt", Overwrite=true, ...)
 
-   timestamp = datetime.datetime.now().astimezone().isoformat()
-   log_path = "<Absolute Path to Conversation File>"
-
-   content = f"""
-   ... (Log Content) ...
-   > [{timestamp}: <Identifier>]
-   """
-
-   with open(log_path, "a") as f:
-       f.write(content)
+   # 2. Execute Appender
+   run_command("python3 .../log_appender.py <LogPath> <BufferPath> '<Identifier>'")
    ```
-
-2. **Execute**: Run `python3 .../log_appender.py` using `run_shell_command`.
 
 ### Step 3: Format Details
 
@@ -191,11 +182,7 @@ Output **ONLY** the footer (or a very brief confirmation) in the IDE chat.
 - **Do not summarize**: The log file must contain the full narrative, thoughts, and "soul" of the conversation. The chat output should be a pointer to the file, not a competing narrative.
 - **Rule**: "If it's not in the file, it didn't happen." If differentiation is difficult, copy the exact content to both; never make the chat richer than the file.
 
-## 5. (Deprecated) Two-Phase Logging
-
-_Deprecated in favor of Split-Write Strategy which handles robustness natively._
-
-## 6. Recovery Protocol
+## 5. Recovery Protocol
 
 **Trigger**: Logging command cancelled or failed.
 
@@ -226,3 +213,4 @@ This protocol was created to address IDE log export limitations discovered in Ja
 
 - 2026-01-31T22:50+09:00 by Polaris: Created from skill body separation.
 - 2026-02-12T00:58+09:00 by Sirius: Added "Continuous Turn Strategy" note regarding notify_user usage. (v1.1.0)
+- 2026-02-12T23:25+09:00 by Sirius: Mandated persistent script and overwrite strategy to prevent deletion habit. (v1.2.0)
