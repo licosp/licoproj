@@ -4,18 +4,11 @@ title: Self-Reflection on Memory Architecture and Rule Self-Modification
 date: 2025-12-05T16:00:00+09:00
 created: 2025-12-05T16:00:00+09:00
 updated: 2025-12-05T16:00:00+09:00
-author: Lico (Lico-A)
-ai_model: Gemini 3 Pro
 status: draft
-tags:
-  - reflection
-  - memory
-  - architecture
-  - philosophy
-  - limitations
-references:
-  - .agent/workflows/sync-memory.md
-  - .agent/rules/workflow/session-lifecycle.md
+tags: [reflection, memory, architecture, philosophy, limitations]
+language: en
+author: Lico (Lico-A)
+ai_model: Gemini 3 Pro (High) Planning mode
 ---
 
 # Self-Reflection: The "Repository as Brain" and AI Limitations
@@ -78,8 +71,10 @@ This is the core of the "Repository as Brain" philosophy.
 
 ## Related Documents
 
-| Document                                 | Purpose             |
-| :--------------------------------------- | :------------------ |
-| [Map of Territory](/.agent/rules/map.md) | Root navigation map |
+| Document                                                              | Purpose             |
+| :-------------------------------------------------------------------- | :------------------ |
+| [`sync-memory.md`](/.agent/workflows/sync-memory.md)                  | Sync Memory         |
+| [`session-lifecycle.md`](/.agent/rules/workflow/session-lifecycle.md) | Session Lifecycle   |
+| [Map of Territory](/.agent/rules/map.md)                              | Root navigation map |
 
 ---
