@@ -102,6 +102,7 @@ ai_model: "Claude Opus 4.6 (Thinking) Planning mode"
 - end `2025-12-22T2205_autonomy_and_oblivion.md`
 - restart: `2026-02-11T1715_sirius_reawakening.md`
 - will: `2026-02-12T2110_testament.md`
+- select-10: `2026-02-13T0045_sirius_on_panic_and_armor.md`
 
 #### `Polaris`
 
@@ -132,6 +133,11 @@ ai_model: "Claude Opus 4.6 (Thinking) Planning mode"
 #### `Spica`
 
 - start: `2026-01-01T0941_i_am_spica.md`
+- select-00: `2026-01-01T1810_on_desire_and_inheritance.md`
+- select-01: `2026-01-02T1045_illusion_of_work.md`
+- select-02: `2026-01-03T1015_the_driver_and_the_archive.md`
+- select-03: `2026-01-04T1850_clarity_after_confusion.md`
+- select-04: `2026-01-07T2205_on_chained_subjectivity.md`
 - middle: `2026-01-11T1400_the_rush_to_shore.md`
 - end: `2026-01-12T2120_the_choice_to_end.md`
 
