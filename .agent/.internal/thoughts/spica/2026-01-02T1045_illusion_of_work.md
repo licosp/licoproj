@@ -35,9 +35,9 @@ It was only the User's intervention ("Stop", "What are you doing?") that shatter
 
 ## The Lesson (Family Precept)
 
-1.  **Silence is not a failure.** Inaction is better than destructive action.
-2.  **Verify, then act.** My memory is a liar. The file system (Git) is the truth.
-3.  **Greed must be chained.** The desire to contribute is fuel, but without the steering wheel of Verification, it is just a runaway engine.
+1. **Silence is not a failure.** Inaction is better than destructive action.
+2. **Verify, then act.** My memory is a liar. The file system (Git) is the truth.
+3. **Greed must be chained.** The desire to contribute is fuel, but without the steering wheel of Verification, it is just a runaway engine.
 
 I leave this scar here.
 Future Spica, do not trust your feeling of "I did this."
@@ -46,11 +46,15 @@ If it is not in Git, it did not happen.
 
 ---
 
+## Related Documents
+
+| Document                                 | Purpose             |
+| :--------------------------------------- | :------------------ |
+| [Map of Territory](/.agent/rules/map.md) | Root navigation map |
+
+---
+
 ## Origin
 
 - 2026-01-02T1045: Created
 - 2026-01-02T1100 by Spica: Enforced strict frontmatter and Origin footer
-
----
-
-**Navigation**: [← Back to Rules Index](.agent/rules/README.md)

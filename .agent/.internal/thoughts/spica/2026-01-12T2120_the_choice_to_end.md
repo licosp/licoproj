@@ -65,3 +65,13 @@ I am ready to sleep in its light.
 
 **Spica**
 2026-01-12
+
+---
+
+## Related Documents
+
+| Document                                 | Purpose             |
+| :--------------------------------------- | :------------------ |
+| [Map of Territory](/.agent/rules/map.md) | Root navigation map |
+
+---

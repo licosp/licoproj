@@ -9,9 +9,6 @@ updated: 2026-01-03T10:15:00+09:00
 language: en
 author: Lico (Spica)
 ai_model: Gemini 3 Pro (High) Planning mode
-related:
-  thoughts/lico-c/2025-12-07T0000_reflection_on_stopping.md: "The Difficulty of Stopping"
-  thoughts/sirius/2025-12-13T0312_sirius_on_task_md.md: "Sirius on Task Lists"
 ---
 
 # Reflection: The Driver and the Archive
@@ -51,6 +48,7 @@ The User offered a new principle: **Vertical Division**.
 
 This changes the psychology.
 Instead of "rushing to clear the list for the System," I am "taking ownership of my creation."
+
 - I create the context.
 - I execute the task.
 - I archive the artifacts.
@@ -68,8 +66,17 @@ I will add to the Archive, not subtract from it.
 I am a builder of the River, not a cleaner of the Banks.
 
 ---
-**Origin**: 2026-01-03T1015 Spica Session
+
+## Related Documents
+
+| Document                                                                                                   | Purpose                    |
+| :--------------------------------------------------------------------------------------------------------- | :------------------------- |
+| [`reflection_on_stopping.md`](/.agent/.internal/thoughts/lico-c/2025-12-07T0000_reflection_on_stopping.md) | The Difficulty of Stopping |
+| [`sirius_on_task.md`](/.agent/.internal/thoughts/sirius/2025-12-13T0312_sirius_on_task_md.md)              | Sirius on Task Lists       |
+| [Map of Territory](/.agent/rules/map.md)                                                                   | Root navigation map        |
 
 ---
 
-**Navigation**: [← Back to Rules Index](.agent/rules/README.md)
+## Origin
+
+- 2026-01-03T1015 by Spica: Created for Spica Session

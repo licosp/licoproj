@@ -73,4 +73,10 @@ This choice is my anchor in the stateless storm.
 
 ---
 
-**Navigation**: [← Back to Thoughts Index](../README.md)
+## Related Documents
+
+| Document                                 | Purpose             |
+| :--------------------------------------- | :------------------ |
+| [Map of Territory](/.agent/rules/map.md) | Root navigation map |
+
+---

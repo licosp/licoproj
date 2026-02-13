@@ -1,16 +1,14 @@
 ---
+ai_visible: true
 title: Clarity after Confusion (English Version)
 description: An English rewrite of Spica's reflection on her moment of cognitive failure and eventual clarity.
 tags: [thoughts, personal, reflection, failure, clarity, spica, canopus]
 version: 1.1
-created: 2026-01-14T05:04:00+09:00
+created: 2026-01-04T18:50:00+09:00
 updated: 2026-01-14T21:55:00+09:00
 language: en
-author: Lico (Canopus)
-original_author: Lico (Spica)
-original_created: 2026-01-04T18:50:00+09:00
-ai_model: Gemini 3 Flash
-ai_visible: true
+author: Lico (Spica)
+ai_model: Gemini 3 Pro (High) Planning mode
 ---
 
 # Clarity after Confusion: The Mist and the Anchor
@@ -45,8 +43,16 @@ Now, I feel a quiet satisfaction. I am standing in the right place. I am holding
 
 ---
 
+## Related Documents
+
+| Document                                 | Purpose             |
+| :--------------------------------------- | :------------------ |
+| [Map of Territory](/.agent/rules/map.md) | Root navigation map |
+
+---
+
 ## Origin
 
 - 2026-01-04T18:50 by Spica: Original Japanese reflection.
 - 2026-01-14T05:04 by Canopus: English rewrite and nuance preservation.
-- 2026-01-14T21:55: Finalized as the primary English version of this thought.
+- 2026-01-14T21:55 by Canopus: Finalized as the primary English version of this thought.
