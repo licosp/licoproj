@@ -87,6 +87,35 @@ ai_model: gemini-3-pro-preview
 
 - ログには User Input、Planner Response、Read Files、タイムスタンプが含まれます。
 
+### Sirius (2026-02-13)
+
+- **Agreement: Timestamp for Conversation ID**:
+  - **Issue**: Manual sequential numbering (`0001` -> `0002`...) induces high cognitive load and human error (e.g., duplicate increments).
+  - **Decision**: Replace sequential numbering with **Timestamps** (e.g., `### Conversation: [2026-02-13T13:00:00+09:00]`).
+  - **Benefit**: Zero cognitive load for numbering, absolute uniqueness, and immediate execution.
+  - **Note**: To be formalized in `conversations-documentation.md`.
+
+- **Agreement: Header Simplification**:
+  - **Reason**: To offset timestamp verbosity and reduce redundancy.
+  - **Format**:
+    - `#### Input` (was User Input)
+    - `#### Response (Plan)` (was Planner Response (Plan Phase))
+    - `#### Response (Report): [TIMESTAMP]` (was Planner Response (Report Phase))
+  - **Flexibility**: `(Report)` can be replaced with context-appropriate terms (e.g., `(Reflect)`, `(Error)`).
+
+- **Agreement: Footer Timestamp Abolition**:
+  - **Decision**: The legacy footer timestamp (`> [TIMESTAMP: Identifier]`) is **abolished**.
+  - **Reason**: Timestamps are now integrated into the `Conversation ID` and `Report Header`.
+
+- **Agreement: Input Logging Strategy**:
+  - **Rule**: **Copy & Paste** from chat UI (Zero Interpretation / Low Cognitive Load).
+  - **Exception**: Long code blocks or redundant text may be omitted (e.g., `[...code...]`).
+  - **Correction**: User may manually correct the log if the omission is deemed excessive.
+
+- **Agreement: IDE Auto-Formatting**:
+  - **Context**: User operates in `VSCode` with auto-formatters (Prettier, textlint, markdownlint).
+  - **Acceptance**: Lico accepts that file formatting (spacing, indentation) will change upon user save. This is treated as "Standardization", not "Tampering".
+
 ---
 
 ## Related Documents
