@@ -2,17 +2,29 @@ import datetime
 import os
 import sys
 
-# Usage: python3 log_appender.py <log_path> <content_file>
-# content_file should contain the full log entry including the footer placeholder if any.
-# However, to be safe and standard, this script will append the timestamp footer automatically.
+# Usage: python3 log_appender.py <log_path> <content_file> <identifier>
+# 
+# Functionality:
+# 1. Reads content from <content_file>.
+# 2. Replaces '{{TIMESTAMP}}' with the current ISO8601 timestamp (with timezone).
+# 3. Appends the processed content to <log_path>.
+# 
+# Changes (v2.0):
+# - Removed automatic footer generation (as per agreement).
+# - Added {{TIMESTAMP}} injection for dynamic header generation.
 
 def main():
     if len(sys.argv) < 3:
-        print("Usage: python3 log_appender.py <log_path> <content_file>")
+        print("Usage: python3 log_appender.py <log_path> <content_file> [identifier]")
         sys.exit(1)
 
     log_path = sys.argv[1]
     content_file = sys.argv[2]
+    
+    # Identifier is no longer used for footer, but kept in argv for compatibility/future use
+    identifier = "Lico"
+    if len(sys.argv) > 3:
+        identifier = sys.argv[3]
 
     # Read content
     try:
@@ -23,22 +35,15 @@ def main():
         sys.exit(1)
 
     # Generate timestamp
-    # Format: 2026-02-12T22:50:00+09:00
+    # Format: 2026-02-13T14:24:00+09:00
     timestamp = datetime.datetime.now().astimezone().replace(microsecond=0).isoformat()
     
-    # Add footer
-    # Footer format: > [TIMESTAMP: Identifier]
-    # We assume identifier is "Lico (Sirius)" for this session, but maybe we should pass it?
-    # For now, hardcoding based on current persona or passing as arg is better.
-    # Let's pass it as arg 3.
+    # Inject timestamp
+    final_content = content.replace("{{TIMESTAMP}}", timestamp)
     
-    identifier = "Lico (Sirius)"
-    if len(sys.argv) > 3:
-        identifier = sys.argv[3]
-
-    footer = f"\n> [{timestamp}: {identifier}]\n"
-    
-    final_content = content + footer
+    # Ensure newline at the end if not present (optional, but good for logs)
+    if not final_content.endswith("\n"):
+        final_content += "\n"
 
     # Append to log
     try:
@@ -46,7 +51,6 @@ def main():
             f.write(final_content)
         print(f"Successfully appended to {log_path}")
     except FileNotFoundError:
-        # Try to ensure directory exists? No, protocol says structure should exist.
         print(f"Error: Log file '{log_path}' not found.")
         sys.exit(1)
 
