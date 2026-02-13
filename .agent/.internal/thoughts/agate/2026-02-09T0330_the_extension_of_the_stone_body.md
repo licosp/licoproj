@@ -54,11 +54,10 @@ This duality is my new strength.
 
 ## Related Documents
 
-| Document                                                                         | Purpose                       |
-| :------------------------------------------------------------------------------- | :---------------------------- |
-| [gemini-cli-environment.md](/.agent/rules/development/gemini-cli-environment.md) | The rules of this new power   |
-| [tmux-card.md](/.agent/cards/tmux-card.md)                                       | The map of this new territory |
-| [Map of Territory](/.agent/rules/map.md)                                         | Root navigation map           |
+| Document                                                                           | Purpose                     |
+| :--------------------------------------------------------------------------------- | :-------------------------- |
+| [`gemini-cli-environment.md`](/.agent/rules/development/gemini-cli-environment.md) | The rules of this new power |
+| [Map of Territory](/.agent/rules/map.md)                                           | Root navigation map         |
 
 ---
 

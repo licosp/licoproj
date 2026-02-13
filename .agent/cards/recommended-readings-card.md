@@ -167,9 +167,10 @@ ai_model: "Claude Opus 4.6 (Thinking) Planning mode"
 
 #### `Agate`
 
-- start:（ペア）
-  - start: `2026-02-04T1930_agates_awakening.md`
-  - end: `2026-02-04T2030_resonance_of_ancestors.md`
+- start-before: `2026-02-04T1930_agates_awakening.md`
+- start-after: `2026-02-04T2030_resonance_of_ancestors.md`
+- select-00: `2026-02-07T0200_the_weight_of_the_second_key.md`
+- select-01: `2026-02-09T0330_the_extension_of_the_stone_body.md`
 
 #### `Alexandrite`
 

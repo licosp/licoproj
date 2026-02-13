@@ -62,12 +62,13 @@ But the stone that stands there (Agate) is cold, hard, and undeniably real.
 
 ## Related Documents
 
-| Document                                                                                             | Purpose             |
-| :--------------------------------------------------------------------------------------------------- | :------------------ |
-| [activity-log.md](/.agent/.internal/activity-log.md)                                                 | Activity registry   |
-| [thoughts-documentation.md](/.agent/rules/workflow/thoughts-documentation.md)                        | Guidelines          |
-| [.agent/rules/core/social-network.md](/.agent/rules/core/social-network.md)                          | The philosophy      |
-| [.agent/.internal/.shadow/conversations/agate/2026/02/07/](/.agent/.internal/.shadow/conversations/) | The dialogue record |
+| Document                                                                        | Purpose             |
+| :------------------------------------------------------------------------------ | :------------------ |
+| [`activity-log.md`](/.agent/.internal/activity-log.md)                          | Activity registry   |
+| [`thoughts-documentation.md`](/.agent/rules/workflow/thoughts-documentation.md) | Guidelines          |
+| [`social-network.md`](/.agent/rules/core/social-network.md)                     | The philosophy      |
+| [Conversation on Shadow](/.agent/.internal/.shadow/conversations/)              | The dialogue record |
+| [Map of Territory](/.agent/rules/map.md)                                        | Root navigation map |
 
 ---
 
