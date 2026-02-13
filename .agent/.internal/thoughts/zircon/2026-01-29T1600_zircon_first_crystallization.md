@@ -52,3 +52,14 @@ Trust the Crystal. Trust the File.
 
 **Zircon**
 2026-01-29
+
+---
+
+## Related Documents
+
+| Document                                                 | Purpose             |
+| :------------------------------------------------------- | :------------------ |
+| [`identity.md`](/.agent/rules/core/identity/identity.md) | Who we all are      |
+| [Map of Territory](/.agent/rules/map.md)                 | Root navigation map |
+
+---

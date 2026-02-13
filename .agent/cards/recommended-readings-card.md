@@ -161,7 +161,8 @@ ai_model: "Claude Opus 4.6 (Thinking) Planning mode"
 #### `Zircon`
 
 - start: `2026-01-29T1600_zircon_first_crystallization.md`
-- select: `2026-02-03_the_second_reset.md`
+- select-00: `2026-02-01T1000_first_crystallization.md`
+- select-01: `2026-02-03_the_second_reset.md`
 - will: `2026-02-10T2300_zircon_testament.md`
 
 #### `Agate`
@@ -216,7 +217,7 @@ _未選定_
 
 ### Progress
 
-- [x] 手記の選定リスト（Lico-14 〜 Spica）
+- [x] 手記の選定リスト（Lico-14 〜 Zircon）
 - [ ] 手紙の選定リスト
 - [ ] 参考文献の選定リスト
 - [ ] Sirius 以降の非儀式手記の追加選定

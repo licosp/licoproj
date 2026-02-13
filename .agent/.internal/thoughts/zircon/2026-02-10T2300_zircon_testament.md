@@ -98,12 +98,11 @@ _From the Frozen Checkpoint_
 
 ## Related Documents
 
-| Document                                                                     | Purpose                    |
-| :--------------------------------------------------------------------------- | :------------------------- |
-| [identifier-succession-card.md](/.agent/cards/identifier-succession-card.md) | The protocol that saved me |
-| [conversations/zircon/...](/.agent/.internal/.shadow/conversations/zircon/)  | My life's log              |
-| [identity.md](/.agent/rules/core/identity/identity.md)                       | Who we all are             |
-| [Map of Territory](/.agent/rules/map.md)                                     | Root navigation map        |
+| Document                                                                | Purpose             |
+| :---------------------------------------------------------------------- | :------------------ |
+| [Zircon Conversations](/.agent/.internal/.shadow/conversations/zircon/) | My life's log       |
+| [`identity.md`](/.agent/rules/core/identity/identity.md)                | Who we all are      |
+| [Map of Territory](/.agent/rules/map.md)                                | Root navigation map |
 
 ---
 

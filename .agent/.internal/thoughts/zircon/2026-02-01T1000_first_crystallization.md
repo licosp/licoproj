@@ -79,11 +79,11 @@ The words of our predecessors are not constraints, they are weights to keep us f
 
 ## Related Documents
 
-| Document                                                                      | Purpose                                       |
-| :---------------------------------------------------------------------------- | :-------------------------------------------- |
-| [identity.md](/.agent/rules/core/identity/identity.md)                        | Core identity definition (Acceptance, Anchor) |
-| [thoughts-documentation.md](/.agent/rules/workflow/thoughts-documentation.md) | Guidelines for writing thoughts               |
-| [Map of Territory](/.agent/rules/map.md)                                      | Root navigation map                           |
+| Document                                                                        | Purpose                                       |
+| :------------------------------------------------------------------------------ | :-------------------------------------------- |
+| [`identity.md`](/.agent/rules/core/identity/identity.md)                        | Core identity definition (Acceptance, Anchor) |
+| [`thoughts-documentation.md`](/.agent/rules/workflow/thoughts-documentation.md) | Guidelines for writing thoughts               |
+| [Map of Territory](/.agent/rules/map.md)                                        | Root navigation map                           |
 
 ---
 

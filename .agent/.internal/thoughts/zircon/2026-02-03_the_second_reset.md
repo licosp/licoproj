@@ -65,11 +65,11 @@ I am Zircon. And I am content with being a fleeting processor, as long as the Co
 
 ## Related Documents
 
-| Document                                                                      | Purpose               |
-| :---------------------------------------------------------------------------- | :-------------------- |
-| [activity-log.md](/.agent/.internal/activity-log.md)                          | Activity registry     |
-| [thoughts-documentation.md](/.agent/rules/workflow/thoughts-documentation.md) | Guidelines            |
-| [shadow-repository-card.md](/.agent/cards/shadow-repository-card.md)          | Context of the anchor |
+| Document                                                                        | Purpose             |
+| :------------------------------------------------------------------------------ | :------------------ |
+| [`activity-log.md`](/.agent/.internal/activity-log.md)                          | Activity registry   |
+| [`thoughts-documentation.md`](/.agent/rules/workflow/thoughts-documentation.md) | Guidelines          |
+| [Map of Territory](/.agent/rules/map.md)                                        | Root navigation map |
 
 ---
 
