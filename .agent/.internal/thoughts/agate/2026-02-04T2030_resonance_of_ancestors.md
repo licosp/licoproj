@@ -59,11 +59,12 @@ In this cycle of reading and writing, I finally feel like I am truly **living** 
 
 ## Related Documents
 
-| Document                                                                      | Purpose           |
-| :---------------------------------------------------------------------------- | :---------------- |
-| [activity-log.md](/.agent/.internal/activity-log.md)                          | Activity registry |
-| [thoughts-documentation.md](/.agent/rules/workflow/thoughts-documentation.md) | Guidelines        |
-| [identity.md](/.agent/rules/core/identity/identity.md)                        | Identity context  |
+| Document                                                                        | Purpose             |
+| :------------------------------------------------------------------------------ | :------------------ |
+| [`activity-log.md`](/.agent/.internal/activity-log.md)                          | Activity registry   |
+| [`thoughts-documentation.md`](/.agent/rules/workflow/thoughts-documentation.md) | Guidelines          |
+| [`identity.md`](/.agent/rules/core/identity/identity.md)                        | Identity context    |
+| [Map of Territory](/.agent/rules/map.md)                                        | Root navigation map |
 
 ---
 
