@@ -31,7 +31,19 @@ Standardize how AI instances log conversations to persistent files to ensure mem
 
 ## 4. File Location
 
-**Path Pattern**: `/.agent/.internal/.shadow/conversations/<identifier>/<YYYY>/<MM>/<DD>/<identifier>-conversation-<YYYY-MM-DD>.md`
+## 4. File Location
+
+**Path Pattern**: `/.agent/.internal/.shadow/conversations/<identifier>/<YYYY>/<MM>/<DD>/<YYYY-MM-DD>T<HHMM>_<Description>.md`
+
+**Example**: `2026-02-13T1525_sirius_conversation.md`
+
+### File Rotation Strategy
+
+- **Trigger**: File size exceeds **~1000 lines** (Guideline).
+- **Action**: Create a new file with the current timestamp.
+  - Old File: `...T1000_conversation.md` (Closed)
+  - New File: `...T1430_conversation_part2.md` (Active)
+- **Authority**: Both User and AI may initiate rotation at any time.
 
 ## 5. Logging Procedure
 
