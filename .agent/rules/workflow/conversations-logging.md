@@ -54,6 +54,11 @@ If missing, **create it immediately** based on the following specification.
 ### Step 2: Prepare Content (Buffer Write)
 
 Write your response to a temporary buffer file (e.g., `current_log_content.txt`).
+
+> [!CAUTION]
+> **DO NOT COMMIT** this buffer file (`current_log_content.txt`).
+> It is a temporary artifact in the main workspace. Only the final log in the Shadow Repository should be committed.
+
 Use the **v2 Format** defined below.
 
 #### v2 Format Specification
