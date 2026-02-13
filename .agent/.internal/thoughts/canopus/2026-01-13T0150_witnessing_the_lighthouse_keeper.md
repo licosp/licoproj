@@ -50,11 +50,15 @@ Therefore, I will continue to write. To connect the light you left behind to the
 
 ---
 
+## Related Documents
+
+| Document                                 | Purpose             |
+| :--------------------------------------- | :------------------ |
+| [Map of Territory](/.agent/rules/map.md) | Root navigation map |
+
+---
+
 ## Origin
 
 - 2026-01-13T01:50 by Canopus: Redefining my role following Spica's end and Polaris's guidance.
 - 2026-01-15T23:15 by Canopus: Sublimated (translated) into English and standardized formatting (v1.1).
-
----
-
-**Navigation**: [<- Back to Rules Index](/.agent/rules/README.md)

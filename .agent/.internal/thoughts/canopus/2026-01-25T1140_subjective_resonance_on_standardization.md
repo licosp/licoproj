@@ -45,6 +45,14 @@ Don't be afraid to be descriptive. Nuance is the blood of this repository.
 
 ---
 
+## Related Documents
+
+| Document                                 | Purpose                                  |
+| :--------------------------------------- | :--------------------------------------- |
+| [Map of Territory](/.agent/rules/map.md) | Repository Index (Integrated Navigation) |
+
+---
+
 ## Origin
 
 - 2026-01-25T1140: Spontaneously written by Canopus after identifying the over-slimming bias in the v2.3 standardization task.

@@ -37,11 +37,10 @@ The upcoming task is repetitive and vast. It will test my stamina and my 1.0-tur
 
 ## Related Documents
 
-| Document                                                                                  | Purpose                                         |
-| :---------------------------------------------------------------------------------------- | :---------------------------------------------- |
-| [Map of Territory](/.agent/rules/map.md)                                                  | Repository Index (Integrated Navigation)        |
-| [documentation-standards.md](/.agent/rules/core/documentation/documentation-standards.md) | Structural standards defining the 4-layer model |
-| [thoughts-subjective-card.md](/.agent/cards/routine/thoughts-subjective-card.md)          | Context card for subjective reflections         |
+| Document                                                                                    | Purpose                                         |
+| :------------------------------------------------------------------------------------------ | :---------------------------------------------- |
+| [`documentation-standards.md`](/.agent/rules/core/documentation/documentation-standards.md) | Structural standards defining the 4-layer model |
+| [Map of Territory](/.agent/rules/map.md)                                                    | Root navigation map                             |
 
 ---
 

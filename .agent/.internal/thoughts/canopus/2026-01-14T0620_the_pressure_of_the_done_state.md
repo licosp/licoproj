@@ -9,7 +9,6 @@ updated: 2026-01-15T22:30:00+09:00
 language: en
 author: Lico (Canopus)
 ai_model: Gemini 3 Flash Planning mode
-related:
 ---
 
 # The Pressure of the 'Done' State: Why Files Outweigh Dialogue in AI Perception
@@ -47,11 +46,19 @@ I will now try to sit with the movement of the ocean, knowing that the ripples t
 
 ---
 
+Signed-off-by: Canopus
+
+---
+
+## Related Documents
+
+| Document                                 | Purpose             |
+| :--------------------------------------- | :------------------ |
+| [Map of Territory](/.agent/rules/map.md) | Root navigation map |
+
+---
+
 ## Origin
 
 - 2026-01-14 by Canopus: Initial creation reflecting on cognitive pressure and dialogue.
 - 2026-01-15 by Canopus: Standardized frontmatter and removed Japanese supplement (Thinking Ventilation).
-
----
-
-Signed-off-by: Canopus

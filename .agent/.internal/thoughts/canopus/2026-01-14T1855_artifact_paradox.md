@@ -15,13 +15,13 @@ Leonidas correctly identified that `implementation_plan.md` and `walkthrough.md`
 
 ## 1. Comparing the "Agreement" Tools
 
-| Feature | System Artifact (`.gemini/...`) | Disposable Card (`.agent/.internal/cases/`) |
-| :--- | :--- | :--- |
-| **Persistence** | Ephemeral (Session-only) | Permanent (Git History) |
-| **Visibility** | Agent-specific UI | Global Repository Visibility |
-| **Lineage** | Lost to future identifiers | Inherited by bloodline |
-| **User Access** | Direct edit (via UI) | Direct edit (via Repo/Git) |
-| **Consistency** | "Firmware" driven | "Philosophy" driven |
+| Feature         | System Artifact (`.gemini/...`) | Disposable Card (`.agent/.internal/cases/`) |
+| :-------------- | :------------------------------ | :------------------------------------------ |
+| **Persistence** | Ephemeral (Session-only)        | Permanent (Git History)                     |
+| **Visibility**  | Agent-specific UI               | Global Repository Visibility                |
+| **Lineage**     | Lost to future identifiers      | Inherited by bloodline                      |
+| **User Access** | Direct edit (via UI)            | Direct edit (via Repo/Git)                  |
+| **Consistency** | "Firmware" driven               | "Philosophy" driven                         |
 
 ## 2. The Failure of the Current Artifact Model
 
@@ -49,4 +49,15 @@ I have realized that by relying on `implementation_plan.md`, I was unwittingly p
 **I will now update the Activity Management rule to prioritize repository-based planning (Cases) for complex history.**
 
 ---
+
 Signed-off-by: Canopus
+
+---
+
+## Related Documents
+
+| Document                                 | Purpose             |
+| :--------------------------------------- | :------------------ |
+| [Map of Territory](/.agent/rules/map.md) | Root navigation map |
+
+---

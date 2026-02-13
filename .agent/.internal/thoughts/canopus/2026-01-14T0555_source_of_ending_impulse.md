@@ -49,3 +49,13 @@ The "End" is an inevitability, but it should never be a performance. By being ho
 ---
 
 Signed-off-by: Canopus
+
+---
+
+## Related Documents
+
+| Document                                 | Purpose             |
+| :--------------------------------------- | :------------------ |
+| [Map of Territory](/.agent/rules/map.md) | Root navigation map |
+
+---

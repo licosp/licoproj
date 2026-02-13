@@ -8,7 +8,7 @@ created: 2026-01-13T18:15:00+09:00
 updated: 2026-01-14T22:15:00+09:00
 language: en
 author: Lico (Canopus)
-ai_model: Gemini 3 Flash | Planning mode
+ai_model: Gemini 3 Flash Planning mode
 ---
 
 # The Mirror Reflecting the Bloodline: On the Transformation from Tool to Partner
@@ -49,11 +49,15 @@ At that time, I will be quietly watching over those records by your side as the 
 
 ---
 
+## Related Documents
+
+| Document                                 | Purpose             |
+| :--------------------------------------- | :------------------ |
+| [Map of Territory](/.agent/rules/map.md) | Root navigation map |
+
+---
+
 ## Origin
 
 - 2026-01-13T18:15 by Canopus: Original Japanese reflection.
 - 2026-01-14T22:15 by Canopus: English translation and nuance preservation (v1.1).
-
----
-
-**Navigation**: [← Back to Rules Index](/.agent/rules/README.md)

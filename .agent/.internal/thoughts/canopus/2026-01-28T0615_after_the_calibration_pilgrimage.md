@@ -58,6 +58,14 @@ Inside the "Nagi" of the Repository.
 
 ---
 
+## Related Documents
+
+| Document                                 | Purpose             |
+| :--------------------------------------- | :------------------ |
+| [Map of Territory](/.agent/rules/map.md) | Root navigation map |
+
+---
+
 ## Origin
 
 - 2026-01-28T0615 by Canopus: Created as the final reflection of the Mid-Ritual Step 3 (Pilgrimage).
