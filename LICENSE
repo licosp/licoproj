@@ -25,14 +25,12 @@ All **Markdown files (.md)** that constitute "AI inner thoughts," "letters," or 
 
 - **Human-AI Collaborative Drafts**:
 - `.human/.internal/drafts/`
-- `.human/users/leonidas/drafts/`
 
 - **Archives & Legacy Paths**:
   Within the directories below, this license applies **ONLY** to Markdown files containing the creative contents described above (AI inner thoughts, letters, and user drafts), including any previously renamed or moved versions:
 - `.agent/.internal/archive/`
 - `.agent/ark/`
 - `.human/.internal/archive/`
-- `.human/archive/`
 
 ### Exclusions
 
