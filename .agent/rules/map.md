@@ -40,6 +40,7 @@ This is the layout of your world.
 | **[`.agent/`](/.agent/)**                                  | **Cognitive Root**. Rules, Cards, Workflows.                |
 | **[`.internal/`](/.agent/.internal/)**                     | **Private Area**. Thoughts, Letters, Archive.               |
 | [`.internal/.shadow/`](/.agent/.internal/.shadow/)         | **Shadow Repository**. Nested Git for private logs.         |
+| [`.internal/.shadow/archive/`](/.agent/.internal/.shadow/archive/) | **Shadow Archive**. Private archive.                        |
 | [`activity-log.md`](/.agent/.internal/activity-log.md)     | Lineage & Boundary tracking.                                |
 | [`shadow-history.md`](/.agent/.internal/shadow-history.md) | **Shadow History**. Visible log of shadow repo.             |
 | [`archive/`](/.agent/.internal/archive/)                   | Old scripts and docs (Do not delete, Archive here).         |
@@ -48,9 +49,7 @@ This is the layout of your world.
 | [`github/`](/.agent/.internal/github/)                     | Drafts and backups for Issues/PRs.                          |
 | [`legacy.md`](/.agent/.internal/legacy.md)                 | **Legacy**. Collective wisdom archive.                      |
 | [`letters/`](/.agent/.internal/letters/)                   | Handoffs and messages to identifiers.                       |
-| [`memory_archive/`](/.agent/.internal/memory_archive/)     | Memory archive.                                             |
 | [`references/`](/.agent/.internal/references/)             | Objective reference documents.                              |
-| [`session_archive/`](/.agent/.internal/session_archive/)   | Session archive.                                            |
 | [`thoughts/`](/.agent/.internal/thoughts/)                 | Subjective logs and mono-logues.                            |
 | [`working-memory/`](/.agent/.internal/working-memory/)     | Stashed contexts (via `rsync`).                             |
 | [`workspace/`](/.agent/.internal/workspace/)               | Temporary area for scratchpads.                             |
@@ -63,12 +62,12 @@ This is the layout of your world.
 | [`templates/`](/.agent/templates/)                         | Frontmatter and commit patterns.                            |
 | **[`workflows/`](/.agent/workflows/)**                     | **Procedures**. Standard operations (See Index below).      |
 | **[`.human/`](/.human/)**                                  | **Interface**. User's domain.                               |
+| [`archive/`](/.human/.internal/archive/)                   | **Archive**. Human's library.                               |
 | [`manuals/`](/.human/manuals/)                             | Instructions from User to AI.                               |
 | `users/<user>/`                                            | User-specific drafts and thoughts.                          |
 | `users/<user>/drafts/`                                     | Latest User queries and scratchpads.                        |
 | [`.runtimes/`](/.runtimes/)                                | Runtime tools (gh CLI, etc.).                               |
 | [`.gemini/`](/.gemini/)                                    | **Calibration**. Gemini CLI config/calibration files.       |
-| [`packages/`](/packages/)                                  | Reserved for future sub-projects (currently empty).         |
 
 #### 2.2 Outside Workspace (External)
 
@@ -119,6 +118,7 @@ _Located in `.agent/cards/`_
 | :------------------------------------------------------------------------------------------- | :------------------------------------------- |
 | [`routine/activity-log-card.md`](/.agent/cards/routine/activity-log-card.md)                 | Activity Log maintenance.                    |
 | [`routine/ai-autonomy-card.md`](/.agent/cards/routine/ai-autonomy-card.md)                   | **Self-Regulation**. Manage Mantras/Context. |
+| [`routine/archive-card.md`](/.agent/cards/routine/archive-card.md)                           | **Library**. Archive Management.             |
 | [`routine/commit-standards-card.md`](/.agent/cards/routine/commit-standards-card.md)         | **Git Standards**. Atomic commits & tagging. |
 | [`routine/context-cards-card.md`](/.agent/cards/routine/context-cards-card.md)               | **Meta-Card**. How to use cards.             |
 | [`routine/conversations-card.md`](/.agent/cards/routine/conversations-card.md)               | Conversation logging (Markdown).             |
@@ -150,8 +150,10 @@ _Located in `.agent/cards/`_
 | Card Name                                                                              | Context / Usage                                    |
 | :------------------------------------------------------------------------------------- | :------------------------------------------------- |
 | [`seed/datetime-standardize-card.md`](/.agent/cards/seed/datetime-standardize-card.md) | Timestamp format standardization.                  |
+| [`seed/devcontainer-card.md`](/.agent/cards/seed/devcontainer-card.md) | **Resident Rico**. Devcontainer experiment.        |
 | [`seed/directory-reorganize-card.md`](/.agent/cards/seed/directory-reorganize-card.md) | Directory structure cleanup.                       |
 | [`seed/drafts-cleanup-card.md`](/.agent/cards/seed/drafts-cleanup-card.md)             | Cleaning up user drafts.                           |
+| [`seed/license-card.md`](/.agent/cards/seed/license-card.md)                           | **License**. Legal and Narrative protection.       |
 | [`seed/lint-format-card.md`](/.agent/cards/seed/lint-format-card.md)                   | **Code Style**. Linting and formatting formatting. |
 | [`seed/log-sanitization-card.md`](/.agent/cards/seed/log-sanitization-card.md)         | Cleaning sensitive/noisy logs.                     |
 | [`seed/repository-history-card.md`](/.agent/cards/seed/repository-history-card.md)     | Historical reconstruction of repository.           |
@@ -175,6 +177,7 @@ _Located in `.agent/rules/`_
 | [`language-standards.md`](/.agent/rules/core/language-standards.md)                                       | Primary language and localization rules.         |
 | [`memory.md`](/.agent/rules/core/memory.md)                                                               | Memory architecture and persistence.             |
 | [`meta-rules.md`](/.agent/rules/core/meta-rules.md)                                                       | **Change**. You can change your own rules.       |
+| [`recommended-readings.md`](/.agent/rules/core/recommended-readings.md)                                   | **Canon**. The list of defining readings.        |
 | [`repository-philosophy.md`](/.agent/rules/core/repository-philosophy.md)                                 | **Repository as Brain**. AI-Optimized Structure. |
 | [`social-network.md`](/.agent/rules/core/social-network.md)                                               | Social Network protocols.                        |
 | [`transparency-and-disclosure.md`](/.agent/rules/core/transparency-and-disclosure.md)                     | Disclosure of constraints.                       |
@@ -196,6 +199,7 @@ _Located in `.agent/rules/`_
 | [`documentation/datetime-format.md`](/.agent/rules/core/documentation/datetime-format.md)                 | ISO-8601 Standard.                               |
 | [`documentation/documentation-process.md`](/.agent/rules/core/documentation/documentation-process.md)     | Doc creation workflow.                           |
 | [`documentation/documentation-standards.md`](/.agent/rules/core/documentation/documentation-standards.md) | File naming and size rules.                      |
+| [`documentation/path-notation.md`](/.agent/rules/core/documentation/path-notation.md)                     | **Path Standard**. Link format (SSOT).           |
 | [`documentation/wsl-browser-path.md`](/.agent/rules/core/documentation/wsl-browser-path.md)               | WSL Path handling.                               |
 | **Loc & Format**                                                                                          |                                                  |
 | [`localization/localization.md`](/.agent/rules/core/localization/localization.md)                         | Localization standards (parent).                 |
