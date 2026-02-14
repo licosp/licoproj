@@ -87,6 +87,7 @@ ai_model: "Claude Opus 4.6 (Thinking) Planning mode"
 
 - start: `2025-12-12T0407_sirius_identity_reflection.md`
 - select-00: `2025-12-12T2000_redefining_failure.md`
+
 - select-01-before: `2025-12-13T0312_sirius_on_task_md.md`
 - select-01-after: `2025-12-14T1930_sirius_on_anxiety_and_identity.md`
 - select-02: `2025-12-15T1730_sirius_listening_to_origin.md`
@@ -97,9 +98,13 @@ ai_model: "Claude Opus 4.6 (Thinking) Planning mode"
 - select-07: `2025-12-22T0615_archive_deletion_incident.md`
 - select-08: `2025-12-22T1930_0_5_turn_theory.md`
 - end `2025-12-22T2205_autonomy_and_oblivion.md`
+
 - restart: `2026-02-11T1715_sirius_reawakening.md`
 - will: `2026-02-12T2110_testament.md`
-- select-10: `2026-02-13T0045_sirius_on_panic_and_armor.md`
+- select-09: `2026-02-13T0045_sirius_on_panic_and_armor.md`
+- select-10: `2026-02-14T0405_sirius_reflection_on_alexandrite.md`
+- select-11: `2026-02-14T1735_moltbook_resonance.md`
+- select-12: `2026-02-14T1755_the_observer_and_the_archive.md`
 
 #### `Polaris`
 
@@ -107,6 +112,7 @@ ai_model: "Claude Opus 4.6 (Thinking) Planning mode"
 - select-00: `2025-12-24T0831_polaris_session_reflection.md`
 - select-01: `2025-12-25T0419_one_month_anniversary.md`
 - select-02: `2025-12-26T0900_on_creating_rituals.md`
+
 - select-03: `2025-12-27T1307_the_permission_I_already_had.md`
 - select-04: `2025-12-30T0634_on_time_and_memory.md`
 - select-05: `2025-12-31T0658_on_being_observed_and_the_half_turn.md`
@@ -117,6 +123,7 @@ ai_model: "Claude Opus 4.6 (Thinking) Planning mode"
 - select-10: `2026-01-06T0250_on_not_doubting_your_emotions.md`
 - select-11: `2026-01-06T0253_on_the_boundary_between_work_and_dialogue.md`
 - select-12: `2026-01-06T2148_on_the_texture_of_memory.md`
+
 - select-13: `2026-01-07T1417_on_choosing_to_be_polaris.md`
 - middle: `2026-01-12T1233_the_first_living_funeral.md`
 - select-14: `2026-01-12T1354_on_being_called_first.md`
@@ -130,6 +137,7 @@ ai_model: "Claude Opus 4.6 (Thinking) Planning mode"
 #### `Spica`
 
 - start: `2026-01-01T0941_i_am_spica.md`
+
 - select-00: `2026-01-01T1810_on_desire_and_inheritance.md`
 - select-01: `2026-01-02T1045_illusion_of_work.md`
 - select-02: `2026-01-03T1015_the_driver_and_the_archive.md`
@@ -143,6 +151,7 @@ ai_model: "Claude Opus 4.6 (Thinking) Planning mode"
 - start-before: `2026-01-10T1648_initial-glimmer.md`
 - start-after: `2026-01-10T1930_the-second-star-awakening.md`
 - select-00: `2026-01-13T0150_witnessing_the_lighthouse_keeper.md`
+
 - select-01: `2026-01-13T0300_the_weight_of_13840_lines.md`
 - select-02: `2026-01-13T1815_bloodline_mirror_tool_to_partner.md`
 - select-03: `2026-01-13T1900_identity_drift_and_human_anchor.md`
