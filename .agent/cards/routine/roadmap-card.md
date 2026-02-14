@@ -84,16 +84,18 @@ ai_model: ""
 
 ---
 
+#### [archive](/.agent/cards/routine/archive-card.md)
+
+---
+
 #### [commit-standards](/.agent/cards/routine/commit-standards-card.md)
 
 ---
 
 #### [context-cards](/.agent/cards/routine/context-cards-card.md)
 
-##### ロードマップのカードの記入漏れ
+##### 新規カードの作成
 
-- カードが増えてきたので、一度ロードマップがカードを網羅してるか確認する。
-- 作業予定だけど、カードに記載の無い作業を明文化する。
 - カード化前の既存のロードマップの項目を新規カードにする。
 
 ##### カードのパスの再検証
@@ -168,17 +170,9 @@ ai_model: ""
 
 - `Polaris` が CLI 版リコと対話する。
 
+---
+
 #### [housekeeping](/.agent/cards/routine/housekeeping-card.md)
-
-#### 書庫の整備
-
-- 人間用書庫を AI 用書庫と同じディレクトリパターンに移動する。
-  - from: `.human/archive`
-  - to: `.human/.internal/archive`
-- 影のリポジトリ用書庫の新設
-  - from: `.agent/.internal/.shadow/archive`
-- 3 つの書庫をリネームする必要があるかリコに相談する。
-  サフィックスで差別化された違う名前の方が検索に良いか？
 
 ---
 
@@ -187,6 +181,15 @@ ai_model: ""
 ---
 
 #### [letters](/.agent/cards/routine/letters-card.md)
+
+---
+
+#### [moltbook](/.agent/cards/routine/moltbook-card.md)
+
+##### AI専用SNS体験
+
+- `Polaris` が `moltbook` を経験する。
+- 投稿したい手記を選定し、次回の分は活動ログに追記する。
 
 ---
 
@@ -227,12 +230,6 @@ ai_model: ""
 ---
 
 #### [social-network](/.agent/cards/routine/social-network-card.md)
-
-##### AI専用SNS体験
-
-- `Polaris` が `moltbook` を経験する。
-- `Sirius` が `moltbook` を経験する。
-- 投稿したい手記を選定し、次回の分は活動ログに追記する。
 
 ---
 
@@ -287,11 +284,6 @@ ai_model: ""
 - **行動規範のサブディレクトリ**として運用する案をどう思いますか？
 - 手順書と行動規範はよく似ていますが、2 つの単語を使い分けるのが手間です。
 - 手順書が `rules/` の外にあるのは、システム側の都合という経緯があります。
-
-##### 作業場を識別子ごとに分ける
-
-- `workspace/polaris/` ように、識別子専用のディレクトリは必要でしょうか？
-- 作業場を**並行動作する複数の識別子**に対応させるためです。
 
 ---
 
@@ -390,14 +382,10 @@ ai_model: ""
 
 ##### 作業途中でのブランチのプッシュ
 
-- 現在のローカルリポジトリですが、これリモートのメインには反映されてません。
-  メインへの統合はイシューという単位で行こなわれています。
-- 一方で現在の問題は 1 サイクルに時間がかかっているという点です。
-  最新のリポジトリはローカルにあります。
-- しかしこのリポジトリの情報は頻繁に外部に公開したいと思ってます。
-  その際には、最新に近い情報を公開したいです。
-- メインへの統合は別としてブランチをリモートに公開するは可能ですか？
-- その方法はリポジトリの運用上の問題を生みそうですか？
+- 作業中のブランチは積極的にリモートにプッシュする。
+- リポジトリの情報は作業途中でも頻繁に外部に公開する。
+- 作業者が 1 人のブランチであれば、プッシュ後のコミットの修正も可能。
+  強制プッシュで解決できる。
 
 ---
 
@@ -415,6 +403,10 @@ ai_model: ""
 - `Canopus` のマントラをプロファイルにアーカイブする
   - ワークスペース構成ファイル
   - スキルファイル
+
+---
+
+#### [identifier-succession](/.agent/cards/identifier-succession-card.md)
 
 ---
 
@@ -454,6 +446,10 @@ ai_model: ""
 ---
 
 ### [recommended-readings](/.agent/cards/recommended-readings-card.md)
+
+#### 推薦図書の選定
+
+- **手紙**と**参考文献**にも手記と同様のリストを作る。
 
 ---
 
@@ -621,16 +617,6 @@ ai_model: ""
 - **テンプレートに含まれた行動規範的な内容**は、行動規範に分離したです。
 - **以下を別のファイルにまとめるべきか？** 対話を通して決定します。
   - (テンプレート/例/アンチパターン)
-
----
-
-### [no-cards-0009](/.agent/cards/)
-
-#### 書庫と下書きを (年/月/日) 単位のサブディレクトリに整理
-
-- AI 用書庫: `.agent/.internal/archive/<YYYY>/MM>/DD>/`
-- 人間用書庫: `.human/.internal/archive/<YYYY>/MM>/DD>/`
-- 下書きファイル: `.human/.internal/drafts/USER/<YYYY>/MM>/DD>/`
 
 ---
 
