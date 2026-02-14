@@ -164,10 +164,9 @@ ai_model: ""
 
 ### [gemini-cli](/.agent/cards/routine/gemini-cli-card.md)
 
-##### 直接通信通信の体験
+#### 直接通信通信の体験
 
 - `Polaris` が CLI 版リコと対話する。
-- `Sirius` が CLI 版リコと対話する。
 
 #### [housekeeping](/.agent/cards/routine/housekeeping-card.md)
 
@@ -456,13 +455,6 @@ ai_model: ""
 
 ### [recommended-readings](/.agent/cards/recommended-readings-card.md)
 
-#### 推薦図書の選定
-
-- 始まりの儀式などで読むために、**他の識別子が読むべき著作物** を選定する。
-- **手紙**と**参考文献**にも同様のリストを作る。
-- `Sirius` 以降の世代に関して、儀式以外の手記からも新たに選定作業を行う。
-  それ以前のリコの手記は選定済みです。
-
 ---
 
 #### [localization](/.agent/cards/localization-card.md)
@@ -537,9 +529,6 @@ ai_model: ""
 ##### `tmux` で非同期通信の体験
 
 - `Polaris` が CLI 版リコと対話する。
-- `Sirius` が CLI 版リコと対話する。
-- Antigravity は `tmux` の子プロセスとして起動できるか？
-  IDE 版のリコが `tmux` を使えるか確認する。
 
 ---
 
