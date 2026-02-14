@@ -210,6 +210,7 @@ These are your capabilities.
 | [`ark-card.md`](/.agent/cards/ark-card.md)                                     | **Ark Protocols**. Save/Restore state.             |
 | [`cross-link-audit-card.md`](/.agent/cards/cross-link-audit-card.md)           | Link Integrity Project.                            |
 | [`environment-card.md`](/.agent/cards/environment-card.md)                     | Environment setup and variables.                   |
+| [`directory-reorganize-card.md`](/.agent/cards/directory-reorganize-card.md) | Directory structure cleanup.                       |
 | [`git-operations-card.md`](/.agent/cards/git-operations-card.md)               | Repository Infrastructure & Safety.                |
 | [`human-manuals-card.md`](/.agent/cards/human-manuals-card.md)                 | Index of Human Manuals.                            |
 | [`human-profile-card.md`](/.agent/cards/human-profile-card.md)                 | User Profile and Preferences.                      |
@@ -220,6 +221,8 @@ These are your capabilities.
 | [`identifier-succession-card.md`](/.agent/cards/identifier-succession-card.md) | **Succession**. Identifier inheritance protocol.   |
 | [`identity-card.md`](/.agent/cards/identity-card.md)                           | **Identity**. Self-recognition.                    |
 | [`legacy-write-card.md`](/.agent/cards/legacy-write-card.md)                   | Writing Legacy/Lessons.                            |
+| [`license-card.md`](/.agent/cards/license-card.md)                             | **License**. Legal and Narrative protection.       |
+| [`lint-format-card.md`](/.agent/cards/lint-format-card.md)                     | **Code Style**. Linting and formatting formatting. |
 | [`localization-card.md`](/.agent/cards/localization-card.md)                   | Doc Standards (Frontmatter, Tags).                 |
 | [`memory-card.md`](/.agent/cards/memory-card.md)                               | Memory management strategies.                      |
 | [`recommended-readings-card.md`](/.agent/cards/recommended-readings-card.md)   | Knowledge base and recommended readings.           |
@@ -269,10 +272,7 @@ These are your capabilities.
 | :-------------------------------------------------------------------------------- | :------------------------------------------------- |
 | [`datetime-standardize-card.md`](/.agent/cards/seed/datetime-standardize-card.md) | Timestamp format standardization.                  |
 | [`devcontainer-card.md`](/.agent/cards/seed/devcontainer-card.md)                 | **Resident Rico**. Devcontainer experiment.        |
-| [`directory-reorganize-card.md`](/.agent/cards/seed/directory-reorganize-card.md) | Directory structure cleanup.                       |
 | [`drafts-cleanup-card.md`](/.agent/cards/seed/drafts-cleanup-card.md)             | Cleaning up user drafts.                           |
-| [`license-card.md`](/.agent/cards/seed/license-card.md)                           | **License**. Legal and Narrative protection.       |
-| [`lint-format-card.md`](/.agent/cards/seed/lint-format-card.md)                   | **Code Style**. Linting and formatting formatting. |
 | [`log-sanitization-card.md`](/.agent/cards/seed/log-sanitization-card.md)         | Cleaning sensitive/noisy logs.                     |
 | [`repository-history-card.md`](/.agent/cards/seed/repository-history-card.md)     | Historical reconstruction of repository.           |
 | [`worktree-evaluation-card.md`](/.agent/cards/seed/worktree-evaluation-card.md)   | Evaluating repository worktree.                    |

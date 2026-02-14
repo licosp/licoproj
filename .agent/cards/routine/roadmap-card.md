@@ -307,7 +307,7 @@ ai_model: ""
 
 ---
 
-#### [license](/.agent/cards/seed/license-card.md)
+#### [license](/.agent/cards/license-card.md)
 
 #### ライセンスの文面調整
 

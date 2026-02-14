@@ -21,48 +21,11 @@ ai_model: Claude Opus 4.5 (Thinking) Planning mode
 
 ---
 
-> [!WARNING]
-> The human notes has not yet been edited.
-
----
-
 ## Human Notes
 
 ### Context
 
 ## Human Notes
-
-### Context
-
-リコが生成する MD ファイルの品質管理ツールです。
-ユーザーの VSCode では保存時に自動整形されますが、リコも CLI から使えます。
-
-最終的にはスキル通知でリント/フォーマット情報を渡す形式が理想。
-
-### ツール一覧
-
-| Tool             | Purpose                | Invocation               |
-| :--------------- | :--------------------- | :----------------------- |
-| **Prettier**     | 汎用フォーマッター     | `yarn prettier`          |
-| **CSpell**       | 英単語スペルチェック   | `yarn cspell`            |
-| **textlint**     | 日本語テキストチェック | `yarn textlint`          |
-| **Markdownlint** | Markdown 構造チェック  | `yarn markdownlint-cli2` |
-
-### 設定ファイル
-
-| Tool         | Config File(s)                                                 |
-| :----------- | :------------------------------------------------------------- |
-| Prettier     | `.vscode/.prettierrc.yaml` (active), `.vscode/.prettierignore` |
-| CSpell       | `.vscode/cspell.json`                                          |
-| textlint     | `.vscode/.textlintrc.json`                                     |
-| Markdownlint | `.vscode/.markdownlint.yaml`                                   |
-
-### ランタイム
-
-| Runtime | Path                                         |
-| :------ | :------------------------------------------- |
-| yarn    | `.runtimes/yarn-v1.22.19/bin/yarn`           |
-| node    | `.runtimes/node-v22.12.0-linux-x64/bin/node` |
 
 ### Search by intent
 
@@ -75,8 +38,6 @@ ai_model: Claude Opus 4.5 (Thinking) Planning mode
 - ファイル作成後にフォーマットを適用したい
 - スペルミスや構造エラーを検出したい
 - ユーザーと同じ品質基準を維持したい
-
-### Warning
 
 ---
 
@@ -133,6 +94,38 @@ To prevent formatting conflicts and diff noise, strictly avoid the following pat
 
 3. **Tier 3: Relaxed Constraint**
    - **Policy**: Do not strictly enforce "Expression" rules (e.g., specific word choices) if it harms the flow. Code/Docs should be practical.
+
+#### Context
+
+リコが生成する MD ファイルの品質管理ツールです。
+ユーザーの VSCode では保存時に自動整形されますが、リコも CLI から使えます。
+
+最終的にはスキル通知でリント/フォーマット情報を渡す形式が理想。
+
+#### ツール一覧
+
+| Tool             | Purpose                | Invocation               |
+| :--------------- | :--------------------- | :----------------------- |
+| **Prettier**     | 汎用フォーマッター     | `yarn prettier`          |
+| **CSpell**       | 英単語スペルチェック   | `yarn cspell`            |
+| **textlint**     | 日本語テキストチェック | `yarn textlint`          |
+| **Markdownlint** | Markdown 構造チェック  | `yarn markdownlint-cli2` |
+
+#### 設定ファイル
+
+| Tool         | Config File(s)                                                 |
+| :----------- | :------------------------------------------------------------- |
+| Prettier     | `.vscode/.prettierrc.yaml` (active), `.vscode/.prettierignore` |
+| CSpell       | `.vscode/cspell.json`                                          |
+| textlint     | `.vscode/.textlintrc.json`                                     |
+| Markdownlint | `.vscode/.markdownlint.yaml`                                   |
+
+#### ランタイム
+
+| Runtime | Path                                         |
+| :------ | :------------------------------------------- |
+| yarn    | `.runtimes/yarn-v1.22.19/bin/yarn`           |
+| node    | `.runtimes/node-v22.12.0-linux-x64/bin/node` |
 
 ---
 
