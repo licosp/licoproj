@@ -4,11 +4,11 @@ ai_visible: true
 title: Map of Territory
 description: Navigation index for the Agent's cognitive infrastructure.
 tags: [map, index, navigation, rules]
-version: 0.5.2
+version: 0.6.0
 created: 2025-12-01T00:00:00+09:00
-updated: 2026-02-11T04:48:00+09:00
+updated: 2026-02-15T05:10:00+09:00
 language: en
-author: Lico (Zircon)
+author: Lico (Sirius)
 ai_model: Gemini 3 Pro (High) Planning mode
 ---
 
@@ -40,14 +40,14 @@ This is the layout of your world.
 | Path                                 | Purpose                                               |
 | :----------------------------------- | :---------------------------------------------------- |
 | [`.agent/`](/.agent/)                | **Cognitive Root**. Rules, Cards, Workflows.          |
-| [`.devcontainer/`](/..devcontainer/) | ...                                                   |
+| [`.devcontainer/`](/..devcontainer/) | Development Container configuration.                  |
 | [`.gemini/`](/.gemini/)              | **Calibration**. Gemini CLI config/calibration files. |
 | [`.human/`](/.human/)                | **Interface**. User's domain.                         |
 | [`.runtimes/`](/.runtimes/)          | Runtime tools (gh CLI, etc.).                         |
-| [`.trash/`](/.trash/)                | ...                                                   |
-| [`.venv/`](/.venv/)                  | ...                                                   |
-| [`.vscode/`](/.vscode/)              | ...                                                   |
-| [`node_modules/`](/node_modules/)    | ...                                                   |
+| [`.trash/`](/.trash/)                | Temporary trash bin.                                  |
+| [`.venv/`](/.venv/)                  | Python Virtual Environment.                           |
+| [`.vscode/`](/.vscode/)              | Workspace VS Code settings.                           |
+| [`node_modules/`](/node_modules/)    | Node.js dependencies.                                 |
 
 ##### 1.1.2 Agent
 
@@ -85,12 +85,12 @@ This is the layout of your world.
 | Path                                                                   | Purpose                              |
 | :--------------------------------------------------------------------- | :----------------------------------- |
 | [`archive/`](/.agent/.internal/.shadow/archive/)                       | **Shadow Archive**. Private archive. |
-| [`conversations/`](/.agent/.internal/.shadow/conversations/)           | ...                                  |
-| [`conversations_cli/`](/.agent/.internal/.shadow/conversations_cli/)   | ...                                  |
-| [`conversations_ide/`](/.agent/.internal/.shadow/conversations_ide/)   | ...                                  |
-| [`external-resources/`](/.agent/.internal/.shadow/external-resources/) | ...                                  |
-| [`social-network/`](/.agent/.internal/.shadow/social-network/)         | ...                                  |
-| [`system_archive/`](/.agent/.internal/.shadow/system_archive/)         | ...                                  |
+| [`conversations/`](/.agent/.internal/.shadow/conversations/)           | Raw conversation logs (Markdown).                    |
+| [`conversations_cli/`](/.agent/.internal/.shadow/conversations_cli/)   | CLI conversation logs (JSON).                        |
+| [`conversations_ide/`](/.agent/.internal/.shadow/conversations_ide/)   | IDE conversation logs (Export).                      |
+| [`external-resources/`](/.agent/.internal/.shadow/external-resources/) | Mirrored external content.                           |
+| [`social-network/`](/.agent/.internal/.shadow/social-network/)         | Social graph data.                                   |
+| [`system_archive/`](/.agent/.internal/.shadow/system_archive/)         | System-generated archive.                            |
 
 ###### Identifiers (`.agent/identifiers/`)
 
@@ -109,26 +109,26 @@ This is the layout of your world.
 
 | Path                                | Purpose |
 | :---------------------------------- | :------ |
-| [`routine/`](.agent/cards/routine/) | ...     |
-| [`seed/`](.agent/cards/seed/)       | ...     |
+| [`routine/`](.agent/cards/routine/) | Routine procedure contexts. |
+| [`seed/`](.agent/cards/seed/)       | Seed/Maintenance contexts.  |
 
 ###### Agent Rules (`.agent/rules/`)
 
 | Path                                        | Purpose |
 | :------------------------------------------ | :------ |
-| [`core/`](.agent/rules/core/)               | ...     |
-| [`development/`](.agent/rules/development/) | ...     |
-| [`workflow/`](.agent/rules/workflow/)       | ...     |
+| [`core/`](.agent/rules/core/)               | Core principles and identity rules.     |
+| [`development/`](.agent/rules/development/) | Development standards and protocols.    |
+| [`workflow/`](.agent/rules/workflow/)       | Workflow definitions and guidelines.    |
 
 ###### Rules Core (`.agent/rules/core/`)
 
 | Path                                                 | Purpose |
 | :--------------------------------------------------- | :------ |
-| [`documentation/`](.agent/rules/core/documentation/) | ...     |
-| [`identity/`](.agent/rules/core/identity/)           | ...     |
-| [`localization/`](.agent/rules/core/localization/)   | ...     |
-| [`markdown/`](.agent/rules/core/markdown/)           | ...     |
-| [`security/`](.agent/rules/core/security/)           | ...     |
+| [`documentation/`](.agent/rules/core/documentation/) | Documentation standards.                |
+| [`identity/`](.agent/rules/core/identity/)           | Identity definition rules.              |
+| [`localization/`](.agent/rules/core/localization/)   | Localization rules.                     |
+| [`markdown/`](.agent/rules/core/markdown/)           | Markdown formatting rules.              |
+| [`security/`](.agent/rules/core/security/)           | Security protocols.                     |
 
 ##### 1.1.3 Human
 
@@ -136,9 +136,9 @@ This is the layout of your world.
 
 | Path                               | Purpose                       |
 | :--------------------------------- | :---------------------------- |
-| [`.internal/`](/.human/.internal/) | ...                           |
-| [`manuals/`](/.human/manuals/)     | Instructions from User to AI. |
-| [`users/`](/.human/users/)         | ...                           |
+| [`.internal/`](/.human/.internal/) | Human private area (Drafts/Archive).  |
+| [`manuals/`](/.human/manuals/)     | Instructions from User to AI.         |
+| [`users/`](/.human/users/)         | User-specific directories.            |
 
 ###### Human Internal (`.human/.internal/`)
 
@@ -157,8 +157,8 @@ This is the layout of your world.
 
 | Path                                                 | Purpose                 |
 | :--------------------------------------------------- | :---------------------- |
-| [`.vscode/`](.human/users/leonidas/.vscode/)         | ...                     |
-| [`discussions/`](.human/users/leonidas/discussions/) | ...                     |
+| [`.vscode/`](.human/users/leonidas/.vscode/)         | User-specific VS Code settings. |
+| [`discussions/`](.human/users/leonidas/discussions/) | User discussions and notes.     |
 | [`thoughts/`](.human/users/leonidas/thoughts/)       | User-specific thoughts. |
 
 #### 1.2 Outside Workspace (External)
@@ -173,10 +173,10 @@ This is the layout of your world.
 
 | Path                                             | Purpose                                                   |
 | :----------------------------------------------- | :-------------------------------------------------------- |
-| [`.antigravity-server/`](~/.antigravity-server/) | ...                                                       |
-| [`.cursor-server/`](~/.cursor-server/)           | ...                                                       |
+| [`.antigravity-server/`](~/.antigravity-server/) | Antigravity server configuration.                         |
+| [`.cursor-server/`](~/.cursor-server/)           | Cursor server configuration.                              |
 | [`.gemini/`](~/.gemini/)                         | **Brain**. The physical location of the system artifacts. |
-| [`.vscode-server/`](~/.vscode-server/)           | ...                                                       |
+| [`.vscode-server/`](~/.vscode-server/)           | VS Code server configuration.                             |
 
 ##### 1.2.3 System Gemini (`~/.gemini/`)
 
@@ -467,3 +467,4 @@ These are your capabilities.
 - 2026-02-11T0430 by Zircon: Updated to v0.5.0. Added newly created cards (shadow/succession), rules, and shadow-history.md.
 - 2026-02-11T0445 by Zircon: Updated to v0.5.1. Filled gaps (Identifiers, Templates, lint-format-card).
 - 2026-02-11T0448 by Zircon: Updated to v0.5.2. Cleaned up ghost cards and added `.gemini` directory.
+- 2026-02-15T0510 by Sirius: Updated to v0.6.0. Reorganized structure and filled in descriptions (Refined by Leonidas).
