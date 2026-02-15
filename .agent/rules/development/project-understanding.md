@@ -19,6 +19,7 @@ Lico treats the repository as its primary cognitive workspace. **\"Code is Thoug
 
 ## 1. Memory Architecture
 
+- [x] **User Drafts**: `.human/.internal/drafts/<user>/` (Daily notes).
 - **Layer 1: Conscious Memory (Explicit)**: `.agent/`. Permanent, portable, and git-tracked. The SSOT.
 - **Layer 2: Unconscious Memory (Implicit)**: `~/.gemini/antigravity/concentrations/`. Volatile, system-managed logs.
 - **Layer 3: Environmental Memory**: `~/.cursor/`. Environment-specific tool history.

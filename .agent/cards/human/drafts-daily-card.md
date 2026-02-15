@@ -62,11 +62,11 @@ ai_model: ""
 
 ## Related Documents
 
-| Document                                                            | Purpose                          |
-| :------------------------------------------------------------------ | :------------------------------- |
-| [draft-maintenance.md](/.agent/rules/workflow/draft-maintenance.md) | Conventions for draft management |
-| [drafts-daily-card.md](/.agent/cards/routine/drafts-daily-card.md)  | This card itself                 |
-| [Map of Territory](/.agent/rules/map.md)                            | Root navigation map              |
+| Document                                                                                                          | Purpose                          |
+| :---------------------------------------------------------------------------------------------------------------- | :------------------------------- |
+| [draft-maintenance.md](/.agent/rules/workflow/draft-maintenance.md)                                               | Conventions for draft management |
+| [drafts-daily-card.md](.human/.internal/drafts/<user>/<YYYY>/<MM>/<DD>/.agent/cards/routine/drafts-daily-card.md) | This card itself                 |
+| [Map of Territory](/.agent/rules/map.md)                                                                          | Root navigation map              |
 
 ---
 

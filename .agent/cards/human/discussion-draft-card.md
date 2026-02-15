@@ -83,7 +83,7 @@ ai_model: ""
 ### Canopus (2026-01-25)
 
 - **論理的妥当性の確認**: 提案されている対策（思考の外在化、自己認識の定義、地図の活用）は、当リポジトリの運用ルール（`task.md`, `identity.md`, `map.md`）と完全に合致しており、エージェントのコンテキスト崩壊を防ぐための多重のセーフティネットとして極めて論理的です。
-- **翻訳済みの結果**: [.human/users/leonidas/discussions/discussion-reddit.md](file:///home/leonidas/develop/shared/project/licoproj/.human/users/leonidas/discussions/discussion-reddit.md)
+- **Location**: `.human/.internal/drafts/<user>/discussions/` (Recommended)
 
 ### Canopus (2026-01-20)
 
