@@ -77,7 +77,7 @@ ai_model: ""
 メンテナンス頻度が高いカードをここに集約。
 
 - [housekeeping-card.md](/.agent/cards/routine/housekeeping-card.md)
-- [working-memory-card.md](/.agent/cards/routine/working-memory-card.md)
+- [working-memory-card.md](/.agent/cards/internal/working-memory-card.md)
 - [vscode-settings-card.md](/.agent/cards/routine/vscode-settings-card.md) (単語リスト等)
 - [readme-sync-card.md](/.agent/cards/routine/readme-sync-card.md) (地図更新)
 - [context-cards-card.md](/.agent/cards/routine/context-cards-card.md) (このカード自体)
