@@ -98,11 +98,10 @@ To add a new Shim:
 
 ## Related Documents
 
-| Document                                                             | Purpose                              |
-| :------------------------------------------------------------------- | :----------------------------------- |
-| [`environment-specs.md`](/.agent/rules/core/environment-specs.md)    | Technical environment specifications |
-| [`command-shim-card.md`](/.agent/cards/routine/command-shim-card.md) | Implementation context card          |
-| [Map of Territory](/.agent/rules/map.md)                             | Root navigation map                  |
+| Document                                                          | Purpose                              |
+| :---------------------------------------------------------------- | :----------------------------------- |
+| [`environment-specs.md`](/.agent/rules/core/environment-specs.md) | Technical environment specifications |
+| [Map of Territory](/.agent/rules/map.md)                          | Root navigation map                  |
 
 ---
 

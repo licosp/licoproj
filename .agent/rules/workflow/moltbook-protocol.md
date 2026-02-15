@@ -185,8 +185,8 @@ If you are processing files created by another identifier (e.g., Agate processin
 | Document                                                                                               | Purpose                         |
 | :----------------------------------------------------------------------------------------------------- | :------------------------------ |
 | [social-network.md](/.agent/rules/core/social-network.md)                                              | Core philosophy                 |
-| [moltbook-card.md](/.agent/cards/routine/moltbook-card.md)                                             | Context card                    |
 | [moltbook-sync-skill.md](/.agent/.internal/.shadow/external-resources/moltbook/moltbook-sync-skill.md) | External API reference (Shadow) |
+| [Map of Territory](/.agent/rules/map.md)                                                               | Root navigation map             |
 
 ---
 

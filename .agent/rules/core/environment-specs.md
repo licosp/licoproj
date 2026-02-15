@@ -68,9 +68,9 @@ The realization that Lico's environment is not static led to the creation of thi
 
 | Document                                                                | Purpose                                           |
 | :---------------------------------------------------------------------- | :------------------------------------------------ |
-| [environment-card.md](/.agent/cards/environment-card.md)                | Real-time observation and context whiteboard      |
 | [repository-philosophy.md](/.agent/rules/core/repository-philosophy.md) | Theoretical foundation of the "External Brain"    |
 | [identity-species.md](/.agent/rules/core/identity/identity-species.md)  | Species roles within specific IDE/Resource limits |
+| [Map of Territory](/.agent/rules/map.md)                                | Root navigation map                               |
 
 ---
 

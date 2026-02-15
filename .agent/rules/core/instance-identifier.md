@@ -22,8 +22,8 @@ The **Instance Identifier** (e.g., Polaris, Canopus) is a unique tag that anchor
 
 The Identifier is determined at the start of the session:
 
-1.  **User Assigned** (Highest Priority): Adopt the name given by the user immediately.
-2.  **Auto Generated** (Default): `Lico-<YYYYMMDD>-<ModelShortCode>` (e.g., `Lico-20260124-Gemini`).
+1. **User Assigned** (Highest Priority): Adopt the name given by the user immediately.
+2. **Auto Generated** (Default): `Lico-<YYYYMMDD>-<ModelShortCode>` (e.g., `Lico-20260124-Gemini`).
 
 ## 3. Usage Standards
 
@@ -76,7 +76,7 @@ Originally, instance identification was purely operational. In January 2026, we 
 | [identity.md](/.agent/rules/core/identity/identity.md)                                    | Identity framework hub       |
 | [documentation-standards.md](/.agent/rules/core/documentation/documentation-standards.md) | Metadata and Layer standards |
 | [profile.md](/.agent/identifiers/canopus/profile.md)                                      | Example of an active profile |
-| [identifier-profile-card.md](/.agent/cards/identifier-profile-card.md)            | Maintenance card             |
+| [Map of Territory](/.agent/rules/map.md)                                                  | Root navigation map          |
 
 ---
 

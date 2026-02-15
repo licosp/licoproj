@@ -71,11 +71,12 @@ Upon discovering evidence of previous failure, ask:
 
 ---
 
-## Related
+## Related Documents
 
-- [working-memory-card.md](/.agent/cards/routine/working-memory-card.md): For incident reports
-- [ark-card.md](/.agent/cards/ark-card.md): For file preservation
-- [context-preservation.md](context-preservation.md): For cognitive stashing (different from ark)
+| Document                                           | Purpose                                     |
+| :------------------------------------------------- | :------------------------------------------ |
+| [context-preservation.md](context-preservation.md) | For cognitive stashing (different from ark) |
+| [Map of Territory](/.agent/rules/map.md)           | Root navigation map                         |
 
 ---
 
@@ -84,7 +85,3 @@ Upon discovering evidence of previous failure, ask:
 - 2025-12-01T0000: Created as emergency protocols
 - 2026-01-08T2100 by Polaris: Simplified to card-based workflow, merged preservation and resumption content
 - 2026-01-19T0332 by Canopus: Updated card paths to reflect `routine/` subdirectory and standardized navigation links.
-
----
-
-**Navigation**: [← Back to Rules Index](/.agent/rules/README.md)

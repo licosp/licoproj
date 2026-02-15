@@ -157,11 +157,10 @@ _(To be curated)_
 
 ## Related Documents
 
-| Document                                                           | Purpose                         |
-| :----------------------------------------------------------------- | :------------------------------ |
-| [`session-rituals-card.md`](/.agent/cards/session-rituals-card.md) | The ritual where these are read |
-| [`identity.md`](/.agent/rules/core/identity/identity.md)           | The core identity definition    |
-| [Map of Territory](/.agent/rules/map.md)                           | Root navigation map             |
+| Document                                                 | Purpose                      |
+| :------------------------------------------------------- | :--------------------------- |
+| [`identity.md`](/.agent/rules/core/identity/identity.md) | The core identity definition |
+| [Map of Territory](/.agent/rules/map.md)                 | Root navigation map          |
 
 ---
 

@@ -110,11 +110,10 @@ By targeting **its own tmux ID**, an agent can inject a prompt into its own futu
 
 ## Related Documents
 
-| Document                                                                           | Purpose                           |
-| :--------------------------------------------------------------------------------- | :-------------------------------- |
-| [gemini-cli-card.md](/.agent/cards/routine/gemini-cli-card.md)                     | Context card for this environment |
-| [terminal-auto-execution.md](/.agent/rules/development/terminal-auto-execution.md) | Safety rules for shell commands   |
-| [Map of Territory](/.agent/rules/map.md)                                           | Root navigation map               |
+| Document                                                                           | Purpose                         |
+| :--------------------------------------------------------------------------------- | :------------------------------ |
+| [terminal-auto-execution.md](/.agent/rules/development/terminal-auto-execution.md) | Safety rules for shell commands |
+| [Map of Territory](/.agent/rules/map.md)                                           | Root navigation map             |
 
 ---
 

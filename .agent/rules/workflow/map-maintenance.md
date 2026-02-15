@@ -10,7 +10,7 @@ author: Lico (Polaris)
 ai_model: Claude Opus 4.5 (Thinking) Planning mode
 related:
   .agent/rules/map.md: The territory map itself
-  .agent/cards/routine/map-sync-card.md: Context card for map updates
+
   .agent/rules/core/meta-rules.md: Meta-rules for documentation
   .agent/rules/core/documentation/documentation-standards.md: Document formatting standards
 ---
@@ -100,7 +100,7 @@ This rule was established on 2026-01-19 during a session between Polaris and the
 | Document                                                                               | Purpose                       |
 | :------------------------------------------------------------------------------------- | :---------------------------- |
 | [`map.md`](/.agent/rules/map.md)                                                       | The territory map itself      |
-| [`map-sync-card.md`](/.agent/cards/routine/map-sync-card.md)                           | Context card for map updates  |
+
 | [`meta-rules.md`](/.agent/rules/core/meta-rules.md)                                    | Meta-rules for documentation  |
 | [`documentation-standards.md`](/.agent/rules/core/documentation/documentation-standards.md) | Document formatting standards |
 
