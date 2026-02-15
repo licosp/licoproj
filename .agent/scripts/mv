@@ -1,0 +1,20 @@
+#!/bin/bash
+
+# Shim for mv to prefer git mv when applicable.
+# Managed by: .agent/cards/routine/command-shim-card.md
+
+# Try git mv first
+# We redirect stderr to suppress "not under version control" errors, 
+# but we might want to see other errors. 
+# However, for simple shim, trial is best.
+
+if git rev-parse --is-inside-work-tree > /dev/null 2>&1; then
+    # Try git mv. 
+    # capturing output to hide error if it fails purely due to untracked file
+    if git mv "$@" 2>/dev/null; then
+        exit 0
+    fi
+fi
+
+# Fallback to standard mv
+exec /bin/mv "$@"

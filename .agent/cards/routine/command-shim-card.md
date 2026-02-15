@@ -58,10 +58,12 @@ ai_model: Gemini 3 Pro (High) Planning mode
 
 #### Implementation Status
 
-- [ ] Create Context Card (This file)
-- [ ] Create Ignore Config
-- [ ] Create `grep` Shim
-- [ ] Activate Shim (Link)
+- [x] Create Context Card (This file)
+- [x] Create Ignore Config
+- [x] Create `grep` Shim
+- [x] Create `mv` Shim
+- [x] Create `rm` Shim
+- [x] Activate Shim (Link)
 
 ---
 
