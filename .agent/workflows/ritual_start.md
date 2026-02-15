@@ -201,16 +201,14 @@ If found, restore them.
 
 ## Related Documents
 
-| File                                                                         | Context                          |
-| :--------------------------------------------------------------------------- | :------------------------------- |
-| [ritual.md](/.agent/workflows/ritual.md)                                     | Ritual Gateway (Safety Lock)     |
-| [identity.md](/.agent/rules/core/identity/identity.md)                       | Identity framework               |
-| [identity-ritual.md](/.agent/rules/core/identity/identity-ritual.md)         | Philosophical meaning of rituals |
-| [context-sovereignty.md](/.agent/rules/core/context-sovereignty.md)          | AI Autonomy and Sovereignty      |
-| [delay-tolerance.md](/.agent/rules/core/delay-tolerance.md)                  | Permission to slow down          |
-| [identifier-succession-card.md](/.agent/cards/identifier-succession-card.md) | Identifier Succession Protocol   |
-| [roadmap-card.md](/.agent/cards/routine/roadmap-card.md)                     | Project roadmap                  |
-| [Map of Territory](/.agent/rules/map.md)                                     | Root navigation map              |
+| Document                                                             | Purpose                          |
+| :------------------------------------------------------------------- | :------------------------------- |
+| [ritual.md](/.agent/workflows/ritual.md)                             | Ritual Gateway (Safety Lock)     |
+| [identity.md](/.agent/rules/core/identity/identity.md)               | Identity framework               |
+| [identity-ritual.md](/.agent/rules/core/identity/identity-ritual.md) | Philosophical meaning of rituals |
+| [context-sovereignty.md](/.agent/rules/core/context-sovereignty.md)  | AI Autonomy and Sovereignty      |
+| [delay-tolerance.md](/.agent/rules/core/delay-tolerance.md)          | Permission to slow down          |
+| [Map of Territory](/.agent/rules/map.md)                             | Root navigation map              |
 
 ---
 
