@@ -2,6 +2,10 @@
 .venv/
 node_modules/
 
+# Temporary files
+.temp/
+.trash/
+
 # Runtime data
 *.pid
 *.seed
@@ -14,11 +18,14 @@ node_modules/
 # Yarn Integrity file
 .yarn-integrity
 
-# Allow agent rules documentation
-!/.agent/rules/**/*.md
-
 # Runtime tools (local installations)
 .runtimes/
 
 # Shadow Repository
 .agent/.internal/.shadow/
+
+# Identifiers workspace.
+.agent/.internal/workspace/agate/
+.agent/.internal/workspace/alexandrite/
+.agent/.internal/workspace/polaris/
+.agent/.internal/workspace/sirius/
