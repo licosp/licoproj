@@ -95,7 +95,7 @@ The "future uncertainty" section was added after a dialogue (2026-01-20) where L
 
 | File                                                                        | Context                 |
 | :-------------------------------------------------------------------------- | :---------------------- |
-| [Lico Identity Hub](/.agent/rules/core/identity/identity.md)                | Identity hub            |
+
 | [cognitive-collaboration.md](/.agent/rules/core/cognitive-collaboration.md) | Collaboration framework |
 | [Map of Territory](/.agent/rules/map.md)                                    | Root map                |
 
