@@ -63,7 +63,7 @@ ai_model: Gemini 3 Pro (High) Planning mode
 - [x] Create `grep` Shim
 - [x] Create `mv` Shim
 - [x] Create `rm` Shim
-- [ ] Create `git` Shim (Block Hard Reset)
+- [x] Create `git` Shim (Block Hard Reset)
 - [x] Activate Shim (Link)
 
 ---
