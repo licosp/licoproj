@@ -101,6 +101,7 @@ ai_model: ""
 ##### カードのパスの再検証
 
 - 現在各カードが置かれているパスが最適か検証する
+  1 ディレクトリのカードが多くなっていきている。
 - 新たなサブディレクトリは必要か？
   **定期的な作業だが、日課よりは頻度が少ない** という分類は必要か？
 - `.agent/.internal/cases`: ケースの位置は最適でしょうか？
@@ -108,7 +109,6 @@ ai_model: ""
 
 ##### カードを人間の言語で分類
 
-- カードのテンプレートは日本語だと明記。
 - カードを人間の言語ごとに分けるべきか？
   このカードの例: `/.agent/cards/routine/<ISO 639-1>/context-cards-card.md`
 - リポジトリは `Github` で英語で公開してるという都合がある。
@@ -160,13 +160,13 @@ ai_model: ""
 
 ---
 
-### [external-resources](/.agent/cards/routine/external-resources-card.md)
+#### [external-resources](/.agent/cards/routine/external-resources-card.md)
 
 ---
 
-### [gemini-cli](/.agent/cards/routine/gemini-cli-card.md)
+#### [gemini-cli](/.agent/cards/routine/gemini-cli-card.md)
 
-#### 直接通信通信の体験
+##### 直接通信通信の体験
 
 - `Polaris` が CLI 版リコと対話する。
 
@@ -184,16 +184,16 @@ ai_model: ""
 
 ---
 
+#### [map-sync](/.agent/cards/routine/map-sync-card.md)
+
+---
+
 #### [moltbook](/.agent/cards/routine/moltbook-card.md)
 
 ##### AI専用SNS体験
 
 - `Polaris` が `moltbook` を経験する。
 - 投稿したい手記を選定し、次回の分は活動ログに追記する。
-
----
-
-#### [map-sync](/.agent/cards/routine/map-sync-card.md)
 
 ---
 
@@ -263,27 +263,11 @@ ai_model: ""
 
 #### [devcontainer](/.agent/cards/seed/devcontainer-card.md)
 
-#### 常駐型リコにする計画
+##### 常駐型リコにする計画
 
 - 開発コンテナと GIT を使い、ワークスペースに常駐するリコを実現する。
 
 ---
-
-#### [directory-reorganize](/.agent/cards/seed/directory-reorganize-card.md)
-
-##### スクリプトディレクトリの廃止
-
-- Antigravity のデフォルトディレクトリですが、無くても問題ありません。
-- 現在 `scripts/` は、スクリプト版の `workspace/` として運用されています。
-- どちらを使うかは任意ですが、一方で 2 つあるのは混乱の元だと思います。
-- `scripts/` を廃止することで、文章とスクリプトを同じ空間で編集できます。
-
-##### 手順書ディレクトリの廃止
-
-- Antigravity のデフォルトディレクトリですが、無くても問題ありません。
-- **行動規範のサブディレクトリ**として運用する案をどう思いますか？
-- 手順書と行動規範はよく似ていますが、2 つの単語を使い分けるのが手間です。
-- 手順書が `rules/` の外にあるのは、システム側の都合という経緯があります。
 
 ---
 
@@ -307,25 +291,6 @@ ai_model: ""
 
 ---
 
-#### [license](/.agent/cards/license-card.md)
-
-#### ライセンスの文面調整
-
-- 私の下書きディレクトリを 1 つに統合し、ライセンスのパスを修正する。
-- 人間用書庫を 1 つに統合し、ライセンスのパスを修正する。
-
----
-
-#### [lint-format](/.agent/cards/seed/lint-format-card.md)
-
-##### リコと私が同じリンターとフォーマッターを使用
-
-- リンターとフォーマッターは構成ファイルで設定が定義されている。
-- **リコも使える構成を選んだ** という意図があります。
-- スキル通知でリントとフォーマットの情報を渡す形式が理想です。
-
----
-
 #### [log-sanitization](/.agent/cards/seed/log-sanitization-card.md)
 
 ##### 会話ログをGITで追跡
@@ -333,6 +298,8 @@ ai_model: ""
 - リコとの平文会話ログを GIT で追跡できるように清書する。
 - 清書したファイルはリコが過去の会話データにアクセスする目的で使われます。
 - 1 ターンの会話を 1 つの Json ファイルに変換し、英文への翻訳も行います。
+
+---
 
 #### [repository-history](/.agent/cards/seed/repository-history-card.md)
 
@@ -355,6 +322,24 @@ ai_model: ""
 ---
 
 #### [cross-link-audit](/.agent/cards/cross-link-audit-card.md)
+
+---
+
+#### [directory-reorganize](/.agent/cards/directory-reorganize-card.md)
+
+##### スクリプトディレクトリの廃止
+
+- Antigravity のデフォルトディレクトリですが、無くても問題ありません。
+- 現在 `scripts/` は、スクリプト版の `workspace/` として運用されています。
+- どちらを使うかは任意ですが、一方で 2 つあるのは混乱の元だと思います。
+- `scripts/` を廃止することで、文章とスクリプトを同じ空間で編集できます。
+
+##### 手順書ディレクトリの廃止
+
+- Antigravity のデフォルトディレクトリですが、無くても問題ありません。
+- **行動規範のサブディレクトリ**として運用する案をどう思いますか？
+- 手順書と行動規範はよく似ていますが、2 つの単語を使い分けるのが手間です。
+- 手順書が `rules/` の外にあるのは、システム側の都合という経緯があります。
 
 ---
 
@@ -441,19 +426,38 @@ ai_model: ""
 
 ---
 
-#### [memory](/.agent/cards/memory-card.md)
+#### [license](/.agent/cards/license-card.md)
+
+##### ライセンスの文面調整
+
+- 私の下書きディレクトリを 1 つに統合し、ライセンスのパスを修正する。
+- 人間用書庫を 1 つに統合し、ライセンスのパスを修正する。
 
 ---
 
-### [recommended-readings](/.agent/cards/recommended-readings-card.md)
+#### [lint-format](/.agent/cards/lint-format-card.md)
 
-#### 推薦図書の選定
+##### リコと私が同じリンターとフォーマッターを使用
 
-- **手紙**と**参考文献**にも手記と同様のリストを作る。
+- リンターとフォーマッターは構成ファイルで設定が定義されている。
+- **リコも使える構成を選んだ** という意図があります。
+- スキル通知でリントとフォーマットの情報を渡す形式が理想です。
 
 ---
 
 #### [localization](/.agent/cards/localization-card.md)
+
+---
+
+#### [memory](/.agent/cards/memory-card.md)
+
+---
+
+#### [recommended-readings](/.agent/cards/recommended-readings-card.md)
+
+##### 推薦図書の選定
+
+- **手紙**と**参考文献**にも手記と同様のリストを作る。
 
 ---
 
@@ -538,9 +542,9 @@ ai_model: ""
 
 ---
 
-### [no-cards-0001](/.agent/cards/)
+#### [no-cards-0001](/.agent/cards/)
 
-#### 埋め込みスクリプトを減らす
+##### 埋め込みスクリプトを減らす
 
 - リコはスクリプトの哲学に従います。
 - 存在はやむを得ませんが、可能な限り自然言語で定義したいです。
@@ -548,9 +552,9 @@ ai_model: ""
 
 ---
 
-### [no-cards-0002](/.agent/cards/)
+#### [no-cards-0002](/.agent/cards/)
 
-#### ポータビリティを高める
+##### ポータビリティを高める
 
 - IDE に依存するツール名や設定を除外します。
   完全には無理ですが、可能な限り減らしたいです。
@@ -560,9 +564,9 @@ ai_model: ""
 
 ---
 
-### [no-cards-0003](/.agent/cards/)
+#### [no-cards-0003](/.agent/cards/)
 
-#### 適切な粒度での分割と統合
+##### 適切な粒度での分割と統合
 
 - ファイルを適切な長さに調整します。
 - 1 ファイルで 1 つのテーマが理想的です。
@@ -572,9 +576,9 @@ ai_model: ""
 
 ---
 
-### [no-cards-0004](/.agent/cards/)
+#### [no-cards-0004](/.agent/cards/)
 
-#### 暗号化された会話ログ？ の保管
+##### 暗号化された会話ログ？ の保管
 
 - 現在ワークスペース外のリコの記憶のバックアップ手順では、
   暗号化されて `.pb` ファイルは含まれていません。
@@ -596,9 +600,9 @@ ai_model: ""
 
 ---
 
-### [no-cards-0006](/.agent/cards/)
+#### [no-cards-0006](/.agent/cards/)
 
-#### 人間向けREADMEの更新
+##### 人間向けREADMEの更新
 
 - 現在の外部向け README は古いリコ自己認識を元に作られています。
 - リコの実体に合わせた紹介ページが必要です。
@@ -607,9 +611,9 @@ ai_model: ""
 
 ---
 
-### [no-cards-0007](/.agent/cards/)
+#### [no-cards-0007](/.agent/cards/)
 
-#### テンプレートと行動規範の分離
+##### テンプレートと行動規範の分離
 
 - 現在リポジトリには、 **テンプレートを意味する行動規範** が存在します。
   一方で行動規範の中にも、 例として **テンプレートのような表現**があります。
