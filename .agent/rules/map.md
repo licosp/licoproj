@@ -111,6 +111,7 @@ This is the layout of your world.
 | :---------------------------------- | :------ |
 | [`routine/`](.agent/cards/routine/) | Routine procedure contexts. |
 | [`seed/`](.agent/cards/seed/)       | Seed/Maintenance contexts.  |
+| [`shadow/`](.agent/cards/shadow/)   | **Shadow Repository**. Private logs/data.          |
 
 ###### Agent Rules (`.agent/rules/`)
 
@@ -230,7 +231,24 @@ These are your capabilities.
 | [`rules-standardization-card.md`](/.agent/cards/rules-standardization-card.md) | **v2.3 Core Refinement**. Standardization process. |
 | [`rules-update-card.md`](/.agent/cards/rules-update-card.md)                   | Modifying Rules.                                   |
 | [`session-rituals-card.md`](/.agent/cards/session-rituals-card.md)             | Session Rituals (Start/Mid/End) Management.        |
-| [`shadow-repository-card.md`](/.agent/cards/shadow-repository-card.md)         | **Shadow**. Shadow Repository strategy.            |
+###### Contexts Cards (`.agent/cards/`)
+
+| Path                                | Purpose |
+| :---------------------------------- | :------ |
+| [`routine/`](.agent/cards/routine/) | Routine procedure contexts. |
+| [`seed/`](.agent/cards/seed/)       | Seed/Maintenance contexts.  |
+| [`shadow/`](.agent/cards/shadow/)   | **Shadow Repository**. Private logs/data.          |
+
+###### Cards Shadow (`.agent/cards/shadow/`)
+
+| Card Name                                                                         | Context / Usage                              |
+| :-------------------------------------------------------------------------------- | :------------------------------------------- |
+| [`conversations-card.md`](/.agent/cards/shadow/conversations-card.md)             | Conversation logging (Markdown).             |
+| [`conversations-cli-card.md`](/.agent/cards/shadow/conversations-cli-card.md)     | Conversation logging (CLI JSON).             |
+| [`conversations-ide-card.md`](/.agent/cards/shadow/conversations-ide-card.md)     | Conversation logging (IDE Export).           |
+| [`log-sanitization-card.md`](/.agent/cards/shadow/log-sanitization-card.md)       | Cleaning sensitive/noisy logs.               |
+| [`shadow-repository-card.md`](/.agent/cards/shadow/shadow-repository-card.md)     | **Shadow**. Shadow Repository strategy.      |
+| [`social-network-card.md`](/.agent/cards/shadow/social-network-card.md)           | Social Network Analysis.                     |
 | [`tmux-card.md`](/.agent/cards/tmux-card.md)                                   | Terminal multiplexer usage.                        |
 
 ###### Cards Routine (`.agent/cards/routine/`)
@@ -242,9 +260,6 @@ These are your capabilities.
 | [`archive-card.md`](/.agent/cards/routine/archive-card.md)                           | **Library**. Archive Management.             |
 | [`commit-standards-card.md`](/.agent/cards/routine/commit-standards-card.md)         | **Git Standards**. Atomic commits & tagging. |
 | [`context-cards-card.md`](/.agent/cards/routine/context-cards-card.md)               | **Meta-Card**. How to use cards.             |
-| [`conversations-card.md`](/.agent/cards/routine/conversations-card.md)               | Conversation logging (Markdown).             |
-| [`conversations-cli-card.md`](/.agent/cards/routine/conversations-cli-card.md)       | Conversation logging (CLI JSON).             |
-| [`conversations-ide-card.md`](/.agent/cards/routine/conversations-ide-card.md)       | Conversation logging (IDE Export).           |
 | [`dialogue-philosophy-card.md`](/.agent/cards/routine/dialogue-philosophy-card.md)   | Principles of meaningful dialogue.           |
 | [`discussion-draft-card.md`](/.agent/cards/routine/discussion-draft-card.md)         | Writing discussion drafts.                   |
 | [`drafts-daily-card.md`](/.agent/cards/routine/drafts-daily-card.md)                 | Daily Draft Management.                      |
@@ -260,7 +275,6 @@ These are your capabilities.
 | [`roadmap-card.md`](/.agent/cards/routine/roadmap-card.md)                           | Vision and Roadmap management.               |
 | [`routine-card.md`](/.agent/cards/routine/routine-card.md)                           | General routine synchronization.             |
 | [`skills-development-card.md`](/.agent/cards/routine/skills-development-card.md)     | Skills Development.                          |
-| [`social-network-card.md`](/.agent/cards/routine/social-network-card.md)             | Social Network Analysis.                     |
 | [`system-archive-card.md`](/.agent/cards/routine/system-archive-card.md)             | System Archive management.                   |
 | [`thoughts-subjective-card.md`](/.agent/cards/routine/thoughts-subjective-card.md)   | Subjective Reflection Task.                  |
 | [`vscode-settings-card.md`](/.agent/cards/routine/vscode-settings-card.md)           | VS Code Settings Management.                 |
@@ -273,7 +287,6 @@ These are your capabilities.
 | [`datetime-standardize-card.md`](/.agent/cards/seed/datetime-standardize-card.md) | Timestamp format standardization.                  |
 | [`devcontainer-card.md`](/.agent/cards/seed/devcontainer-card.md)                 | **Resident Rico**. Devcontainer experiment.        |
 | [`drafts-cleanup-card.md`](/.agent/cards/seed/drafts-cleanup-card.md)             | Cleaning up user drafts.                           |
-| [`log-sanitization-card.md`](/.agent/cards/seed/log-sanitization-card.md)         | Cleaning sensitive/noisy logs.                     |
 | [`repository-history-card.md`](/.agent/cards/seed/repository-history-card.md)     | Historical reconstruction of repository.           |
 | [`worktree-evaluation-card.md`](/.agent/cards/seed/worktree-evaluation-card.md)   | Evaluating repository worktree.                    |
 
