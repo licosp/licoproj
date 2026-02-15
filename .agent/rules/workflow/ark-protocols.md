@@ -41,7 +41,7 @@ When to enter emergency mode:
    - What happened?
    - What were you doing?
    - What should the next AI do?
-3. **If files need preservation**: Open `ark-card.md` context, save to `ark/`
+3. **If files need preservation**: Save to `ark/`
 4. **Notify user and halt**
 
 ---
