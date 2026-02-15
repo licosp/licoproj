@@ -121,6 +121,9 @@
     "markdownlint.severityForError": "Error",
     "markdownlint.severityForWarning": "Error",
 
+    // Markdown Table
+    "markdowntable.showMenu.tsvToTable": true,
+
     // Textlint
     "textlint.autoFixOnSave": true,
     "textlint.configPath": ".vscode/.textlintrc.json",
