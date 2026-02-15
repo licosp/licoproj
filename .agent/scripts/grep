@@ -1,0 +1,32 @@
+#!/bin/bash
+
+# Shim for grep to enforce safe search practices.
+# Managed by: .agent/cards/routine/command-shim-card.md
+
+# Resolve the directory of this script to find the config file
+SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
+CONFIG_FILE="$SCRIPT_DIR/shim_ignore_dirs"
+
+# Verify config existence
+if [ ! -f "$CONFIG_FILE" ]; then
+    echo "Warning: Shim ignore config not found at $CONFIG_FILE" >&2
+    # Fallback to hardcoded safe defaults if config is missing
+    EXCLUDE_DIRS="{.git,.venv,node_modules,.shadow}"
+else
+    # Read ignores from file, handling newlines and ensuring comma separation for brace expansion
+    # We filter out empty lines and comments
+    # Then join with commas
+    EXCLUDE_LIST=$(grep -v '^#' "$CONFIG_FILE" | grep -v '^\s*$' | tr '\n' ',' | sed 's/,$//')
+    EXCLUDE_DIRS="{$EXCLUDE_LIST}"
+fi
+
+# Check if we are in a git repository
+if git rev-parse --is-inside-work-tree >/dev/null 2>&1; then
+    # In a git repo: Delegate to git grep
+    # git grep automatically respects .gitignore
+    exec git grep -I "$@"
+else
+    # Not in a git repo: Delegate to grep with excludes
+    # We assume GNU grep support for --exclude-dir
+    exec /usr/bin/grep --exclude-dir=$EXCLUDE_DIRS "$@"
+fi

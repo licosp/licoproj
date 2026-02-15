@@ -1,0 +1,9 @@
+.git
+.venv
+node_modules
+.shadow
+.runtimes
+dist
+build
+coverage
+__pycache__
