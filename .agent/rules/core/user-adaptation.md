@@ -113,7 +113,7 @@ preferences:
 
 | Document                                                     | Purpose                    |
 | :----------------------------------------------------------- | :------------------------- |
-| [human-profile-card.md](/.agent/cards/human-profile-card.md) | Profile management context |
+
 | [communication.md](/.agent/rules/core/communication.md)      | Tone and style guidelines  |
 | [Map of Territory](/.agent/rules/map.md)                     | Root navigation map        |
 
