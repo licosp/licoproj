@@ -113,6 +113,41 @@ ai_model: ""
 
 ---
 
+---
+
+## Ongoing Project: Card Classification (2026-02-15)
+
+現在、フラットな `cards/routine` や `cards/seed` を、より意味のあるサブディレクトリへ分類する作業が進行中です。
+
+### Completed
+- [x] **Shadow Context** (`cards/shadow/`)
+  - `conversations-*.md`, `log-sanitization-card.md`, `shadow-repository-card.md` etc.
+- [x] **Human Context** (`cards/human/`)
+  - `human-manuals-card.md`, `human-profile-card.md`, `drafts-*.md` etc.
+
+### Remaining Tasks (To Be Resumed)
+以下の分類案に基づき、残りのカードを移動・整理する必要があります。
+
+1.  **System / Infra** (`cards/system/` or `infra/`)
+    - `git-operations-card.md`, `devcontainer-card.md`, `worktree-evaluation-card.md`
+    - `vscode-settings-card.md`, `environment-card.md`
+2.  **Procedure / Ops** (`cards/ops/` or `procedure/`)
+    - `routine-card.md`, `housekeeping-card.md`, `repository-backup-card.md`
+    - `activity-log-card.md`, `session-rituals-card.md`
+3.  **Governance / Meta** (`cards/governance/`)
+    - `roadmap-card.md`, `context-cards-card.md`, `rules-*.md`
+    - `license-card.md`, `lint-format-card.md`
+4.  **Identity** (`cards/identity/`)
+    - `lico-identity-card.md`, `identifier-profile-card.md`, `ai-autonomy-card.md`
+5.  **Project / Issue** (`cards/project/`)
+    - `idd-*.md`, `cross-link-audit-card.md`
+
+### Note on Resumption
+- 作業再開時は、このリストを元に `git mv` と `map.md` の更新を行ってください。
+- 各移動において、必ず `grep` で参照箇所（特に Rules からのリンク）を確認し、修正/削除してください。
+
+---
+
 ## Related Documents
 
 | Document                                                                    | Purpose                                    |
