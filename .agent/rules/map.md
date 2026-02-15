@@ -141,6 +141,17 @@ This is the layout of your world.
 | [`manuals/`](/.human/manuals/)     | Instructions from User to AI.         |
 | [`users/`](/.human/users/)         | User-specific directories.            |
 
+###### Human Cards (`.agent/cards/human/`)
+
+| Card Name                                                                         | Context / Usage                              |
+| :-------------------------------------------------------------------------------- | :------------------------------------------- |
+| [`discussion-draft-card.md`](/.agent/cards/human/discussion-draft-card.md)         | Writing discussion drafts.                   |
+| [`drafts-cleanup-card.md`](/.agent/cards/human/drafts-cleanup-card.md)             | Cleaning up user drafts.                           |
+| [`drafts-daily-card.md`](/.agent/cards/human/drafts-daily-card.md)                 | Daily Draft Management.                      |
+| [`human-manuals-card.md`](/.agent/cards/human/human-manuals-card.md)                 | Index of Human Manuals.                            |
+| [`human-profile-card.md`](/.agent/cards/human/human-profile-card.md)                 | User Profile and Preferences.                      |
+| [`human-thoughts-card.md`](/.agent/cards/human/human-thoughts-card.md)             | Capturing and analyzing Human thoughts.      |
+
 ###### Human Internal (`.human/.internal/`)
 
 | Path                                     | Purpose                       |
@@ -213,8 +224,6 @@ These are your capabilities.
 | [`environment-card.md`](/.agent/cards/environment-card.md)                     | Environment setup and variables.                   |
 | [`directory-reorganize-card.md`](/.agent/cards/directory-reorganize-card.md) | Directory structure cleanup.                       |
 | [`git-operations-card.md`](/.agent/cards/git-operations-card.md)               | Repository Infrastructure & Safety.                |
-| [`human-manuals-card.md`](/.agent/cards/human-manuals-card.md)                 | Index of Human Manuals.                            |
-| [`human-profile-card.md`](/.agent/cards/human-profile-card.md)                 | User Profile and Preferences.                      |
 | [`idd-initialization-card.md`](/.agent/cards/idd-initialization-card.md)       | **IDD Phase 1**: Initialization.                   |
 | [`idd-implementation-card.md`](/.agent/cards/idd-implementation-card.md)       | **IDD Phase 2**: Implementation.                   |
 | [`idd-finalization-card.md`](/.agent/cards/idd-finalization-card.md)           | **IDD Phase 3**: Finalization.                     |
@@ -261,12 +270,9 @@ These are your capabilities.
 | [`commit-standards-card.md`](/.agent/cards/routine/commit-standards-card.md)         | **Git Standards**. Atomic commits & tagging. |
 | [`context-cards-card.md`](/.agent/cards/routine/context-cards-card.md)               | **Meta-Card**. How to use cards.             |
 | [`dialogue-philosophy-card.md`](/.agent/cards/routine/dialogue-philosophy-card.md)   | Principles of meaningful dialogue.           |
-| [`discussion-draft-card.md`](/.agent/cards/routine/discussion-draft-card.md)         | Writing discussion drafts.                   |
-| [`drafts-daily-card.md`](/.agent/cards/routine/drafts-daily-card.md)                 | Daily Draft Management.                      |
 | [`external-resources-card.md`](/.agent/cards/routine/external-resources-card.md)     | Managing external resources.                 |
 | [`gemini-cli-card.md`](/.agent/cards/routine/gemini-cli-card.md)                     | Gemini CLI operations.                       |
 | [`housekeeping-card.md`](/.agent/cards/routine/housekeeping-card.md)                 | Short-term tasks, quick maintenance.         |
-| [`human-thoughts-card.md`](/.agent/cards/routine/human-thoughts-card.md)             | Capturing and analyzing Human thoughts.      |
 | [`letters-card.md`](/.agent/cards/routine/letters-card.md)                           | Writing Letters/Handoffs.                    |
 | [`map-sync-card.md`](/.agent/cards/routine/map-sync-card.md)                         | Map Updates.                                 |
 | [`moltbook-card.md`](/.agent/cards/routine/moltbook-card.md)                         | Moltbook Protocol management.                |
@@ -286,7 +292,6 @@ These are your capabilities.
 | :-------------------------------------------------------------------------------- | :------------------------------------------------- |
 | [`datetime-standardize-card.md`](/.agent/cards/seed/datetime-standardize-card.md) | Timestamp format standardization.                  |
 | [`devcontainer-card.md`](/.agent/cards/seed/devcontainer-card.md)                 | **Resident Rico**. Devcontainer experiment.        |
-| [`drafts-cleanup-card.md`](/.agent/cards/seed/drafts-cleanup-card.md)             | Cleaning up user drafts.                           |
 | [`repository-history-card.md`](/.agent/cards/seed/repository-history-card.md)     | Historical reconstruction of repository.           |
 | [`worktree-evaluation-card.md`](/.agent/cards/seed/worktree-evaluation-card.md)   | Evaluating repository worktree.                    |
 

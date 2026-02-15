@@ -101,16 +101,17 @@ ai_model: ""
 
 **Root Cards (`.agent/cards/`)**:
 
-- ark-card.md, cross-link-audit-card.md, human-manuals-card.md, human-profile-card.md
+- ark-card.md, cross-link-audit-card.md
+- directory-reorganize-card.md, git-operations-card.md
 - idd-fini-card.md, idd-impl-card.md, idd-init-card.md
-- legacy-write-card.md, lico-identity-card.md, localization-card.md
+- legacy-write-card.md, license-card.md, lico-identity-card.md
+- lint-format-card.md, localization-card.md
 - rules-update-card.md, session-rituals-card.md
 
 **Routine Cards (`.agent/cards/routine/`)**:
 
 - activity-log-card.md, ai-autonomy-card.md, context-cards-card.md, dialogue-philosophy-card.md
-- discussion-draft-card.md, drafts-daily-card.md, housekeeping-card.md, human-thoughts-card.md
-- letters-card.md, map-sync-card.md, moltbook-card.md
+- housekeeping-card.md, letters-card.md, map-sync-card.md, moltbook-card.md
 - references-objective-card.md, repository-backup-card.md, roadmap-card.md
 - routine-card.md, skills-development-card.md
 - system-archive-card.md, thoughts-subjective-card.md
@@ -124,7 +125,12 @@ ai_model: ""
 **Seed Cards (`.agent/cards/seed/`)**:
 
 - datetime-standardize-card.md, devcontainer-card.md
-- drafts-cleanup-card.md, repository-history-card.md, worktree-evaluation-card.md
+- repository-history-card.md, worktree-evaluation-card.md
+
+**Human Cards (`.agent/cards/human/`)**:
+
+- discussion-draft-card.md, drafts-cleanup-card.md, drafts-daily-card.md
+- human-manuals-card.md, human-profile-card.md, human-thoughts-card.md
 
 **Section 3.2 (Workflow Rules) - 追加が必要**:
 
