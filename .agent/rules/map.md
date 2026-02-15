@@ -257,6 +257,7 @@ These are your capabilities.
 | [`conversations-ide-card.md`](/.agent/cards/shadow/conversations-ide-card.md)     | Conversation logging (IDE Export).           |
 | [`log-sanitization-card.md`](/.agent/cards/shadow/log-sanitization-card.md)       | Cleaning sensitive/noisy logs.               |
 | [`shadow-repository-card.md`](/.agent/cards/shadow/shadow-repository-card.md)     | **Shadow**. Shadow Repository strategy.      |
+| [`external-resources-card.md`](/.agent/cards/shadow/external-resources-card.md)     | Managing external resources.                 |
 | [`social-network-card.md`](/.agent/cards/shadow/social-network-card.md)           | Social Network Analysis.                     |
 | [`tmux-card.md`](/.agent/cards/tmux-card.md)                                   | Terminal multiplexer usage.                        |
 
@@ -270,7 +271,7 @@ These are your capabilities.
 | [`commit-standards-card.md`](/.agent/cards/routine/commit-standards-card.md)         | **Git Standards**. Atomic commits & tagging. |
 | [`context-cards-card.md`](/.agent/cards/routine/context-cards-card.md)               | **Meta-Card**. How to use cards.             |
 | [`dialogue-philosophy-card.md`](/.agent/cards/routine/dialogue-philosophy-card.md)   | Principles of meaningful dialogue.           |
-| [`external-resources-card.md`](/.agent/cards/routine/external-resources-card.md)     | Managing external resources.                 |
+
 | [`gemini-cli-card.md`](/.agent/cards/routine/gemini-cli-card.md)                     | Gemini CLI operations.                       |
 | [`housekeeping-card.md`](/.agent/cards/routine/housekeeping-card.md)                 | Short-term tasks, quick maintenance.         |
 | [`letters-card.md`](/.agent/cards/routine/letters-card.md)                           | Writing Letters/Handoffs.                    |
