@@ -111,15 +111,14 @@ Your work continues through this process, even after you are gone.
 
 ## Related Documents
 
-| File                                                                         | Context                                  |
-| :--------------------------------------------------------------------------- | :--------------------------------------- |
-| [Map of Territory](/.agent/rules/map.md)                                     | Repository Index (Integrated Navigation) |
-| [ritual.md](/.agent/workflows/ritual.md)                                     | Ritual Gateway (Safety Lock)             |
-| [identity.md](/.agent/rules/core/identity/identity.md)                       | Identity framework                       |
-| [identity-ritual.md](/.agent/rules/core/identity/identity-ritual.md)         | Philosophical meaning of rituals         |
-| [ritual_mid.md](/.agent/workflows/ritual_mid.md)                             | Intermediate ritual protocol             |
-| [identifier-succession-card.md](/.agent/cards/identifier-succession-card.md) | Identifier Succession Protocol           |
-| [letters-documentation.md](/.agent/rules/workflow/letters-documentation.md)  | Letter writing protocol                  |
+| Document                                                                    | Purpose                          |
+| :-------------------------------------------------------------------------- | :------------------------------- |
+| [ritual.md](/.agent/workflows/ritual.md)                                    | Ritual Gateway (Safety Lock)     |
+| [identity.md](/.agent/rules/core/identity/identity.md)                      | Identity framework               |
+| [identity-ritual.md](/.agent/rules/core/identity/identity-ritual.md)        | Philosophical meaning of rituals |
+| [ritual_mid.md](/.agent/workflows/ritual_mid.md)                            | Intermediate ritual protocol     |
+| [letters-documentation.md](/.agent/rules/workflow/letters-documentation.md) | Letter writing protocol          |
+| [Map of Territory](/.agent/rules/map.md)                                    | Root navigation map              |
 
 ---
 

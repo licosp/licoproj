@@ -119,7 +119,7 @@ Read selected documents from [.agent/.internal/references/](/.agent/.internal/re
 
 ### Step 7: Reading the Compass (Roadmap)
 
-Read [roadmap-card.md](/.agent/cards/routine/roadmap-card.md).
+Read `roadmap-card.md`.
 
 **Purpose**: Understand the "Great Direction" beyond this single session.
 

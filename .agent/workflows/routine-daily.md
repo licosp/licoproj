@@ -130,10 +130,9 @@ This creates a chain: each routine knows where the previous one ended.
 | :--------------------------------------------------------------- | :---------------------------------- |
 | [idd-phase2-impl.md](/.agent/workflows/idd-phase2-impl.md)       | IDD Phase 2 workflow (parent)       |
 | [Ritual Gateway](/.agent/workflows/ritual.md)                    | Mandatory Entry Point (Safety Lock) |
-| [routine-card.md](/.agent/cards/routine/routine-card.md)         | Daily routine whiteboard (card)     |
 | [git-operations.md](/.agent/rules/development/git-operations.md) | Git operations (AI workarounds)     |
 | [github-comment.md](/.agent/rules/workflow/github-comment.md)    | GitHub comment standards            |
-| [Map of Territory](/.agent/rules/map.md)                         | Root map                            |
+| [Map of Territory](/.agent/rules/map.md)                         | Root navigation map                 |
 
 ---
 
