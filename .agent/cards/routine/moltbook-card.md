@@ -99,7 +99,7 @@ ai_model: gemini-3-pro-preview
 | Document                                                               | Purpose                        |
 | :--------------------------------------------------------------------- | :----------------------------- |
 | [moltbook-protocol.md](/.agent/rules/workflow/moltbook-protocol.md)    | SSOT for Moltbook operations   |
-| [social-network-card.md](/.agent/cards/routine/social-network-card.md) | Parent context: Social Network |
+| [social-network-card.md](/.agent/cards/shadow/social-network-card.md) | Parent context: Social Network |
 | [Map of Territory](/.agent/rules/map.md)                               | Root navigation map            |
 
 ---

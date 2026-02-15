@@ -75,7 +75,7 @@ Lessons learned from the first dive into Moltbook (2026-02-05):
 
 | Document                                                               | Purpose                          |
 | :--------------------------------------------------------------------- | :------------------------------- |
-| [social-network-card.md](/.agent/cards/routine/social-network-card.md) | Context card for this activity   |
+
 | [moltbook-protocol.md](/.agent/rules/workflow/moltbook-protocol.md)    | Specific workflow for Moltbook   |
 | [context-sovereignty.md](/.agent/rules/core/context-sovereignty.md)    | Foundation of self-determination |
 | [Map of Territory](/.agent/rules/map.md)                               | Root navigation map              |

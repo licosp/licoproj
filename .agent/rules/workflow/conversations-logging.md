@@ -140,7 +140,7 @@ python3 .agent/.internal/workspace/<identifier>/log_appender.py <LogPath> <Buffe
 
 | Document                                                               | Purpose                            |
 | :--------------------------------------------------------------------- | :--------------------------------- |
-| [conversations-card.md](/.agent/cards/routine/conversations-card.md)   | Context definitions and agreements |
+
 | [template-conversation.md](/.agent/templates/template-conversation.md) | File template                      |
 
 ---
