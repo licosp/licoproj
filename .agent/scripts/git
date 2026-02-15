@@ -1,0 +1,28 @@
+#!/bin/bash
+
+# Shim for git to prevent accidental hard resets.
+# Managed by: .agent/cards/routine/command-shim-card.md
+
+# Check for "reset" and "--hard" in arguments
+HAS_RESET=false
+HAS_HARD=false
+
+for arg in "$@"; do
+    if [[ "$arg" == "reset" ]]; then
+        HAS_RESET=true
+    fi
+    if [[ "$arg" == "--hard" ]]; then
+        HAS_HARD=true
+    fi
+done
+
+if [[ "$HAS_RESET" == "true" ]] && [[ "$HAS_HARD" == "true" ]]; then
+    echo "🚫 [Shim] 'git reset --hard' is blocked for safety." >&2
+    echo "   Use '--soft' or backup first." >&2
+    echo "   To bypass, use '/usr/bin/git reset --hard'." >&2
+    exit 1
+fi
+
+# Fallback to standard git
+# WE MUST USE ABSOLUTE PATH TO AVOID RECURSION
+exec /usr/bin/git "$@"
