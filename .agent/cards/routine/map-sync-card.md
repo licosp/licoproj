@@ -110,14 +110,21 @@ ai_model: ""
 
 - activity-log-card.md, ai-autonomy-card.md, context-cards-card.md, dialogue-philosophy-card.md
 - discussion-draft-card.md, drafts-daily-card.md, housekeeping-card.md, human-thoughts-card.md
-- letters-card.md, readme-sync-card.md, references-objective-card.md, roadmap-card.md
-- routine-card.md, skills-create-card.md, sync-memory-card.md
-- thoughts-subjective-card.md, vscode-settings-card.md, working-memory-card.md
+- letters-card.md, map-sync-card.md, moltbook-card.md
+- references-objective-card.md, repository-backup-card.md, roadmap-card.md
+- routine-card.md, skills-development-card.md
+- system-archive-card.md, thoughts-subjective-card.md
+- vscode-settings-card.md, working-memory-card.md
+
+**Shadow Cards (`.agent/cards/shadow/`)**:
+
+- conversations-card.md, conversations-cli-card.md, conversations-ide-card.md
+- log-sanitization-card.md, shadow-repository-card.md, social-network-card.md, tmux-card.md
 
 **Seed Cards (`.agent/cards/seed/`)**:
 
-- datetime-standardize-card.md, directory-reorganize-card.md, drafts-cleanup-card.md
-- identifier-profile-card.md, log-sanitization-card.md, worktree-evaluation-card.md
+- datetime-standardize-card.md, devcontainer-card.md
+- drafts-cleanup-card.md, repository-history-card.md, worktree-evaluation-card.md
 
 **Section 3.2 (Workflow Rules) - 追加が必要**:
 
