@@ -26,7 +26,7 @@ The primary action for removal is **Archive**. Direct deletion with `rm` is stri
 | Priority | Destination                 | Use Case                                    |
 | :------- | :-------------------------- | :------------------------------------------ |
 | **1st**  | `.agent/.internal/archive/` | AI-generated content (History)              |
-| **1st**  | `.human/archive/`           | User-generated content                      |
+| **1st**  | `.human/.internal/archive/` | User-generated content                      |
 | **2nd**  | `.trash/`                   | High-noise or temporary errors (Safety net) |
 
 ---
