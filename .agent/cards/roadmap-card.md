@@ -317,15 +317,15 @@ ai_model: ""
 
 ---
 
-#### [ark](/.agent/cards/ark-card.md)
+#### [ark](/.agent/cards/agent/ark-card.md)
 
 ---
 
-#### [cross-link-audit](/.agent/cards/cross-link-audit-card.md)
+#### [cross-link-audit](/.agent/cards/procedures/cross-link-audit-card.md)
 
 ---
 
-#### [directory-reorganize](/.agent/cards/directory-reorganize-card.md)
+#### [directory-reorganize](/.agent/cards/procedures/directory-reorganize-card.md)
 
 ##### スクリプトディレクトリの廃止
 
@@ -343,11 +343,11 @@ ai_model: ""
 
 ---
 
-#### [environment](/.agent/cards/environment-card.md)
+#### [environment](/.agent/cards/rules/environment-card.md)
 
 ---
 
-#### [git-operations](/.agent/cards/git-operations-card.md)
+#### [git-operations](/.agent/cards/rules/git-operations-card.md)
 
 ---
 
@@ -640,6 +640,11 @@ ai_model: ""
   - [x] Batch 5: `roadmap` to `social-network`
   - [x] Batch 6: `system-archive` to `working-memory`
   - [x] Batch 7: Seed cards (datetime to worktree)
+  - [x] Batch 8: `ark` to `git-operations`
+  - [ ] Batch 9: `human-manuals` to `idd-initialization`
+  - [ ] Batch 10: `identifier-profile` to `license`
+  - [ ] Batch 11: `lint-format` to `rules-audit`
+  - [ ] Batch 12: `rules-standardization` to `tmux`
 
 ---
 
