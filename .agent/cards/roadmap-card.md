@@ -156,15 +156,15 @@ ai_model: ""
 
 ---
 
-#### [drafts-daily](/.agent/cards/routine/drafts-daily-card.md)
+#### [drafts-daily](/.agent/cards/human/drafts-daily-card.md)
 
 ---
 
-#### [external-resources](/.agent/cards/routine/external-resources-card.md)
+#### [external-resources](/.agent/cards/shadow/external-resources-card.md)
 
 ---
 
-#### [gemini-cli](/.agent/cards/routine/gemini-cli-card.md)
+#### [gemini-cli](/.agent/cards/rules/gemini-cli-card.md)
 
 ##### 直接通信通信の体験
 
@@ -172,11 +172,11 @@ ai_model: ""
 
 ---
 
-#### [housekeeping](/.agent/cards/routine/housekeeping-card.md)
+#### [housekeeping](/.agent/cards/maintenance/housekeeping-card.md)
 
 ---
 
-#### [human-thoughts](/.agent/cards/routine/human-thoughts-card.md)
+#### [human-thoughts](/.agent/cards/human/human-thoughts-card.md)
 
 ---
 
@@ -635,7 +635,7 @@ ai_model: ""
 - **Status Tracking**:
   - [x] Batch 1: `activity-log` to `context-cards`
   - [x] Batch 2: `conversations` to `dialogue-philosophy`
-  - [ ] Batch 3: `discussion-draft` to `human-thoughts`
+  - [x] Batch 3: `discussion-draft` to `human-thoughts`
   - [ ] Batch 4: `letters` to `repository-backup`
   - [ ] Batch 5: `roadmap` to `social-network`
   - [ ] Batch 6: `system-archive` to `working-memory`
