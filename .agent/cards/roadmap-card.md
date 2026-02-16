@@ -130,19 +130,19 @@ ai_model: ""
 
 ---
 
-#### [conversations](/.agent/cards/routine/conversations-card.md)
+#### [conversations](/.agent/cards/shadow/conversations-card.md)
 
 ---
 
-#### [conversations-cli](/.agent/cards/routine/conversations-cli-card.md)
+#### [conversations-cli](/.agent/cards/shadow/conversations-cli-card.md)
 
 ---
 
-#### [conversations-ide](/.agent/cards/routine/conversations-ide-card.md)
+#### [conversations-ide](/.agent/cards/shadow/conversations-ide-card.md)
 
 ---
 
-#### [dialogue-philosophy](/.agent/cards/routine/dialogue-philosophy-card.md)
+#### [dialogue-philosophy](/.agent/cards/seed/dialogue-philosophy-card.md)
 
 ##### 作業中に無関係なファイルのコミットが頻発
 
@@ -152,7 +152,7 @@ ai_model: ""
 
 ---
 
-#### [discussion-draft](/.agent/cards/routine/discussion-draft-card.md)
+#### [discussion-draft](/.agent/cards/human/discussion-draft-card.md)
 
 ---
 
@@ -634,7 +634,7 @@ ai_model: ""
 - **Strategy**: Process in batches of 5 to manage volume.
 - **Status Tracking**:
   - [x] Batch 1: `activity-log` to `context-cards`
-  - [ ] Batch 2: `conversations` to `dialogue-philosophy`
+  - [x] Batch 2: `conversations` to `dialogue-philosophy`
   - [ ] Batch 3: `discussion-draft` to `human-thoughts`
   - [ ] Batch 4: `letters` to `repository-backup`
   - [ ] Batch 5: `roadmap` to `social-network`
