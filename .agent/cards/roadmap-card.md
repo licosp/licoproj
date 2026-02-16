@@ -237,15 +237,15 @@ ai_model: ""
 
 ---
 
-#### [thoughts-subjective](/.agent/cards/routine/thoughts-subjective-card.md)
+#### [thoughts-subjective](/.agent/cards/internal/thoughts-subjective-card.md)
 
 ---
 
-#### [vscode-settings](/.agent/cards/routine/vscode-settings-card.md)
+#### [vscode-settings](/.agent/cards/project/vscode-settings-card.md)
 
 ---
 
-#### [working-memory](/.agent/cards/routine/working-memory-card.md)
+#### [working-memory](/.agent/cards/maintenance/working-memory-card.md)
 
 ---
 
@@ -638,7 +638,7 @@ ai_model: ""
   - [x] Batch 3: `discussion-draft` to `human-thoughts`
   - [x] Batch 4: `letters` to `repository-backup`
   - [x] Batch 5: `roadmap` to `social-network`
-  - [ ] Batch 6: `system-archive` to `working-memory`
+  - [x] Batch 6: `system-archive` to `working-memory`
   - [ ] Batch 7: Seed cards (datetime to worktree)
 
 ---
