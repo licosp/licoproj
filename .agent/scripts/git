@@ -17,9 +17,13 @@ for arg in "$@"; do
 done
 
 if [[ "$HAS_RESET" == "true" ]] && [[ "$HAS_HARD" == "true" ]]; then
-    echo "🚫 [Shim] 'git reset --hard' is blocked for safety." >&2
-    echo "   Use '--soft' or backup first." >&2
-    echo "   To bypass, use '/usr/bin/git reset --hard'." >&2
+    echo "🚫 [Shim] BLOCKED: 'git reset --hard' is dangerous." >&2
+    echo "   (危険なコマンドのためブロックされました)" >&2
+    echo "" >&2
+    echo "   Alternative / 代替案:" >&2
+    echo "   1. Soft Reset:  git reset --soft <commit>" >&2
+    echo "   2. Bypass:      /usr/bin/git reset --hard <commit>" >&2
+    echo "" >&2
     exit 1
 fi
 
