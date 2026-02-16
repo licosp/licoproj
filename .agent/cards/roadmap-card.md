@@ -378,7 +378,7 @@ ai_model: ""
 
 ---
 
-#### [identifier-profile](/.agent/cards/identifier-profile-card.md)
+#### [identifier-profile](/.agent/cards/agent/identifier-profile-card.md)
 
 ##### 識別子プロファイルの作成・修正
 
@@ -391,11 +391,11 @@ ai_model: ""
 
 ---
 
-#### [identifier-succession](/.agent/cards/identifier-succession-card.md)
+#### [identifier-succession](/.agent/cards/agent/identifier-succession-card.md)
 
 ---
 
-#### [identity](/.agent/cards/identity-card.md)
+#### [identity](/.agent/cards/rules/identity-card.md)
 
 ##### 行動規範を読む順番
 
@@ -422,11 +422,11 @@ ai_model: ""
 
 ---
 
-#### [legacy-write](/.agent/cards/legacy-write-card.md)
+#### [legacy-write](/.agent/cards/internal/legacy-write-card.md)
 
 ---
 
-#### [license](/.agent/cards/license-card.md)
+#### [license](/.agent/cards/project/license-card.md)
 
 ##### ライセンスの文面調整
 
@@ -642,7 +642,7 @@ ai_model: ""
   - [x] Batch 7: Seed cards (datetime to worktree)
   - [x] Batch 8: `ark` to `git-operations`
   - [x] Batch 9: `human-manuals` to `idd-initialization`
-  - [ ] Batch 10: `identifier-profile` to `license`
+  - [x] Batch 10: `identifier-profile` to `license`
   - [ ] Batch 11: `lint-format` to `rules-audit`
   - [ ] Batch 12: `rules-standardization` to `tmux`
 
