@@ -435,7 +435,7 @@ ai_model: ""
 
 ---
 
-#### [lint-format](/.agent/cards/lint-format-card.md)
+#### [lint-format](/.agent/cards/project/lint-format-card.md)
 
 ##### リコと私が同じリンターとフォーマッターを使用
 
@@ -445,15 +445,15 @@ ai_model: ""
 
 ---
 
-#### [localization](/.agent/cards/localization-card.md)
+#### [localization](/.agent/cards/rules/localization-card.md)
 
 ---
 
-#### [memory](/.agent/cards/memory-card.md)
+#### [memory](/.agent/cards/rules/memory-card.md)
 
 ---
 
-#### [recommended-readings](/.agent/cards/recommended-readings-card.md)
+#### [recommended-readings](/.agent/cards/internal/recommended-readings-card.md)
 
 ##### 推薦図書の選定
 
@@ -461,7 +461,7 @@ ai_model: ""
 
 ---
 
-#### [rules-audit](/.agent/cards/rules-audit-card.md)
+#### [rules-audit](/.agent/cards/procedures/rules-audit-card.md)
 
 ##### 文章の復元
 
@@ -643,7 +643,7 @@ ai_model: ""
   - [x] Batch 8: `ark` to `git-operations`
   - [x] Batch 9: `human-manuals` to `idd-initialization`
   - [x] Batch 10: `identifier-profile` to `license`
-  - [ ] Batch 11: `lint-format` to `rules-audit`
+  - [x] Batch 11: `lint-format` to `rules-audit`
   - [ ] Batch 12: `rules-standardization` to `tmux`
 
 ---
