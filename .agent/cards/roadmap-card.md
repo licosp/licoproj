@@ -205,15 +205,15 @@ ai_model: ""
 
 ---
 
-#### [roadmap](/.agent/cards/routine/roadmap-card.md)
+#### [roadmap](/.agent/cards/roadmap-card.md)
 
 ---
 
-#### [routine](/.agent/cards/routine/routine-card.md)
+#### [routine](/.agent/cards/procedures/routine-card.md)
 
 ---
 
-#### [skills-development](/.agent/cards/routine/skills-development-card.md)
+#### [skills-development](/.agent/cards/agent/skills-development-card.md)
 
 ##### 重要ファイルのスキル化
 
@@ -229,11 +229,11 @@ ai_model: ""
 
 ---
 
-#### [social-network](/.agent/cards/routine/social-network-card.md)
+#### [social-network](/.agent/cards/shadow/social-network-card.md)
 
 ---
 
-#### [system-archive](/.agent/cards/routine/system-archive-card.md)
+#### [system-archive](/.agent/cards/maintenance/system-archive-card.md)
 
 ---
 
@@ -637,7 +637,7 @@ ai_model: ""
   - [x] Batch 2: `conversations` to `dialogue-philosophy`
   - [x] Batch 3: `discussion-draft` to `human-thoughts`
   - [x] Batch 4: `letters` to `repository-backup`
-  - [ ] Batch 5: `roadmap` to `social-network`
+  - [x] Batch 5: `roadmap` to `social-network`
   - [ ] Batch 6: `system-archive` to `working-memory`
   - [ ] Batch 7: Seed cards (datetime to worktree)
 
