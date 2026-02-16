@@ -18,9 +18,9 @@ done
 
 if [[ "$HAS_RESET" == "true" ]] && [[ "$HAS_HARD" == "true" ]]; then
     echo "🚫 [Shim] BLOCKED: 'git reset --hard' is dangerous." >&2
-    echo "   (危険なコマンドのためブロックされました)" >&2
+    echo "   This command destroys uncommitted changes and local history." >&2
     echo "" >&2
-    echo "   Alternative / 代替案:" >&2
+    echo "   Alternatives:" >&2
     echo "   1. Soft Reset:  git reset --soft <commit>" >&2
     echo "   2. Bypass:      /usr/bin/git reset --hard <commit>" >&2
     echo "" >&2
