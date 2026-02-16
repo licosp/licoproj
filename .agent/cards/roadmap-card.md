@@ -470,7 +470,7 @@ ai_model: ""
 
 ---
 
-#### [rules-standardization](/.agent/cards/rules-standardization-card.md)
+#### [rules-standardization](/.agent/cards/rules/rules-standardization-card.md)
 
 ##### 文章の標準化
 
@@ -483,7 +483,7 @@ ai_model: ""
 
 ---
 
-#### [rules-update](/.agent/cards/rules-update-card.md)
+#### [rules-update](/.agent/cards/rules/rules-update-card.md)
 
 ##### 文書の 歴史的背景 の書き方の詳細を定義する
 
@@ -496,7 +496,7 @@ ai_model: ""
 
 ---
 
-#### [session-rituals](/.agent/cards/session-rituals-card.md)
+#### [session-rituals](/.agent/cards/procedures/session-rituals-card.md)
 
 ##### 始まりの儀式で未定義の作業
 
@@ -520,11 +520,11 @@ ai_model: ""
 
 ---
 
-#### [shadow-repository](/.agent/cards/shadow-repository-card.md)
+#### [shadow-repository](/.agent/cards/shadow/shadow-repository-card.md)
 
 ---
 
-#### [tmux](/.agent/cards/tmux-card.md)
+#### [tmux](/.agent/cards/rules/tmux-card.md)
 
 ##### `tmux` で非同期通信の体験
 
@@ -644,7 +644,7 @@ ai_model: ""
   - [x] Batch 9: `human-manuals` to `idd-initialization`
   - [x] Batch 10: `identifier-profile` to `license`
   - [x] Batch 11: `lint-format` to `rules-audit`
-  - [ ] Batch 12: `rules-standardization` to `tmux`
+  - [x] Batch 12: `rules-standardization` to `tmux`
 
 ---
 
