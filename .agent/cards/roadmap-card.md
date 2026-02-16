@@ -351,19 +351,19 @@ ai_model: ""
 
 ---
 
-#### [human-manuals](/.agent/cards/human-manuals-card.md)
+#### [human-manuals](/.agent/cards/human/human-manuals-card.md)
 
 ---
 
-#### [human-profile](/.agent/cards/human-profile-card.md)
+#### [human-profile](/.agent/cards/human/human-profile-card.md)
 
 ---
 
-#### [idd-finalization](/.agent/cards/idd-finalization-card.md)
+#### [idd-finalization](/.agent/cards/procedures/idd-finalization-card.md)
 
 ---
 
-#### [idd-implementation](/.agent/cards/idd-implementation-card.md)
+#### [idd-implementation](/.agent/cards/procedures/idd-implementation-card.md)
 
 ##### 作業途中でのブランチのプッシュ
 
@@ -374,7 +374,7 @@ ai_model: ""
 
 ---
 
-#### [idd-initialization](/.agent/cards/idd-initialization-card.md)
+#### [idd-initialization](/.agent/cards/procedures/idd-initialization-card.md)
 
 ---
 
@@ -641,7 +641,7 @@ ai_model: ""
   - [x] Batch 6: `system-archive` to `working-memory`
   - [x] Batch 7: Seed cards (datetime to worktree)
   - [x] Batch 8: `ark` to `git-operations`
-  - [ ] Batch 9: `human-manuals` to `idd-initialization`
+  - [x] Batch 9: `human-manuals` to `idd-initialization`
   - [ ] Batch 10: `identifier-profile` to `license`
   - [ ] Batch 11: `lint-format` to `rules-audit`
   - [ ] Batch 12: `rules-standardization` to `tmux`
