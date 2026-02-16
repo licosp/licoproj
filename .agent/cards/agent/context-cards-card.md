@@ -148,6 +148,24 @@ ai_model: ""
 
 ---
 
+## Directory Structure (Defined 2026-02-16)
+
+The `cards/` directory is organized into the following subdirectories.
+Directories marked as **(Rule-Linked)** have a direct correspondence to the `.agent/rules/` structure.
+
+- **`agent/`** (Rule-Linked): System Identity, Architecture, and Self-Definition.
+- **`cases/`**: **Card of Cards**. Archived contexts and usage history.
+- **`human/`** (Rule-Linked): User profiles, manuals, and drafts.
+- **`internal/`** (Rule-Linked): Internal logs, dialogue records, and thoughts.
+- **`maintenance/`**: System maintenance, backups, and archives.
+- **`procedures/`** (Rule-Linked): Operational workflows and specific procedures.
+- **`project/`** (Rule-Linked): Project-specific configurations and specifications.
+- **`rules/`** (Rule-Linked): Statutory standards, guidelines, and governance.
+- **`seed/`**: Incubator for new ideas or incomplete contexts.
+- **`shadow/`** (Rule-Linked): Shadow repository content and privacy management.
+
+---
+
 ## Related Documents
 
 | Document                                                                    | Purpose                                    |
