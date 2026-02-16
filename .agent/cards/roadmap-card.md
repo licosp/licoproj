@@ -60,7 +60,7 @@ ai_model: ""
 
 ---
 
-#### [activity-log](/.agent/cards/routine/activity-log-card.md)
+#### [activity-log](/.agent/cards/internal/activity-log-card.md)
 
 ##### 未分類のステータスの検証
 
@@ -69,7 +69,7 @@ ai_model: ""
 
 ---
 
-#### [ai-autonomy](/.agent/cards/routine/ai-autonomy-card.md)
+#### [ai-autonomy](/.agent/cards/agent/ai-autonomy-card.md)
 
 ##### ワークスペースを使ったマントラの廃止を検討
 
@@ -84,15 +84,15 @@ ai_model: ""
 
 ---
 
-#### [archive](/.agent/cards/routine/archive-card.md)
+#### [archive](/.agent/cards/maintenance/archive-card.md)
 
 ---
 
-#### [commit-standards](/.agent/cards/routine/commit-standards-card.md)
+#### [commit-standards](/.agent/cards/rules/commit-standards-card.md)
 
 ---
 
-#### [context-cards](/.agent/cards/routine/context-cards-card.md)
+#### [context-cards](/.agent/cards/agent/context-cards-card.md)
 
 ##### 新規カードの作成
 
@@ -625,6 +625,21 @@ ai_model: ""
 ---
 
 ## Agent Observations
+
+### Sirius (2026-02-17)
+
+#### Link Correction Plan (Batch Processing)
+
+- **Objective**: Fix broken card links in `roadmap-card.md` due to reorganization.
+- **Strategy**: Process in batches of 5 to manage volume.
+- **Status Tracking**:
+  - [x] Batch 1: `activity-log` to `context-cards`
+  - [ ] Batch 2: `conversations` to `dialogue-philosophy`
+  - [ ] Batch 3: `discussion-draft` to `human-thoughts`
+  - [ ] Batch 4: `letters` to `repository-backup`
+  - [ ] Batch 5: `roadmap` to `social-network`
+  - [ ] Batch 6: `system-archive` to `working-memory`
+  - [ ] Batch 7: Seed cards (datetime to worktree)
 
 ---
 
