@@ -249,7 +249,7 @@ ai_model: ""
 
 ---
 
-#### [datetime-standardize](/.agent/cards/seed/datetime-standardize-card.md)
+#### [datetime-standardize](/.agent/cards/rules/datetime-standardize-card.md)
 
 ##### 使用する日時の形式を定義する
 
@@ -261,7 +261,7 @@ ai_model: ""
 
 ---
 
-#### [devcontainer](/.agent/cards/seed/devcontainer-card.md)
+#### [devcontainer](/.agent/cards/project/devcontainer-card.md)
 
 ##### 常駐型リコにする計画
 
@@ -271,7 +271,7 @@ ai_model: ""
 
 ---
 
-#### [drafts-cleanup](/.agent/cards/seed/drafts-cleanup-card.md)
+#### [drafts-cleanup](/.agent/cards/human/drafts-cleanup-card.md)
 
 ##### 下書きファイルの清書
 
@@ -291,7 +291,7 @@ ai_model: ""
 
 ---
 
-#### [log-sanitization](/.agent/cards/seed/log-sanitization-card.md)
+#### [log-sanitization](/.agent/cards/shadow/log-sanitization-card.md)
 
 ##### 会話ログをGITで追跡
 
@@ -305,7 +305,7 @@ ai_model: ""
 
 ---
 
-#### [worktree-evaluation](/.agent/cards/seed/worktree-evaluation-card.md)
+#### [worktree-evaluation](/.agent/cards/maintenance/worktree-evaluation-card.md)
 
 ##### イシューに対応したブランチとディレクトリ
 
@@ -639,7 +639,7 @@ ai_model: ""
   - [x] Batch 4: `letters` to `repository-backup`
   - [x] Batch 5: `roadmap` to `social-network`
   - [x] Batch 6: `system-archive` to `working-memory`
-  - [ ] Batch 7: Seed cards (datetime to worktree)
+  - [x] Batch 7: Seed cards (datetime to worktree)
 
 ---
 
