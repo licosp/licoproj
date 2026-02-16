@@ -266,9 +266,9 @@ Zircon の活動により、以下のディレクトリが実体化しました�
 
 | Path                                               | Purpose                          |
 | :------------------------------------------------- | :------------------------------- |
-| `.agent/cards/directory-reorganize-card.md` | Directory structure cleanup      |
-| `.agent/cards/license-card.md`              | License management               |
-| `.agent/cards/lint-format-card.md`          | Code Style                       |
+| `.agent/cards/directory-reorganize-card.md`        | Directory structure cleanup      |
+| `.agent/cards/license-card.md`                     | License management               |
+| `.agent/cards/lint-format-card.md`                 | Code Style                       |
 | `.agent/rules/core/documentation/path-notation.md` | file path notation rules         |
 | `.agent/rules/core/recommended-readings.md`        | _Duplicate or Misplaced? Check._ |
 
@@ -287,7 +287,42 @@ Zircon の活動により、以下のディレクトリが実体化しました�
 
 ---
 
+### Sirius (2026-02-16)
 
+#### Audit Objective
+
+To verify the coherence of `map.md` after the "Card Organization" project, specifically the new split of `.agent/cards/` into subdirectories (`agent`, `rules`, `procedures`, `etc.`).
+
+#### Actions
+
+- [ ] Verify all new card paths.
+- [ ] Check for any orphaned files in old locations (`routine/`, `seed/`).
+- [ ] Verify `context-card-workflow.md` alignment.
+
+#### Audit Results (2026-02-16)
+
+**1. Broken Links**:
+
+| Path             | Status              | Action |
+| :--------------- | :------------------ | :----- |
+| `.devcontainer/` | Missing in project. | Remove |
+
+**2. Missing Descriptions (`...`)**:
+
+| Path                            | Current | Proposed                                     |
+| :------------------------------ | :------ | :------------------------------------------- |
+| `.agent/cards/command-shim-card` | `...`   | **Safety**. Command shim configuration.      |
+| `licoproj/`                     | `...`   | Project root directory.                      |
+| `.gitignore`                    | `...`   | Git ignore rules.                            |
+| `LICENSE`                       | `...`   | Project License (MIT/Proprietary).           |
+| `README.ja.md`                  | `...`   | Project documentation (Japanese).            |
+| `README.md`                     | `...`   | Project documentation (English).             |
+
+**3. Missing Files**:
+
+| Path                                             | Action |
+| :----------------------------------------------- | :----- |
+| `.agent/rules/development/command-shims.md`      | Add    |
 
 ---
 
