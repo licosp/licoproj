@@ -180,15 +180,15 @@ ai_model: ""
 
 ---
 
-#### [letters](/.agent/cards/routine/letters-card.md)
+#### [letters](/.agent/cards/internal/letters-card.md)
 
 ---
 
-#### [map-sync](/.agent/cards/routine/map-sync-card.md)
+#### [map-sync](/.agent/cards/rules/map-sync-card.md)
 
 ---
 
-#### [moltbook](/.agent/cards/routine/moltbook-card.md)
+#### [moltbook](/.agent/cards/shadow/moltbook-card.md)
 
 ##### AI専用SNS体験
 
@@ -197,11 +197,11 @@ ai_model: ""
 
 ---
 
-#### [references-objective](/.agent/cards/routine/references-objective-card.md)
+#### [references-objective](/.agent/cards/internal/references-objective-card.md)
 
 ---
 
-#### [repository-backup](/.agent/cards/routine/repository-backup-card.md)
+#### [repository-backup](/.agent/cards/maintenance/repository-backup-card.md)
 
 ---
 
@@ -636,7 +636,7 @@ ai_model: ""
   - [x] Batch 1: `activity-log` to `context-cards`
   - [x] Batch 2: `conversations` to `dialogue-philosophy`
   - [x] Batch 3: `discussion-draft` to `human-thoughts`
-  - [ ] Batch 4: `letters` to `repository-backup`
+  - [x] Batch 4: `letters` to `repository-backup`
   - [ ] Batch 5: `roadmap` to `social-network`
   - [ ] Batch 6: `system-archive` to `working-memory`
   - [ ] Batch 7: Seed cards (datetime to worktree)
