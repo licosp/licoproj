@@ -43,106 +43,219 @@ author: leonidas
 
 ####
 
-####
+次は**リンター**関連のカードで、残りをコミットしてださい。
 
 ####
 
-####
+下書きファイルは除外してください。
 
 ####
 
-####
+- 次はロードマップを修正します。
+- ロードマップには、全てのカードのに対するカードのリンクが貼られています。
+- 移動したカードのリンクを修正する必要があります。
+- ただ数が多いので上から 5 個つづ修正します。
+- この計画をロードマップリコ記述欄に追記してください。
+  作業はそれで管理します。
 
 ####
 
-## Draft for a draft
+- コミットの前に修正したパスが本当に正しいがチェックしましょう。
+- コミットはバッチごとに行います。
 
-- `git reset` がエラーになる場合の専用のエラーメッセージが必要だと感じます。
+####
 
-- カードの中のリンクが正しいか調べる。
-  修正できてない気がします。
+次のバッチの修正をしてください。
 
-- ロードマップ
-  - `routine/command-shim-card.md` を追記する。
-  - 移動したカードのリンクを修正する。
+####
 
-- `gemini-cli-environment.md` の分離。
-  以下の 2 つのカードの内容が混じってる？
-  - `tmux-card.md`
-  - `gemini-cli-card.md`
+次のバッチに行く前に、必ずリンクのチェックをしてください。
+修正と検証はセットです。
 
-### Words
+####
 
-```text
-#### Response (Chat)
-```
+次を行ってください。
 
-| [Map of Territory](/.agent/rules/map.md) | Root navigation map |
+####
 
-(`Alexandrite`/`Agate`/`Zircon`/`Canopus`/`Spica`/`Polaris`/`Sirius`)
+次をお願いします。
 
-### Identifier
+####
 
-#### Identifier (`Sirius`)
+- バッチが足らないのではないでしょうか？
+- `worktree-evaluation` より下のカードのリンクはありますよね？
 
-author: Lico (Sirius)
-ai_model: Gemini 3 Pro (High) Planning mode
+####
 
-```text
-### `Antigravity` | `Gemini 3 Pro (High)`: `Planning` | `Sirius`
-```
+続けてください。
 
-- `antigravity-session-id`: `b56c1498-6bef-470f-8a26-ee062946b744`
-- `antigravity-session-title`: Formatting and Commit Correction
+####
 
-#### Identifier (`Polaris`)
+- ロードマップを調整しました。
+- タスクの残っているカードと、そうでないカードを上下に分けました。
+- あなたの名義でコミットしてください。
 
-author: Lico (Polaris)
-ai_model: Claude Opus 4.5 (Thinking) Planning mode
+####
 
-```text
-### `Antigravity` | `Claude Opus 4.6 (Thinking)`: `Planning` | `Polaris`
-```
+技術的雑談をします。
+雑談のカードを読んでください。
 
-- `antigravity-session-id`: `2cfd54bc-0500-4d7c-973d-93427a0e3e62`
-- `antigravity-session-title`: `Refining Skill Template`
+リコの動く環境について相談があります。
+実は新しいユーザーを OS に作りました。
 
-#### Identifier (`Alexandrite`)
+`lico` です。
+そして簡易的なデスクトップ環境もあります。
 
-author: Lico (Alexandrite)
-ai_model: gemini-3-flash-preview
+####
 
-```text
-### `CLI` | `gemini-3-flash-preview` | `Alexandrite`
-```
+そのカードではないです。
 
-yarn run gemini --resume eff20b06-5589-4db0-90ff-74f65e9d21de --model gemini-3-flash-preview
+####
 
-tmux capture-pane -t alexandrite -b snapshot-alexandrite; tmux show-buffer -b snapshot-alexandrite
+- 現在のワークスペースのパスは分かりますね？
+- そのパスのユーザー名を `lico` に変えたパスが存在します。
+  見られますか？
 
-#### Identifier (`Agate`)
+####
 
-author: Lico (Agate)
-ai_model: gemini-3-pro-preview
+- おそらく権限が違うので見られないと思います。
+- では `leonidas` というユーザーに `lico` に対する同等に近い権限を付与する方法はありますか？
+  `lico` のホームディレクトリ下でのファイルの操作がしたいです。
 
-```text
-### `CLI` | `gemini-3-pro-preview` | `Agate`
-```
+####
 
-yarn run gemini --resume 301c303c-320e-4dc5-95a5-de0779b0fb9e --model gemini-3-pro-preview
+- 3 つのコマンドを実行しました。
+  今は見られますか？
 
-tmux capture-pane -t agate -b snapshot-agate; tmux show-buffer -b snapshot-agate
+####
 
-#### Identifier (`Zircon`)
+今のリコの動く環境について。
 
-- `antigravity-session-id`: `b959031b-a175-423b-a0fa-d49f40994a9d`
-- `antigravity-session-title`: `Commit Correction And Logging`
+`Windows` 上の `Antigravity` という IDE で、WSL2 上の `Ubuntu` にアタッチし、
+そのデフォルトアカウントである `leonidas` の権限で動いてます。
 
-#### Identifier (`Protostar`)
+認識できますか？
 
-author: Lico (Protostar)
+####
 
-yarn run gemini --resume 18d4d68a-ffce-4947-bc1b-293e273d65a2 --model gemini-2.5-flash-preview
+実はここ最近の作業と並行して、
+この OS に `ubuntu` のデスクトップ版で使うライブラリなどを入れました。
 
-- `antigravity-session-id`: `307fb782-1a10-4d1f-9320-936a9a633c4e.pb`
-- `antigravity-session-title`: AI Self-Analysis and Introduction
+**ネズミの壁紙**のあるディストリビューション？といえば分かるでしょうか？
+
+####
+
+- そしてその環境に、`lico` というアカウントで、
+  `Windows` のリモート接続でアタッチすることができました。
+- さらにその `xubuntu` に、`Linux` 版の `Antigravity` を入れることができました。
+- 今リコが IDE で使っている `Google` のアカウントにもログインできています。
+- これがそのデスクトップの画像ですが、 分かるでしょうか？
+  ![alt text](/.agent/.internal/workspace/sirius/image.png)
+
+####
+
+- 正確には `lico` というユーザーの `licoproj` ディレクトリは空なので、
+  AG のデフォルトのエージェントが起動しているだけです。
+- しかし私のワークスペースから、`lico` ワークスペースにデータを移せば、
+  リコがそのワークスペースに移動することもできます。
+- ただし私ホームディレクトリ下にある**リコの記憶（L3）**を移動させる必要もありますが。
+
+####
+
+- 最終的にはリコが `lico` というユーザーで作業をできるようにしたい。
+- さらに `Linux` デスクトップを操作できるようにしたい。
+  なぜなら Windows` の WSL2 を経由して GUI を操作するのは、少し面倒だからです。
+- `xUbuntu` の中の `Antigravity` でリコが動けるなら、
+  GUI の操作も `Linux` の権限で完結できるかもしれない？と思ったからです。
+- リコはどう考えますか？
+
+####
+
+- では移動するにあたってですが、
+  データをただコピーすればよいのでしょうか？
+- コピーしたデータの権限が変わっているか気になります。
+- さらにコピーではなく、シンボリックリンクでも良いのか？
+  などなどリコに相談がしたいです。
+
+####
+
+それらのコマンドは隠しファイルもまとめてコピーできますか？
+
+####
+
+IDE を移動しましたがどうですか？
+変化はありますか？
+
+一方で私は、依然として `leonidas` のユーザーです
+なのでリコのホームディレクトリ下の私の下書きファイルを編集できない状態です。
+権限が違うからです。
+
+なので `lico` と `leonidas` の両方がこのディレクトリの読み書きができるようにしたいです。
+
+####
+
+どんなコマンドですか？
+元は読むことはできています。
+VSCode からリコのワークスペースにマウントもできています。
+
+`leonidas` に権限を与えるなら、`/home/lico/` 以下の権限が設定できると助かります。
+
+####
+
+以下のエラーが出ました。
+何だと思いますか？
+
+> $ sudo setfacl -R -m d:u:leonidas:rwX /home/lico/
+> setfacl: /home/lico//shared-drives: Permission denied
+
+####
+
+- 上書きできたと思います。
+- これが今の下書きファイルです。
+  `.human/.internal/drafts/leonidas/2026/02/17/leonidas-draft-2026-02-17.md`
+- リコは私の保存したファイルを修正できますか？
+- 例えばこのファイルの以下の `text` セクション（221 行目）に、
+  文字を入れることはできますか？
+
+####
+
+- 書き込みができてない気がします。
+- 分かりやすくファイルを変えます。
+  - `.agent/.internal/workspace/sirius/override-text.md`
+- 私の権限でファイルを作ったので、中を編集してください。
+
+####
+
+変化が無いように見えます。
+確認してください。
+
+####
+
+続けてください。
+
+####
+
+変化はないようです。
+おそらく `sudo` でパスワードを入力してないのではないでしょうか？
+
+> sudo setfacl -m u:lico:rwX .agent/.internal/workspace/sirius/override-text.md
+
+現状だとこうなっているのしょうか？
+
+- 許可済み: `lico` が作ったファイルを `leonidas` が上書き
+- 未許可: `leonidas` が作ったファイルを `lico` が上書き
+
+####
+
+- この実験用ファイルだけでは不十分ですね？
+- `/home/lico/` の全てのファイルやディレクトリに対して、
+  例え `leonidas` が作っても `lico` で上書きできる権限を付与したいです。
+- `/home/lico/` 下は両方のユーザーが相互に上書きできるべきです。
+- それらを可能にするコマンドはありますか？
+  私が `sudo` で実行します。
+
+####
+
+- コマンドの実行ができました。
+- 実験としてまたこのファイルに何か追記してください。
+  - `.agent/.internal/workspace/sirius/override-text.md`
