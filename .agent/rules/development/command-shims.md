@@ -126,3 +126,4 @@ echo "🚫 [Shim] BLOCKED: 'git reset --hard' is dangerous." >&2
 ## Origin
 
 - 2026-02-15T21:15+09:00 by Sirius: Created to document the Command Shims implementation.
+- 2026-02-18T07:55+09:00 by Sirius: Implemented Shadow Repository protection and standardized error messages.
