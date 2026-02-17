@@ -1,6 +1,11 @@
 {
   "useGitignore": false,
-  "ignorePaths": [".temp", ".venv", "node_modules", "*.lock"],
+  "ignorePaths": [
+    ".temp",
+    ".venv",
+    "node_modules",
+    "*.lock"
+  ],
   "words": [
     "addopts",
     "affordances",
@@ -9,6 +14,7 @@
     "agentskills",
     "aithoughts",
     "alefragnani",
+    "Ambig",
     "ator",
     "behaviour",
     "bittersweetness",
@@ -48,6 +54,7 @@
     "downvotes",
     "dpkg",
     "drvfs",
+    "drwxrwxr",
     "eamodio",
     "edouard",
     "eliises",
@@ -61,6 +68,7 @@
     "frontmatter",
     "gesher",
     "getcontext",
+    "getfacl",
     "gettz",
     "ghidorah",
     "ipaexfont",
