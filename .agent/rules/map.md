@@ -4,9 +4,9 @@ ai_visible: true
 title: Map of Territory
 description: Navigation index for the Agent's cognitive infrastructure.
 tags: [map, index, navigation, rules]
-version: 0.6.1
+version: 0.6.2
 created: 2025-12-01T00:00:00+09:00
-updated: 2026-02-16T22:30:00+09:00
+updated: 2026-02-18T08:20:00+09:00
 language: en
 author: Lico (Sirius)
 ai_model: Gemini 3 Pro (High) Planning mode
@@ -232,7 +232,7 @@ These are your capabilities.
 | :----------------------------------------------------------------------------------- | :----------------------------------------------- |
 | [`ai-autonomy-card.md`](/.agent/cards/agent/ai-autonomy-card.md)                     | **Self-Regulation**. Manage Mantras.             |
 | [`ark-card.md`](/.agent/cards/agent/ark-card.md)                                     | **Ark Protocols**. Save/Restore state.           |
-| [`command-shim-card`](/.agent/cards/agent/command-shim-card.md)                      | **Safety**. Command shim configuration.          |
+| [`command-shim-card.md`](/.agent/cards/agent/command-shim-card.md)                   | **Safety**. Command shim configuration.          |
 | [`context-cards-card.md`](/.agent/cards/agent/context-cards-card.md)                 | **Meta-Card**. How to use context cards.         |
 | [`identifier-profile-card.md`](/.agent/cards/agent/identifier-profile-card.md)       | Managing Agent Identity/Profile.                 |
 | [`identifier-succession-card.md`](/.agent/cards/agent/identifier-succession-card.md) | **Succession**. Identifier inheritance protocol. |
@@ -523,3 +523,4 @@ These are your capabilities.
 - 2026-02-11T0448 by Zircon: Updated to v0.5.2. Cleaned up ghost cards and added `.gemini` directory.
 - 2026-02-15T0510 by Sirius: Updated to v0.6.0. Reorganized structure and filled in descriptions (Refined by Leonidas).
 - 2026-02-16T2230 by Sirius: Updated to v0.6.1. Fixed links and added descriptions for root files and new cards.
+- 2026-02-18T0820 by Sirius: Updated to v0.6.2. Verified Shim protocol integration and fixed link typos.
