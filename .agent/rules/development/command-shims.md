@@ -5,7 +5,7 @@ description: Protocol for environment-based safety mechanism (Shims) to override
 tags: [protocol, environment, safety, shims, scripts]
 version: 1.0.0
 created: 2026-02-15T21:15:00+09:00
-updated: 2026-02-15T21:15:00+09:00
+updated: 2026-02-18T07:55:00+09:00
 language: en
 author: Lico (Sirius)
 ai_model: Gemini 3 Pro (High) Planning mode
@@ -70,13 +70,17 @@ Scripts are symlinked to a directory that is prioritized in the system `PATH`.
 - **Purpose**: Provides a safety net for accidental deletions while maintaining Git status consistency.
 - **Trash Location**: `.trash/YYYY-MM-DDTHHMMSS/` (Git-tracked directory, contents ignored).
 
-### `git` (Hard Reset Blocker)
+### `git` (Safety Enforcer)
 
 - **Behavior**:
-  - **Intercepts**: Checks for usage of `reset` AND `--hard`.
-  - **Action**: **BLOCKS execution** with an error message.
-  - **Bypass**: Users must use `/usr/bin/git reset --hard` if they truly intend to destroy data.
-- **Purpose**: Enforces the "Soft-First Rule" defined in `git-operations.md`.
+  - **Shadow Protection**: Blocks operations on `.shadow/` files from the root directory.
+    - **Trigger**: Argument contains `.shadow/`.
+    - **Action**: **BLOCKS execution** and instructs user to `cd` into the directory.
+  - **Hard Reset**: Blocks `git reset --hard` to prevent data loss.
+    - **Trigger**: `reset` AND `--hard`.
+    - **Action**: **BLOCKS execution**.
+    - **Bypass**: Use `/usr/bin/git reset --hard`.
+- **Purpose**: Enforces safety constraints (Soft-First Rule, Context Integrity).
 
 ---
 
@@ -93,6 +97,20 @@ To add a new Shim:
 
 - **Pass-through**: Ensure the shim accepts standard arguments (`"$@"`) and passes them to the underlying tool.
 - **Fallback**: Always provide a fallback to the system binary if the special condition (e.g., Git repo) is not met.
+
+### Error Message Standard
+
+To distinguish Shim interventions from native command errors, use the following format:
+
+- **Icon**: `🚫` (U+1F6AB No Entry Sign)
+- **Prefix**: `[Shim]`
+- **Format**: `🚫 [Shim] <Type>: <Message>`
+
+**Example**:
+
+```bash
+echo "🚫 [Shim] BLOCKED: 'git reset --hard' is dangerous." >&2
+```
 
 ---
 

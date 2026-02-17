@@ -7,6 +7,17 @@
 HAS_RESET=false
 HAS_HARD=false
 
+# Check for Shadow Repository access (Block & Warn)
+for arg in "$@"; do
+    if [[ "$arg" == *".shadow/"* ]]; then
+        echo "🚫 [Shim] BLOCKED: Shadow Repository Detected." >&2
+        echo "   You are trying to operate on a file inside '.shadow/' from the root." >&2
+        echo "   Please 'cd' into the directory first to ensure correct git context." >&2
+        echo "" >&2
+        exit 1
+    fi
+done
+
 for arg in "$@"; do
     if [[ "$arg" == "reset" ]]; then
         HAS_RESET=true
