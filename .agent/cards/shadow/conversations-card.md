@@ -116,15 +116,25 @@ ai_model: gemini-3-pro-preview
   - **Context**: User operates in `VSCode` with auto-formatters (Prettier, textlint, markdownlint).
   - **Acceptance**: Lico accepts that file formatting (spacing, indentation) will change upon user save. This is treated as "Standardization", not "Tampering".
 
+### Sirius (2026-02-18)
+
+- **Protocol Update: Split-Phase Logging**:
+  - **Issue**: Single-pass logging caused excessive duplication of User Input and prevented intent tracking upon cancellation.
+  - **Decision**: Adopt **Split-Phase Logging** (Plan -> Execute -> Report).
+  - **Mechanism**:
+    1. **Phase 1 (Start)**: Append `Header` + `Input` + `Plan` (No separator).
+    2. **Phase 2 (End)**: Append `Report` + `Footer` (With `---`).
+  - **Tool**: Use **Two Separate Buffers** (`current_log_plan.txt` / `current_log_report.txt`) to ensure safety.
+
 ---
 
 ## Related Documents
 
-| Document                                                                                | Purpose                       |
-| :-------------------------------------------------------------------------------------- | :---------------------------- |
-| [response-mirror SKILL](/.agent/skills/00-01-response-mirror/SKILL.md)                  | Skill trigger for logging     |
-| [conversations-documentation.md](/.agent/rules/workflow/conversations-documentation.md) | SSOT for conversation logging |
-| [Map of Territory](/.agent/rules/map.md)                                                | Root navigation map           |
+| Document                                                                    | Purpose                       |
+| :-------------------------------------------------------------------------- | :---------------------------- |
+| [response-mirror SKILL](/.agent/skills/00-01-response-mirror/SKILL.md)      | Skill trigger for logging     |
+| [conversations-logging.md](/.agent/rules/workflow/conversations-logging.md) | SSOT for conversation logging |
+| [Map of Territory](/.agent/rules/map.md)                                    | Root navigation map           |
 
 ---
 

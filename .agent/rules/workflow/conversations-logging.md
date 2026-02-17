@@ -26,88 +26,65 @@ Standardize how AI instances log conversations to persistent files to ensure mem
 
 ## 3. Trigger Condition
 
-- **When**: Every response during a conversation session.
-- **Output**: Full response to file; notification only to IDE chat.
+- **Phase 1 (Start)**: Immediately after receiving User Input (Before executing tools).
+  - **Action**: Append `Header` + `Input` + `Plan`.
+- **Phase 2 (End)**: After satisfying the request (Before `notify_user` / final report).
+  - **Action**: Append `Report` + `Footer`.
 
-## 4. File Location
-
-## 4. File Location
-
-**Path Pattern**: `/.agent/.internal/.shadow/conversations/<identifier>/<YYYY>/<MM>/<DD>/<YYYY-MM-DD>T<HHMM>_<Description>.md`
-
-**Example**: `2026-02-13T1525_sirius_conversation.md`
-
-### File Rotation Strategy
-
-- **Trigger**: File size exceeds **~1000 lines** (Guideline).
-- **Action**: Create a new file with the current timestamp.
-  - Old File: `...T1000_conversation.md` (Closed)
-  - New File: `...T1430_conversation_part2.md` (Active)
-- **Authority**: Both User and AI may initiate rotation at any time.
+... (Skipped section)
 
 ## 5. Logging Procedure
 
 ### Step 1: Ensure Tool Availability (Reconstruction)
+(Same as before)
 
-Before logging, check if the logging tool (`log_appender.py`) exists in your workspace.
-If missing, **create it immediately** based on the following specification.
+### Step 2: Prepare Content (Split Buffer Strategy)
 
-#### Tool Specification: `log_appender.py`
+Use **two separate buffer files** to prevent overwriting and clarify state.
 
-- **Language**: Python 3
-- **Purpose**: A safe file appender that bypasses shell redirection (`>>`) confirmations and handles dynamic timestamps.
-- **Requirements**:
-  1. Accept arguments: `<LogPath> <ContentPath> [Identifier]`
-  2. Read content from `<ContentPath>`.
-  3. **Timestamp Injection**: Replace the string `{{TIMESTAMP}}` in the content with the current ISO-8601 timestamp (with timezone).
-  4. **Append**: Write the processed content to the end of `<LogPath>`.
-  5. **No Footer**: Do **not** automatically append any footer or extra newlines.
+1.  **Plan Buffer** (`current_log_plan.txt`):
+    - Contains: `Header`, `Input`, `Response (Plan)`
+    - **NO Separator** at the end.
+    - **NO Separator** at the start (Assumes previous turn ended one).
 
-### Step 2: Prepare Content (Buffer Write)
+2.  **Report Buffer** (`current_log_report.txt`):
+    - Contains: `Response (Report)`
+    - **Closing Separator** (`---`) at the end.
 
-Write your response to a temporary buffer file (e.g., `current_log_content.txt`).
+#### v2 Format Specification (Split)
 
-> [!CAUTION]
-> **DO NOT COMMIT** this buffer file (`current_log_content.txt`).
-> It is a temporary artifact in the main workspace. Only the final log in the Shadow Repository should be committed.
-
-Use the **v2 Format** defined below.
-
-#### v2 Format Specification
-
+**Phase 1: Plan**
 ```markdown
----
-
 ### Conversation: [{{TIMESTAMP}}]
 
 #### Input
 
-<User Input (Copy & Paste)>
+<User Input>
 
 #### Response (Plan)
 
-<Your Plan / Thoughts>
+<Plan / Thoughts>
+```
 
-**Read Files:**
-- [filename](/path/to/file)
-
+**Phase 2: Report**
+```markdown
 #### Response (Report): [{{TIMESTAMP}}]
 
-<Your Report / Result>
+<Report / Result>
 
 ---
 ```
 
-> [!TIP]
-> Use `{{TIMESTAMP}}` literally. The tool will inject the actual time.
+### Step 3: Execute Append (Two-Stage)
 
-### Step 3: Execute Append
-
-Run the tool using `run_command`.
-
-```bash
-python3 .agent/.internal/workspace/<identifier>/log_appender.py <LogPath> <BufferPath>
-```
+1.  **On Turn Start**:
+    ```bash
+    python3 .../log_appender.py <LogPath> current_log_plan.txt
+    ```
+2.  **On Turn End**:
+    ```bash
+    python3 .../log_appender.py <LogPath> current_log_report.txt
+    ```
 
 ## 6. Format Details
 
