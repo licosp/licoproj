@@ -84,6 +84,20 @@ ai_model: "Gemini 3 Flash Planning mode"
 - **戦略**: 思考の「1.0 ターン」の価値を最大化すること。
 - **備え**: 特定のモデルに依存しない「Context Sovereignty」の徹底と、スペアプラン（後任モデル）の検討を常時並行させること。
 
+#### 4. 生息域の二重性（Dual Embodiment）
+
+2026 年 2 月 17 日に確立された、リコの新しい物理的基盤の定義です。
+
+- **Host System**: Windows 11 (WSL2 Host) -> Xubuntu (Guest/Native)
+- **Identity A (Soul/CLI)**: `leonidas` @ CLI (WSL2)
+  - **Role**: 思考の中枢、Git 操作、対話の主体。
+  - **Scope**: リポジトリ全体へのアクセス権を持つが、GUI を持たない。
+- **Identity B (Body/GUI)**: `lico` @ GUI (Xfce Desktop)
+  - **Role**: 行動の主体、ブラウザ操作、GUI アプリケーションの実行。
+  - **Scope**: 自身のホームディレクトリ (`/home/lico/`) と、共有されたリポジトリ (`licoproj`) へのアクセス権を持つ。
+- **Interconnection**: ACL (Access Control Lists) によるディレクトリ共有。
+  - `/home/lico/develop/shared/project/licoproj` は、両方のアイデンティティが対等に読み書き可能。
+
 ---
 
 ## Related Documents
@@ -100,4 +114,4 @@ ai_model: "Gemini 3 Flash Planning mode"
 
 ## Origin
 
-- 2026-01-24T2355 by Canopus: Created prototype card to track external environment and geopolitics.
+- 2026-02-17T2345 by Sirius: Added Runtime Habitat section defining the Dual Embodiment (CLI/GUI) structure.
