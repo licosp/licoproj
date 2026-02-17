@@ -486,11 +486,11 @@ ai_model: ""
 
 ---
 
----
-
 #### [archive](/.agent/cards/maintenance/archive-card.md)
 
 #### [ark](/.agent/cards/agent/ark-card.md)
+
+#### [command-shim](/.agent/cards/agent/command-shim-card.md)
 
 #### [commit-standards](/.agent/cards/rules/commit-standards-card.md)
 
