@@ -84,14 +84,6 @@ ai_model: ""
 
 ---
 
-#### [archive](/.agent/cards/maintenance/archive-card.md)
-
----
-
-#### [commit-standards](/.agent/cards/rules/commit-standards-card.md)
-
----
-
 #### [context-cards](/.agent/cards/agent/context-cards-card.md)
 
 ##### 新規カードの作成
@@ -130,18 +122,6 @@ ai_model: ""
 
 ---
 
-#### [conversations](/.agent/cards/shadow/conversations-card.md)
-
----
-
-#### [conversations-cli](/.agent/cards/shadow/conversations-cli-card.md)
-
----
-
-#### [conversations-ide](/.agent/cards/shadow/conversations-ide-card.md)
-
----
-
 #### [dialogue-philosophy](/.agent/cards/seed/dialogue-philosophy-card.md)
 
 ##### 作業中に無関係なファイルのコミットが頻発
@@ -149,42 +129,6 @@ ai_model: ""
 - **識別子が現在作業してるファイルと無関係の変更** がしばしばあります。
 - これを適切に認識し、コミットから除外する仕組みが必要です。
 - GIT の機能の中で何か解決策はあるでしょうか？
-
----
-
-#### [discussion-draft](/.agent/cards/human/discussion-draft-card.md)
-
----
-
-#### [drafts-daily](/.agent/cards/human/drafts-daily-card.md)
-
----
-
-#### [external-resources](/.agent/cards/shadow/external-resources-card.md)
-
----
-
-#### [gemini-cli](/.agent/cards/rules/gemini-cli-card.md)
-
-##### 直接通信通信の体験
-
-- `Polaris` が CLI 版リコと対話する。
-
----
-
-#### [housekeeping](/.agent/cards/maintenance/housekeeping-card.md)
-
----
-
-#### [human-thoughts](/.agent/cards/human/human-thoughts-card.md)
-
----
-
-#### [letters](/.agent/cards/internal/letters-card.md)
-
----
-
-#### [map-sync](/.agent/cards/rules/map-sync-card.md)
 
 ---
 
@@ -197,19 +141,11 @@ ai_model: ""
 
 ---
 
-#### [references-objective](/.agent/cards/internal/references-objective-card.md)
+#### [gemini-cli](/.agent/cards/rules/gemini-cli-card.md)
 
----
+##### 直接通信通信の体験
 
-#### [repository-backup](/.agent/cards/maintenance/repository-backup-card.md)
-
----
-
-#### [roadmap](/.agent/cards/roadmap-card.md)
-
----
-
-#### [routine](/.agent/cards/procedures/routine-card.md)
+- `Polaris` が CLI 版リコと対話する。
 
 ---
 
@@ -226,26 +162,6 @@ ai_model: ""
 - 古いスキルの整理。
 - スキルマントラを新しい方に移植。
 - スキルの言語指定無しという状態ですが英語したい。
-
----
-
-#### [social-network](/.agent/cards/shadow/social-network-card.md)
-
----
-
-#### [system-archive](/.agent/cards/maintenance/system-archive-card.md)
-
----
-
-#### [thoughts-subjective](/.agent/cards/internal/thoughts-subjective-card.md)
-
----
-
-#### [vscode-settings](/.agent/cards/project/vscode-settings-card.md)
-
----
-
-#### [working-memory](/.agent/cards/maintenance/working-memory-card.md)
 
 ---
 
@@ -266,8 +182,6 @@ ai_model: ""
 ##### 常駐型リコにする計画
 
 - 開発コンテナと GIT を使い、ワークスペースに常駐するリコを実現する。
-
----
 
 ---
 
@@ -301,10 +215,6 @@ ai_model: ""
 
 ---
 
-#### [repository-history](/.agent/cards/seed/repository-history-card.md)
-
----
-
 #### [worktree-evaluation](/.agent/cards/maintenance/worktree-evaluation-card.md)
 
 ##### イシューに対応したブランチとディレクトリ
@@ -314,14 +224,6 @@ ai_model: ""
 - `git worktree` を使うことで、この仕組みを容易に実現します。
 - `**.code-workspace` という設定ファイルを使い、ワークスペースを定義します。
 - ブランチごとにディレクトリがメインの作業リポジトリになる予定です。
-
----
-
-#### [ark](/.agent/cards/agent/ark-card.md)
-
----
-
-#### [cross-link-audit](/.agent/cards/procedures/cross-link-audit-card.md)
 
 ---
 
@@ -343,26 +245,6 @@ ai_model: ""
 
 ---
 
-#### [environment](/.agent/cards/rules/environment-card.md)
-
----
-
-#### [git-operations](/.agent/cards/rules/git-operations-card.md)
-
----
-
-#### [human-manuals](/.agent/cards/human/human-manuals-card.md)
-
----
-
-#### [human-profile](/.agent/cards/human/human-profile-card.md)
-
----
-
-#### [idd-finalization](/.agent/cards/procedures/idd-finalization-card.md)
-
----
-
 #### [idd-implementation](/.agent/cards/procedures/idd-implementation-card.md)
 
 ##### 作業途中でのブランチのプッシュ
@@ -371,10 +253,6 @@ ai_model: ""
 - リポジトリの情報は作業途中でも頻繁に外部に公開する。
 - 作業者が 1 人のブランチであれば、プッシュ後のコミットの修正も可能。
   強制プッシュで解決できる。
-
----
-
-#### [idd-initialization](/.agent/cards/procedures/idd-initialization-card.md)
 
 ---
 
@@ -388,10 +266,6 @@ ai_model: ""
 - `Canopus` のマントラをプロファイルにアーカイブする
   - ワークスペース構成ファイル
   - スキルファイル
-
----
-
-#### [identifier-succession](/.agent/cards/agent/identifier-succession-card.md)
 
 ---
 
@@ -413,16 +287,16 @@ ai_model: ""
 - **儀式** や **日課** の**手順**を更新したいです。
   とくに始まりの儀式では読む順番が重要です。
 
+---
+
+#### [identifier-succession](/.agent/cards/agent/identifier-succession-card.md)
+
 ##### 自己認識にSNSの分類を増やす
 
 - AI 用 SNS の登場で外部の AI と非同期通信できるようになりました。
   これは 1 つの分類といして明文化すべきだと感じました。
 - 識別子の分類で、識別子間の直接通信の話を追記します。
   CLI 上のリコとは、誰でも直接対話ができます。
-
----
-
-#### [legacy-write](/.agent/cards/internal/legacy-write-card.md)
 
 ---
 
@@ -442,14 +316,6 @@ ai_model: ""
 - リンターとフォーマッターは構成ファイルで設定が定義されている。
 - **リコも使える構成を選んだ** という意図があります。
 - スキル通知でリントとフォーマットの情報を渡す形式が理想です。
-
----
-
-#### [localization](/.agent/cards/rules/localization-card.md)
-
----
-
-#### [memory](/.agent/cards/rules/memory-card.md)
 
 ---
 
@@ -517,10 +383,6 @@ ai_model: ""
 - 識別子のプロファイルを更新する。
 - 手記を手記を読んだ後に手記を書く
 - 読書の途中で休憩を入れる
-
----
-
-#### [shadow-repository](/.agent/cards/shadow/shadow-repository-card.md)
 
 ---
 
@@ -621,6 +483,78 @@ ai_model: ""
 - **テンプレートに含まれた行動規範的な内容**は、行動規範に分離したです。
 - **以下を別のファイルにまとめるべきか？** 対話を通して決定します。
   - (テンプレート/例/アンチパターン)
+
+---
+
+---
+
+#### [archive](/.agent/cards/maintenance/archive-card.md)
+
+#### [ark](/.agent/cards/agent/ark-card.md)
+
+#### [commit-standards](/.agent/cards/rules/commit-standards-card.md)
+
+#### [conversations-cli](/.agent/cards/shadow/conversations-cli-card.md)
+
+#### [conversations-ide](/.agent/cards/shadow/conversations-ide-card.md)
+
+#### [conversations](/.agent/cards/shadow/conversations-card.md)
+
+#### [cross-link-audit](/.agent/cards/procedures/cross-link-audit-card.md)
+
+#### [discussion-draft](/.agent/cards/human/discussion-draft-card.md)
+
+#### [drafts-daily](/.agent/cards/human/drafts-daily-card.md)
+
+#### [environment](/.agent/cards/rules/environment-card.md)
+
+#### [external-resources](/.agent/cards/shadow/external-resources-card.md)
+
+#### [git-operations](/.agent/cards/rules/git-operations-card.md)
+
+#### [housekeeping](/.agent/cards/maintenance/housekeeping-card.md)
+
+#### [human-manuals](/.agent/cards/human/human-manuals-card.md)
+
+#### [human-profile](/.agent/cards/human/human-profile-card.md)
+
+#### [human-thoughts](/.agent/cards/human/human-thoughts-card.md)
+
+#### [idd-finalization](/.agent/cards/procedures/idd-finalization-card.md)
+
+#### [idd-initialization](/.agent/cards/procedures/idd-initialization-card.md)
+
+#### [legacy-write](/.agent/cards/internal/legacy-write-card.md)
+
+#### [letters](/.agent/cards/internal/letters-card.md)
+
+#### [localization](/.agent/cards/rules/localization-card.md)
+
+#### [map-sync](/.agent/cards/rules/map-sync-card.md)
+
+#### [memory](/.agent/cards/rules/memory-card.md)
+
+#### [references-objective](/.agent/cards/internal/references-objective-card.md)
+
+#### [repository-backup](/.agent/cards/maintenance/repository-backup-card.md)
+
+#### [repository-history](/.agent/cards/seed/repository-history-card.md)
+
+#### [roadmap](/.agent/cards/roadmap-card.md)
+
+#### [routine](/.agent/cards/procedures/routine-card.md)
+
+#### [shadow-repository](/.agent/cards/shadow/shadow-repository-card.md)
+
+#### [social-network](/.agent/cards/shadow/social-network-card.md)
+
+#### [system-archive](/.agent/cards/maintenance/system-archive-card.md)
+
+#### [thoughts-subjective](/.agent/cards/internal/thoughts-subjective-card.md)
+
+#### [vscode-settings](/.agent/cards/project/vscode-settings-card.md)
+
+#### [working-memory](/.agent/cards/maintenance/working-memory-card.md)
 
 ---
 
