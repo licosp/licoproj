@@ -1,6 +1,6 @@
 #!/bin/bash
 
-# Shim for git to prevent accidental hard resets.
+# Shim for git to prevent accidental hard resets and data loss.
 # Managed by: .agent/cards/routine/command-shim-card.md
 
 # Check for "reset" and "--hard" in arguments
@@ -14,6 +14,22 @@ for arg in "$@"; do
         echo "   You are trying to operate on a file inside '.shadow/' from the root." >&2
         echo "   Please 'cd' into the directory first to ensure correct git context." >&2
         echo "" >&2
+        exit 1
+    fi
+
+    # Block 'restore' (Data Loss Risk)
+    if [[ "$arg" == "restore" ]]; then
+        echo "🚫 [Shim] BLOCKED: 'git restore' is restricted." >&2
+        echo "   This command silently discards uncommitted changes (Drafts/Logs)." >&2
+        echo "   Use 'git checkout <file>' or overwrite explicitly." >&2
+        exit 1
+    fi
+
+    # Block 'clean' (Untracked Deletion Risk)
+    if [[ "$arg" == "clean" ]]; then
+        echo "🚫 [Shim] BLOCKED: 'git clean' is restricted." >&2
+        echo "   This command deletes untracked files without trash safety." >&2
+        echo "   Use 'rm <file>' (which is safe-shimmed) instead." >&2
         exit 1
     fi
 done

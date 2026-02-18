@@ -5,7 +5,7 @@ description: Protocol for environment-based safety mechanism (Shims) to override
 tags: [protocol, environment, safety, shims, scripts]
 version: 1.0.0
 created: 2026-02-15T21:15:00+09:00
-updated: 2026-02-18T07:55:00+09:00
+updated: 2026-02-19T03:40:00+09:00
 language: en
 author: Lico (Sirius)
 ai_model: Gemini 3 Pro (High) Planning mode
@@ -80,6 +80,12 @@ Scripts are symlinked to a directory that is prioritized in the system `PATH`.
     - **Trigger**: `reset` AND `--hard`.
     - **Action**: **BLOCKS execution**.
     - **Bypass**: Use `/usr/bin/git reset --hard`.
+  - **Restore**: Blocks `git restore` (No-Discard Policy).
+    - **Trigger**: `restore` command.
+    - **Reason**: Prevents accidental loss of uncommitted drafts or logs.
+  - **Clean**: Blocks `git clean` (No-Untracked-Delete Policy).
+    - **Trigger**: `clean` command.
+    - **Reason**: Prevents permanent deletion of untracked files (bypass `rm` shim).
 - **Purpose**: Enforces safety constraints (Soft-First Rule, Context Integrity).
 
 ---
@@ -127,3 +133,4 @@ echo "🚫 [Shim] BLOCKED: 'git reset --hard' is dangerous." >&2
 
 - 2026-02-15T21:15+09:00 by Sirius: Created to document the Command Shims implementation.
 - 2026-02-18T07:55+09:00 by Sirius: Implemented Shadow Repository protection and standardized error messages.
+- 2026-02-19T03:40+09:00 by Sirius: Added restrictions for `git restore` and `git clean` to prevent accidental data loss.
