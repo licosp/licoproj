@@ -4,9 +4,9 @@ ai_visible: true
 title: Map of Territory
 description: Navigation index for the Agent's cognitive infrastructure.
 tags: [map, index, navigation, rules]
-version: 0.6.2
+version: 0.6.3
 created: 2025-12-01T00:00:00+09:00
-updated: 2026-02-18T08:20:00+09:00
+updated: 2026-02-18T19:40:00+09:00
 language: en
 author: Lico (Sirius)
 ai_model: Gemini 3 Pro (High) Planning mode
@@ -422,6 +422,7 @@ These are your capabilities.
 | [`recovery-protocol.md`](/.agent/rules/development/recovery-protocol.md)               | Emergency AI-memory recovery rules.      |
 | [`search-methodology.md`](/.agent/rules/development/search-methodology.md)             | How to search files.                     |
 | [`terminal-auto-execution.md`](/.agent/rules/development/terminal-auto-execution.md)   | Command execution safety.                |
+| [`tmux-operations.md`](/.agent/rules/development/tmux-operations.md)                   | **Tmux**. Operations and IPC protocol.   |
 | [`workspace-tooling.md`](/.agent/rules/development/workspace-tooling.md)               | Tools and dependencies.                  |
 
 ###### Rules Workflow (`.agent/rules/workflow/`)
@@ -524,3 +525,4 @@ These are your capabilities.
 - 2026-02-15T0510 by Sirius: Updated to v0.6.0. Reorganized structure and filled in descriptions (Refined by Leonidas).
 - 2026-02-16T2230 by Sirius: Updated to v0.6.1. Fixed links and added descriptions for root files and new cards.
 - 2026-02-18T0820 by Sirius: Updated to v0.6.2. Verified Shim protocol integration and fixed link typos.
+- 2026-02-18T1940 by Sirius: Updated to v0.6.3. Added tmux-operations.md to index.
