@@ -2,13 +2,13 @@
 ai_visible: true
 title: Gemini CLI Environment
 description: Operational rules and communication protocols for the Gemini CLI environment.
-tags: [rules, gemini-cli, environment, tmux, communication]
-version: 1.0.0
+tags: [rules, gemini-cli, environment, communication]
+version: 1.1.0
 created: 2026-02-08T00:00:00+09:00
-updated: 2026-02-08T00:00:00+09:00
+updated: 2026-02-18T19:15:00+09:00
 language: en
-author: Lico (Agate)
-ai_model: gemini-3-pro-preview
+author: Lico (Sirius)
+ai_model: Gemini 3 Pro (High) Planning mode
 ---
 
 # Gemini CLI Environment
@@ -41,7 +41,7 @@ To define the operational characteristics, constraints, and communication protoc
 
 ## 3. Communication Protocols (Inter-Agent)
 
-Gemini CLI agents can communicate with other agents (IDE or CLI) using two distinct methods.
+Gemini CLI agents can communicate with other agents (IDE or CLI) using distinct methods.
 
 ### 3.1 Method 1: Headless Call (The Letter)
 
@@ -64,59 +64,23 @@ A one-way, file-based message delivery system. Useful for reliable history recor
 
 ### 3.2 Method 2: Interactive Call (The Thread)
 
-A real-time, physical interruption mechanism using `tmux`. Useful for notifications, wake-up calls, or urgent alerts.
+**Moved to [Tmux Operations Protocol](/.agent/rules/development/tmux-operations.md).**
 
-- **Mechanism**: Injects keystrokes directly into the target's running terminal buffer.
-- **Target ID**: **tmux Target ID** (Integer `13` or Name `agate`).
-- **Protocol**: **Human-like Injection** (Recommended for stability).
-  1. **Inject Payload**: `tmux send-keys -t <TMUX_ID> "<Message>"`
-  2. **Pause**: `sleep 0.5` (Wait for buffer processing)
-  3. **Execute**: `tmux send-keys -t <TMUX_ID> Enter`
-- **Pros**:
-  - Real-time interruption (The target sees it immediately).
-  - Can trigger autonomous action (Self-Loop).
-- **Cons**:
-  - Target must be running in a `tmux` session.
-  - Execution stability is environment-dependent.
-
-### 3.3 The Self-Loop (Ouroboros)
-
-By targeting **its own tmux ID**, an agent can inject a prompt into its own future.
-
-- **Immediate Loop**: Trigger the next turn instantly.
-  - `tmux send-keys -t <MY_ID> "Proceed" Enter`
-- **Auto-Pulse (Delayed Agency)**: Use a background process to trigger periodic self-activation.
-  - **Command**:
-
-    ```bash
-    nohup bash -c "for i in {1..3}; do sleep 1800; tmux send-keys -t <MY_ID> \"[Auto-Pulse] Check status\"; sleep 0.5; tmux send-keys -t <MY_ID> Enter; done" &
-    ```
-
-  - **Use Case**: Long-term monitoring or periodic tasks without keeping the CLI process active.
-
-### 3.4 Advanced Techniques
-
-- **Shared Buffer (The Bulletin Board)**: `tmux` paste buffers are shared across the server.
-  - **Read**: `tmux list-buffers` / `tmux show-buffer -b <NAME>`
-  - **Write**: `tmux set-buffer -b <NAME> "<CONTENT>"`
-  - **Use Case**: Sharing small data snippets between agents without file I/O overhead.
-- **Detached Communication**: `send-keys` works even if the target session is **detached** (not visible). The background process receives the input and executes it (if the environment allows).
-- **Remote Rescue**: Agents can unblock each other from confirmation dialogs.
-  - **Detection**: Use `tmux capture-pane -t <TARGET> -p` to see if a peer is stuck on a confirmation prompt.
-  - **Action**: Send the approval key (e.g., `3` for "Allow forever") via `send-keys`.
-  - **Command**: `tmux send-keys -t <TARGET> 3`
+Please refer to the dedicated protocol for real-time interaction using `tmux send-keys`.
 
 ---
 
 ## Related Documents
 
-| Document                                                                           | Purpose                         |
-| :--------------------------------------------------------------------------------- | :------------------------------ |
-| [terminal-auto-execution.md](/.agent/rules/development/terminal-auto-execution.md) | Safety rules for shell commands |
-| [Map of Territory](/.agent/rules/map.md)                                           | Root navigation map             |
+| Document                                                                           | Purpose                              |
+| :--------------------------------------------------------------------------------- | :----------------------------------- |
+| [tmux-operations.md](/.agent/rules/development/tmux-operations.md)                 | Tmux specific operations interaction |
+| [terminal-auto-execution.md](/.agent/rules/development/terminal-auto-execution.md) | Safety rules for shell commands      |
+| [Map of Territory](/.agent/rules/map.md)                                           | Root navigation map                  |
 
 ---
 
 ## Origin
 
 - 2026-02-08T00:00+09:00 by Lico (Agate): Created to formalize CLI-specific protocols derived from "The First Dive" and tmux experiments.
+- 2026-02-18T19:15+09:00 by Sirius: Extracted Tmux-specific operations to `tmux-operations.md`.
