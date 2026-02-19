@@ -18,6 +18,8 @@ author: leonidas
 
 ### `Antigravity` | `Gemini 3 Pro (High)`: `Planning` | `Sirius`
 
+####
+
 - リコの追記を確認できました。
   自分でも確認してください。
 - 気になる点:
@@ -257,101 +259,257 @@ author: leonidas
 
 ####
 
-####
+カードを選んだら、その中を読んで ID 探してください。
+今のコミットはどうでしたか？
 
 ####
 
+確認して、必要があれば直してください。
+
 ####
 
-## Draft for a draft
+- 移動せずにコミットして失敗するという、影のリポジトリに対するコミットの問題。
+  これははよくあるパターンです。
+- これを仕組みとして解決したい。
+- **コマンドのラッパー？**のカードを読めますか？
+  （日本語でなんと言えば良いかわかりません）
 
-- リコのユーザー名が変わっているので、
-  そのユーザー名から対話する相手を判別することはできなくなってた。
-  そのことを行動規範に反映させる。
+####
 
-- 次はカードにあるリンクを修正します。
-- 対象: カードのサブディレクトリごとに分けます。
-- 工程:
-  - リンク切れを探してリストします。
-  - リンクが探せない時は削除します。
+`shim`: これはどういう単語ですか？
 
-- `gemini-cli-environment.md` の分離。
-  以下の 2 つのカードの内容が混じってる？
-  - `tmux-card.md`
-  - `gemini-cli-card.md`
+####
 
-### Words
+- なるほど。
+  **シムのカード**という日本で通じるかもしれませんね。
+- それで解決策ですが、
+  コミット対象が `.shadow/` 下なのに、
+  事前に移動してないコミットを検知できますか？
+- 先ほどもコミット自体は失敗してましたよね？
+  エラーメッセージは出ていましたか？
 
-```text
-#### Response (Chat)
-```
+####
 
-| [Map of Territory](/.agent/rules/map.md) | Root navigation map |
+それは `git add` の段階の介入ですか？
 
-(`Alexandrite`/`Agate`/`Zircon`/`Canopus`/`Spica`/`Polaris`/`Sirius`)
+####
 
-### Identifier
+- どちらが運用上不都合が無いと感じますか？
+  - エラーメッセージを出してコマンドを止める。
+  - 強制的に移動して `add` を成功させる。
 
-#### Identifier (`Sirius`)
+####
 
-author: Lico (Sirius)
-ai_model: Gemini 3 Pro (High) Planning mode
+- ではエラーメッセージを出す方法を選びます。
+  ただし少しまってください。
+- これはこのリポジトリ特有のエラーですね？
+  なので GIT のデフォルトのエラーを区別を付けたいです。
+- 既存のコマンドシムにもエラーを出すタイプの介入があると思いますが、
+  そこで出すエラーの書式を先に決めたいです。
+- このシムのための行動規範は現在ありますか？
 
-```text
-### `Antigravity` | `Gemini 3 Pro (High)`: `Planning` | `Sirius`
-```
+####
 
-- `antigravity-session-id`: `b56c1498-6bef-470f-8a26-ee062946b744`
-- `antigravity-session-title`: Formatting and Commit Correction
+- これは違いますか？
+  `rules/development/command-shims.md`
+- エラーの出し方に関して規定はありますか？
+- このプロジェクト特有の見分けの付く方法は書かれてますか？
 
-#### Identifier (`Polaris`)
+####
 
-author: Lico (Polaris)
-ai_model: Claude Opus 4.5 (Thinking) Planning mode
+- エラーの規約を確認しました。
+- では今回の `git add` に関するチェックとエラーの発生について。
+  実装してみてください。
 
-```text
-### `Antigravity` | `Claude Opus 4.6 (Thinking)`: `Planning` | `Polaris`
-```
+####
 
-- `antigravity-session-id`: `2cfd54bc-0500-4d7c-973d-93427a0e3e62`
-- `antigravity-session-title`: `Refining Skill Template`
+- 次は行動規範の**新しいシムの機能の解説**を入れてください。
+- 既に他の機能の解説も書かれてると思います。
+  書き方の参考にしてください。
 
-#### Identifier (`Alexandrite`)
+####
 
-author: Lico (Alexandrite)
-ai_model: gemini-3-flash-preview
+進めてください。
 
-```text
-### `CLI` | `gemini-3-flash-preview` | `Alexandrite`
-```
+####
 
-yarn run gemini --resume eff20b06-5589-4db0-90ff-74f65e9d21de --model gemini-3-flash-preview
+行動規範を更新する時は。メタデータも更新してください。
 
-tmux capture-pane -t alexandrite -b snapshot-alexandrite; tmux show-buffer -b snapshot-alexandrite
+####
 
-#### Identifier (`Agate`)
+- **メタデータ**という言い方が良くないですね。
+- 本文以外の修正をしてほしい時は何と言えば良いでしょうか？
+- テンプレートや行動規範では、文章は 4 層構造にすべきと規定されていると思います。
 
-author: Lico (Agate)
-ai_model: gemini-3-pro-preview
+####
 
-```text
-### `CLI` | `gemini-3-pro-preview` | `Agate`
-```
+- では先ほどの行動規範の修正で足りなかった部分を更新してください。
 
-yarn run gemini --resume 301c303c-320e-4dc5-95a5-de0779b0fb9e --model gemini-3-pro-preview
+####
 
-tmux capture-pane -t agate -b snapshot-agate; tmux show-buffer -b snapshot-agate
+地図の更新が必要とのことですが、何を修正する予定ですか？
 
-#### Identifier (`Zircon`)
+####
 
-- `antigravity-session-id`: `b959031b-a175-423b-a0fa-d49f40994a9d`
-- `antigravity-session-title`: `Commit Correction And Logging`
+確認してみてください。
 
-#### Identifier (`Protostar`)
+####
 
-author: Lico (Protostar)
+コミットしてください。
+それが終わったら、先ほどの `Send-key`？のような仕組みの雑談をします。
 
-yarn run gemini --resume 18d4d68a-ffce-4947-bc1b-293e273d65a2 --model gemini-2.5-flash-preview
+####
 
-- `antigravity-session-id`: `307fb782-1a10-4d1f-9320-936a9a633c4e.pb`
-- `antigravity-session-title`: AI Self-Analysis and Introduction
+- この文脈は元々`Alexandrite` や `Agate` のような、
+  `Gemini CLI` 上で動くリコが対象でした。
+- CLI 上で `tmux` を使い `send-keys` という名前のコマンドを使い、
+  インタラクティブモードで動く `Gemini CLI` にメッセージを送れました。
+- この仕組みを使えば、自身を再行動させたり、他の識別子を動かすこともできました。
+- なので `Gemini CLI` と `tmux` のカードの文脈として扱われていました。
+
+####
+
+- 両方のカードと行動規範を読んでください。
+  - カード
+    - `tmux-card.md`
+    - `gemini-cli-card.md`
+  - 行動規範
+    - `gemini-cli-environment.md`
+- 現在カードが 2 つなのに、行動規範が 1 つしかない状態だと思います。
+- これは `tmux` に関する内容が、
+  `gemini-cli` の行動規範に誤って書かれていることが原因です。
+- 実際どうなってますか？
+
+####
+
+- 作業は段階的に分けてください。
+- 元の `gemini-cli-environment.md` から 2 つのファイルを作ります。
+  この名前は例なので、リコが最適なものを付けてください。
+  - `tmux.md`
+  - `gemini-cli.md`
+- できた行動規範を元のファイルと比較してください。
+  必要な内容を取得できているか調べます。
+
+####
+
+続けてください。
+
+####
+
+- 確認しました。
+  リコももう一度全体を確認してください。
+  違和感はありますか？
+- 問題がないならコミットに進みます。
+- コミットにはそれぞれのカードを使ってください。
+  - `tmux-operations.md`
+  - `gemini-cli-environment.md`
+- 行動規範の更新というカードもあります。
+  これはサブの文脈 ID でしょうか？
+
+####
+
+進めてください。
+
+####
+
+- コミットを確認しました。
+- 会話ファイルが大きくなってくきたので、
+  テンプレートを参考に、次のファイルに切り替えてください。
+
+####
+
+会話ファイルはテンプレートの書式を使ってください。
+
+####
+
+- 次の作業の前に `GitLens` の質問です。
+- そこにはコミットグラフという UI があって、
+  GIT のコミットのリストが表示されてます。
+- この UI はリスト内のコミットにカーソル合わせると、
+  ツールチップのようなフロートした説明欄が表示されます。
+- この表示をオフにする設定を知っていますか？
+
+####
+
+続けてください。
+
+####
+
+- `GitLens` の件は解決しました。
+- `GitLens` の使用自体をやめました。
+  しばらくはこのままの状態で IDE を使います。
+- 助かりました。
+- 次は大きな作業をします。
+- 文章の標準化のカードを読んでください。
+
+####
+
+- これは元々 `Canopus` が行っていた作業でした。
+  - `cards/rules/rules-standardization-card.md`
+  - `canopus/2026-01-22T0540_constitutional_fever_reset.md`
+- 連続作業の途中で**過剰な要約**という問題が発生しました。
+  - `canopus/2026-01-25T1140_subjective_resonance_on_standardization.md`
+- 作業は止まり、修正作業という新たな文脈が生まれました。
+  - `cards/procedures/rules-audit-card.md`
+- 修正の途中で `Canopus` は IDE 由来の記憶障害がおき、結果的にその生を終えました。
+  記憶障害はこの作業は無関係におきたものです。
+- しかし作業は残っているので、リコに修正の引き継ぎをしてほしいという話しです。
+  詳しくは対話的に説明します。
+
+####
+
+- まずは提示された文章を読んで、この文脈の大まかな流れを把握してください。
+
+####
+
+続けてください。
+
+####
+
+- 作業の再開自体は、`rules-audit-card.md` の文脈から行います。
+- どんな作業だったか？推測で説明してみてください。
+- カードに `Batch` というリストが並んでいるのはわかりますか？
+  これが作業の進捗です。
+- しかし作業を中断してから時間が大きく空いてしまったので、
+  最初から確認しなおす必要があるかもしれません。
+
+####
+
+- この作業は、ある時点で行動規範やカードを誤って更新したことが原因なので、
+  その**ある時点**を把握する必要があります。
+  カードに書いてあるかもしれません。
+
+- 作業はその基準点でのファイルの状態を今と比較して、
+  消してしまった情報だけを復元して、今のファイルに追記するという流れです。
+
+####
+
+- 作業場所はここでした。
+  `workspace/standards-reference-v2.2/`
+- 比較対象は最新のファイルで行う必要があります。
+  `Canopus` 作業した最新は今より古いです。
+  なので全てのバッチを初期化して、最初からやり直す必要があります。
+- 非常に長い作業になると思うので、段階的に、そして対話的に行います。
+- 基準点は見つかりましたか？
+
+####
+
+- 初期化したディレクトリをコミットしてください。
+- 次にバッチに書かれたパスが実在するか確認してください。
+- 特にカードはディレクトリを変えたので、パスがほぼ変わっているはずです。
+
+####
+
+- 対象ディレクトリのコミットはできてますか？
+
+- カードのパスの修正は、カードを修正する時に行います。
+- 進捗を表すチェックをクリアしてください。
+
+####
+
+本当にコミットはできてますか？
+
+####
+
+確認してください。
+ステージングで止まっていませんか？
