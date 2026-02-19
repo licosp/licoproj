@@ -5,13 +5,12 @@ import fcntl
 import os
 import signal
 import sys
-from typing import Optional
 
 # Strict Type Enforcement
 # This script is designed to be checked with mypy
 
 
-def handle_signal(signum: int, frame: Optional[object]) -> None:
+def handle_signal(signum: int, frame: object | None) -> None:
     """Handle termination signals to ensure cleanup."""
     # Print to stderr to capture in logs if possible
     sys.stderr.write(f"Error: Received signal {signum}. Exiting...\n")
@@ -19,8 +18,7 @@ def handle_signal(signum: int, frame: Optional[object]) -> None:
 
 
 def append_log(log_path: str, content_file: str, header_id: str) -> None:
-    """
-    Append content from content_file to log_path with a header.
+    """Append content from content_file to log_path with a header.
     Uses file locking to prevent race conditions.
     """
     if not os.path.exists(content_file):
@@ -28,7 +26,7 @@ def append_log(log_path: str, content_file: str, header_id: str) -> None:
         sys.exit(1)
 
     try:
-        with open(content_file, "r", encoding="utf-8") as f_src:
+        with open(content_file, encoding="utf-8") as f_src:
             content: str = f_src.read()
     except Exception as e:
         sys.stderr.write(f"Error: Failed to read content file: {e}\n")
@@ -85,15 +83,19 @@ def main() -> None:
     # But since we deleted the wrapper, we should implement a self-timeout?
     # For now, we trust strict signal handling.
 
-    if len(sys.argv) < 3:
+    arg_count_min = 3
+    if len(sys.argv) < arg_count_min:
         sys.stderr.write(
-            "Usage: python3 log_appender.py <log_path> <content_file> [identifier]\n"
+            "Usage: python3 log_appender.py <log_path> "
+            "<content_file> [identifier]\n",
         )
         sys.exit(1)
 
     log_path: str = sys.argv[1]
     content_file: str = sys.argv[2]
-    identifier: str = sys.argv[3] if len(sys.argv) > 3 else "Unknown"
+    identifier: str = (
+        sys.argv[3] if len(sys.argv) > arg_count_min else "Unknown"
+    )
 
     # Self-timeout watchdog (optional but good for robustness against hangs)
     signal.alarm(10)  # Kill self after 10 seconds if not done
