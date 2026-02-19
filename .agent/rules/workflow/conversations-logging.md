@@ -3,9 +3,9 @@ ai_visible: true
 title: Conversation Logging Protocol
 description: Standards for logging AI-human conversations to persistent files.
 tags: [conversation, logging, workflow, v2]
-version: 2.1.0
+version: 2.3.0
 created: 2026-01-31T22:50:00+09:00
-updated: 2026-02-19T20:10:00+09:00
+updated: 2026-02-20T08:34:00+09:00
 language: en
 author: Lico (Sirius)
 ai_model: Gemini 3 Pro (High) Planning mode
@@ -28,8 +28,9 @@ Standardize how AI instances log conversations to persistent files to ensure mem
 
 - **Phase 1 (Start)**: Immediately after receiving User Input (Before executing tools).
   - **Action**: Append `Header` + `Input` + `Plan`.
-- **Phase 2 (End)**: After satisfying the request (Before `notify_user` / final report).
-  - **Action**: Append `Report` + `Footer`.
+- **Phase 2 (End / Progress)**: After satisfying the request OR completing a significant subtask.
+  - **Action**: Append `Report` + `Footer` (or just `Report` for progress).
+  - **Note**: Multiple Report phases are allowed for complex tasks to provide progress updates.
 
 ... (Skipped section)
 
@@ -119,6 +120,7 @@ Use **two separate buffer files** to prevent overwriting and clarify state.
 | **Footer**      | **Abolished** (Do not use)                                  |
 
 ### Timestamp Format
+
 The `{{TIMESTAMP}}` placeholder must strictly follow the **Repository Default** format defined in `datetime-format.md`.
 
 - **Format**: `YYYY-MM-DDTHH:MM:SS+09:00` (ISO 8601 with Japan Time)
@@ -159,3 +161,4 @@ The `{{TIMESTAMP}}` placeholder must strictly follow the **Repository Default** 
 - 2026-02-19T08:35:00+09:00: v2.1.0 by Sirius (Updated to Managed Script architecture).
 - 2026-02-19T19:45:00+09:00: v2.2.0 by Sirius (Added Tool Usage Constraints).
 - 2026-02-19T20:10:00+09:00: v2.2.1 by Sirius (Standardized to Second Precision).
+- 2026-02-20T08:34:00+09:00: v2.3.0 by Sirius (Allow Multi-Report phases for complex tasks).
