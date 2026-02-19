@@ -35,7 +35,9 @@ def append_log(log_path: str, content_file: str, header_id: str) -> None:
         sys.exit(1)
 
     # Generate Timestamp
-    timestamp: str = datetime.datetime.now().strftime("%Y-%m-%dT%H:%M:%S%z")
+    # Generate Timestamp (ISO 8601 with JST and seconds)
+    jst = datetime.timezone(datetime.timedelta(hours=9))
+    timestamp: str = datetime.datetime.now(jst).isoformat(timespec="seconds")
 
     # Replace placeholder
     # If the content doesn't have the placeholder, we might want to prepend a header,
