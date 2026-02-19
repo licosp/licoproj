@@ -3,20 +3,12 @@
 node_modules/
 
 # Temporary files
-.temp/
-.trash/
+.temp/*
+.trash/*
+!.gitkeep
 
-# Runtime data
-*.pid
-*.seed
-*.pid.lock
-
-# IDE/Editor files
-*.swp
-*.swo
-
-# Yarn Integrity file
-.yarn-integrity
+# Python.
+__pycache__/
 
 # Runtime tools (local installations)
 .runtimes/
