@@ -9,9 +9,11 @@ TIMESTAMP=$(date +%Y-%m-%dT%H%M%S)
 TRASH_DIR="$TRASH_ROOT/$TIMESTAMP"
 
 # Create Trash Dir
-# We rely on the fact that we are likely in the project root or typical subdir.
-# Ideally find project root.
-REPO_ROOT=$(git rev-parse --show-toplevel 2>/dev/null || pwd)
+# Ideally find project root relative to this script.
+# Script is located at .agent/scripts/rm
+SCRIPT_PATH=$(readlink -f "$0")
+SCRIPT_DIR=$(dirname "$SCRIPT_PATH")
+REPO_ROOT=$(builtin cd "$SCRIPT_DIR/../.." && pwd)
 FULL_TRASH_DIR="$REPO_ROOT/.trash/$TIMESTAMP"
 
 mkdir -p "$FULL_TRASH_DIR"
@@ -39,11 +41,11 @@ fi
 # Logic to handle Git status
 # If files were tracked, they are now gone from working tree.
 # We should stage this deletion to be helpful.
-if git rev-parse --is-inside-work-tree > /dev/null 2>&1; then
+if git rev-parse --is-inside-work-tree >/dev/null 2>&1; then
     for file in "${FILES[@]}"; do
         # check if file was tracked (it's gone now, so we check if it's in index)
         # git ls-files --error-unmatch needs the file to exist? No, it checks index.
-        # But wait, git rm needs the file to be deleted? 
+        # But wait, git rm needs the file to be deleted?
         # If we run 'git add -u <file>', it stages the deletion suitable for git.
         git add -u "$file" 2>/dev/null
     done

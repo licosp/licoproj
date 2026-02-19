@@ -66,6 +66,12 @@ ai_model: Gemini 3 Pro (High) Planning mode
 - [x] Create `git` Shim (Block Hard Reset)
 - [x] Activate Shim (Link)
 
+### Sirius (2026-02-20)
+
+- **Fix**: Updated `rm` shim to use Script-Relative Absolute Path for `.trash/`.
+  - **Issue**: `git rev-parse` caused `.trash/` creation in CWD if inside another git repo (e.g. `.shadow/`).
+  - **Resolution**: `$(dirname $(readlink -f $0))/../..` ensures Workspace Root.
+
 ---
 
 ## Related Documents
