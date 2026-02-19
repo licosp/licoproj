@@ -1,4 +1,4 @@
-"""Append content to a log file with timestamp and locking."""  # noqa: INP001
+"""Append content to a log file with timestamp and locking."""
 
 import datetime
 import fcntl
@@ -29,7 +29,7 @@ def append_log(log_path: str, content_file: str) -> None:
 
     try:
         content = Path(content_file).read_text(encoding="utf-8")
-    except Exception as e:  # noqa: BLE001
+    except (OSError, ValueError) as e:
         sys.stderr.write(f"Error: Failed to read content file: {e}\n")
         sys.exit(1)
 
@@ -63,7 +63,7 @@ def append_log(log_path: str, content_file: str) -> None:
             finally:
                 fcntl.flock(f_dest, fcntl.LOCK_UN)
 
-    except Exception as e:  # noqa: BLE001
+    except (OSError, ValueError) as e:
         sys.stderr.write(f"Error: Failed to write to log file: {e}\n")
         sys.exit(1)
 
