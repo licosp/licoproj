@@ -36,4 +36,4 @@ _Why this document was created and its evolution._
 
 ## Origin
 
-- 2026-01-31T00:00+09:00 by <`Identifier`>: Created.
+- 2026-01-31T00:00:00+09:00 by <`Identifier`>: Created.

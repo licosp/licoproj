@@ -36,7 +36,7 @@ Timestamps appear in multiple contexts (frontmatter, filenames, commit messages)
 
 ### For Timestamps (in content)
 
-```
+```text
 YYYY-MM-DDTHH:MM:SS+09:00
 ```
 
@@ -44,7 +44,7 @@ YYYY-MM-DDTHH:MM:SS+09:00
 
 ### For File Names
 
-```
+```text
 YYYY-MM-DDTHHMM_description.md
 ```
 
@@ -59,7 +59,8 @@ YYYY-MM-DDTHHMM_description.md
 | Situation               | Format                      |
 | :---------------------- | :-------------------------- |
 | Timestamp in content    | `YYYY-MM-DDTHH:MM:SS+09:00` |
-| Origin (Historical Log) | `YYYY-MM-DDTHH:MM+09:00`    |
+| Origin (Historical Log) | `YYYY-MM-DDTHH:MM:SS+09:00` |
+| Conversation Log        | `YYYY-MM-DDTHH:MM:SS+09:00` |
 | File name prefix        | `YYYY-MM-DDTHHMM_`          |
 | Unknown time            | Use `T0000` (midnight)      |
 | Date only needed        | `YYYY-MM-DD`                |
@@ -70,7 +71,7 @@ YYYY-MM-DDTHHMM_description.md
 
 When recording historical entries (Origin):
 
-1. **Precision Standard**: The standard format for `Origin` is `YYYY-MM-DDTHH:MM+09:00`.
+1. **Precision Standard**: The standard format for `Origin` is `YYYY-MM-DDTHH:MM:SS+09:00`.
 2. **Handle Incomplete Data**: If the source data (e.g., from an old commit) lacks minutes or hours, do NOT invent "00" entries to satisfy the format if it falsely implies precision.
 3. **Primary Principle**: Accuracy to the known source takes precedence over strict format compliance, but for NEW entries, the standard MUST be followed.
 
@@ -80,7 +81,7 @@ When recording historical entries (Origin):
 
 ### File Names
 
-```
+```text
 2025-12-11T0109_session_report.md
 2025-12-07T0000_reflection.md
 2025-12-10T1530_implementation_plan.md
