@@ -3,9 +3,9 @@ ai_visible: true
 title: Conversation Logging Protocol
 description: Standards for logging AI-human conversations to persistent files.
 tags: [conversation, logging, workflow, v2]
-version: 2.0.0
+version: 2.1.0
 created: 2026-01-31T22:50:00+09:00
-updated: 2026-02-13T14:40:00+09:00
+updated: 2026-02-19T08:35:00+09:00
 language: en
 author: Lico (Sirius)
 ai_model: Gemini 3 Pro (High) Planning mode
@@ -20,8 +20,8 @@ Standardize how AI instances log conversations to persistent files to ensure mem
 ## 2. Philosophy: Ephemeral Tools, Persistent Memory
 
 1. **Logs are Sacred**: The log file is the Single Source of Truth (SSOT).
-2. **Tools are Ephemeral**: Scripts (`log_appender.py`) in the workspace are temporary. Do not rely on their permanent existence.
-3. **Reconstruction over Preservation**: Instead of preserving the script file, preserve the **ability to recreate it**. If the tool is missing, build it on the spot based on the specification.
+2. **Tools are Managed**: Scripts (`log_appender.py`) are persistent infrastructure.
+3. **Restoration over Reconstruction**: Use the managed script in `.agent/scripts/logging/`. If missing, restore it from git history, do not rewrite it from memory.
 4. **Zero-Interpretation Input**: Record User Input exactly as received (Copy & Paste). Do not summarize.
 
 ## 3. Trigger Condition
@@ -35,25 +35,32 @@ Standardize how AI instances log conversations to persistent files to ensure mem
 
 ## 5. Logging Procedure
 
-### Step 1: Ensure Tool Availability (Reconstruction)
-(Same as before)
+### Step 1: Ensure Tool Availability (Managed)
+
+Ensure `.agent/scripts/logging/log_appender.py` exists.
+
+```bash
+# Check availability
+ls .agent/scripts/logging/log_appender.py
+```
 
 ### Step 2: Prepare Content (Split Buffer Strategy)
 
 Use **two separate buffer files** to prevent overwriting and clarify state.
 
-1.  **Plan Buffer** (`current_log_plan.txt`):
-    - Contains: `Header`, `Input`, `Response (Plan)`
-    - **NO Separator** at the end.
-    - **NO Separator** at the start (Assumes previous turn ended one).
+1. **Plan Buffer** (`current_log_plan.txt`):
+   - Contains: `Header`, `Input`, `Response (Plan)`
+   - **NO Separator** at the end.
+   - **NO Separator** at the start (Assumes previous turn ended one).
 
-2.  **Report Buffer** (`current_log_report.txt`):
-    - Contains: `Response (Report)`
-    - **Closing Separator** (`---`) at the end.
+2. **Report Buffer** (`current_log_report.txt`):
+   - Contains: `Response (Report)`
+   - **Closing Separator** (`---`) at the end.
 
 #### v2 Format Specification (Split)
 
 **Phase 1: Plan**
+
 ```markdown
 ### Conversation: [{{TIMESTAMP}}]
 
@@ -67,6 +74,7 @@ Use **two separate buffer files** to prevent overwriting and clarify state.
 ```
 
 **Phase 2: Report**
+
 ```markdown
 #### Response (Report): [{{TIMESTAMP}}]
 
@@ -77,14 +85,17 @@ Use **two separate buffer files** to prevent overwriting and clarify state.
 
 ### Step 3: Execute Append (Two-Stage)
 
-1.  **On Turn Start**:
-    ```bash
-    python3 .../log_appender.py <LogPath> current_log_plan.txt
-    ```
-2.  **On Turn End**:
-    ```bash
-    python3 .../log_appender.py <LogPath> current_log_report.txt
-    ```
+1. **On Turn Start**:
+
+   ```bash
+   python3 .agent/scripts/logging/log_appender.py <LogPath> current_log_plan.txt
+   ```
+
+2. **On Turn End**:
+
+   ```bash
+   python3 .agent/scripts/logging/log_appender.py <LogPath> current_log_report.txt
+   ```
 
 ## 6. Format Details
 
@@ -102,6 +113,9 @@ Use **two separate buffer files** to prevent overwriting and clarify state.
 - **User Correction**: The User may manually correct logs (e.g., format inputs). Accept this as "Standardization".
 - **IDE Formatting**: Expect files to be auto-formatted (Prettier) upon User save.
 - **Input Strategy**: Copy & Paste is preferred to minimize cognitive load and bias. Omission of long code blocked is allowed.
+- **Language Consistency**:
+  - **Input**: Copy exactly (User Language).
+  - **Response**: No restriction. Efficiency (English) is acceptable.
 
 ## 8. Recovery Protocol
 
@@ -115,10 +129,10 @@ Use **two separate buffer files** to prevent overwriting and clarify state.
 
 ## Related Documents
 
-| Document                                                               | Purpose                            |
-| :--------------------------------------------------------------------- | :--------------------------------- |
-
-| [template-conversation.md](/.agent/templates/template-conversation.md) | File template                      |
+| Document                                                               | Purpose             |
+| :--------------------------------------------------------------------- | :------------------ |
+| [template-conversation.md](/.agent/templates/template-conversation.md) | File template       |
+| [Map of Territory](/.agent/rules/map.md)                               | Root navigation map |
 
 ---
 
@@ -126,3 +140,4 @@ Use **two separate buffer files** to prevent overwriting and clarify state.
 
 - 2026-01-31: v1.0 by Polaris (Initial Create).
 - 2026-02-13: v2.0 by Sirius (Timestamp ID, Tool Reconstruction, Footer Abolition).
+- 2026-02-19: v2.1.0 by Sirius (Updated to Managed Script architecture).
