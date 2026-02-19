@@ -1,0 +1,13 @@
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[project]
+name = "licoproj_devc"
+version = "0.0.1"
+
+[project.scripts]
+licoproj_devc = "licoproj_devc:main"
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/licoproj_devc"]
