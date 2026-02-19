@@ -97,17 +97,15 @@ Use **two separate buffer files** to prevent overwriting and clarify state.
    python3 .agent/scripts/logging/log_appender.py <LogPath> current_log_report.txt
    ```
 
-   ```
-
 ## 6. Tool Usage Constraints
 
 > [!WARNING]
 > The choice of tool for logging is strictly constrained to prevent data loss and user disruption.
 
-| Tool | Status | Reasoning |
-| :--- | :--- | :--- |
+| Tool                | Status        | Reasoning                                                                                                                                                                                                                         |
+| :------------------ | :------------ | :-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | **`write_to_file`** | **FORBIDDEN** | 1. **Data Loss**: Risk of accidentally overwriting the entire log history.<br>2. **Distraction**: Forces the IDE to open and focus the file, disrupting the user.<br>3. **Portability**: Not available in all agent environments. |
-| **`run_command`** | **ALLOWED** | 1. **Safety**: Appending via script (`log_appender.py`) is atomic and safe.<br>2. **Silent**: Does not trigger IDE focus or UI changes.<br>3. **Universal**: Shell commands are available in almost all environments. |
+| **`run_command`**   | **ALLOWED**   | 1. **Safety**: Appending via script (`log_appender.py`) is atomic and safe.<br>2. **Silent**: Does not trigger IDE focus or UI changes.<br>3. **Universal**: Shell commands are available in almost all environments.             |
 
 ## 7. Format Details
 
@@ -150,6 +148,6 @@ Use **two separate buffer files** to prevent overwriting and clarify state.
 
 ## Origin
 
-- 2026-01-31: v1.0 by Polaris (Initial Create).
-- 2026-02-13: v2.0 by Sirius (Timestamp ID, Tool Reconstruction, Footer Abolition).
-- 2026-02-19: v2.1.0 by Sirius (Updated to Managed Script architecture).
+- 2026-01-31T2250+09:00: v1.0 by Polaris (Initial Create).
+- 2026-02-13T0000+09:00: v2.0 by Sirius (Timestamp ID, Tool Reconstruction, Footer Abolition).
+- 2026-02-19T0835+09:00: v2.1.0 by Sirius (Updated to Managed Script architecture).
