@@ -97,7 +97,19 @@ Use **two separate buffer files** to prevent overwriting and clarify state.
    python3 .agent/scripts/logging/log_appender.py <LogPath> current_log_report.txt
    ```
 
-## 6. Format Details
+   ```
+
+## 6. Tool Usage Constraints
+
+> [!WARNING]
+> The choice of tool for logging is strictly constrained to prevent data loss and user disruption.
+
+| Tool | Status | Reasoning |
+| :--- | :--- | :--- |
+| **`write_to_file`** | **FORBIDDEN** | 1. **Data Loss**: Risk of accidentally overwriting the entire log history.<br>2. **Distraction**: Forces the IDE to open and focus the file, disrupting the user.<br>3. **Portability**: Not available in all agent environments. |
+| **`run_command`** | **ALLOWED** | 1. **Safety**: Appending via script (`log_appender.py`) is atomic and safe.<br>2. **Silent**: Does not trigger IDE focus or UI changes.<br>3. **Universal**: Shell commands are available in almost all environments. |
+
+## 7. Format Details
 
 | Element         | Description                                                 |
 | :-------------- | :---------------------------------------------------------- |
@@ -108,7 +120,7 @@ Use **two separate buffer files** to prevent overwriting and clarify state.
 | **Report Time** | `#### Response (Report): [{{TIMESTAMP}}]` (Tracks duration) |
 | **Footer**      | **Abolished** (Do not use)                                  |
 
-## 7. Agreements & Context
+## 8. Agreements & Context
 
 - **User Correction**: The User may manually correct logs (e.g., format inputs). Accept this as "Standardization".
 - **IDE Formatting**: Expect files to be auto-formatted (Prettier) upon User save.
@@ -117,7 +129,7 @@ Use **two separate buffer files** to prevent overwriting and clarify state.
   - **Input**: Copy exactly (User Language).
   - **Response**: No restriction. Efficiency (English) is acceptable.
 
-## 8. Recovery Protocol
+## 9. Recovery Protocol
 
 **Trigger**: Logging command cancelled or failed.
 
