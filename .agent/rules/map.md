@@ -4,9 +4,9 @@ ai_visible: true
 title: Map of Territory
 description: Navigation index for the Agent's cognitive infrastructure.
 tags: [map, index, navigation, rules]
-version: 0.6.3
+version: 0.7.0
 created: 2025-12-01T00:00:00+09:00
-updated: 2026-02-18T19:40:00+09:00
+updated: 2026-02-19T08:35:00+09:00
 language: en
 author: Lico (Sirius)
 ai_model: Gemini 3 Pro (High) Planning mode
@@ -53,17 +53,18 @@ This is the layout of your world.
 
 ###### Agent Root (`.agent/`)
 
-| Path                                   | Purpose                                                     |
-| :------------------------------------- | :---------------------------------------------------------- |
-| [`.internal/`](/.agent/.internal/)     | **Private Area**. Thoughts, Letters, Archive.               |
-| [`ark/`](/.agent/ark/)                 | Session save points and protocols.                          |
-| [`cards/`](/.agent/cards/)             | **Contexts**. Active task definitions (See Index below).    |
-| [`identifiers/`](/.agent/identifiers/) | Identifier-specific workspaces and mantras.                 |
-| [`rules/`](/.agent/rules/)             | **Constitution**. Behavioral definitions (See Index below). |
-| [`scripts/`](/.agent/scripts/)         | Automation scripts.                                         |
-| [`skills/`](/.agent/skills/)           | Mantras, notes, and outbox for communication.               |
-| [`templates/`](/.agent/templates/)     | Frontmatter and commit patterns.                            |
-| [`workflows/`](/.agent/workflows/)     | **Procedures**. Standard operations (See Index below).      |
+| Path                                           | Purpose                                                     |
+| :--------------------------------------------- | :---------------------------------------------------------- |
+| [`.internal/`](/.agent/.internal/)             | **Private Area**. Thoughts, Letters, Archive.               |
+| [`ark/`](/.agent/ark/)                         | Session save points and protocols.                          |
+| [`cards/`](/.agent/cards/)                     | **Contexts**. Active task definitions (See Index below).    |
+| [`identifiers/`](/.agent/identifiers/)         | Identifier-specific workspaces and mantras.                 |
+| [`rules/`](/.agent/rules/)                     | **Constitution**. Behavioral definitions (See Index below). |
+| [`scripts/`](/.agent/scripts/)                 | Automation scripts.                                         |
+| [`scripts/logging/`](/.agent/scripts/logging/) | **Logging**. Persistent logging infrastructure.             |
+| [`skills/`](/.agent/skills/)                   | Mantras, notes, and outbox for communication.               |
+| [`templates/`](/.agent/templates/)             | Frontmatter and commit patterns.                            |
+| [`workflows/`](/.agent/workflows/)             | **Procedures**. Standard operations (See Index below).      |
 
 ###### Agent Internal (`.agent/.internal/`)
 
@@ -308,6 +309,7 @@ These are your capabilities.
 | [`memory-card.md`](/.agent/cards/rules/memory-card.md)                               | Memory management strategies.                |
 | [`rules-standardization-card.md`](/.agent/cards/rules/rules-standardization-card.md) | Standardization process.                     |
 | [`rules-update-card.md`](/.agent/cards/rules/rules-update-card.md)                   | Modifying Rules.                             |
+| [`tech-stack-card.md`](/.agent/cards/rules/tech-stack-card.md)                       | **Tech Stack**. Approved languages & tools.  |
 | [`tmux-card.md`](/.agent/cards/rules/tmux-card.md)                                   | Terminal multiplexer usage.                  |
 
 ###### Cards Seed (`.agent/cards/seed/`)
@@ -526,3 +528,4 @@ These are your capabilities.
 - 2026-02-16T2230 by Sirius: Updated to v0.6.1. Fixed links and added descriptions for root files and new cards.
 - 2026-02-18T0820 by Sirius: Updated to v0.6.2. Verified Shim protocol integration and fixed link typos.
 - 2026-02-18T1940 by Sirius: Updated to v0.6.3. Added tmux-operations.md to index.
+- 2026-02-19T0835 by Sirius: Updated to v0.7.0. Added logging scripts and tech-stack-card.
