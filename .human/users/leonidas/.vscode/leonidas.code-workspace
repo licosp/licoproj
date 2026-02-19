@@ -70,10 +70,19 @@
     // * Outside tools
     // Python
     "python.analysis.diagnosticMode": "workspace",
-    "python.analysis.extraPaths": [],
+    "python.analysis.extraPaths": ["packages/licoproj-devc/src"],
     "python.analysis.typeCheckingMode": "strict",
     "python.testing.pytestEnabled": true,
     "python.languageServer": "Pylance",
+
+    // Mypy
+    "mypy-type-checker.args": ["--config-file=pyproject.toml"],
+
+    // Ruff
+    "ruff.configuration": "pyproject.toml",
+
+    // Docstring
+    "autoDocstring.docstringFormat": "google",
 
     // Prettier
     "prettier.configPath": ".vscode/.prettierrc.yaml",
@@ -89,14 +98,6 @@
     "shellcheck.useWorkspaceRootAsCwd": true,
     "shellcheck.logLevel": "debug",
 
-    // Mypy
-    "mypy-type-checker.args": ["--config-file=pyproject.toml"],
-
-    // Python
-    "[python]": {
-      "editor.defaultFormatter": "charliermarsh.ruff",
-    },
-
     // Git
     "git.autoRepositoryDetection": "openEditors",
     "git.inputValidation": true,
@@ -108,12 +109,6 @@
     "bashIde.logLevel": "debug",
     "bashIde.shellcheckPath": "", // Disable lint
     "bashIde.shfmt.path": "", // Disable format
-
-    // Docstring
-    "autoDocstring.docstringFormat": "google",
-
-    // Ruff
-    "ruff.configuration": "pyproject.toml",
 
     // Markdownlint
     "markdownlint.configFile": ".vscode/.markdownlint.yaml",
@@ -159,6 +154,11 @@
     },
     "[shellscript]": {
       "editor.defaultFormatter": "foxundermoon.shell-format",
+    },
+
+    // Python
+    "[python]": {
+      "editor.defaultFormatter": "charliermarsh.ruff",
     },
   },
 }
