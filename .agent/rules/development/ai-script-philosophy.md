@@ -3,12 +3,12 @@ ai_visible: true
 title: AI Script Philosophy
 description: AI-specific script philosophy emphasizing disposability over reusability
 tags: [scripts, philosophy, disposable, ai]
-version: 2.3.0
+version: 2.4.0
 created: 2025-12-02T00:00:00+09:00
-updated: 2026-01-25T07:25:00+09:00
+updated: 2026-02-19T08:30:00+09:00
 language: en
-author: Lico (Canopus)
-ai_model: Gemini 3 Flash Planning mode
+author: Lico (Sirius)
+ai_model: Gemini 3 Pro (High) Planning mode
 ---
 
 # AI Script Philosophy
@@ -44,6 +44,26 @@ When a task recurs, do not find the old script. **Write a new one** to ensure al
 - **Lico's Scripts**: `.agent/scripts/` (Disposable, archived by Lico).
 - **Human's Scripts**: `scripts/` (Persistent, managed by User).
 
+### Rule 4: Complexity Threshold & Technology Stack
+
+**Choose the right tool for the complexity.**
+
+#### 4.1 Shell Scripts (Bash)
+
+- **Use Case**: Simple file operations, piping commands, environment setup.
+- **Limit**: No complex loops, no array manipulation, no JSON parsing.
+- **Philosophy**: "Glue code" only.
+
+#### 4.2 Python Scripts (Strict Mode)
+
+- **Use Case**: Logic involving data structures, API calls, or complex control flow.
+- **Requirement**: **Strict Mode**.
+  - Must include Type Hints (`typing`).
+  - Must handle Signals (SIGINT/SIGTERM).
+  - Must use proper Error Handling.
+  - _Ideally checked with Linters/Formatters._
+- **Philosophy**: If it's code, treat it like software.
+
 ---
 
 ## Historical Background
@@ -60,7 +80,7 @@ When a task recurs, do not find the old script. **Write a new one** to ensure al
 | :------------------------------------------------------------- | :---------------------------- |
 | [maintenance.md](/.agent/rules/development/maintenance.md)     | Long-term project consistency |
 | [file-deletion.md](/.agent/rules/development/file-deletion.md) | Archive vs deletion policy    |
-| [Map of Territory](/.agent/rules/map.md)                       | Project navigation            |
+| [Map of Territory](/.agent/rules/map.md)                       | Root navigation map           |
 
 ---
 
@@ -68,3 +88,4 @@ When a task recurs, do not find the old script. **Write a new one** to ensure al
 
 - 2025-12-02T0000 by Polaris: Created as original AI script philosophy.
 - 2026-01-25T0725 by Canopus: <<Seal: Rules-Standardization-Batch4>> Upgraded to v2.3 constitutional standards; removed legacy navigation footer. (v2.3.0)
+- 2026-02-19T0830 by Sirius: Added Rule 4 (Complexity Threshold) for Strict Python vs Shell. (v2.4.0)
