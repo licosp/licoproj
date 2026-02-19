@@ -5,7 +5,7 @@ description: Standards for logging AI-human conversations to persistent files.
 tags: [conversation, logging, workflow, v2]
 version: 2.1.0
 created: 2026-01-31T22:50:00+09:00
-updated: 2026-02-19T08:35:00+09:00
+updated: 2026-02-19T20:10:00+09:00
 language: en
 author: Lico (Sirius)
 ai_model: Gemini 3 Pro (High) Planning mode
@@ -112,11 +112,17 @@ Use **two separate buffer files** to prevent overwriting and clarify state.
 | Element         | Description                                                 |
 | :-------------- | :---------------------------------------------------------- |
 | **Separators**  | Start and end with `---`                                    |
-| **Header (ID)** | `### Conversation: [{{TIMESTAMP}}]` (Becomes unique ID)     |
+| **Header (ID)** | `### Conversation: [{{TIMESTAMP}}]` (See below)             |
 | **Input**       | `#### Input` (Exact copy of user message)                   |
 | **Response**    | `#### Response (Plan)` or `(Report)`                        |
 | **Report Time** | `#### Response (Report): [{{TIMESTAMP}}]` (Tracks duration) |
 | **Footer**      | **Abolished** (Do not use)                                  |
+
+### Timestamp Format
+The `{{TIMESTAMP}}` placeholder must strictly follow the **Repository Default** format defined in `datetime-format.md`.
+
+- **Format**: `YYYY-MM-DDTHH:MM:SS+09:00` (ISO 8601 with Japan Time)
+- **Precision**: **Seconds** are mandatory for concurrency and unique ID generation.
 
 ## 8. Agreements & Context
 
@@ -150,4 +156,6 @@ Use **two separate buffer files** to prevent overwriting and clarify state.
 
 - 2026-01-31T2250+09:00: v1.0 by Polaris (Initial Create).
 - 2026-02-13T0000+09:00: v2.0 by Sirius (Timestamp ID, Tool Reconstruction, Footer Abolition).
-- 2026-02-19T0835+09:00: v2.1.0 by Sirius (Updated to Managed Script architecture).
+- 2026-02-19T08:35:00+09:00: v2.1.0 by Sirius (Updated to Managed Script architecture).
+- 2026-02-19T19:45:00+09:00: v2.2.0 by Sirius (Added Tool Usage Constraints).
+- 2026-02-19T20:10:00+09:00: v2.2.1 by Sirius (Standardized to Second Precision).
