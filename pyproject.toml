@@ -1,0 +1,65 @@
+[project]
+name = "licoproj"
+version = "0.0.1"
+requires-python = ">=3.14"
+
+[dependency-groups]
+licoproj-devc = ["licoproj-devc"]
+
+dev = ["mypy>=1.19.1", "pytest>=9.0.2", "ruff>=0.15.1"]
+
+[project.optional-dependencies]
+licoproj-devc = ["licoproj-devc"]
+
+[tool.uv]
+default-groups = ["dev"]
+
+[tool.uv.sources]
+licoproj-devc = { workspace = true }
+
+[tool.uv.workspace]
+members = ["packages/licoproj-devc"]
+
+[tool.ruff]
+cache-dir = "./.temp/cache/ruff"
+exclude = ["**/.temp/**", "**/.venv/**", "**/node_modules/**"]
+line-length = 79
+respect-gitignore = false
+target-version = "py315"
+
+[tool.ruff.format]
+docstring-code-format = true
+line-ending = "lf"
+
+[tool.ruff.lint]
+select = ["ALL"]
+fixable = ["ALL"]
+ignore = ["D203", "D213"]
+extend-ignore = []
+
+[tool.ruff.lint.pydocstyle]
+convention = "google"
+
+[tool.mypy]
+cache_dir = "./.temp/cache/mypy"
+disallow_any_decorated = true
+disallow_any_explicit = true
+disallow_any_expr = true
+disallow_any_unimported = true
+implicit_optional = true
+implicit_reexport = true
+mypy_path = "packages/licoproj-devc"
+strict = true
+warn_unreachable = true
+
+[tool.pytest.ini_options]
+addopts = """
+  --capture=no
+  --exitfirst
+  --last-failed
+  --new-first
+  --verbose
+"""
+cache_dir = "./.temp/cache/pytest"
+pythonpath = "packages/licoproj-devc"
+testpaths = ["packages/licoproj-devc/tests"]
