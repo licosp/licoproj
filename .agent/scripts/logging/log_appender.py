@@ -12,7 +12,13 @@ from pathlib import Path
 
 
 def handle_signal(signum: int, _frame: object | None) -> None:
-    """Handle termination signals to ensure cleanup."""
+    """Handle termination signals to ensure cleanup.
+
+    Args:
+        signum (int): The signal number received.
+        _frame (object | None): The current stack frame (unused).
+
+    """
     # Print to stderr to capture in logs if possible
     sys.stderr.write(f"Error: Received signal {signum}. Exiting...\n")
     sys.exit(128 + signum)
@@ -22,6 +28,11 @@ def append_log(log_path: str, content_file: str) -> None:
     """Append content from content_file to log_path with a header.
 
     Uses file locking to prevent race conditions.
+
+    Args:
+        log_path (str): The path to the log file to append to.
+        content_file (str): The path to the temporary file containing content.
+
     """
     if not Path(content_file).exists():
         sys.stderr.write(f"Error: Content file '{content_file}' not found.\n")
