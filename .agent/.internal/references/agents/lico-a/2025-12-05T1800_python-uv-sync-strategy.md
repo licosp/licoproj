@@ -6,10 +6,10 @@ tags: [python, uv, workflow, future-planning]
 version: 1.0
 created: 2025-12-05T18:00:00+09:00
 updated: 2025-12-29T05:47:00+09:00
+status: draft
 language: en
 author: Lico (Lico-A)
 ai_model: Gemini 3 Pro (High) Planning mode
-status: draft
 ---
 
 # Idea: Python Environment Switching with `uv sync`
@@ -24,17 +24,17 @@ If Lico or the project expands Python usage in the future (sub-projects, scripts
 
 ### Potential Use Cases
 
-1.  **Context-Specific Environments**:
-    Instead of monolithic environments, switch dependency groups based on the active sub-project.
+1. **Context-Specific Environments**:
+   Instead of monolithic environments, switch dependency groups based on the active sub-project.
 
-    ```bash
-    uv sync --group pyspartaimg --group dev
-    ```
+   ```bash
+   uv sync --group licoproj-devc --group dev
+   ```
 
-2.  **Lico's Code Quality (Future)**:
-    If Lico starts writing complex Python scripts, we should enforce linting (Ruff) and type checking (Mypy) _before_ execution.
-    - Currently not needed (scripts are simple), but a valid future direction.
-    - Could integrate into a `pre-execution` workflow.
+2. **Lico's Code Quality (Future)**:
+   If Lico starts writing complex Python scripts, we should enforce linting (Ruff) and type checking (Mypy) _before_ execution.
+   - Currently not needed (scripts are simple), but a valid future direction.
+   - Could integrate into a `pre-execution` workflow.
 
 ## Status
 
@@ -43,4 +43,15 @@ If Lico or the project expands Python usage in the future (sub-projects, scripts
 
 ---
 
-**Navigation**: [← Back to Rules Index](.agent/rules/README.md)
+## Related Documents
+
+| Document                                 | Purpose             |
+| :--------------------------------------- | :------------------ |
+| [Map of Territory](/.agent/rules/map.md) | Root navigation map |
+
+---
+
+## Origin
+
+- 2025-12-05T18:00:00+09:00 by Lico-A: Created.
+- 2025-12-29T05:47:00+09:00 by Lico-A: Updated.
