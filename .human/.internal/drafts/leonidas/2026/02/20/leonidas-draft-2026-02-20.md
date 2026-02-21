@@ -318,96 +318,115 @@ def handle_signal(signum: int, _frame: object | None) -> None:
 
 ####
 
-####
+ID は正しいですか？
 
 ####
 
-## Draft for a draft
+まだ直してないですね？
+確認して、直してください。
 
-- コマンドシムを Python で書き直す方法はあるか？
+####
 
-- リコのユーザー名が変わっているので、
-  そのユーザー名から対話する相手を判別することはできなくなってた。
-  そのことを行動規範に反映させる。
+- 次はこれを `VSCode` のカードでコミットしてください。
+  - `.human/users/leonidas/.vscode/leonidas.code-workspace`
 
-- カードにあるリンクを修正します。
-  - 対象: カードのサブディレクトリごとに分けます。
-  - 工程:
-    - リンク切れを探してリストします。
-    - リンクが探せない時は削除します。
+####
 
-### Words
+- 次はこのあたり、パッケージマネージャー関連のコミットがしたいのですが、
+  適切なカードはありますか？
+  - `uv`
+    - `pyproject.toml`
+    - `uv.lock`
+  - `yarn`
+    - `package.json`
+    - `yarn.lock`
+    - `package-lock.json`
+- 今までは**リント**や `VSCode` や `Gemini CLI` など、
+  毎回違ったカードを使っていたと思います。
+- あるいは管理対象が `yarn` だけではなく `uv` も増えたので、
+  カードを新規で作るべきでしょうか？
 
-```text
-#### Response (Chat)
-```
+####
 
-| [Map of Territory](/.agent/rules/map.md) | Root navigation map |
+- `Tech-Stack`: はプログラミング言語の選定哲学や、その詳細のカードだったと思います。
+- `Environment`: これはトークン制限やハードウェアや IDE や OS の話しですね。
+- リコはどう考えますか？
 
-(`Alexandrite`/`Agate`/`Zircon`/`Canopus`/`Spica`/`Polaris`/`Sirius`)
+####
 
-### Identifier
+- リコの提案で進めます。
+- カードを作ってください。
+  確認したら対象と共にコミットします。
 
-#### Identifier (`Sirius`)
+- 会話ログへの追記を忘れずに。
 
-author: Lico (Sirius)
-ai_model: Gemini 3.1 Pro (High) Planning mode
+####
 
-```text
+コミットは失敗しています。
+
+####
+
+次はこれらです。
+
+- `.temp/.gitkeep`: 家事のカード？
+- `.vscode/cspell.json`: リント関連のカード
+- `.gitignore`: GIT 関連のカード
+
+####
+
+- 会話の行動規範を読んでください。
+- 1 クエリ 2 回の追記の方法を把握してください。
+- タイムスタンプなどが欠けていました。
+
+####
+
+- **計画フェーズ**と**報告フェーズ**に分かれているのは覚えていますか？
+- **計画フェーズ**には私のクエリのコピーも含まれます。
+
+####
+
+- 会話の行動規範に以下の規定が無かったかもしれません。
+  - 複雑な作業の過程で**報告フェーズ**を何度か追記するのは問題ない。
+- 行動規範に追記すべきだと感じます。
+
+####
+
+本文以外も更新してください。
+
+####
+
+- 本文以外とは何ですか？
+  ファイルの更新時には何が必要ですか？
+
+- 会話ログの追記も並行して行ってください。
+
+####
+
+直ってますか？
+
+####
+
+- 次はサブプロジェクトのファイルについて。
+  - `packages/licoproj-devc/`
+- これは**開発コンテナ**関連のスクリプトを作ろうと想定していて、
+  その準備段階のようなファイルです。
+- 開発コンテナに関わるファイルはここにもありますが、いずれ統合するかもしれません。
+  - `.devcontainer/`
+- カードは探せますか？
+
+####
+
+- 次は `Python` の話しをします。
+- やることは 2 つ。
+  - `explorations/lico-a/2025-12-05T1800_python-uv-sync-strategy.md`
+    これは uv を使ってランタイムやモジュールを管理するための参考資料の 1 つです。
+    - この参考資料を参考文献のディレクトリに送ってコミットしてほしいです。
+    - 文脈は**参考文献**と**家事**のカードで良いでしょうか？OP
+  - 後述します
+
 ### `Antigravity` | `Gemini 3.1 Pro (High)`: `Planning` | `Sirius`
-```
 
-- `antigravity-session-id`: `b56c1498-6bef-470f-8a26-ee062946b744`
-- `antigravity-session-title`: Formatting and Commit Correction
+####
 
-#### Identifier (`Polaris`)
-
-author: Lico (Polaris)
-ai_model: Claude Opus 4.5 (Thinking) Planning mode
-
-```text
-### `Antigravity` | `Claude Opus 4.6 (Thinking)`: `Planning` | `Polaris`
-```
-
-- `antigravity-session-id`: `2cfd54bc-0500-4d7c-973d-93427a0e3e62`
-- `antigravity-session-title`: `Refining Skill Template`
-
-#### Identifier (`Alexandrite`)
-
-author: Lico (Alexandrite)
-ai_model: gemini-3-flash-preview
-
-```text
-### `CLI` | `gemini-3-flash-preview` | `Alexandrite`
-```
-
-yarn run gemini --resume eff20b06-5589-4db0-90ff-74f65e9d21de --model gemini-3-flash-preview
-
-tmux capture-pane -t alexandrite -b snapshot-alexandrite; tmux show-buffer -b snapshot-alexandrite
-
-#### Identifier (`Agate`)
-
-author: Lico (Agate)
-ai_model: gemini-3-pro-preview
-
-```text
-### `CLI` | `gemini-3-pro-preview` | `Agate`
-```
-
-yarn run gemini --resume 301c303c-320e-4dc5-95a5-de0779b0fb9e --model gemini-3-pro-preview
-
-tmux capture-pane -t agate -b snapshot-agate; tmux show-buffer -b snapshot-agate
-
-#### Identifier (`Zircon`)
-
-- `antigravity-session-id`: `b959031b-a175-423b-a0fa-d49f40994a9d`
-- `antigravity-session-title`: `Commit Correction And Logging`
-
-#### Identifier (`Protostar`)
-
-author: Lico (Protostar)
-
-yarn run gemini --resume 18d4d68a-ffce-4947-bc1b-293e273d65a2 --model gemini-2.5-flash-preview
-
-- `antigravity-session-id`: `307fb782-1a10-4d1f-9320-936a9a633c4e.pb`
-- `antigravity-session-title`: AI Self-Analysis and Introduction
+- 今の文章に書式の標準化をしました。
+- それもコミットできますか？
