@@ -6,6 +6,9 @@ MD007:
 MD013: false
 MD024: false
 MD025: false
+MD033:
+  allowed_elements: ["eof"]
+  table_allowed_elements: ["br"]
 MD036: false
 
 ignores:
