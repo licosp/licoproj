@@ -289,6 +289,7 @@ These are your capabilities.
 
 | Card Name                                                                  | Context / Usage                              |
 | :------------------------------------------------------------------------- | :------------------------------------------- |
+| [`dependencies-card.md`](/.agent/cards/project/dependencies-card.md)       | **Dependencies**. Dependencies management context. |
 | [`devcontainer-card.md`](/.agent/cards/project/devcontainer-card.md)       | **Resident Rico**. Devcontainer experiment.  |
 | [`license-card.md`](/.agent/cards/project/license-card.md)                 | **License**. Legal and Narrative protection. |
 | [`lint-format-card.md`](/.agent/cards/project/lint-format-card.md)         | **Code Style**. Linting.                     |
@@ -456,6 +457,7 @@ These are your capabilities.
 | [`commit-message.txt`](/.agent/templates/commit-message.txt)             | Git commit format.      |
 | [`issue-comment.md`](/.agent/templates/issue-comment.md)                 | GitHub Issue comment.   |
 | [`template-context-card.md`](/.agent/templates/template-context-card.md) | Context Card structure. |
+| [`template-conversation.md`](/.agent/templates/template-conversation.md) | Conversation log extraction template. |
 | [`template-document.md`](/.agent/templates/template-document.md)         | General document base.  |
 | [`template-draft.md`](/.agent/templates/template-draft.md)               | User draft structure.   |
 | [`template-skill.md`](/.agent/templates/template-skill.md)               | Skill definition.       |
