@@ -56,6 +56,7 @@
     "eliises",
     "esbenp",
     "evals",
+    "existance",
     "exitfirst",
     "fcntl",
     "fini",
@@ -68,7 +69,7 @@
     "getfacl",
     "gettz",
     "ghidorah",
-    "Haisin",
+    "haisin",
     "ipaexfont",
     "ipafont",
     "isort",
@@ -114,10 +115,11 @@
     "noqa",
     "observarion",
     "oderwat",
+    "omote",
     "oneline",
     "openclaw",
     "paramiko",
-    "Pathlib",
+    "pathlib",
     "pathspec",
     "physicalized",
     "pkill",
@@ -177,6 +179,7 @@
     "uncommited",
     "unmatch",
     "unmix",
+    "unoptimizable",
     "unpushed",
     "unstaging",
     "upvote",
@@ -184,6 +187,7 @@
     "usermod",
     "venv",
     "worktree",
-    "yorick"
+    "yorick",
+    "प्रदूषण"
   ]
 }
