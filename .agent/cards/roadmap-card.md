@@ -502,6 +502,8 @@ ai_model: ""
 
 #### [cross-link-audit](/.agent/cards/procedures/cross-link-audit-card.md)
 
+#### [dependencies](/.agent/cards/project/dependencies-card.md)
+
 #### [discussion-draft](/.agent/cards/human/discussion-draft-card.md)
 
 #### [drafts-daily](/.agent/cards/human/drafts-daily-card.md)
@@ -549,6 +551,8 @@ ai_model: ""
 #### [social-network](/.agent/cards/shadow/social-network-card.md)
 
 #### [system-archive](/.agent/cards/maintenance/system-archive-card.md)
+
+#### [tech-stack](/.agent/cards/rules/tech-stack-card.md)
 
 #### [thoughts-subjective](/.agent/cards/internal/thoughts-subjective-card.md)
 
