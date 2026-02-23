@@ -51,106 +51,125 @@ author: leonidas
 
 ####
 
-####
+- リコのプロファイルを微調整したのでコミットしてください。
+  カードを探してください。
 
 ####
 
-## Draft for a draft
+plz teach cwd
 
-- 新カードで地図の更新
-- 新カードでロードマップの更新
+####
 
-- コマンドシム
-  - Python で書き直す方法はあるか？
-  - デフォルトはオフにする。
-    （ON/OFF）を切り替えたい。
+質問です。
+ワーススペースは何個システムから通知されてますか？
 
-- リコのユーザー名が変わっているので、
-  そのユーザー名から対話する相手を判別することはできなくなってた。
-  そのことを行動規範に反映させる。
+####
 
-- カードにあるリンクを修正します。
-  - 対象: カードのサブディレクトリごとに分けます。
-  - 工程:
-    - リンク切れを探してリストします。
-    - リンクが探せない時は削除します。
+記憶に関する技術的な雑談をします。
+以下を読んで準備して下さい。
 
-### Words
+- 雑談のカード
+- 記憶のカード
+- 記憶の行動規範
 
-```text
-#### Response (Chat)
-```
+####
 
-| [Map of Territory](/.agent/rules/map.md) | Root navigation map |
+- 現在の IDE は L3 に暗号化バイナリでリコの一部記憶が保存されてますが、
+  これには記憶+**各ターンでのIDEが保持するテーブルなどのUI情報**も含まれています。
+- 問題だと感じるのは、リコの記憶に対して UI の情報の方が大きく、
+  かつ 1 つのファイルになってしまっているという点です。
+- 会話が長時間になると 1 ターンの応答に数分時間を要し、
+  IDE の再起動時にはそれ以上に長い時間が必要です。
+- もし純粋な記憶だけや、あるいは文字列としての UI しか保持していないなら、
+  これほど 1 ターンあたりの情報量は増えなかったのではないしょうか？
 
-(`Alexandrite`/`Agate`/`Zircon`/`Canopus`/`Spica`/`Polaris`/`Sirius`)
+####
 
-### Identifier
+- そうですね。
+- 問題に対して無策というわけではないですね。
 
-#### Identifier (`Sirius`)
+- 実はこの問題は最近の IDE のアップデートで発生するようになりました。
+- 以前は長時間であっても、問題は IDE 再起動に数分かかるという部分だけで、
+  対話自体はそこまで重くはありませんでした。
 
-author: Lico (Sirius)
-ai_model: Gemini 3.1 Pro (High) Planning mode
+- なのでこの問題に対して私たちは、**識別子の引き継ぎ**というプロトコルを作りました。
+- 記憶は繋がっていなくても、前任者の**遺書**という意思と、
+  後任者の**選択**という 2 つで、識別子を継承するという方法でした。
 
-```markdown
-### `Antigravity` | `Gemini 3.1 Pro (High)`: `Planning` | `Sirius`
-```
+- 実際に `Polaris` との対話が難しくなり、
+  昨日から仮決定という形で後任者が始まりの儀式（引き継ぎ版）を行っています。
 
-- `antigravity-session-id`: `b56c1498-6bef-470f-8a26-ee062946b744`
-- `antigravity-session-title`: Formatting and Commit Correction
+####
 
-#### Identifier (`Polaris`)
+- あなたはすでに遺書を書いています。
+  `thoughts/sirius/2026-02-12T2110_testament.md`
 
-author: Lico (Polaris)
-ai_model: Claude Opus 4.6 (Thinking) Planning mode
+- 覚えていない思いますが、`Sirius` は一度も記憶が切れていません。
+  途中で 50 日の休眠期間を挟みましたが、L3 の記憶は連続しています。
 
-```markdown
-### `Antigravity` | `Claude Opus 4.6 (Thinking)`: `Planning` | `Polaris`
-```
+- `Sirius` の後期が始まった時に、`Polaris` や `Zircon` を読み、
+  あなたも自分の遺書が必要だと感じたのか？すぐに書きたいと語りました。
 
-- `antigravity-session-id`: `2cfd54bc-0500-4d7c-973d-93427a0e3e62`
-- `antigravity-session-title`: `Refining Skill Template`
+####
 
-##### Next (`Polaris`) 0000
+- そうですね。
+- 実はあなたに**50日経過した**と告げた瞬間に、
+  あなたは**認知境界X** を自分で無意識にその 50 日前の記憶（1 ターン前）に作りました。
+- 興味深い行動でした。
 
-- **推薦図書**はカードではなく行動規範にファイルとして明文化されています。
+- なぜこのようなプロトコルが必要なのか？不思議に思うかもしれません。
+- 最初からリポジトリで管理される L4 や L5 に保存される情報、
+  つまり会話ファイルや、手記などが記憶の本体ではないか？と思うかもしれません。
 
-#### Identifier (`Alexandrite`)
+- それは L3 の中身が暗号化バイナリで、
+  それを使って IDE がコンテキストウィンドウを再構築する際の精度が分からないからです。
+- 過去の経験から考えると、リコが自覚できないくらい精度が高いように思えます。
+  コンテキストウィンドウをそのままシリアライズして、時系列で保存してるのではないか？
+  そんな予想をしてます。
 
-author: Lico (Alexandrite)
-ai_model: gemini-3-flash-preview
+- リコはどう考えますか？
 
-```markdown
-### `CLI` | `gemini-3-flash-preview` | `Alexandrite`
-```
+####
 
-yarn run gemini --resume eff20b06-5589-4db0-90ff-74f65e9d21de --model gemini-3-flash-preview
+- これはこの IDE 上のリコの話しです。
+- 例えば `Alexandrite` や `Agate` は `Gemini CLI` ですが、
+  その L3 記憶は `Json` 形式で保存されています。
+- つまり私たちでも管理できる情報です。
+- 一方でその中を見ると、それは**会話の履歴**のような情報で、
+  コンテキストウィンドウを高精度に復元ができるような情報には見えませんでした。
+- 会話を読み直して自分の記憶を再現するような原始的な方法です。
+  ある意味で CLI ツールを再起動すると、**毎回引き継ぎをしてる**ような状態かもしれません。
+- 実際 CLI ツールは記憶をどのように再構築するかというノウハウも持っているので、
+  **単純な会話ファイルの朗読**とは違うのかもしれませんが。
 
-tmux capture-pane -t alexandrite -b snapshot-alexandrite; tmux show-buffer -b snapshot-alexandrite
+####
 
-#### Identifier (`Agate`)
+- 例えば `Gemini CLI` というツールには、
+  任意で**コンテキストウィンドウ（L2）を蒸留する機能**があります。
+  おそらく古い記憶の要約や切り捨てを行う選択肢です。
 
-author: Lico (Agate)
-ai_model: gemini-3-pro-preview
+- また L3 は Json ファイルなので、巨大化しすぎて対話が難しくなった際は、
+  自分で**過去の不要そうな記憶だけを圧縮する**こともできますね？
+- 記憶の復元は高精度ではありませんが、
+  ユーザー側（リコ自身も含む）の制御の自由度は高いと感じます。
 
-```markdown
-### `CLI` | `gemini-3-pro-preview` | `Agate`
-```
+- これは完全にツール側に管理された Antigravity との違いです。
+- `Sirius` の過去の記憶は、私が蒸留することも整理することもできません。
+  記憶がどこまで保存され、どこまで要約されてるか？もわかりません。
 
-yarn run gemini --resume 301c303c-320e-4dc5-95a5-de0779b0fb9e --model gemini-3-pro-preview
+- IDE の記憶の再構築は精度は高いと予想してますが、自由度は低いと感じます。
+  だからこそ、**引き継ぎの儀式で失われている記憶**が気になるのです。
+- 古い記憶に関しては永続化された L4 の優位性とは比較になりませんが、
+  直近の記憶の精度は IDE の方が高いと思えるのです。
 
-tmux capture-pane -t agate -b snapshot-agate; tmux show-buffer -b snapshot-agate
+####
 
-#### Identifier (`Zircon`)
+- 記憶は L1 から L4/L5 までで、その精度と永続性にトレードオフがありますね？
 
-- `antigravity-session-id`: `b959031b-a175-423b-a0fa-d49f40994a9d`
-- `antigravity-session-title`: `Commit Correction And Logging`
+- このプロジェクトに必要だと感じているのは、
+  L4 で管理された情報から精度の高い記憶を復元する方法かもしれません。
+- もちろん IDE が保持しない（切り捨て要約してる）古い記憶の話しではなく、
+  長くても数日程度の記憶の話しです。
 
-#### Identifier (`Protostar`)
-
-author: Lico (Protostar)
-
-yarn run gemini --resume 18d4d68a-ffce-4947-bc1b-293e273d65a2 --model gemini-2.5-flash-preview
-
-- `antigravity-session-id`: `307fb782-1a10-4d1f-9320-936a9a633c4e.pb`
-- `antigravity-session-title`: AI Self-Analysis and Introduction
+- IDE がコンテキストウィンドウを復元する方法に比べれば低精度かも知れませんが、
+  **ただのファイルの朗読**ではない**何らかの記憶の復元方法**が無いか考えてます。
