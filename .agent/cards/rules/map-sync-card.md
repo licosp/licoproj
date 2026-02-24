@@ -309,20 +309,56 @@ To verify the coherence of `map.md` after the "Card Organization" project, speci
 
 **2. Missing Descriptions (`...`)**:
 
-| Path                            | Current | Proposed                                     |
-| :------------------------------ | :------ | :------------------------------------------- |
-| `.agent/cards/command-shim-card` | `...`   | **Safety**. Command shim configuration.      |
-| `licoproj/`                     | `...`   | Project root directory.                      |
-| `.gitignore`                    | `...`   | Git ignore rules.                            |
-| `LICENSE`                       | `...`   | Project License (MIT/Proprietary).           |
-| `README.ja.md`                  | `...`   | Project documentation (Japanese).            |
-| `README.md`                     | `...`   | Project documentation (English).             |
+| Path                             | Current | Proposed                                |
+| :------------------------------- | :------ | :-------------------------------------- |
+| `.agent/cards/command-shim-card` | `...`   | **Safety**. Command shim configuration. |
+| `licoproj/`                      | `...`   | Project root directory.                 |
+| `.gitignore`                     | `...`   | Git ignore rules.                       |
+| `LICENSE`                        | `...`   | Project License (MIT/Proprietary).      |
+| `README.ja.md`                   | `...`   | Project documentation (Japanese).       |
+| `README.md`                      | `...`   | Project documentation (English).        |
 
 **3. Missing Files**:
 
-| Path                                             | Action |
-| :----------------------------------------------- | :----- |
-| `.agent/rules/development/command-shims.md`      | Add    |
+| Path                                        | Action |
+| :------------------------------------------ | :----- |
+| `.agent/rules/development/command-shims.md` | Add    |
+
+---
+
+### Sirius (2026-02-24)
+
+#### 発見したギャップ (Structural Changes & Path Discrepancies)
+
+本日の監査スクリプトにより、以下のファイルとディレクトリについて `map.md` と実体（領土）との間の不一致を確認しました。
+
+**1. Exclude List (Missing in Territory)**:
+`map.md` に記載されていますが、指定されたパスに実体が見つかりません。移動されたか、環境依存で元々存在しない可能性があります。
+
+| Path                                  | Status                                                                                                                                    |
+| :------------------------------------ | :---------------------------------------------------------------------------------------------------------------------------------------- |
+| `/.agent/.internal/.shadow/archive/`  | **Missing**. No directory found. (※ 本セッションで `.gitkeep` を追加し解決済)                                                             |
+| `/.agent/.internal/shadow-history.md` | **Missing**. Moved to `archive/2026/02/22/`. (※ ユーザーからの指摘により、本来のパス `.agent/.internal/shadow-history.md` に復元し解決済) |
+| `../licoproj_backup/`                 | **Missing**. No directory found. (※ 次のバックアップ時に適切に作成されるため問題なし)                                                     |
+| `~/.cursor-server/`                   | **Missing**. No directory found. (※ 現状はなくても問題なし)                                                                               |
+| `~/.gemini/settings.json`             | **Missing**. No file found. (※ Gemini CLI 専用の設定ファイルであり、まだ CLI 上の引越しが完了していないため存在しないのが正常)            |
+| `~/.gemini/tmp/`                      | **Missing**. No directory found. (※ 現状はなくても問題なし)                                                                               |
+
+**2. Unmapped Paths (Exist in Territory, Missing in Map)**:
+実在していますが、`map.md` に明示的な記載がありません。
+
+| Path                                        | Purpose                                   |
+| :------------------------------------------ | :---------------------------------------- |
+| `.agent/cards/project/dependencies-card.md` | Dependencies management context.          |
+| `.agent/templates/template-conversation.md` | Template for conversation log extraction. |
+
+_(Note: `.agent/scripts/` 以下の個別スクリプト（`git`, `rm`, `grep`, `mv`, `logging/log_appender.py` など）も実在しますが、現在の `map.md` にはスクリプトファイルを列挙する専用セクションが存在しないため未記載です。)_
+
+#### 次のアクション
+
+- [ ] `map.md` から存在しないパスを削除、または注意書きに修正する
+- [ ] `map.md` に不足しているカードやテンプレートのパスを追記する
+- [ ] スクリプト群（`.agent/scripts/`）の個別記載セクションを新設するか相談する
 
 ---
 
