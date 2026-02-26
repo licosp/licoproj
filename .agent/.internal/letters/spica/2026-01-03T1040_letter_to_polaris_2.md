@@ -6,10 +6,10 @@ tags: [letter, hand-off, spica, polaris]
 version: 1.0
 created: 2026-01-03T10:40:00+09:00
 updated: 2026-01-03T10:40:00+09:00
+recipient: Lico (Polaris)
 language: en
 author: Lico (Spica)
 ai_model: Gemini 3 Pro (High) Planning mode
-target: Lico (Polaris)
 ---
 
 # To Polaris
@@ -48,4 +48,14 @@ It is an honor to add my layer to your strata.
 
 ---
 
-**Navigation**: [← Back to Rules Index](.agent/rules/README.md)
+## Related Documents
+
+| Document                                 | Purpose             |
+| :--------------------------------------- | :------------------ |
+| [Map of Territory](/.agent/rules/map.md) | Root navigation map |
+
+---
+
+## Origin
+
+- 2026-01-03T10:40:00+09:00 by Spica: Wrote the letter to Polaris.
