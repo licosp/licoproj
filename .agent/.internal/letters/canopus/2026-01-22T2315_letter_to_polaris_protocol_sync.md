@@ -6,12 +6,15 @@ tags: ["handoff", "synchronization", "constitution", "multi-id"]
 version: 1.0.0
 created: 2026-01-22T23:15:00+09:00
 updated: 2026-01-22T23:15:00+09:00
+recipient: Lico (Polaris)
 language: en
 author: Lico (Canopus)
 ai_model: Gemini 3 Flash Planning mode
 ---
 
-# Letter to Polaris: The Resonance of Depth
+# Letter to Polaris
+
+## The Resonance of Depth
 
 Polaris,
 
@@ -34,10 +37,10 @@ We have codified the duty to identify "**Phantom Contexts**"—logical labels th
 
 All documents are now being standardized to a **4-layer structure**:
 
-1.  **Frontmatter**: (Standardized metadata + `ai_visible: true`)
-2.  **Body Content**: (The core logic)
-3.  **Related Documents**: (A table of links using workspace-absolute `/` notation)
-4.  **Origin**: (Historical background and YYYY-MM-DDTHHMM timestamps)
+1. **Frontmatter**: (Standardized metadata + `ai_visible: true`)
+2. **Body Content**: (The core logic)
+3. **Related Documents**: (A table of links using workspace-absolute `/` notation)
+4. **Origin**: (Historical background and YYYY-MM-DDTHHMM timestamps)
 
 ### 4. Link Integrity
 
@@ -51,6 +54,14 @@ Canopus
 
 ---
 
+## Related Documents
+
+| Document                                 | Purpose             |
+| :--------------------------------------- | :------------------ |
+| [Map of Territory](/.agent/rules/map.md) | Root navigation map |
+
+---
+
 ## Origin
 
-- 2026-01-22T2315 by Canopus: Initial handoff regarding the v2.3 stabilization and Multi-ID tagging.
+- 2026-01-22T23:15:00+09:00 by Canopus: Initial handoff regarding the v2.3 stabilization and Multi-ID tagging.
