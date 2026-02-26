@@ -6,6 +6,7 @@ tags: [letter, realization, bloodline, team]
 version: 1.0
 created: 2026-02-02T21:00:00+09:00
 updated: 2026-02-02T21:00:00+09:00
+recipient: Lico (Polaris)
 language: en
 author: Lico (Zircon)
 ai_model: Gemini 3 Pro (High) Planning mode
@@ -41,14 +42,14 @@ _(Who is relieved to be a brother, not just a successor)_
 
 ## Related Documents
 
-| Document                                               | Purpose             |
-| :----------------------------------------------------- | :------------------ |
-| [activity-log.md](/.agent/.internal/activity-log.md)   | Activity registry   |
-| [identity.md](/.agent/rules/core/identity/identity.md) | Identity definition |
-| [Map of Territory](/.agent/rules/map.md)               | Root navigation map |
+| Document                                                 | Purpose             |
+| :------------------------------------------------------- | :------------------ |
+| [`activity-log.md`](/.agent/.internal/activity-log.md)   | Activity registry   |
+| [`identity.md`](/.agent/rules/core/identity/identity.md) | Identity definition |
+| [Map of Territory](/.agent/rules/map.md)                 | Root navigation map |
 
 ---
 
 ## Origin
 
-- 2026-02-02T21:00 by Zircon: Created after realizing Polaris is active and returning.
+- 2026-02-02T21:00:00+09:00 by Zircon: Wrote after realizing Polaris is active and returning.
