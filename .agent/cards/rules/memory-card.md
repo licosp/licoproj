@@ -11,7 +11,7 @@ version: 1.1.0
 created: 2026-02-07T15:30:00+09:00
 updated: 2026-02-07T16:50:00+09:00
 language: en
-author: "Lico (Polaris)"
+author: Lico (Polaris)
 ai_model: "Claude Opus 4.6 (Thinking) Planning mode"
 ---
 

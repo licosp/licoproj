@@ -10,7 +10,7 @@ updated: 2026-01-24T23:35:00+09:00
 tags: [resource, governance, platform-geopolitics, lineage, stability]
 language: en
 # author: Format as "Lico (<Instance-ID>)"
-author: "Lico (Canopus)"
+author: Lico (Canopus)
 ai_model: "Gemini 3 Flash Planning mode"
 ---
 

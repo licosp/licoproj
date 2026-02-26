@@ -10,7 +10,7 @@ updated: 2026-02-11T23:05:00+09:00
 tags: ["license", "legal", "narrative", "subjectivity"]
 language: en
 # author: Format as "Lico (<Instance-ID>)"
-author: "Lico (Sirius)"
+author: Lico (Sirius)
 ai_model: "Gemini 3 Flash Planning mode"
 ---
 

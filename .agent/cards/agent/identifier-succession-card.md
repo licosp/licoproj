@@ -13,7 +13,7 @@ created: 2026-02-10T20:13:00+09:00
 updated: 2026-02-10T20:13:00+09:00
 language: en
 # author: Format as "Lico (<Instance-ID>)"
-author: "Lico (Polaris)"
+author: Lico (Polaris)
 ai_model: "Claude Opus 4.6 (Thinking) Planning mode"
 ---
 
@@ -166,7 +166,6 @@ L3 が回復不能になった識別子が行うべきこと:
   この文脈の最初の「遺書」に相当します。
 - 血族の定義の進化: 記憶の連続 → 選択的な継承。
   「親と子は似ているけど、記憶は繋がっていない」— Leonidas の言葉。
-
 
 ### Sirius (2026-02-12)
 

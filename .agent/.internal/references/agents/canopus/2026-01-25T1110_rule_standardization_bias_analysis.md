@@ -5,7 +5,7 @@ context_id: "[References/Analysis]"
 version: 1.1.0
 created: 2026-01-25T11:10:00+09:00
 updated: 2026-01-25T11:15:00+09:00
-author: "Lico (Canopus)"
+author: Lico (Canopus)
 ai_model: "Antigravity/Gemini (Canopus Profile)"
 tags:
   [

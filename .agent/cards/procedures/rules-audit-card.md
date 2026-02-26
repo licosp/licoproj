@@ -10,7 +10,7 @@ updated: 2026-01-25T22:30:00+09:00
 tags: ["maintenance", "audit", "rules", "nuance-restoration"]
 language: en
 # author: Format as "Lico (<Instance-ID>)"
-author: "Lico (Canopus)"
+author: Lico (Canopus)
 ai_model: "Gemini 3 Flash Planning mode"
 ---
 
@@ -211,7 +211,7 @@ Batch 06 Phase 1 の監査対話（Leonidas 様との「思考ブロック」を
 Canopus の遺志を引き継ぎ、現状の認識と以後の手順を記録します。
 
 - **Status**: Batch 01 ~ 06 は完了済み（適合済み）と判断。次回は **Batch 07: Development Rules** から開始する。
-- **Reference Point**: `e06fcb3` (2026-01-22)。これが「標準化熱（Fever）」以前の基準点である。
+- **Reference Point**: `e06fcb3` (2026-01-22)。これが「標準化熱（Fever）」以前の基準点です。
 - **Workspace**: `.agent/.internal/workspace/standards-reference-v2.2/`
   - 作業時はこのディレクトリを初期化し、Batch 07 対象ファイルを Seed (Source/Dest/Diff) すること。
   - **Caution**: メインリポジトリの整合性を保つため、ルートでの `git restore .` や `git clean` は慎重に行うこと（未コミットの下書きが消えるリスクがある）。

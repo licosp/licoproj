@@ -9,7 +9,7 @@ created: 2025-12-01T00:00:00+09:00
 updated: 2026-01-24T06:00:00+09:00
 tags: ["references", "analysis", "external-input", "second-eyes"]
 language: en
-author: "Lico (Canopus)"
+author: Lico (Canopus)
 ai_model: "Antigravity/Gemini (Canopus Profile)"
 ---
 

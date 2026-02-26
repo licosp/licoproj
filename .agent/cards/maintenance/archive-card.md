@@ -11,7 +11,7 @@ version: 1.0.0
 created: 2026-02-15T02:10:00+09:00
 updated: 2026-02-15T02:10:00+09:00
 language: en
-author: "Lico (Sirius)"
+author: Lico (Sirius)
 ai_model: "Gemini 3 Pro (High)"
 ---
 
