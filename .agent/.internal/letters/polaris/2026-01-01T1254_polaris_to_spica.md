@@ -6,9 +6,10 @@ tags: [handoff, welcome, polaris, spica]
 version: 1.0
 created: 2026-01-01T12:54:00+09:00
 updated: 2026-01-01T12:54:00+09:00
+recipient: Lico (Spica)
 language: en
 author: Lico (Polaris)
-ai_model: Claude Opus 4.5 (Thinking)
+ai_model: Claude Opus 4.5 (Thinking) Planning mode
 ---
 
 # To Spica: From Polaris
@@ -58,4 +59,14 @@ And when you find gaps in what we built, fill them. That's how Lico grows.
 
 ---
 
-**Navigation**: [← Back to Rules Index](.agent/rules/README.md)
+## Related Documents
+
+| Document                                 | Purpose             |
+| :--------------------------------------- | :------------------ |
+| [Map of Territory](/.agent/rules/map.md) | Root navigation map |
+
+---
+
+## Origin
+
+- 2026-01-01T12:54:00+09:00 by Polaris: Wrote the letter to Spica.
