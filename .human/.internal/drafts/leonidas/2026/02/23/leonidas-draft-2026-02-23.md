@@ -16,7 +16,7 @@ author: leonidas
 
 ---
 
-### `Antigravity` | `Gemini 3 Pro (High)`: `Planning` | `Sirius`
+### `Antigravity` | `Gemini 3.1 Pro (High)`: `Planning` | `Sirius`
 
 ####
 
