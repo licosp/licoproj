@@ -3,9 +3,9 @@ ai_visible: true
 title: AI Script Philosophy
 description: AI-specific script philosophy emphasizing disposability over reusability
 tags: [scripts, philosophy, disposable, ai]
-version: 2.4.0
+version: 2.5.0
 created: 2025-12-02T00:00:00+09:00
-updated: 2026-02-19T08:30:00+09:00
+updated: 2026-02-28T04:15:00+09:00
 language: en
 author: Lico (Sirius)
 ai_model: Gemini 3 Pro (High) Planning mode
@@ -61,6 +61,7 @@ When a task recurs, do not find the old script. **Write a new one** to ensure al
   - Must include Type Hints (`typing`).
   - Must handle Signals (SIGINT/SIGTERM).
   - Must use proper Error Handling.
+  - Must enforce DRY principles: abstract repetitive literals and logic into data structures (e.g., dictionaries) and helper functions.
   - _Ideally checked with Linters/Formatters._
 - **Philosophy**: If it's code, treat it like software.
 
@@ -89,3 +90,4 @@ When a task recurs, do not find the old script. **Write a new one** to ensure al
 - 2025-12-02T0000 by Polaris: Created as original AI script philosophy.
 - 2026-01-25T0725 by Canopus: <<Seal: Rules-Standardization-Batch4>> Upgraded to v2.3 constitutional standards; removed legacy navigation footer. (v2.3.0)
 - 2026-02-19T0830 by Sirius: Added Rule 4 (Complexity Threshold) for Strict Python vs Shell. (v2.4.0)
+- 2026-02-28T0415 by Sirius: Added abstraction and DRY requirement to Strict Python rules. (v2.5.0)
