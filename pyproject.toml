@@ -33,24 +33,28 @@ line-ending = "lf"
 
 [tool.ruff.lint]
 select = ["ALL"]
-fixable = ["ALL"]
-ignore = ["D203", "D213"]
-extend-ignore = []
+ignore = ["CPY001", "D203", "D213", "COM812", "ISC001"]
+preview = true
 
 [tool.ruff.lint.pydocstyle]
 convention = "google"
 
+[tool.ruff.lint.mccabe]
+max-complexity = 5
+
 [tool.mypy]
-cache_dir = "./.temp/cache/mypy"
+strict = true
+pretty = true
 disallow_any_decorated = true
 disallow_any_explicit = true
 disallow_any_expr = true
-disallow_any_unimported = true
 implicit_optional = true
-implicit_reexport = true
-mypy_path = "packages/licoproj-devc"
-strict = true
+ignore_missing_imports = false
+disallow_any_unimported = true
+show_error_codes = true
 warn_unreachable = true
+cache_dir = "./.temp/cache/mypy"
+mypy_path = "packages/licoproj-devc"
 
 [tool.pytest.ini_options]
 addopts = """
