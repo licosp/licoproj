@@ -1,0 +1,6 @@
+shims:
+  git: true
+  grep: false
+  mv: false
+  python: false
+  rm: false
