@@ -1,6 +1,4 @@
 #!/usr/bin/python3
-# ruff: noqa: S404, S603, S606, S607, TRY400
-# mypy: disable-error-code="misc, import-untyped"
 """lico-shim: Unified Python Command Shim Router.
 
 This script acts as a fast, strict-mode interceptor for common shell commands.
@@ -11,6 +9,7 @@ executes safety logic or drops directly into the native system binary.
 
 Managed by: .agent/rules/development/command-shims.md
 """
+
 
 import argparse
 import datetime
@@ -33,6 +32,13 @@ class _Logger:
             msg %= args
         os.write(2, (msg + "\n").encode("utf-8"))
 
+    @staticmethod
+    def exception(msg: str, *args: object) -> None:
+        _, exc_val, _ = sys.exc_info()
+        if exc_val:
+            msg = f"{msg} Error: {exc_val}"
+        _Logger.error(msg, *args)
+
 
 logger = _Logger()
 
@@ -41,11 +47,11 @@ logger = _Logger()
 try:
     import yaml
 except ImportError:
-    logger.error(
+    logger.exception(
         "\U0001f6ab [Shim] FATAL: python3-yaml is not installed "
         "on the base system."
     )
-    logger.error("   Run: sudo apt-get install python3-yaml")
+    logger.exception("   Run: sudo apt-get install python3-yaml")
     sys.exit(1)
 
 
@@ -86,12 +92,11 @@ def load_config() -> dict[str, bool]:
             if data and isinstance(data, dict) and "shims" in data:
                 for k, v in data["shims"].items():
                     default_cfg[k] = bool(v)
-    except yaml.YAMLError as e:
-        logger.error(
+    except yaml.YAMLError:
+        logger.exception(
             "\U0001f6ab [Shim] WARNING: Failed to parse %s. "
-            "Defaulting to OFF. Error: %s",
+            "Defaulting to OFF.",
             CONFIG_FILE,
-            e,
         )
 
     return default_cfg

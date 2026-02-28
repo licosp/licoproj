@@ -6,7 +6,13 @@ requires-python = ">=3.14"
 [dependency-groups]
 licoproj-devc = ["licoproj-devc"]
 
-dev = ["mypy>=1.19.1", "pytest>=9.0.2", "ruff>=0.15.1"]
+dev = [
+  "mypy>=1.19.1",
+  "pytest>=9.0.2",
+  "pyyaml>=6.0.3",
+  "ruff>=0.15.1",
+  "types-pyyaml>=6.0.12.20250915",
+]
 
 [project.optional-dependencies]
 licoproj-devc = ["licoproj-devc"]
@@ -42,6 +48,9 @@ convention = "google"
 [tool.ruff.lint.mccabe]
 max-complexity = 5
 
+[tool.ruff.lint.per-file-ignores]
+".agent/scripts/lico-shim.py" = ["S404", "S603", "S606", "S607"]
+
 [tool.mypy]
 strict = true
 pretty = true
@@ -55,6 +64,10 @@ show_error_codes = true
 warn_unreachable = true
 cache_dir = "./.temp/cache/mypy"
 mypy_path = "packages/licoproj-devc"
+
+[[tool.mypy.overrides]]
+module = "lico-shim"
+disable_error_code = ["misc"]
 
 [tool.pytest.ini_options]
 addopts = """

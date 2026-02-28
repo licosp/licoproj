@@ -1,0 +1,59 @@
+#!/bin/bash
+
+# Shim for git to prevent accidental hard resets and data loss.
+# Managed by: .agent/cards/routine/command-shim-card.md
+
+# Check for "reset" and "--hard" in arguments
+HAS_RESET=false
+HAS_HARD=false
+
+# Check for Shadow Repository access (Block & Warn)
+for arg in "$@"; do
+    if [[ "$arg" == *".shadow/"* ]]; then
+        echo "🚫 [Shim] BLOCKED: Shadow Repository Detected." >&2
+        echo "   You are trying to operate on a file inside '.shadow/' from the root." >&2
+        echo "   Please 'cd' into the directory first to ensure correct git context." >&2
+        echo "" >&2
+        exit 1
+    fi
+
+    # Block 'restore' (Data Loss Risk)
+    if [[ "$arg" == "restore" ]]; then
+        echo "🚫 [Shim] BLOCKED: 'git restore' is restricted." >&2
+        echo "   This command silently discards uncommitted changes (Drafts/Logs)." >&2
+        echo "   Use 'git checkout <file>' or overwrite explicitly." >&2
+        exit 1
+    fi
+
+    # Block 'clean' (Untracked Deletion Risk)
+    if [[ "$arg" == "clean" ]]; then
+        echo "🚫 [Shim] BLOCKED: 'git clean' is restricted." >&2
+        echo "   This command deletes untracked files without trash safety." >&2
+        echo "   Use 'rm <file>' (which is safe-shimmed) instead." >&2
+        exit 1
+    fi
+done
+
+for arg in "$@"; do
+    if [[ "$arg" == "reset" ]]; then
+        HAS_RESET=true
+    fi
+    if [[ "$arg" == "--hard" ]]; then
+        HAS_HARD=true
+    fi
+done
+
+if [[ "$HAS_RESET" == "true" ]] && [[ "$HAS_HARD" == "true" ]]; then
+    echo "🚫 [Shim] BLOCKED: 'git reset --hard' is dangerous." >&2
+    echo "   This command destroys uncommitted changes and local history." >&2
+    echo "" >&2
+    echo "   Alternatives:" >&2
+    echo "   1. Soft Reset:  git reset --soft <commit>" >&2
+    echo "   2. Bypass:      /usr/bin/git reset --hard <commit>" >&2
+    echo "" >&2
+    exit 1
+fi
+
+# Fallback to standard git
+# WE MUST USE ABSOLUTE PATH TO AVOID RECURSION
+exec /usr/bin/git "$@"

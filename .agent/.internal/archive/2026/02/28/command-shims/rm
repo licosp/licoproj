@@ -1,0 +1,52 @@
+#!/bin/bash
+
+# Shim for rm to enforce "Move to Trash" instead of delete.
+# Managed by: .agent/cards/routine/command-shim-card.md
+
+# Trash Directory
+TRASH_ROOT=".trash"
+TIMESTAMP=$(date +%Y-%m-%dT%H%M%S)
+TRASH_DIR="$TRASH_ROOT/$TIMESTAMP"
+
+# Create Trash Dir
+# Ideally find project root relative to this script.
+# Script is located at .agent/scripts/rm
+SCRIPT_PATH=$(readlink -f "$0")
+SCRIPT_DIR=$(dirname "$SCRIPT_PATH")
+REPO_ROOT=$(builtin cd "$SCRIPT_DIR/../.." && pwd)
+FULL_TRASH_DIR="$REPO_ROOT/.trash/$TIMESTAMP"
+
+mkdir -p "$FULL_TRASH_DIR"
+
+# Parse arguments to extract files/dirs and ignore flags (-rf, etc)
+FILES=()
+for arg in "$@"; do
+    if [[ "$arg" == -* ]]; then
+        continue # Ignore flags
+    fi
+    FILES+=("$arg")
+done
+
+if [ ${#FILES[@]} -eq 0 ]; then
+    # No files specified, pass through to rm (which will likely complain about missing operand)
+    # or just exit.
+    # To be safe/compliant with rm behavior, let's run /bin/rm "$@" which will print help/error
+    exec /bin/rm "$@"
+fi
+
+# Move files to trash
+# We use /bin/mv directly
+/bin/mv "${FILES[@]}" "$FULL_TRASH_DIR/"
+
+# Logic to handle Git status
+# If files were tracked, they are now gone from working tree.
+# We should stage this deletion to be helpful.
+if git rev-parse --is-inside-work-tree >/dev/null 2>&1; then
+    for file in "${FILES[@]}"; do
+        # check if file was tracked (it's gone now, so we check if it's in index)
+        # git ls-files --error-unmatch needs the file to exist? No, it checks index.
+        # But wait, git rm needs the file to be deleted?
+        # If we run 'git add -u <file>', it stages the deletion suitable for git.
+        git add -u "$file" 2>/dev/null
+    done
+fi
