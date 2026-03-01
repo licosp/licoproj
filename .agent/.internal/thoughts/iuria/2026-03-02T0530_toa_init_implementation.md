@@ -59,11 +59,11 @@ Initially, the project used a very basic static map. The jump to 3D was prompted
 
 ## Related Documents
 
-| Document                                                                                      | Purpose                    |
-| :-------------------------------------------------------------------------------------------- | :------------------------- |
-| [core.py](file:///d:/develop/antigravity/toa/packages/toa-init/src/toa_init/core.py)          | Game Engine implementation |
-| [index.html](file:///d:/develop/antigravity/toa/packages/toa-init/index.html)                 | 3D Renderer implementation |
-| [Map of Territory](/.agent/rules/map.md)                                                      | Root navigation map        |
+| Document                                               | Purpose                    |
+| :----------------------------------------------------- | :------------------------- |
+| [core.py](/toa/packages/toa-init/src/toa_init/core.py) | Game Engine implementation |
+| [index.html](/packages/toa-init/index.html)            | 3D Renderer implementation |
+| [Map of Territory](/.agent/rules/map.md)               | Root navigation map        |
 
 ---
 

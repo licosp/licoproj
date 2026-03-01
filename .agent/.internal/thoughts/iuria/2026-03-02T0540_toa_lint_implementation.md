@@ -57,11 +57,11 @@ The creation of `toa-lint` was a direct response to the "Linting Noise" encounte
 
 ## Related Documents
 
-| Document                                                                             | Purpose                 |
-| :----------------------------------------------------------------------------------- | :---------------------- |
-| [main.py](file:///d:/develop/antigravity/toa/packages/toa-lint/src/toa_lint/main.py) | CLI Tool implementation |
-| [pyproject.toml](file:///d:/develop/antigravity/toa/pyproject.toml)                  | Workspace configuration |
-| [Map of Territory](/.agent/rules/map.md)                                             | Root navigation map     |
+| Document                                           | Purpose                 |
+| :------------------------------------------------- | :---------------------- |
+| [main.py](/packages/toa-lint/src/toa_lint/main.py) | CLI Tool implementation |
+| [pyproject.toml](/pyproject.toml)                  | Workspace configuration |
+| [Map of Territory](/.agent/rules/map.md)           | Root navigation map     |
 
 ---
 
