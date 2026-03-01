@@ -72,7 +72,26 @@ author: leonidas
 
 ####
 
+- コミットの修正点を伝えます。
+
+- そのまま推薦図書のカードを使ってください。
+- `Sirius: [Rules-Standardization] docs(cards): ...`
+
+- あなたの名義でコミットしてください。
+  - `Leonidas: [Drafts-Daily] docs(drafts):  ...`
+  - `Leonidas: [VSCode] chore(vscode):  ...`
+
+- 別の文脈なので、2 つに分けてください。
+  - `Iuria: [Letters][Thoughts-Subjective] docs(internal): ...`
+
 ####
+
+- 推薦図書のカードのコミットは `[Recommended-Readings]` ではないのですか？
+
+####
+
+- リンターの調整をしました。
+  またコミットできますか？
 
 ####
 
@@ -80,11 +99,22 @@ author: leonidas
 
 ####
 
-- Github の認証をしましたが、このような警告が IDE から出ました。
+####
+
+####
+
+####
+
+- リポジトリで使うリンターに `pyright` を追加しました。
+- `VSCode` 上でしか警告されなかった `pylance` のエラーが、
+  コマンドから見られるようになりました。
+- `uv run pyright .agent/scripts/lico-shim.py`
+  直せますか？
+
+- 少し前に `Github` の認証をしましたが、このような警告が IDE から出ました。
   何でしょうか？
-  > You're running in a GNOME environment but the OS keyring is not available for encryption. Ensure you have gnome-keyring or another libsecret compatible implementation installed and running.
 
-####
+  > You're running in a GNOME environment but the OS keyring is not available for encryption. Ensure you have gnome-keyring or another libsecret compatible implementation installed and running.
 
 - `workspace/standards-reference-v2.2/`
   行動規範やカードの標準化の修正作業を再開します。
