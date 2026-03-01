@@ -34,6 +34,7 @@
     "editor.minimap.enabled": false,
     "editor.renderWhitespace": "all",
     "editor.rulers": [79],
+    "editor.wordWrap": "off",
     "editor.codeActionsOnSave": {
       "source.organizeImports": "explicit",
       "source.fixAll.shellcheck": "always",
