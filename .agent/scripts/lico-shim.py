@@ -49,8 +49,7 @@ try:
     import yaml
 except ImportError:
     logger.exception(
-        "\U0001f6ab [Shim] FATAL: python3-yaml is not installed " +
-        "on the base system."
+        "\U0001f6ab [Shim] FATAL: python3-yaml is not installed on the base system."
     )
     logger.exception("   Run: sudo apt-get install python3-yaml")
     sys.exit(1)
@@ -72,7 +71,7 @@ NATIVE_BINARIES = {
 }
 
 
-def load_config() -> dict[str, bool]:
+def load_config() -> dict[str, bool]:  # noqa: C901
     """Load the YAML configuration, defaulting to False for all flags.
 
     Returns:
@@ -91,15 +90,14 @@ def load_config() -> dict[str, bool]:
         with CONFIG_FILE.open() as f:
             parsed = yaml.safe_load(f)
             if isinstance(parsed, dict) and "shims" in parsed:
-                shims = typing.cast(typing.Any, parsed["shims"])
+                shims = typing.cast("typing.Any", parsed["shims"])
                 if isinstance(shims, dict):
-                    shims_dict = typing.cast(dict[str, typing.Any], shims)
+                    shims_dict = typing.cast("dict[str, typing.Any]", shims)
                     for k, v in shims_dict.items():
                         default_cfg[str(k)] = bool(v)
     except yaml.YAMLError:
         logger.exception(
-            "\U0001f6ab [Shim] WARNING: Failed to parse %s. " +
-            "Defaulting to OFF.",
+            "\U0001f6ab [Shim] WARNING: Failed to parse %s. Defaulting to OFF.",
             CONFIG_FILE,
         )
 
