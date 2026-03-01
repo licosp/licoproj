@@ -1,6 +1,6 @@
 shims:
   git: true
   grep: false
-  mv: false
-  python: false
-  rm: false
+  mv: true
+  python: true
+  rm: true
