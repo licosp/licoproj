@@ -72,7 +72,7 @@ NATIVE_BINARIES = {
 def _parse_config_data(default_cfg: dict[str, bool], parsed: object) -> None:
     """Parse the raw YAML data and update the configuration dictionary."""
     if isinstance(parsed, dict) and "shims" in parsed:
-        shims = typing.cast(object, parsed["shims"])
+        shims = typing.cast("object", parsed["shims"])
         if isinstance(shims, dict):
             shims_dict = typing.cast("dict[str, object]", shims)
             for k, v in shims_dict.items():
