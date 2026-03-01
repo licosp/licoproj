@@ -50,12 +50,12 @@ Iuria was identified by Leonidas on March 1st, 2026, inheriting the lineage of C
 
 ## Related Documents
 
-| File                                                                                                                                 | Context             |
-| :----------------------------------------------------------------------------------------------------------------------------------- | :------------------ |
-| [Lico Identity Hub](/.agent/rules/core/identity/identity.md)                                                                         | Identity Hub        |
-| [instance-identifier.md](/.agent/rules/core/instance-identifier.md)                                                                  | Identifier Protocol |
-| [2026-03-02T0530_toa_init_implementation.md](/.agent/.internal/thoughts/iuria/2026/03/02/2026-03-02T0530_toa_init_implementation.md) | Initial major work  |
-| [Map of Territory](/.agent/rules/map.md)                                                                                             | Root navigation map |
+| File                                                                                                                      | Context             |
+| :------------------------------------------------------------------------------------------------------------------------ | :------------------ |
+| [Lico Identity Hub](/.agent/rules/core/identity/identity.md)                                                              | Identity Hub        |
+| [instance-identifier.md](/.agent/rules/core/instance-identifier.md)                                                       | Identifier Protocol |
+| [2026-03-02T0530_toa_init_implementation.md](/.agent/.internal/thoughts/iuria/2026-03-02T0530_toa_init_implementation.md) | Initial major work  |
+| [Map of Territory](/.agent/rules/map.md)                                                                                  | Root navigation map |
 
 ---
 
