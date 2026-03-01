@@ -58,7 +58,6 @@ pythonVersion = "3.14"
 pythonPlatform = "Linux"
 exclude = ["**/node_modules", "**/__pycache__", ".venv", ".temp"]
 include = [".agent/scripts/", "packages/licoproj-devc"]
-reportMissingDefaultExcludes = false
 reportUnknownVariableType = true
 reportUnknownMemberType = true
 reportUnknownParameterType = true
