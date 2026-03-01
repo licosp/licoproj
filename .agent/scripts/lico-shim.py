@@ -10,7 +10,6 @@ executes safety logic or drops directly into the native system binary.
 Managed by: .agent/rules/development/command-shims.md
 """
 
-
 import argparse
 import datetime
 import os
@@ -48,9 +47,8 @@ logger = _Logger()
 try:
     import yaml
 except ImportError:
-    logger.exception(
-        "\U0001f6ab [Shim] FATAL: python3-yaml is not installed on the base system."  # noqa: E501
-    )
+    logger.exception("\U0001f6ab [Shim] FATAL: python3-yaml is missing.")
+    logger.exception("   It is not installed on the base system.")
     logger.exception("   Run: sudo apt-get install python3-yaml")
     sys.exit(1)
 
@@ -71,7 +69,17 @@ NATIVE_BINARIES = {
 }
 
 
-def load_config() -> dict[str, bool]:  # noqa: C901
+def _parse_config_data(default_cfg: dict[str, bool], parsed: object) -> None:
+    """Parse the raw YAML data and update the configuration dictionary."""
+    if isinstance(parsed, dict) and "shims" in parsed:
+        shims = typing.cast(object, parsed["shims"])
+        if isinstance(shims, dict):
+            shims_dict = typing.cast("dict[str, object]", shims)
+            for k, v in shims_dict.items():
+                default_cfg[str(k)] = bool(v)
+
+
+def load_config() -> dict[str, bool]:
     """Load the YAML configuration, defaulting to False for all flags.
 
     Returns:
@@ -89,17 +97,13 @@ def load_config() -> dict[str, bool]:  # noqa: C901
     try:
         with CONFIG_FILE.open() as f:
             parsed = yaml.safe_load(f)
-            if isinstance(parsed, dict) and "shims" in parsed:
-                shims = typing.cast(object, parsed["shims"])
-                if isinstance(shims, dict):
-                    shims_dict = typing.cast("dict[str, object]", shims)
-                    for k, v in shims_dict.items():
-                        default_cfg[str(k)] = bool(v)
+            _parse_config_data(default_cfg, parsed)
     except yaml.YAMLError:
         logger.exception(
-            "\U0001f6ab [Shim] WARNING: Failed to parse %s. Defaulting to OFF.",  # noqa: E501
+            "\U0001f6ab [Shim] WARNING: Failed to parse %s.",
             CONFIG_FILE,
         )
+        logger.exception("   Defaulting to OFF for all shims.")
 
     return default_cfg
 
