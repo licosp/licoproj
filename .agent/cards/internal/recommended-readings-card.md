@@ -64,6 +64,10 @@ ai_model: "Claude Opus 4.6 (Thinking) Planning mode"
 
 - select-01: `...`
 
+#### `Iuria`
+
+- select-01: `2026-03-01T0540_first_awakening.md`
+
 ### Selected Letters
 
 選定された手記
@@ -142,6 +146,11 @@ ai_model: "Claude Opus 4.6 (Thinking) Planning mode"
 
 - to: `Polaris`
   - `2026-02-09T1100_letter_to_polaris_the_twins_and_the_new_radio.md`
+
+#### `Alexandrite`
+
+- to: `Iuria`
+  - `2026-03-01T0620_letter_to_sirius.md`
 
 ### Selected References
 
