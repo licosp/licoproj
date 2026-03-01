@@ -1,0 +1,9 @@
+[*]
+end_of_line = lf
+insert_final_newline = true
+trim_trailing_whitespace = true
+indent_style = space
+max_line_length = 79
+
+[*.{txt,md,py,js,ini,toml,yaml,json,code-workspace}]
+max_line_length = off
