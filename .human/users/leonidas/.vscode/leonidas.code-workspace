@@ -119,6 +119,9 @@
     // Markdown Table
     "markdowntable.showMenu.tsvToTable": true,
 
+    // Powershell
+    "powershell.scriptAnalysis.settingsPath": ".vscode/PSScriptAnalyzerSettings.psd1",
+
     // Textlint
     "textlint.autoFixOnSave": true,
     "textlint.configPath": ".vscode/.textlintrc.json",
@@ -160,5 +163,6 @@
     "[python]": {
       "editor.defaultFormatter": "charliermarsh.ruff",
     },
+    "python.analysis.diagnosticsSource": "Pyright",
   },
 }
