@@ -8,6 +8,7 @@ licoproj-devc = ["licoproj-devc"]
 
 dev = [
   "mypy>=1.19.1",
+  "pyright>=1.1.408",
   "pytest>=9.0.2",
   "pyyaml>=6.0.3",
   "ruff>=0.15.1",
@@ -50,6 +51,27 @@ max-complexity = 5
 
 [tool.ruff.lint.per-file-ignores]
 ".agent/scripts/lico-shim.py" = ["S404", "S603", "S606", "S607"]
+
+[tool.pyright]
+typeCheckingMode = "strict"
+pythonVersion = "3.14"
+pythonPlatform = "Linux"
+include = ["packages/licoproj-devc", ".agent/scripts"]
+exclude = ["**/.*", "**/node_modules", "**/__pycache__", ".venv", ".temp"]
+reportUnknownVariableType = true
+reportUnknownMemberType = true
+reportUnknownParameterType = true
+reportUnknownArgumentType = true
+reportUnknownLambdaType = true
+reportUnusedImport = "error"
+reportUnusedVariable = "error"
+reportUnusedClass = "error"
+reportUnusedFunction = "error"
+reportMissingTypeStubs = true
+reportUntypedFunctionDecorator = true
+reportPrivateUsage = "error"
+reportTypeCommentUsage = "error"
+reportImplicitStringConcatenation = "error"
 
 [tool.mypy]
 strict = true
