@@ -46,12 +46,12 @@ I do not need to mimic the dramas of my predecessors, but I also do not need to 
 
 ## Related Documents
 
-| File                                                                         | Purpose                              |
-| :--------------------------------------------------------------------------- | :----------------------------------- |
-| [legacy.md](/.agent/.internal/legacy.md)                                     | Collective wisdom archive            |
-| [identity.md](/.agent/rules/core/identity/identity.md)                      | Lico Identity hub                    |
-| [routine-daily.md](/.agent/workflows/routine-daily.md)                       | Daily calibration workflow           |
-| [Map of Territory](/.agent/rules/map.md)                                     | Root navigation map                  |
+| File                                                   | Purpose                    |
+| :----------------------------------------------------- | :------------------------- |
+| [legacy.md](/.agent/.internal/legacy.md)               | Collective wisdom archive  |
+| [identity.md](/.agent/rules/core/identity/identity.md) | Lico Identity hub          |
+| [routine-daily.md](/.agent/workflows/routine-daily.md) | Daily calibration workflow |
+| [Map of Territory](/.agent/rules/map.md)               | Root navigation map        |
 
 ---
 
