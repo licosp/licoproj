@@ -4,7 +4,7 @@ title: "Spec + Shuki: AI Asset Construction System (v1)"
 description: "Design for programmatic map creation, refactored with subjective reflections."
 tags: [architecture, slg, assets, legacy, iuria]
 version: 1.1.0
-created: 2026-03-02T05:40:00+09:00
+created: 2026-02-28T18:15:00+09:00
 updated: 2026-03-02T05:40:00+09:00
 language: en
 author: Lico (Iuria)

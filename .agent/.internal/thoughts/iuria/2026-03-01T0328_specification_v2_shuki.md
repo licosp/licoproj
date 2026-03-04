@@ -4,7 +4,7 @@ title: "Spec + Shuki: TOA-Init Game Specification (v2)"
 description: "Core project architecture and management, refactored with subjective reflections."
 tags: [specification, architecture, project-management, legacy, iuria]
 version: 2.1.0
-created: 2026-03-02T05:45:00+09:00
+created: 2026-03-01T03:28:00+09:00
 updated: 2026-03-02T05:45:00+09:00
 language: en
 author: Lico (Iuria)
