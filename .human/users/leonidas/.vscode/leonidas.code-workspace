@@ -73,6 +73,7 @@
     "python.analysis.diagnosticMode": "workspace",
     "python.analysis.extraPaths": ["packages/licoproj-devc/src"],
     "python.analysis.typeCheckingMode": "strict",
+    "python.analysis.diagnosticsSource": "Pyright",
     "python.testing.pytestEnabled": true,
     "python.languageServer": "Pylance",
 
@@ -100,7 +101,7 @@
     "shellcheck.logLevel": "debug",
 
     // Git
-    "git.autoRepositoryDetection": "openEditors",
+    "git.autoRepositoryDetection": true,
     "git.inputValidation": true,
 
     // shfmt
@@ -164,6 +165,6 @@
     "[python]": {
       "editor.defaultFormatter": "charliermarsh.ruff",
     },
-    "python.analysis.diagnosticsSource": "Pyright",
+    "git.repositoryScanMaxDepth": 4,
   },
 }

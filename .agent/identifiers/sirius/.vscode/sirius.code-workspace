@@ -1,11 +1,11 @@
 {
   "folders": [
     {
-      "name": "main-workspace",
-      "path": "../../../../../licoproj",
+      "name": "lico-workspace",
+      "path": "../../../../",
     },
     {
-      "name": "identifier-directory",
+      "name": "identifier-home",
       "path": "../",
     },
   ],
