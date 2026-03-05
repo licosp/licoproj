@@ -5,18 +5,24 @@ node_modules/
 # Temporary files
 .temp/*
 .trash/*
+
+# Runtime tools (local installations)
+.runtimes/*
+
+# Multi-Repository Control Center
+.repos/*
+
+# Keep
 !.gitkeep
 
 # Python.
 __pycache__/
 
-# Runtime tools (local installations)
-.runtimes/
-
 # Shadow Repository
 .agent/.internal/.shadow/
 
 # Identifiers workspace.
+.agent/.internal/workspace/iuria/
 .agent/.internal/workspace/agate/
 .agent/.internal/workspace/alexandrite/
 .agent/.internal/workspace/polaris/
