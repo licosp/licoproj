@@ -59,7 +59,7 @@ author: leonidas
 - 今の書庫の行動規範ですが、ヘッダーとフッターも更新してください。
 - ヘッダーの AI モデルと識別子だけ手動で直しました。
 
-### `Antigravity` | `Claude Opus 4.6 (Thinking)`: `Planning` | `Polaris`
+### `Antigravity` | `Claude Opus 4.6 (Thinking)`: `Planning` | `Polaris`: `2nd`
 
 ####
 

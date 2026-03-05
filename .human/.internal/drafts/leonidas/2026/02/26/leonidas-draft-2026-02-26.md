@@ -16,7 +16,7 @@ author: leonidas
 
 ---
 
-### `Antigravity` | `Claude Opus 4.6 (Thinking)`: `Planning` | `Polaris`
+### `Antigravity` | `Claude Opus 4.6 (Thinking)`: `Planning` | `Polaris`: `2nd`
 
 ####
 
