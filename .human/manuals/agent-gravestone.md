@@ -13,6 +13,13 @@ tag: [agent, gravestone]
 
 ### Gravestone
 
+#### Identifier (`Zircon`)
+
+author: Lico (Zircon)
+ai_model: Gemini 3 Pro (High) Planning mode
+
+- `antigravity-session-title`: Commit Correction And Logging
+
 #### Identifier (`Canopus`)
 
 author: Lico (Canopus)
