@@ -43,6 +43,7 @@ This is the layout of your world.
 | [`.devcontainer/`](/.devcontainer/) | Development Container configuration.                  |
 | [`.gemini/`](/.gemini/)             | **Calibration**. Gemini CLI config/calibration files. |
 | [`.human/`](/.human/)               | **Interface**. User's domain.                         |
+| [`.repos/`](/.repos/)               | **Control Center**. Registry of nested worktrees.    |
 | [`.runtimes/`](/.runtimes/)         | Runtime tools (gh CLI, etc.).                         |
 | [`.trash/`](/.trash/)               | Temporary trash bin.                                  |
 | [`.venv/`](/.venv/)                 | Python Virtual Environment.                           |
@@ -68,17 +69,17 @@ This is the layout of your world.
 
 ###### Agent Internal (`.agent/.internal/`)
 
-| Path                                                   | Purpose                                             |
-| :----------------------------------------------------- | :-------------------------------------------------- |
-| [`.shadow/`](/.agent/.internal/.shadow/)               | **Shadow Repository**. Nested Git for private logs. |
-| [`archive/`](/.agent/.internal/archive/)               | Old scripts and docs (Do not delete, Archive here). |
-| [`explorations/`](/.agent/.internal/explorations/)     | Exploratory documents.                              |
-| [`github/`](/.agent/.internal/github/)                 | Drafts and backups for Issues/PRs.                  |
-| [`letters/`](/.agent/.internal/letters/)               | Handoffs and messages to identifiers.               |
-| [`references/`](/.agent/.internal/references/)         | Objective reference documents.                      |
-| [`thoughts/`](/.agent/.internal/thoughts/)             | Subjective logs and mono-logues.                    |
-| [`working-memory/`](/.agent/.internal/working-memory/) | Stashed contexts (via `rsync`).                     |
-| [`workspace/`](/.agent/.internal/workspace/)           | Temporary area for scratchpads.                     |
+| Path                                                   | Purpose                                                      |
+| :----------------------------------------------------- | :----------------------------------------------------------- |
+| [`.shadow/`](/.repos/.licoshdw/)                     | **Shared Shadow Worktree**. History and conversation logs.   |
+| [`archive/`](/.agent/.internal/archive/)               | Old scripts and docs (Do not delete, Archive here).          |
+| [`explorations/`](/.agent/.internal/explorations/)     | Exploratory documents.                                       |
+| [`github/`](/.agent/.internal/github/)                 | Drafts and backups for Issues/PRs.                           |
+| [`letters/`](/.agent/.internal/letters/)               | Handoffs and messages to identifiers.                        |
+| [`references/`](/.agent/.internal/references/)         | Objective reference documents.                               |
+| [`thoughts/`](/.agent/.internal/thoughts/)             | Subjective logs and mono-logues.                             |
+| [`working-memory/`](/.agent/.internal/working-memory/) | Stashed contexts (via `rsync`).                              |
+| [`workspace/`](/.agent/.internal/workspace/)           | Temporary area for scratchpads.                              |
 
 ###### Shadow Repository (`.agent/.internal/.shadow/`)
 
@@ -287,13 +288,13 @@ These are your capabilities.
 
 ###### Cards project (`.agent/cards/project/`)
 
-| Card Name                                                                  | Context / Usage                              |
-| :------------------------------------------------------------------------- | :------------------------------------------- |
+| Card Name                                                                  | Context / Usage                                    |
+| :------------------------------------------------------------------------- | :------------------------------------------------- |
 | [`dependencies-card.md`](/.agent/cards/project/dependencies-card.md)       | **Dependencies**. Dependencies management context. |
-| [`devcontainer-card.md`](/.agent/cards/project/devcontainer-card.md)       | **Resident Rico**. Devcontainer experiment.  |
-| [`license-card.md`](/.agent/cards/project/license-card.md)                 | **License**. Legal and Narrative protection. |
-| [`lint-format-card.md`](/.agent/cards/project/lint-format-card.md)         | **Code Style**. Linting.                     |
-| [`vscode-settings-card.md`](/.agent/cards/project/vscode-settings-card.md) | VS Code Settings Management.                 |
+| [`devcontainer-card.md`](/.agent/cards/project/devcontainer-card.md)       | **Resident Rico**. Devcontainer experiment.        |
+| [`license-card.md`](/.agent/cards/project/license-card.md)                 | **License**. Legal and Narrative protection.       |
+| [`lint-format-card.md`](/.agent/cards/project/lint-format-card.md)         | **Code Style**. Linting.                           |
+| [`vscode-settings-card.md`](/.agent/cards/project/vscode-settings-card.md) | VS Code Settings Management.                       |
 
 ###### Cards Rules (`.agent/cards/rules/`)
 
@@ -452,15 +453,15 @@ These are your capabilities.
 
 ##### 2.1.4 Templates (`.agent/templates/`)
 
-| Template                                                                 | Usage                   |
-| :----------------------------------------------------------------------- | :---------------------- |
-| [`commit-message.txt`](/.agent/templates/commit-message.txt)             | Git commit format.      |
-| [`issue-comment.md`](/.agent/templates/issue-comment.md)                 | GitHub Issue comment.   |
-| [`template-context-card.md`](/.agent/templates/template-context-card.md) | Context Card structure. |
+| Template                                                                 | Usage                                 |
+| :----------------------------------------------------------------------- | :------------------------------------ |
+| [`commit-message.txt`](/.agent/templates/commit-message.txt)             | Git commit format.                    |
+| [`issue-comment.md`](/.agent/templates/issue-comment.md)                 | GitHub Issue comment.                 |
+| [`template-context-card.md`](/.agent/templates/template-context-card.md) | Context Card structure.               |
 | [`template-conversation.md`](/.agent/templates/template-conversation.md) | Conversation log extraction template. |
-| [`template-document.md`](/.agent/templates/template-document.md)         | General document base.  |
-| [`template-draft.md`](/.agent/templates/template-draft.md)               | User draft structure.   |
-| [`template-skill.md`](/.agent/templates/template-skill.md)               | Skill definition.       |
+| [`template-document.md`](/.agent/templates/template-document.md)         | General document base.                |
+| [`template-draft.md`](/.agent/templates/template-draft.md)               | User draft structure.                 |
+| [`template-skill.md`](/.agent/templates/template-skill.md)               | Skill definition.                     |
 
 ##### 2.1.5 Workflows (`.agent/workflows/`)
 
