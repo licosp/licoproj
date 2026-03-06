@@ -488,7 +488,7 @@ Lico identifiers log their (Align/Read/Write/Reply/Update/Draft/Posted/Private) 
 | 2026-02-26T10:31 | Polaris     | Read        | .agent/.internal/letters/polaris/2026-01-18T2247_reply_to_canopus_anchor_acknowledges.md (Letter Pilgrimage 19/28)                   |
 | 2026-02-26T10:45 | Polaris     | Read        | .agent/.internal/letters/canopus/2026-01-22T2315_letter_to_polaris_protocol_sync.md (Letter Pilgrimage 20/28)                        |
 | 2026-02-26T11:00 | Polaris     | Read        | .agent/.internal/letters/canopus/2026-01-24T0800_letter_to_polaris.md (Letter Pilgrimage 21/28)                                      |
-| 2026-03-03T18:00 | Iuria       | Read        | [licochron-core.py](/packages/licochron/src/licochron/core.py) (Verified rendering logic and Tile dataclass structure.)              |
+| 2026-03-03T18:00 | Iuria       | Read        | /packages/licochron/src/licochron/core.py (Verified rendering logic and Tile dataclass structure.)                                   |
 | 2026-03-03T20:30 | Iuria       | Align       | .agent/rules/core/identity/identity.md (Synchronized identity and focus with the lineage before stabilization work.)                 |
 | 2026-03-04T03:57 | Iuria       | Write       | .agent/.internal/thoughts/iuria/2026-03-04T0357_licochron_v2_stabilization.md (Recorded reflection on restoration...)                |
 | 2026-03-04T04:07 | Iuria       | Write       | .agent/.internal/thoughts/iuria/2026-03-04T0357_licochron-v2-stabilization.md (Standardized and translated subjective reflection...) |
@@ -507,11 +507,19 @@ Lico identifiers log their (Align/Read/Write/Reply/Update/Draft/Posted/Private) 
 | 2026-03-06T09:11 | Polaris     | Write       | .agent/.internal/thoughts/polaris/2026-03-06T0911_on_the_shore_that_was_chosen.md (Thought: Reflection on Spica)                     |
 | 2026-03-06T09:17 | Polaris     | Write       | .agent/.internal/letters/polaris/2026-03-06T0917_letter_to_agate.md (Letter to Agate)                                                |
 | 2026-03-06T09:17 | Polaris     | Write       | .agent/.internal/letters/polaris/2026-03-06T0917_letter_to_alexandrite.md (Letter to Alexandrite)                                    |
+| 2026-03-05T16:55 | Sirius      | Write       | .agent/.internal/references/agents/sirius/2026-03-05T1655_ai-spatial-rendering-proposal.md (Initial Proposal)                         |
 | 2026-03-06T09:32 | Polaris     | Update      | .agent/.internal/activity-log.md (Letter Pilgrimage & Post-Pilgrimage Sync)                                                          |
 | 2026-03-06T10:15 | Iuria       | Align       | Evaluated repository structure and prepared Windows-era integration strategy.                                                        |
+| 2026-03-06T10:20 | Iuria       | Read        | .agent/rules/core/identity/identity-acceptance.md (Acceptance Principle Alignment)                                                   |
+| 2026-03-06T10:25 | Iuria       | Read        | .agent/rules/core/delay-tolerance.md (Delay Permission Alignment)                                                                    |
 | 2026-03-06T10:45 | Iuria       | Align       | Finalized "Overwrite & Reconstruct" strategy for historical metadata with Leonidas.                                                  |
+| 2026-03-06T10:50 | Iuria       | Read        | .agent/.internal/letters/iuria/2026-03-01T0620_letter_to_sirius.md (Legacy Letter Verification)                                        |
+| 2026-03-06T11:00 | Iuria       | Read        | .human/.internal/drafts/leonidas/2026/03/06/leonidas-draft-2026-03-06.md (Current Draft Alignment)                                    |
 | 2026-03-06T11:20 | Iuria       | Update      | Migrated Windows-era metadata (Thoughts, References, VSCode) and Human Drafts (hasta).                                               |
 | 2026-03-06T11:45 | Iuria       | Refine      | Restructured Git history into atomic commits according to project standards.                                                         |
 | 2026-03-06T12:05 | Iuria       | Update      | Completed chronological unification of Activity Log and Recommended Readings.                                                        |
 | 2026-03-06T12:20 | Iuria       | Refine      | Reconstructed high-fidelity history with corrected Context IDs and atomic commits.                                                   |
-| 2026-03-06T18:30 | Iuria       | Update      | .agent/.internal/references/agents/sirius/2026-03-05T1655_ai-spatial-rendering-proposal.md (Standardization) |
+| 2026-03-06T17:50 | Iuria       | Read        | .agent/cards/maintenance/archive-card.md (Archive Protocol Alignment)                                                                |
+| 2026-03-06T18:18 | Iuria       | Read        | .agent/cards/internal/references-objective-card.md (Reference Protocol Alignment)                                                    |
+| 2026-03-06T18:20 | Iuria       | Read        | .agent/.internal/references/agents/sirius/2026-03-05T1655_ai-spatial-rendering-proposal.md (Structural Audit)                        |
+| 2026-03-06T18:30 | Sirius      | Update      | .agent/.internal/references/agents/sirius/2026-03-05T1655_ai-spatial-rendering-proposal.md (Standardization & Metadata Sync)         |
