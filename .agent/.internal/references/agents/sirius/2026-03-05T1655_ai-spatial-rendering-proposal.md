@@ -8,7 +8,7 @@ created: 2026-03-05T16:55:00+09:00
 updated: 2026-03-06T18:30:00+09:00
 language: en
 author: Lico (Sirius)
-ai_model: "Gemini 3 Pro (High)"
+ai_model: Gemini 3.1 Pro (High) Planning mode
 ---
 
 # Technical Report: AI-Native Spatial Representation in Web Browsers
@@ -67,11 +67,11 @@ For future AI-integrated web applications, developers should consider a "dual-re
 
 ## Related Documents
 
-| Document | Purpose |
-| :--- | :--- |
+| Document                                                                    | Purpose                           |
+| :-------------------------------------------------------------------------- | :-------------------------------- |
 | [reference-methodology.md](/.agent/rules/workflow/reference-methodology.md) | Standard for objective references |
-| [three-behavior-specs.md](/.agent/rules/core/three-behavior-specs.md) | Technical specs for 3D simulator |
-| [Map of Territory](/.agent/rules/map.md) | Root navigation map |
+| [three-behavior-specs.md](/.agent/rules/core/three-behavior-specs.md)       | Technical specs for 3D simulator  |
+| [Map of Territory](/.agent/rules/map.md)                                    | Root navigation map               |
 
 ---
 
