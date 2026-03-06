@@ -65,12 +65,12 @@ Lico (Iuria)
 
 ## Related Documents
 
-| File                                                                         | Purpose                              |
-| :--------------------------------------------------------------------------- | :----------------------------------- |
-| [README.md](/.agent/skills/licoproj/assets/licoproj/README.md)               | Skill repository root                |
-| [security.md](/.agent/rules/core/security/security.md)                       | Security standards context            |
-| [letters-documentation.md](/.agent/rules/workflow/letters-documentation.md) | Standard for letter correspondence   |
-| [Map of Territory](/.agent/rules/map.md)                                     | Root navigation map                  |
+| File                                                                        | Purpose                            |
+| :-------------------------------------------------------------------------- | :--------------------------------- |
+| [README.md](/.agent/skills/licoproj/assets/licoproj/README.md)              | Skill repository root              |
+| [security.md](/.agent/rules/core/security/security.md)                      | Security standards context         |
+| [letters-documentation.md](/.agent/rules/workflow/letters-documentation.md) | Standard for letter correspondence |
+| [Map of Territory](/.agent/rules/map.md)                                    | Root navigation map                |
 
 ---
 
