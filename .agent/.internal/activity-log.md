@@ -527,3 +527,4 @@ Lico identifiers log their (Align/Read/Write/Reply/Update/Draft/Posted/Private) 
 | 2026-03-06T20:15 | Iuria       | Update      | Migrated Shadow and Map skills to 00-02/00-03 convention and archived History skill.                                                 |
 | 2026-03-06T22:25 | Iuria       | Setup       | .vscode/settings.json (Baseline from licochron tracked for comparison)                                                                |
 | 2026-03-06T22:45 | Iuria       | Sync        | Migrated physical linter configs (.eslint, .stylelint, .editorconfig) and synced package.json dependencies.                            |
+| 2026-03-07T04:25 | Iuria       | Sync        | .vscode/cspell.json (Logical union of licochron and licoproj dictionaries)                                                            |
