@@ -4,6 +4,7 @@ requires-python = ">=3.14"
 
 [manifest]
 members = [
+    "lico-lint",
     "licoproj",
     "licoproj-devc",
 ]
@@ -61,11 +62,19 @@ wheels = [
 ]
 
 [[package]]
+name = "lico-lint"
+version = "0.1.0"
+source = { editable = "packages/lico-lint" }
+
+[[package]]
 name = "licoproj"
 version = "0.0.1"
 source = { virtual = "." }
 
 [package.optional-dependencies]
+lico-lint = [
+    { name = "lico-lint" },
+]
 licoproj-devc = [
     { name = "licoproj-devc" },
 ]
@@ -79,13 +88,19 @@ dev = [
     { name = "ruff" },
     { name = "types-pyyaml" },
 ]
+lico-lint = [
+    { name = "lico-lint" },
+]
 licoproj-devc = [
     { name = "licoproj-devc" },
 ]
 
 [package.metadata]
-requires-dist = [{ name = "licoproj-devc", marker = "extra == 'licoproj-devc'", editable = "packages/licoproj-devc" }]
-provides-extras = ["licoproj-devc"]
+requires-dist = [
+    { name = "lico-lint", marker = "extra == 'lico-lint'", editable = "packages/lico-lint" },
+    { name = "licoproj-devc", marker = "extra == 'licoproj-devc'", editable = "packages/licoproj-devc" },
+]
+provides-extras = ["lico-lint", "licoproj-devc"]
 
 [package.metadata.requires-dev]
 dev = [
@@ -96,6 +111,7 @@ dev = [
     { name = "ruff", specifier = ">=0.15.1" },
     { name = "types-pyyaml", specifier = ">=6.0.12.20250915" },
 ]
+lico-lint = [{ name = "lico-lint", editable = "packages/lico-lint" }]
 licoproj-devc = [{ name = "licoproj-devc", editable = "packages/licoproj-devc" }]
 
 [[package]]
