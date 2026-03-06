@@ -11,28 +11,20 @@
   "editor.minimap.enabled": false,
   "editor.renderWhitespace": "all",
   "editor.rulers": [79],
+  "editor.wordWrap": "off",
   "editor.codeActionsOnSave": {
     "source.organizeImports": "explicit",
     "source.fixAll.shellcheck": "always",
-    "source.fixAll.markdownlint": "always",
-    "source.fixAll.stylelint": "explicit",
-    "source.fixAll.eslint": "explicit"
+    "source.fixAll.markdownlint": "always"
   },
-
-  // ESLint
-  "eslint.options": {
-    "overrideConfigFile": ".vscode/eslint.config.mjs"
-  },
-  "eslint.validate": ["javascript", "html"],
 
   // SMC
   "scm.diffDecorations": "none",
 
-  // Files
-  "files.eol": "\n",
-  "files.insertFinalNewline": true,
-  "files.trimTrailingWhitespace": true,
+  // Git
+  "git.repositoryScanMaxDepth": 4,
 
+  // * Outside tools
   // Python
   "python.analysis.diagnosticMode": "workspace",
   "python.analysis.diagnosticsSource": "Pyright",
@@ -57,20 +49,13 @@
   "shellcheck.executablePath": "shellcheck",
   "shellcheck.useWorkspaceRootAsCwd": true,
 
-  // stylelint
-  "stylelint.configFile": ".vscode/.stylelintrc.yaml",
-  "stylelint.validate": ["css", "html"],
-
-  // Git
-  "git.repositoryScanMaxDepth": 4,
-
   // Markdownlint
   "markdownlint.configFile": ".vscode/.markdownlint.yaml",
   "markdownlint.run": "onSave",
   "markdownlint.severityForError": "Error",
   "markdownlint.severityForWarning": "Error",
 
-  // Formatter
+  // * Formatter
   // Prettier
   "editor.defaultFormatter": "esbenp.prettier-vscode",
 

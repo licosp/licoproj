@@ -1,11 +1,12 @@
 {
   "folders": [
     {
-      "name": "licochron",
+      "name": "licoproj",
       "path": "../../../../",
     },
   ],
   "settings": {
+    // * VSCode
     // Terminal
     "terminal.integrated.defaultProfile.linux": "bash",
 
@@ -49,6 +50,7 @@
       ".shellcheckrc": "properties",
     },
 
+    // * Outside tools
     // Python
     "python.languageServer": "Pylance",
 
@@ -59,8 +61,8 @@
     "shellcheck.logLevel": "debug",
 
     // Git
+    "git.autoRepositoryDetection": true,
     "git.inputValidation": true,
-    "git.autoRepositoryDetection": "subFolders",
 
     // shfmt
     "shellformat.useEditorConfig": true,

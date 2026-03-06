@@ -9,12 +9,36 @@
   ],
   "dependencies": {},
   "devDependencies": {
+    "@eslint/js": "^10.0.1",
     "cspell": "^9.6.4",
+    "eslint": "^10.0.2",
+    "eslint-config-prettier": "^10.1.8",
+    "eslint-plugin-html": "^8.1.4",
+    "eslint-plugin-import": "^2.32.0",
+    "eslint-plugin-prettier": "^5.5.5",
+    "globals": "^17.4.0",
+    "js-yaml": "^4.1.1",
     "markdownlint-cli2": "^0.21.0",
+    "postcss-html": "^1.8.1",
     "prettier": "^3.8.1",
     "prettier-plugin-toml": "^2.0.6",
+    "stylelint": "^17.4.0",
+    "stylelint-config-prettier": "^9.0.5",
+    "stylelint-config-recess-order": "^7.6.1",
+    "stylelint-config-standard": "^40.0.0",
+    "stylelint-order": "^7.0.1",
+    "stylelint-prettier": "^5.0.3",
     "textlint": "^15.5.1",
     "textlint-rule-preset-ja-spacing": "^2.4.3",
     "textlint-rule-preset-japanese": "^10.0.4"
+  },
+  "scripts": {
+    "lint:css": "stylelint --config .vscode/.stylelintrc.yaml",
+    "lint:css:fix": "yarn lint:css --fix",
+    "lint:js": "eslint --config .vscode/eslint.config.mjs",
+    "lint:js:fix": "yarn lint:js --fix",
+    "lint:spelling": "cspell -c .vscode/cspell.json --no-progress --dot",
+    "lint:md": "markdownlint-cli2",
+    "lint:text": "textlint -c .vscode/.textlintrc.json"
   }
 }
