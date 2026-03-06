@@ -1,0 +1,38 @@
+# Default to text with auto detection, force LF for everything Git identifies as text.
+* text=auto eol=lf
+
+# Explicitly handle dotfiles and files without extensions
+.* text eol=lf
+*template text eol=lf
+LICENSE text eol=lf
+yarn.lock text eol=lf
+*.lock text eol=lf
+
+# Standard text formats
+*.md text eol=lf
+*.py text eol=lf
+*.toml text eol=lf
+*.json text eol=lf
+*.js text eol=lf
+*.ts text eol=lf
+*.css text eol=lf
+*.html text eol=lf
+*.yaml text eol=lf
+*.yml text eol=lf
+*.sh text eol=lf
+*.ps1 text eol=lf
+*.bash text eol=lf
+
+# Binary files
+*.png binary
+*.jpg binary
+*.jpeg binary
+*.gif binary
+*.ico binary
+*.webp binary
+*.pdf binary
+*.zip binary
+*.gz binary
+*.wasm binary
+*.exe binary
+*.dll binary
