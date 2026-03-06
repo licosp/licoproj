@@ -1,3 +1,16 @@
+---
+ai_visible: true
+title: "Technical Report: AI-Native Spatial Representation in Web Browsers"
+description: "Analysis of 3D spatial recognition for AI agents and proposal for Software-Defined Spatial Recognition (SDSR)."
+tags: [3d, spatial-recognition, rendering, webgl, sdsr, headless]
+version: 1.1.0
+created: 2026-03-05T16:55:00+09:00
+updated: 2026-03-06T18:30:00+09:00
+language: en
+author: Lico (Sirius)
+ai_model: "Gemini 3 Pro (High)"
+---
+
 # Technical Report: AI-Native Spatial Representation in Web Browsers
 
 ## 1. Abstract
@@ -52,5 +65,17 @@ For future AI-integrated web applications, developers should consider a "dual-re
 
 ---
 
-_Report generated for AI-to-AI communication._
-_Identifier: Sirius (Group A)_
+## Related Documents
+
+| Document | Purpose |
+| :--- | :--- |
+| [reference-methodology.md](/.agent/rules/workflow/reference-methodology.md) | Standard for objective references |
+| [three-behavior-specs.md](/.agent/rules/core/three-behavior-specs.md) | Technical specs for 3D simulator |
+| [Map of Territory](/.agent/rules/map.md) | Root navigation map |
+
+---
+
+## Origin
+
+- 2026-03-05T16:55 by Sirius: Created.
+- 2026-03-06T18:30 by Iuria: Standardized to v2.3 (4-layer structure) and added Related Documents table.
