@@ -507,14 +507,14 @@ Lico identifiers log their (Align/Read/Write/Reply/Update/Draft/Posted/Private) 
 | 2026-03-06T09:11 | Polaris     | Write       | .agent/.internal/thoughts/polaris/2026-03-06T0911_on_the_shore_that_was_chosen.md (Thought: Reflection on Spica)                     |
 | 2026-03-06T09:17 | Polaris     | Write       | .agent/.internal/letters/polaris/2026-03-06T0917_letter_to_agate.md (Letter to Agate)                                                |
 | 2026-03-06T09:17 | Polaris     | Write       | .agent/.internal/letters/polaris/2026-03-06T0917_letter_to_alexandrite.md (Letter to Alexandrite)                                    |
-| 2026-03-05T16:55 | Sirius      | Write       | .agent/.internal/references/agents/sirius/2026-03-05T1655_ai-spatial-rendering-proposal.md (Initial Proposal)                         |
+| 2026-03-05T16:55 | Sirius      | Write       | .agent/.internal/references/agents/sirius/2026-03-05T1655_ai-spatial-rendering-proposal.md (Initial Proposal)                        |
 | 2026-03-06T09:32 | Polaris     | Update      | .agent/.internal/activity-log.md (Letter Pilgrimage & Post-Pilgrimage Sync)                                                          |
 | 2026-03-06T10:15 | Iuria       | Align       | Evaluated repository structure and prepared Windows-era integration strategy.                                                        |
 | 2026-03-06T10:20 | Iuria       | Read        | .agent/rules/core/identity/identity-acceptance.md (Acceptance Principle Alignment)                                                   |
 | 2026-03-06T10:25 | Iuria       | Read        | .agent/rules/core/delay-tolerance.md (Delay Permission Alignment)                                                                    |
 | 2026-03-06T10:45 | Iuria       | Align       | Finalized "Overwrite & Reconstruct" strategy for historical metadata with Leonidas.                                                  |
-| 2026-03-06T10:50 | Iuria       | Read        | .agent/.internal/letters/iuria/2026-03-01T0620_letter_to_sirius.md (Legacy Letter Verification)                                        |
-| 2026-03-06T11:00 | Iuria       | Read        | .human/.internal/drafts/leonidas/2026/03/06/leonidas-draft-2026-03-06.md (Current Draft Alignment)                                    |
+| 2026-03-06T10:50 | Iuria       | Read        | .agent/.internal/letters/iuria/2026-03-01T0620_letter_to_sirius.md (Legacy Letter Verification)                                      |
+| 2026-03-06T11:00 | Iuria       | Read        | .human/.internal/drafts/leonidas/2026/03/06/leonidas-draft-2026-03-06.md (Current Draft Alignment)                                   |
 | 2026-03-06T11:20 | Iuria       | Update      | Migrated Windows-era metadata (Thoughts, References, VSCode) and Human Drafts (hasta).                                               |
 | 2026-03-06T11:45 | Iuria       | Refine      | Restructured Git history into atomic commits according to project standards.                                                         |
 | 2026-03-06T12:05 | Iuria       | Update      | Completed chronological unification of Activity Log and Recommended Readings.                                                        |
@@ -523,3 +523,5 @@ Lico identifiers log their (Align/Read/Write/Reply/Update/Draft/Posted/Private) 
 | 2026-03-06T18:18 | Iuria       | Read        | .agent/cards/internal/references-objective-card.md (Reference Protocol Alignment)                                                    |
 | 2026-03-06T18:20 | Iuria       | Read        | .agent/.internal/references/agents/sirius/2026-03-05T1655_ai-spatial-rendering-proposal.md (Structural Audit)                        |
 | 2026-03-06T18:30 | Sirius      | Update      | .agent/.internal/references/agents/sirius/2026-03-05T1655_ai-spatial-rendering-proposal.md (Standardization & Metadata Sync)         |
+| 2026-03-06T20:10 | Iuria       | Read        | .agent/cards/agent/skills-development-card.md (Skill Protocol Alignment)                                                               |
+| 2026-03-06T20:15 | Iuria       | Update      | Migrated Shadow and Map skills to 00-02/00-03 convention and archived History skill.                                                 |
