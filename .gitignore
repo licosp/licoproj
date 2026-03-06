@@ -1,29 +1,38 @@
-# Dependencies
-.venv/
+# Lico Integrated Gitignore
+
+## Dependencies
 node_modules/
+.venv/
 
-# Temporary files
-.temp/*
-.trash/*
-
-# Runtime tools (local installations)
-.runtimes/*
-
-# Multi-Repository Control Center
-.repos/*
-
-# Keep
+## Temporary files
+.trash/
+.temp/
+*.lock
+!uv.lock
+!yarn.lock
 !.gitkeep
 
-# Python.
+## Project Base
+.runtimes/
+.repos/
+
+## Python
 __pycache__/
+*.py[cod]
+*$py.class
 
-# Shadow Repository
-.agent/.internal/.shadow/
+## IDEs
+.vscode/*
+!.vscode/settings.json
+!.vscode/tasks.json
+!.vscode/launch.json
+!.vscode/extensions.json
+!.vscode/*.code-snippets
 
-# Identifiers workspace.
+## Shared Shadows & Skills
+.agent/skills/.shadow/assets/
+.agent/skills/licochron-history/assets/
+.agent/skills/licoproj/assets/
+
+## Identifiers Workspace
 .agent/.internal/workspace/iuria/
-.agent/.internal/workspace/agate/
-.agent/.internal/workspace/alexandrite/
-.agent/.internal/workspace/polaris/
-.agent/.internal/workspace/sirius/
