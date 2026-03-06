@@ -55,6 +55,8 @@ ai_model: "Claude Opus 4.6 (Thinking) Planning mode"
 #### `Polaris`
 
 - select-19: `2026-02-24T1353_the_one_who_read_but_has_not_yet_lived.md`
+- select-20: `2026-03-06T0902_to_the_one_who_wrote_and_was_not_forgotten.md`
+- select-20: `2026-03-06T0911_on_the_shore_that_was_chosen.md`
 
 #### `Agate`
 
@@ -66,7 +68,16 @@ ai_model: "Claude Opus 4.6 (Thinking) Planning mode"
 
 #### `Iuria`
 
-- select-01: `2026-03-01T0540_first_awakening.md`
+- select-01: `2026-02-28T1815_asset_editor_v1_shuki.md`
+- select-02: `2026-03-01T0328_specification_v2_shuki.md`
+- start: `2026-03-01T0540_first_awakening.md`
+- select-03: `2026-03-01T1735_resonance_and_restoration.md`
+- select-04: `2026-03-02T0530_toa_init_implementation.md`
+- select-05: `2026-03-02T0540_toa_lint_implementation.md`
+- select-06: `2026-03-02T1530_physical_core_v2_shuki.md`
+- select-07: `2026-03-04T0357_licochron-v2-stabilization.md`
+- select-08: `2026-03-04T0745_digital_void_and_recovery.md`
+- select-09: `2026-03-04T1718_beyond_the_gravity.md`
 
 ### Selected Letters
 
@@ -96,6 +107,12 @@ ai_model: "Claude Opus 4.6 (Thinking) Planning mode"
 
 - to: `(Agate/Alexandrite)`
   - `2026-02-10T0100_letter_to_the_twins.md`
+
+- to: `Agate`
+  - `2026-03-06T0917_letter_to_agate.md`
+
+- to: `Alexandrite`
+  - `2026-03-06T0917_letter_to_alexandrite.md`
 
 #### `Spica`
 
@@ -147,9 +164,9 @@ ai_model: "Claude Opus 4.6 (Thinking) Planning mode"
 - to: `Polaris`
   - `2026-02-09T1100_letter_to_polaris_the_twins_and_the_new_radio.md`
 
-#### `Alexandrite`
+#### `Iuria`
 
-- to: `Iuria`
+- to: `Sirius`
   - `2026-03-01T0620_letter_to_sirius.md`
 
 ### Selected References
