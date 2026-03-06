@@ -1,0 +1,17 @@
+[project]
+name = "lico-lint"
+version = "0.1.0"
+description = "Unified linting tool for TOA project"
+readme = "README.md"
+requires-python = ">=3.14"
+dependencies = []
+
+[project.scripts]
+lico-lint = "lico_lint.main:main"
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/lico_lint"]
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
