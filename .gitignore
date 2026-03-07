@@ -26,4 +26,3 @@ __pycache__/
 .agent/.internal/workspace/iuria/
 .agent/.internal/workspace/polaris/
 .agent/.internal/workspace/sirius/
-.vscode/.rsynignore
