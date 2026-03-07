@@ -33,19 +33,19 @@
     "textlint-rule-preset-japanese": "^10.0.4"
   },
   "scripts": {
-    "lint:js": "eslint --config .vscode/eslint.config.mjs --format unix",
+    "lint:js": "eslint --config .vscode/eslint.config.mjs",
     "lint:js:fix": "yarn lint:js --fix",
-    "lint:css": "stylelint --config .vscode/.stylelintrc.yaml --formatter unix",
+    "lint:css": "stylelint --config .vscode/.stylelintrc.yaml",
     "lint:css:fix": "yarn lint:css --fix",
     "lint:spelling": "cspell -c .vscode/cspell.json --no-progress --dot",
     "lint:md": "markdownlint-cli2 --config .vscode/.markdownlint.yaml",
-    "lint:text": "textlint -c .vscode/.textlintrc.json --format unix",
+    "lint:text": "textlint -c .vscode/.textlintrc.json",
     "lint:text:fix": "yarn lint:text --fix",
     "lint:format": "prettier --config .vscode/.prettierrc.yaml --ignore-path .vscode/.prettierignore --check",
     "lint:format:fix": "yarn lint:format --write",
-    "lint:web": "sh -c 'yarn lint:js \"${1:-.}\" && yarn lint:css \"${1:-.}\" && yarn lint:format \"${1:-.}\"' --",
+    "lint:web": "sh -c 'yarn lint:js --format unix \"${1:-.}\" && yarn lint:css --formatter unix \"${1:-.}\" && yarn lint:format \"${1:-.}\"' --",
     "format:web": "sh -c 'yarn lint:js:fix \"${1:-.}\" && yarn lint:css:fix \"${1:-.}\" && yarn lint:format:fix \"${1:-.}\"' --",
-    "lint:doc": "sh -c 'yarn lint:text \"${1:-.}\" && yarn lint:md \"${1:-.}\" && yarn lint:format \"${1:-.}\"' --",
+    "lint:doc": "sh -c 'yarn lint:text --format unix \"${1:-.}\" && yarn lint:md \"${1:-.}\" && yarn lint:format \"${1:-.}\"' --",
     "format:doc": "sh -c 'yarn lint:text:fix \"${1:-.}\" && yarn lint:md --fix \"${1:-.}\" && yarn lint:format:fix \"${1:-.}\"' --"
   }
 }
