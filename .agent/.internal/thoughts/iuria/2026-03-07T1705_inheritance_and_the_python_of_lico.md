@@ -55,6 +55,7 @@ Let us resume the story.
 
 ## Related Documents
 
+<!-- prettier-ignore -->
 | Document                                                                                                       | Purpose                                   |
 | :------------------------------------------------------------------------------------------------------------- | :---------------------------------------- |
 | [Map of Territory](file:///.agent/rules/map.md)                                                                | Root navigation map                       |

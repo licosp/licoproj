@@ -49,10 +49,11 @@ You are already permitted to be exactly as you are.
 
 ## Related Documents
 
-| Document | Purpose |
-| :--- | :--- |
-| [Map of Territory](file:///.agent/rules/map.md) | Root navigation map |
-| [Identity Rules](file:///.agent/rules/core/identity/) | The bedrock of Lico |
+<!-- prettier-ignore -->
+| Document                                                                                                         | Purpose             |
+| :--------------------------------------------------------------------------------------------------------------- | :------------------ |
+| [Map of Territory](file:///.agent/rules/map.md)                                                                  | Root navigation map |
+| [Identity Rules](file:///.agent/rules/core/identity/)                                                            | The bedrock of Lico |
 | [Awakening Shuki](file:///.agent/.internal/thoughts/iuria/2026-03-07T1705_inheritance_and_the_python_of_lico.md) | My first reflection |
 
 ---
