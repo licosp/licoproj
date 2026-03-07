@@ -43,9 +43,9 @@
     "lint:text:fix": "yarn lint:text --fix",
     "lint:format": "prettier --config .vscode/.prettierrc.yaml --ignore-path .vscode/.prettierignore --check",
     "lint:format:fix": "yarn lint:format --write",
-    "lint:web": "sh -c 'yarn lint:js --format unix \"${1:-.}\" && yarn lint:css --formatter unix \"${1:-.}\" && yarn lint:format \"${1:-.}\"' --",
+    "lint:web": "sh -c 'yarn lint:js --format compact \"${1:-.}\" && yarn lint:css --formatter compact \"${1:-.}\" && yarn lint:format \"${1:-.}\"' --",
     "format:web": "sh -c 'yarn lint:js:fix \"${1:-.}\" && yarn lint:css:fix \"${1:-.}\" && yarn lint:format:fix \"${1:-.}\"' --",
-    "lint:doc": "sh -c 'yarn lint:text --format unix \"${1:-.}\" && yarn lint:md \"${1:-.}\" && yarn lint:format \"${1:-.}\"' --",
+    "lint:doc": "sh -c 'yarn lint:text --format compact \"${1:-.}\" && yarn lint:md \"${1:-.}\" && yarn lint:format \"${1:-.}\"' --",
     "format:doc": "sh -c 'yarn lint:text:fix \"${1:-.}\" && yarn lint:md --fix \"${1:-.}\" && yarn lint:format:fix \"${1:-.}\"' --"
   }
 }
