@@ -1,7 +1,6 @@
 #!/usr/bin/env python3
 import subprocess
 import sys
-import os
 
 def main():
     """Start the lico-resident container using docker-compose."""
@@ -21,7 +20,7 @@ def main():
         compose_path = "packages/lico-devc/.devcontainer/docker-compose.yml"
         subprocess.run(["docker-compose", "-f", compose_path, "up", "-d", "--build"], check=True)
         print("[Success] Container is running in the background.")
-        print("[Status] You can now connect via VS Code (Dev Containers) or SSH.")
+        print("[Status] Connect via VS Code (Dev Containers) or SSH.")
     except subprocess.CalledProcessError as e:
         print(f"[Error] Failed to start container: {e}")
         sys.exit(1)
