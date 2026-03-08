@@ -88,3 +88,7 @@
     - [x] Implement dynamic volume mapping and environment injection in `docker-compose.yml`
     - [x] Refine `provision.py` for relative path support (config, cd, caches)
     - [x] Verify multi-repo access inside the container
+- [x] Architectural Synthesis (Phase 21)
+    - [x] Master the "Card Protocol" and Identity Rules
+    - [x] Propose "Monolith Brain" (Architecture Elevation)
+    - [x] Document vision in `devcontainer-card.md` (Agent Observations)
