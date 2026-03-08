@@ -66,3 +66,7 @@
     - [x] Consolidate tool caches into `.temp` hub
     - [x] Implement environment variable redirection in `provision.py`
     - [x] Verify cross-user cache sharing and performance
+- [x] Cultural Adaptability (Phase 16)
+    - [x] Implement `site_config` in `residents.json`
+    - [x] Refine `provision.py` for dynamic global-env injection
+    - [x] Verify `LANG` and `TZ` settings in resident shells
