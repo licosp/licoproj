@@ -83,7 +83,14 @@ def main():
             process.communicate(input=f"{name}:{password}")
             print(f"[Resident] Password set for {name}.")
 
-    # 5. Shared Directory Permissions (Optional but recommended)
+        # 5. Shell Enhancement: Auto-cd to /workspace
+        bashrc_path = f"/home/{name}/.bashrc"
+        if os.path.exists(bashrc_path):
+            with open(bashrc_path, "a") as bashrc:
+                bashrc.write("\n# Auto-cd to workspace\ncd /workspace\n")
+            print(f"[Resident] {name} configured to auto-cd to /workspace.")
+
+    # 6. Shared Directory Permissions (Optional but recommended)
     # Ensure /workspace is group-writable by 'residents'
     run(["chgrp", "-R", COMMON_GROUP, "/workspace"], check=False)
     run(["chmod", "-R", "g+w", "/workspace"], check=False)

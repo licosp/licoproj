@@ -11,6 +11,7 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
     openssh-server \
     sudo \
     gnupg \
+    tmux \
     && rm -rf /var/lib/apt/lists/*
 
 # 2. Install Docker CLI (Docker-out-of-Docker)
