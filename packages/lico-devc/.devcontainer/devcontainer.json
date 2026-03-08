@@ -1,7 +1,0 @@
-{
-  "containerEnv": {
-    "LANG": "${localEnv:LANG}",
-    "TZ": "Asia/Tokyo",
-    "PYTHONPYCACHEPREFIX": "${containerWorkspaceFolder}/.temp/cache/python"
-  }
-}

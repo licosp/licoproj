@@ -1,4 +1,8 @@
 {
+  "credentials": {
+    "name": "habitat",
+    "path": "~/develop/shared/project/.licoshdw/.shadow/licoproj/habitat-credentials.json"
+  },
   "site_config": {
     "LANG": "C.UTF-8",
     "TZ": "Asia/Tokyo"
