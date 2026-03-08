@@ -4,14 +4,16 @@ services:
       context: ../../..
       dockerfile: packages/lico-devc/.devcontainer/Dockerfile
     volumes:
-      - ../../..:/workspace:cached
+      - ${LICO_HUB_ROOT}:/workspace:cached
       - /var/run/docker.sock:/var/run/docker.sock
       # Performance Optimization: Shadow high-I/O directories with native volumes
-      - venv-cache:/workspace/.venv
-      - node-modules-cache:/workspace/node_modules
-      - temp-cache:/workspace/.temp
+      - venv-cache:/workspace/${LICO_ACTIVE_REL}/.venv
+      - node-modules-cache:/workspace/${LICO_ACTIVE_REL}/node_modules
+      - temp-cache:/workspace/${LICO_ACTIVE_REL}/.temp
       # SSH Passport: Keep host keys persistent across rebuilds
       - ssh-keys:/etc/ssh
+    environment:
+      - LICO_ACTIVE_REL=${LICO_ACTIVE_REL}
     ports:
       - "2222:22"
     stdin_open: true

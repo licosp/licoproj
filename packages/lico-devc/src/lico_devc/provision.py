@@ -4,7 +4,8 @@ import os
 import subprocess
 import sys
 
-CONFIG_PATH = "/workspace/packages/lico-devc/residents.json"
+ACTIVE_REL = os.environ.get("LICO_ACTIVE_REL", "project/licoproj")
+CONFIG_PATH = f"/workspace/{ACTIVE_REL}/packages/lico-devc/residents.json"
 
 def run(cmd, check=True):
     print(f"[Provision] Executing: {' '.join(cmd)}")
@@ -30,14 +31,14 @@ def main():
     global_env = {
         "LANG": site_config.get("LANG", "C.UTF-8"),
         "TZ": site_config.get("TZ", "UTC"),
-        "PYTHONPYCACHEPREFIX": "/workspace/.temp/pycache",
-        "UV_CACHE_DIR": "/workspace/.temp/uv-cache",
-        "YARN_CACHE_FOLDER": "/workspace/.temp/yarn-cache",
-        "RUFF_CACHE_DIR": "/workspace/.temp/ruff-cache",
-        "MYPY_CACHE_DIR": "/workspace/.temp/mypy-cache",
-        "PIP_CACHE_DIR": "/workspace/.temp/pip-cache",
-        "npm_config_cache": "/workspace/.temp/npm-cache",
-        "PYTEST_ADDOPTS": "-o cache_dir=/workspace/.temp/pytest-cache"
+        "PYTHONPYCACHEPREFIX": f"/workspace/{ACTIVE_REL}/.temp/pycache",
+        "UV_CACHE_DIR": f"/workspace/{ACTIVE_REL}/.temp/uv-cache",
+        "YARN_CACHE_FOLDER": f"/workspace/{ACTIVE_REL}/.temp/yarn-cache",
+        "RUFF_CACHE_DIR": f"/workspace/{ACTIVE_REL}/.temp/ruff-cache",
+        "MYPY_CACHE_DIR": f"/workspace/{ACTIVE_REL}/.temp/mypy-cache",
+        "PIP_CACHE_DIR": f"/workspace/{ACTIVE_REL}/.temp/pip-cache",
+        "npm_config_cache": f"/workspace/{ACTIVE_REL}/.temp/npm-cache",
+        "PYTEST_ADDOPTS": f"-o cache_dir=/workspace/{ACTIVE_REL}/.temp/pytest-cache"
     }
 
     # 0. Create Common Group (for shared resources)
@@ -101,7 +102,7 @@ def main():
         bashrc_path = f"/home/{name}/.bashrc"
         if os.path.exists(bashrc_path):
             with open(bashrc_path, "a") as bashrc:
-                bashrc.write("\n# Auto-cd to workspace\ncd /workspace\n")
+                bashrc.write(f"\n# Auto-cd to active workspace\ncd /workspace/{ACTIVE_REL}\n")
                 bashrc.write("\n# Village Global Environment\n")
                 for key, value in global_env.items():
                     bashrc.write(f'export {key}="{value}"\n')

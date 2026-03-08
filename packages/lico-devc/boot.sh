@@ -8,8 +8,5 @@ if ! docker compose version >/dev/null 2>&1; then
     exit 1
 fi
 
-echo "[Action] Starting lico-resident container via docker compose..."
-docker compose -f packages/lico-devc/.devcontainer/docker-compose.yml up -d --build
-
-echo "[Success] Lico container 'lico-resident' is now active."
-echo "You can now join the conversation from inside the container."
+# Run the Python bootstrapper (Source of Truth)
+python3 packages/lico-devc/src/lico_devc/boot.py "$@"

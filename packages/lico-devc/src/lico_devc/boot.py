@@ -1,6 +1,16 @@
-#!/usr/bin/env python3
+import os
 import subprocess
 import sys
+
+def find_hub_root():
+    current = os.path.abspath(os.getcwd())
+    while current != "/":
+        dirs = os.listdir(current)
+        if "project" in dirs and "crew" in dirs:
+            return current
+        current = os.path.dirname(current)
+    # Fallback: assume 3 levels up from boot script's project root
+    return os.path.abspath(os.path.join(os.getcwd(), "../../.."))
 
 def main():
     """Start the lico-resident container using docker compose."""
@@ -28,12 +38,23 @@ def main():
         # Fallback for systems where grp isn't available
         pass
 
-    # 3. Up the container
+    # 3. Discover Hub Root and Active Rel Path
+    # This allows us to mount the whole world while knowing where our project is
+    hub_root = find_hub_root()
+    active_rel_path = os.path.relpath(os.getcwd(), hub_root)
+    print(f"[Hub] Root: {hub_root}")
+    print(f"[Hub] Active: {active_rel_path}")
+
+    # 4. Up the container
     print("[Action] Starting lico-resident container...")
     try:
-        # Use -d to detach, but -f to ensure we use the specific modular compose file
+        # Pass discovery variables to compose
+        env = os.environ.copy()
+        env["LICO_HUB_ROOT"] = hub_root
+        env["LICO_ACTIVE_REL"] = active_rel_path
+
         compose_path = "packages/lico-devc/.devcontainer/docker-compose.yml"
-        subprocess.run(["docker", "compose", "-f", compose_path, "up", "-d", "--build"], check=True)
+        subprocess.run(["docker", "compose", "-f", compose_path, "up", "-d", "--build"], env=env, check=True)
         print("[Success] Container is running in the background.")
         print("[Status] Connect via VS Code (Dev Containers) or SSH.")
     except subprocess.CalledProcessError as e:

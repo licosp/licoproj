@@ -32,8 +32,12 @@ RUN chmod +x /install.sh && /install.sh && rm /install.sh
 
 # 5. Environment configuration
 ENV PATH="/root/.local/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin"
+
+# 6. Preparation for Dynamic Provisioning (Internal Tools)
+# We copy to /app so the tools are available even if /workspace is obscured by a volume
+COPY . /app
 WORKDIR /workspace
 
 # Initial entrypoint is now the Provisioning System
 # This script creates users and starts sshd at runtime.
-CMD ["python3", "/workspace/packages/lico-devc/src/lico_devc/provision.py"]
+CMD ["python3", "/app/packages/lico-devc/src/lico_devc/provision.py"]
