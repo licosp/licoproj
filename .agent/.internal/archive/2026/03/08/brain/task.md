@@ -32,3 +32,9 @@
     - [x] Create `boot.py` for Pythonic host startup
     - [x] Define `docker-compose.yml` for simplified orchestration
     - [x] Author "Minimal Spark" `Dockerfile`
+    - [x] Document "Initial Spark" prerequisites in README
+- [ ] Resident Substance Upgrade (Issue 28)
+    - [x] Create Substance Upgrade plan
+    - [x] Update `Dockerfile` (Docker CLI, Node.js, Yarn, SSH)
+    - [x] Update `docker-compose.yml` (Socket mount, Port 2222)
+    - [x] Verify autonomous toolset (including SSH)
