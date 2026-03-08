@@ -1,0 +1,33 @@
+# Task: Archive Ritual & Directory Management (Issue 22)
+
+- [x] Archiving `sync-test.txt`
+    - [x] Search for `sync-test.txt`
+    - [x] Research Archive (Shoko) protocols
+    - [x] Create implementation plan for archiving
+    - [x] Perform `git mv` to the Archive directory
+    - [x] Commit with `[Archive]` context
+- [x] Draft Management (Issue 20)
+    - [x] Commit Leonidas's drafts for 2026-03-08 in his workspace
+- [x] Merge Cycle (TBD)
+    - [x] Merge `20-leonidas-drafts` into `trunk`
+    - [x] Merge `22-iuria-worktree-management` into `trunk`
+    - [x] Realign task branches (Rebase/Reset) onto `trunk`
+- [x] Directory Management (Issue 22)
+    - [x] Identify redundant or misplaced files
+    - [x] Propose reorganization plan (issue_22_cleanup_plan.md)
+    - [x] Archive root-level test files (`test.*`, `todo.md`)
+    - [x] Prototype "Pulse" automation script (`pulse.sh`)
+    - [x] Create workspace alias for Leonidas visibility (`.repos/iuria`)
+    - [x] Finalize user-led archival via alias (`licochron-history/SKILL.md`)
+- [x] Custom Linter Development (Issue 24)
+    - [x] Create implementation plan (TDD focal)
+    - [x] Setup `packages/lico-lint-empty-dir` structure
+    - [x] Phase 1: Write failing tests (Red)
+    - [x] Phase 2: Refactor/Implement logic to pass (Green)
+    - [x] Phase 3: Verify and integrate into Pulse
+    - [x] Archival of manual test verification by Leonidas
+- [x] Container Bootstrapper (Issue 26)
+    - [x] Rename `licoproj-devc` to `lico-devc`
+    - [x] Implement minimal `boot.sh` (Dependency-free start)
+    - [x] Create `boot.py` for Pythonic host startup
+    - [x] Define `docker-compose.yml` for simplified orchestration
