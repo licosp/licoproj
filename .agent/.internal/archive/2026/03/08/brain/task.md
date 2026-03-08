@@ -33,8 +33,14 @@
     - [x] Define `docker-compose.yml` for simplified orchestration
     - [x] Author "Minimal Spark" `Dockerfile`
     - [x] Document "Initial Spark" prerequisites in README
-- [ ] Resident Substance Upgrade (Issue 28)
+- [x] Resident Substance Upgrade (Issue 28)
     - [x] Create Substance Upgrade plan
     - [x] Update `Dockerfile` (Docker CLI, Node.js, Yarn, SSH)
     - [x] Update `docker-compose.yml` (Socket mount, Port 2222)
     - [x] Verify autonomous toolset (including SSH)
+- [x] Village Provisioning System (Issue 30)
+    - [x] Create Provisioning System plan
+    - [x] Implement `provision.py` (Logic)
+    - [x] Define `residents.json` (Data)
+    - [x] Decouple `Dockerfile` from user/SSH setup
+    - [x] Verify dynamic multi-identifier creation

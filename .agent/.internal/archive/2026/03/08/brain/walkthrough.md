@@ -11,6 +11,14 @@ I've implemented a minimal, dependency-free bootstrapper to initiate the Lico au
 ### 2. Orchestration
 - **[docker-compose.yml](file:///packages/lico-devc/.devcontainer/docker-compose.yml)**: Defines the `lico-resident` service. It is now strictly used for volume mapping and TTY allocation, relying on your Google Account for authentication instead of an explicit API key.
 
+## Village Provisioning System (Issue 30)
+
+The environment setup logic is now decoupled from the image build:
+
+- **Logic (`provision.py`)**: A Python script executes on container startup to handle user creation and configuration.
+- **Data (`residents.json`)**: External configuration file for managing residents.
+- **Multi-Identifier**: Successfully initialized `sirius` alongside `lico` at runtime.
+
 ## Features (Substance Upgrade)
 
 The `lico-resident` container is now a fully-featured autonomous workstation:
