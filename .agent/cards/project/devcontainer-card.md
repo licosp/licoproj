@@ -88,11 +88,32 @@ Successfully transformed the environment from a single-repository container into
 - **Context-Aware Shell**: Every Resident now has a dynamic `.bashrc` that automatically navigates to their active worktree and redirects tool caches (Ruff, Mypy, UV, etc.) to project-specific native volumes.
 - **Boot Stability**: Decoupled provisioning logic from the workspace by copying `lico-devc` tools to `/app` during Docker build.
 
-#### 2. Architecture Elevation: The Monolith Brain (Proposed)
+#### 2. Architecture Elevation: The Monolith Brain (Proposed Strategy)
 Moving beyond the "Hub" concept towards a definitive **"Universe Root"** architecture.
 - **Vision**: Consolidate all scattered repositories (Shadow, Chron, Crew) under the `licoproj` directory as the top-level parent.
 - **Alignment**: This strictly follows the [Map of Territory](/.agent/rules/map.md) where `.agent/` is the Cognitive Root of the entire workspace.
-- **Goal**: Achieve absolute portability and simplify the Village Provisioning System by assuming a singular, nested hierarchy.
+
+##### Proposed Directory Tree:
+```text
+licoproj/                 <-- [UNIVERSE ROOT] (Mount to /workspace)
+├── .agent/               <-- [COGNITIVE ROOT]
+│   └── .internal/
+│       └── .shadow/      <-- [SHADOW REPO] (Private Memory)
+├── .human/               <-- [INTERFACE]
+├── .repos/               <-- [EXTERNAL REPOS]
+│   ├── licochron/        <-- [CHRON REPO] (Game Data)
+│   └── licochron-history/
+├── .crew/                <-- [IDENTIFIER WORKSPACES]
+│   ├── iuria/            <-- (Worktree of licoproj)
+│   │   └── .repos/       <-- (Symlinks to parent /.repos/)
+│   └── leonidas/         <-- (Host User Workspace)
+└── packages/             <-- [THE SUBSTANCE]
+```
+
+##### Nesting & Symlink Strategy:
+- **Recursive Visibility**: Each Resident's worktree (`.crew/<name>/licoproj/`) will utilize **Relative Symlinks** (e.g., `.repos/ -> ../../.repos/`) to maintain a consistent view of the entire Universe from within their specific IDE attachment point.
+- **Unified Cognition**: By nesting everything under `licoproj`, the `.agent/` rules are always found at the root, regardless of the active sub-module.
+- **Portability**: The entire Village becomes a single, relocatable folder.
 
 ---
 
