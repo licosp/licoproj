@@ -1,4 +1,8 @@
 {
+  "site_config": {
+    "LANG": "C.UTF-8",
+    "TZ": "Asia/Tokyo"
+  },
   "residents": [
     { "name": "leonidas", "uid": 1000, "gid": 1000, "shell": "/bin/bash", "sudo": true, "password": "lico" },
     { "name": "lico", "uid": 1001, "gid": 1001, "shell": "/bin/bash", "sudo": true, "password": "lico" },

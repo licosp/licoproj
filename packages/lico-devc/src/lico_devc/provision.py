@@ -26,6 +26,15 @@ def main():
     with open(CONFIG_PATH, "r") as f:
         config = json.load(f)
 
+    site_config = config.get("site_config", {})
+    global_env = {
+        "LANG": site_config.get("LANG", "C.UTF-8"),
+        "TZ": site_config.get("TZ", "UTC"),
+        "PYTHONPYCACHEPREFIX": "/workspace/.temp/pycache",
+        "UV_CACHE_DIR": "/workspace/.temp/uv-cache",
+        "YARN_CACHE_FOLDER": "/workspace/.temp/yarn-cache"
+    }
+
     # 0. Create Common Group (for shared resources)
     COMMON_GROUP = "residents"
     COMMON_GID = 2000
@@ -88,11 +97,10 @@ def main():
         if os.path.exists(bashrc_path):
             with open(bashrc_path, "a") as bashrc:
                 bashrc.write("\n# Auto-cd to workspace\ncd /workspace\n")
-                bashrc.write("\n# High-Performance Cache Redirection (.temp hub)\n")
-                bashrc.write("export UV_CACHE_DIR=/workspace/.temp/uv-cache\n")
-                bashrc.write("export YARN_CACHE_FOLDER=/workspace/.temp/yarn-cache\n")
-                bashrc.write("export PYTHONPYCACHEPREFIX=/workspace/.temp/pycache\n")
-            print(f"[Resident] {name} configured with centralized caches in /workspace/.temp.")
+                bashrc.write("\n# Village Global Environment\n")
+                for key, value in global_env.items():
+                    bashrc.write(f"export {key}={value}\n")
+            print(f"[Resident] {name} shell configured with global environment.")
 
     # 6. Shared Directory Permissions (Optional but recommended)
     # Ensure /workspace is group-writable by 'residents'
