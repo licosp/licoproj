@@ -1,0 +1,20 @@
+{
+  "residents": [
+    {
+      "name": "lico",
+      "uid": 1001,
+      "gid": 1001,
+      "shell": "/bin/bash",
+      "sudo": true,
+      "password": "lico"
+    },
+    {
+      "name": "sirius",
+      "uid": 1002,
+      "gid": 1002,
+      "shell": "/bin/bash",
+      "sudo": false,
+      "password": "lico"
+    }
+  ]
+}

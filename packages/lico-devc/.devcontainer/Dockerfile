@@ -29,19 +29,10 @@ RUN curl -fsSL https://deb.nodesource.com/setup_20.x | bash - && \
 ADD https://astral.sh/uv/install.sh /install.sh
 RUN chmod +x /install.sh && /install.sh && rm /install.sh
 
-# 5. User Configuration (Identity Alignment)
-# Create 'lico' user with host-matching UID/GID
-RUN groupadd -g 1001 lico && \
-    useradd -u 1001 -g 1001 -m -s /bin/bash lico && \
-    echo "lico ALL=(ALL) NOPASSWD:ALL" >> /etc/sudoers
-
-# 6. SSH Configuration
-RUN mkdir /var/run/sshd && \
-    echo 'lico:lico' | chpasswd # Default password (changeable)
-
-# Environment configuration
-ENV PATH="/root/.local/bin:/home/lico/.local/bin:${PATH}"
+# 5. Environment configuration
+ENV PATH="/root/.local/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin"
 WORKDIR /workspace
 
-# Initial entrypoint to ensure SSH starts and we keep a shell open
-CMD ["/usr/sbin/sshd", "-D"]
+# Initial entrypoint is now the Provisioning System
+# This script creates users and starts sshd at runtime.
+CMD ["python3", "/workspace/packages/lico-devc/src/lico_devc/provision.py"]
