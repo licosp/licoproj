@@ -17,8 +17,9 @@ def main():
     # 2. Up the container
     print("[Action] Starting lico-resident container...")
     try:
-        # Use -d to detach, but -f to ensure we use the root compose file
-        subprocess.run(["docker-compose", "up", "-d", "--build"], check=True)
+        # Use -d to detach, but -f to ensure we use the specific modular compose file
+        compose_path = "packages/lico-devc/.devcontainer/docker-compose.yml"
+        subprocess.run(["docker-compose", "-f", compose_path, "up", "-d", "--build"], check=True)
         print("[Success] Container is running in the background.")
         print("[Status] You can now connect via VS Code (Dev Containers) or SSH.")
     except subprocess.CalledProcessError as e:

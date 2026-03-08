@@ -1,10 +1,10 @@
 services:
   lico-resident:
     build:
-      context: .
-      dockerfile: .devcontainer/Dockerfile
+      context: ../../..
+      dockerfile: packages/lico-devc/.devcontainer/Dockerfile
     volumes:
-      - .:/workspace:cached
+      - ../../..:/workspace:cached
     environment:
       - GEMINI_API_KEY=${GEMINI_API_KEY}
     working_dir: /workspace
