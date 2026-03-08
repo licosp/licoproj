@@ -28,12 +28,43 @@ def resolve_habitat_path(path_str):
         return None
     
     # Standard translation: host '~/develop/shared/' -> container '/workspace/'
-    # This matches the LICO_HUB_ROOT mapping in docker-compose.
     if path_str.startswith("~/develop/shared/"):
         return WS_ROOT / path_str.replace("~/develop/shared/", "")
     
     # Fallback to standard os.path expansion
     return Path(os.path.expanduser(path_str))
+
+def parse_env_file(path):
+    """
+    Dependency-free parser for .env files supporting comments and quotes.
+    """
+    env_data = {}
+    if not path or not path.exists():
+        return env_data
+    
+    with open(path, "r") as f:
+        for line in f:
+            line = line.strip()
+            if not line or line.startswith("#"):
+                continue
+            
+            # Handle inline comments
+            if " #" in line:
+                line = line.split(" #", 1)[0].strip()
+            
+            if "=" in line:
+                key, value = line.split("=", 1)
+                key = key.strip()
+                value = value.strip()
+                
+                # Remove surrounding quotes
+                if len(value) >= 2:
+                    if (value.startswith('"') and value.endswith('"')) or \
+                       (value.startswith("'") and value.endswith("'")):
+                        value = value[1:-1]
+                
+                env_data[key] = value
+    return env_data
 
 def ensure_repos(repos):
     repos_dir = WS_ROOT / ".repos"
@@ -53,7 +84,6 @@ def ensure_repos(repos):
         if source_from == "remote" and source.get("remote"):
             run(["git", "clone", source["remote"], str(target_path)])
         elif source_from == "local" and source.get("local"):
-            # Resolve the local source path
             local_path = resolve_habitat_path(source.get("local"))
             if local_path and local_path.exists():
                 run(["cp", "-r", str(local_path), str(target_path)])
@@ -71,7 +101,6 @@ def ensure_crew_worktrees(crew_list):
         
         worktrees = member.get("worktree", [])
         for wt_name in worktrees:
-            # We treat 'licoproj' as the workspace itself (Hub Root)
             wt_path = member_dir / wt_name
             if wt_path.exists():
                 continue
@@ -84,7 +113,6 @@ def ensure_crew_worktrees(crew_list):
                 else:
                     print(f"[Warning] /workspace is not a git repository. Cannot add worktree for {name}.")
             else:
-                # For other repos, we create a symlink from .repos
                 repo_source = WS_ROOT / ".repos" / wt_name
                 if repo_source.exists():
                     run(["ln", "-s", f"../../.repos/{wt_name}", wt_name], cwd=str(member_dir))
@@ -113,28 +141,37 @@ def main():
     # 2. Orchestrate Crew Worktrees
     ensure_crew_worktrees(config.get("crew", []))
 
-    # 3. Load Credentials (Vault Strategy)
+    # 3. Load Secrets (The Vault)
     passwords = {}
     site_secrets = {}
-    cred_meta = config.get("credentials", {})
     
-    cred_path_str = cred_meta.get("path")
-    cred_path = resolve_habitat_path(cred_path_str) if cred_path_str else None
+    # Handle environment based secrets (.env redirection)
+    env_meta = config.get("env", {})
+    env_path = resolve_habitat_path(env_meta.get("path"))
     
-    if not cred_path or not cred_path.exists():
-        cred_path = WS_ROOT / "packages/lico-devc/habitat-credentials.json"
-
-    if cred_path.exists():
-        print(f"[Provision] Loading credentials from vault: {cred_path}")
-        with open(cred_path, "r") as f:
-            creds_data = json.load(f)
-            # Load user passwords
-            for c in creds_data.get("crew", []):
-                passwords[c["name"]] = c["password"]
-            # Load global site secrets (API keys, etc.)
-            site_secrets = creds_data.get("secrets", {})
+    if env_path and env_path.exists():
+        print(f"[Provision] Loading secrets from env vault: {env_path}")
+        raw_env = parse_env_file(env_path)
+        keys_to_load = env_meta.get("env-keys", [])
+        
+        for k in keys_to_load:
+            if k in raw_env:
+                v = raw_env[k]
+                site_secrets[k] = v
+                # Map passwords (Format: LICOPROJ_CREW_PASS_<NAME>)
+                if k.startswith("LICOPROJ_CREW_PASS_"):
+                    name = k.replace("LICOPROJ_CREW_PASS_", "").lower()
+                    passwords[name] = v
     else:
-        print("[Warning] No credentials vault found. Using defaults.")
+        # Fallback to legacy JSON format if .env not found
+        cred_path = WS_ROOT / "packages/lico-devc/habitat-credentials.json"
+        if cred_path.exists():
+            print(f"[Provision] Loading credentials from legacy vault: {cred_path}")
+            with open(cred_path, "r") as f:
+                creds_data = json.load(f)
+                for c in creds_data.get("crew", []):
+                    passwords[c["name"]] = c["password"]
+                site_secrets = creds_data.get("secrets", {})
 
     # 4. Setup Residents and Environment
     site_config = config.get("site_config", {})
@@ -188,7 +225,6 @@ def main():
                     "LANG": site_config.get("LANG", "C.UTF-8"),
                     "TZ": site_config.get("TZ", "UTC"),
                 }
-                # Inject secrets (API Keys, etc.) from the vault
                 env_vars.update(site_secrets)
                 
                 # Tool Cache settings

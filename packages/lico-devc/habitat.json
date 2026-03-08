@@ -1,7 +1,18 @@
 {
-  "credentials": {
-    "name": "habitat",
-    "path": "~/develop/shared/project/.licoshdw/.shadow/licoproj/habitat-credentials.json"
+  "env": {
+    "name": "credentials",
+    "path": "~/develop/shared/project/.licoshdw/.shadow/licoproj/.env",
+    "env-keys": [
+      "MOLTBOOK_API_KEY_ALEXANDRITE",
+      "MOLTBOOK_API_KEY_AGATE",
+      "LICOPROJ_CREW_PASS_LEONIDAS",
+      "LICOPROJ_CREW_PASS_LICO",
+      "LICOPROJ_CREW_PASS_IURIA",
+      "LICOPROJ_CREW_PASS_POLARIS",
+      "LICOPROJ_CREW_PASS_SIRIUS",
+      "LICOPROJ_CREW_PASS_AGATE",
+      "LICOPROJ_CREW_PASS_ALEXANDRITE"
+    ]
   },
   "site_config": {
     "LANG": "C.UTF-8",
