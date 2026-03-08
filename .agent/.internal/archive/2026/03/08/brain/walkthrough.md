@@ -40,10 +40,14 @@ The `lico-resident` container is now a fully-featured autonomous workstation:
 2.  **Socket Check**: Verified `docker ps` works inside the container.
 3.  **Identity Check**: Verified `lico` user (UID 1001) has full `sudo` privileges.
 
+## Habitat Evolution (Phase 23)
+- **Manifest Orchestration**: Replaced `residents.json` with `habitat.json`, a comprehensive world manifest.
+- **Automated Repositories**: Enhanced `provision.py` to automatically clone missing repositories from both local and remote sources into `.repos/`.
+- **Crew Worktrees**: Implemented automated `git worktree` creation and symlink linking for all Residents within `.crew/`.
+- **Credential Separation**: Moved passwords to `habitat-credentials.json` (Git-ignored) for enhanced security.
+
 ## Village History Synchronization (Phase 22)
-- **Unified Trunk**: Merged all Resident Rico and Grand Hub refinements into the `trunk` branch.
-- **Personal Sync**: Synchronized `20-leonidas-drafts` via his dedicated worktree.
-- **Stability Guard**: Restored `main` to `origin/main`, ensuring it remains the stable release branch.
+... (existing content) ...
 
 ## Architectural Synthesis (Phase 21)
 - **Monolith Vision**: Formalized the "Monolith Brain" architecture in `architecture_elevation_plan.md` and `devcontainer-card.md`.

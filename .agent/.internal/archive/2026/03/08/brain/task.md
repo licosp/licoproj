@@ -97,8 +97,8 @@
     - [x] Merge `trunk` into `20-leonidas-drafts` (Personal branch)
     - [x] Restore `main` to `origin/main` (Stable release)
     - [x] Verify history consistency across all worktrees
-- [/] Habitat Evolution (Phase 23)
-    - [ ] Create `habitat.json` manifest
-    - [ ] Update `.gitignore` for credentials
-    - [ ] Refactor `provision.py` for automated Repo/Crew orchestration
-    - [ ] Verify manifest-driven boot (Dry Run)
+- [x] Habitat Evolution (Phase 23)
+    - [x] Create `habitat.json` manifest
+    - [x] Update `.gitignore` for credentials
+    - [x] Refactor `provision.py` for automated Repo/Crew orchestration
+    - [x] Verify manifest-driven boot (Dry Run)

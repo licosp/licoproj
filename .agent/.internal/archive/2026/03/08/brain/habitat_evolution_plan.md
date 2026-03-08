@@ -12,7 +12,9 @@ The definitive manifest for the Village structure.
 - **`site_config`**: Regional settings (LANG, TZ).
 - **`repos`**: List of repositories to ensure exist in `.repos/`.
   - Supports `remote` (URL) and `local` (Path) sources.
+  - **`hidden`**: If true, treated as infrastructure/private memory (no-lint, background).
 - **`crew`**: List of residents with account details and desired worktrees.
+  - **`alias`**: List of names to generate shell aliases for identity switching.
 
 #### [NEW] [habitat-credentials.json](file:///home/lico/develop/shared/project/licoproj/packages/lico-devc/habitat-credentials.json)
 - **NOT tracked by Git** (add to `.gitignore`).
