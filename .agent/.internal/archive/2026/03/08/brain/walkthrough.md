@@ -9,7 +9,7 @@ I've implemented a minimal, dependency-free bootstrapper to initiate the Lico au
 - **[boot.py](file:///packages/lico-devc/src/lico_devc/boot.py)**: A Python script using only the standard library.
 
 ### 2. Orchestration
-- **[docker-compose.yml](file:///packages/lico-devc/.devcontainer/docker-compose.yml)**: Defines the `lico-resident` service, points to the modular `Dockerfile`, and maps the project root.
+- **[docker-compose.yml](file:///packages/lico-devc/.devcontainer/docker-compose.yml)**: Defines the `lico-resident` service. It is now strictly used for volume mapping and TTY allocation, relying on your Google Account for authentication instead of an explicit API key.
 
 ## Verification
 1.  **Dependency Check**: Verified that the scripts run with only `docker-compose` and standard system tools.

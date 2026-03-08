@@ -31,3 +31,4 @@
     - [x] Implement minimal `boot.sh` (Dependency-free start)
     - [x] Create `boot.py` for Pythonic host startup
     - [x] Define `docker-compose.yml` for simplified orchestration
+    - [x] Author "Minimal Spark" `Dockerfile`

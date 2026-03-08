@@ -26,8 +26,13 @@ Create a custom linter to identify and notify about empty directories within the
 #### [NEW] [boot.py](file:///packages/lico-devc/src/lico_devc/boot.py)
 - A Python script using only the standard library (`subprocess`, `os`, `sys`) to manage the container lifecycle on the host.
 
-#### [NEW] [docker-compose.yml](file:///docker-compose.yml)
+#### [NEW] [docker-compose.yml](file:///packages/lico-devc/.devcontainer/docker-compose.yml)
 - Define the `rico-resident` service mapping the project root to `/workspace`.
+
+#### [NEW] [Dockerfile](file:///packages/lico-devc/.devcontainer/Dockerfile)
+- Base: `python:3.12-slim-bookworm` (minimal).
+- Tools: `uv` (core), `git` (management).
+- Role: The "Clean Room" where Lico operates.
 
 ## Verification Plan (TDD)
 
