@@ -32,7 +32,12 @@ def main():
         "TZ": site_config.get("TZ", "UTC"),
         "PYTHONPYCACHEPREFIX": "/workspace/.temp/pycache",
         "UV_CACHE_DIR": "/workspace/.temp/uv-cache",
-        "YARN_CACHE_FOLDER": "/workspace/.temp/yarn-cache"
+        "YARN_CACHE_FOLDER": "/workspace/.temp/yarn-cache",
+        "RUFF_CACHE_DIR": "/workspace/.temp/ruff-cache",
+        "MYPY_CACHE_DIR": "/workspace/.temp/mypy-cache",
+        "PIP_CACHE_DIR": "/workspace/.temp/pip-cache",
+        "npm_config_cache": "/workspace/.temp/npm-cache",
+        "PYTEST_ADDOPTS": "-o cache_dir=/workspace/.temp/pytest-cache"
     }
 
     # 0. Create Common Group (for shared resources)
@@ -99,7 +104,7 @@ def main():
                 bashrc.write("\n# Auto-cd to workspace\ncd /workspace\n")
                 bashrc.write("\n# Village Global Environment\n")
                 for key, value in global_env.items():
-                    bashrc.write(f"export {key}={value}\n")
+                    bashrc.write(f'export {key}="{value}"\n')
             print(f"[Resident] {name} shell configured with global environment.")
 
     # 6. Shared Directory Permissions (Optional but recommended)
