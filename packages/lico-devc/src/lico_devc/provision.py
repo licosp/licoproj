@@ -88,7 +88,11 @@ def main():
         if os.path.exists(bashrc_path):
             with open(bashrc_path, "a") as bashrc:
                 bashrc.write("\n# Auto-cd to workspace\ncd /workspace\n")
-            print(f"[Resident] {name} configured to auto-cd to /workspace.")
+                bashrc.write("\n# High-Performance Cache Redirection (.temp hub)\n")
+                bashrc.write("export UV_CACHE_DIR=/workspace/.temp/uv-cache\n")
+                bashrc.write("export YARN_CACHE_FOLDER=/workspace/.temp/yarn-cache\n")
+                bashrc.write("export PYTHONPYCACHEPREFIX=/workspace/.temp/pycache\n")
+            print(f"[Resident] {name} configured with centralized caches in /workspace/.temp.")
 
     # 6. Shared Directory Permissions (Optional but recommended)
     # Ensure /workspace is group-writable by 'residents'

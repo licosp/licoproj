@@ -6,7 +6,16 @@ services:
     volumes:
       - ../../..:/workspace:cached
       - /var/run/docker.sock:/var/run/docker.sock
+      # Performance Optimization: Shadow high-I/O directories with native volumes
+      - venv-cache:/workspace/.venv
+      - node-modules-cache:/workspace/node_modules
+      - temp-cache:/workspace/.temp
     ports:
       - "2222:22"
     stdin_open: true
     tty: true
+
+volumes:
+  venv-cache:
+  node-modules-cache:
+  temp-cache:

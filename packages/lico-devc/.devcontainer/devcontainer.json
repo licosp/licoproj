@@ -1,48 +1,7 @@
 {
-  "name": "licodevc",
-  "image": "mcr.microsoft.com/devcontainers/base:dev-ubuntu-24.04",
-  "init": true,
-  "overrideCommand": true,
-  "updateRemoteUserUID": false,
-  "containerUser": "vscode",
-  "workspaceFolder": "/home/vscode/workspace",
-  "postCreateCommand": "./packages/licodevc/src/lifecycle-create.sh",
-  "postAttachCommand": "./packages/licodevc/src/lifecycle-attach.sh",
   "containerEnv": {
     "LANG": "${localEnv:LANG}",
     "TZ": "Asia/Tokyo",
-    "PYTHONPYCACHEPREFIX": "${containerWorkspaceFolder}/.temp/cache/python",
-    "DEVC_PROJECT": "${localEnv:DEVC_PROJECT}"
-  },
-  "mounts": [
-    {
-      "type": "bind",
-      "source": "${localWorkspaceFolder}",
-      "target": "${containerWorkspaceFolder}"
-    },
-    { "type": "volume", "target": "${containerWorkspaceFolder}/.temp/cache" },
-    { "type": "volume", "target": "${containerWorkspaceFolder}/.venv" },
-    { "type": "volume", "target": "${containerWorkspaceFolder}/node_modules" }
-  ],
-  "features": {
-    "ghcr.io/devcontainers/features/common-utils:2": {
-      "installZsh": false,
-      "installOhMyZsh": false,
-      "installOhMyZshConfig": false,
-      "upgradePackages": false,
-      "username": "${localEnv:DEVC_USER}",
-      "userUid": "${localEnv:DEVC_UID}",
-      "userGid": "${localEnv:DEVC_GID}"
-    },
-    "ghcr.io/devcontainers/features/docker-outside-of-docker:1": {
-      "moby": false,
-      "mobyBuildxVersion": "",
-      "installDockerBuildx": false,
-      "installDockerComposeSwitch": false
-    },
-    "ghcr.io/va-h/devcontainers-features/uv:1": {
-      "shellautocompletion": true
-    },
-    "ghcr.io/eliises/devcontainer-features/devcontainers-cli:1": {}
+    "PYTHONPYCACHEPREFIX": "${containerWorkspaceFolder}/.temp/cache/python"
   }
 }
