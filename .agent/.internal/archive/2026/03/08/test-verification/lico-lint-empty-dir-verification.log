@@ -1,0 +1,64 @@
+lico@wdl:~/develop/shared/crew/iuria/licoproj$ uv run pytest
+=========================================================================================================== test session starts ============================================================================================================
+platform linux -- Python 3.14.3, pytest-9.0.2, pluggy-1.6.0 -- /home/lico/develop/shared/crew/iuria/licoproj/.venv/bin/python
+cachedir: .temp/cache/pytest
+rootdir: /home/lico/develop/shared/crew/iuria/licoproj
+configfile: pyproject.toml
+testpaths: packages/lico-lint/tests, packages/lico-lint-empty-dir/tests
+collected 2 items
+run-last-failure: no previously failed tests, not deselecting items.
+
+packages/lico-lint-empty-dir/tests/test_linter.py::test_is_empty_dir_logic PASSED
+packages/lico-lint-empty-dir/tests/test_linter.py::test_scanner_reports_correctly PASSED
+
+============================================================================================================ 2 passed in 0.02s =============================================================================================================
+lico@wdl:~/develop/shared/crew/iuria/licoproj$
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
