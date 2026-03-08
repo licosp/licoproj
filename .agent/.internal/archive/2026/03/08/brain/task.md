@@ -44,3 +44,10 @@
     - [x] Define `residents.json` (Data)
     - [x] Decouple `Dockerfile` from user/SSH setup
     - [x] Verify dynamic multi-identifier creation
+- [x] Expand Village Population (Phase 10)
+    - [x] Update `residents.json` with all identifiers & Leonidas
+    - [x] Design and implement "Shared Repository" group (`residents`)
+    - [x] Re-provision container and verify multi-login
+- [x] Host-Side Safety Checks (Phase 11)
+    - [x] Implement group check in `boot.py`
+    - [x] Document host-side setup in READMEs

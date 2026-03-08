@@ -40,7 +40,9 @@ The `lico-resident` container is now a fully-featured autonomous workstation:
 2.  **Socket Check**: Verified `docker ps` works inside the container.
 3.  **Identity Check**: Verified `lico` user (UID 1001) has full `sudo` privileges.
 
----
+## Host-Side Safety Checks (Phase 11)
+- **`boot.py`**: Added a check for the existence of the `residents` group (GID 2000) on the host system.
+- **Documentation**: Updated `README.md` and `README.ja.md` with instructions for host-side group setup.
 
 ## Origin
 1.  **Dependency Check**: Verified that the scripts run with only `docker-compose` and standard system tools.
