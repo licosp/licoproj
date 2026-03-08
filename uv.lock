@@ -4,10 +4,10 @@ requires-python = ">=3.14"
 
 [manifest]
 members = [
+    "lico-devc",
     "lico-lint",
     "lico-lint-empty-dir",
     "licoproj",
-    "licoproj-devc",
 ]
 
 [[package]]
@@ -63,6 +63,11 @@ wheels = [
 ]
 
 [[package]]
+name = "lico-devc"
+version = "0.0.1"
+source = { editable = "packages/lico-devc" }
+
+[[package]]
 name = "lico-lint"
 version = "0.1.0"
 source = { editable = "packages/lico-lint" }
@@ -81,11 +86,11 @@ dependencies = [
 ]
 
 [package.optional-dependencies]
+lico-devc = [
+    { name = "lico-devc" },
+]
 lico-lint = [
     { name = "lico-lint" },
-]
-licoproj-devc = [
-    { name = "licoproj-devc" },
 ]
 
 [package.dev-dependencies]
@@ -97,20 +102,20 @@ dev = [
     { name = "ruff" },
     { name = "types-pyyaml" },
 ]
+lico-devc = [
+    { name = "lico-devc" },
+]
 lico-lint = [
     { name = "lico-lint" },
-]
-licoproj-devc = [
-    { name = "licoproj-devc" },
 ]
 
 [package.metadata]
 requires-dist = [
+    { name = "lico-devc", marker = "extra == 'lico-devc'", editable = "packages/lico-devc" },
     { name = "lico-lint", marker = "extra == 'lico-lint'", editable = "packages/lico-lint" },
     { name = "lico-lint-empty-dir", editable = "packages/lico-lint-empty-dir" },
-    { name = "licoproj-devc", marker = "extra == 'licoproj-devc'", editable = "packages/licoproj-devc" },
 ]
-provides-extras = ["lico-lint", "licoproj-devc"]
+provides-extras = ["lico-lint", "lico-devc"]
 
 [package.metadata.requires-dev]
 dev = [
@@ -121,13 +126,8 @@ dev = [
     { name = "ruff", specifier = ">=0.15.1" },
     { name = "types-pyyaml", specifier = ">=6.0.12.20250915" },
 ]
+lico-devc = [{ name = "lico-devc", editable = "packages/lico-devc" }]
 lico-lint = [{ name = "lico-lint", editable = "packages/lico-lint" }]
-licoproj-devc = [{ name = "licoproj-devc", editable = "packages/licoproj-devc" }]
-
-[[package]]
-name = "licoproj-devc"
-version = "0.0.1"
-source = { editable = "packages/licoproj-devc" }
 
 [[package]]
 name = "mypy"

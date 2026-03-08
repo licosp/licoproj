@@ -1,0 +1,13 @@
+services:
+  lico-resident:
+    build:
+      context: .
+      dockerfile: .devcontainer/Dockerfile
+    volumes:
+      - .:/workspace:cached
+    environment:
+      - GEMINI_API_KEY=${GEMINI_API_KEY}
+    working_dir: /workspace
+    stdin_open: true
+    tty: true
+    command: /bin/bash

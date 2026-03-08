@@ -8,7 +8,7 @@ dependencies = [
 
 [dependency-groups]
 lico-lint = ["lico-lint"]
-licoproj-devc = ["licoproj-devc"]
+lico-devc = ["lico-devc"]
 
 dev = [
   "mypy>=1.19.1",
@@ -21,18 +21,18 @@ dev = [
 
 [project.optional-dependencies]
 lico-lint = ["lico-lint"]
-licoproj-devc = ["licoproj-devc"]
+lico-devc = ["lico-devc"]
 
 [tool.uv]
-default-groups = ["dev", "lico-lint", "licoproj-devc"]
+default-groups = ["dev", "lico-lint", "lico-devc"]
 
 [tool.uv.sources]
 lico-lint = { workspace = true }
-licoproj-devc = { workspace = true }
+lico-devc = { workspace = true }
 lico-lint-empty-dir = { workspace = true }
 
 [tool.uv.workspace]
-members = ["packages/lico-lint", "packages/lico-lint-empty-dir", "packages/licoproj-devc"]
+members = ["packages/lico-lint", "packages/lico-lint-empty-dir", "packages/lico-devc"]
 
 [tool.ruff]
 cache-dir = "./.temp/cache/ruff"
@@ -87,8 +87,8 @@ exclude = [
   ".trash",
   ".agent/.internal/archive",
 ]
-include = ["packages/lico-lint/src", "packages/licoproj-devc/src"]
-extraPaths = ["packages/lico-lint/src", "packages/licoproj-devc/src"]
+include = ["packages/lico-lint/src", "packages/lico-devc/src"]
+extraPaths = ["packages/lico-lint/src", "packages/lico-devc/src"]
 reportUnknownVariableType = true
 reportUnknownMemberType = true
 reportUnknownParameterType = true
@@ -116,10 +116,10 @@ disallow_any_unimported = true
 show_error_codes = true
 warn_unreachable = true
 cache_dir = "./.temp/cache/mypy"
-mypy_path = ["packages/lico-lint", "packages/licoproj-devc"]
+mypy_path = ["packages/lico-lint", "packages/lico-devc"]
 
 [[tool.mypy.overrides]]
-module = ["lico-lint", "licoproj-devc"]
+module = ["lico-lint", "lico-devc"]
 disable_error_code = ["misc"]
 
 [tool.pytest.ini_options]
@@ -131,5 +131,5 @@ addopts = """
   --verbose
 """
 cache_dir = "./.temp/cache/pytest"
-pythonpath = ["packages/lico-lint", "packages/licoproj-devc"]
+pythonpath = ["packages/lico-lint", "packages/lico-devc"]
 testpaths = ["packages/lico-lint/tests", "packages/lico-lint-empty-dir/tests"]
