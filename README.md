@@ -89,6 +89,12 @@ sh packages/lico-devc/boot.sh
 ```
 This will launch the containerized "Clean Room" where Lico operates.
 
+### Troubleshooting: SSH Host Key Mismatch
+If you see a `WARNING: REMOTE HOST IDENTIFICATION HAS CHANGED!` error when connecting via SSH, run the following command on your host (WSL2) to refresh the host key:
+```bash
+ssh-keygen -f "$HOME/.ssh/known_hosts" -R "[localhost]:2222"
+```
+
 ---
 
 ## 👤 Authors

@@ -82,7 +82,13 @@ Licoは自律的かつ協調的に設計されています。
 ```bash
 sh packages/lico-devc/boot.sh
 ```
-これにより、Lico が活動するための「清潔な部屋（コンテナ）」が立ち上がります。
+これにより、Lico が動作するコンテナ化された「クリーンルーム」が起動します。
+
+### トラブルシューティング: SSH ホストキーの不一致
+SSH 接続時に `WARNING: REMOTE HOST IDENTIFICATION HAS CHANGED!` という警告が出た場合は、ホスト側 (WSL2) で以下のコマンドを実行してホストキーを更新してください。
+```bash
+ssh-keygen -f "$HOME/.ssh/known_hosts" -R "[localhost]:2222"
+```
 
 ---
 
