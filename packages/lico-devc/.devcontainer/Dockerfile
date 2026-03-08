@@ -1,21 +1,25 @@
-FROM mcr.microsoft.com/devcontainers/python:3.11-bookworm
+# packages/lico-devc/.devcontainer/Dockerfile
+# "Minimal Spark" - The definitive clean room for Lico.
 
-# Installing required system tools.
-RUN apt-get update && apt-get install -y \
+FROM python:3.12-slim-bookworm
+
+# 1. Install minimal system tools (The "Substance")
+RUN apt-get update && apt-get install -y --no-install-recommends \
     git \
-    vim \
     curl \
+    ca-certificates \
     && rm -rf /var/lib/apt/lists/*
 
-# Installing Google Gemini SDK and the monitoring library (watchdog).
-RUN pip install --no-cache-dir \
-    google-generativeai \
-    watchdog
+# 2. Install uv (The Project Engine)
+# We pipe the official installer to sh for the latest stable version
+ADD https://astral.sh/uv/install.sh /install.sh
+RUN chmod +x /install.sh && /install.sh && rm /install.sh
 
-# Git user settings for AI.
-# (so that it is clear at a glance in the history that this is AI action)
-RUN git config --global user.email "ai-agent@example.com" \
-    && git config --global user.name "Lico-Agent" \
-    && git config --global init.defaultBranch main
+# Ensure uv is available in the PATH
+ENV PATH="/root/.cargo/bin:${PATH}"
 
+# 3. Environment configuration
 WORKDIR /workspace
+
+# Default to bash for the initial launcher intent
+CMD ["/bin/bash"]
