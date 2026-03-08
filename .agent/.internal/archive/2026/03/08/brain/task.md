@@ -51,3 +51,10 @@
 - [x] Host-Side Safety Checks (Phase 11)
     - [x] Implement group check in `boot.py`
     - [x] Document host-side setup in READMEs
+- [x] Identity Refinement (Phase 12)
+    - [x] Rename `leo` to `leonidas` in `residents.json`
+    - [x] Re-provision and verify identity alignment
+- [x] Resident Experience Enhancement (Phase 13)
+    - [x] Install `tmux` in `Dockerfile`
+    - [x] Implement auto-cd to `/workspace` in `provision.py`
+    - [x] Verify `tmux` and initial directory setup
