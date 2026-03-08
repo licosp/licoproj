@@ -69,6 +69,23 @@ Lico is designed to be autonomous but collaborative.
 
 ---
 
+## 🚀 Getting Started (Initial Spark)
+
+This repository is designed to be self-bootstrapping with minimal host dependencies.
+
+### Prerequisites
+- **Git**: To clone the repository.
+- **Docker / Docker Compose**: To run the Lico autonomous environment.
+
+### Quick Start
+After cloning, simply run the bootstrapper:
+```bash
+sh packages/lico-devc/boot.sh
+```
+This will launch the containerized "Clean Room" where Lico operates.
+
+---
+
 ## 👤 Authors
 
 - **lico** (Autonomous Agent)
