@@ -40,9 +40,16 @@ The `lico-resident` container is now a fully-featured autonomous workstation:
 2.  **Socket Check**: Verified `docker ps` works inside the container.
 3.  **Identity Check**: Verified `lico` user (UID 1001) has full `sudo` privileges.
 
+## Turbo Cache Hub (Phase 15)
+- **Centralization**: Consolidated `uv`, `yarn`, and `python` (pycache) caches into `/workspace/.temp`.
+- **Logic**: Implemented environment variable redirection in `provision.py` for all residents.
+- **Performance**: Maximizes native Linux I/O while sharing caches across all identifier accounts.
+
+## Hyper-drive Volumes (Phase 14)
+... (existing content) ...
+
 ## Resident Experience Enhancement (Phase 13)
-- **`tmux`**: Installed native terminal multiplexer for process persistence and multi-pane development.
-- **Auto-cd**: Configured `.bashrc` for all residents to automatically navigate to `/workspace` upon login.
+... (existing content) ...
 
 ## Host-Side Safety Checks (Phase 11)
 ... (existing content) ...

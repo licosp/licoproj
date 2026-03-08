@@ -58,3 +58,11 @@
     - [x] Install `tmux` in `Dockerfile`
     - [x] Implement auto-cd to `/workspace` in `provision.py`
     - [x] Verify `tmux` and initial directory setup
+- [x] Hyper-drive Volumes (Phase 14)
+    - [x] Research WSL2 volume best practices
+    - [x] Implement named volumes in `docker-compose.yml`
+    - [x] Verify volume creation and performance shadowing
+- [x] Turbo Cache Hub (Phase 15)
+    - [x] Consolidate tool caches into `.temp` hub
+    - [x] Implement environment variable redirection in `provision.py`
+    - [x] Verify cross-user cache sharing and performance
