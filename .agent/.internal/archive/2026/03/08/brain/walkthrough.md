@@ -40,9 +40,12 @@ The `lico-resident` container is now a fully-featured autonomous workstation:
 2.  **Socket Check**: Verified `docker ps` works inside the container.
 3.  **Identity Check**: Verified `lico` user (UID 1001) has full `sudo` privileges.
 
+## Resident Onboarding Documentation (Phase 19)
+- **Troubleshooting**: Added a dedicated section to `README.md` and `README.ja.md` for SSH host key mismatches.
+- **Actionable Guidance**: Provided the exact `ssh-keygen` command to resolve identification changes, ensuring a smooth entry for all residents.
+
 ## Resident Passport Persistence (Phase 18)
-- **Host Key Stability**: Mounted `/etc/ssh` as a named volume (`ssh-keys`) in `docker-compose.yml`.
-- **Identity Consistency**: Prevents "REMOTE HOST IDENTIFICATION HAS CHANGED" errors after rebuilding the container.
+... (existing content) ...
 
 ## Full Stack Optimization (Phase 17)
 ... (existing content) ...

@@ -78,3 +78,7 @@
 - [x] Resident Passport Persistence (Phase 18)
     - [x] Implement persistent SSH host keys in `docker-compose.yml`
     - [x] Verify seamless login after container rebuild
+- [x] Resident Onboarding Documentation (Phase 19)
+    - [x] Update `README.md` with SSH troubleshooting
+    - [x] Update `README.ja.md` with SSH troubleshooting
+    - [x] Archive documentation updates
