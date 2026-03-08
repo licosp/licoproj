@@ -2,6 +2,9 @@
 name = "licoproj"
 version = "0.0.1"
 requires-python = ">=3.14"
+dependencies = [
+    "lico-lint-empty-dir",
+]
 
 [dependency-groups]
 lico-lint = ["lico-lint"]
@@ -26,9 +29,10 @@ default-groups = ["dev", "lico-lint", "licoproj-devc"]
 [tool.uv.sources]
 lico-lint = { workspace = true }
 licoproj-devc = { workspace = true }
+lico-lint-empty-dir = { workspace = true }
 
 [tool.uv.workspace]
-members = ["packages/lico-lint", "packages/licoproj-devc"]
+members = ["packages/lico-lint", "packages/lico-lint-empty-dir", "packages/licoproj-devc"]
 
 [tool.ruff]
 cache-dir = "./.temp/cache/ruff"

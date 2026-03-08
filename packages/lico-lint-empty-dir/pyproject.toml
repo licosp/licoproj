@@ -1,0 +1,17 @@
+[project]
+name = "lico-lint-empty-dir"
+version = "0.1.0"
+description = "Linter to detect and notify about empty directories"
+readme = "README.md"
+requires-python = ">=3.14"
+dependencies = []
+
+[project.scripts]
+lico-lint-empty-dir = "lico_lint_empty_dir.main:main"
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/lico_lint_empty_dir"]
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"

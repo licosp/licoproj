@@ -5,6 +5,7 @@ requires-python = ">=3.14"
 [manifest]
 members = [
     "lico-lint",
+    "lico-lint-empty-dir",
     "licoproj",
     "licoproj-devc",
 ]
@@ -67,9 +68,17 @@ version = "0.1.0"
 source = { editable = "packages/lico-lint" }
 
 [[package]]
+name = "lico-lint-empty-dir"
+version = "0.1.0"
+source = { editable = "packages/lico-lint-empty-dir" }
+
+[[package]]
 name = "licoproj"
 version = "0.0.1"
 source = { virtual = "." }
+dependencies = [
+    { name = "lico-lint-empty-dir" },
+]
 
 [package.optional-dependencies]
 lico-lint = [
@@ -98,6 +107,7 @@ licoproj-devc = [
 [package.metadata]
 requires-dist = [
     { name = "lico-lint", marker = "extra == 'lico-lint'", editable = "packages/lico-lint" },
+    { name = "lico-lint-empty-dir", editable = "packages/lico-lint-empty-dir" },
     { name = "licoproj-devc", marker = "extra == 'licoproj-devc'", editable = "packages/licoproj-devc" },
 ]
 provides-extras = ["lico-lint", "licoproj-devc"]
