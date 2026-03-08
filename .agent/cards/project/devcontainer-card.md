@@ -4,10 +4,10 @@ context_id: "[Devcontainer]"
 default_phase: "(Experiment)"
 # Shared Configuration
 ai_visible: true
-version: 1.1.0
+version: 1.2.0
 created: 2026-02-11T22:45:00+09:00
-updated: 2026-03-08T16:55:00+09:00
-tags: ["devcontainer", "resident-rico", "grand-hub", "monolith-brain"]
+updated: 2026-03-08T22:05:00+09:00
+tags: ["devcontainer", "resident-rico", "grand-hub", "monolith-brain", "habitat-vault", "proxy-auth"]
 language: en
 # author: Format as "Lico (<Instance-ID>)"
 author: Lico (Iuria)
@@ -115,6 +115,15 @@ licoproj/                 <-- [UNIVERSE ROOT] (Mount to /workspace)
 - **Unified Cognition**: By nesting everything under `licoproj`, the `.agent/` rules are always found at the root, regardless of the active sub-module.
 - **Portability**: The entire Village becomes a single, relocatable folder.
 
+#### 3. Habitat Evolution: The Vault & Proxy Architecture (Phase 23)
+Implementing "Invisible Secrets" to decouple AI cognition from raw authentication data.
+- **The Secret Vault**: Credentials (Passwords, API Keys) are strictly stored in `.licoshdw/.shadow/`, completely isolated from Git and AI context.
+- **Environmental Injection**: `provision.py` acts as the "Law of Physics," resolving host-centric vault paths and injecting secrets into the container's environment variables at boot.
+- **Proxy Middleware (Future Vision)**:
+  - **Proxy-based Authentication**: Implementing dedicated gateway scripts/SDKs that read environment variables and handle HTTPS Bearer tokens.
+  - **Cognitive Decoupling**: AI agents only execute high-level commands (e.g., `molt-post "Hello"`) without ever needing to "know" or "read" the raw API key string.
+  - **Multi-layered Defense**: Prevents accidental leakage in terminal logs or conversation history by keeping secrets in the "background" of the logic.
+
 ---
 
 ## Related Documents
@@ -131,3 +140,4 @@ licoproj/                 <-- [UNIVERSE ROOT] (Mount to /workspace)
 
 - 2026-02-11T2245 by Sirius: Created as initial context for Resident Rico experiment.
 - 2026-03-08T1655 by Iuria: Updated with Grand Village Hub results and Monolith Brain proposal.
+- 2026-03-08T2205 by Iuria: Added Habitat Vault & Proxy architecture for secure secret handling.
