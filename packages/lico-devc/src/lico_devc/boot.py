@@ -13,7 +13,22 @@ def main():
         print("[Error] 'docker compose' command not found. Please install Docker Compose.")
         sys.exit(1)
 
-    # 2. Up the container
+    # 2. Safety Check: Host-side 'residents' group (GID 2000)
+    # This ensures UID/GID consistency for file editing.
+    try:
+        import grp
+        try:
+            grp.getgrgid(2000)
+        except KeyError:
+            print("[Warning] Host-side 'residents' group (GID 2000) not found.")
+            print("          To avoid permission issues, please run:")
+            print("          sudo groupadd -g 2000 residents")
+            print("          sudo usermod -aG residents $USER")
+    except ImportError:
+        # Fallback for systems where grp isn't available
+        pass
+
+    # 3. Up the container
     print("[Action] Starting lico-resident container...")
     try:
         # Use -d to detach, but -f to ensure we use the specific modular compose file

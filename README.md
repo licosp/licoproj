@@ -74,7 +74,12 @@ Lico is designed to be autonomous but collaborative.
 This repository is designed to be self-bootstrapping with minimal host dependencies.
 
 ### Prerequisites
-- **Git**: To clone the repository.
+- **Git** & **Docker** (v20.10+)
+- **Host Group**: `residents` (GID 2000)
+  ```bash
+  sudo groupadd -g 2000 residents
+  sudo usermod -aG residents $USER
+  ```
 - **Docker / Docker Compose**: To run the Lico autonomous environment.
 
 ### Quick Start

@@ -1,20 +1,11 @@
 {
   "residents": [
-    {
-      "name": "lico",
-      "uid": 1001,
-      "gid": 1001,
-      "shell": "/bin/bash",
-      "sudo": true,
-      "password": "lico"
-    },
-    {
-      "name": "sirius",
-      "uid": 1002,
-      "gid": 1002,
-      "shell": "/bin/bash",
-      "sudo": false,
-      "password": "lico"
-    }
+    { "name": "leo", "uid": 1000, "gid": 1000, "shell": "/bin/bash", "sudo": true, "password": "lico" },
+    { "name": "lico", "uid": 1001, "gid": 1001, "shell": "/bin/bash", "sudo": true, "password": "lico" },
+    { "name": "iuria", "uid": 1003, "gid": 1003, "shell": "/bin/bash", "sudo": false, "password": "lico" },
+    { "name": "polaris", "uid": 1004, "gid": 1004, "shell": "/bin/bash", "sudo": false, "password": "lico" },
+    { "name": "sirius", "uid": 1005, "gid": 1005, "shell": "/bin/bash", "sudo": false, "password": "lico" },
+    { "name": "agate", "uid": 1006, "gid": 1006, "shell": "/bin/bash", "sudo": false, "password": "lico" },
+    { "name": "alexandrite", "uid": 1007, "gid": 1007, "shell": "/bin/bash", "sudo": false, "password": "lico" }
   ]
 }

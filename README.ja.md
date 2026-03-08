@@ -69,7 +69,13 @@ Licoは自律的かつ協調的に設計されています。
 
 ### 前提条件
 - **Git**: リポジトリのクローンに必要です。
-- **Docker / Docker Compose**: Lico の自律稼働環境を動かすために必要です。
+- **Git** & **Docker** (v20.10+)
+- **ホスト側グループ**: `residents` (GID 2000)
+  ```bash
+  sudo groupadd -g 2000 residents
+  sudo usermod -aG residents $USER
+  ```
+- **Docker Compose**: Lico の自律稼働環境を動かすために必要です。
 
 ### クイックスタート
 クローン後、以下の起動スクリプトを実行してください：

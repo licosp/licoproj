@@ -26,6 +26,15 @@ def main():
     with open(CONFIG_PATH, "r") as f:
         config = json.load(f)
 
+    # 0. Create Common Group (for shared resources)
+    COMMON_GROUP = "residents"
+    COMMON_GID = 2000
+    try:
+        run(["groupadd", "-g", str(COMMON_GID), COMMON_GROUP], check=False)
+        print(f"[Provision] Common group '{COMMON_GROUP}' (GID:{COMMON_GID}) ensured.")
+    except Exception:
+        pass
+
     for resident in config.get("residents", []):
         name = resident["name"]
         uid = resident["uid"]
@@ -36,31 +45,37 @@ def main():
 
         print(f"[Resident] Setting up: {name} (UID:{uid})")
 
-        # 1. Create Group
+        # 1. Create Individual Group
         try:
             run(["groupadd", "-g", str(gid), name], check=False)
         except Exception:
             pass
 
-        # 2. Create User
+        # 2. Create User and Add to Common Group
         try:
             run([
                 "useradd", 
                 "-u", str(uid), 
                 "-g", str(gid), 
+                "-G", COMMON_GROUP,  # Add to residents group
                 "-m", 
                 "-s", shell, 
                 name
             ], check=False)
         except Exception:
-            pass
+            # If user exists, ensure they are in the group
+            run(["usermod", "-aG", COMMON_GROUP, name], check=False)
 
         # 3. Sudo Privileges
         if w_sudo:
             sudo_line = f"{name} ALL=(ALL) NOPASSWD:ALL"
-            with open("/etc/sudoers", "a") as sudoers:
-                sudoers.write(f"\n{sudo_line}\n")
-            print(f"[Resident] {name} granted sudo privileges.")
+            # Ensure we don't duplicate lines
+            with open("/etc/sudoers", "r") as r:
+                content = r.read()
+            if sudo_line not in content:
+                with open("/etc/sudoers", "a") as sudoers:
+                    sudoers.write(f"\n{sudo_line}\n")
+                print(f"[Resident] {name} granted sudo privileges.")
 
         # 4. Password (for SSH)
         if password:
@@ -68,7 +83,13 @@ def main():
             process.communicate(input=f"{name}:{password}")
             print(f"[Resident] Password set for {name}.")
 
-    # 5. Global SSH Setup (Ensure directory exists)
+    # 5. Shared Directory Permissions (Optional but recommended)
+    # Ensure /workspace is group-writable by 'residents'
+    run(["chgrp", "-R", COMMON_GROUP, "/workspace"], check=False)
+    run(["chmod", "-R", "g+w", "/workspace"], check=False)
+    print(f"[Provision] /workspace is now group-writable by '{COMMON_GROUP}'.")
+
+    # 6. Global SSH Setup (Ensure directory exists)
     if not os.path.exists("/var/run/sshd"):
         os.makedirs("/var/run/sshd")
 
