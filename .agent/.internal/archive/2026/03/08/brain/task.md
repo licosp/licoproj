@@ -70,3 +70,8 @@
     - [x] Implement `site_config` in `residents.json`
     - [x] Refine `provision.py` for dynamic global-env injection
     - [x] Verify `LANG` and `TZ` settings in resident shells
+- [x] Full Stack Optimization (Phase 17)
+    - [x] Research tool-specific cache environment variables
+    - [x] Expand `global_env` in `provision.py` with Ruff, Mypy, etc.
+    - [x] Implement robust shell injection (quoting)
+    - [x] Verify full stack cache redirection
