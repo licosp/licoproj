@@ -39,10 +39,9 @@ def ensure_repos(repos):
         if source_from == "remote" and source.get("remote"):
             run(["git", "clone", source["remote"], str(target_path)])
         elif source_from == "local" and source.get("local"):
-            # For local source, we might want to copy or symlink depending on intent.
-            # Here we assume a local reference on the host mapped to the container.
-            # If it's not found, we skip with a warning.
-            local_path = Path(source["local"])
+            # Expand ~ for robustness, assuming it refers to the host user's home
+            # which is usually /home/lico in this specific environment setup.
+            local_path = Path(os.path.expanduser(source["local"]))
             if local_path.exists():
                 run(["cp", "-r", str(local_path), str(target_path)])
             else:
@@ -59,25 +58,27 @@ def ensure_crew_worktrees(crew_list):
         
         worktrees = member.get("worktree", [])
         for wt_name in worktrees:
-            # Current implementation: worktree are based on 'licoproj' usually.
-            # We add it as a worktree into the crew member's folder.
+            # We assume 'licoproj' is the base for these worktrees.
+            # If the name is 'licoshdw', it refers to a standalone repo in .repos.
+            # We implement a flexible linking strategy.
             wt_path = member_dir / wt_name
             if wt_path.exists():
                 continue
                 
-            print(f"[Crew] Adding worktree for {name}: {wt_name}")
-            # We assume the main repo (licoproj) is the root /workspace itself.
-            # Git needs to be initialized there.
-            if not (WS_ROOT / ".git").exists():
-                print("[Error] /workspace is not a git repository. Cannot add worktrees.")
-                continue
-                
-            run(["git", "worktree", "add", str(wt_path), "trunk"], cwd=str(WS_ROOT))
+            print(f"[Crew] Adding link/worktree for {name}: {wt_name}")
             
-            # Visibility: Link .repos from Hub back to the worktree
-            symlink_target = wt_path / ".repos"
-            if not symlink_target.exists():
-                run(["ln", "-s", "../../.repos", ".repos"], cwd=str(wt_path))
+            # If it's the main repo (licoproj), we add a git worktree
+            if wt_name == "licoproj":
+                if (WS_ROOT / ".git").exists():
+                    run(["git", "worktree", "add", str(wt_path), "trunk"], cwd=str(WS_ROOT))
+                else:
+                    print("[Error] /workspace is not a git repository. Cannot add worktrees.")
+            else:
+                # For other repos, we create a symlink from .repos
+                repo_source = WS_ROOT / ".repos" / wt_name
+                if repo_source.exists():
+                    # Link it directly into the crew's workspace
+                    run(["ln", "-s", f"../../.repos/{wt_name}", wt_name], cwd=str(member_dir))
 
 def main():
     print("--- Lico Village Provisioning System (Habitat) ---")
@@ -93,8 +94,11 @@ def main():
             print(f"[Error] Habitat config not found.")
             sys.exit(1)
 
-    with open(config_path, "r") as f:
-        config = json.load(f)
+    # 1. Orchestrate Repositories
+    ensure_repos(config.get("repos", []))
+
+    # 2. Orchestrate Crew Worktrees
+    ensure_crew_worktrees(config.get("crew", []))
 
     # Load credentials if available
     passwords = {}
@@ -104,12 +108,6 @@ def main():
             for c in creds.get("crew", []):
                 passwords[c["name"]] = c["password"]
 
-    # 1. Orchestrate Repositories
-    ensure_repos(config.get("repos", []))
-
-    # 2. Orchestrate Crew Worktrees
-    ensure_crew_worktrees(config.get("crew", []))
-
     # 3. Setup Residents and Environment
     site_config = config.get("site_config", {})
     COMMON_GROUP = "residents"
@@ -118,7 +116,8 @@ def main():
         run(["groupadd", "-g", str(COMMON_GID), COMMON_GROUP], check=False)
     except Exception: pass
 
-    for member in config.get("crew", []):
+    crew = config.get("crew", [])
+    for member in crew:
         name = member["name"]
         acc = member["account"]
         uid = acc["uid"]
@@ -172,6 +171,15 @@ def main():
                 }
                 for k, v in env_vars.items():
                     bashrc.write(f'export {k}="{v}"\n')
+                
+                # Add aliases for identity switching
+                bashrc.write("\n# Village Identity Aliases\n")
+                for other in crew:
+                    for alias in other.get("alias", []):
+                        if alias == name:
+                            other_wt = other.get("worktree", [None])[0]
+                            other_cd = WS_ROOT / f".crew/{other['name']}/{other_wt}" if other_wt else WS_ROOT
+                            bashrc.write(f"alias {other['name']}='cd {other_cd}'\n")
 
     # 4. Finalize
     run(["chgrp", "-R", COMMON_GROUP, str(WS_ROOT)], check=False)
