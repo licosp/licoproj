@@ -10,6 +10,8 @@ services:
       - venv-cache:/workspace/.venv
       - node-modules-cache:/workspace/node_modules
       - temp-cache:/workspace/.temp
+      # SSH Passport: Keep host keys persistent across rebuilds
+      - ssh-keys:/etc/ssh
     ports:
       - "2222:22"
     stdin_open: true
@@ -19,3 +21,4 @@ volumes:
   venv-cache:
   node-modules-cache:
   temp-cache:
+  ssh-keys:
