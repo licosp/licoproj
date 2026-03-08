@@ -40,11 +40,17 @@ The `lico-resident` container is now a fully-featured autonomous workstation:
 2.  **Socket Check**: Verified `docker ps` works inside the container.
 3.  **Identity Check**: Verified `lico` user (UID 1001) has full `sudo` privileges.
 
+## Village History Synchronization (Phase 22)
+- **Unified Trunk**: Merged all Resident Rico and Grand Hub refinements into the `trunk` branch.
+- **Personal Sync**: Synchronized `20-leonidas-drafts` via his dedicated worktree.
+- **Stability Guard**: Restored `main` to `origin/main`, ensuring it remains the stable release branch.
+
+## Architectural Synthesis (Phase 21)
+- **Monolith Vision**: Formalized the "Monolith Brain" architecture in `architecture_elevation_plan.md` and `devcontainer-card.md`.
+- **Memory Persistence**: Updated `devcontainer-card.md` in English with explicit directory trees and symlink strategies.
+
 ## Grand Village Hub (Phase 20)
-- **Monorepo Orchestration**: Mounted the entire host `shared/` directory as `/workspace` in the container.
-- **Dynamic Discovery**: Updated `boot.py` to automatically find the Hub root and the active project's relative path.
-- **Resident Experience**: Implemented dynamic `auto-cd` and cache redirection that adapts to the current worktree.
-- **Stability**: Refined `Dockerfile` to copy provisioning tools to `/app`, ensuring boot works regardless of volume mapping.
+... (existing content) ...
 
 ## Resident Onboarding Documentation (Phase 19)
 ... (existing content) ...

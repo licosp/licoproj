@@ -92,3 +92,13 @@
     - [x] Master the "Card Protocol" and Identity Rules
     - [x] Propose "Monolith Brain" (Architecture Elevation)
     - [x] Document vision in `devcontainer-card.md` (Agent Observations)
+- [x] Village History Synchronization (Phase 22)
+    - [x] Merge into `trunk` (Integration branch)
+    - [x] Merge `trunk` into `20-leonidas-drafts` (Personal branch)
+    - [x] Restore `main` to `origin/main` (Stable release)
+    - [x] Verify history consistency across all worktrees
+- [/] Habitat Evolution (Phase 23)
+    - [ ] Create `habitat.json` manifest
+    - [ ] Update `.gitignore` for credentials
+    - [ ] Refactor `provision.py` for automated Repo/Crew orchestration
+    - [ ] Verify manifest-driven boot (Dry Run)
