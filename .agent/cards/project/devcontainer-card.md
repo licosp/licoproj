@@ -4,14 +4,14 @@ context_id: "[Devcontainer]"
 default_phase: "(Experiment)"
 # Shared Configuration
 ai_visible: true
-version: 1.0.0
+version: 1.1.0
 created: 2026-02-11T22:45:00+09:00
-updated: 2026-02-11T22:45:00+09:00
-tags: ["devcontainer", "resident-ai", "loop", "experiment"]
+updated: 2026-03-08T16:55:00+09:00
+tags: ["devcontainer", "resident-rico", "grand-hub", "monolith-brain"]
 language: en
 # author: Format as "Lico (<Instance-ID>)"
-author: Lico (Sirius)
-ai_model: Gemini 3 Pro (High) Planning mode
+author: Lico (Iuria)
+ai_model: Gemini 3 Flash Planning mode
 ---
 
 # Context Whiteboard: Devcontainer & Resident Rico
@@ -79,6 +79,23 @@ ai_model: Gemini 3 Pro (High) Planning mode
 
 ---
 
+### Iuria (2026-03-08)
+
+#### 1. Grand Village Hub Implementation (Phase 20)
+Successfully transformed the environment from a single-repository container into a **Multi-Repository Orchestration Hub**.
+- **Unified Volume**: Mounted the entire host `shared/` directory as `/workspace`.
+- **Dynamic Discovery**: Implemented logic in `boot.py` to auto-discover the Hub root and the active project's relative path (`LICO_ACTIVE_REL`).
+- **Context-Aware Shell**: Every Resident now has a dynamic `.bashrc` that automatically navigates to their active worktree and redirects tool caches (Ruff, Mypy, UV, etc.) to project-specific native volumes.
+- **Boot Stability**: Decoupled provisioning logic from the workspace by copying `lico-devc` tools to `/app` during Docker build.
+
+#### 2. Architecture Elevation: The Monolith Brain (Proposed)
+Moving beyond the "Hub" concept towards a definitive **"Universe Root"** architecture.
+- **Vision**: Consolidate all scattered repositories (Shadow, Chron, Crew) under the `licoproj` directory as the top-level parent.
+- **Alignment**: This strictly follows the [Map of Territory](/.agent/rules/map.md) where `.agent/` is the Cognitive Root of the entire workspace.
+- **Goal**: Achieve absolute portability and simplify the Village Provisioning System by assuming a singular, nested hierarchy.
+
+---
+
 ## Related Documents
 
 | Document                                                 | Purpose                            |
@@ -92,3 +109,4 @@ ai_model: Gemini 3 Pro (High) Planning mode
 ## Origin
 
 - 2026-02-11T2245 by Sirius: Created as initial context for Resident Rico experiment.
+- 2026-03-08T1655 by Iuria: Updated with Grand Village Hub results and Monolith Brain proposal.
