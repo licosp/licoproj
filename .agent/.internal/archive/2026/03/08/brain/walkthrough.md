@@ -40,9 +40,14 @@ The `lico-resident` container is now a fully-featured autonomous workstation:
 2.  **Socket Check**: Verified `docker ps` works inside the container.
 3.  **Identity Check**: Verified `lico` user (UID 1001) has full `sudo` privileges.
 
+## Grand Village Hub (Phase 20)
+- **Monorepo Orchestration**: Mounted the entire host `shared/` directory as `/workspace` in the container.
+- **Dynamic Discovery**: Updated `boot.py` to automatically find the Hub root and the active project's relative path.
+- **Resident Experience**: Implemented dynamic `auto-cd` and cache redirection that adapts to the current worktree.
+- **Stability**: Refined `Dockerfile` to copy provisioning tools to `/app`, ensuring boot works regardless of volume mapping.
+
 ## Resident Onboarding Documentation (Phase 19)
-- **Troubleshooting**: Added a dedicated section to `README.md` and `README.ja.md` for SSH host key mismatches.
-- **Actionable Guidance**: Provided the exact `ssh-keygen` command to resolve identification changes, ensuring a smooth entry for all residents.
+... (existing content) ...
 
 ## Resident Passport Persistence (Phase 18)
 ... (existing content) ...

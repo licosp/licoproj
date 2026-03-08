@@ -82,3 +82,9 @@
     - [x] Update `README.md` with SSH troubleshooting
     - [x] Update `README.ja.md` with SSH troubleshooting
     - [x] Archive documentation updates
+- [x] Grand Village Hub (Phase 20)
+    - [x] Implement dynamic hub root discovery in `boot.py`
+    - [x] Unify `boot.sh` and `boot.py` logic
+    - [x] Implement dynamic volume mapping and environment injection in `docker-compose.yml`
+    - [x] Refine `provision.py` for relative path support (config, cd, caches)
+    - [x] Verify multi-repo access inside the container
