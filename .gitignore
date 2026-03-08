@@ -1,5 +1,8 @@
 # Lico
 
+# Lico Provisioning Credentials
+packages/lico-devc/habitat-credentials.json
+
 ## Dependencies
 .venv/
 node_modules/

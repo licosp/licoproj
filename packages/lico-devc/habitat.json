@@ -1,0 +1,117 @@
+{
+    "site_config": {
+        "LANG": "C.UTF-8",
+        "TZ": "Asia/Tokyo"
+    },
+    "repos": [
+        {
+            "name": "licoproj",
+            "source_from": "remote",
+            "source": {
+                "remote": "https://github.com/licosp/licoproj.git",
+                "local": "/home/lico/develop/shared/project/licoproj"
+            }
+        },
+        {
+            "name": ".licoshdw",
+            "source_from": "local",
+            "source": {
+                "remote": "",
+                "local": "/home/lico/develop/shared/project/.licoshdw"
+            }
+        },
+        {
+            "name": "licochron",
+            "source_from": "remote",
+            "source": {
+                "remote": "https://github.com/licosp/licochron.git",
+                "local": "/home/lico/develop/shared/project/licochron"
+            }
+        },
+        {
+            "name": "licochron-history",
+            "source_from": "remote",
+            "source": {
+                "remote": "https://github.com/licosp/licochron-history.git",
+                "local": "/home/lico/develop/shared/project/licochron-history"
+            }
+        }
+    ],
+    "crew": [
+        {
+            "name": "leonidas",
+            "account": {
+                "uid": 1000,
+                "gid": 1000,
+                "shell": "/bin/bash",
+                "sudo": true
+            },
+            "alias": [
+                "leo"
+            ],
+            "worktree": [
+                "licoproj"
+            ]
+        },
+        {
+            "name": "lico",
+            "account": {
+                "uid": 1001,
+                "gid": 1001,
+                "shell": "/bin/bash",
+                "sudo": true
+            },
+            "alias": [
+                "lico"
+            ],
+            "worktree": [
+                "licoproj"
+            ]
+        },
+        {
+            "name": "iuria",
+            "account": {
+                "uid": 1003,
+                "gid": 1003,
+                "shell": "/bin/bash",
+                "sudo": false
+            },
+            "alias": [
+                "iuria"
+            ],
+            "worktree": [
+                "licoproj"
+            ]
+        },
+        {
+            "name": "polaris",
+            "account": {
+                "uid": 1004,
+                "gid": 1004,
+                "shell": "/bin/bash",
+                "sudo": false
+            },
+            "alias": [
+                "polaris"
+            ],
+            "worktree": [
+                "licoproj"
+            ]
+        },
+        {
+            "name": "sirius",
+            "account": {
+                "uid": 1005,
+                "gid": 1005,
+                "shell": "/bin/bash",
+                "sudo": false
+            },
+            "alias": [
+                "sirius"
+            ],
+            "worktree": [
+                "licoproj"
+            ]
+        }
+    ]
+}
