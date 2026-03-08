@@ -132,4 +132,4 @@ addopts = """
 """
 cache_dir = "./.temp/cache/pytest"
 pythonpath = ["packages/lico-lint", "packages/licoproj-devc"]
-testpaths = ["packages/lico-lint/tests"]
+testpaths = ["packages/lico-lint/tests", "packages/lico-lint-empty-dir/tests"]
