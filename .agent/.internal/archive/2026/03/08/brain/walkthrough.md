@@ -40,9 +40,12 @@ The `lico-resident` container is now a fully-featured autonomous workstation:
 2.  **Socket Check**: Verified `docker ps` works inside the container.
 3.  **Identity Check**: Verified `lico` user (UID 1001) has full `sudo` privileges.
 
+## Resident Passport Persistence (Phase 18)
+- **Host Key Stability**: Mounted `/etc/ssh` as a named volume (`ssh-keys`) in `docker-compose.yml`.
+- **Identity Consistency**: Prevents "REMOTE HOST IDENTIFICATION HAS CHANGED" errors after rebuilding the container.
+
 ## Full Stack Optimization (Phase 17)
-- **Comprehensive Caches**: Added `RUFF`, `MYPY`, `PIP`, `npm`, and `Pytest` to the redirected cache list.
-- **Robustness**: Refined `.bashrc` injection to properly handle and quote complex values (e.g., `-o cache_dir=...`).
+... (existing content) ...
 
 ## Cultural Adaptability (Phase 16)
 ... (existing content) ...

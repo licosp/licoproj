@@ -75,3 +75,6 @@
     - [x] Expand `global_env` in `provision.py` with Ruff, Mypy, etc.
     - [x] Implement robust shell injection (quoting)
     - [x] Verify full stack cache redirection
+- [x] Resident Passport Persistence (Phase 18)
+    - [x] Implement persistent SSH host keys in `docker-compose.yml`
+    - [x] Verify seamless login after container rebuild
