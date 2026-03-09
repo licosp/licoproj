@@ -1,7 +1,7 @@
 [project]
 name = "lico-lint"
 version = "0.1.0"
-description = "Unified linting tool for TOA project"
+description = "Unified linting tool for the Lico project"
 readme = "README.md"
 requires-python = ">=3.14"
 dependencies = []
