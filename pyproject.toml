@@ -88,7 +88,7 @@ exclude = [
   "**/__pycache__",
 ]
 include = ["."]
-extraPaths = ["packages/lico-lint/src", "packages/lico-devc/src"]
+extraPaths = ["packages/lico-lint/src", "packages/lico-lint-empty-dir/src", "packages/lico-devc/src"]
 reportUnknownVariableType = "error"
 reportUnknownMemberType = "error"
 reportUnknownParameterType = "error"
@@ -116,10 +116,10 @@ disallow_any_unimported = true
 show_error_codes = true
 warn_unreachable = true
 cache_dir = "./.temp/cache/mypy"
-mypy_path = ["packages/lico-lint", "packages/lico-devc"]
+mypy_path = ["packages/lico-lint", "packages/lico-lint-empty-dir", "packages/lico-devc"]
 
 [[tool.mypy.overrides]]
-module = ["lico-lint", "lico-devc"]
+module = ["lico-lint", "lico-lint-empty-dir", "lico-devc"]
 disable_error_code = ["misc"]
 
 [tool.pytest.ini_options]
@@ -131,5 +131,5 @@ addopts = """
   --verbose
 """
 cache_dir = "./.temp/cache/pytest"
-pythonpath = ["packages/lico-lint", "packages/lico-devc"]
+pythonpath = ["packages/lico-lint", "packages/lico-lint-empty-dir", "packages/lico-devc"]
 testpaths = ["packages/lico-lint/tests", "packages/lico-lint-empty-dir/tests"]

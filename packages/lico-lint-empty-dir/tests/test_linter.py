@@ -7,7 +7,7 @@ from lico_lint_empty_dir.main import EmptyDirLinter
 if TYPE_CHECKING:
     from _pytest.capture import CaptureFixture
 
-@pytest.fixture
+@pytest.fixture  # type: ignore[misc]
 def test_env(tmp_path: Path) -> Path:
     """Set up a temporary directory structure for testing."""
     root = tmp_path / "test_root"
