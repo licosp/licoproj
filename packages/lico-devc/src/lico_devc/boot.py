@@ -1,39 +1,18 @@
 """Lico Container Bootstrapper (Bare Spark)."""
 
-import json
 import logging
 import os
 import subprocess
 import sys
 from pathlib import Path
-from typing import TypedDict, cast
+
+from .manifest import load_habitat_config
 
 # Configure logging for discrete CLI feedback
 logging.basicConfig(
     level=logging.INFO, format="%(message)s", stream=sys.stdout
 )
 logger = logging.getLogger(__name__)
-
-
-class BootConfig(TypedDict, total=False):
-    """Configuration for boot operations."""
-
-    cwd: str
-
-
-class EnvConfig(TypedDict, total=False):
-    """Configuration for environment variables."""
-
-    name: str
-    path: str
-    env_keys: list[str]
-
-
-class HabitatConfig(TypedDict, total=False):
-    """Configuration for the Lico habitat."""
-
-    boot: BootConfig
-    env: EnvConfig
 
 
 class Habitat:
@@ -50,8 +29,7 @@ class Habitat:
         if not config_path.exists():
             return  # Fallback if config is missing
 
-        with config_path.open("r", encoding="utf-8") as f:
-            config = cast("HabitatConfig", json.load(f))
+        config = load_habitat_config(config_path)
 
         boot_config = config.get("boot", {})
         expected_cwd = boot_config.get("cwd")
@@ -80,8 +58,7 @@ class Habitat:
         if not config_path.exists():
             return
 
-        with config_path.open("r", encoding="utf-8") as f:
-            config = cast("HabitatConfig", json.load(f))
+        config = load_habitat_config(config_path)
 
         env_config = config.get("env", {})
         if env_config.get("name") != "credentials":

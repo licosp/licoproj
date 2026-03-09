@@ -5,6 +5,8 @@ Handles user creation, worktree orchestration, and environment configuration
 within the Resident Rico container.
 """
 
+from __future__ import annotations
+
 import json
 import logging
 import os
@@ -12,7 +14,15 @@ import subprocess
 import sys
 from contextlib import suppress
 from pathlib import Path
-from typing import TypedDict, cast
+from typing import cast
+
+from .manifest import (
+    CrewMember,
+    EnvConfig,
+    HabitatConfig,
+    RepoConfig,
+    load_habitat_config,
+)
 
 # In the Monolith Brain, /workspace is the Hub Root (e.g., shared/)
 WS_ROOT = Path("/workspace")
@@ -30,54 +40,6 @@ logging.basicConfig(
     level=logging.INFO, format="%(message)s", stream=sys.stdout
 )
 logger = logging.getLogger(__name__)
-
-
-class AccountConfig(TypedDict, total=False):
-    """Configuration for a resident's system account."""
-
-    uid: int
-    gid: int
-    shell: str
-    sudo: bool
-
-
-class RepoSource(TypedDict, total=False):
-    """Source configuration for a repository."""
-
-    remote: str
-    local: str
-
-
-class RepoConfig(TypedDict):
-    """Configuration for a managed repository."""
-
-    name: str
-    source_from: str
-    source: RepoSource
-
-
-class CrewMember(TypedDict, total=False):
-    """Configuration for a village resident (crew member)."""
-
-    name: str
-    account: AccountConfig
-    alias: list[str]
-    worktree: list[str]
-
-
-class EnvMeta(TypedDict, total=False):
-    """Metadata for environment and secret loading."""
-
-    path: str
-
-
-class HabitatConfig(TypedDict, total=False):
-    """Root configuration for the Lico habitat."""
-
-    repos: list[RepoConfig]
-    crew: list[CrewMember]
-    env: EnvMeta
-    site_config: dict[str, str]
 
 
 def run(
@@ -287,7 +249,9 @@ def ensure_crew_worktrees(crew_list: list[CrewMember]) -> None:
 
 
 def load_env_meta_secrets(
-    env_meta: EnvMeta, passwords: dict[str, str], site_secrets: dict[str, str]
+    env_meta: EnvConfig,
+    passwords: dict[str, str],
+    site_secrets: dict[str, str],
 ) -> None:
     """Load secrets from env redirection.
 
@@ -515,8 +479,7 @@ def main() -> None:
 
     _check_host_gid()
 
-    with cfg_p.open("r", encoding="utf-8") as f:
-        config = cast("HabitatConfig", json.load(f))
+    config = load_habitat_config(cfg_p)
 
     # 1. Orchestrate Village
     ensure_repos(config.get("repos", []))
