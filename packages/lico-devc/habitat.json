@@ -1,7 +1,7 @@
 {
   "env": {
     "name": "credentials",
-    "path": "../.licoshdw/.shadow/licoproj/.env",
+    "path": "~/develop/credentials/licoproj/.env",
     "env-keys": [
       "MOLTBOOK_API_KEY_ALEXANDRITE",
       "MOLTBOOK_API_KEY_AGATE",
@@ -25,7 +25,7 @@
       "source_from": "local",
       "source": {
         "remote": "",
-        "local": "../.licoshdw"
+        "local": "../.licoshdw.git"
       }
     },
     {
