@@ -1,4 +1,7 @@
 {
+  "boot": {
+    "cwd": "~/shared/project/licoproj"
+  },
   "env": {
     "name": "credentials",
     "path": "~/develop/credentials/licoproj/.env",
