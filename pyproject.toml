@@ -78,14 +78,14 @@ typeCheckingMode = "strict"
 pythonVersion = "3.14"
 pythonPlatform = "Linux"
 exclude = [
-  "**/.*",
+  "**/.venv",
+  "**/.temp",
+  "**/.trash",
+  "**/.repos",
+  "**/.gemini",
+  "**/.agent/.internal/archive",
   "**/node_modules",
   "**/__pycache__",
-  ".venv",
-  ".temp",
-  ".repos",
-  ".trash",
-  ".agent/.internal/archive",
 ]
 include = ["."]
 extraPaths = ["packages/lico-lint/src", "packages/lico-devc/src"]
