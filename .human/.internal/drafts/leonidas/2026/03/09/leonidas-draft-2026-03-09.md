@@ -474,16 +474,29 @@ env.update({"LICO_HUB_ROOT": hub_root, "LICO_ACTIVE_REL": active_rel})
 
 ####
 
+- では `devc` の `boot.py` からリファクタリングを始めましょう。
+
+####
+
+- 途中でリントの結果をファイル書き出したりすると思います。
+- GIT で追跡しないあなた専用の作業ディレクトリがあるので使ってください。
+  - `.agent/.internal/workspace/iuria/`
+
 ####
 
 ####
 
-packages/lico-lint/README.md
+####
 
 ####
 
-- 複雑な作業は UV 環境の `Python` で行うべきですが、
-  それはコンテナの中でやることです。
+####
+
+####
+
+####
+
+####
 
 ## Draft for a draft
 
