@@ -1,68 +1,128 @@
-import os, subprocess, sys, json
+"""Lico Container Bootstrapper (Bare Spark)."""
+
+import json
+import logging
+import os
+import subprocess
+import sys
+from pathlib import Path
+from typing import TypedDict, cast
+
+# Configure logging for discrete CLI feedback
+logging.basicConfig(
+    level=logging.INFO, format="%(message)s", stream=sys.stdout
+)
+logger = logging.getLogger(__name__)
+
+
+class BootConfig(TypedDict, total=False):
+    """Configuration for boot operations."""
+
+    cwd: str
+
+
+class HabitatConfig(TypedDict, total=False):
+    """Configuration for the Lico habitat."""
+
+    boot: BootConfig
+
 
 class Habitat:
     """Validator for the Initial Spark environment."""
+
     @staticmethod
-    def validate_cwd(project_root):
-        config_path = os.path.join(project_root, "packages/lico-devc/habitat.json")
-        if not os.path.exists(config_path):
-            return # Fallback if config is missing (bootstrapper might be running for first time)
-            
-        with open(config_path, "r") as f:
-            config = json.load(f)
-            
-        expected_cwd = config.get("boot", {}).get("cwd")
+    def validate_cwd(project_root: Path) -> None:
+        """Verify if the current project root matches the designated Habitat.
+
+        Args:
+            project_root: The identified absolute path to the project root.
+        """
+        config_path = project_root / "packages/lico-devc/habitat.json"
+        if not config_path.exists():
+            return  # Fallback if config is missing
+
+        with config_path.open("r", encoding="utf-8") as f:
+            config = cast("HabitatConfig", json.load(f))
+
+        boot_config = config.get("boot", {})
+        expected_cwd = boot_config.get("cwd")
         if not expected_cwd:
             return
-            
+
         # Normalize and expand for comparison
-        expected_abs = os.path.abspath(os.path.expanduser(expected_cwd))
-        actual_abs = os.path.abspath(project_root)
-        
+        expected_abs = Path(expected_cwd).expanduser().resolve()
+        actual_abs = project_root.resolve()
+
         if expected_abs != actual_abs:
-            print(f"[Error] Environment Mismatch.")
-            print(f"        Expected Root: {expected_abs}")
-            print(f"        Actual Root:   {actual_abs}")
-            print("        Please ensure you are running from the designated Village Root.")
+            logger.error("[Error] Environment Mismatch.")
+            logger.error("        Expected Root: %s", expected_abs)
+            logger.error("        Actual Root:   %s", actual_abs)
+            logger.error("        Please ensure you are at the Village Root.")
             sys.exit(1)
 
-def find_hub_root():
-    """Discover the Universe Root (Hub) by looking for 'project' and 'crew' folders."""
-    current = os.path.abspath(os.getcwd())
-    while current != "/":
-        dirs = os.listdir(current)
-        if "project" in dirs and "crew" in dirs:
-            return current
-        current = os.path.dirname(current)
-    # Fallback: traverse up from script location
-    return os.path.abspath(os.path.join(os.path.dirname(__file__), "../../../.."))
 
-def main():
-    print("--- Lico Container Bootstrapper (Bare Spark) ---")
-    
+def find_hub_root() -> Path:
+    """Discover Hub Root by looking for 'project/crew' folders.
+
+    Returns:
+        The absolute path to the discovered Hub Root.
+    """
+    current = Path.cwd().resolve()
+    while current != current.parent:
+        if (current / "project").exists() and (current / "crew").exists():
+            return current
+        current = current.parent
+    # Fallback: traverse up from script location
+    return Path(__file__).resolve().parents[4]
+
+
+def main() -> None:
+    """Entry point for the Lico Container Bootstrapper."""
+    logger.info("--- Lico Container Bootstrapper (Bare Spark) ---")
+
     # 1. Pivot to Project Root (Universal Invocation)
-    # This script is at: <project_root>/packages/lico-devc/src/lico_devc/boot.py
-    project_root = os.path.abspath(os.path.join(os.path.dirname(__file__), "../../.."))
+    # Script: <root>/packages/lico-devc/src/lico_devc/boot.py
+    # From lico_devc -> src -> lico-devc -> packages -> licoproj (4 steps up)
+    project_root = Path(__file__).resolve().parents[4]
     os.chdir(project_root)
-    
+
     # 2. Safety Check: CWD Validation (Habitat Gate)
     Habitat.validate_cwd(project_root)
-    
+
     # 3. Discover Universe Root
     hub_root = find_hub_root()
-    active_rel = os.path.relpath(project_root, hub_root)
-    print(f"[Hub] Root: {hub_root} | Active: {active_rel}")
+    active_rel = project_root.relative_to(hub_root)
+    logger.info("[Hub] Root: %s | Active: %s", hub_root, active_rel)
 
     env = os.environ.copy()
-    env.update({"LICO_HUB_ROOT": hub_root, "LICO_ACTIVE_REL": active_rel})
-    
+    env.update(
+        {"LICO_HUB_ROOT": str(hub_root), "LICO_ACTIVE_REL": str(active_rel)}
+    )
+
     try:
-        compose_path = "packages/lico-devc/.devcontainer/docker-compose.yml"
-        subprocess.run(["docker", "compose", "-f", compose_path, "up", "-d", "--build"], env=env, check=True)
-        print("[Success] Container is running. Connect via VS Code or SSH.")
-    except Exception as e:
-        print(f"[Error] Failed to start container: {e}")
+        devc_rel = Path("packages") / "lico-devc"
+        compose_path = devc_rel / ".devcontainer" / "docker-compose.yml"
+        subprocess.run(
+            [
+                "docker",
+                "compose",
+                "-f",
+                str(compose_path),
+                "up",
+                "-d",
+                "--build",
+            ],
+            env=env,
+            check=True,
+        )
+        logger.info("[Success] Container is running. Connect via VS Code/SSH.")
+    except subprocess.CalledProcessError:
+        logger.exception("[Error] Failed to start container")
         sys.exit(1)
+    except Exception:
+        logger.exception("[Fatal] Unexpected error")
+        sys.exit(1)
+
 
 if __name__ == "__main__":
     main()
