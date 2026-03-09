@@ -1,7 +1,33 @@
-import os, subprocess, sys
+import os, subprocess, sys, json
+
+class Habitat:
+    """Validator for the Initial Spark environment."""
+    @staticmethod
+    def validate_cwd(project_root):
+        config_path = os.path.join(project_root, "packages/lico-devc/habitat.json")
+        if not os.path.exists(config_path):
+            return # Fallback if config is missing (bootstrapper might be running for first time)
+            
+        with open(config_path, "r") as f:
+            config = json.load(f)
+            
+        expected_cwd = config.get("boot", {}).get("cwd")
+        if not expected_cwd:
+            return
+            
+        # Normalize and expand for comparison
+        expected_abs = os.path.abspath(os.path.expanduser(expected_cwd))
+        actual_abs = os.path.abspath(project_root)
+        
+        if expected_abs != actual_abs:
+            print(f"[Error] Environment Mismatch.")
+            print(f"        Expected Root: {expected_abs}")
+            print(f"        Actual Root:   {actual_abs}")
+            print("        Please ensure you are running from the designated Village Root.")
+            sys.exit(1)
 
 def find_hub_root():
-    """Discover the Universe Root by looking for 'project' and 'crew' folders."""
+    """Discover the Universe Root (Hub) by looking for 'project' and 'crew' folders."""
     current = os.path.abspath(os.getcwd())
     while current != "/":
         dirs = os.listdir(current)
@@ -19,7 +45,10 @@ def main():
     project_root = os.path.abspath(os.path.join(os.path.dirname(__file__), "../../.."))
     os.chdir(project_root)
     
-    # 2. Discover Universe Root
+    # 2. Safety Check: CWD Validation (Habitat Gate)
+    Habitat.validate_cwd(project_root)
+    
+    # 3. Discover Universe Root
     hub_root = find_hub_root()
     active_rel = os.path.relpath(project_root, hub_root)
     print(f"[Hub] Root: {hub_root} | Active: {active_rel}")
