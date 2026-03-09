@@ -5,10 +5,14 @@ import subprocess
 import sys
 from pathlib import Path
 
-# In the Monolith Brain, /workspace is the project root.
+# In the Monolith Brain, /workspace is the Hub Root (e.g., shared/)
 WS_ROOT = Path("/workspace")
-# Tools are in /app (copied during build), but manifest is in /workspace for persistence.
-HABITAT_CONFIG = WS_ROOT / "packages/lico-devc/habitat.json"
+# LICO_ACTIVE_REL points to the project root (e.g., project/licoproj)
+ACTIVE_REL = os.environ.get("LICO_ACTIVE_REL", "")
+ACTIVE_ROOT = WS_ROOT / ACTIVE_REL if ACTIVE_REL else WS_ROOT
+
+# Manifest is in the active project, while tools are in /app.
+HABITAT_CONFIG = ACTIVE_ROOT / "packages/lico-devc/habitat.json"
 
 def run(cmd, check=True, cwd=None):
     print(f"[Provision] Executing: {' '.join(cmd)}")
@@ -112,10 +116,10 @@ def ensure_crew_worktrees(crew_list):
             print(f"[Crew] Adding link/worktree for {name}: {wt_name}")
             
             if wt_name == "licoproj" or wt_name == "workspace":
-                if (WS_ROOT / ".git").exists():
-                    run(["git", "worktree", "add", str(wt_path), "trunk"], cwd=str(WS_ROOT))
+                if (ACTIVE_ROOT / ".git").exists():
+                    run(["git", "worktree", "add", str(wt_path), "trunk"], cwd=str(ACTIVE_ROOT))
                 else:
-                    print(f"[Warning] /workspace is not a git repository. Cannot add worktree for {name}.")
+                    print(f"[Warning] {ACTIVE_ROOT} is not a git repository. Cannot add worktree for {name}.")
             else:
                 repo_source = WS_ROOT / ".repos" / wt_name
                 if repo_source.exists():
@@ -135,6 +139,19 @@ def main():
         else:
             print(f"[Error] Habitat config not found.")
             sys.exit(1)
+
+    # 0. Safety Check: Host-side 'residents' group (GID 2000)
+    # We check if the mounted /workspace has the correct GID mapping.
+    try:
+        ws_stat = os.stat(WS_ROOT)
+        if ws_stat.st_gid != 2000:
+            print("[Warning] Host-side permission mismatch detected.")
+            print(f"          /workspace GID is {ws_stat.st_gid}, but expected 2000 (residents).")
+            print("          To fix this, please run these commands ON YOUR HOST:")
+            print("          sudo groupadd -g 2000 residents")
+            print("          sudo usermod -aG residents $USER")
+    except Exception as e:
+        print(f"[Warning] Could not verify /workspace permissions: {e}")
 
     with open(config_path, "r") as f:
         config = json.load(f)
