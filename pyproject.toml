@@ -87,13 +87,13 @@ exclude = [
   ".trash",
   ".agent/.internal/archive",
 ]
-include = ["packages/lico-lint/src", "packages/lico-devc/src"]
+include = ["."]
 extraPaths = ["packages/lico-lint/src", "packages/lico-devc/src"]
-reportUnknownVariableType = true
-reportUnknownMemberType = true
-reportUnknownParameterType = true
-reportUnknownArgumentType = true
-reportUnknownLambdaType = true
+reportUnknownVariableType = "error"
+reportUnknownMemberType = "error"
+reportUnknownParameterType = "error"
+reportUnknownArgumentType = "error"
+reportUnknownLambdaType = "error"
 reportUnusedImport = "error"
 reportUnusedVariable = "error"
 reportUnusedClass = "error"
