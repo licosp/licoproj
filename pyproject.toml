@@ -2,11 +2,12 @@
 name = "licoproj"
 version = "0.0.1"
 requires-python = ">=3.14"
-dependencies = ["lico-lint-empty-dir"]
+dependencies = []
 
 [dependency-groups]
 lico-lint = ["lico-lint"]
 lico-devc = ["lico-devc"]
+lico-lint-empty-dir = ["lico-lint-empty-dir"]
 
 dev = [
   "mypy>=1.19.1",
@@ -20,9 +21,10 @@ dev = [
 [project.optional-dependencies]
 lico-lint = ["lico-lint"]
 lico-devc = ["lico-devc"]
+lico-lint-empty-dir = ["lico-lint-empty-dir"]
 
 [tool.uv]
-default-groups = ["dev", "lico-lint", "lico-devc"]
+default-groups = ["dev", "lico-lint", "lico-devc", "lico-lint-empty-dir"]
 
 [tool.uv.sources]
 lico-lint = { workspace = true }
