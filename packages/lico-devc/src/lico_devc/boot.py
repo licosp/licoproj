@@ -21,10 +21,19 @@ class BootConfig(TypedDict, total=False):
     cwd: str
 
 
+class EnvConfig(TypedDict, total=False):
+    """Configuration for environment variables."""
+
+    name: str
+    path: str
+    env_keys: list[str]
+
+
 class HabitatConfig(TypedDict, total=False):
     """Configuration for the Lico habitat."""
 
     boot: BootConfig
+    env: EnvConfig
 
 
 class Habitat:
@@ -60,6 +69,36 @@ class Habitat:
             logger.error("        Please ensure you are at the Village Root.")
             sys.exit(1)
 
+    @staticmethod
+    def validate_credentials(project_root: Path) -> None:
+        """Verify if the required credential file exists.
+
+        Args:
+            project_root: The identified absolute path to the project root.
+        """
+        config_path = project_root / "packages/lico-devc/habitat.json"
+        if not config_path.exists():
+            return
+
+        with config_path.open("r", encoding="utf-8") as f:
+            config = cast("HabitatConfig", json.load(f))
+
+        env_config = config.get("env", {})
+        if env_config.get("name") != "credentials":
+            return
+
+        env_path = env_config.get("path")
+        if not env_path:
+            return
+
+        # Normalize and expand for check
+        cred_path = Path(env_path).expanduser().resolve()
+        if not cred_path.exists():
+            logger.warning("[Warning] Credentials Missing.")
+            logger.warning("          Path: %s", cred_path)
+            logger.warning("          Please ensure your Vault is active.")
+            sys.exit(1)
+
 
 def find_hub_root() -> Path:
     """Discover Hub Root by looking for 'project/crew' folders.
@@ -86,8 +125,9 @@ def main() -> None:
     project_root = Path(__file__).resolve().parents[4]
     os.chdir(project_root)
 
-    # 2. Safety Check: CWD Validation (Habitat Gate)
+    # 2. Safety Check: CWD & Credential Validation (Habitat Gate)
     Habitat.validate_cwd(project_root)
+    Habitat.validate_credentials(project_root)
 
     # 3. Discover Universe Root
     hub_root = find_hub_root()
