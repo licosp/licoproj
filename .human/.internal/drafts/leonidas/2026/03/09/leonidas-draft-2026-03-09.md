@@ -426,6 +426,16 @@ env.update({"LICO_HUB_ROOT": hub_root, "LICO_ACTIVE_REL": active_rel})
 
 ####
 
+- リコの環境で今 UV は動きますね？
+- コードを書くなら定期的にリファクタリングをしたいです。
+
+- 本当はコンテナの中でこういう作業をすべきですが、
+  現状は WLS 上でやるしかないですね？
+  - `packages/lico-lint/README.md`
+
+- 使い方は分かりますか？
+- どんなツールですか？
+
 ####
 
 ####
