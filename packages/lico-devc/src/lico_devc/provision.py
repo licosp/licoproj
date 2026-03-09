@@ -376,7 +376,8 @@ def configure_bashrc(
         site_config: Global site configuration.
         site_secrets: Loaded secrets.
     """
-    active_wt = member.get("worktree", [None])[0]
+    wts = member.get("worktree", [])
+    active_wt = wts[0] if wts else None
     cd_path = WS_ROOT / f".crew/{name}/{active_wt}" if active_wt else WS_ROOT
     bash_p = Path(f"/home/{name}/.bashrc")
     if not bash_p.exists():
@@ -485,7 +486,8 @@ def _add_crew_aliases(member_name: str, crew: list[CrewMember]) -> None:
     for other in crew:
         other_name = other.get("name", "unknown")
         if member_name in other.get("alias", []):
-            other_wt = other.get("worktree", [None])[0]
+            other_wts = other.get("worktree", [])
+            other_wt = other_wts[0] if other_wts else None
             other_cd = (
                 WS_ROOT / f".crew/{other_name}/{other_wt}"
                 if other_wt
