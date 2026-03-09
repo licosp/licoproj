@@ -14,8 +14,14 @@ def find_hub_root():
 def main():
     print("--- Lico Container Bootstrapper (Bare Spark) ---")
     
+    # 1. Pivot to Project Root (Universal Invocation)
+    # This script is at: <project_root>/packages/lico-devc/src/lico_devc/boot.py
+    project_root = os.path.abspath(os.path.join(os.path.dirname(__file__), "../../.."))
+    os.chdir(project_root)
+    
+    # 2. Discover Universe Root
     hub_root = find_hub_root()
-    active_rel = os.path.relpath(os.getcwd(), hub_root)
+    active_rel = os.path.relpath(project_root, hub_root)
     print(f"[Hub] Root: {hub_root} | Active: {active_rel}")
 
     env = os.environ.copy()
