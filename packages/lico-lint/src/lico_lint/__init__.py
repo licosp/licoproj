@@ -1,3 +1,3 @@
-"""Unified linting tool for the TOA project."""
+"""Unified linting tool for `licoproj`."""
 
 __version__ = "0.1.0"

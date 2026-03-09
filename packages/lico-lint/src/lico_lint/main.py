@@ -1,4 +1,4 @@
-"""Unified linting tool for the Licochron project."""
+"""Unified linting tool for `licoproj`."""
 
 import argparse
 import logging
