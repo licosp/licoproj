@@ -384,7 +384,9 @@ def configure_bashrc(
         return
 
     with bash_p.open("a", encoding="utf-8") as bashrc:
-        bashrc.write(f"\n# Auto-cd to active workspace\ncd {cd_path}\n")
+        bashrc.write("\n# Village Auto-Context Setup\n")
+        bashrc.write("unset VIRTUAL_ENV\n")
+        bashrc.write(f"cd {cd_path}\n")
         bashrc.write("\n# Village Global Environment\n")
 
         env_vars = {
