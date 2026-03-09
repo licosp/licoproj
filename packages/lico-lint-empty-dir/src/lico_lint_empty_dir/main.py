@@ -26,7 +26,7 @@ class EmptyDirLinter:
         found_empty = False
 
         # Use os.walk to find all directories
-        for root, dirs, files in os.walk(self.root_dir):
+        for root, dirs, _ in os.walk(self.root_dir):
             # In-place modify dirs to skip excluded ones and hidden ones
             dirs[:] = [d for d in dirs if d not in self.exclude_dirs and not d.startswith(".")]
             
@@ -48,7 +48,7 @@ class EmptyDirLinter:
 def main() -> None:
     """Entry point for the linter CLI."""
     linter = EmptyDirLinter()
-    found = linter.scan()
+    linter.scan()
     # For now, we always exit with 0 to keep the pulse going in prototypes.
     # In production, this might be sys.exit(1 if found else 0).
     sys.exit(0)

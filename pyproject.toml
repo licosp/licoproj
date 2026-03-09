@@ -83,7 +83,7 @@ exclude = [
   "**/.trash",
   "**/.repos",
   "**/.gemini",
-  "**/.agent/.internal/archive",
+  "**/.agent/.internal",
   "**/node_modules",
   "**/__pycache__",
 ]

@@ -1,10 +1,14 @@
-import os
-import shutil
+from __future__ import annotations
+from pathlib import Path
+from typing import TYPE_CHECKING
 import pytest
 from lico_lint_empty_dir.main import EmptyDirLinter
 
+if TYPE_CHECKING:
+    from _pytest.capture import CaptureFixture
+
 @pytest.fixture
-def test_env(tmp_path):
+def test_env(tmp_path: Path) -> Path:
     """Set up a temporary directory structure for testing."""
     root = tmp_path / "test_root"
     root.mkdir()
@@ -25,14 +29,14 @@ def test_env(tmp_path):
     
     return root
 
-def test_is_empty_dir_logic(test_env):
+def test_is_empty_dir_logic(test_env: Path) -> None:
     """Test the core empty check logic."""
     linter = EmptyDirLinter()
     assert linter.is_empty_dir(str(test_env / "empty_dir")) is True
     assert linter.is_empty_dir(str(test_env / "non_empty_file")) is False
     assert linter.is_empty_dir(str(test_env / "non_empty_subdir")) is False
 
-def test_scanner_reports_correctly(test_env, capsys):
+def test_scanner_reports_correctly(test_env: Path, capsys: CaptureFixture[str]) -> None:
     """Test the full scanner reporting."""
     linter = EmptyDirLinter(root_dir=str(test_env))
     linter.scan()
