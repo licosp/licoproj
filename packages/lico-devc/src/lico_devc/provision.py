@@ -21,18 +21,22 @@ def run(cmd, check=True, cwd=None):
 
 def resolve_habitat_path(path_str):
     """
-    Translates host-centric paths (e.g. ~/develop/shared/...)
-    into container-centric paths (e.g. /workspace/...)
+    Translates paths into container-centric paths.
+    - If it starts with '~/develop/shared/', it's a legacy absolute mapping.
+    - If it's absolute (starts with /) or has home (~), use standard expansion.
+    - Otherwise, treat as relative to /workspace (WS_ROOT).
     """
     if not path_str:
         return None
     
-    # Standard translation: host '~/develop/shared/' -> container '/workspace/'
     if path_str.startswith("~/develop/shared/"):
         return WS_ROOT / path_str.replace("~/develop/shared/", "")
     
-    # Fallback to standard os.path expansion
-    return Path(os.path.expanduser(path_str))
+    if path_str.startswith("/") or path_str.startswith("~"):
+        return Path(os.path.expanduser(path_str))
+    
+    # Monolith/Relative path
+    return WS_ROOT / path_str
 
 def parse_env_file(path):
     """

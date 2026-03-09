@@ -19,6 +19,7 @@ __pycache__/
 ## Project Base
 .runtimes/*
 .repos/*
+.crew/*
 
 ## Git
 !.gitkeep

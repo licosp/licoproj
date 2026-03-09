@@ -1,7 +1,7 @@
 {
   "env": {
     "name": "credentials",
-    "path": "~/develop/shared/project/.licoshdw/.shadow/licoproj/.env",
+    "path": "../.licoshdw/.shadow/licoproj/.env",
     "env-keys": [
       "MOLTBOOK_API_KEY_ALEXANDRITE",
       "MOLTBOOK_API_KEY_AGATE",
@@ -25,7 +25,7 @@
       "source_from": "local",
       "source": {
         "remote": "",
-        "local": "~/develop/shared/project/.licoshdw"
+        "local": "../.licoshdw"
       }
     },
     {
@@ -34,7 +34,7 @@
       "source_from": "remote",
       "source": {
         "remote": "https://github.com/licosp/licochron.git",
-        "local": "~/develop/shared/project/licochron"
+        "local": ".repos/licochron"
       }
     },
     {
@@ -43,7 +43,7 @@
       "source_from": "remote",
       "source": {
         "remote": "https://github.com/licosp/licochron-history.git",
-        "local": "~/develop/shared/project/licochron-history"
+        "local": ".repos/licochron-history"
       }
     }
   ],
@@ -56,8 +56,14 @@
         "shell": "/bin/bash",
         "sudo": true
       },
-      "alias": ["leonidas"],
-      "worktree": ["licoshdw", "licochron", "licochron-history"]
+      "alias": [
+        "leonidas"
+      ],
+      "worktree": [
+        "licoshdw",
+        "licochron",
+        "licochron-history"
+      ]
     },
     {
       "name": "iuria",
@@ -67,8 +73,12 @@
         "shell": "/bin/bash",
         "sudo": false
       },
-      "alias": ["leonidas"],
-      "worktree": ["licoshdw"]
+      "alias": [
+        "leonidas"
+      ],
+      "worktree": [
+        "licoshdw"
+      ]
     },
     {
       "name": "polaris",
@@ -78,8 +88,12 @@
         "shell": "/bin/bash",
         "sudo": false
       },
-      "alias": ["leonidas"],
-      "worktree": ["licoshdw"]
+      "alias": [
+        "leonidas"
+      ],
+      "worktree": [
+        "licoshdw"
+      ]
     },
     {
       "name": "sirius",
@@ -89,8 +103,12 @@
         "shell": "/bin/bash",
         "sudo": false
       },
-      "alias": ["leonidas"],
-      "worktree": ["licoshdw"]
+      "alias": [
+        "leonidas"
+      ],
+      "worktree": [
+        "licoshdw"
+      ]
     },
     {
       "name": "agate",
@@ -100,8 +118,12 @@
         "shell": "/bin/bash",
         "sudo": false
       },
-      "alias": ["leonidas"],
-      "worktree": ["licoshdw"]
+      "alias": [
+        "leonidas"
+      ],
+      "worktree": [
+        "licoshdw"
+      ]
     },
     {
       "name": "alexandrite",
@@ -111,8 +133,12 @@
         "shell": "/bin/bash",
         "sudo": false
       },
-      "alias": ["leonidas"],
-      "worktree": ["licoshdw"]
+      "alias": [
+        "leonidas"
+      ],
+      "worktree": [
+        "licoshdw"
+      ]
     },
     {
       "name": "leonidas",
@@ -122,8 +148,17 @@
         "shell": "/bin/bash",
         "sudo": true
       },
-      "alias": ["lico", "iuria", "polaris", "sirius", "agate", "alexandrite"],
-      "worktree": ["licoshdw"]
+      "alias": [
+        "lico",
+        "iuria",
+        "polaris",
+        "sirius",
+        "agate",
+        "alexandrite"
+      ],
+      "worktree": [
+        "licoshdw"
+      ]
     }
   ]
 }
