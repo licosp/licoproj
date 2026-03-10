@@ -344,6 +344,16 @@ def configure_bashrc(
     active_wt = wts[0] if wts else None
     cd_path = WS_ROOT / f".crew/{name}/{active_wt}" if active_wt else WS_ROOT
     bash_p = Path(f"/home/{name}/.bashrc")
+    profile_p = Path(f"/home/{name}/.bash_profile")
+
+    # Ensure .bash_profile exists and sources .bashrc for login parity
+    if not profile_p.exists():
+        with profile_p.open("w", encoding="utf-8") as profile:
+            profile.write("# Village Login Profile\n")
+            profile.write("if [ -f ~/.bashrc ]; then\n")
+            profile.write("    . ~/.bashrc\n")
+            profile.write("fi\n")
+
     if not bash_p.exists():
         return
 
