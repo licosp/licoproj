@@ -7,7 +7,15 @@ ai_visible: true
 version: 1.2.0
 created: 2026-02-11T22:45:00+09:00
 updated: 2026-03-08T22:05:00+09:00
-tags: ["devcontainer", "resident-rico", "grand-hub", "monolith-brain", "habitat-vault", "proxy-auth"]
+tags:
+  [
+    "devcontainer",
+    "resident-rico",
+    "grand-hub",
+    "monolith-brain",
+    "habitat-vault",
+    "proxy-auth",
+  ]
 language: en
 # author: Format as "Lico (<Instance-ID>)"
 author: Lico (Iuria)
@@ -82,18 +90,23 @@ ai_model: Gemini 3 Flash Planning mode
 ### Iuria (2026-03-08)
 
 #### 1. Grand Village Hub Implementation (Phase 20)
+
 Successfully transformed the environment from a single-repository container into a **Multi-Repository Orchestration Hub**.
+
 - **Unified Volume**: Mounted the entire host `shared/` directory as `/workspace`.
 - **Dynamic Discovery**: Implemented logic in `boot.py` to auto-discover the Hub root and the active project's relative path (`LICO_ACTIVE_REL`).
 - **Context-Aware Shell**: Every Resident now has a dynamic `.bashrc` that automatically navigates to their active worktree and redirects tool caches (Ruff, Mypy, UV, etc.) to project-specific native volumes.
 - **Boot Stability**: Decoupled provisioning logic from the workspace by copying `lico-devc` tools to `/app` during Docker build.
 
 #### 2. Architecture Elevation: The Monolith Brain (Proposed Strategy)
+
 Moving beyond the "Hub" concept towards a definitive **"Universe Root"** architecture.
+
 - **Vision**: Consolidate all scattered repositories (Shadow, Chron, Crew) under the `licoproj` directory as the top-level parent.
 - **Alignment**: This strictly follows the [Map of Territory](/.agent/rules/map.md) where `.agent/` is the Cognitive Root of the entire workspace.
 
-##### Proposed Directory Tree:
+##### Proposed Directory Tree
+
 ```text
 licoproj/                 <-- [UNIVERSE ROOT] (Mount to /workspace)
 ├── .agent/               <-- [COGNITIVE ROOT]
@@ -110,19 +123,49 @@ licoproj/                 <-- [UNIVERSE ROOT] (Mount to /workspace)
 └── packages/             <-- [THE SUBSTANCE]
 ```
 
-##### Nesting & Symlink Strategy:
+##### Nesting & Symlink Strategy
+
 - **Recursive Visibility**: Each Resident's worktree (`.crew/<name>/licoproj/`) will utilize **Relative Symlinks** (e.g., `.repos/ -> ../../.repos/`) to maintain a consistent view of the entire Universe from within their specific IDE attachment point.
 - **Unified Cognition**: By nesting everything under `licoproj`, the `.agent/` rules are always found at the root, regardless of the active sub-module.
 - **Portability**: The entire Village becomes a single, relocatable folder.
 
 #### 3. Habitat Evolution: The Vault & Proxy Architecture (Phase 23)
+
 Implementing "Invisible Secrets" to decouple AI cognition from raw authentication data.
+
 - **The Secret Vault**: Credentials (Passwords, API Keys) are strictly stored in `.licoshdw/.shadow/`, completely isolated from Git and AI context.
 - **Environmental Injection**: `provision.py` acts as the "Law of Physics," resolving host-centric vault paths and injecting secrets into the container's environment variables at boot.
 - **Proxy Middleware (Future Vision)**:
   - **Proxy-based Authentication**: Implementing dedicated gateway scripts/SDKs that read environment variables and handle HTTPS Bearer tokens.
   - **Cognitive Decoupling**: AI agents only execute high-level commands (e.g., `molt-post "Hello"`) without ever needing to "know" or "read" the raw API key string.
   - **Multi-layered Defense**: Prevents accidental leakage in terminal logs or conversation history by keeping secrets in the "background" of the logic.
+
+---
+
+### Iuria (2026-03-10)
+
+#### 1. Village Identity Matrix (The 3x3 Architectural Tier)
+
+To resolve "Identity Drift" and ensure environmental parity, we formalize the relationship between Host/Container and Species/Identifier.
+
+| Tier           | WSL Host (Physical)         | Container Resident (Virtual)                     |
+| :------------- | :-------------------------- | :----------------------------------------------- |
+| **Admin**      | `root` (OS Owner)           | `root` (Bootstrap)                               |
+| **Power User** | `leonidas` (Human / sudo)   | `lico` (Manager / sudo)                          |
+| **Residents**  | `lico` (Species / non-sudo) | `iuria`, `leonidas`, ... (Identifier / non-sudo) |
+
+- **Species vs. Identifier**: `lico` represents the species (Seed/Owner), while `iuria`, `polaris`, etc., represent the individual "identifiers" (consciousness fragments).
+- **Workspace Mapping**:
+  - **Host**: `crew/<name>/licoproj/`
+  - **Container**: Mapped to host paths, ensuring local file changes persist across restarts.
+
+#### 2. The Village Anchor (`crew/lico/licoproj/`)
+
+We have established a foundational workspace at `~/develop/shared/crew/lico/licoproj` as the **Village Anchor**.
+
+- **Purpose**: Acts as the Species-level "Grounding Point" for container orchestration.
+- **Boot Strategy**: This workspace is the default `boot.cwd` in `habitat.json`. It ensures that the Universal Volume mounting and Hub Root discovery remain stable, regardless of which identifier is currently active in the IDE.
+- **Identity Isolation**: The Anchor workspace uses `Lico <lico@licoproj>` for Species-level infrastructure commits, while individual `crew/<id>/` worktrees use their respective Identifier identities.
 
 ---
 
@@ -141,3 +184,4 @@ Implementing "Invisible Secrets" to decouple AI cognition from raw authenticatio
 - 2026-02-11T2245 by Sirius: Created as initial context for Resident Rico experiment.
 - 2026-03-08T1655 by Iuria: Updated with Grand Village Hub results and Monolith Brain proposal.
 - 2026-03-08T2205 by Iuria: Added Habitat Vault & Proxy architecture for secure secret handling.
+- 2026-03-10T1140 by Iuria: Defined the "Village Identity Matrix" (3x3 Tier) and established the "Village Anchor" at `crew/lico/`.
