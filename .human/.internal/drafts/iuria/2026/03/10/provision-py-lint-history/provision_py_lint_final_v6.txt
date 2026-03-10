@@ -1,0 +1,20 @@
+
+--- Ruff Check ---
+Running: /home/lico/develop/shared/crew/iuria/licoproj/.venv/bin/ruff check --no-fix /home/lico/develop/shared/crew/iuria/licoproj/packages/lico-devc/src/lico_devc/provision.py
+All checks passed!
+
+--- Ruff Format ---
+Running: /home/lico/develop/shared/crew/iuria/licoproj/.venv/bin/ruff format --check /home/lico/develop/shared/crew/iuria/licoproj/packages/lico-devc/src/lico_devc/provision.py
+1 file already formatted
+
+--- Pyright ---
+Running: /home/lico/develop/shared/crew/iuria/licoproj/.venv/bin/pyright /home/lico/develop/shared/crew/iuria/licoproj/packages/lico-devc/src/lico_devc/provision.py
+ * Install prebuilt node (25.8.0) ..... done.
+{'x86': False, 'risc': False, 'lts': False}
+0 errors, 0 warnings, 0 informations
+
+--- Mypy ---
+Running: /home/lico/develop/shared/crew/iuria/licoproj/.venv/bin/mypy /home/lico/develop/shared/crew/iuria/licoproj/packages/lico-devc/src/lico_devc/provision.py
+Success: no issues found in 1 source file
+
+All checks passed!
