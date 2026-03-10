@@ -2,13 +2,12 @@
 name = "licoproj"
 version = "0.0.1"
 requires-python = ">=3.14"
-dependencies = [
-    "lico-lint-empty-dir",
-]
+dependencies = []
 
 [dependency-groups]
 lico-lint = ["lico-lint"]
 lico-devc = ["lico-devc"]
+lico-lint-empty-dir = ["lico-lint-empty-dir"]
 
 dev = [
   "mypy>=1.19.1",
@@ -22,9 +21,11 @@ dev = [
 [project.optional-dependencies]
 lico-lint = ["lico-lint"]
 lico-devc = ["lico-devc"]
+lico-lint-empty-dir = ["lico-lint-empty-dir"]
 
 [tool.uv]
-default-groups = ["dev", "lico-lint", "lico-devc"]
+cache-dir = "./.temp/cache/uv"
+default-groups = ["dev", "lico-lint", "lico-devc", "lico-lint-empty-dir"]
 
 [tool.uv.sources]
 lico-lint = { workspace = true }
@@ -32,7 +33,11 @@ lico-devc = { workspace = true }
 lico-lint-empty-dir = { workspace = true }
 
 [tool.uv.workspace]
-members = ["packages/lico-lint", "packages/lico-lint-empty-dir", "packages/lico-devc"]
+members = [
+  "packages/lico-lint",
+  "packages/lico-lint-empty-dir",
+  "packages/lico-devc",
+]
 
 [tool.ruff]
 cache-dir = "./.temp/cache/ruff"
@@ -78,22 +83,26 @@ typeCheckingMode = "strict"
 pythonVersion = "3.14"
 pythonPlatform = "Linux"
 exclude = [
-  "**/.*",
+  "**/.venv",
+  "**/.temp",
+  "**/.trash",
+  "**/.repos",
+  "**/.gemini",
+  "**/.agent/.internal",
   "**/node_modules",
   "**/__pycache__",
-  ".venv",
-  ".temp",
-  ".repos",
-  ".trash",
-  ".agent/.internal/archive",
 ]
-include = ["packages/lico-lint/src", "packages/lico-devc/src"]
-extraPaths = ["packages/lico-lint/src", "packages/lico-devc/src"]
-reportUnknownVariableType = true
-reportUnknownMemberType = true
-reportUnknownParameterType = true
-reportUnknownArgumentType = true
-reportUnknownLambdaType = true
+include = ["."]
+extraPaths = [
+  "packages/lico-lint/src",
+  "packages/lico-lint-empty-dir/src",
+  "packages/lico-devc/src",
+]
+reportUnknownVariableType = "error"
+reportUnknownMemberType = "error"
+reportUnknownParameterType = "error"
+reportUnknownArgumentType = "error"
+reportUnknownLambdaType = "error"
 reportUnusedImport = "error"
 reportUnusedVariable = "error"
 reportUnusedClass = "error"
@@ -116,10 +125,14 @@ disallow_any_unimported = true
 show_error_codes = true
 warn_unreachable = true
 cache_dir = "./.temp/cache/mypy"
-mypy_path = ["packages/lico-lint", "packages/lico-devc"]
+mypy_path = [
+  "packages/lico-lint",
+  "packages/lico-lint-empty-dir",
+  "packages/lico-devc",
+]
 
 [[tool.mypy.overrides]]
-module = ["lico-lint", "lico-devc"]
+module = ["lico-lint", "lico-lint-empty-dir", "lico-devc"]
 disable_error_code = ["misc"]
 
 [tool.pytest.ini_options]
@@ -131,5 +144,13 @@ addopts = """
   --verbose
 """
 cache_dir = "./.temp/cache/pytest"
-pythonpath = ["packages/lico-lint", "packages/lico-devc"]
-testpaths = ["packages/lico-lint/tests", "packages/lico-lint-empty-dir/tests"]
+pythonpath = [
+  "packages/lico-lint",
+  "packages/lico-lint-empty-dir",
+  "packages/lico-devc",
+]
+testpaths = [
+  "packages/lico-lint/tests",
+  "packages/lico-lint-empty-dir/tests",
+  "packages/lico-devc/tests",
+]

@@ -1,30 +1,18 @@
 """Lico Container Bootstrapper (Bare Spark)."""
 
-import json
 import logging
 import os
 import subprocess
 import sys
 from pathlib import Path
-from typing import TypedDict, cast
+
+from .manifest import load_habitat_config
 
 # Configure logging for discrete CLI feedback
 logging.basicConfig(
     level=logging.INFO, format="%(message)s", stream=sys.stdout
 )
 logger = logging.getLogger(__name__)
-
-
-class BootConfig(TypedDict, total=False):
-    """Configuration for boot operations."""
-
-    cwd: str
-
-
-class HabitatConfig(TypedDict, total=False):
-    """Configuration for the Lico habitat."""
-
-    boot: BootConfig
 
 
 class Habitat:
@@ -41,8 +29,7 @@ class Habitat:
         if not config_path.exists():
             return  # Fallback if config is missing
 
-        with config_path.open("r", encoding="utf-8") as f:
-            config = cast("HabitatConfig", json.load(f))
+        config = load_habitat_config(config_path)
 
         boot_config = config.get("boot", {})
         expected_cwd = boot_config.get("cwd")
@@ -58,6 +45,35 @@ class Habitat:
             logger.error("        Expected Root: %s", expected_abs)
             logger.error("        Actual Root:   %s", actual_abs)
             logger.error("        Please ensure you are at the Village Root.")
+            sys.exit(1)
+
+    @staticmethod
+    def validate_credentials(project_root: Path) -> None:
+        """Verify if the required credential file exists.
+
+        Args:
+            project_root: The identified absolute path to the project root.
+        """
+        config_path = project_root / "packages/lico-devc/habitat.json"
+        if not config_path.exists():
+            return
+
+        config = load_habitat_config(config_path)
+
+        env_config = config.get("env", {})
+        if env_config.get("name") != "credentials":
+            return
+
+        env_path = env_config.get("path")
+        if not env_path:
+            return
+
+        # Normalize and expand for check
+        cred_path = Path(env_path).expanduser().resolve()
+        if not cred_path.exists():
+            logger.warning("[Warning] Credentials Missing.")
+            logger.warning("          Path: %s", cred_path)
+            logger.warning("          Please ensure your Vault is active.")
             sys.exit(1)
 
 
@@ -86,8 +102,9 @@ def main() -> None:
     project_root = Path(__file__).resolve().parents[4]
     os.chdir(project_root)
 
-    # 2. Safety Check: CWD Validation (Habitat Gate)
+    # 2. Safety Check: CWD & Credential Validation (Habitat Gate)
     Habitat.validate_cwd(project_root)
+    Habitat.validate_credentials(project_root)
 
     # 3. Discover Universe Root
     hub_root = find_hub_root()
