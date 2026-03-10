@@ -360,14 +360,15 @@ def configure_bashrc(
         env_vars.update(site_secrets)
         env_vars.update(
             {
-                "PYTHONPYCACHEPREFIX": f"{cd_path}/.temp/pycache",
-                "UV_CACHE_DIR": f"{cd_path}/.temp/uv-cache",
-                "YARN_CACHE_FOLDER": f"{cd_path}/.temp/yarn-cache",
-                "RUFF_CACHE_DIR": f"{cd_path}/.temp/ruff-cache",
-                "MYPY_CACHE_DIR": f"{cd_path}/.temp/mypy-cache",
-                "PIP_CACHE_DIR": f"{cd_path}/.temp/pip-cache",
-                "npm_config_cache": f"{cd_path}/.temp/npm-cache",
-                "PYTEST_ADDOPTS": f"-o cache_dir={cd_path}/.temp/pytest-cache",
+                "PYTHONPYCACHEPREFIX": f"{cd_path}/.temp/cache/pycache",
+                "PYRIGHT_PYTHON_CACHE_DIR": f"{cd_path}/.temp/cache/pyright",
+                "UV_CACHE_DIR": f"{cd_path}/.temp/cache/uv",
+                "YARN_CACHE_FOLDER": f"{cd_path}/.temp/cache/yarn",
+                "RUFF_CACHE_DIR": f"{cd_path}/.temp/cache/ruff",
+                "MYPY_CACHE_DIR": f"{cd_path}/.temp/cache/mypy",
+                "PIP_CACHE_DIR": f"{cd_path}/.temp/cache/pip",
+                "npm_config_cache": f"{cd_path}/.temp/cache/npm",
+                "PYTEST_ADDOPTS": f"-o cache_dir={cd_path}/.temp/cache/pytest",
             }
         )
 

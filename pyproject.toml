@@ -24,6 +24,7 @@ lico-devc = ["lico-devc"]
 lico-lint-empty-dir = ["lico-lint-empty-dir"]
 
 [tool.uv]
+cache-dir = "./.temp/cache/uv"
 default-groups = ["dev", "lico-lint", "lico-devc", "lico-lint-empty-dir"]
 
 [tool.uv.sources]
