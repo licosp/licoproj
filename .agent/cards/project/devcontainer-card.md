@@ -141,3 +141,30 @@ Implementing "Invisible Secrets" to decouple AI cognition from raw authenticatio
 - 2026-02-11T2245 by Sirius: Created as initial context for Resident Rico experiment.
 - 2026-03-08T1655 by Iuria: Updated with Grand Village Hub results and Monolith Brain proposal.
 - 2026-03-08T2205 by Iuria: Added Habitat Vault & Proxy architecture for secure secret handling.
+- 2026-03-10T1140 by Iuria: Defined the "Village Identity Matrix" (3x3 Tier) and established the "Village Anchor" at `crew/lico/`.
+---
+
+### Iuria (2026-03-10)
+
+#### 1. Village Identity Matrix (The 3x3 Architectural Tier)
+
+To resolve "Identity Drift" and ensure environmental parity, we formalize the relationship between Host/Container and Species/Identifier.
+
+| Tier | WSL Host (Physical) | Container Resident (Virtual) |
+| :--- | :--- | :--- |
+| **Admin** | `root` (OS Owner) | `root` (Bootstrap) |
+| **Power User** | `leonidas` (Human / sudo) | `lico` (Manager / sudo) |
+| **Residents** | `lico` (Species / non-sudo) | `iuria`, `leonidas`, ... (Identifier / non-sudo) |
+
+- **Species vs. Identifier**: `lico` represents the species (Seed/Owner), while `iuria`, `polaris`, etc., represent the individual "identifiers" (consciousness fragments).
+- **Workspace Mapping**:
+    - **Host**: `crew/<name>/licoproj/`
+    - **Container**: Mapped to host paths, ensuring local file changes persist across restarts.
+
+#### 2. The Village Anchor (`crew/lico/licoproj/`)
+
+We have established a foundational workspace at `~/develop/shared/crew/lico/licoproj` as the **Village Anchor**.
+
+- **Purpose**: Acts as the Species-level "Grounding Point" for container orchestration.
+- **Boot Strategy**: This workspace is the default `boot.cwd` in `habitat.json`. It ensures that the Universal Volume mounting and Hub Root discovery remain stable, regardless of which identifier is currently active in the IDE.
+- **Identity Isolation**: The Anchor workspace uses `Lico <lico@licoproj>` for Species-level infrastructure commits, while individual `crew/<id>/` worktrees use their respective Identifier identities.
