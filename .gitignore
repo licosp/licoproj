@@ -1,8 +1,5 @@
 # Lico
 
-# Lico Provisioning Credentials
-packages/lico-devc/habitat-credentials.json
-
 ## Dependencies
 .venv/
 node_modules/
@@ -17,7 +14,6 @@ __pycache__/
 .trash/*
 
 ## Project Base
-.runtimes/*
 .repos/*
 .crew/*
 
