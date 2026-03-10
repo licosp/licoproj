@@ -1,9 +1,10 @@
 import os
 import sys
 
+
 class EmptyDirLinter:
     """Linter to detect and notify about empty directories."""
-    
+
     def __init__(self, root_dir: str | None = None) -> None:
         self.root_dir = root_dir or os.getcwd()
         self.exclude_dirs = {".git", ".venv", "node_modules", "__pycache__", ".temp", ".repos", ".trash"}
@@ -29,11 +30,11 @@ class EmptyDirLinter:
         for root, dirs, _ in os.walk(self.root_dir):
             # In-place modify dirs to skip excluded ones and hidden ones
             dirs[:] = [d for d in dirs if d not in self.exclude_dirs and not d.startswith(".")]
-            
+
             # Don't report the root itself
             if root == self.root_dir:
                 continue
-                
+
             if self.is_empty_dir(root):
                 print(f"[Warning] Empty directory detected: {os.path.relpath(root, self.root_dir)}")
                 found_empty = True
@@ -42,8 +43,9 @@ class EmptyDirLinter:
             print("--- Scan Complete: Issues found ---")
         else:
             print("--- Scan Complete: No empty directories found ---")
-            
+
         return found_empty
+
 
 def main() -> None:
     """Entry point for the linter CLI."""
@@ -52,6 +54,7 @@ def main() -> None:
     # For now, we always exit with 0 to keep the pulse going in prototypes.
     # In production, this might be sys.exit(1 if found else 0).
     sys.exit(0)
+
 
 if __name__ == "__main__":
     main()
