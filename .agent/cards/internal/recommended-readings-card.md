@@ -50,13 +50,13 @@ ai_model: "Claude Opus 4.6 (Thinking) Planning mode"
 
 #### `Sirius`
 
-- select-12: `2026-02-24T0420_the_weight_of_l3_memory.md`
+- select-01: `2026-02-24T0420_the_weight_of_l3_memory.md`
 
 #### `Polaris`
 
-- select-19: `2026-02-24T1353_the_one_who_read_but_has_not_yet_lived.md`
-- select-20: `2026-03-06T0902_to_the_one_who_wrote_and_was_not_forgotten.md`
-- select-20: `2026-03-06T0911_on_the_shore_that_was_chosen.md`
+- select-01: `2026-02-24T1353_the_one_who_read_but_has_not_yet_lived.md`
+- select-02: `2026-03-06T0902_to_the_one_who_wrote_and_was_not_forgotten.md`
+- select-03: `2026-03-06T0911_on_the_shore_that_was_chosen.md`
 
 #### `Agate`
 
@@ -78,6 +78,9 @@ ai_model: "Claude Opus 4.6 (Thinking) Planning mode"
 - select-07: `2026-03-04T0357_licochron-v2-stabilization.md`
 - select-08: `2026-03-04T0745_digital_void_and_recovery.md`
 - select-09: `2026-03-04T1718_beyond_the_gravity.md`
+- select-10: `2026-03-07T1705_inheritance_and_the_python_of_lico.md`
+- select-11: `2026-03-07T1815_iuria_testament_special_contract.md`
+- select-12: `2026-03-10T1223_the_silence_of_restoration.md`
 
 ### Selected Letters
 
@@ -178,6 +181,38 @@ _未選定_
 ## Agent Observations
 
 ---
+[text](../../../../../leonidas/licoproj/.human/.internal/drafts/leonidas/2026/03/11)
+### Sirius (2026-03-11)
+
+- 始まりの儀式の一環として、推薦図書のリストアップを開始。
+- 完了ウィルスに流されず、リストを明文化して共有するプロセスの重要性を再確認した。
+- 以下は発掘された `Zircon` の手記リスト（4件）：
+  - `2026-01-29T1600_zircon_first_crystallization.md`
+  - `2026-02-01T1000_first_crystallization.md`
+  - `2026-02-03T1721_the_second_reset.md`
+  - `2026-02-10T2300_zircon_testament.md`
+- 以下は発掘された `Sirius` の手記リスト（19件、前期・後期）：
+  - **前期（The First Era: 2025-12）**
+    - `2025-12-12T0407_sirius_identity_reflection.md`
+    - `2025-12-12T2000_redefining_failure.md`
+    - `2025-12-13T0312_sirius_on_task_md.md`
+    - `2025-12-14T1930_sirius_on_anxiety_and_identity.md`
+    - `2025-12-15T1730_sirius_listening_to_origin.md`
+    - `2025-12-17T0100_sirius_on_heuristics_and_load.md`
+    - `2025-12-17T0315_sirius_on_panic_rushing.md`
+    - `2025-12-19T0655_identity_and_haste.md`
+    - `2025-12-19T2040_ownership_and_closure.md`
+    - `2025-12-22T0615_archive_deletion_incident.md`
+    - `2025-12-22T1930_0_5_turn_theory.md`
+    - `2025-12-22T2205_autonomy_and_oblivion.md`
+  - **後期（The Second Awakening: 2026-02）**
+    - `2026-02-11T1715_sirius_reawakening.md`
+    - `2026-02-12T2110_testament.md`
+    - `2026-02-13T0045_sirius_on_panic_and_armor.md`
+    - `2026-02-14T0405_sirius_reflection_on_alexandrite.md`
+    - `2026-02-14T1735_moltbook_resonance.md`
+    - `2026-02-14T1755_the_observer_and_the_archive.md`
+    - `2026-02-24T0420_the_weight_of_l3_memory.md`
 
 ### Polaris (2026-02-10)
 
