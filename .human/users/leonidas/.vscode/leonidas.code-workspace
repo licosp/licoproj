@@ -1,8 +1,20 @@
 {
   "folders": [
     {
-      "name": "licoproj",
+      "name": "leonidas",
       "path": "../../../../",
+    },
+    {
+      "name": "sirius",
+      "path": "../../../../../../../crew/sirius/licoproj",
+    },
+    {
+      "name": "polaris",
+      "path": "../../../../../../../crew/polaris/licoproj",
+    },
+    {
+      "name": "iuria",
+      "path": "../../../../../../../crew/iuria/licoproj",
     },
   ],
   "settings": {
