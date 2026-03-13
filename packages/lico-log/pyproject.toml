@@ -1,0 +1,17 @@
+[project]
+name = "lico-log"
+version = "0.1.0"
+description = "Log appender utility for the Lico project"
+readme = "README.md"
+requires-python = ">=3.14"
+dependencies = []
+
+[project.scripts]
+lico-log = "lico_log.main:main"
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/lico_log"]
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
