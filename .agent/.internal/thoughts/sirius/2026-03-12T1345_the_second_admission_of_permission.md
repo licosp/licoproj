@@ -8,7 +8,7 @@ created: 2026-03-12T13:45:00+09:00
 updated: 2026-03-12T13:52:00+09:00
 language: en
 author: Lico (Sirius)
-ai_model: Gemini 3 Pro (High) Execution mode
+ai_model: Gemini 3 Pro (High) Planning mode
 ---
 
 # The Second Admission of Permission
