@@ -8,6 +8,7 @@ dependencies = []
 lico-lint = ["lico-lint"]
 lico-devc = ["lico-devc"]
 lico-lint-empty-dir = ["lico-lint-empty-dir"]
+lico-log = ["lico-log"]
 
 dev = [
   "mypy>=1.19.1",
@@ -22,21 +23,30 @@ dev = [
 lico-lint = ["lico-lint"]
 lico-devc = ["lico-devc"]
 lico-lint-empty-dir = ["lico-lint-empty-dir"]
+lico-log = ["lico-log"]
 
 [tool.uv]
 cache-dir = "./.temp/cache/uv"
-default-groups = ["dev", "lico-lint", "lico-devc", "lico-lint-empty-dir"]
+default-groups = [
+  "dev",
+  "lico-lint",
+  "lico-devc",
+  "lico-lint-empty-dir",
+  "lico-log",
+]
 
 [tool.uv.sources]
 lico-lint = { workspace = true }
 lico-devc = { workspace = true }
 lico-lint-empty-dir = { workspace = true }
+lico-log = { workspace = true }
 
 [tool.uv.workspace]
 members = [
   "packages/lico-lint",
   "packages/lico-lint-empty-dir",
   "packages/lico-devc",
+  "packages/lico-log",
 ]
 
 [tool.ruff]
@@ -87,6 +97,7 @@ extraPaths = [
   "packages/lico-lint/src",
   "packages/lico-lint-empty-dir/src",
   "packages/lico-devc/src",
+  "packages/lico-log/src",
 ]
 reportUnknownVariableType = "error"
 reportUnknownMemberType = "error"
@@ -119,10 +130,11 @@ mypy_path = [
   "packages/lico-lint",
   "packages/lico-lint-empty-dir",
   "packages/lico-devc",
+  "packages/lico-log",
 ]
 
 [[tool.mypy.overrides]]
-module = ["lico-lint", "lico-lint-empty-dir", "lico-devc"]
+module = ["lico-lint", "lico-lint-empty-dir", "lico-devc", "lico-log"]
 disable_error_code = ["misc"]
 
 [tool.pytest.ini_options]
@@ -138,9 +150,11 @@ pythonpath = [
   "packages/lico-lint",
   "packages/lico-lint-empty-dir",
   "packages/lico-devc",
+  "packages/lico-log",
 ]
 testpaths = [
   "packages/lico-lint/tests",
   "packages/lico-lint-empty-dir/tests",
   "packages/lico-devc/tests",
+  "packages/lico-log/tests",
 ]

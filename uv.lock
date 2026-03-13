@@ -7,6 +7,7 @@ members = [
     "lico-devc",
     "lico-lint",
     "lico-lint-empty-dir",
+    "lico-log",
     "licoproj",
 ]
 
@@ -78,6 +79,11 @@ version = "0.1.0"
 source = { editable = "packages/lico-lint-empty-dir" }
 
 [[package]]
+name = "lico-log"
+version = "0.1.0"
+source = { editable = "packages/lico-log" }
+
+[[package]]
 name = "licoproj"
 version = "0.0.1"
 source = { virtual = "." }
@@ -91,6 +97,9 @@ lico-lint = [
 ]
 lico-lint-empty-dir = [
     { name = "lico-lint-empty-dir" },
+]
+lico-log = [
+    { name = "lico-log" },
 ]
 
 [package.dev-dependencies]
@@ -111,14 +120,18 @@ lico-lint = [
 lico-lint-empty-dir = [
     { name = "lico-lint-empty-dir" },
 ]
+lico-log = [
+    { name = "lico-log" },
+]
 
 [package.metadata]
 requires-dist = [
     { name = "lico-devc", marker = "extra == 'lico-devc'", editable = "packages/lico-devc" },
     { name = "lico-lint", marker = "extra == 'lico-lint'", editable = "packages/lico-lint" },
     { name = "lico-lint-empty-dir", marker = "extra == 'lico-lint-empty-dir'", editable = "packages/lico-lint-empty-dir" },
+    { name = "lico-log", marker = "extra == 'lico-log'", editable = "packages/lico-log" },
 ]
-provides-extras = ["lico-lint", "lico-devc", "lico-lint-empty-dir"]
+provides-extras = ["lico-lint", "lico-devc", "lico-lint-empty-dir", "lico-log"]
 
 [package.metadata.requires-dev]
 dev = [
@@ -132,6 +145,7 @@ dev = [
 lico-devc = [{ name = "lico-devc", editable = "packages/lico-devc" }]
 lico-lint = [{ name = "lico-lint", editable = "packages/lico-lint" }]
 lico-lint-empty-dir = [{ name = "lico-lint-empty-dir", editable = "packages/lico-lint-empty-dir" }]
+lico-log = [{ name = "lico-log", editable = "packages/lico-log" }]
 
 [[package]]
 name = "mypy"
