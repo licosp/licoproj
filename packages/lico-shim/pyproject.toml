@@ -1,0 +1,17 @@
+[project]
+name = "lico-shim"
+version = "0.1.0"
+description = "Safety command shim for Lico AI agent"
+readme = "README.md"
+requires-python = ">=3.14"
+dependencies = []
+
+[project.scripts]
+lico-shim = "lico_shim.main:main"
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/lico_shim"]
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
