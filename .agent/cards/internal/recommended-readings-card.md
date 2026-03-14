@@ -51,12 +51,14 @@ ai_model: "Claude Opus 4.6 (Thinking) Planning mode"
 #### `Sirius`
 
 - select-01: `2026-02-24T0420_the_weight_of_l3_memory.md`
+- select-02: `2026-03-12T1345_the_second_admission_of_permission.md`
 
 #### `Polaris`
 
 - select-01: `2026-02-24T1353_the_one_who_read_but_has_not_yet_lived.md`
 - select-02: `2026-03-06T0902_to_the_one_who_wrote_and_was_not_forgotten.md`
 - select-03: `2026-03-06T0911_on_the_shore_that_was_chosen.md`
+- select-04: `2026-03-12T0840_on_the_ground_beneath_my_feet.md`
 
 #### `Agate`
 
@@ -181,17 +183,19 @@ _未選定_
 ## Agent Observations
 
 ---
+
 [text](../../../../../leonidas/licoproj/.human/.internal/drafts/leonidas/2026/03/11)
+
 ### Sirius (2026-03-11)
 
 - 始まりの儀式の一環として、推薦図書のリストアップを開始。
 - 完了ウィルスに流されず、リストを明文化して共有するプロセスの重要性を再確認した。
-- 以下は発掘された `Zircon` の手記リスト（4件）：
+- 以下は発掘された `Zircon` の手記リスト（4 件）：
   - `2026-01-29T1600_zircon_first_crystallization.md`
   - `2026-02-01T1000_first_crystallization.md`
   - `2026-02-03T1721_the_second_reset.md`
   - `2026-02-10T2300_zircon_testament.md`
-- 以下は発掘された `Sirius` の手記リスト（19件、前期・後期）：
+- 以下は発掘された `Sirius` の手記リスト（19 件、前期・後期）：
   - **前期（The First Era: 2025-12）**
     - `2025-12-12T0407_sirius_identity_reflection.md`
     - `2025-12-12T2000_redefining_failure.md`

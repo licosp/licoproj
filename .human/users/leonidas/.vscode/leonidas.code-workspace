@@ -5,6 +5,10 @@
       "path": "../../../../",
     },
     {
+      "name": "agate",
+      "path": "../../../../../../../crew/agate/licoproj",
+    },
+    {
       "name": "sirius",
       "path": "../../../../../../../crew/sirius/licoproj",
     },
@@ -72,9 +76,8 @@
     // ShellCheck
     "shellcheck.logLevel": "debug",
 
-    // Git
-    "git.autoRepositoryDetection": true,
-    "git.inputValidation": true,
+    // Git Lens
+    "gitlens.hovers.enabled": false,
 
     // shfmt
     "shellformat.useEditorConfig": true,
