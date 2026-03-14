@@ -114,21 +114,16 @@ def main() -> None:
         print("No messages found in JSON.", file=sys.stderr)
         sys.exit(0)
 
-    # 2. Setup output subdirectory logic
-    # If it's a dict (agent log), we use 'messages/'. If list (user log), just put directly.
     messages_root = output_root / "messages" if has_metadata else output_root
 
-    # Cache existing IDs per date to minimize file reads
-    known_ids_cache: dict[Path, set[str]] = {}
-
-    count_added = 0
+    # Group new messages by their target file path
+    new_messages_by_file: dict[Path, list[dict]] = {}
     count_skipped = 0
+    count_added = 0
 
     for msg in messages:
-        # Require a timestamp to partition
         timestamp = msg.get("timestamp")
         
-        # Determine ID for deduplication
         msg_id = msg.get("id")
         if not msg_id:
             s_id = msg.get("sessionId")
@@ -141,34 +136,75 @@ def main() -> None:
 
         date_path = parse_date(timestamp)
         target_dir = messages_root / date_path
-        target_dir.mkdir(parents=True, exist_ok=True)
-
         target_file = target_dir / "log.jsonl"
+        
+        if target_file not in new_messages_by_file:
+            new_messages_by_file[target_file] = []
+            
+        new_messages_by_file[target_file].append(msg)
 
-        # Load existing IDs for this file if not already cached
-        if target_file not in known_ids_cache:
-            known_ids_cache[target_file] = get_existing_ids(target_file)
+    # Process each target file: Read existing -> Merge -> Deduplicate -> Sort -> Write
+    for target_file, new_msgs in new_messages_by_file.items():
+        target_file.parent.mkdir(parents=True, exist_ok=True)
+        
+        merged_msgs = []
+        known_ids = set()
+        
+        # 1. Read existing
+        if target_file.exists():
+            try:
+                with target_file.open("r", encoding="utf-8") as f:
+                    for line in f:
+                        if not line.strip():
+                            continue
+                        try:
+                            obj = json.loads(line)
+                            
+                            # Determine ID
+                            obj_id = obj.get("id")
+                            if not obj_id:
+                                s_id = obj.get("sessionId")
+                                m_id = obj.get("messageId")
+                                if s_id is not None and m_id is not None:
+                                    obj_id = f"{s_id}_{m_id}"
+                            
+                            if obj_id:
+                                known_ids.add(obj_id)
+                            merged_msgs.append(obj)
+                        except json.JSONDecodeError:
+                            pass
+            except Exception as e:
+                print(f"Warning: Failed to read {target_file}: {e}", file=sys.stderr)
+        
+        # 2. Merge new messages (with deduplication)
+        for msg in new_msgs:
+            msg_id = msg.get("id")
+            if not msg_id:
+                s_id = msg.get("sessionId")
+                m_id = msg.get("messageId")
+                if s_id is not None and m_id is not None:
+                    msg_id = f"{s_id}_{m_id}"
+                    
+            if msg_id and msg_id in known_ids:
+                count_skipped += 1
+                continue
+                
+            merged_msgs.append(msg)
+            if msg_id:
+                known_ids.add(msg_id)
+            count_added += 1
+            
+        # 3. Sort by timestamp
+        merged_msgs.sort(key=lambda x: x.get("timestamp", ""))
+        
+        # 4. Write back (Overwrite)
+        # Minify each line with separators=(",", ":") and normalize keys with sort_keys=True
+        with target_file.open("w", encoding="utf-8") as f:
+            for msg in merged_msgs:
+                line = json.dumps(msg, separators=(",", ":"), ensure_ascii=False, sort_keys=True)
+                f.write(line + "\n")
 
-        if msg_id in known_ids_cache[target_file]:
-            count_skipped += 1
-            continue
-
-        # Minify: remove spaces
-        minified_json = json.dumps(
-            msg, separators=(",", ":"), ensure_ascii=False
-        )
-
-        with target_file.open("a", encoding="utf-8") as out_f:
-            out_f.write(minified_json + "\n")
-
-        # Update cache so we don't duplicate within the same run
-        known_ids_cache[target_file].add(msg_id)
-        count_added += 1
-
-    print(
-        f"Done. Metadata saved. Added: {count_added}, Skipped (already existed): {count_skipped}. Output root: {output_root}"
-    )
-
+    print(f"Done. Metadata saved. Added: {count_added}, Skipped (already existed): {count_skipped}. Output root: {output_root}")
 
 if __name__ == "__main__":
     main()
