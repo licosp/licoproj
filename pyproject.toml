@@ -10,6 +10,7 @@ lico-devc = ["lico-devc"]
 lico-lint-empty-dir = ["lico-lint-empty-dir"]
 lico-log = ["lico-log"]
 lico-shim = ["lico-shim"]
+lico-cli-tools = ["lico-cli-tools"]
 
 dev = [
   "mypy>=1.19.1",
@@ -26,10 +27,19 @@ lico-devc = ["lico-devc"]
 lico-lint-empty-dir = ["lico-lint-empty-dir"]
 lico-log = ["lico-log"]
 lico-shim = ["lico-shim"]
+lico-cli-tools = ["lico-cli-tools"]
 
 [tool.uv]
 cache-dir = "./.temp/cache/uv"
-default-groups = ["dev", "lico-lint", "lico-devc", "lico-lint-empty-dir", "lico-log", "lico-shim"]
+default-groups = [
+  "dev",
+  "lico-lint",
+  "lico-devc",
+  "lico-lint-empty-dir",
+  "lico-log",
+  "lico-shim",
+  "lico-cli-tools",
+]
 
 [tool.uv.sources]
 lico-lint = { workspace = true }
@@ -37,6 +47,7 @@ lico-devc = { workspace = true }
 lico-lint-empty-dir = { workspace = true }
 lico-log = { workspace = true }
 lico-shim = { workspace = true }
+lico-cli-tools = { workspace = true }
 
 [tool.uv.workspace]
 members = [
@@ -45,6 +56,7 @@ members = [
   "packages/lico-devc",
   "packages/lico-log",
   "packages/lico-shim",
+  "packages/lico-cli-tools",
 ]
 
 [tool.ruff]
@@ -97,6 +109,7 @@ extraPaths = [
   "packages/lico-devc/src",
   "packages/lico-log/src",
   "packages/lico-shim/src",
+  "packages/lico-cli-tools/src",
 ]
 reportUnknownVariableType = "error"
 reportUnknownMemberType = "error"
@@ -131,10 +144,18 @@ mypy_path = [
   "packages/lico-devc",
   "packages/lico-log",
   "packages/lico-shim",
+  "packages/lico-cli-tools",
 ]
 
 [[tool.mypy.overrides]]
-module = ["lico-lint", "lico-lint-empty-dir", "lico-devc", "lico-log", "lico-shim"]
+module = [
+  "lico-lint",
+  "lico-lint-empty-dir",
+  "lico-devc",
+  "lico-log",
+  "lico-shim",
+  "lico-cli-tools",
+]
 disable_error_code = ["misc"]
 
 [tool.pytest.ini_options]
@@ -152,6 +173,7 @@ pythonpath = [
   "packages/lico-devc",
   "packages/lico-log",
   "packages/lico-shim",
+  "packages/lico-cli-tools",
 ]
 testpaths = [
   "packages/lico-lint/tests",
@@ -159,4 +181,5 @@ testpaths = [
   "packages/lico-devc/tests",
   "packages/lico-log/tests",
   "packages/lico-shim/tests",
+  "packages/lico-cli-tools/tests",
 ]

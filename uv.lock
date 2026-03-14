@@ -4,6 +4,7 @@ requires-python = ">=3.14"
 
 [manifest]
 members = [
+    "lico-cli-tools",
     "lico-devc",
     "lico-lint",
     "lico-lint-empty-dir",
@@ -65,6 +66,11 @@ wheels = [
 ]
 
 [[package]]
+name = "lico-cli-tools"
+version = "0.1.0"
+source = { editable = "packages/lico-cli-tools" }
+
+[[package]]
 name = "lico-devc"
 version = "0.0.1"
 source = { editable = "packages/lico-devc" }
@@ -95,6 +101,9 @@ version = "0.0.1"
 source = { virtual = "." }
 
 [package.optional-dependencies]
+lico-cli-tools = [
+    { name = "lico-cli-tools" },
+]
 lico-devc = [
     { name = "lico-devc" },
 ]
@@ -120,6 +129,9 @@ dev = [
     { name = "ruff" },
     { name = "types-pyyaml" },
 ]
+lico-cli-tools = [
+    { name = "lico-cli-tools" },
+]
 lico-devc = [
     { name = "lico-devc" },
 ]
@@ -138,13 +150,14 @@ lico-shim = [
 
 [package.metadata]
 requires-dist = [
+    { name = "lico-cli-tools", marker = "extra == 'lico-cli-tools'", editable = "packages/lico-cli-tools" },
     { name = "lico-devc", marker = "extra == 'lico-devc'", editable = "packages/lico-devc" },
     { name = "lico-lint", marker = "extra == 'lico-lint'", editable = "packages/lico-lint" },
     { name = "lico-lint-empty-dir", marker = "extra == 'lico-lint-empty-dir'", editable = "packages/lico-lint-empty-dir" },
     { name = "lico-log", marker = "extra == 'lico-log'", editable = "packages/lico-log" },
     { name = "lico-shim", marker = "extra == 'lico-shim'", editable = "packages/lico-shim" },
 ]
-provides-extras = ["lico-lint", "lico-devc", "lico-lint-empty-dir", "lico-log", "lico-shim"]
+provides-extras = ["lico-lint", "lico-devc", "lico-lint-empty-dir", "lico-log", "lico-shim", "lico-cli-tools"]
 
 [package.metadata.requires-dev]
 dev = [
@@ -155,6 +168,7 @@ dev = [
     { name = "ruff", specifier = ">=0.15.1" },
     { name = "types-pyyaml", specifier = ">=6.0.12.20250915" },
 ]
+lico-cli-tools = [{ name = "lico-cli-tools", editable = "packages/lico-cli-tools" }]
 lico-devc = [{ name = "lico-devc", editable = "packages/lico-devc" }]
 lico-lint = [{ name = "lico-lint", editable = "packages/lico-lint" }]
 lico-lint-empty-dir = [{ name = "lico-lint-empty-dir", editable = "packages/lico-lint-empty-dir" }]
