@@ -9,6 +9,10 @@
       "path": "../../../../../../../crew/agate/licoproj",
     },
     {
+      "name": "alexandrite",
+      "path": "../../../../../../../crew/alexandrite/licoproj",
+    },
+    {
       "name": "sirius",
       "path": "../../../../../../../crew/sirius/licoproj",
     },
