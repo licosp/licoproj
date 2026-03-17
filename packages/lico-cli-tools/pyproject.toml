@@ -8,7 +8,8 @@ dependencies = []
 
 [project.scripts]
 lico-jsonl-converter = "lico_cli_tools.json_converter:main"
-lico-jsonl-reconstructor = "lico_cli_tools.json_reconstructor:main"
+lico-jsonl-filter = "lico_cli_tools.json_filter:main"
+lico-jsonl-pack = "lico_cli_tools.json_pack:main"
 
 [tool.hatch.build.targets.wheel]
 packages = ["src/lico_cli_tools"]
