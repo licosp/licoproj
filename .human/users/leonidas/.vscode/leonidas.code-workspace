@@ -12,17 +12,21 @@
       "name": "alexandrite",
       "path": "../../../../../../../crew/alexandrite/licoproj",
     },
+    // {
+    //   "name": "sirius",
+    //   "path": "../../../../../../../crew/sirius/licoproj",
+    // },
+    // {
+    //   "name": "polaris",
+    //   "path": "../../../../../../../crew/polaris/licoproj",
+    // },
+    // {
+    //   "name": "iuria",
+    //   "path": "../../../../../../../crew/iuria/licoproj",
+    // },
     {
-      "name": "sirius",
-      "path": "../../../../../../../crew/sirius/licoproj",
-    },
-    {
-      "name": "polaris",
-      "path": "../../../../../../../crew/polaris/licoproj",
-    },
-    {
-      "name": "iuria",
-      "path": "../../../../../../../crew/iuria/licoproj",
+      "name": "chats",
+      "path": "/home/lico/.gemini/tmp/crew-agate/chats",
     },
   ],
   "settings": {
