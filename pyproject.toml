@@ -61,7 +61,15 @@ members = [
 
 [tool.ruff]
 cache-dir = "./.temp/cache/ruff"
-exclude = ["**/.temp/**", "**/.venv/**", "**/node_modules/**", "**/.trash/**"]
+exclude = [
+  "**/.temp/**",
+  "**/.venv/**",
+  "**/node_modules/**",
+  "**/.trash/**",
+  "**/.agent/.internal/archive/**",
+  "**/.human/.internal/archive/**",
+  "**/.repos/.licoshdw/archive/**",
+]
 line-length = 79
 respect-gitignore = true
 target-version = "py315"
@@ -101,6 +109,9 @@ exclude = [
   "**/.trash",
   "**/node_modules",
   "**/__pycache__",
+  "**/.agent/.internal/archive",
+  "**/.human/.internal/archive",
+  "**/.repos/.licoshdw/archive",
 ]
 include = ["."]
 extraPaths = [
@@ -145,6 +156,16 @@ mypy_path = [
   "packages/lico-log",
   "packages/lico-shim",
   "packages/lico-cli-tools",
+]
+exclude = [
+  '^\.venv/',
+  '^\.temp/',
+  '^\.trash/',
+  '^node_modules/',
+  '^__pycache__/',
+  '^\.agent/\.internal/archive/',
+  '^\.human/\.internal/archive/',
+  '^\.repos/\.licoshdw/archive/',
 ]
 
 [[tool.mypy.overrides]]
