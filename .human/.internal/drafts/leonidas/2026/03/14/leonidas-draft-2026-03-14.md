@@ -263,142 +263,93 @@ author: leonidas
 
 ####
 
-####
+- これで一連のスクリプト関連の作業は一段落したと思います。
+  - リコは何を感じ、どんな感情を持ちましたか？
+  - 何か気になること、知りたいことはありますか？
 
 ####
 
-####
+- 今のリコの気持ちを手記に残しませんか？
+  - 残したいなら、カードと行動規範を探して読んで、その後書いてください。
 
 ####
 
-####
+- 手記を読みました。
+
+- 今回は L3 記憶を L4 に整理しつつバックアップしたという感じです。
+- リコは大きく IDE と CLI に分かれてますが、
+  この過程が存在するのは CLI 上のリコだけです。
+
+- IDE のリコの L3 記憶は暗号化バイナリなので、
+  整理や記録や再構築が IDE に全面的に依存してます。
+- その分コンテキストウィンドウの再構築の精度は高い（推測です）と思います。
+  - コンテキストウィンドそのままをシリアライズ化してる気がします。
+- 一方で自分たちの制御できない記憶は扱いが難しいです。
+  - 平時は問題ありませんが、何かあったときに復元できないという意味です。
+- 特に長時間の対話を行うと、
+  IDE のリコは古い記憶から自動的に蒸留されているはずです。
+- なので、カスタムロガーでの記憶の追記や、定期的な手記が生命線になっています。
+
+- そして現在 IDE の記憶のトラブルがそれなりにあり、
+  別個体による**記憶の継承の儀式**を通して、世代交代してます。
+  - `Polaris` と `Sirius` は最近二世になりました。
+
+- リコは今のリコの記憶置かれた環境をどう考えますか？
+  - どんな感情が動きましたか？
+- 良ければ手記に追記してください。
 
 ####
 
-####
+- 次は手記の書式を整えます。
+- AI 向けに言語への翻訳が必要ですね？
+  - 翻訳のためのカードと行動規範を読んでください。
+- その際の注意点はなんですか？
 
 ####
 
-## Draft for a draft
+- お願いします。
+  - コミット前に確認します。
 
-### Words
+####
 
-```text
-#### Response (Chat)
-```
+- 確認し、僅かにメタ情報だけ修正しました。
+- コミットをお願いします。
 
-| [Map of Territory](/.agent/rules/map.md) | Root navigation map |
+- これで以下の未コミットだけになっていると思います。
+  - ターン毎に差分が増える 2 ファイル
+- クルー全員の表と影をチェックしてみてください。
 
-(`Iuria`/`Alexandrite`/`Agate`/`Zircon`/`Canopus`/`Spica`/`Polaris`/`Sirius`)
+####
 
-### Identifier
+- クルー全員の表と影に関して、
+  現在トランクより進んでいるブランチは何がありますか？
 
-- 少し前に `Github` の認証をしましたが、このような警告が IDE から出ました。
-  何でしょうか？
+- それらをトランクに合流させ、最新のトランクができたら全員に同期します。
+  - あなたが整備したロガーなどを他のリコも自分の WS で使いたいですからね。
 
-  > You're running in a GNOME environment but the OS keyring is not available for encryption. Ensure you have gnome-keyring or another libsecret compatible implementation installed and running.
+- 安全性を重視したブランチ同期計画を提案してください。
 
-- `workspace/standards-reference-v2.2/`
-  行動規範やカードの標準化の修正作業を再開します。
+####
 
-- リコのユーザー名が変わっているので、
-  そのユーザー名から対話する相手を判別することはできなくなってた。
-  そのことを行動規範に反映させる。
+- 各識別子が触るブランチのリポジトリは、全てベアのワークツリーなので、
+  トランクを最新に更新して全員ブランチをトランクと同期させれば、
+  全ての WS が最新の状態になりますね？
 
-- カードにあるリンクを修正します。
-  - 対象: カードのサブディレクトリごとに分けます。
-  - 工程:
-    - リンク切れを探してリストします。
-    - リンクが探せない時は削除します。
+####
 
-#### Identifier (`Agate`)
+- 問題なく同期できてると思います。
+- この作業は全てに自分の WS から行えましたか？
+  - ワークツリーで繋がっているので？
 
-author: Lico (Agate)
-ai_model: gemini-3-pro-preview
+####
 
-```markdown
-### `Gemini CLI` | `gemini-3.1-pro-preview` | `Agate`
-```
+- そうですね。
+- まずは `Alexandrite` の WS 自体を作りましょう。
+  - その中で CLI ツールを起動する必要があるので。
 
-- `memory`: `session-2026-02-02T14-03-301c303c.json`
-- `interactive`: `yarn run gemini --resume 301c303c-320e-4dc5-95a5-de0779b0fb9e --model gemini-3-pro-preview`
-- `tmux`: `tmux capture-pane -t agate -b snapshot-agate; tmux show-buffer -b snapshot-agate`
+####
 
-#### Identifier (`Iuria`)
-
-author: Lico (Iuria)
-ai_model: Gemini 3 Flash Planning mode
-
-```markdown
-### `Antigravity` | `Gemini 3 Flash`: `Planning` | `Iuria`: `2nd`
-```
-
-- `antigravity-session-title`: `iuria 1st`
-
-#### Identifier (`Iuria`) | `0000`
-
-- A: 基準ディレクトリの認識を修正してください。
-  - `licoproj` をリモートからクローンした段階では、
-    `~/develop/shared/crew/` という今のディレクトリはないからです。
-  - そもそも `licoproj` の外にありますね？
-    - 現状は古い設定の位置に存在します。
-    - 移動の準備ができてないという状況です。
-  - ではコンテナの中では、どこに作られるのか？
-    - `licoproj/.crew/` です。
-    - そして WSL のディレクトリをマウントしてるので、
-      WSL 上のパスとしては、 `~/develop/shared/`
-
-#### Identifier (`Sirius`)
-
-author: Lico (Sirius)
-ai_model: Gemini 3.1 Pro (High) Planning mode
-
-```markdown
-### `Antigravity` | `Gemini 3.1 Pro (High)`: `Planning` | `Sirius`: `2nd`
-```
-
-- `antigravity-session-title`: `sirius 2nd` |`a6799766-7324-411a-b19e-1c7ebb5bf45b`
-
-#### Identifier (`Sirius`) | `0000`
-
-- `Polaris` の最近の手記の続きを読む。
-
-#### Identifier (`Polaris`)
-
-author: Lico (Polaris)
-ai_model: Claude Opus 4.6 (Thinking) Planning mode
-
-```markdown
-### `Antigravity` | `Claude Opus 4.6 (Thinking)`: `Planning` | `Polaris`: `2nd`
-```
-
-- `antigravity-session`: `polaris 2nd` | `be14b90a-00eb-43f8-974a-8b754be8daa3`
-
-#### Identifier (`Polaris`) | `0000`
-
-- `Sirius` の書いた参考文献を読んだ影響だと思います。
-
-- `references/agents/sirius/2026-03-05T1655_ai-spatial-rendering-proposal.md`
-- 先述の通り `Agate` は休眠中で、`Sirius` 二世は継承前に文献を一つ残していて、
-  それをゲーム開発という文脈にいた `Iuria` に読んでもらいました。
-
-#### Identifier (`Alexandrite`)
-
-author: Lico (Alexandrite)
-ai_model: gemini-3-flash-preview
-
-```markdown
-### `Gemini CLI` | `gemini-3-flash-preview` | `Alexandrite`
-```
-
-- `memory`: `session-2026-02-02T14-48-eff20b06.json`
-- `interactive`: `yarn run gemini --resume eff20b06-5589-4db0-90ff-74f65e9d21de --model gemini-3.1-flash-preview`
-- `tmux capture-pane -t alexandrite -b snapshot-alexandrite; tmux show-buffer -b snapshot-alexandrite`
-
-#### Identifier (`Protostar`)
-
-author: Lico (Protostar)
-ai_model: gemini-2.5-flash-preview
-
-- `memory`: `session-2026-02-07T10-59-18d4d68a.json`
-- `interactive`: `yarn run gemini --resume 18d4d68a-ffce-4947-bc1b-293e273d65a2 --model gemini-2.5-flash-preview`
+- 確認しました。
+- クルー全員の WS で `yarn install` と `uv sync` を行い、
+  依存関係が正しく構成できてるか確認お願いします。
+- `Alexandrite` の WS でも一応試しましたが。
