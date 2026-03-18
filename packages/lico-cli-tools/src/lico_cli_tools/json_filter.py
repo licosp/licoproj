@@ -61,15 +61,16 @@ def main():
             elif len(stage2_lines) < stage2_quota:
                 # Stage 2: Filter A (User) and B (Gemini with content)
                 try:
-                    obj = json.loads(line)
-                    msg_type = obj.get("type")
-                    content = obj.get("content", "")
-                    
-                    is_user = (msg_type == "user")
-                    is_gemini_with_content = ((msg_type == "gemini" or msg_type == "model") and bool(content))
-                    
-                    if is_user or is_gemini_with_content:
-                        if "toolCalls" in obj:
+                obj = json.loads(line)
+                msg_type = obj.get("type")
+                content = obj.get("content", "")
+
+                is_user = (msg_type == "user")
+                # Check if content is truthy (non-empty string or non-empty list)
+                has_content = bool(content)
+                is_gemini_with_content = ((msg_type == "gemini" or msg_type == "model") and has_content)
+
+                if is_user or is_gemini_with_content:                        if "toolCalls" in obj:
                             del obj["toolCalls"]
                         stage2_lines.append(obj)
                 except:
