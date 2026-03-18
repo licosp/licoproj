@@ -2,10 +2,10 @@
 # yarn lockfile v1
 
 
-"@a2a-js/sdk@^0.3.8":
-  version "0.3.13"
-  resolved "https://registry.yarnpkg.com/@a2a-js/sdk/-/sdk-0.3.13.tgz#e8fb68e1b69e28ccb5699cac1310f1c133444c29"
-  integrity sha512-BZr0f9JVNQs3GKOM9xINWCh6OKIJWZFPyqqVqTym5mxO2Eemc6I/0zL7zWnljHzGdaf5aZQyQN5xa6PSH62q+A==
+"@a2a-js/sdk@0.3.11":
+  version "0.3.11"
+  resolved "https://registry.yarnpkg.com/@a2a-js/sdk/-/sdk-0.3.11.tgz#da9eba33f7a2b035b67b4fc6648924f70cfd503d"
+  integrity sha512-pXjjlL0ZYHgAxObov1J+W3ylfQV0rOrDBB8Eo4a9eCunqs7iNW5OIfMcV8YnZQdzeVSRomj8jHeudVz0zc4RNw==
   dependencies:
     uuid "^11.1.0"
 
@@ -47,6 +47,11 @@
   version "7.28.5"
   resolved "https://registry.yarnpkg.com/@babel/helper-validator-identifier/-/helper-validator-identifier-7.28.5.tgz#010b6938fab7cb7df74aa2bbc06aa503b8fe5fb4"
   integrity sha512-qSs4ifwzKJSV39ucNjsvc6WVHs6b7S03sOh2OcHF9UHfVPqWWALUsNUVzhSBiItjRZoLHx7nIarVjqKVusUZ1Q==
+
+"@bufbuild/protobuf@^2.11.0":
+  version "2.11.0"
+  resolved "https://registry.yarnpkg.com/@bufbuild/protobuf/-/protobuf-2.11.0.tgz#3ec3985c9074b23aea337957225fe15a0e845f8e"
+  integrity sha512-sBXGT13cpmPR5BMgHE6UEEfEaShh5Ror6rfN3yEK5si7QVrtZg8LEPQb0VVhiLRUslD2yLnXtnRzG035J/mZXQ==
 
 "@cacheable/memory@^2.0.7":
   version "2.0.7"
@@ -680,12 +685,13 @@
   resolved "https://registry.yarnpkg.com/@google-cloud/promisify/-/promisify-4.1.0.tgz#df8b060f0121c6462233f5420738dcda09c6df4a"
   integrity sha512-G/FQx5cE/+DqBbOpA5jKsegGwdPniU6PuIEMt+qxWgFxvxuFOzVmp6zYchtYuwAWV5/8Dgs0yAmjvNZv3uXLQg==
 
-"@google/gemini-cli-core@0.33.2":
-  version "0.33.2"
-  resolved "https://registry.yarnpkg.com/@google/gemini-cli-core/-/gemini-cli-core-0.33.2.tgz#2023d9adc3024dad1e1be7075ae36b3ffbe72d5e"
-  integrity sha512-uZJqueJ/W/VgHgnsmA5QTixZBNj61vXuDLmFN0t3WATLqYEM3dGcuPYIOYGHagH4RxIdXXOQ9K2B3b3mTN8Hug==
+"@google/gemini-cli-core@0.34.0":
+  version "0.34.0"
+  resolved "https://registry.yarnpkg.com/@google/gemini-cli-core/-/gemini-cli-core-0.34.0.tgz#03110a5f1fc207a4aa9212e8cbd10962b340818b"
+  integrity sha512-WIaX66NCw7UBscdQMMEOnwhRFYpDAe+UMNC5v/xJVHE6pRCCET7HNv93rh9t7YNvtIlVby2aL7CCT6WphSRCHQ==
   dependencies:
-    "@a2a-js/sdk" "^0.3.8"
+    "@a2a-js/sdk" "0.3.11"
+    "@bufbuild/protobuf" "^2.11.0"
     "@google-cloud/logging" "^11.2.1"
     "@google-cloud/opentelemetry-cloud-monitoring-exporter" "^0.21.0"
     "@google-cloud/opentelemetry-cloud-trace-exporter" "^3.0.0"
@@ -728,6 +734,7 @@
     html-to-text "^9.0.5"
     https-proxy-agent "^7.0.6"
     ignore "^7.0.0"
+    ipaddr.js "^1.9.1"
     js-yaml "^4.1.1"
     marked "^15.0.12"
     mime "4.0.7"
@@ -757,13 +764,13 @@
     keytar "^7.9.0"
     node-pty "^1.0.0"
 
-"@google/gemini-cli@^0.33.0":
-  version "0.33.2"
-  resolved "https://registry.yarnpkg.com/@google/gemini-cli/-/gemini-cli-0.33.2.tgz#0f29ebc9cac72b0f48756a8f7bb1559ed60db775"
-  integrity sha512-66N3BA1K6MyOzFA4z2NkzqIYCROCpeMpHDzwXYR28jMur44onvut6293sYHmpdcroxwXNjYIif5r6fmg9TIiag==
+"@google/gemini-cli@^0.34.0":
+  version "0.34.0"
+  resolved "https://registry.yarnpkg.com/@google/gemini-cli/-/gemini-cli-0.34.0.tgz#ea8b1a7080c53a712db0314826fa73f1bfe1f806"
+  integrity sha512-dbrlpK6GSkQYLHZ43jcpjzTBSmUXOAdJcaBkKBAjAogFHfRoQmdXbDOeD8ETK/D+d6iCWI9dvaAcNVSyb34XZw==
   dependencies:
     "@agentclientprotocol/sdk" "^0.12.0"
-    "@google/gemini-cli-core" "0.33.2"
+    "@google/gemini-cli-core" "0.34.0"
     "@google/genai" "1.30.0"
     "@iarna/toml" "^2.2.5"
     "@modelcontextprotocol/sdk" "^1.23.0"
@@ -4389,7 +4396,7 @@ ip-address@10.1.0:
   resolved "https://registry.yarnpkg.com/ip-address/-/ip-address-10.1.0.tgz#d8dcffb34d0e02eb241427444a6e23f5b0595aa4"
   integrity sha512-XXADHxXmvT9+CRxhXg56LJovE+bmWnEWB78LB83VZTprKTmaC5QfruXocxzTZ2Kl0DNwKuBdlIhjL8LeY8Sf8Q==
 
-ipaddr.js@1.9.1:
+ipaddr.js@1.9.1, ipaddr.js@^1.9.1:
   version "1.9.1"
   resolved "https://registry.yarnpkg.com/ipaddr.js/-/ipaddr.js-1.9.1.tgz#bff38543eeb8984825079ff3a2a8e6cbd46781b3"
   integrity sha512-0KI/607xoxSToH7GjN1FfSbLoU0+btTicjsQSWQlh/hZykN8KpmMf7uYwPW3R+akZ6R/w18ZlXSHBYXiYUPO3g==
@@ -7992,6 +7999,7 @@ word-wrap@^1.2.5:
   integrity sha512-BN22B5eaMMI9UMtjrGd5g5eCYPpCPDUy0FJXbYsaT5zYxjFOckS53SQDE3pWkVoWpHXVb3BrYcEN4Twa55B5cA==
 
 "wrap-ansi-cjs@npm:wrap-ansi@^7.0.0", wrap-ansi@^7.0.0:
+  name wrap-ansi-cjs
   version "7.0.0"
   resolved "https://registry.yarnpkg.com/wrap-ansi/-/wrap-ansi-7.0.0.tgz#67e145cff510a6a6984bdf1152911d69d2eb9e43"
   integrity sha512-YVGIj2kamLSTxw6NsZjoBxfSwsn0ycdesmc4p+Q21c5zPuZ1pl+NfxVdxPtdHvmNVOQ6XSYG4AUtyt/Fi7D16Q==
