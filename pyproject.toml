@@ -11,6 +11,7 @@ lico-lint-empty-dir = ["lico-lint-empty-dir"]
 lico-log = ["lico-log"]
 lico-shim = ["lico-shim"]
 lico-cli-tools = ["lico-cli-tools"]
+lico-backup = ["lico-backup"]
 
 dev = [
   "mypy>=1.19.1",
@@ -28,6 +29,7 @@ lico-lint-empty-dir = ["lico-lint-empty-dir"]
 lico-log = ["lico-log"]
 lico-shim = ["lico-shim"]
 lico-cli-tools = ["lico-cli-tools"]
+lico-backup = ["lico-backup"]
 
 [tool.uv]
 cache-dir = "./.temp/cache/uv"
@@ -39,6 +41,7 @@ default-groups = [
   "lico-log",
   "lico-shim",
   "lico-cli-tools",
+  "lico-backup",
 ]
 
 [tool.uv.sources]
@@ -48,6 +51,7 @@ lico-lint-empty-dir = { workspace = true }
 lico-log = { workspace = true }
 lico-shim = { workspace = true }
 lico-cli-tools = { workspace = true }
+lico-backup = { workspace = true }
 
 [tool.uv.workspace]
 members = [
@@ -57,6 +61,7 @@ members = [
   "packages/lico-log",
   "packages/lico-shim",
   "packages/lico-cli-tools",
+  "packages/lico-backup",
 ]
 
 [tool.ruff]

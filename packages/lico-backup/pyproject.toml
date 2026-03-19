@@ -1,0 +1,18 @@
+[project]
+name = "lico-backup"
+version = "0.1.0"
+description = "Backup utilities for Lico (Workspace and IDE artifacts)"
+readme = "README.md"
+requires-python = ">=3.14"
+dependencies = []
+
+[project.scripts]
+lico-backup-artifacts = "lico_backup.artifacts:main"
+lico-backup-workspace = "lico_backup.workspace:main"
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/lico_backup"]
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"

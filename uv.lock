@@ -4,6 +4,7 @@ requires-python = ">=3.14"
 
 [manifest]
 members = [
+    "lico-backup",
     "lico-cli-tools",
     "lico-devc",
     "lico-lint",
@@ -66,6 +67,11 @@ wheels = [
 ]
 
 [[package]]
+name = "lico-backup"
+version = "0.1.0"
+source = { editable = "packages/lico-backup" }
+
+[[package]]
 name = "lico-cli-tools"
 version = "0.1.0"
 source = { editable = "packages/lico-cli-tools" }
@@ -101,6 +107,9 @@ version = "0.0.1"
 source = { virtual = "." }
 
 [package.optional-dependencies]
+lico-backup = [
+    { name = "lico-backup" },
+]
 lico-cli-tools = [
     { name = "lico-cli-tools" },
 ]
@@ -129,6 +138,9 @@ dev = [
     { name = "ruff" },
     { name = "types-pyyaml" },
 ]
+lico-backup = [
+    { name = "lico-backup" },
+]
 lico-cli-tools = [
     { name = "lico-cli-tools" },
 ]
@@ -150,6 +162,7 @@ lico-shim = [
 
 [package.metadata]
 requires-dist = [
+    { name = "lico-backup", marker = "extra == 'lico-backup'", editable = "packages/lico-backup" },
     { name = "lico-cli-tools", marker = "extra == 'lico-cli-tools'", editable = "packages/lico-cli-tools" },
     { name = "lico-devc", marker = "extra == 'lico-devc'", editable = "packages/lico-devc" },
     { name = "lico-lint", marker = "extra == 'lico-lint'", editable = "packages/lico-lint" },
@@ -157,7 +170,7 @@ requires-dist = [
     { name = "lico-log", marker = "extra == 'lico-log'", editable = "packages/lico-log" },
     { name = "lico-shim", marker = "extra == 'lico-shim'", editable = "packages/lico-shim" },
 ]
-provides-extras = ["lico-lint", "lico-devc", "lico-lint-empty-dir", "lico-log", "lico-shim", "lico-cli-tools"]
+provides-extras = ["lico-lint", "lico-devc", "lico-lint-empty-dir", "lico-log", "lico-shim", "lico-cli-tools", "lico-backup"]
 
 [package.metadata.requires-dev]
 dev = [
@@ -168,6 +181,7 @@ dev = [
     { name = "ruff", specifier = ">=0.15.1" },
     { name = "types-pyyaml", specifier = ">=6.0.12.20250915" },
 ]
+lico-backup = [{ name = "lico-backup", editable = "packages/lico-backup" }]
 lico-cli-tools = [{ name = "lico-cli-tools", editable = "packages/lico-cli-tools" }]
 lico-devc = [{ name = "lico-devc", editable = "packages/lico-devc" }]
 lico-lint = [{ name = "lico-lint", editable = "packages/lico-lint" }]
