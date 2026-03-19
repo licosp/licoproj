@@ -1,4 +1,4 @@
-# lico-cli-tools
+# lico-memory
 
 Assorted CLI utilities for managing Lico's environment and logs.
 

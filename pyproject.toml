@@ -7,10 +7,9 @@ dependencies = []
 [dependency-groups]
 lico-lint = ["lico-lint"]
 lico-devc = ["lico-devc"]
-lico-lint-empty-dir = ["lico-lint-empty-dir"]
 lico-log = ["lico-log"]
 lico-shim = ["lico-shim"]
-lico-cli-tools = ["lico-cli-tools"]
+lico-memory = ["lico-memory"]
 lico-backup = ["lico-backup"]
 
 dev = [
@@ -25,10 +24,9 @@ dev = [
 [project.optional-dependencies]
 lico-lint = ["lico-lint"]
 lico-devc = ["lico-devc"]
-lico-lint-empty-dir = ["lico-lint-empty-dir"]
 lico-log = ["lico-log"]
 lico-shim = ["lico-shim"]
-lico-cli-tools = ["lico-cli-tools"]
+lico-memory = ["lico-memory"]
 lico-backup = ["lico-backup"]
 
 [tool.uv]
@@ -37,30 +35,27 @@ default-groups = [
   "dev",
   "lico-lint",
   "lico-devc",
-  "lico-lint-empty-dir",
   "lico-log",
   "lico-shim",
-  "lico-cli-tools",
+  "lico-memory",
   "lico-backup",
 ]
 
 [tool.uv.sources]
 lico-lint = { workspace = true }
 lico-devc = { workspace = true }
-lico-lint-empty-dir = { workspace = true }
 lico-log = { workspace = true }
 lico-shim = { workspace = true }
-lico-cli-tools = { workspace = true }
+lico-memory = { workspace = true }
 lico-backup = { workspace = true }
 
 [tool.uv.workspace]
 members = [
   "packages/lico-lint",
-  "packages/lico-lint-empty-dir",
   "packages/lico-devc",
   "packages/lico-log",
   "packages/lico-shim",
-  "packages/lico-cli-tools",
+  "packages/lico-memory",
   "packages/lico-backup",
 ]
 
@@ -121,11 +116,11 @@ exclude = [
 include = ["."]
 extraPaths = [
   "packages/lico-lint/src",
-  "packages/lico-lint-empty-dir/src",
   "packages/lico-devc/src",
   "packages/lico-log/src",
   "packages/lico-shim/src",
-  "packages/lico-cli-tools/src",
+  "packages/lico-memory/src",
+  "packages/lico-backup/src",
 ]
 reportUnknownVariableType = "error"
 reportUnknownMemberType = "error"
@@ -156,11 +151,11 @@ warn_unreachable = true
 cache_dir = "./.temp/cache/mypy"
 mypy_path = [
   "packages/lico-lint",
-  "packages/lico-lint-empty-dir",
   "packages/lico-devc",
   "packages/lico-log",
   "packages/lico-shim",
-  "packages/lico-cli-tools",
+  "packages/lico-memory",
+  "packages/lico-backup",
 ]
 exclude = [
   '^\.venv/',
@@ -176,11 +171,11 @@ exclude = [
 [[tool.mypy.overrides]]
 module = [
   "lico-lint",
-  "lico-lint-empty-dir",
   "lico-devc",
   "lico-log",
   "lico-shim",
-  "lico-cli-tools",
+  "lico-memory",
+  "lico-backup",
 ]
 disable_error_code = ["misc"]
 
@@ -195,17 +190,17 @@ addopts = """
 cache_dir = "./.temp/cache/pytest"
 pythonpath = [
   "packages/lico-lint",
-  "packages/lico-lint-empty-dir",
   "packages/lico-devc",
   "packages/lico-log",
   "packages/lico-shim",
-  "packages/lico-cli-tools",
+  "packages/lico-memory",
+  "packages/lico-backup",
 ]
 testpaths = [
   "packages/lico-lint/tests",
-  "packages/lico-lint-empty-dir/tests",
   "packages/lico-devc/tests",
   "packages/lico-log/tests",
   "packages/lico-shim/tests",
-  "packages/lico-cli-tools/tests",
+  "packages/lico-memory/tests",
+  "packages/lico-backup/tests",
 ]

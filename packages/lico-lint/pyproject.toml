@@ -7,7 +7,8 @@ requires-python = ">=3.14"
 dependencies = []
 
 [project.scripts]
-lico-lint = "lico_lint.main:main"
+lico-lint-all = "lico_lint.main:main"
+lico-lint-empty-dir = "lico_lint.empty_dir:main"
 
 [tool.hatch.build.targets.wheel]
 packages = ["src/lico_lint"]

@@ -1,0 +1,19 @@
+[project]
+name = "lico-memory"
+version = "0.1.0"
+description = "L3 Memory management tools for Lico (e.g., L3 to L4 conversion, filtering, packing)"
+readme = "README.md"
+requires-python = ">=3.14"
+dependencies = []
+
+[project.scripts]
+lico-memory-backup = "lico_memory.backup:main"
+lico-memory-filter = "lico_memory.filter:main"
+lico-memory-pack = "lico_memory.pack:main"
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/lico_memory"]
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
