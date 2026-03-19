@@ -11,9 +11,9 @@ lico-log = ["lico-log"]
 lico-shim = ["lico-shim"]
 lico-memory = ["lico-memory"]
 lico-backup = ["lico-backup"]
+lico-pipeline = ["lico-pipeline"]
 
 dev = [
-  "mypy>=1.19.1",
   "pyright>=1.1.408",
   "pytest>=9.0.2",
   "pyyaml>=6.0.3",
@@ -28,6 +28,7 @@ lico-log = ["lico-log"]
 lico-shim = ["lico-shim"]
 lico-memory = ["lico-memory"]
 lico-backup = ["lico-backup"]
+lico-pipeline = ["lico-pipeline"]
 
 [tool.uv]
 cache-dir = "./.temp/cache/uv"
@@ -39,6 +40,7 @@ default-groups = [
   "lico-shim",
   "lico-memory",
   "lico-backup",
+  "lico-pipeline",
 ]
 
 [tool.uv.sources]
@@ -48,6 +50,7 @@ lico-log = { workspace = true }
 lico-shim = { workspace = true }
 lico-memory = { workspace = true }
 lico-backup = { workspace = true }
+lico-pipeline = { workspace = true }
 
 [tool.uv.workspace]
 members = [
@@ -57,6 +60,7 @@ members = [
   "packages/lico-shim",
   "packages/lico-memory",
   "packages/lico-backup",
+  "packages/lico-pipeline",
 ]
 
 [tool.ruff]
@@ -195,6 +199,7 @@ pythonpath = [
   "packages/lico-shim",
   "packages/lico-memory",
   "packages/lico-backup",
+  "packages/lico-pipeline",
 ]
 testpaths = [
   "packages/lico-lint/tests",
@@ -203,4 +208,5 @@ testpaths = [
   "packages/lico-shim/tests",
   "packages/lico-memory/tests",
   "packages/lico-backup/tests",
+  "packages/lico-pipeline/tests",
 ]

@@ -1,16 +1,16 @@
 [project]
-name = "lico-lint"
+name = "lico-pipeline"
 version = "0.1.0"
-description = "Unified linting tool for the Lico project"
+description = "Orchestrator for Lico's linting and testing pipelines"
 readme = "README.md"
 requires-python = ">=3.14"
 dependencies = []
 
 [project.scripts]
-lico-lint-empty-dir = "lico_lint.empty_dir:main"
+lico-pipeline = "lico_pipeline.main:main"
 
 [tool.hatch.build.targets.wheel]
-packages = ["src/lico_lint"]
+packages = ["src/lico_pipeline"]
 
 [build-system]
 requires = ["hatchling"]
