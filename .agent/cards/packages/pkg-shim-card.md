@@ -1,17 +1,17 @@
 ---
-context_id: "[Command-Shim]"
+context_id: "[Pkg-Shim]"
 default_phase: "(Setup)"
 ai_visible: true
 version: 1.0.0
 created: 2026-02-15T20:30:00+09:00
-updated: 2026-02-15T20:30:00+09:00
-tags: ["shim", "shell", "safety", "environment"]
+updated: 2026-03-19T00:00:00+09:00
+tags: ["shim", "shell", "safety", "environment", "package"]
 language: en
 author: Lico (Sirius)
 ai_model: Gemini 3 Pro (High) Planning mode
 ---
 
-# Context Whiteboard: Command Shim & Safety
+# Context Whiteboard: Package lico-shim
 
 > [!TIP]
 > There is no language requirement.

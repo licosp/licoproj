@@ -115,6 +115,7 @@ This is the layout of your world.
 | [`human/`](.agent/cards/human/)             | **Human**. User Interface (Manuals, Drafts).  |
 | [`internal/`](.agent/cards/internal/)       | **Internal**. Logs, Thoughts, Letters.        |
 | [`maintenance/`](.agent/cards/maintenance/) | **Maintenance**. Archive, Backup, Cleanup.    |
+| [`packages/`](.agent/cards/packages/)       | **Packages**. Python script development.      |
 | [`procedures/`](.agent/cards/procedures/)   | **Procedures**. Workflows & Operations.       |
 | [`project/`](.agent/cards/project/)         | **Project**. Project-specific configuration.  |
 | [`rules/`](.agent/cards/rules/)             | **Rules**. Standards & Governance.            |
