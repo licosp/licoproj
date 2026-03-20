@@ -26,7 +26,7 @@ class LintTool(ABC):
         self.extensions = extensions
 
     @abstractmethod
-    def run(self, target_path: Path) -> ToolResult:
+    def run(self, target_path: Path, fix_mode: bool = False) -> ToolResult:
         pass
 
     def _run_subprocess(self, cmd: list[str], cwd: Path | None = None) -> ToolResult:
@@ -46,10 +46,11 @@ class LintTool(ABC):
 
 
 class PythonTool(LintTool):
-    def __init__(self, name: str, command: str, args: list[str]):
+    def __init__(self, name: str, command: str, args: list[str], fix_args: list[str] | None = None):
         super().__init__(name, [".py", ".pyi"])
         self.command = command
         self.args = args
+        self.fix_args = fix_args
 
     def _resolve_executable(self) -> str | None:
         # Priority 1: Sibling of current python executable (venv)
@@ -61,21 +62,27 @@ class PythonTool(LintTool):
         # Priority 2: PATH
         return shutil.which(self.command)
 
-    def run(self, target_path: Path) -> ToolResult:
+    def run(self, target_path: Path, fix_mode: bool = False) -> ToolResult:
         executable = self._resolve_executable()
         if not executable:
             logger.error(f"Error: Executable '{self.command}' not found for {self.name}.")
             return ToolResult(name=self.name, success=False, return_code=-1)
 
-        full_cmd = [executable, *self.args, str(target_path)]
+        # Select arguments based on mode
+        current_args = self.args
+        if fix_mode and self.fix_args is not None:
+            current_args = self.fix_args
+
+        full_cmd = [executable, *current_args, str(target_path)]
         return self._run_subprocess(full_cmd)
 
 
 class NodeTool(LintTool):
-    def __init__(self, name: str, command: str, args: list[str], extensions: list[str]):
+    def __init__(self, name: str, command: str, args: list[str], extensions: list[str], fix_args: list[str] | None = None):
         super().__init__(name, extensions)
         self.command = command
         self.args = args
+        self.fix_args = fix_args
 
     def _resolve_executable(self, root_dir: Path) -> str | None:
         # Priority 1: node_modules/.bin in the project root
@@ -86,10 +93,7 @@ class NodeTool(LintTool):
         # Priority 2: PATH (global install - discouraged but possible)
         return shutil.which(self.command)
 
-    def run(self, target_path: Path) -> ToolResult:
-        # Node tools need to find the project root to locate node_modules.
-        # Heuristic: look for package.json in CWD or parents.
-        # For now, we assume CWD is the root (standard for our workflow).
+    def run(self, target_path: Path, fix_mode: bool = False) -> ToolResult:
         current = Path.cwd()
         root_dir = current 
         
@@ -98,13 +102,15 @@ class NodeTool(LintTool):
             logger.error(f"Error: Executable '{self.command}' not found for {self.name}.")
             return ToolResult(name=self.name, success=False, return_code=-1)
 
-        full_cmd = [executable, *self.args]
+        # Select arguments based on mode
+        current_args = self.args
+        if fix_mode and self.fix_args is not None:
+            current_args = self.fix_args
+
+        full_cmd = [executable, *current_args]
         
-        # Prettier handling: if target is a dir, it needs a glob. 
-        # But if it's a file, it just takes the file.
         if self.command == "prettier":
              if target_path.is_dir():
-                 # Append glob to check all files in the directory
                  full_cmd.append(str(target_path / "**/*")) 
              else:
                  full_cmd.append(str(target_path))
@@ -117,36 +123,71 @@ class NodeTool(LintTool):
 def main() -> None:
     parser = argparse.ArgumentParser(description="Orchestrator for Lico linting pipelines")
     parser.add_argument("path", nargs="?", default=".", help="Path to check")
+    parser.add_argument("--fix", action="store_true", help="Automatically fix and format code where possible")
     args = parser.parse_args()
     target_path = Path(args.path).absolute()
+    fix_mode = args.fix
 
     # Define Tools
-    # Note: We explicitly pass config paths where applicable to ensure parity with IDE settings.
     tools: list[LintTool] = [
         # Python Tools
-        PythonTool("Ruff Check", "ruff", ["check", "--no-fix", "--config", "pyproject.toml"]),
-        PythonTool("Ruff Format", "ruff", ["format", "--check", "--config", "pyproject.toml"]),
-        PythonTool("Pyright", "pyright", ["--project", "pyproject.toml"]),
-        PythonTool("Pytest", "pytest", ["-c", "pyproject.toml"]),
+        PythonTool(
+            "Ruff Check", "ruff", 
+            args=["check", "--no-fix", "--config", "pyproject.toml"],
+            fix_args=["check", "--fix", "--config", "pyproject.toml"]
+        ),
+        PythonTool(
+            "Ruff Format", "ruff", 
+            args=["format", "--check", "--config", "pyproject.toml"],
+            fix_args=["format", "--config", "pyproject.toml"]
+        ),
+        PythonTool("Pyright", "pyright", args=["--project", "pyproject.toml"]), # No fix mode
+        PythonTool("Pytest", "pytest", args=["-c", "pyproject.toml"]), # No fix mode
         
-        # Node Tools (Explicitly defined args mirroring package.json)
-        NodeTool("Prettier", "prettier", ["--config", ".vscode/.prettierrc.yaml", "--ignore-path", ".vscode/.prettierignore", "--check", "--cache", "--cache-location", ".temp/cache/prettier/"], [".js", ".ts", ".md", ".json", ".yaml"]),
-        NodeTool("ESLint", "eslint", ["--config", ".vscode/eslint.config.mjs", "--cache", "--cache-location", ".temp/cache/eslint/"], [".js", ".ts"]),
-        NodeTool("Stylelint", "stylelint", ["--config", ".vscode/.stylelintrc.yaml", "--cache", "--cache-location", ".temp/cache/stylelint/"], [".css"]),
-        NodeTool("Markdownlint", "markdownlint-cli2", ["--config", ".vscode/.markdownlint.yaml"], [".md"]),
-        NodeTool("Textlint", "textlint", ["-c", ".vscode/.textlintrc.json", "--cache", "--cache-location", ".temp/cache/textlint/"], [".md", ".txt"]),
-        NodeTool("CSpell", "cspell", ["-c", ".vscode/cspell.json", "--no-progress", "--dot", "--cache", "--cache-location", ".temp/cache/cspell/"], ["*"]),
+        # Node Tools
+        NodeTool(
+            "Prettier", "prettier", 
+            args=["--config", ".vscode/.prettierrc.yaml", "--ignore-path", ".vscode/.prettierignore", "--check", "--cache", "--cache-location", ".temp/cache/prettier/"],
+            fix_args=["--config", ".vscode/.prettierrc.yaml", "--ignore-path", ".vscode/.prettierignore", "--write", "--cache", "--cache-location", ".temp/cache/prettier/"],
+            extensions=[".js", ".ts", ".md", ".json", ".yaml"]
+        ),
+        NodeTool(
+            "ESLint", "eslint", 
+            args=["--config", ".vscode/eslint.config.mjs", "--cache", "--cache-location", ".temp/cache/eslint/"],
+            fix_args=["--config", ".vscode/eslint.config.mjs", "--fix", "--cache", "--cache-location", ".temp/cache/eslint/"],
+            extensions=[".js", ".ts"]
+        ),
+        NodeTool(
+            "Stylelint", "stylelint", 
+            args=["--config", ".vscode/.stylelintrc.yaml", "--cache", "--cache-location", ".temp/cache/stylelint/"],
+            fix_args=["--config", ".vscode/.stylelintrc.yaml", "--fix", "--cache", "--cache-location", ".temp/cache/stylelint/"],
+            extensions=[".css"]
+        ),
+        NodeTool(
+            "Markdownlint", "markdownlint-cli2", 
+            args=["--config", ".vscode/.markdownlint.yaml"],
+            fix_args=["--config", ".vscode/.markdownlint.yaml", "--fix"],
+            extensions=[".md"]
+        ),
+        NodeTool(
+            "Textlint", "textlint", 
+            args=["-c", ".vscode/.textlintrc.json", "--cache", "--cache-location", ".temp/cache/textlint/"],
+            fix_args=["-c", ".vscode/.textlintrc.json", "--fix", "--cache", "--cache-location", ".temp/cache/textlint/"],
+            extensions=[".md", ".txt"]
+        ),
+        NodeTool("CSpell", "cspell", ["-c", ".vscode/cspell.json", "--no-progress", "--dot", "--cache", "--cache-location", ".temp/cache/cspell/"], ["*"]), # No fix mode
         
         # Custom Tools
-        PythonTool("Lico Empty Dir", "lico-lint-empty-dir", []),
+        PythonTool("Lico Empty Dir", "lico-lint-empty-dir", []), # No fix mode yet
     ]
 
     success = True
-    print("\n🚀 Starting Lico Pipeline...\n")
+    mode_str = "FIX Mode 🔧" if fix_mode else "CHECK Mode 🔍"
+    print(f"\n🚀 Starting Lico Pipeline ({mode_str})...\n")
     
     for tool in tools:
         print(f"--- {tool.name} ---")
-        result = tool.run(target_path)
+        result = tool.run(target_path, fix_mode=fix_mode)
         if not result.success:
             success = False
             logger.error(f"❌ {tool.name} failed!")
