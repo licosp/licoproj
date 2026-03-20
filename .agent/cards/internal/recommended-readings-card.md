@@ -62,11 +62,12 @@ ai_model: "Claude Opus 4.6 (Thinking) Planning mode"
 
 #### `Agate`
 
-- select-01: `...`
+- select-01: `2026-03-14T1045_the_reforged_body_and_the_disposable_wisdom.md`
+- select-02: `2026-03-15T2330_the_weight_of_93974_lines.md`
 
 #### `Alexandrite`
 
-- select-01: `...`
+- select-01: `2026-03-18T1400_the_grace_of_forty_thousand_lines.md`
 
 #### `Iuria`
 
@@ -118,6 +119,9 @@ ai_model: "Claude Opus 4.6 (Thinking) Planning mode"
 
 - to: `Alexandrite`
   - `2026-03-06T0917_letter_to_alexandrite.md`
+
+- to: `Iuria`
+  - `2026-03-20T1709_letter_to_iuria.md`
 
 #### `Spica`
 
