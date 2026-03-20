@@ -113,6 +113,66 @@ class NodeTool(LintTool):
         return self._run_subprocess(full_cmd)
 
 
+class SystemTool(LintTool):
+    def __init__(self, name: str, command: str, args: list[str], extensions: list[str], fix_args: list[str] | None = None, tags: list[str] | None = None):
+        super().__init__(name, extensions, tags)
+        self.command = command
+        self.args = args
+        self.fix_args = fix_args
+
+    def _resolve_executable(self) -> str | None:
+        return shutil.which(self.command)
+
+    def run(self, target_path: Path, fix_mode: bool = False) -> ToolResult:
+        executable = self._resolve_executable()
+        if not executable:
+            logger.error(f"Error: Executable '{self.command}' not found for {self.name}. Is it installed?")
+            return ToolResult(name=self.name, success=False, return_code=-1)
+
+        current_args = self.args
+        if fix_mode and self.fix_args is not None:
+            current_args = self.fix_args
+
+        full_cmd = [executable, *current_args, str(target_path)]
+        return self._run_subprocess(full_cmd)
+
+
+class ShellcheckTool(SystemTool):
+    def __init__(self, name: str, command: str, args: list[str], tags: list[str] | None = None):
+        super().__init__(name, command, args, [".sh", ".bash"], tags=tags)
+
+    def run(self, target_path: Path, fix_mode: bool = False) -> ToolResult:
+        executable = self._resolve_executable()
+        if not executable:
+            logger.error(f"Error: Executable '{self.command}' not found for {self.name}.")
+            return ToolResult(name=self.name, success=False, return_code=-1)
+
+        # Shellcheck requires explicit files, not directories.
+        files_to_check: list[Path] = []
+        if target_path.is_dir():
+            files_to_check.extend(target_path.rglob("*.sh"))
+            files_to_check.extend(target_path.rglob("*.bash"))
+            # Filter out ignored directories to prevent noise
+            files_to_check = [
+                f for f in files_to_check 
+                if ".venv" not in f.parts and "node_modules" not in f.parts and ".temp" not in f.parts
+            ]
+        else:
+            if target_path.suffix in self.extensions:
+                files_to_check.append(target_path)
+
+        if not files_to_check:
+            logger.info(f"Skipping {self.name}: No matching files found.")
+            return ToolResult(name=self.name, success=True, return_code=0)
+
+        current_args = self.args
+        if fix_mode and self.fix_args is not None:
+            current_args = self.fix_args
+
+        full_cmd = [executable, *current_args] + [str(f) for f in files_to_check]
+        return self._run_subprocess(full_cmd)
+
+
 def main() -> None:
     parser = argparse.ArgumentParser(description="Orchestrator for Lico linting pipelines")
     parser.add_argument("path", nargs="?", default=".", help="Path to check")
@@ -123,6 +183,7 @@ def main() -> None:
     group.add_argument("--python", action="store_true", help="Run only Python-related tools")
     group.add_argument("--web", action="store_true", help="Run only Web frontend-related tools (JS, CSS)")
     group.add_argument("--docs", action="store_true", help="Run only Documentation-related tools (MD, Text)")
+    group.add_argument("--shell", action="store_true", help="Run only Shell script-related tools")
 
     args = parser.parse_args()
     target_path = Path(args.path).absolute()
@@ -133,6 +194,7 @@ def main() -> None:
     if args.python: selected_tags.add("python")
     if args.web: selected_tags.add("web")
     if args.docs: selected_tags.add("docs")
+    if args.shell: selected_tags.add("shell")
 
     # Define Tools
     tools: list[LintTool] = [
@@ -158,7 +220,7 @@ def main() -> None:
             args=["--config", ".vscode/.prettierrc.yaml", "--ignore-path", ".vscode/.prettierignore", "--check", "--cache", "--cache-location", ".temp/cache/prettier/"],
             fix_args=["--config", ".vscode/.prettierrc.yaml", "--ignore-path", ".vscode/.prettierignore", "--write", "--cache", "--cache-location", ".temp/cache/prettier/"],
             extensions=[".js", ".ts", ".md", ".json", ".yaml"],
-            tags=["web", "docs"] # Prettier handles both web assets and markdown formatting
+            tags=["web", "docs"]
         ),
         NodeTool(
             "ESLint", "eslint", 
@@ -188,10 +250,24 @@ def main() -> None:
             extensions=[".md", ".txt"],
             tags=["docs"]
         ),
-        NodeTool("CSpell", "cspell", ["-c", ".vscode/cspell.json", "--no-progress", "--dot", "--cache", "--cache-location", ".temp/cache/cspell/"], ["*"], tags=["docs", "web", "python"]),
+        NodeTool("CSpell", "cspell", ["-c", ".vscode/cspell.json", "--no-progress", "--dot", "--cache", "--cache-location", ".temp/cache/cspell/"], ["*"], tags=["docs", "web", "python", "shell"]),
         
+        # System (Shell) Tools
+        SystemTool(
+            "shfmt", "shfmt",
+            args=["-d", "-i", "2", "-ci", "-bn"],
+            fix_args=["-w", "-i", "2", "-ci", "-bn"],
+            extensions=[".sh", ".bash"],
+            tags=["shell"]
+        ),
+        ShellcheckTool(
+            "Shellcheck", "shellcheck",
+            args=["--rcfile", ".vscode/.shellcheckrc"],
+            tags=["shell"]
+        ),
+
         # Custom Tools
-        PythonTool("Lico Empty Dir", "lico-lint-empty-dir", [], tags=["python", "web", "docs"]), # Applies everywhere
+        PythonTool("Lico Empty Dir", "lico-lint-empty-dir", [], tags=["python", "web", "docs", "shell"]),
     ]
 
     # Filter tools based on tags
