@@ -30,9 +30,6 @@
   "python.analysis.diagnosticsSource": "Pyright",
   "python.testing.pytestEnabled": true,
 
-  // Mypy
-  "mypy-type-checker.args": ["--config-file=pyproject.toml"],
-
   // Ruff
   "ruff.configuration": "pyproject.toml",
 

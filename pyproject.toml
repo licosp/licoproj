@@ -18,7 +18,6 @@ dev = [
   "pytest>=9.0.2",
   "pyyaml>=6.0.3",
   "ruff>=0.15.1",
-  "types-pyyaml>=6.0.12.20250915",
 ]
 
 [project.optional-dependencies]
@@ -140,48 +139,6 @@ reportUntypedFunctionDecorator = true
 reportPrivateUsage = "error"
 reportTypeCommentUsage = "error"
 reportImplicitStringConcatenation = "error"
-
-[tool.mypy]
-strict = true
-pretty = true
-disallow_any_decorated = true
-disallow_any_explicit = true
-disallow_any_expr = true
-implicit_optional = true
-ignore_missing_imports = false
-disallow_any_unimported = true
-show_error_codes = true
-warn_unreachable = true
-cache_dir = "./.temp/cache/mypy"
-mypy_path = [
-  "packages/lico-lint",
-  "packages/lico-devc",
-  "packages/lico-log",
-  "packages/lico-shim",
-  "packages/lico-memory",
-  "packages/lico-backup",
-]
-exclude = [
-  '^\.venv/',
-  '^\.temp/',
-  '^\.trash/',
-  '^node_modules/',
-  '^__pycache__/',
-  '^\.agent/\.internal/archive/',
-  '^\.human/\.internal/archive/',
-  '^\.repos/\.licoshdw/archive/',
-]
-
-[[tool.mypy.overrides]]
-module = [
-  "lico-lint",
-  "lico-devc",
-  "lico-log",
-  "lico-shim",
-  "lico-memory",
-  "lico-backup",
-]
-disable_error_code = ["misc"]
 
 [tool.pytest.ini_options]
 addopts = """
