@@ -18,6 +18,8 @@ dev = [
   "pytest>=9.0.2",
   "pyyaml>=6.0.3",
   "ruff>=0.15.1",
+  "shellcheck-py>=0.10.0.1",
+  "shfmt-py>=3.8.0.1",
 ]
 
 [project.optional-dependencies]

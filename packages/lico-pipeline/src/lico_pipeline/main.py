@@ -113,33 +113,11 @@ class NodeTool(LintTool):
         return self._run_subprocess(full_cmd)
 
 
-class SystemTool(LintTool):
-    def __init__(self, name: str, command: str, args: list[str], extensions: list[str], fix_args: list[str] | None = None, tags: list[str] | None = None):
-        super().__init__(name, extensions, tags)
-        self.command = command
-        self.args = args
-        self.fix_args = fix_args
-
-    def _resolve_executable(self) -> str | None:
-        return shutil.which(self.command)
-
-    def run(self, target_path: Path, fix_mode: bool = False) -> ToolResult:
-        executable = self._resolve_executable()
-        if not executable:
-            logger.error(f"Error: Executable '{self.command}' not found for {self.name}. Is it installed?")
-            return ToolResult(name=self.name, success=False, return_code=-1)
-
-        current_args = self.args
-        if fix_mode and self.fix_args is not None:
-            current_args = self.fix_args
-
-        full_cmd = [executable, *current_args, str(target_path)]
-        return self._run_subprocess(full_cmd)
-
-
-class ShellcheckTool(SystemTool):
+class ShellcheckTool(PythonTool):
     def __init__(self, name: str, command: str, args: list[str], tags: list[str] | None = None):
-        super().__init__(name, command, args, [".sh", ".bash"], tags=tags)
+        # Inherit from PythonTool since shellcheck-py puts the binary in .venv/bin
+        super().__init__(name, command, args, tags=tags)
+        self.extensions = [".sh", ".bash"] # override Python extensions
 
     def run(self, target_path: Path, fix_mode: bool = False) -> ToolResult:
         executable = self._resolve_executable()
@@ -252,12 +230,11 @@ def main() -> None:
         ),
         NodeTool("CSpell", "cspell", ["-c", ".vscode/cspell.json", "--no-progress", "--dot", "--cache", "--cache-location", ".temp/cache/cspell/"], ["*"], tags=["docs", "web", "python", "shell"]),
         
-        # System (Shell) Tools
-        SystemTool(
+        # Shell Tools (Now managed by uv via PyPI wrappers)
+        PythonTool(
             "shfmt", "shfmt",
             args=["-d", "-i", "2", "-ci", "-bn"],
             fix_args=["-w", "-i", "2", "-ci", "-bn"],
-            extensions=[".sh", ".bash"],
             tags=["shell"]
         ),
         ShellcheckTool(
