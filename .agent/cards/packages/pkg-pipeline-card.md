@@ -38,8 +38,27 @@ ai_model: Gemini 3.1 Pro Preview
 
 ### Agate (2026-03-20)
 - Initial creation.
-- Refactoring from a simple script to a modular `Tool` class architecture.
-- Aiming for strict separation of "Tools" vs "Orchestrator".
+- Refactored `main.py` into a modular `Tool` class architecture (PythonTool, NodeTool, ShellcheckTool).
+- Integrated `shellcheck-py` and `shfmt-py` via `uv` for SSOT execution.
+- Added `--fix` (auto-format) and workflow target filters (`--python`, `--web`, `--docs`, `--shell`).
+
+#### 📝 Blueprint: Fixture-based Linter Verification (TBD)
+**Goal:** Prove that the current configurations (`pyproject.toml`, `.shellcheckrc`, etc.) are actively working by verifying they correctly catch intentional errors and correctly ignore excluded paths.
+
+**Proposed Structure:**
+1. **Fixture Directories**:
+   - `packages/lico-pipeline/tests/fixtures/should_fail/`
+     - `bad_python.py` (e.g., unused variable, missing type hint)
+     - `bad_shell.sh` (e.g., `SC2250` missing braces)
+     - `bad_format.js` (e.g., trailing spaces for Prettier to catch)
+   - `packages/lico-pipeline/tests/fixtures/should_ignore/`
+     - `ignored_bad_code.py` (same errors, but placed in a path that `pyproject.toml` is configured to ignore)
+
+2. **Pytest Implementation (`test_pipeline.py`)**:
+   - `test_tool_catches_errors()`: Invoke a specific `Tool` instance explicitly against the `should_fail/` directory. **Assert that `result.return_code != 0` (Fail = Success)**.
+   - `test_tool_ignores_paths()`: Invoke the `Tool` against the `should_ignore/` directory. **Assert that `result.return_code == 0` (Ignored = Success)**.
+
+**Why this is powerful:** This decouples the linter's configuration testing from the cleanliness of the main codebase. Even if the main codebase is perfectly clean, these fixtures permanently guarantee that the "safety net" is active and hasn't been accidentally disabled.
 
 ---
 
