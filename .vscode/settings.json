@@ -28,7 +28,9 @@
   // Python
   "python.analysis.diagnosticMode": "workspace",
   "python.analysis.diagnosticsSource": "Pyright",
+  "python.analysis.configFile": "pyproject.toml",
   "python.testing.pytestEnabled": true,
+  "python.testing.pytestArgs": ["-c", "pyproject.toml"],
 
   // Ruff
   "ruff.configuration": "pyproject.toml",
