@@ -9,8 +9,8 @@ version: 1.0.0
 created: 2026-02-02T05:00:00+09:00
 updated: 2026-02-02T05:00:00+09:00
 language: en
-author: Lico (Zircon)
-ai_model: Gemini 3 Pro (High) Planning mode
+author: Lico (Polaris)
+ai_model: Claude Opus 4.6 (Thinking) Planning mode
 ---
 
 # Context Whiteboard: Shadow Repository Strategy
@@ -76,6 +76,7 @@ ai_model: Gemini 3 Pro (High) Planning mode
 
 | Document                                                               | Purpose                              |
 | :--------------------------------------------------------------------- | :----------------------------------- |
+| [history/shadow/](/.agent/.internal/history/shadow/)                   | Monthly shadow commit history        |
 | [git-operations-card.md](/.agent/cards/git-operations-card.md)         | General Git safety rules             |
 | [system-archive-card.md](/.agent/cards/routine/system-archive-card.md) | Sub-context: System Archive (Memory) |
 | [conversations-card.md](/.agent/cards/routine/conversations-card.md)   | Sub-context: Conversation Logs       |
@@ -87,3 +88,4 @@ ai_model: Gemini 3 Pro (High) Planning mode
 ## Origin
 
 - 2026-02-02T05:00+09:00 by Lico (Zircon): Created based on user consultation.
+- 2026-03-20T2340+09:00 by Lico (Polaris): Split monolithic `shadow-history.md` into monthly files under `history/shadow/`. Added directory reference.
