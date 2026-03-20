@@ -9,9 +9,8 @@ created: 2026-01-14T01:21:00+09:00
 updated: 2026-01-24T06:00:00+09:00
 tags: ["internal", "tracking"]
 language: en
-# author: Format as "Lico (<Instance-ID>)"
-author: ""
-ai_model: ""
+author: Lico (Polaris)
+ai_model: Claude Opus 4.6 (Thinking) Planning mode
 ---
 
 # Context Whiteboard: Activity Log Card
@@ -60,7 +59,8 @@ ai_model: ""
 
 ### Polaris (2026-01-14 Initial Design)
 
-**ファイル**: `.agent/.internal/activity-log.md`
+**ディレクトリ**: `.agent/.internal/history/activity/`
+**ファイル命名規則**: `YYYY-MM-activity.md`
 
 **フォーマット**:
 
@@ -130,7 +130,7 @@ ai_model: ""
 
 | File                                                                               | Relation            |
 | :--------------------------------------------------------------------------------- | :------------------ |
-| [activity-log.md](/.agent/.internal/activity-log.md)                               | Activity file       |
+| [history/activity/](/.agent/.internal/history/activity/)                           | Activity directory  |
 | [activity-management.md](/.agent/rules/workflow/activity-management.md)            | Activity rules      |
 | [letters-card.md](/.agent/cards/routine/letters-card.md)                           | letters card        |
 | [references-objective-card.md](/.agent/cards/routine/references-objective-card.md) | References card     |
@@ -144,3 +144,4 @@ ai_model: ""
 - 2026-01-14T1945 by Canopus: Action type finalization (v1.5).
 - 2026-01-24T0545 by Canopus: <<Seal: Rules-Standardization-Batch7>> Standardized with Dialogue Layer template and bilingual H2 headers.
 - 2026-01-24T0600 by Canopus: <<Seal: Rules-Standardization-Batch7>> Standardized Related Documents to table format and ensured English-only headers.
+- 2026-03-20T2340 by Polaris: Split monolithic `activity-log.md` into monthly files under `history/activity/`. Updated file reference to directory.
