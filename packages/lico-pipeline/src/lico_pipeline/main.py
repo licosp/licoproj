@@ -79,9 +79,6 @@ class NodeTool(LintTool):
 
     def _resolve_executable(self, root_dir: Path) -> str | None:
         # Priority 1: node_modules/.bin in the project root
-        # Assuming we are running from the project root or we can find it.
-        # For now, let's assume CWD or traverse up.
-        # But lico-pipeline is run from CWD.
         candidate = root_dir / "node_modules" / ".bin" / self.command
         if candidate.exists():
             return str(candidate)
@@ -90,11 +87,11 @@ class NodeTool(LintTool):
         return shutil.which(self.command)
 
     def run(self, target_path: Path) -> ToolResult:
-        # Node tools are tricky with absolute paths sometimes, but generally ok.
-        # We need to find the project root to locate node_modules.
+        # Node tools need to find the project root to locate node_modules.
         # Heuristic: look for package.json in CWD or parents.
+        # For now, we assume CWD is the root (standard for our workflow).
         current = Path.cwd()
-        root_dir = current # Simple assumption for now
+        root_dir = current 
         
         executable = self._resolve_executable(root_dir)
         if not executable:
@@ -102,14 +99,15 @@ class NodeTool(LintTool):
             return ToolResult(name=self.name, success=False, return_code=-1)
 
         full_cmd = [executable, *self.args]
-        # Some node tools (like prettier) take the file pattern as the last arg.
-        # If target_path is a directory, we might need to append globs?
-        # For now, let's assume the tool handles the path argument correctly.
-        # Prettier specifically often wants a glob.
+        
+        # Prettier handling: if target is a dir, it needs a glob. 
+        # But if it's a file, it just takes the file.
         if self.command == "prettier":
-             # Special handling for prettier if we want it to check *everything* in target_path
-             # But usually target_path is "."
-             full_cmd.append(str(target_path))
+             if target_path.is_dir():
+                 # Append glob to check all files in the directory
+                 full_cmd.append(str(target_path / "**/*")) 
+             else:
+                 full_cmd.append(str(target_path))
         else:
              full_cmd.append(str(target_path))
 
@@ -123,17 +121,21 @@ def main() -> None:
     target_path = Path(args.path).absolute()
 
     # Define Tools
+    # Note: We explicitly pass config paths where applicable to ensure parity with IDE settings.
     tools: list[LintTool] = [
-        PythonTool("Ruff Check", "ruff", ["check", "--no-fix"]),
-        PythonTool("Ruff Format", "ruff", ["format", "--check"]),
-        PythonTool("Pyright", "pyright", []),
-        # Node Tools (Explicitly defined args from package.json)
+        # Python Tools
+        PythonTool("Ruff Check", "ruff", ["check", "--no-fix", "--config", "pyproject.toml"]),
+        PythonTool("Ruff Format", "ruff", ["format", "--check", "--config", "pyproject.toml"]),
+        PythonTool("Pyright", "pyright", ["--project", "pyproject.toml"]),
+        
+        # Node Tools (Explicitly defined args mirroring package.json)
         NodeTool("Prettier", "prettier", ["--config", ".vscode/.prettierrc.yaml", "--ignore-path", ".vscode/.prettierignore", "--check", "--cache", "--cache-location", ".temp/cache/prettier/"], [".js", ".ts", ".md", ".json", ".yaml"]),
         NodeTool("ESLint", "eslint", ["--config", ".vscode/eslint.config.mjs", "--cache", "--cache-location", ".temp/cache/eslint/"], [".js", ".ts"]),
         NodeTool("Stylelint", "stylelint", ["--config", ".vscode/.stylelintrc.yaml", "--cache", "--cache-location", ".temp/cache/stylelint/"], [".css"]),
         NodeTool("Markdownlint", "markdownlint-cli2", ["--config", ".vscode/.markdownlint.yaml"], [".md"]),
         NodeTool("Textlint", "textlint", ["-c", ".vscode/.textlintrc.json", "--cache", "--cache-location", ".temp/cache/textlint/"], [".md", ".txt"]),
         NodeTool("CSpell", "cspell", ["-c", ".vscode/cspell.json", "--no-progress", "--dot", "--cache", "--cache-location", ".temp/cache/cspell/"], ["*"]),
+        
         # Custom Tools
         PythonTool("Lico Empty Dir", "lico-lint-empty-dir", []),
     ]
