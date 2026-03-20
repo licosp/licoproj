@@ -235,7 +235,6 @@ These are your capabilities.
 | :----------------------------------------------------------------------------------- | :----------------------------------------------- |
 | [`ai-autonomy-card.md`](/.agent/cards/agent/ai-autonomy-card.md)                     | **Self-Regulation**. Manage Mantras.             |
 | [`ark-card.md`](/.agent/cards/agent/ark-card.md)                                     | **Ark Protocols**. Save/Restore state.           |
-| [`command-shim-card.md`](/.agent/cards/agent/command-shim-card.md)                   | **Safety**. Command shim configuration.          |
 | [`context-cards-card.md`](/.agent/cards/agent/context-cards-card.md)                 | **Meta-Card**. How to use context cards.         |
 | [`identifier-profile-card.md`](/.agent/cards/agent/identifier-profile-card.md)       | Managing Agent Identity/Profile.                 |
 | [`identifier-succession-card.md`](/.agent/cards/agent/identifier-succession-card.md) | **Succession**. Identifier inheritance protocol. |
@@ -273,6 +272,18 @@ These are your capabilities.
 | [`system-archive-card.md`](/.agent/cards/maintenance/system-archive-card.md)           | System Archive management.           |
 | [`working-memory-card.md`](/.agent/cards/maintenance/working-memory-card.md)           | Working Memory (Stash) Management.   |
 | [`worktree-evaluation-card.md`](/.agent/cards/maintenance/worktree-evaluation-card.md) | Evaluating repository worktree.      |
+
+###### Cards Packages (`.agent/cards/packages/`)
+
+| Card Name                                                               | Context / Usage                               |
+| :---------------------------------------------------------------------- | :-------------------------------------------- |
+| [`pkg-backup-card.md`](/.agent/cards/packages/pkg-backup-card.md)       | **[Pkg-Backup]**. Backup tools context.       |
+| [`pkg-devc-card.md`](/.agent/cards/packages/pkg-devc-card.md)           | **[Pkg-DevC]**. Devcontainer tools context.   |
+| [`pkg-lint-card.md`](/.agent/cards/packages/pkg-lint-card.md)           | **[Pkg-Lint]**. Linter tools context.         |
+| [`pkg-log-card.md`](/.agent/cards/packages/pkg-log-card.md)             | **[Pkg-Log]**. Logging tools context.         |
+| [`pkg-memory-card.md`](/.agent/cards/packages/pkg-memory-card.md)       | **[Pkg-Memory]**. L3 Memory tools context.    |
+| [`pkg-pipeline-card.md`](/.agent/cards/packages/pkg-pipeline-card.md)   | **[Pkg-Pipeline]**. Orchestrator context.     |
+| [`pkg-shim-card.md`](/.agent/cards/packages/pkg-shim-card.md)           | **[Pkg-Shim]**. Command shim context.         |
 
 ###### Cards Procedures (`.agent/cards/procedures/`)
 

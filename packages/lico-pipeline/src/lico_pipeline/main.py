@@ -3,6 +3,8 @@ import logging
 import shutil
 import subprocess
 import sys
+from abc import ABC, abstractmethod
+from dataclasses import dataclass
 from pathlib import Path
 
 logging.basicConfig(
@@ -10,74 +12,150 @@ logging.basicConfig(
 )
 logger = logging.getLogger(__name__)
 
-def _get_executable(name: str) -> str | None:
-    """Resolve the executable path, prioritizing the active venv."""
-    executable = shutil.which(name)
-    if not executable:
+
+@dataclass
+class ToolResult:
+    name: str
+    success: bool
+    return_code: int
+
+
+class LintTool(ABC):
+    def __init__(self, name: str, extensions: list[str]):
+        self.name = name
+        self.extensions = extensions
+
+    @abstractmethod
+    def run(self, target_path: Path) -> ToolResult:
+        pass
+
+    def _run_subprocess(self, cmd: list[str], cwd: Path | None = None) -> ToolResult:
+        logger.info(f"Running: {' '.join(cmd)}")
+        try:
+            result = subprocess.run(
+                cmd, capture_output=False, check=False, shell=False, cwd=cwd
+            )
+            return ToolResult(
+                name=self.name,
+                success=result.returncode == 0,
+                return_code=result.returncode,
+            )
+        except FileNotFoundError:
+            logger.exception(f"Error: Command '{cmd[0]}' not found.")
+            return ToolResult(name=self.name, success=False, return_code=-1)
+
+
+class PythonTool(LintTool):
+    def __init__(self, name: str, command: str, args: list[str]):
+        super().__init__(name, [".py", ".pyi"])
+        self.command = command
+        self.args = args
+
+    def _resolve_executable(self) -> str | None:
+        # Priority 1: Sibling of current python executable (venv)
         python_dir = Path(sys.executable).parent
-        candidate = python_dir / f"{name}.exe"
-        if not candidate.exists():
-            candidate = python_dir / name
-
+        candidate = python_dir / self.command
         if candidate.exists():
-            executable = str(candidate)
-    return executable
-
-def run_command(command: list[str], path: Path | None = None) -> bool:
-    """Run a shell command and return success."""
-    executable = _get_executable(command[0])
-    if not executable:
-        logger.error(f"Error: Command '{command[0]}' not found.")
-        return False
-
-    full_cmd = [executable, *command[1:]]
-    if path:
-        full_cmd.append(str(path))
+            return str(candidate)
         
-    logger.info(f"Running: {' '.join(full_cmd)}")
-    try:
-        result = subprocess.run(
-            full_cmd, capture_output=False, check=False, shell=False
-        )
-    except FileNotFoundError:
-        logger.exception(f"Error: Command '{executable}' not found.")
-        return False
-    else:
-        return result.returncode == 0
+        # Priority 2: PATH
+        return shutil.which(self.command)
 
-def _parse_args() -> argparse.Namespace:
-    parser = argparse.ArgumentParser(description="Orchestrator for Lico linting pipelines")
-    parser.add_argument("path", nargs="?", default=".", help="Path to check")
-    return parser.parse_args()
+    def run(self, target_path: Path) -> ToolResult:
+        executable = self._resolve_executable()
+        if not executable:
+            logger.error(f"Error: Executable '{self.command}' not found for {self.name}.")
+            return ToolResult(name=self.name, success=False, return_code=-1)
+
+        full_cmd = [executable, *self.args, str(target_path)]
+        return self._run_subprocess(full_cmd)
+
+
+class NodeTool(LintTool):
+    def __init__(self, name: str, command: str, args: list[str], extensions: list[str]):
+        super().__init__(name, extensions)
+        self.command = command
+        self.args = args
+
+    def _resolve_executable(self, root_dir: Path) -> str | None:
+        # Priority 1: node_modules/.bin in the project root
+        # Assuming we are running from the project root or we can find it.
+        # For now, let's assume CWD or traverse up.
+        # But lico-pipeline is run from CWD.
+        candidate = root_dir / "node_modules" / ".bin" / self.command
+        if candidate.exists():
+            return str(candidate)
+        
+        # Priority 2: PATH (global install - discouraged but possible)
+        return shutil.which(self.command)
+
+    def run(self, target_path: Path) -> ToolResult:
+        # Node tools are tricky with absolute paths sometimes, but generally ok.
+        # We need to find the project root to locate node_modules.
+        # Heuristic: look for package.json in CWD or parents.
+        current = Path.cwd()
+        root_dir = current # Simple assumption for now
+        
+        executable = self._resolve_executable(root_dir)
+        if not executable:
+            logger.error(f"Error: Executable '{self.command}' not found for {self.name}.")
+            return ToolResult(name=self.name, success=False, return_code=-1)
+
+        full_cmd = [executable, *self.args]
+        # Some node tools (like prettier) take the file pattern as the last arg.
+        # If target_path is a directory, we might need to append globs?
+        # For now, let's assume the tool handles the path argument correctly.
+        # Prettier specifically often wants a glob.
+        if self.command == "prettier":
+             # Special handling for prettier if we want it to check *everything* in target_path
+             # But usually target_path is "."
+             full_cmd.append(str(target_path))
+        else:
+             full_cmd.append(str(target_path))
+
+        return self._run_subprocess(full_cmd)
+
 
 def main() -> None:
-    """Entry point for the unified pipeline orchestrator."""
-    args = _parse_args()
+    parser = argparse.ArgumentParser(description="Orchestrator for Lico linting pipelines")
+    parser.add_argument("path", nargs="?", default=".", help="Path to check")
+    args = parser.parse_args()
     target_path = Path(args.path).absolute()
-    
-    # Define the pipeline steps. 
-    # Notice we use 'uv run' for python tools to ensure environment correctness,
-    # and 'yarn run' for node tools.
-    commands = [
-        (["ruff", "check", "--no-fix"], "Ruff Check", target_path),
-        (["ruff", "format", "--check"], "Ruff Format", target_path),
-        (["pyright"], "Pyright", target_path),
-        (["yarn", "run", "lint"], "Yarn Lint (Prettier/ESLint/etc)", None), # yarn lint usually handles its own paths
-        (["lico-lint-empty-dir"], "Lico Custom: Empty Directory Check", target_path),
+
+    # Define Tools
+    tools: list[LintTool] = [
+        PythonTool("Ruff Check", "ruff", ["check", "--no-fix"]),
+        PythonTool("Ruff Format", "ruff", ["format", "--check"]),
+        PythonTool("Pyright", "pyright", []),
+        # Node Tools (Explicitly defined args from package.json)
+        NodeTool("Prettier", "prettier", ["--config", ".vscode/.prettierrc.yaml", "--ignore-path", ".vscode/.prettierignore", "--check", "--cache", "--cache-location", ".temp/cache/prettier/"], [".js", ".ts", ".md", ".json", ".yaml"]),
+        NodeTool("ESLint", "eslint", ["--config", ".vscode/eslint.config.mjs", "--cache", "--cache-location", ".temp/cache/eslint/"], [".js", ".ts"]),
+        NodeTool("Stylelint", "stylelint", ["--config", ".vscode/.stylelintrc.yaml", "--cache", "--cache-location", ".temp/cache/stylelint/"], [".css"]),
+        NodeTool("Markdownlint", "markdownlint-cli2", ["--config", ".vscode/.markdownlint.yaml"], [".md"]),
+        NodeTool("Textlint", "textlint", ["-c", ".vscode/.textlintrc.json", "--cache", "--cache-location", ".temp/cache/textlint/"], [".md", ".txt"]),
+        NodeTool("CSpell", "cspell", ["-c", ".vscode/cspell.json", "--no-progress", "--dot", "--cache", "--cache-location", ".temp/cache/cspell/"], ["*"]),
+        # Custom Tools
+        PythonTool("Lico Empty Dir", "lico-lint-empty-dir", []),
     ]
 
     success = True
-    for cmd, name, path_arg in commands:
-        logger.info(f"\n--- {name} ---")
-        if not run_command(cmd, path_arg):
+    print("\n🚀 Starting Lico Pipeline...\n")
+    
+    for tool in tools:
+        print(f"--- {tool.name} ---")
+        result = tool.run(target_path)
+        if not result.success:
             success = False
-            logger.error(f"{name} failed!")
+            logger.error(f"❌ {tool.name} failed!")
+        else:
+            logger.info(f"✅ {tool.name} passed.")
+        print("")
 
     if success:
-        logger.info("\n✅ All pipeline checks passed successfully!")
+        logger.info("🎉 All checks passed!")
         sys.exit(0)
     else:
-        logger.error("\n❌ Some pipeline checks failed. Please review the errors above.")
+        logger.error("💥 Some checks failed.")
         sys.exit(1)
 
 if __name__ == "__main__":
