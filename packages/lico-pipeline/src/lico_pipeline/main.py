@@ -127,6 +127,7 @@ def main() -> None:
         PythonTool("Ruff Check", "ruff", ["check", "--no-fix", "--config", "pyproject.toml"]),
         PythonTool("Ruff Format", "ruff", ["format", "--check", "--config", "pyproject.toml"]),
         PythonTool("Pyright", "pyright", ["--project", "pyproject.toml"]),
+        PythonTool("Pytest", "pytest", ["-c", "pyproject.toml"]),
         
         # Node Tools (Explicitly defined args mirroring package.json)
         NodeTool("Prettier", "prettier", ["--config", ".vscode/.prettierrc.yaml", "--ignore-path", ".vscode/.prettierignore", "--check", "--cache", "--cache-location", ".temp/cache/prettier/"], [".js", ".ts", ".md", ".json", ".yaml"]),
