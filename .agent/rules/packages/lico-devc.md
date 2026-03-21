@@ -34,10 +34,10 @@ ai_model: Gemini 3.1 Pro (High) Planning mode
 
 ## Related Documents
 
-| Document                                 | Purpose             |
-| :--------------------------------------- | :------------------ |
-| [`packages/lico-devc/README.md`](/packages/lico-devc/README.md) | Package structural pointer |
-| [Map of Territory](/.agent/rules/map.md) | Root navigation map |
+| Document                                               | Purpose                    |
+| :----------------------------------------------------- | :------------------------- |
+| [`lico-devc/README.md`](/packages/lico-devc/README.md) | Package structural pointer |
+| [Map of Territory](/.agent/rules/map.md)               | Root navigation map        |
 
 ---
 

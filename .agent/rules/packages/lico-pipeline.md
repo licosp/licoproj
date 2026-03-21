@@ -31,10 +31,10 @@ While `lico-lint` handles static analysis, `lico-pipeline` wires together the br
 
 ## Related Documents
 
-| Document                                 | Purpose             |
-| :--------------------------------------- | :------------------ |
-| [`packages/lico-pipeline/README.md`](/packages/lico-pipeline/README.md) | Package structural pointer |
-| [Map of Territory](/.agent/rules/map.md) | Root navigation map |
+| Document                                                       | Purpose                    |
+| :------------------------------------------------------------- | :------------------------- |
+| [`lico-pipeline/README.md`](/packages/lico-pipeline/README.md) | Package structural pointer |
+| [Map of Territory](/.agent/rules/map.md)                       | Root navigation map        |
 
 ---
 

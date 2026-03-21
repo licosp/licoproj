@@ -52,7 +52,7 @@ find .agent/.internal/memory_archive -type f -name "*.md*" | wc -l
 
 | Document                                                                                    | Purpose                               |
 | :------------------------------------------------------------------------------------------ | :------------------------------------ |
-| [`packages/lico-backup/README.md`](/packages/lico-backup/README.md) | Package structural pointer |
+| [`lico-backup/README.md`](/packages/lico-backup/README.md)                                  | Package structural pointer            |
 | [`documentation-standards.md`](/.agent/rules/core/documentation/documentation-standards.md) | Standard for readable documentation   |
 | [`repository-philosophy.md`](/.agent/rules/core/repository-philosophy.md)                   | "Repository as Brain" core principles |
 | [Map of Territory](/.agent/rules/map.md)                                                    | Root navigation map                   |

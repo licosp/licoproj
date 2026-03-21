@@ -54,10 +54,10 @@ _Note: This tool is intended to run both on the host (WSL) and within the contai
 
 ## Related Documents
 
-| Document                                 | Purpose             |
-| :--------------------------------------- | :------------------ |
-| [`packages/lico-lint/README.md`](/packages/lico-lint/README.md) | Package structural pointer |
-| [Map of Territory](/.agent/rules/map.md) | Root navigation map |
+| Document                                               | Purpose                    |
+| :----------------------------------------------------- | :------------------------- |
+| [`lico-lint/README.md`](/packages/lico-lint/README.md) | Package structural pointer |
+| [Map of Territory](/.agent/rules/map.md)               | Root navigation map        |
 
 ---
 
