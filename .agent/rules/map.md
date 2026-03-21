@@ -6,7 +6,7 @@ description: Navigation index for the Agent's cognitive infrastructure.
 tags: [map, index, navigation, rules]
 version: 0.7.0
 created: 2025-12-01T00:00:00+09:00
-updated: 2026-02-19T08:35:00+09:00
+updated: 2026-03-21T18:35:00+09:00
 language: en
 author: Lico (Sirius)
 ai_model: Gemini 3 Pro (High) Planning mode
@@ -61,8 +61,6 @@ This is the layout of your world.
 | [`cards/`](/.agent/cards/)                     | **Contexts**. Active task definitions (See Index below).    |
 | [`identifiers/`](/.agent/identifiers/)         | Identifier-specific workspaces and mantras.                 |
 | [`rules/`](/.agent/rules/)                     | **Constitution**. Behavioral definitions (See Index below). |
-| [`scripts/`](/.agent/scripts/)                 | Automation scripts.                                         |
-| [`scripts/logging/`](/.agent/scripts/logging/) | **Logging**. Persistent logging infrastructure.             |
 | [`skills/`](/.agent/skills/)                   | Mantras, notes, and outbox for communication.               |
 | [`templates/`](/.agent/templates/)             | Frontmatter and commit patterns.                            |
 | [`workflows/`](/.agent/workflows/)             | **Procedures**. Standard operations (See Index below).      |
@@ -544,3 +542,4 @@ These are your capabilities.
 - 2026-02-18T0820 by Sirius: Updated to v0.6.2. Verified Shim protocol integration and fixed link typos.
 - 2026-02-18T1940 by Sirius: Updated to v0.6.3. Added tmux-operations.md to index.
 - 2026-02-19T0835 by Sirius: Updated to v0.7.0. Added logging scripts and tech-stack-card.
+- 2026-03-21T1835 by Sirius: Updated to v0.7.1. Removed deprecated `.agent/scripts/` workspace following the transition to UV packages and identifier sandboxes.
