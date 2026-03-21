@@ -1,0 +1,26 @@
+{
+  "rules": {
+    "preset-ja-spacing": {
+      "ja-nakaguro-or-halfwidth-space-between-katakana": true,
+      "ja-no-space-around-parentheses": false,
+      "ja-no-space-between-full-width": true,
+      "ja-space-after-exclamation": true,
+      "ja-space-after-question": true,
+      "ja-space-around-code": {
+        "before": true,
+        "after": true
+      },
+      "ja-space-around-link": true,
+      "ja-space-between-half-and-full-width": { "space": "always" }
+    },
+    "preset-japanese": {
+      "sentence-length": { "max": 999 },
+      "max-ten": { "max": 5 },
+      "no-double-negative": true,
+      "no-doubled-conjunction": true,
+      "no-doubled-conjunctive-particle-ga": true,
+      "no-doubled-joshi": false,
+      "period-in-list-item": false
+    }
+  }
+}
