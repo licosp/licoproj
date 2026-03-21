@@ -36,6 +36,10 @@ Standardize how AI instances log conversations to persistent files to ensure mem
 
 ## 5. Logging Procedure
 
+> [!IMPORTANT]
+> Format Enforcement
+> AIs **MUST** strictly structure the textual contents written to the buffer files using the exact `template-conversation.md` syntax (see the **v2 Format Specification (Split)** below). Emitting raw unformatted text like `**Lico**: <message>` will irreparably break the logging syntax.
+
 ### Step 1: Ensure Tool Availability (Managed UV Package)
 
 Ensure the `lico-log` package is available in the workspace.
