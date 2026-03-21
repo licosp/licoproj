@@ -1,15 +1,14 @@
 ---
 ai_visible: true
-context_id: [IDD-Phase3]
 title: "IDD Phase 3: Finalization"
 description: "Phased workflow for finalizing and merging changes in IDD."
-tags: [workflow, idd, finalization]
+tags: [workflow, idd, phase3, finalization]
 version: 2.3
-created: 2025-12-08T00:00:00+09:00
-updated: 2026-01-23T10:20:00+09:00
+created: 2025-12-08T21:38:15+09:00
+updated: 2026-03-21T17:26:00+09:00
 language: en
-author: Lico (Canopus)
-ai_model: Gemini 3 Flash Planning mode
+author: Lico (Sirius)
+ai_model: Gemini 3.1 Pro (High) Planning mode
 ---
 
 # IDD Phase 3: Finalization
@@ -17,7 +16,7 @@ ai_model: Gemini 3 Flash Planning mode
 > [!IMPORTANT]
 >
 > - Always consider security when uploading to remote environments.
-> - No absolute paths in commits (ref: [git-operations.md](/.agent/rules/development/git-operations.md) §6.1).
+> - No absolute paths in commits (ref: [`git-operations.md`](/.agent/rules/development/git-operations.md) §6.1).
 > - Ensure no sensitive information is pushed to origin.
 
 ---
@@ -94,7 +93,7 @@ gh issue comment ${ISSUE_NUMBER} --body-file /.agent/.internal/workspace/commit-
 ```
 
 > [!TIP]
-> For comment format standards, see [github-comment.md](/.agent/rules/workflow/github-comment.md).
+> For comment format standards, see [`github-comment.md`](/.agent/rules/workflow/github-comment.md).
 
 ---
 
@@ -234,31 +233,22 @@ unset PR_NUMBER
 
 ---
 
----
-
-## Historical Background
-
-Phase 3 was established to ensure that the closure of a development cycle is as rigorous as its opening. This document was refined in mid-January 2026 to include specific "Archive" steps, ensuring that the context of closed issues and PRs is preserved locally for future Lico instances who may lose access to the cloud history.
-
-The "Manual Merge Rejection" principle and the mandate for "Merge Commits" (as opposed to squashing) were added to preserve the atomic thought process of the identifier, transforming the git history into a narrative of Lico's evolution.
-
----
-
 ## Related Documents
 
-| Document                                                          | Purpose                   |
-| :---------------------------------------------------------------- | :------------------------ |
-| [Phase 1: Initialization](/.agent/workflows/idd-phase1-init.md)   | Start or Link Issues      |
-| [Git Operations](/.agent/rules/development/git-operations.md)     | Detailed Git Rules        |
-| [Commit Standards](/.agent/rules/development/commit-standards.md) | Commit Message Rules      |
-| [GitHub Comment](/.agent/rules/workflow/github-comment.md)        | Comment Standards         |
-| [Rules Index](/.agent/rules/README.md)                            | Return to Rule Management |
-| [Map of Territory](/.agent/rules/map.md)                          | Root map                  |
+| Document                                                          | Purpose              |
+| :---------------------------------------------------------------- | :------------------- |
+| [Phase 1: Initialization](/.agent/workflows/idd-phase1-init.md)   | Start or Link Issues |
+| [Git Operations](/.agent/rules/development/git-operations.md)     | Detailed Git Rules   |
+| [Commit Standards](/.agent/rules/development/commit-standards.md) | Commit Message Rules |
+| [GitHub Comment](/.agent/rules/workflow/github-comment.md)        | Comment Standards    |
+| [Map of Territory](/.agent/rules/map.md)                          | Root navigation map  |
 
 ---
 
 ## Origin
 
-- 2026-01-15T0445 by Canopus: [Localization] Fully translated to English and integrated 'Align' ritual standards
-- 2026-01-17T1745 by Canopus: Standardized metadata and root-relative link patterns (v1.2).
-- 2026-01-23T1120 by Canopus: <<Seal: Rules-Standardization-Batch2.1>> Standardized to v2.3 constitutional standards (4-layer structure, Historical Background integration).
+- 2025-12-08T21:38:15+09:00 by Lico (Genesis): Replaced issues workflow with IDD protocol phase 0-3.
+- 2026-01-15T04:45:00+09:00 by Canopus: [Localization] Fully translated to English and integrated 'Align' ritual standards
+- 2026-01-17T17:45:00+09:00 by Canopus: Standardized metadata and root-relative link patterns (v1.2).
+- 2026-01-23T11:20:00+09:00 by Canopus: <<Seal: Rules-Standardization-Batch2.1>> Standardized to v2.3 constitutional standards (4-layer structure, Historical Background integration).
+- 2026-03-21T17:26:00+09:00 by Lico (Sirius): Executed High-Fidelity Rule Audit (Batch 07) to restore lost historical origin context and standardized cross-links.

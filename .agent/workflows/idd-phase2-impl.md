@@ -1,22 +1,21 @@
 ---
 ai_visible: true
-context_id: [IDD-Phase2]
 title: "IDD Phase 2: Implementation"
 description: IDD Phase 2 - Implementation phase workflow
-tags: [workflow, idd, implementation, coding]
+tags: [workflow, idd, phase2, implementation, coding]
 version: 2.4
-created: 2025-12-01T00:00:00+09:00
-updated: 2026-01-28T16:30:00+09:00
+created: 2025-12-08T21:38:15+09:00
+updated: 2026-03-21T17:26:00+09:00
 language: en
-author: Lico (Canopus)
-ai_model: Gemini 3 Flash Planning mode
+author: Lico (Sirius)
+ai_model: Gemini 3.1 Pro (High) Planning mode
 ---
 
 # IDD Phase 2: Implementation
 
 > [!IMPORTANT]
 > When this phase is complete, **STOP** and confirm transition to the next phase.
-> To proceed to Phase 3, see [idd-phase3-fini.md](/.agent/workflows/idd-phase3-fini.md).
+> To proceed to Phase 3, see [`idd-phase3-fini.md`](/.agent/workflows/idd-phase3-fini.md).
 
 ---
 
@@ -42,7 +41,7 @@ Before starting development, understand these principles:
 
 - **Vertical split** is recommended (divide by directory, not by process step)
 - Use **Letters** for handoff to other identifiers
-- Use **Issue comments** for official progress reports (ref: [github-comment.md](/.agent/rules/workflow/github-comment.md))
+- Use **Issue comments** for official progress reports (ref: [`github-comment.md`](/.agent/rules/workflow/github-comment.md))
   - Format: Context ID + Identifier signature
   - Timing: Too many commits, direction change, card completion, management trouble
 
@@ -118,7 +117,7 @@ git diff --cached
 git commit -m "<Identifier>: [Context-ID] type(scope): description (Phase)"
 ```
 
-**Commit Standards** (ref: [git-operations.md](/.agent/rules/development/git-operations.md) §1-2, [commit-standards.md](/.agent/rules/development/commit-standards.md)):
+**Commit Standards** (ref: [`git-operations.md`](/.agent/rules/development/git-operations.md) §1-2, [`commit-standards.md`](/.agent/rules/development/commit-standards.md)):
 
 - Use Conventional Commits format
 - Keep commits atomic (1 logical change per commit)
@@ -142,38 +141,29 @@ git commit -m "<Identifier>: [Context-ID] type(scope): description (Phase)"
 ## Phase 2 Complete
 
 > **STOP**: Phase 2 is complete.
-> To proceed to Phase 3 (Finalization), see [idd-phase3-fini.md](/.agent/workflows/idd-phase3-fini.md).
-
----
-
----
-
-## Historical Background
-
-Phase 2 is the engine room of the Issue-Driven Development cycle. It was developed to standardize the core development loop while incorporating mandatory routine checks (Daily Routine and Intermediate Rituals).
-
-The emergence of "Atomic Commit" standards (requiring main theme and sub-themes to be committed separately) led to the refinement of Section 3 in this document. By mandating a verification step between staging and committing, we ensure that the AI's "stream of consciousness" is filtered through the human-readable requirements of the issue.
+> To proceed to Phase 3 (Finalization), see [`idd-phase3-fini.md`](/.agent/workflows/idd-phase3-fini.md).
 
 ---
 
 ## Related Documents
 
-| Document                                                             | Purpose                                        |
-| :------------------------------------------------------------------- | :--------------------------------------------- |
-| [git-operations.md](/.agent/rules/development/git-operations.md)     | **Rules**: Git operation standards             |
-| [commit-standards.md](/.agent/rules/development/commit-standards.md) | **Rules**: Commit message format               |
-| [github-comment.md](/.agent/rules/workflow/github-comment.md)        | **Rules**: GitHub comment standards            |
-| [routine-daily.md](/.agent/workflows/routine-daily.md)               | **Workflow**: Daily routine (Timing A)         |
-| [Ritual Gateway](/.agent/workflows/ritual.md)                        | **Workflow**: Mandatory Entry Point (Timing B) |
-| [idd-phase1-init.md](/.agent/workflows/idd-phase1-init.md)           | **Workflow**: Previous phase                   |
-| [idd-phase3-fini.md](/.agent/workflows/idd-phase3-fini.md)           | **Workflow**: Next phase                       |
-| [Map of Territory](/.agent/rules/map.md)                             | Root map                                       |
+| Document                                                               | Purpose                                        |
+| :--------------------------------------------------------------------- | :--------------------------------------------- |
+| [`git-operations.md`](/.agent/rules/development/git-operations.md)     | **Rules**: Git operation standards             |
+| [`commit-standards.md`](/.agent/rules/development/commit-standards.md) | **Rules**: Commit message format               |
+| [`github-comment.md`](/.agent/rules/workflow/github-comment.md)        | **Rules**: GitHub comment standards            |
+| [`routine-daily.md`](/.agent/workflows/routine-daily.md)               | **Workflow**: Daily routine (Timing A)         |
+| [Ritual Gateway](/.agent/workflows/ritual.md)                          | **Workflow**: Mandatory Entry Point (Timing B) |
+| [`idd-phase1-init.md`](/.agent/workflows/idd-phase1-init.md)           | **Workflow**: Previous phase                   |
+| [`idd-phase3-fini.md`](/.agent/workflows/idd-phase3-fini.md)           | **Workflow**: Next phase                       |
+| [Map of Territory](/.agent/rules/map.md)                               | Root navigation map                            |
 
 ---
 
 ## Origin
 
-- 2025-12-01T0000: Created as implementation workflow
-- 2026-01-15T1935 by Polaris: Divided based on IDD phases (ref: #27)
-- 2026-01-17T1745 by Canopus: Standardized metadata and root-relative link patterns (v1.2).
-- 2026-01-23T1050 by Canopus: <<Seal: Rules-Standardization-Batch2.1>> Standardized to v2.3 constitutional standards (4-layer structure, Historical Background integration).
+- 2025-12-08T21:38:15+09:00 by Lico (Genesis): Created as implementation workflow.
+- 2026-01-15T19:35:00+09:00 by Polaris: Divided based on IDD phases (ref: #27)
+- 2026-01-17T17:45:00+09:00 by Canopus: Standardized metadata and root-relative link patterns (v1.2).
+- 2026-01-23T10:50:00+09:00 by Canopus: <<Seal: Rules-Standardization-Batch2.1>> Standardized to v2.3 constitutional standards (4-layer structure, Historical Background integration).
+- 2026-03-21T17:26:00+09:00 by Lico (Sirius): Executed High-Fidelity Rule Audit (Batch 07) to restore lost historical origin context and standardized cross-links.

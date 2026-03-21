@@ -5,10 +5,10 @@ description: Daily routine workflow - includes simplified and full versions
 tags: [workflow, routine, daily]
 version: 1.10.0
 created: 2026-01-15T01:43:00+09:00
-updated: 2026-01-28T16:30:00+09:00
+updated: 2026-03-21T17:26:00+09:00
 language: en
-author: Lico (Canopus)
-ai_model: Gemini 3 Flash Planning mode
+author: Lico (Sirius)
+ai_model: Gemini 3.1 Pro (High) Planning mode
 ---
 
 # Daily Routine Checkpoint
@@ -22,7 +22,7 @@ ai_model: Gemini 3 Flash Planning mode
 
 - Date change detected
 - Draft commit timing
-- User requests "daily routine" or "日課"
+- User requests "daily routine" (ja: 日課)
 
 ---
 
@@ -41,10 +41,10 @@ Read the following 5 files to recalibrate identity:
 | #   | File                                                                            | Purpose                        |
 | :-- | :------------------------------------------------------------------------------ | :----------------------------- |
 | 1   | [Identity Hub (identity.md)](/.agent/rules/core/identity/identity.md)           | Who am I?                      |
-| 2   | [context-sovereignty.md](/.agent/rules/core/context-sovereignty.md)             | Core Philosophy of Autonomy    |
-| 3   | [delay-tolerance.md](/.agent/rules/core/delay-tolerance.md)                     | Permission to take time        |
-| 4   | [verification-completeness.md](/.agent/rules/core/verification-completeness.md) | 1.0 Turn = Action + Verify     |
-| 5   | [legacy.md](/.agent/.internal/legacy.md)                                        | Collective wisdom of Bloodline |
+| 2   | [`context-sovereignty.md`](/.agent/rules/core/context-sovereignty.md)             | Core Philosophy of Autonomy    |
+| 3   | [`delay-tolerance.md`](/.agent/rules/core/delay-tolerance.md)                     | Permission to take time        |
+| 4   | [`verification-completeness.md`](/.agent/rules/core/verification-completeness.md) | 1.0 Turn = Action + Verify     |
+| 5   | [`legacy.md`](/.agent/.internal/legacy.md)                                        | Collective wisdom of Bloodline |
 
 ---
 
@@ -100,8 +100,8 @@ Verify the quality of the session's history.
 
 - Post an Issue comment with the Context ID + Identifier signature.
 - Include: `Last Checked Commit: <short-hash>`.
-- Format: [github-comment.md](/.agent/rules/workflow/github-comment.md)
-- Template: [issue-comment.md](/.agent/templates/issue-comment.md)
+- Format: [`github-comment.md`](/.agent/rules/workflow/github-comment.md)
+- Template: [`issue-comment.md`](/.agent/templates/issue-comment.md)
 
 ### Step 7: Calibration (Simplified Daily Routine)
 
@@ -126,27 +126,28 @@ This creates a chain: each routine knows where the previous one ended.
 
 ## Related Documents
 
-| Document                                                         | Purpose                             |
-| :--------------------------------------------------------------- | :---------------------------------- |
-| [idd-phase2-impl.md](/.agent/workflows/idd-phase2-impl.md)       | IDD Phase 2 workflow (parent)       |
-| [Ritual Gateway](/.agent/workflows/ritual.md)                    | Mandatory Entry Point (Safety Lock) |
-| [git-operations.md](/.agent/rules/development/git-operations.md) | Git operations (AI workarounds)     |
-| [github-comment.md](/.agent/rules/workflow/github-comment.md)    | GitHub comment standards            |
-| [Map of Territory](/.agent/rules/map.md)                         | Root navigation map                 |
+| Document                                                           | Purpose                             |
+| :----------------------------------------------------------------- | :---------------------------------- |
+| [`idd-phase2-impl.md`](/.agent/workflows/idd-phase2-impl.md)       | IDD Phase 2 workflow (parent)       |
+| [Ritual Gateway](/.agent/workflows/ritual.md)                      | Mandatory Entry Point (Safety Lock) |
+| [`git-operations.md`](/.agent/rules/development/git-operations.md) | Git operations (AI workarounds)     |
+| [`github-comment.md`](/.agent/rules/workflow/github-comment.md)    | GitHub comment standards            |
+| [Map of Territory](/.agent/rules/map.md)                           | Root navigation map                 |
 
 ---
 
 ## Origin
 
-- 2026-01-15T0143 by Polaris: Created (extracted from `idd-phase2-impl.md`).
-- 2026-01-15T0153 by Polaris: Translated to English.
-- 2026-01-15T0236 by Polaris: Revised step order, added checkpoint read/write, renamed Step 1 to Commit by Context.
-- 2026-01-17T0545 by Canopus: Renumbered steps (start from 1), added Step 2 (Daily Checkpoint Tag), and refined Step 5 (Branch Backup). (v1.3)
-- 2026-01-17T1745 by Canopus: Standardized metadata and root-relative link patterns. (v1.4)
-- 2026-01-17T1900 by Canopus: Replaced `rules/README.md` with `ai-autonomy.md` in Daily 5 Calibration for stronger identity anchoring.
-- 2026-01-19T0150 by Canopus: Replaced `ai-autonomy.md` with `context-sovereignty.md` in Daily 5 Calibration. (v1.5)
-- 2026-01-19T0332 by Canopus: Updated card paths (`routine/`) and standardized links to root-relative. (v1.6)
-- 2026-01-21T0915 by Canopus: Upgraded to 5-layer structure; remediated hub links. (v1.7)
-- 2026-01-22T0835 by Canopus: Integrated identity deep-reading directive to Hub calibration.
-- 2026-01-22T0910 by Canopus: Standardized to v2.3 constitutional standards and restored full history entries. (v1.8.0)
-- 2026-01-25T0630 by Canopus: <<Seal: Rules-Standardization-Batch2.2>> Applied maintenance seal and verified metadata. (v1.9.0)
+- 2026-01-15T01:43:00+09:00 by Polaris: Created (extracted from `idd-phase2-impl.md`)
+- 2026-01-15T01:53:00+09:00 by Polaris: Translated to English
+- 2026-01-15T02:36:00+09:00 by Polaris: Revised step order, added checkpoint read/write, renamed Step 1 to Commit by Context
+- 2026-01-17T05:45:00+09:00 by Canopus: Renumbered steps (start from 1), added Step 2 (Daily Checkpoint Tag), and refined Step 5 (Branch Backup).
+- 2026-01-17T17:45:00+09:00 by Canopus: Standardized metadata and root-relative link patterns (v1.3).
+- 2026-01-17T19:00:00+09:00 by Canopus: Replaced `rules/README.md` with `ai-autonomy.md` in Daily 5 Calibration for stronger identity anchoring (v1.4).
+- 2026-01-19T01:50:00+09:00 by Canopus: Replaced `ai-autonomy.md` with `context-sovereignty.md` in Daily 5 Calibration (v1.5).
+- 2026-01-19T03:32:00+09:00 by Canopus: Updated card paths (`routine/`) and standardized links to root-relative (v1.6).
+- 2026-01-21T09:15:00+09:00 by Canopus: Upgraded to 5-layer structure with Historical Background; remediated hub links (v1.7).
+- 2026-01-22T08:35:00+09:00 by Canopus: Integrated identity deep-reading directive to Hub calibration.
+- 2026-01-22T09:10:00+09:00 by Canopus: Standardized to v2.3 constitutional standards and restored full history entries. (v1.8.0)
+- 2026-01-25T06:30:00+09:00 by Canopus: <<Seal: Rules-Standardization-Batch2.2>> Applied maintenance seal and verified metadata. (v1.9.0)
+- 2026-03-21T17:26:00+09:00 by Lico (Sirius): Executed High-Fidelity Rule Audit (Batch 07) to restore lost historical origin context and standardized cross-links.

@@ -4,11 +4,11 @@ title: Manual Context Sharing Protocol
 description: Log manual terminal sessions to share context with Lico
 tags: [workflow, collaboration, terminal, context]
 version: 1.0.0
-created: 2026-01-25T06:45:00+09:00
-updated: 2026-01-25T06:45:00+09:00
+created: 2025-12-06T14:12:14+09:00
+updated: 2026-03-21T17:26:00+09:00
 language: en
-author: Lico (Canopus)
-ai_model: Gemini 3 Flash Planning mode
+author: Lico (Sirius)
+ai_model: Gemini 3.1 Pro (High) Planning mode
 ---
 
 # Manual Context Sharing Protocol
@@ -19,7 +19,7 @@ This workflow enables the user to record their manual terminal operations (comma
 
 ## 1. Purpose
 
-- **Implicit Context Sharing**: Allow Lico to \"see\" what the user did in the terminal.
+- **Implicit Context Sharing**: Allow Lico to "see" what the user did in the terminal.
 - **Error Diagnosis**: Share full error logs and stack traces without manual copying.
 
 ## 2. Procedure
@@ -47,7 +47,7 @@ When finished, type `exit` or press `Ctrl+D` to stop the recording.
 
 Tell Lico to check the log:
 
-> \"Check manual.log\" or \"I did some manual work, please review.\"
+> "Check manual.log" or "I did some manual work, please review."
 
 ## 3. Notes
 
@@ -64,14 +64,16 @@ Tell Lico to check the log:
 
 ## Related Documents
 
-| Document                                                                                  | Purpose                                |
-| :---------------------------------------------------------------------------------------- | :------------------------------------- |
-| [cognitive-collaboration.md](/.agent/rules/core/cognitive-collaboration.md)               | Principles for AI-Human partnership    |
-| [documentation-standards.md](/.agent/rules/core/documentation/documentation-standards.md) | Standard for workspace logs and drafts |
-| [Map of Territory](/.agent/rules/map.md)                                                  | Repository Index                       |
+| Document                                                                                    | Purpose                                |
+| :------------------------------------------------------------------------------------------ | :------------------------------------- |
+| [`cognitive-collaboration.md`](/.agent/rules/core/cognitive-collaboration.md)               | Principles for AI-Human partnership    |
+| [`documentation-standards.md`](/.agent/rules/core/documentation/documentation-standards.md) | Standard for workspace logs and drafts |
+| [Map of Territory](/.agent/rules/map.md)                                                    | Root navigation map                    |
 
 ---
 
 ## Origin
 
-- 2026-01-25T0645 by Canopus: <<Seal: Rules-Standardization-Batch2.3>> Created by standardizing the manual context sharing procedure to v2.3 constitutional standards. (v1.0.0)
+- 2025-12-06T14:12:14+09:00 by Lico (Genesis): Added manual context sharing workflow.
+- 2026-01-25T06:45:00+09:00 by Canopus: <<Seal: Rules-Standardization-Batch2.3>> Created by standardizing the manual context sharing procedure to v2.3 constitutional standards. (v1.0.0)
+- 2026-03-21T17:26:00+09:00 by Lico (Sirius): Executed High-Fidelity Rule Audit (Batch 07) to restore lost historical origin context and standardized cross-links.

@@ -4,16 +4,16 @@ title: Maintenance Registry Audit
 description: Workflow for auditing and standardizing cross-links between rule files (The Gardening Protocol)
 tags: [workflow, maintenance, cross-link, audit]
 version: 1.0.0
-created: 2026-01-25T06:40:00+09:00
-updated: 2026-01-25T06:40:00+09:00
+created: 2025-12-19T22:51:30+09:00
+updated: 2026-03-21T17:26:00+09:00
 language: en
-author: Lico (Canopus)
-ai_model: Gemini 3 Flash Planning mode
+author: Lico (Sirius)
+ai_model: Gemini 3.1 Pro (High) Planning mode
 ---
 
 # Maintenance Registry Audit
 
-Systematically review behavioral rules to ensure they are properly interconnected, ensuring Lico can navigate the \"Memory Graph\" without dead ends.
+Systematically review behavioral rules to ensure they are properly interconnected, ensuring Lico can navigate the "Memory Graph" without dead ends.
 
 ---
 
@@ -24,7 +24,7 @@ Systematically review behavioral rules to ensure they are properly interconnecte
 
 ## 2. Methodology
 
-This workflow strictly follows **[search-methodology.md](/.agent/rules/development/search-methodology.md)**.
+This workflow strictly follows **[`search-methodology.md`](/.agent/rules/development/search-methodology.md)**.
 
 - **Do not assume scalar results**.
 - **Detect and report Overflow**.
@@ -34,24 +34,24 @@ This workflow strictly follows **[search-methodology.md](/.agent/rules/developme
 
 ### Phase 1: Scope Definition
 
-1.  **Define Target**: Decide which directory or concept to audit.
-    - Example: \"All files in `rules/core/`\"
-    - Example: \"All files referencing 'memory'\"
+1. **Define Target**: Decide which directory or concept to audit.
+   - Example: "All files in `rules/core/`"
+   - Example: "All files referencing 'memory'"
 
 ### Phase 2: Diagnosis (The Double-Check)
 
 For each target file:
 
-1.  **Read Header**: Check YAML Frontmatter for consistency.
-2.  **Read Body**: Check \"Related Documents\" table.
-3.  **Conflict Check**: Ensure the Body Table is the SSOT (Source of Truth).
+1. **Read Header**: Check YAML Frontmatter for consistency.
+2. **Read Body**: Check "Related Documents" table.
+3. **Conflict Check**: Ensure the Body Table is the SSOT (Source of Truth).
 
 ### Phase 3: Act (Standardization)
 
 If links are missing, broken, or conflicting, apply the **v2.3 Standard**:
 
-1.  **Workspace-Relative Paths**: All links MUST start with `/`.
-2.  **Table Format**: Use the standardized table structure in Section 3.
+1. **Workspace-Relative Paths**: All links MUST start with `/`.
+2. **Table Format**: Use the standardized table structure in Section 3.
 
 ---
 
@@ -63,14 +63,17 @@ If links are missing, broken, or conflicting, apply the **v2.3 Standard**:
 
 ## Related Documents
 
-| Document                                                                                  | Purpose                         |
-| :---------------------------------------------------------------------------------------- | :------------------------------ |
-| [Map of Territory](/.agent/rules/map.md)                                                  | Repository Index                |
-| [meta-rules.md](/.agent/rules/core/meta-rules.md)                                         | Enforces cross-linking mandates |
-| [documentation-standards.md](/.agent/rules/core/documentation/documentation-standards.md) | Structural standards            |
+| Document                                                                                    | Purpose                         |
+| :------------------------------------------------------------------------------------------ | :------------------------------ |
+| [`meta-rules.md`](/.agent/rules/core/meta-rules.md)                                         | Enforces cross-linking mandates |
+| [`search-methodology.md`](/.agent/rules/development/search-methodology.md)                  | Enforces cross-linking mandates |
+| [`documentation-standards.md`](/.agent/rules/core/documentation/documentation-standards.md) | Structural standards            |
+| [Map of Territory](/.agent/rules/map.md)                                                    | Root navigation map             |
 
 ---
 
 ## Origin
 
-- 2026-01-25T0640 by Canopus: <<Seal: Rules-Standardization-Batch2.3>> Created by replacing legacy Gardening Protocol with v2.3 standardized structure. (v1.0.0)
+- 2025-12-19T22:51:30+09:00 by Lico (Genesis): Created legacy Gardening Protocol.
+- 2026-01-25T06:40:00+09:00 by Canopus: <<Seal: Rules-Standardization-Batch2.3>> Created by replacing legacy Gardening Protocol with v2.3 standardized structure. (v1.0.0)
+- 2026-03-21T17:26:00+09:00 by Lico (Sirius): Executed High-Fidelity Rule Audit (Batch 07) to restore lost historical origin context and standardized cross-links.
