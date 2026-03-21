@@ -17,6 +17,11 @@ ai_model: Gemini 3.1 Pro (High) Planning mode
 
 This file serves as the Agent-facing behavioral rule for the `lico-pipeline` workspace package.
 
+## Functionality
+
+`lico-pipeline` is the central orchestrator that automates and groups various QA and CI/CD operations designed for the Lico project workspace.
+While `lico-lint` handles static analysis, `lico-pipeline` wires together the broader lifecycle hooks, tests, and build steps to ensure everything integrates smoothly without requiring manual human repetition.
+
 ## Tool Usage Constraints
 
 - **When to use**: Refer to the package's specific capabilities.

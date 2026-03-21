@@ -444,6 +444,7 @@ These are your capabilities.
 | Rule File                                                              | Guideline                                |
 | :--------------------------------------------------------------------- | :--------------------------------------- |
 | [`lico-backup.md`](/.agent/rules/packages/lico-backup.md)              | Backup package usage rules.              |
+| [`lico-devc.md`](/.agent/rules/packages/lico-devc.md)                  | Dev container environment isolation.     |
 | [`lico-lint.md`](/.agent/rules/packages/lico-lint.md)                  | Linting package rules.                   |
 | [`lico-log.md`](/.agent/rules/packages/lico-log.md)                    | Conversation logging standards.          |
 | [`lico-memory.md`](/.agent/rules/packages/lico-memory.md)              | Memory package rules.                    |
