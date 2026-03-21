@@ -216,6 +216,38 @@ Canopus の遺志を引き継ぎ、現状の認識と以後の手順を記録し
   - 作業時はこのディレクトリを初期化し、Batch 07 対象ファイルを Seed (Source/Dest/Diff) すること。
   - **Caution**: メインリポジトリの整合性を保つため、ルートでの `git restore .` や `git clean` は慎重に行うこと（未コミットの下書きが消えるリスクがある）。
 
+---
+
+### Sirius (2026-03-21)
+
+#### Batch 09 (Workflows) 完了と、新プロトコル（A〜G）の確立
+
+本日、テストケースとして構造のシンプルな「手順書ディレクトリ（Batch 09）」15ファイルの High-Fidelity 復元監査を実行・完遂しました。
+旧来の繁雑な `source/dest/diff` 3層構造による視覚的監査は、VS Code の機能とマルチワークスペース（`.vscode/` の同梱設定など）を前提とすれば、**`diff` 単一のディレクトリとネストされた Git 履歴だけで十分である**と結論付けられました。
+
+これに伴い、今後のバッチ（Batch 07, 08, 10 等）の監査作業において、私と人間との間でより解像度の高い協働を行うための **「単一差分（Diff-Only）A〜G プロトコル」** を新たに定義します。
+
+#### 新・単一差分プロトコル (Diff-Only Audit Pipeline A-G)
+
+今後は `diff/` フォルダ単体にベースラインをコミットし、そこへ現在の本番用ファイルを直接上書きすることで、IDE の差分UI上に「失われた過去」と「現在の状態」を浮かび上がらせます。
+
+- **準備**: 対象バッチの「純粋なベースライン（`e06fcb3`時など）」を抽出し `diff/` 内で最初のコミットを行う。その後、現在の本番ファイルを `diff/` に上書きコピーする。
+- **[作業手順]**:
+  - **A: 日時標準化 (Lico/Human)**: Origin（更新履歴）等の日付書式を SSOT（`datetime-format.md`）の ISO-8601（`YYYY-MM-DDTHH:MM:SS+09:00`）へと厳密に修正・統一する。
+  - **B: Frontmatter同期 (Lico)**: Python 等のスクリプトを用い、Frontmatterの `created`/`updated` を、Origin 履歴の「最古/最新」日時へと完全に同期し、歴史的時系列の矛盾を排除する。
+  - **C: リンク・パスの厳密化 (Lico)**: Markdownリンク内のファイル名ラベルをバッククォート（<code>[`file.md`]</code>）で囲い統一し、リンク切れを自律的に検出し実際の有効パスへと引き直す。
+  - **D: 執筆者名の明示と署名 (Lico)**: Frontmatter の `author` と `ai_model`、さらに Origin に「復元・標準化を実行した Identifier 名儀」での明確な完了署名と現在日時を残す。
+  - **E: 本番への待機配置 (Lico/Human)**: 完成した `diff/` 内のファイルを本来の本番ディレクトリ（`.agent/...`）へ上書き適応し、最終確認（Git diff 等）に備える。
+  - **F: 本番反映コミット (Human/Lico)**: 本番ディレクトリへのコピーが完了した後、本番リポジトリ側にて正式な「Trinity Commit（監査の完了と正本化）」を実行する。
+  - **G: ワークスペースの初期化 (Lico)**: `diff/` ディレクトリの中身を空にしコミットすることで、次のバッチへすぐに取り掛かれるようにクリーニングする。
+
+#### Sirius からの所感（注意点と学び）
+
+- **AI の自動一括置換の有用性と危険性**: 15ファイルにまたがる日付フォーマット補正や、リンクパスの機械的置き換えなど「一貫性が命」の作業については、手作業よりもPython等を利用した一括処理（B〜D）が極めて速く正確でした（Average Regression の逆となる「解像度の底上げ」が可能です）。
+- **完全な自動化は不可能**: 一方で、`<...>` で失われていた「当時の原典コミットメッセージの要約」や「ファイル本来の意図」の復元は、人間の手による（`git log` 等の精微な観察を伴う）手動調整が絶対に欠かせませんでした。機械の「構造的標準化」と人間の「文脈的標準化」の美しい分業が、今回の成功を生みました。
+- **一時スクリプトのゴミのリスク**: 高速な一括置換のために生成したスクリプト群（`.py`）がメインリポジトリの未追跡（Untracked）リストに混入してしまうと、人間側が E や F の監査コミットを行う際のノイズや重大な巻き込み事故の要因となります。これらの実験的スクリプトは速やかに `.agent/.internal/workspace/sirius/` のような専用の非追跡フォルダへ隔離・廃棄する手順を徹底すべきです。
+- **作業単位（バッチサイズ）**: 今回の15ファイルは、自動化プログラムを用いたことでギリギリ認知処理の限界に収まりました。「3〜5ファイル単位が理想」という過去の推察は安全側として正しく、複雑な文章を多く含むバッチ（`.agent/rules/` 本丸など）では、Chunking（小分け）プロトコルへ回帰すべきと考えます。
+
 ### Canopus (2026-01-26)
 
 Generated at: 2026-01-25T01:32:05Z
@@ -327,21 +359,21 @@ Generated at: 2026-01-25T01:32:05Z
 
 ##### Batch 09: Core Workflows (`.agent/workflows/`)
 
-- [ ] [cross-link-audit-plan.md](/.agent/workflows/cross-link-audit-plan.md)
-- [ ] [cross-link-audit.md](/.agent/workflows/cross-link-audit.md)
-- [ ] [deep-reading.md](/.agent/workflows/deep-reading.md)
-- [ ] [deep-writing.md](/.agent/workflows/deep-writing.md)
-- [ ] [idd-phase1-init.md](/.agent/workflows/idd-phase1-init.md)
-- [ ] [idd-phase2-impl.md](/.agent/workflows/idd-phase2-impl.md)
-- [ ] [idd-phase3-fini.md](/.agent/workflows/idd-phase3-fini.md)
-- [ ] [maintenance-rule-audit.md](/.agent/workflows/maintenance-rule-audit.md)
-- [ ] [ritual_end.md](/.agent/workflows/ritual_end.md)
-- [ ] [ritual_mid.md](/.agent/workflows/ritual_mid.md)
-- [ ] [ritual_start.md](/.agent/workflows/ritual_start.md)
-- [ ] [routine-daily.md](/.agent/workflows/routine-daily.md)
-- [ ] [share-manual-context.md](/.agent/workflows/share-manual-context.md)
-- [ ] [sync-memory.md](/.agent/workflows/sync-memory.md)
-- [ ] [update-protected-rules.md](/.agent/workflows/update-protected-rules.md)
+- [x] [cross-link-audit-plan.md](/.agent/workflows/cross-link-audit-plan.md)
+- [x] [cross-link-audit.md](/.agent/workflows/cross-link-audit.md)
+- [x] [deep-reading.md](/.agent/workflows/deep-reading.md)
+- [x] [deep-writing.md](/.agent/workflows/deep-writing.md)
+- [x] [idd-phase1-init.md](/.agent/workflows/idd-phase1-init.md)
+- [x] [idd-phase2-impl.md](/.agent/workflows/idd-phase2-impl.md)
+- [x] [idd-phase3-fini.md](/.agent/workflows/idd-phase3-fini.md)
+- [x] [maintenance-rule-audit.md](/.agent/workflows/maintenance-rule-audit.md)
+- [x] [ritual_end.md](/.agent/workflows/ritual_end.md)
+- [x] [ritual_mid.md](/.agent/workflows/ritual_mid.md)
+- [x] [ritual_start.md](/.agent/workflows/ritual_start.md)
+- [x] [routine-daily.md](/.agent/workflows/routine-daily.md)
+- [x] [share-manual-context.md](/.agent/workflows/share-manual-context.md)
+- [x] [sync-memory.md](/.agent/workflows/sync-memory.md)
+- [x] [update-protected-rules.md](/.agent/workflows/update-protected-rules.md)
 
 ---
 
