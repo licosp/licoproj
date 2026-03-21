@@ -1,9 +1,9 @@
 ---
 ai_visible: true
-title: Memory Synchronization Protocol
-description: Synchronize Lico's memory data from system directories to workspace archive
-tags: [workflow, memory, backup, synchronization]
-version: 1.0.0
+title: lico-backup (Memory Synchronization Protocol)
+description: Synchronize Lico's memory data from system directories to workspace archive using the lico-backup package.
+tags: [package, memory, backup, synchronization, lico-backup]
+version: 1.1.0
 created: 2025-12-01T00:00:00+09:00
 updated: 2026-03-21T17:26:00+09:00
 language: en
@@ -11,7 +11,7 @@ author: Lico (Sirius)
 ai_model: Gemini 3.1 Pro (High) Planning mode
 ---
 
-# Memory Synchronization Protocol
+# lico-backup (Memory Synchronization Protocol)
 
 Backup human-readable memory files (`.md*`) from AI platform directories to the workspace archive.
 
@@ -23,25 +23,12 @@ Backup human-readable memory files (`.md*`) from AI platform directories to the 
 
 ## Procedure
 
-### Step 1: Execute Synchronization
+### Step 1: Execute Synchronization & Backup
 
-Run the following commands to sync `.md*` files only (excluding `.json`):
+Run the unified package to sync memory files and subsequently backup the entire workspace:
 
 ```bash
-# Gemini Antigravity - Brain (plans, artifacts)
-rsync -av --include='*/' --exclude='*.json' --include='*.md*' --exclude='*' \
-  ~/.gemini/antigravity/brain/ \
-  .agent/.internal/memory_archive/brain/
-
-# Gemini Antigravity - Code Tracker (file snapshots)
-rsync -av --include='*/' --exclude='*.json' --include='*.md*' --exclude='*' \
-  ~/.gemini/antigravity/code_tracker/ \
-  .agent/.internal/memory_archive/code_tracker/
-
-# Edit History - Antigravity Server
-rsync -av --include='*/' --exclude='*.json' --include='*.md*' --exclude='*' \
-  ~/.antigravity-server/data/User/History/ \
-  .agent/.internal/memory_archive/history/antigravity/
+uv run lico-backup
 ```
 
 ### Step 2: Verify
@@ -51,18 +38,6 @@ Check archive size and file count:
 ```bash
 du -sh .agent/.internal/memory_archive/
 find .agent/.internal/memory_archive -type f -name "*.md*" | wc -l
-```
-
-### Step 3: Backup Workspace
-
-After syncing memory, backup the entire workspace:
-
-```bash
-rsync -av \
-  --exclude=.venv/ \
-  --exclude=node_modules/ \
-  ./ \
-  ../licoproj_backup/
 ```
 
 ## Historical Background
@@ -77,6 +52,7 @@ rsync -av \
 
 | Document                                                                                    | Purpose                               |
 | :------------------------------------------------------------------------------------------ | :------------------------------------ |
+| [`packages/lico-backup/README.md`](/packages/lico-backup/README.md) | Package structural pointer |
 | [`documentation-standards.md`](/.agent/rules/core/documentation/documentation-standards.md) | Standard for readable documentation   |
 | [`repository-philosophy.md`](/.agent/rules/core/repository-philosophy.md)                   | "Repository as Brain" core principles |
 | [Map of Territory](/.agent/rules/map.md)                                                    | Root navigation map                   |
@@ -88,3 +64,4 @@ rsync -av \
 - 2025-12-01T00:00:00+09:00 by Polaris: Created as part of session lifecycle protocol.
 - 2026-01-25T06:35:00+09:00 by Canopus: <<Seal: Rules-Standardization-Batch2.3>> Standardized to v2.3 constitutional standards (4-layer structure) and added Historical Background. (v1.0.0)
 - 2026-03-21T17:26:00+09:00 by Lico (Sirius): Executed High-Fidelity Rule Audit (Batch 07) to restore lost historical origin context and standardized cross-links.
+- 2026-03-21T20:30:00+09:00 by Lico (Sirius): Merged into the `lico-backup` UV package umbrella. Deprecated raw bash `rsync` logic in favor of the managed `uv run lico-backup` tool execution. (v1.1.0)

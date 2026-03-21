@@ -134,6 +134,7 @@ echo "🚫 [Shim] BLOCKED: 'git reset --hard' is dangerous." >&2
 
 | Document                                                          | Purpose                              |
 | :---------------------------------------------------------------- | :----------------------------------- |
+| [`packages/lico-shim/README.md`](/packages/lico-shim/README.md) | Package structural pointer |
 | [`environment-specs.md`](/.agent/rules/core/environment-specs.md) | Technical environment specifications |
 | [Map of Territory](/.agent/rules/map.md)                          | Root navigation map                  |
 

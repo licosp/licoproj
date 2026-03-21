@@ -70,6 +70,7 @@ Partitions directly into `YYYY/MM/DD/log.jsonl` (no metadata file).
 
 | Document                                 | Purpose             |
 | :--------------------------------------- | :------------------ |
+| [`packages/lico-memory/README.md`](/packages/lico-memory/README.md) | Package structural pointer |
 | [Map of Territory](/.agent/rules/map.md) | Root navigation map |
 
 ---

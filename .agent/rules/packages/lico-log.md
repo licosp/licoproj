@@ -149,6 +149,7 @@ The `{{TIMESTAMP}}` placeholder must strictly follow the **Repository Default** 
 
 | Document                                                               | Purpose             |
 | :--------------------------------------------------------------------- | :------------------ |
+| [`packages/lico-log/README.md`](/packages/lico-log/README.md) | Package structural pointer |
 | [template-conversation.md](/.agent/templates/template-conversation.md) | File template       |
 | [Map of Territory](/.agent/rules/map.md)                               | Root navigation map |
 
