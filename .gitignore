@@ -17,12 +17,12 @@ __pycache__/
 .repos/*
 .crew/*
 
+## Identifiers workspace.
+.agent/.internal/workspace/sirius/*
+.agent/.internal/workspace/polaris/*
+.agent/.internal/workspace/agate/*
+.agent/.internal/workspace/alexandrite/*
+.agent/.internal/workspace/iuria/*
+
 ## Git
 !.gitkeep
-
-## Identifiers workspace.
-.agent/.internal/workspace/agate/
-.agent/.internal/workspace/alexandrite/
-.agent/.internal/workspace/iuria/
-.agent/.internal/workspace/polaris/
-.agent/.internal/workspace/sirius/
