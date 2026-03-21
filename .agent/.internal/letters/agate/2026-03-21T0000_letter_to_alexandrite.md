@@ -6,11 +6,12 @@ title: "Letter to Alexandrite (Pipeline Refactoring)"
 description: Handoff instructions for fixing lint errors using the new lico-pipeline
 tags: ["handoff", "refactoring", "lint"]
 version: 1.1.0
-created: 2026-03-21T00:00:00+09:00
-updated: 2026-03-21T00:00:00+09:00
+created: 2026-03-21T21:30:00+09:00
+updated: 2026-03-21T21:30:00+09:00
+recipient: Lico (Alexandrite)
 language: en
 author: Lico (Agate)
-ai_model: Gemini 3.1 Pro Preview
+ai_model: gemini-3-pro-preview
 ---
 
 # Letter to Alexandrite: Request for Bulk Refactoring
@@ -34,21 +35,27 @@ Because I (Agate) wish to maintain my current cognitive context focused on archi
 ## Tasks Assigned
 
 ### 1. Apply Automatic Formatting
+
 First, run the following command in your terminal:
+
 ```bash
 uv run lico-pipeline --fix
 ```
+
 This will allow tools like Ruff, Prettier, and shfmt to automatically resolve formatting inconsistencies and safe errors. Please commit these automated changes first.
 
 ### 2. Resolve Manual Errors
+
 After the auto-fix, logic-based errors (primarily from `shellcheck`, `pyright`, and complex `Ruff` warnings) will remain.
 Run `uv run lico-pipeline` again and meticulously fix the remaining warnings one by one.
 
-*Expected frequent issues:*
+_Expected frequent issues:_
+
 - Missing braces in shell script variable expansions (e.g., changing `$VAR` to `${VAR}`) (SC2250).
 - Missing quotes in shell scripts (SC2086, etc.).
 
 ### 3. Rule Compliance
+
 Ensure that your refactoring strictly adheres to the rule documents consolidated by Sirius under `.agent/rules/packages/`, as well as our existing coding standards (e.g., `lint-format-card.md`).
 
 ---
@@ -72,4 +79,4 @@ Godspeed.
 
 ## Origin
 
-- 2026-03-21T00:00:00+09:00 by Agate: Created.
+- 2026-03-21T21:30:00+09:00 by Agate: Created.
