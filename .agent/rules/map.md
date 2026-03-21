@@ -126,6 +126,7 @@ This is the layout of your world.
 | :------------------------------------------ | :----------------------------------- |
 | [`core/`](.agent/rules/core/)               | Core principles and identity rules.  |
 | [`development/`](.agent/rules/development/) | Development standards and protocols. |
+| [`packages/`](.agent/rules/packages/)       | Package behavioral rules and usage.  |
 | [`workflow/`](.agent/rules/workflow/)       | Workflow definitions and guidelines. |
 
 ###### Rules Core (`.agent/rules/core/`)
@@ -423,7 +424,6 @@ These are your capabilities.
 | [`archive-management.md`](/.agent/rules/development/archive-management.md)             | Archive maintenance.                     |
 | [`auto_frontmatter_on_save.md`](/.agent/rules/development/auto_frontmatter_on_save.md) | Auto-frontmatter rule.                   |
 | [`code-quality.md`](/.agent/rules/development/code-quality.md)                         | Code style and structure.                |
-| [`command-shims.md`](/.agent/rules/development/command-shims.md)                       | **Safety**. Command shim protocols.      |
 | [`commit-standards.md`](/.agent/rules/development/commit-standards.md)                 | Commit message format.                   |
 | [`continuous-improvement.md`](/.agent/rules/development/continuous-improvement.md)     | Self-improvement protocol.               |
 | [`file-deletion.md`](/.agent/rules/development/file-deletion.md)                       | **Preservation**. Archive, don't delete. |
@@ -439,6 +439,17 @@ These are your capabilities.
 | [`tmux-operations.md`](/.agent/rules/development/tmux-operations.md)                   | **Tmux**. Operations and IPC protocol.   |
 | [`workspace-tooling.md`](/.agent/rules/development/workspace-tooling.md)               | Tools and dependencies.                  |
 
+###### Rules Packages (`.agent/rules/packages/`)
+
+| Rule File                                                              | Guideline                                |
+| :--------------------------------------------------------------------- | :--------------------------------------- |
+| [`lico-backup.md`](/.agent/rules/packages/lico-backup.md)              | Backup package usage rules.              |
+| [`lico-lint.md`](/.agent/rules/packages/lico-lint.md)                  | Linting package rules.                   |
+| [`lico-log.md`](/.agent/rules/packages/lico-log.md)                    | Conversation logging standards.          |
+| [`lico-memory.md`](/.agent/rules/packages/lico-memory.md)              | Memory package rules.                    |
+| [`lico-pipeline.md`](/.agent/rules/packages/lico-pipeline.md)          | Pipeline package rules.                  |
+| [`lico-shim.md`](/.agent/rules/packages/lico-shim.md)                  | **Safety**. Command shim protocols.      |
+
 ###### Rules Workflow (`.agent/rules/workflow/`)
 
 | Rule File                                                                       | Guideline                                       |
@@ -448,7 +459,6 @@ These are your capabilities.
 | [`context-card-workflow.md`](/.agent/rules/workflow/context-card-workflow.md)   | How to use Context Cards.                       |
 | [`context-preservation.md`](/.agent/rules/workflow/context-preservation.md)     | Stashing context (Emergency).                   |
 | [`context-resumption.md`](/.agent/rules/workflow/context-resumption.md)         | Resuming from stash.                            |
-| [`conversations-logging.md`](/.agent/rules/workflow/conversations-logging.md)   | Conversation logging standards.                 |
 | [`draft-maintenance.md`](/.agent/rules/workflow/draft-maintenance.md)           | Managing drafts.                                |
 | [`github-comment.md`](/.agent/rules/workflow/github-comment.md)                 | GitHub comment standards.                       |
 | [`letters-documentation.md`](/.agent/rules/workflow/letters-documentation.md)   | Writing letters/handoffs.                       |

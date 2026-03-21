@@ -3,7 +3,7 @@
 name: 00-01-response-mirror
 description: >
   Identifiers [Action] Mirror response to the active conversation file.
-  Trigger: Every response. Rule: /.agent/rules/workflow/conversations-logging.md
+  Trigger: Every response. Rule: /.agent/rules/packages/lico-log.md
 # Shared Configuration
 ai_visible: true
 title: "Conversation Mirroring Protocol"

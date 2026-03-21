@@ -1,3 +1,3 @@
 # lico-shim
 
-Safety command router for the Lico project. Intercepts destructive commands (`rm`, `git`) and routes `python` to the `uv` virtual environment.
+See [/.agent/rules/packages/lico-shim.md](/.agent/rules/packages/lico-shim.md) for AI Agent usage and behavioral rules.

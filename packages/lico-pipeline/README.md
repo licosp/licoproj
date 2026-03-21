@@ -1,3 +1,3 @@
 # lico-pipeline
 
-Orchestrates all linting, formatting, and verification tasks for the Lico project.
+See [/.agent/rules/packages/lico-pipeline.md](/.agent/rules/packages/lico-pipeline.md) for AI Agent usage and behavioral rules.

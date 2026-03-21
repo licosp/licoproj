@@ -3,9 +3,9 @@ ai_visible: true
 title: Conversation Logging Protocol
 description: Standards for logging AI-human conversations to persistent files.
 tags: [conversation, logging, workflow, v2]
-version: 2.3.0
+version: 2.4.0
 created: 2026-01-31T22:50:00+09:00
-updated: 2026-02-20T08:34:00+09:00
+updated: 2026-03-21T19:30:00+09:00
 language: en
 author: Lico (Sirius)
 ai_model: Gemini 3 Pro (High) Planning mode
@@ -21,7 +21,7 @@ Standardize how AI instances log conversations to persistent files to ensure mem
 
 1. **Logs are Sacred**: The log file is the Single Source of Truth (SSOT).
 2. **Tools are Managed**: Scripts (`log_appender.py`) are persistent infrastructure.
-3. **Restoration over Reconstruction**: Use the managed script in `.agent/scripts/logging/`. If missing, restore it from git history, do not rewrite it from memory.
+3. **Restoration over Reconstruction**: Use the managed UV package `lico-log`. If missing, restore it from the workspace packages, do not rewrite it from memory.
 4. **Zero-Interpretation Input**: Record User Input exactly as received (Copy & Paste). Do not summarize.
 
 ## 3. Trigger Condition
@@ -36,13 +36,13 @@ Standardize how AI instances log conversations to persistent files to ensure mem
 
 ## 5. Logging Procedure
 
-### Step 1: Ensure Tool Availability (Managed)
+### Step 1: Ensure Tool Availability (Managed UV Package)
 
-Ensure `.agent/scripts/logging/log_appender.py` exists.
+Ensure the `lico-log` package is available in the workspace.
 
 ```bash
 # Check availability
-ls .agent/scripts/logging/log_appender.py
+uv run lico-log --help
 ```
 
 ### Step 2: Prepare Content (Split Buffer Strategy)
@@ -89,13 +89,13 @@ Use **two separate buffer files** to prevent overwriting and clarify state.
 1. **On Turn Start**:
 
    ```bash
-   python3 .agent/scripts/logging/log_appender.py <LogPath> current_log_plan.txt
+   uv run lico-log <LogPath> current_log_plan.txt
    ```
 
 2. **On Turn End**:
 
    ```bash
-   python3 .agent/scripts/logging/log_appender.py <LogPath> current_log_report.txt
+   uv run lico-log <LogPath> current_log_report.txt
    ```
 
 ## 6. Tool Usage Constraints
@@ -106,7 +106,7 @@ Use **two separate buffer files** to prevent overwriting and clarify state.
 | Tool                | Status        | Reasoning                                                                                                                                                                                                                         |
 | :------------------ | :------------ | :-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | **`write_to_file`** | **FORBIDDEN** | 1. **Data Loss**: Risk of accidentally overwriting the entire log history.<br>2. **Distraction**: Forces the IDE to open and focus the file, disrupting the user.<br>3. **Portability**: Not available in all agent environments. |
-| **`run_command`**   | **ALLOWED**   | 1. **Safety**: Appending via script (`log_appender.py`) is atomic and safe.<br>2. **Silent**: Does not trigger IDE focus or UI changes.<br>3. **Universal**: Shell commands are available in almost all environments.             |
+| **`run_command`**   | **ALLOWED**   | 1. **Safety**: Appending via the `lico-log` package is atomic and safe.<br>2. **Silent**: Does not trigger IDE focus or UI changes.<br>3. **Universal**: Shell commands are available in almost all environments.             |
 
 ## 7. Format Details
 
@@ -162,3 +162,4 @@ The `{{TIMESTAMP}}` placeholder must strictly follow the **Repository Default** 
 - 2026-02-19T19:45:00+09:00: v2.2.0 by Sirius (Added Tool Usage Constraints).
 - 2026-02-19T20:10:00+09:00: v2.2.1 by Sirius (Standardized to Second Precision).
 - 2026-02-20T08:34:00+09:00: v2.3.0 by Sirius (Allow Multi-Report phases for complex tasks).
+- 2026-03-21T19:30:00+09:00: v3.0.0 by Sirius (Migrated hard-coded scripts to the `lico-log` UV package and relocated to `.agent/rules/packages/`).

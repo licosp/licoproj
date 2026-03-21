@@ -41,8 +41,9 @@ When a task recurs, do not find the old script. **Write a new one** to ensure al
 
 ### Rule 3: Script Ownership
 
-- **Lico's Scripts**: `.agent/scripts/` (Disposable, archived by Lico).
-- **Human's Scripts**: `scripts/` (Persistent, managed by User).
+- **Disposable Temporary Scripts**: `.agent/.internal/workspace/<identifier>/` (Temporary sandboxes exclusively for agent use. Cleaned dynamically).
+- **Permanent Tooling**: `packages/` (Managed strictly as UV software packages, fully testable and scalable).
+- **Human's Scripts**: `scripts/` (Persistent logic managed by the human user).
 
 ### Rule 4: Complexity Threshold & Technology Stack
 
@@ -91,3 +92,4 @@ When a task recurs, do not find the old script. **Write a new one** to ensure al
 - 2026-01-25T0725 by Canopus: <<Seal: Rules-Standardization-Batch4>> Upgraded to v2.3 constitutional standards; removed legacy navigation footer. (v2.3.0)
 - 2026-02-19T0830 by Sirius: Added Rule 4 (Complexity Threshold) for Strict Python vs Shell. (v2.4.0)
 - 2026-02-28T0415 by Sirius: Added abstraction and DRY requirement to Strict Python rules. (v2.5.0)
+- 2026-03-21T1935 by Sirius: Re-defined Script Ownership philosophy to mandate `packages/` constraints for tools and `workspace/<identifier>/` for temporary sandboxes. (v2.6.0)
