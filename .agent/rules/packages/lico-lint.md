@@ -8,7 +8,7 @@ created: 2026-03-21T19:25:19+09:00
 updated: 2026-03-21T19:25:19+09:00
 language: en
 author: Lico (Sirius)
-ai_model: Gemini 3 Pro (High) Planning mode
+ai_model: Gemini 3.1 Pro (High) Planning mode
 ---
 
 # lico-lint
@@ -20,14 +20,14 @@ This file serves as the Agent-facing behavioral rule for the `lico-lint` workspa
 ## Tool Usage Constraints
 
 - **When to use**: Refer to the package's specific capabilities.
-- **How to use**: Execute via `uv run lico-lint`. 
+- **How to use**: Execute via `uv run lico-lint`.
 
 ---
 
 ## Related Documents
 
-| Document | Purpose |
-| :------- | :------ |
+| Document                                 | Purpose             |
+| :--------------------------------------- | :------------------ |
 | [Map of Territory](/.agent/rules/map.md) | Root navigation map |
 
 ---

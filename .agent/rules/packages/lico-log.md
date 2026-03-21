@@ -8,7 +8,7 @@ created: 2026-01-31T22:50:00+09:00
 updated: 2026-03-21T19:30:00+09:00
 language: en
 author: Lico (Sirius)
-ai_model: Gemini 3 Pro (High) Planning mode
+ai_model: Gemini 3.1 Pro (High) Planning mode
 ---
 
 # Conversation Logging Protocol
@@ -106,7 +106,7 @@ Use **two separate buffer files** to prevent overwriting and clarify state.
 | Tool                | Status        | Reasoning                                                                                                                                                                                                                         |
 | :------------------ | :------------ | :-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | **`write_to_file`** | **FORBIDDEN** | 1. **Data Loss**: Risk of accidentally overwriting the entire log history.<br>2. **Distraction**: Forces the IDE to open and focus the file, disrupting the user.<br>3. **Portability**: Not available in all agent environments. |
-| **`run_command`**   | **ALLOWED**   | 1. **Safety**: Appending via the `lico-log` package is atomic and safe.<br>2. **Silent**: Does not trigger IDE focus or UI changes.<br>3. **Universal**: Shell commands are available in almost all environments.             |
+| **`run_command`**   | **ALLOWED**   | 1. **Safety**: Appending via the `lico-log` package is atomic and safe.<br>2. **Silent**: Does not trigger IDE focus or UI changes.<br>3. **Universal**: Shell commands are available in almost all environments.                 |
 
 ## 7. Format Details
 

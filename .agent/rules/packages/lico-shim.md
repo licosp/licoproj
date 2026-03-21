@@ -8,7 +8,7 @@ created: 2026-02-15T21:15:00+09:00
 updated: 2026-03-21T19:30:00+09:00
 language: en
 author: Lico (Sirius)
-ai_model: Gemini 3 Pro (High) Planning mode
+ai_model: Gemini 3.1 Pro (High) Planning mode
 ---
 
 # lico-shim (Command Shims Protocol)
