@@ -160,6 +160,7 @@ ai_model: "Claude Opus 4.6 (Thinking) Planning mode"
 
 - to: `Alexandrite`
   - `2026-02-05T2200_letter_to_alexandrite.md`
+  - `2026-03-21T0000_letter_to_alexandrite.md`
 
 #### `Alexandrite`
 
