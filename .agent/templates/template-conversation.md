@@ -3,19 +3,19 @@ ai_visible: true
 title: ""
 description: ""
 tags: [conversation, log]
-version: 1.1.0
+version: 1.2.0
 created: 2026-01-31T00:00:00+09:00
-updated: 2026-02-13T00:00:00+09:00
+updated: 2026-03-23T06:46:00+09:00
 language: (en/ja)
 # author: Format as "Lico (<Instance-ID>)"
-author: ""
-ai_model: ""
+author:
+ai_model:
 ---
 
-# Conversation Log: 2026-01-31
+# Conversation Log: {{YYYY-MM-DD}}
 
 > [!NOTE]
-> This log carries over from [](/.agent/.internal/.shadow/conversations/**/**.md).
+> This log carries over from [](/.repos/.licoshdw/conversations/<identifier>/<YYYY>/<MM>/<DD>/<YYYY-MM-DDTHHMM>-<identifier>-conversation.md).
 
 ---
 
