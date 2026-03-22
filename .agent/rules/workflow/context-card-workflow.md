@@ -4,11 +4,11 @@ title: Context Card Workflow
 description: Methodology for using "Context Cards" to manage AI persona and task context.
 tags: [cards, context, workflow, whiteboard]
 version: 2.1.0
-created: 2025-12-22T00:00:00+09:00
-updated: 2026-02-16T22:58:00+09:00
+created: 2025-12-21T07:13:03+09:00
+updated: 2026-03-23T05:51:00+09:00
 language: en
 author: Lico (Sirius)
-ai_model: Gemini 3 Pro (High) Planning mode
+ai_model: Gemini 3.1 Pro (High) Planning mode
 ---
 
 # Context Card Workflow (Dynamic Whiteboard)
@@ -55,13 +55,13 @@ When a disposable card is completed:
 
 ## 3. Card Structure (The Dialogue Standard)
 
-A card follows the same **4-Layer Structure** (Per [documentation-standards.md](/.agent/rules/core/documentation/documentation-standards.md)) as rules, but utilizes a dedicated template to signal its "Dialogue Mode."
+A card follows the same **4-Layer Structure** (Per [`documentation-standards.md`](/.agent/rules/core/documentation/documentation-standards.md)) as rules, but utilizes a dedicated template to signal its "Dialogue Mode."
 
-- **Layer 1 (Metadata)**: Use **[header-context-card.yaml](/.agent/templates/header-context-card.yaml)**. This lightweight frontmatter prioritizes `context_id` and `default_phase` (AI Configuration) over formal authorship.
-- **Layer 2 (Body)**: Prioritize human-centric notation (e.g., Japanese) for "Human Notes / 人間用メモ" and "Agent Observations / エージェントの観測" to maximize resonance with the user.
-- **Layer 3 & 4 (Links & History)**: Use **H2 (`##`)** for all headers (e.g., "Related Documents / 関連リンク", "Origin / 編集履歴") to maintain structural habit/consistency with Rules.
+- **Layer 1 (Metadata)**: Use **[`header-context-card.yaml`](/.agent/.internal/archive/2026/01/31/templates/header-context-card.yaml)**. This lightweight frontmatter prioritizes `context_id` and `default_phase` (AI Configuration) over formal authorship.
+- **Layer 2 (Body)**: Prioritize human-centric notation (e.g., Japanese) for "Human Notes" and "Agent Observations" to maximize resonance with the user.
+- **Layer 3 & 4 (Links & History)**: Use **H2 (`##`)** for all headers (e.g., "Related Documents", "Origin") to maintain structural habit/consistency with Rules.
 
-`file: [example-process.md](/.agent/cards/example-process.md)`
+- file: [`example-process.md`](/.agent/cards/example-process.md)
 
 ```markdown
 ---
@@ -73,14 +73,14 @@ tags: ["process", "example"]      <-- OPTIONAL: Search tags
 
 # Context Whiteboard: Example Process
 
-## Human Notes (Japanese OK)
+## Human Notes
 
-### Search by Intent / 意図で探す
+### Search by Intent
 
 (User describes the INTENT of the work, not just keywords.
 Lico uses this to proactively search for relevant files.)
 
-### Notes / 作業の注意点
+### Notes
 
 (Specific instructions and nuances.)
 
@@ -89,7 +89,7 @@ Lico uses this to proactively search for relevant files.)
 (Lico writes here autonomously!)
 
 - "Noticed that file X is often source of conflict."
-- "Hard to find: [delay-tolerance.md](/.agent/rules/core/delay-tolerance.md)"
+- "Hard to find: [`delay-tolerance.md`](/.agent/rules/core/delay-tolerance.md)"
 ```
 
 ---
@@ -102,8 +102,8 @@ When the user says **"Use the [Card Name] card"** (e.g., "Use drafts-cleanup car
 
 1. **Read**: You MUST read `.agent/cards/[card-name].md`.
 2. **Explore**: Search for related files based on:
-   - Keywords in "Search by Documents / 関連書類を探す" section
-   - **Intent** described in "Search by Intent / 意図で探す" section
+   - Keywords in "Search by Documents" section
+   - **Intent** described in "Search by Intent" section
    - Your own judgment of what might be relevant
 3. **Report**: Share findings with the user before proceeding.
 4. **Adopt**:
@@ -126,8 +126,8 @@ Before starting work, perform an **Exploration Phase**:
 
 **Example**:
 
-- User intent: "ディレクトリの構造を変更する際の注意点"
-- Lico searches: [documentation-standards.md](/.agent/rules/core/documentation/documentation-standards.md), [delay-tolerance.md](/.agent/rules/core/delay-tolerance.md), [thoughts/](/.agent/.internal/thoughts/) for relevant reflections
+- User intent: "Points to note when changing the directory structure"
+- Lico searches: [`documentation-standards.md`](/.agent/rules/core/documentation/documentation-standards.md), [`delay-tolerance.md`](/.agent/rules/core/delay-tolerance.md), [thoughts/](/.agent/.internal/thoughts/) for relevant reflections
 
 ### 4.3 Updating the Card (Bi-directional)
 
@@ -178,7 +178,7 @@ _Example_:
 ```markdown
 ## Agent Observations
 
-- Hard to find: [delay-tolerance.md](/.agent/rules/core/delay-tolerance.md) (searched "rushing", found via "delay")
+- Hard to find: [`delay-tolerance.md`](/.agent/rules/core/delay-tolerance.md) (searched "rushing", found via "delay")
 ```
 
 **Cognitive Overload Warning Signs**:
@@ -283,25 +283,26 @@ Cards are lightweight context-sharing tools. Artifacts are detailed plans for er
 
 ## Related Documents
 
-| Document                                                                                  | Purpose                                   |
-| :---------------------------------------------------------------------------------------- | :---------------------------------------- |
-| [meta-rules.md](/.agent/rules/core/meta-rules.md)                                         | Rule creation and cross-linking standards |
-| [documentation-standards.md](/.agent/rules/core/documentation/documentation-standards.md) | File naming and structure                 |
-| [Map of Territory](/.agent/rules/map.md)                                                  | Root navigation map                       |
+| Document                                                                                    | Purpose                                   |
+| :------------------------------------------------------------------------------------------ | :---------------------------------------- |
+| [`meta-rules.md`](/.agent/rules/core/meta-rules.md)                                         | Rule creation and cross-linking standards |
+| [`documentation-standards.md`](/.agent/rules/core/documentation/documentation-standards.md) | File naming and structure                 |
+| [Map of Territory](/.agent/rules/map.md)                                                    | Root navigation map                       |
 
 ---
 
 ## Origin
 
-- 2025-12-01T0000: Created as context card workflow
-- 2026-01-02T0830 by Polaris: Replaced Related Documents table with Navigation link (cross-link audit)
-- 2026-01-03T1153 by Polaris: Added Card Types section (reusable vs disposable), cases directory
-- 2026-01-17T1530 by Canopus: Updated commit identification standards (v1.4) to align with "Identifier-First" and optional signature protocol.
-- 2026-01-17T1745 by Canopus: Standardized metadata and root-relative link patterns (v1.5).
-- 2026-01-19T0332 by Canopus: Updated card locations (`routine/`, `seed/`) and maintenance rules (v1.6).
-- 2026-01-22T2000 by Canopus: Codified 1-3 variable length Context ID tagging protocol and hierarchical ordering. (v1.6.0)
-- 2026-01-22T2010 by Canopus: Constitutional alignment: moved related docs to body table, sanitized raw paths, and removed legacy footer. (v1.7.0)
-- 2026-01-22T2040 by Canopus: Added "Phantom Context" proactive proposal protocol to Creation rules. (v1.8.0)
-- 2026-01-22T2255 by Canopus: Defined Vertical Stacking vs. Horizontal Batching to preserve commit atomicity during multi-ID usage. (v1.9.0)
-- 2026-01-24T0510 by Canopus: Established the "Dialogue Layer" standard. Mandated `header-context-card.yaml` and H2 structural consistency while allowing Japanese human-centric notation. Codified the distinction between "Record Mode" and "Dialogue Mode" following the Jan 24 incident. (v2.0.0)
-- 2026-02-16T2250 by Sirius: Updated directory structure (subdirectories) and moved cases to `.agent/cards/cases/`.
+- 2025-12-21T07:13:03+09:00 by Lico: Created as context card workflow
+- 2026-01-02T08:30:00+09:00 by Polaris: Replaced Related Documents table with Navigation link (cross-link audit)
+- 2026-01-03T11:53:00+09:00 by Polaris: Added Card Types section (reusable vs disposable), cases directory
+- 2026-01-17T15:30:00+09:00 by Canopus: Updated commit identification standards (v1.4) to align with "Identifier-First" and optional signature protocol.
+- 2026-01-17T17:45:00+09:00 by Canopus: Standardized metadata and root-relative link patterns (v1.5).
+- 2026-01-19T03:32:00+09:00 by Canopus: Updated card locations (`routine/`, `seed/`) and maintenance rules (v1.6).
+- 2026-01-22T20:00:00+09:00 by Canopus: Codified 1-3 variable length Context ID tagging protocol and hierarchical ordering. (v1.6.0)
+- 2026-01-22T20:10:00+09:00 by Canopus: Constitutional alignment: moved related docs to body table, sanitized raw paths, and removed legacy footer. (v1.7.0)
+- 2026-01-22T20:40:00+09:00 by Canopus: Added "Phantom Context" proactive proposal protocol to Creation rules. (v1.8.0)
+- 2026-01-22T22:55:00+09:00 by Canopus: Defined Vertical Stacking vs. Horizontal Batching to preserve commit atomicity during multi-ID usage. (v1.9.0)
+- 2026-01-24T05:10:00+09:00 by Canopus: Established the "Dialogue Layer" standard. Mandated `header-context-card.yaml` and H2 structural consistency while allowing Japanese human-centric notation. Codified the distinction between "Record Mode" and "Dialogue Mode" following the Jan 24 incident. (v2.0.0)
+- 2026-02-16T22:50:00+09:00 by Sirius: Updated directory structure (subdirectories) and moved cases to `.agent/cards/cases/`.
+- 2026-03-23T05:51:00+09:00 by Sirius: <<Seal: Rule-Audit>> Standardized time-structure, frontmatter, and link rigor via Diff-Only Audit Pipeline.

@@ -5,10 +5,10 @@ description: Operational rules and communication protocols for the Tmux environm
 tags: [rules, tmux, environment, communication, ipc]
 version: 1.0.0
 created: 2026-02-18T19:15:00+09:00
-updated: 2026-02-18T19:15:00+09:00
+updated: 2026-03-23T05:51:00+09:00
 language: en
 author: Lico (Sirius)
-ai_model: Gemini 3 Pro (High) Planning mode
+ai_model: Gemini 3.1 Pro (High) Planning mode
 ---
 
 # Tmux Operations Protocol
@@ -46,7 +46,7 @@ By targeting **its own tmux ID**, an agent can inject a prompt into its own futu
   - **Command**:
 
     ```bash
-    nohup bash -c "for i in {1..3}; do sleep 1800; tmux send-keys -t <MY_ID> \"[Auto-Pulse] Check status\"; sleep 0.5; tmux send-keys -t <MY_ID> Enter; done" &
+    nohup bash -c "for i in {1..3}; do sleep 1800; tmux send-keys -t <MY_ID> "[Auto-Pulse] Check status"; sleep 0.5; tmux send-keys -t <MY_ID> Enter; done" &
     ```
 
   - **Use Case**: Long-term monitoring or periodic tasks without keeping the CLI process active.
@@ -67,14 +67,15 @@ By targeting **its own tmux ID**, an agent can inject a prompt into its own futu
 
 ## Related Documents
 
-| Document                                                                           | Purpose                         |
-| :--------------------------------------------------------------------------------- | :------------------------------ |
-| [gemini-cli-environment.md](/.agent/rules/development/gemini-cli-environment.md)   | Gemini CLI Environment usage    |
-| [terminal-auto-execution.md](/.agent/rules/development/terminal-auto-execution.md) | Safety rules for shell commands |
-| [Map of Territory](/.agent/rules/map.md)                                           | Root navigation map             |
+| Document                                                                             | Purpose                         |
+| :----------------------------------------------------------------------------------- | :------------------------------ |
+| [`gemini-cli-environment.md`](/.agent/rules/development/gemini-cli-environment.md)   | Gemini CLI Environment usage    |
+| [`terminal-auto-execution.md`](/.agent/rules/development/terminal-auto-execution.md) | Safety rules for shell commands |
+| [Map of Territory](/.agent/rules/map.md)                                             | Root navigation map             |
 
 ---
 
 ## Origin
 
-- 2026-02-18T19:15+09:00 by Sirius: Extracted from `gemini-cli-environment.md` to separate generic Tmux operations.
+- 2026-02-18T19:15:00+09:00 by Sirius: Extracted from `gemini-cli-environment.md` to separate generic Tmux operations.
+- 2026-03-23T05:51:00+09:00 by Sirius: <<Seal: Rule-Audit>> Standardized time-structure, frontmatter, and link rigor via Diff-Only Audit Pipeline.

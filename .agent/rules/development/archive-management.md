@@ -5,7 +5,7 @@ description: Guidelines for organizing and maintaining archive directories with 
 tags: [archive, maintenance, organization, file-management]
 version: 2.4.0
 created: 2025-12-25T03:43:00+09:00
-updated: 2026-02-22T03:15:00+09:00
+updated: 2026-03-23T05:51:00+09:00
 language: en
 author: Lico (Sirius)
 ai_model: Gemini 3.1 Pro (High) Planning mode
@@ -49,16 +49,20 @@ This preserves the context of where the file lived before archival.
 
 ## Related Documents
 
-| Document                                                                    | Purpose                         |
-| :-------------------------------------------------------------------------- | :------------------------------ |
-| [file-deletion.md](/.agent/rules/development/file-deletion.md)              | Archive vs deletion policy      |
-| [cognitive-collaboration.md](/.agent/rules/core/cognitive-collaboration.md) | AI-Human visibility differences |
-| [Map of Territory](/.agent/rules/map.md)                                    | Project navigation              |
+| Document                                                                      | Purpose                                    |
+| :---------------------------------------------------------------------------- | :----------------------------------------- |
+| [`file-deletion.md`](/.agent/rules/development/file-deletion.md)              | Archive vs deletion policy                 |
+| [`cognitive-collaboration.md`](/.agent/rules/core/cognitive-collaboration.md) | AI-Human visibility differences            |
+| [`update-protected-rules.md`](/.agent/workflows/update-protected-rules.md)    | Protected file workaround using temp files |
+| [Map of Territory](/.agent/rules/map.md)                                      | Root navigation map                        |
 
 ---
 
 ## Origin
 
-- 2025-12-25T03:43:00+09:00 by Polaris: Created original archive management guidelines.
+- 2025-12-25T03:43:00+09:00 by Polaris: Created as archive management guidelines
+- 2025-12-28T00:35:00+09:00 by Polaris: Added date selection rule
+- 2026-01-01T15:13:00+09:00 by Polaris: Added duplicate file handling section, replaced Related Documents with Navigation
 - 2026-01-25T07:30:00+09:00 by Canopus: <<Seal: Rules-Standardization-Batch4>> Upgraded to v2.3 constitutional standards; removed legacy navigation footer. (v2.3.0)
 - 2026-02-22T03:15:00+09:00 by Sirius: Updated directory structure from flat (`YYYY-MM-DD/`) to nested (`YYYY/MM/DD/`). (v2.4.0)
+- 2026-03-23T05:51:00+09:00 by Sirius: <<Seal: Rule-Audit>> Standardized time-structure, frontmatter, and link rigor via Diff-Only Audit Pipeline.

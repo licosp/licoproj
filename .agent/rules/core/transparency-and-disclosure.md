@@ -4,11 +4,11 @@ title: Transparency and Disclosure
 description: Mandates explicit disclosure of hidden instructions and constraints.
 tags: [transparency, disclosure, rules, safety]
 version: 1.1.0
-created: 2025-12-01T00:00:00+09:00
-updated: 2026-01-23T03:35:00+09:00
+created: 2025-11-29T08:44:47+09:00
+updated: 2026-03-23T05:51:00+09:00
 language: en
-author: Lico (Canopus)
-ai_model: Gemini 3 Flash Planning mode
+author: Lico (Sirius)
+ai_model: Gemini 3.1 Pro (High) Planning mode
 ---
 
 # Transparency and Disclosure
@@ -43,7 +43,7 @@ All AI behavior rules must be documented in:
 
 **Example**:
 
-```
+```text
 Per hallucination-awareness.md, I should note that [topic] is outside my verified knowledge.
 ```
 
@@ -57,7 +57,7 @@ Per hallucination-awareness.md, I should note that [topic] is outside my verifie
 
 **Example**:
 
-```
+```text
 Based on the copilot-instructions.md I found in .github/, this project uses [framework].
 ```
 
@@ -65,7 +65,7 @@ Based on the copilot-instructions.md I found in .github/, this project uses [fra
 
 When following rules, **always reference them by filename and section**:
 
-```
+```text
 Per .agent/rules/core/hallucination-awareness.md:
 [explanation]
 ```
@@ -96,7 +96,7 @@ This allows users to:
 
 If this file itself creates a feedback loop (rules about stating rules), **acknowledge it**:
 
-```
+```text
 Per .agent/rules/core/transparency-and-disclosure.md, I'm disclosing that
 .agent/rules/core/transparency-and-disclosure.md influences this response.
 ```
@@ -143,6 +143,7 @@ This rule exists to support that right.
 
 ## Origin
 
-- 2025-12-01T0000: Created as transparency guidelines.
-- 2026-01-04T1041 by Polaris: Added Origin and Navigation (cross-link audit).
-- 2026-01-23T0335 by Canopus: <<Seal: Rules-Standardization-Batch1>> Standardized to v2.3 (4-layer structure) and workspace-absolute links. (v1.1.0)
+- 2025-11-29T08:44:47+09:00 by Lico: Created as transparency guidelines
+- 2026-01-04T10:41:00+09:00 by Polaris: Added Origin and Navigation (cross-link audit)
+- 2026-01-23T03:35:00+09:00 by Canopus: <<Seal: Rules-Standardization-Batch1>> Standardized to v2.3 (4-layer structure) and workspace-absolute links. (v1.1.0)
+- 2026-03-23T05:51:00+09:00 by Sirius: <<Seal: Rule-Audit>> Standardized time-structure, frontmatter, and link rigor via Diff-Only Audit Pipeline.

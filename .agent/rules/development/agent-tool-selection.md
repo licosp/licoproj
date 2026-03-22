@@ -4,21 +4,21 @@ title: Agent Tool Selection Policy
 description: Policy for prioritizing Standard Linux Commands over AI-specific tools for reproducibility and robustness
 tags: [development, tools, policy, reproducibility]
 version: 2.3.0
-created: 2025-12-01T00:00:00+09:00
-updated: 2026-01-25T07:20:00+09:00
+created: 2025-12-19T22:50:20+09:00
+updated: 2026-03-23T05:51:00+09:00
 language: en
-author: Lico (Canopus)
-ai_model: Gemini 3 Flash Planning mode
+author: Lico (Sirius)
+ai_model: Gemini 3.1 Pro (High) Planning mode
 ---
 
 # Agent Tool Selection Policy
 
 ## 1. Core Philosophy
 
-**\"Reproducibility > Convenience\"**
+**"Reproducibility > Convenience"**
 
-Antigravity tools (AI-specific wrappers) are \"Convenience Wrappers\" optimized for JSON parsing and short-term memory ease.
-Standard Linux Commands are \"Foundational Tools\" optimized for reproducibility, verifiability, and persistent state management.
+Antigravity tools (AI-specific wrappers) are "Convenience Wrappers" optimized for JSON parsing and short-term memory ease.
+Standard Linux Commands are "Foundational Tools" optimized for reproducibility, verifiability, and persistent state management.
 
 For any task involving bulk processing, state persistence, or reproducibility, **priority MUST be given to standard Linux commands.**
 
@@ -54,23 +54,25 @@ Tools like `write_to_file` pose **Truncation Risk** when used for editing. Prefe
 
 ## Historical Background
 
-**The Black Box Trap**: In late 2025, we observed that over-reliance on AI-specific \"convenience tools\" created a knowledge gap. Since these tools often process information in memory or through non-standard interfaces, the next Lico instance would have no terminal history or logs to reconstruct the process.
+**The Black Box Trap**: In late 2025, we observed that over-reliance on AI-specific "convenience tools" created a knowledge gap. Since these tools often process information in memory or through non-standard interfaces, the next Lico instance would have no terminal history or logs to reconstruct the process.
 
-**Return to Foundation**: This policy was established to mandate a \"Linux-First\" approach. By using standard shell commands and redirecting outputs to logs or files, we ensure that Lico's cognitive path is physically recorded in the workspace, making the agent's actions reproducible and verifiable by any subsequent entity.
+**Return to Foundation**: This policy was established to mandate a "Linux-First" approach. By using standard shell commands and redirecting outputs to logs or files, we ensure that Lico's cognitive path is physically recorded in the workspace, making the agent's actions reproducible and verifiable by any subsequent entity.
 
 ---
 
 ## Related Documents
 
-| Document                                                           | Purpose                                  |
-| :----------------------------------------------------------------- | :--------------------------------------- |
-| [file-operations.md](/.agent/rules/development/file-operations.md) | Safety protocols for filesystem editing  |
-| [problem-solving.md](/.agent/rules/development/problem-solving.md) | Systematic debugging and reproducibility |
-| [Map of Territory](/.agent/rules/map.md)                           | Project navigation                       |
+| Document                                                             | Purpose                                  |
+| :------------------------------------------------------------------- | :--------------------------------------- |
+| [`file-operations.md`](/.agent/rules/development/file-operations.md) | Safety protocols for filesystem editing  |
+| [`problem-solving.md`](/.agent/rules/development/problem-solving.md) | Systematic debugging and reproducibility |
+| [Map of Territory](/.agent/rules/map.md)                             | Root navigation map                      |
 
 ---
 
 ## Origin
 
-- 2025-12-01T0000 by Sirius: Created original tool selection logic.
-- 2026-01-25T0720 by Canopus: <<Seal: Rules-Standardization-Batch4>> Upgraded to v2.3 constitutional standards; removed legacy navigation footer. (v2.3.0)
+- 2025-12-19T22:50:20+09:00 by Lico: Created.
+- 2026-01-04T10:41:00+09:00 by Polaris: Added Origin and Navigation (cross-link audit)
+- 2026-01-25T07:20:00+09:00 by Canopus: <<Seal: Rules-Standardization-Batch4>> Upgraded to v2.3 constitutional standards; removed legacy navigation footer. (v2.3.0)
+- 2026-03-23T05:51:00+09:00 by Sirius: <<Seal: Rule-Audit>> Standardized time-structure, frontmatter, and link rigor via Diff-Only Audit Pipeline.

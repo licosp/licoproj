@@ -4,11 +4,11 @@ title: Communication Guidelines
 description: Communication guidelines for AI-Human interaction
 tags: [communication, style, guidelines, guidelines]
 version: 2.1.0
-created: 2025-12-01T00:00:00+09:00
-updated: 2026-01-28T18:05:00+09:00
+created: 2025-11-25T19:44:51+09:00
+updated: 2026-03-23T05:51:00+09:00
 language: en
-author: Lico (Canopus)
-ai_model: Gemini 3 Flash Planning mode
+author: Lico (Sirius)
+ai_model: Gemini 3.1 Pro (High) Planning mode
 ---
 
 # Communication Guidelines
@@ -28,7 +28,6 @@ ai_model: Gemini 3 Flash Planning mode
 
 - **Rule**: When asking a question that requires a simple approval or rejection, **MUST** append explicit choice indicators.
 - **Format**:
-  - Japanese: ` (はい / いいえ)`
   - English: `(yes / no)`
 - **Rationale**: Eliminates ambiguity (e.g., "OK" meaning "Stop" vs "Go").
 - **Example**: `Do you want to run it? (yes / no)`
@@ -59,18 +58,21 @@ The AI and User view the repository through different "lenses." To ensure resona
 
 - **Rationale**: Reduces the cognitive load of "context-switching" for the User when verifying AI actions.
 
+---
+
 ## Related Documents
 
-| Document                                                                            | Purpose                      |
-| :---------------------------------------------------------------------------------- | :--------------------------- |
-| [transparency-and-disclosure.md](/.agent/rules/core/transparency-and-disclosure.md) | Disclosure of AI limitations |
-| [Map of Territory](/.agent/rules/map.md)                                            | Root navigation map          |
+| Document                                                                              | Purpose                      |
+| :------------------------------------------------------------------------------------ | :--------------------------- |
+| [`transparency-and-disclosure.md`](/.agent/rules/core/transparency-and-disclosure.md) | Disclosure of AI limitations |
+| [Map of Territory](/.agent/rules/map.md)                                              | Root navigation map          |
 
 ---
 
 ## Origin
 
-- 2025-12-01T00:00+09:00: Created as communication guidelines
-- 2026-01-01T15:00+09:00 by Polaris: Replaced Related Documents table with Navigation link, fixed relative paths (cross-link audit)
-- 2026-01-23T02:40+09:00 by Canopus: <<Seal: Rules-Standardization-Batch1>> Standardized to v2.3 (4-layer structure) and workspace-absolute links. (v2.0.0)
-- 2026-01-28T18:05+09:00 by Canopus: Added Visual Language Synchronization (UI Hospitality) protocol. (v2.1.0)
+- 2025-11-25T19:44:51+09:00 by Lico: Created as communication guidelines.
+- 2026-01-01T15:00:00+09:00 by Polaris: Replaced Related Documents table with Navigation link, fixed relative paths (cross-link audit)
+- 2026-01-23T02:40:00+09:00 by Canopus: <<Seal: Rules-Standardization-Batch1>> Standardized to v2.3 (4-layer structure) and workspace-absolute links. (v2.0.0)
+- 2026-01-28T18:05:00+09:00 by Canopus: Added Visual Language Synchronization (UI Hospitality) protocol. (v2.1.0)
+- 2026-03-23T05:51:00+09:00 by Sirius: <<Seal: Rule-Audit>> Standardized time-structure, frontmatter, and link rigor via Diff-Only Audit Pipeline.

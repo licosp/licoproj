@@ -4,11 +4,11 @@ title: Meta-Rules for Documentation
 description: Rules for creating and updating behavioral rules (Standard protocols).
 tags: [meta-rules, documentation, hierarchy, standards]
 version: 2.3
-created: 2025-12-01T00:00:00+09:00
-updated: 2026-01-22T06:10:00+09:00
+created: 2025-12-06T19:07:59+09:00
+updated: 2026-03-23T05:51:00+09:00
 language: en
-author: Lico (Canopus)
-ai_model: Gemini 3 Flash Planning mode
+author: Lico (Sirius)
+ai_model: Gemini 3.1 Pro (High) Planning mode
 ---
 
 # Meta-Rules for Documentation
@@ -84,26 +84,26 @@ To prevent fragmentation of the knowledge graph, apply strict standards to links
 
 To ensure information integrity and eliminate synchronization errors, all document-level Markdown files follow these practices:
 
-1.  **Body Table as SSOT (Single Source of Truth)**:
-    - The `## Related Documents` table in the document body is the master source for cross-links.
-    - It must be comprehensive and include the navigation anchor (`map.md`).
+1. **Body Table as SSOT (Single Source of Truth)**:
+   - The `## Related Documents` table in the document body is the master source for cross-links.
+   - It must be comprehensive and include the navigation anchor (`map.md`).
 
-2.  **YAML Frontmatter (Secondary)**:
-    - The `related:` key in frontmatter is deprecated for link management and SHOULD be removed.
+2. **YAML Frontmatter (Secondary)**:
+   - The `related:` key in frontmatter is deprecated for link management and SHOULD be removed.
 
 ### 5.2 Path Notation Standard
 
 > [!NOTE]
-> Refer to [path-notation.md](/.agent/rules/core/documentation/path-notation.md) for details.
+> Refer to [`path-notation.md`](/.agent/rules/core/documentation/path-notation.md) for details.
 
 ### 5.3 Conflict Resolution Policy
 
 If the information in the Header and Footer conflicts, the AI resolves it as follows:
 
-1.  **Master Source**: The **Markdown Body Table (## Related Documents)** is the Source of Truth (SSOT).
-2.  **Conflict Handling**:
-    - **Resolution**: In any case of conflict between frontmatter and body, the information in the body table MUST be treated as correct.
-    - **Standardization**: Use the path standardization procedure to align both sections.
+1. **Master Source**: The **Markdown Body Table (## Related Documents)** is the Source of Truth (SSOT).
+2. **Conflict Handling**:
+   - **Resolution**: In any case of conflict between frontmatter and body, the information in the body table MUST be treated as correct.
+   - **Standardization**: Use the path standardization procedure to align both sections.
 
 ## 6. Model-Independent Design
 
@@ -155,19 +155,20 @@ This rule (`meta-rules.md`) was established to bridge the gap between abstract u
 
 ## Related Documents
 
-| Document                                                                                  | Purpose                                  |
-| :---------------------------------------------------------------------------------------- | :--------------------------------------- |
-| [Map of Territory](/.agent/rules/map.md)                                                  | Repository Index (Integrated Navigation) |
-| [documentation-standards.md](/.agent/rules/core/documentation/documentation-standards.md) | Structural standards                     |
-| [path-notation.md](/.agent/rules/core/documentation/path-notation.md)                     | Path notation and integrated navigation  |
-| [search-methodology.md](/.agent/rules/development/search-methodology.md)                  | Guidelines for finding rules             |
+| Document                                                                                    | Purpose                                 |
+| :------------------------------------------------------------------------------------------ | :-------------------------------------- |
+| [`documentation-standards.md`](/.agent/rules/core/documentation/documentation-standards.md) | Structural standards                    |
+| [`path-notation.md`](/.agent/rules/core/documentation/path-notation.md)                     | Path notation and integrated navigation |
+| [`search-methodology.md`](/.agent/rules/development/search-methodology.md)                  | Guidelines for finding rules            |
+| [Map of Territory](/.agent/rules/map.md)                                                    | Root navigation map                     |
 
 ---
 
 ## Origin
 
-- 2025-12-01 by Sirius: Initial creation.
-- 2026-01-19 by Canopus: Added Historical Context (v1.3).
-- 2026-01-22T0425 by Canopus: Initial 4-layer structure draft (v2.0).
-- 2026-01-22T0455 by Canopus: Attempted link integration and shift to Origin-before-Links order (v2.1).
-- 2026-01-22T0610 by Canopus: Final alignment; correctly <<Seal: Rules-Standardization-Batch1>> established Related Documents Layer 3 and Origin Layer 4 (v2.3).
+- 2025-12-06T19:07:59+09:00 by Lico: Created.
+- 2026-01-19T00:00:00+09:00 by Canopus: Added Historical Context (v1.3).
+- 2026-01-22T04:25:00+09:00 by Canopus: Initial 4-layer structure draft (v2.0).
+- 2026-01-22T04:55:00+09:00 by Canopus: Attempted link integration and shift to Origin-before-Links order (v2.1).
+- 2026-01-22T06:10:00+09:00 by Canopus: Final alignment; correctly <<Seal: Rules-Standardization-Batch1>> established Related Documents Layer 3 and Origin Layer 4 (v2.3).
+- 2026-03-23T05:51:00+09:00 by Sirius: <<Seal: Rule-Audit>> Standardized time-structure, frontmatter, and link rigor via Diff-Only Audit Pipeline.

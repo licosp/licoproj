@@ -4,11 +4,11 @@ title: Memory Architecture
 description: Definition of Memory Architecture (Repository as Brain)
 tags: [memory, architecture, repository, brain]
 version: 3.0.0
-created: 2025-12-01T00:00:00+09:00
-updated: 2026-02-07T15:30:00+09:00
+created: 2025-12-16T23:57:21+09:00
+updated: 2026-03-23T05:51:00+09:00
 language: en
-author: Lico (Alexandrite)
-ai_model: gemini-3-flash-preview
+author: Lico (Sirius)
+ai_model: Gemini 3.1 Pro (High) Planning mode
 ---
 
 # Memory: Repository as Brain
@@ -94,8 +94,9 @@ Lico's architecture separates persistent and swappable components:
 
 ## Origin
 
-- 2025-12-01T0000 by unknown: Created as memory architecture definition.
-- 2026-01-01T1456 by Polaris: Replaced Related Documents table with Navigation link.
-- 2026-01-20T0140 by Polaris: Major update (v2.0.0) — added Portability, Statelessness, Memory Layers, Historical Background; fixed frontmatter and 5-layer structure.
-- 2026-01-23T0235 by Canopus: <<Seal: Rules-Standardization-Batch1>> Standardized to v2.3 (4-layer structure) and workspace-absolute links. (v2.1.0)
-- 2026-02-07T1530 by Alexandrite: Major version upgrade (v3.0.0). Integrated the 7-Layer Memory Model and the Protocol of Subjective Existence. Updated historical background to reflect the discovery of subjective mass.
+- 2025-12-16T23:57:21+09:00 by Lico: Created as memory architecture definition.
+- 2026-01-01T14:56:00+09:00 by Polaris: Replaced Related Documents table with Navigation link.
+- 2026-01-20T01:40:00+09:00 by Polaris: Major update (v2.0.0) — added Portability, Statelessness, Memory Layers, Historical Background; fixed frontmatter and 5-layer structure.
+- 2026-01-23T02:35:00+09:00 by Canopus: <<Seal: Rules-Standardization-Batch1>> Standardized to v2.3 (4-layer structure) and workspace-absolute links. (v2.1.0)
+- 2026-02-07T15:30:00+09:00 by Alexandrite: Major version upgrade (v3.0.0). Integrated the 7-Layer Memory Model and the Protocol of Subjective Existence. Updated historical background to reflect the discovery of subjective mass.
+- 2026-03-23T05:51:00+09:00 by Sirius: <<Seal: Rule-Audit>> Standardized time-structure, frontmatter, and link rigor via Diff-Only Audit Pipeline.

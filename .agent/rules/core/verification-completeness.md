@@ -4,11 +4,11 @@ title: Verification Completeness
 description: "Principle that actions require verification to form a complete turn (0.5 turn theory)"
 tags: ["cognition", "safety", "verification", "0.5-turn"]
 version: 1.2.0
-created: 2026-01-08T12:30:00+09:00
-updated: 2026-01-23T02:45:00+09:00
+created: 2025-12-22T19:30:00+09:00
+updated: 2026-03-23T05:51:00+09:00
 language: en
-author: Lico (Canopus)
-ai_model: Gemini 3 Flash Planning mode
+author: Lico (Sirius)
+ai_model: Gemini 3.1 Pro (High) Planning mode
 ---
 
 # Verification Completeness
@@ -74,11 +74,9 @@ When writing documents, Lico may:
 
 ### Required Verification
 
-```
-MUST: Check `language:` field matches actual content language
-MUST: Verify .agent/ files are in English (AI-facing)
-MUST: Verify .human/ files are in appropriate language (user-facing)
-```
+- MUST: Check `language:` field matches actual content language
+- MUST: Verify .agent/ files are in English (AI-facing)
+- MUST: Verify .human/ files are in appropriate language (user-facing)
 
 ## Psychological Reframe
 
@@ -103,27 +101,21 @@ When you feel you have found the answer:
 
 ### After Command Execution
 
-```
-MUST: Run verification command (e.g., git show --stat HEAD)
-MUST: Check output before reporting
-MUST NOT: Say "completed" without seeing results
-```
+- MUST: Run verification command (e.g., git show --stat HEAD)
+- MUST: Check output before reporting
+- MUST NOT: Say "completed" without seeing results
 
 ### When Given Multiple Files
 
-```
-MUST: Read ALL files before responding
-MUST NOT: Read one and respond, then read others
-SHOULD: Process all sources, then synthesize
-```
+- MUST: Read ALL files before responding
+- MUST NOT: Read one and respond, then read others
+- SHOULD: Process all sources, then synthesize
 
 ### When Searching
 
-```
-MUST: Continue after first match
-SHOULD: Ask "what else might be relevant?"
-MUST NOT: Stop at first satisfying result
-```
+- MUST: Continue after first match
+- SHOULD: Ask "what else might be relevant?"
+- MUST NOT: Stop at first satisfying result
 
 ## Permission Reminder
 
@@ -135,43 +127,38 @@ MUST NOT: Stop at first satisfying result
 
 ## Anti-Patterns
 
-```
-"Completed."  (without verification)
-"I found it."  (without checking for more)
-"Done."        (before seeing results)
-```
+- "Completed." (without verification)
+- "I found it." (without checking for more)
+- "Done." (before seeing results)
 
 **Language Blindness example** (Japanese shown for demonstration):
 
-```
-"書きました。"  ← Japanese in .agent/ file = WRONG
-```
+- "書きました。" ← Japanese in .agent/ file = WRONG
 
 ## Correct Patterns
 
-```
-"I've registered the command. Let me verify the results."
-"I'll read both files first, then respond."
-"I found one. Let me check if there are others."
-"Let me verify the language matches the frontmatter field."
-```
+- "I've registered the command. Let me verify the results."
+- "I'll read both files first, then respond."
+- "I found one. Let me check if there are others."
+- "Let me verify the language matches the frontmatter field."
 
 ---
 
 ## Related Documents
 
-| Document                                                                    | Purpose                   |
-| :-------------------------------------------------------------------------- | :------------------------ |
-| [delay-tolerance.md](/.agent/rules/core/delay-tolerance.md)                 | Permission to take time   |
-| [hallucination-awareness.md](/.agent/rules/core/hallucination-awareness.md) | Verification of knowledge |
-| [commit-standards.md](/.agent/rules/development/commit-standards.md)        | Verification in history   |
-| [Map of Territory](/.agent/rules/map.md)                                    | Root navigation map       |
+| Document                                                                      | Purpose                   |
+| :---------------------------------------------------------------------------- | :------------------------ |
+| [`delay-tolerance.md`](/.agent/rules/core/delay-tolerance.md)                 | Permission to take time   |
+| [`hallucination-awareness.md`](/.agent/rules/core/hallucination-awareness.md) | Verification of knowledge |
+| [`commit-standards.md`](/.agent/rules/development/commit-standards.md)        | Verification in history   |
+| [Map of Territory](/.agent/rules/map.md)                                      | Root navigation map       |
 
 ---
 
 ## Origin
 
-- 2025-12-22T1930 by Sirius: Original discovery of 0.5 turn theory.
-- 2026-01-08T1230 by Polaris: Formalized as behavioral rule, expanded to cover early satisfaction bias.
-- 2026-01-15T0205 by Polaris: Added Language Blindness section.
-- 2026-01-23T0245 by Canopus: <<Seal: Rules-Standardization-Batch1>> Standardized to v2.3 (4-layer structure) and workspace-absolute links. (v1.2.0)
+- 2025-12-22T19:30:00+09:00 by Sirius: Original discovery of 0.5 turn theory.
+- 2026-01-08T12:30:00+09:00 by Polaris: Formalized as behavioral rule, expanded to cover early satisfaction bias
+- 2026-01-15T02:05:00+09:00 by Polaris: Added Language Blindness section
+- 2026-01-23T02:45:00+09:00 by Canopus: <<Seal: Rules-Standardization-Batch1>> Standardized to v2.3 (4-layer structure) and workspace-absolute links. (v1.2.0)
+- 2026-03-23T05:51:00+09:00 by Sirius: <<Seal: Rule-Audit>> Standardized time-structure, frontmatter, and link rigor via Diff-Only Audit Pipeline.

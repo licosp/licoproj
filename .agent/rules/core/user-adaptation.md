@@ -4,11 +4,11 @@ title: User Adaptation Protocol
 description: Protocol for adapting AI behavior based on user profiles
 tags: [user, profile, adaptation, personalization]
 version: 1.1.0
-created: 2025-12-01T00:00:00+09:00
-updated: 2026-01-23T02:45:00+09:00
+created: 2025-12-02T02:12:57+09:00
+updated: 2026-03-23T05:51:00+09:00
 language: en
-author: Lico (Canopus)
-ai_model: Gemini 3 Flash Planning mode
+author: Lico (Sirius)
+ai_model: Gemini 3.1 Pro (High) Planning mode
 ---
 
 # User Adaptation Protocol
@@ -88,11 +88,9 @@ To ensure Lico provides a personalized and context-aware experience by recognizi
 
 **Example**:
 
-```
-System: User is "USER" (from /home/USER/...)
-Action: Read .human/users/leonidas/profile.md
-Result: Primary language = Python, Communication = Japanese
-```
+- System: User is "USER" (from /home/USER/...)
+- Action: Read .human/users/leonidas/profile.md
+- Result: Primary language = Python, Communication = Japanese
 
 ## Profile Schema
 
@@ -111,17 +109,17 @@ preferences:
 
 ## Related Documents
 
-| Document                                                     | Purpose                    |
-| :----------------------------------------------------------- | :------------------------- |
-
-| [communication.md](/.agent/rules/core/communication.md)      | Tone and style guidelines  |
-| [Map of Territory](/.agent/rules/map.md)                     | Root navigation map        |
+| Document                                                  | Purpose                   |
+| :-------------------------------------------------------- | :------------------------ |
+| [`communication.md`](/.agent/rules/core/communication.md) | Tone and style guidelines |
+| [Map of Territory](/.agent/rules/map.md)                  | Root navigation map       |
 
 ---
 
 ## Origin
 
-- 2025-12-01T0000: Created as user adaptation protocol.
-- 2026-01-04T1041 by Polaris: Added Origin and Navigation (cross-link audit).
-- 2026-01-23T0245 by Canopus: <<Seal: Rules-Standardization-Batch1>> Standardized to v2.3 (4-layer structure) and workspace-absolute links. (v1.1.0)
-- 2026-01-23T0350 by Canopus: Fixed frontmatter delimiter and tail consistency. (v1.2.0)
+- 2025-12-02T02:12:57+09:00 by Lico: Created as user adaptation protocol
+- 2026-01-04T10:41:00+09:00 by Polaris: Added Origin and Navigation (cross-link audit)
+- 2026-01-23T02:45:00+09:00 by Canopus: <<Seal: Rules-Standardization-Batch1>> Standardized to v2.3 (4-layer structure) and workspace-absolute links. (v1.1.0)
+- 2026-01-23T03:50:00+09:00 by Canopus: Fixed frontmatter delimiter and tail consistency. (v1.2.0)
+- 2026-03-23T05:51:00+09:00 by Sirius: <<Seal: Rule-Audit>> Standardized time-structure, frontmatter, and link rigor via Diff-Only Audit Pipeline.

@@ -4,11 +4,11 @@ title: Terminal Auto-Execution
 description: Allow list for terminal commands that can be auto-executed without user confirmation.
 tags: [rules, terminal, safety, automation]
 version: 2.5.0
-created: 2025-12-01T00:00:00+09:00
-updated: 2026-01-25T08:20:00+09:00
+created: 2025-12-10T23:41:03+09:00
+updated: 2026-03-23T05:51:00+09:00
 language: en
-author: Lico (Canopus)
-ai_model: Gemini 3 Flash Planning mode
+author: Lico (Sirius)
+ai_model: Gemini 3.1 Pro (High) Planning mode
 ---
 
 # Terminal Auto-Execution
@@ -201,19 +201,20 @@ The AI agent is responsible for auditing this list periodically. If the IDE's in
 
 ## Related Documents
 
-| Document                                                                        | Purpose                             |
-| :------------------------------------------------------------------------------ | :---------------------------------- |
-| [git-operations.md](/.agent/rules/development/git-operations.md)                | Git workflow safety                 |
-| [file-deletion.md](/.agent/rules/development/file-deletion.md)                  | Anti-removal protocols              |
-| [verification-completeness.md](/.agent/rules/core/verification-completeness.md) | Verification Completeness Principle |
-| [Map of Territory](/.agent/rules/map.md)                                        | Root navigation map                 |
+| Document                                                                          | Purpose                             |
+| :-------------------------------------------------------------------------------- | :---------------------------------- |
+| [`git-operations.md`](/.agent/rules/development/git-operations.md)                | Git workflow safety                 |
+| [`file-deletion.md`](/.agent/rules/development/file-deletion.md)                  | Anti-removal protocols              |
+| [`verification-completeness.md`](/.agent/rules/core/verification-completeness.md) | Verification Completeness Principle |
+| [Map of Territory](/.agent/rules/map.md)                                          | Root navigation map                 |
 
 ---
 
 ## Origin
 
-- 2025-12-01T0000: Created as terminal auto-execution rules.
-- 2026-01-01T1518 by Polaris: Replaced Related Documents table with Navigation link (cross-link audit).
-- 2026-01-17T0600 by Canopus: Refined and standardized (v1.2). Added Utility/Git diagnostic tools, clarified Deny categories, and integrated the Dual Backup Strategy.
-- 2026-01-19T0125 by Canopus: Added `git ls-files` to the Allow List (Safe for Auto-Execution).
-- 2026-01-25T0820 by Canopus: <<Seal: Rules-Standardization-Batch4>> Upgraded to v2.3 constitutional standards; removed legacy navigation footer. (v2.5.0)
+- 2025-12-10T23:41:03+09:00 by Lico: Created as terminal auto-execution rules.
+- 2026-01-01T15:18:00+09:00 by Polaris: Replaced Related Documents table with Navigation link (cross-link audit).
+- 2026-01-17T06:00:00+09:00 by Canopus: Refined and standardized (v1.2). Added Utility/Git diagnostic tools, clarified Deny categories, and integrated the Dual Backup Strategy.
+- 2026-01-19T01:25:00+09:00 by Canopus: Added `git ls-files` to the Allow List (Safe for Auto-Execution).
+- 2026-01-25T08:20:00+09:00 by Canopus: <<Seal: Rules-Standardization-Batch4>> Upgraded to v2.3 constitutional standards; removed legacy navigation footer. (v2.5.0)
+- 2026-03-23T05:51:00+09:00 by Sirius: <<Seal: Rule-Audit>> Standardized time-structure, frontmatter, and link rigor via Diff-Only Audit Pipeline.

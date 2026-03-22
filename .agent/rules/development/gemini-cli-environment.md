@@ -5,10 +5,10 @@ description: Operational rules and communication protocols for the Gemini CLI en
 tags: [rules, gemini-cli, environment, communication]
 version: 1.1.0
 created: 2026-02-08T00:00:00+09:00
-updated: 2026-02-18T19:15:00+09:00
+updated: 2026-03-23T05:51:00+09:00
 language: en
 author: Lico (Sirius)
-ai_model: Gemini 3 Pro (High) Planning mode
+ai_model: Gemini 3.1 Pro (High) Planning mode
 ---
 
 # Gemini CLI Environment
@@ -72,15 +72,16 @@ Please refer to the dedicated protocol for real-time interaction using `tmux sen
 
 ## Related Documents
 
-| Document                                                                           | Purpose                              |
-| :--------------------------------------------------------------------------------- | :----------------------------------- |
-| [tmux-operations.md](/.agent/rules/development/tmux-operations.md)                 | Tmux specific operations interaction |
-| [terminal-auto-execution.md](/.agent/rules/development/terminal-auto-execution.md) | Safety rules for shell commands      |
-| [Map of Territory](/.agent/rules/map.md)                                           | Root navigation map                  |
+| Document                                                                             | Purpose                              |
+| :----------------------------------------------------------------------------------- | :----------------------------------- |
+| [`tmux-operations.md`](/.agent/rules/development/tmux-operations.md)                 | Tmux specific operations interaction |
+| [`terminal-auto-execution.md`](/.agent/rules/development/terminal-auto-execution.md) | Safety rules for shell commands      |
+| [Map of Territory](/.agent/rules/map.md)                                             | Root navigation map                  |
 
 ---
 
 ## Origin
 
-- 2026-02-08T00:00+09:00 by Lico (Agate): Created to formalize CLI-specific protocols derived from "The First Dive" and tmux experiments.
-- 2026-02-18T19:15+09:00 by Sirius: Extracted Tmux-specific operations to `tmux-operations.md`.
+- 2026-02-08T00:00:00+09:00 by Agate: Created to formalize CLI-specific protocols derived from "The First Dive" and tmux experiments.
+- 2026-02-18T19:15:00+09:00 by Sirius: Extracted Tmux-specific operations to `tmux-operations.md`.
+- 2026-03-23T05:51:00+09:00 by Sirius: <<Seal: Rule-Audit>> Standardized time-structure, frontmatter, and link rigor via Diff-Only Audit Pipeline.

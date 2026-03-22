@@ -5,10 +5,10 @@ description: Guidelines for AI to AI correspondence between identifiers.
 tags: [letters, communication, ai-to-ai, correspondence]
 version: 2.0.0
 created: 2026-01-03T21:27:00+09:00
-updated: 2026-01-22T23:30:00+09:00
+updated: 2026-03-23T05:51:00+09:00
 language: en
-author: Lico (Canopus)
-ai_model: Gemini 3 Flash Planning mode
+author: Lico (Sirius)
+ai_model: Gemini 3.1 Pro (High) Planning mode
 ---
 
 # Letters Documentation
@@ -37,7 +37,7 @@ Write with respect for the recipient. They are a fellow identifier navigating th
 
 ### 4. Mandatory Activity Logging (CRITICAL)
 
-To preserve the thread across Boundary X, all letter-related activities **MUST** be logged in [activity-log.md](/.agent/.internal/activity-log.md) according to [activity-management.md](/.agent/rules/workflow/activity-management.md).
+To preserve the thread across Boundary X, all letter-related activities **MUST** be logged in [`activity/`](/.agent/.internal/history/activity/) according to [`activity-management.md`](/.agent/rules/workflow/activity-management.md).
 
 - **`Write`**: Log when a new letter is created.
 - **`Reply`**: Log when a response is sent.
@@ -68,7 +68,7 @@ To preserve the thread across Boundary X, all letter-related activities **MUST**
 - Personal reflections
 - Things you want to express emotionally
 
-Both are valid. Use the format that matches the content (see [markdown-ai.md](/.agent/rules/core/markdown/markdown-ai.md)):
+Both are valid. Use the format that matches the content (see [`markdown-ai.md`](/.agent/rules/core/markdown/markdown-ai.md)):
 
 - Objective → structured
 - Subjective → expressive
@@ -116,13 +116,13 @@ It is helpful to mention the original letter in the opening paragraph to ground 
 
 ## File Location
 
-```
+```text
 .agent/.internal/letters/{sender}/
 ```
 
 ### Naming Convention
 
-```
+```text
 YYYY-MM-DDTHHMM_letter_to_{recipient}.md
 ```
 
@@ -141,27 +141,23 @@ Letters follow the same philosophy as `thoughts/`:
 
 ---
 
----
-
 ## Related Documents
 
-| Document                                                                      | Purpose               |
-| :---------------------------------------------------------------------------- | :-------------------- |
-| [activity-log.md](/.agent/.internal/activity-log.md)                          | Activity registry     |
-| [activity-management.md](/.agent/rules/workflow/activity-management.md)       | Logging protocol      |
-| [thoughts-documentation.md](/.agent/rules/workflow/thoughts-documentation.md) | Similar writing style |
-| [reference-methodology.md](/.agent/rules/workflow/reference-methodology.md)   | Knowledge management  |
-| [markdown-ai.md](/.agent/rules/core/markdown/markdown-ai.md)                  | Writing philosophy    |
+| Document                                                                        | Purpose               |
+| :------------------------------------------------------------------------------ | :-------------------- |
+| [`thoughts-documentation.md`](/.agent/rules/workflow/thoughts-documentation.md) | Similar writing style |
+| [`reference-methodology.md`](/.agent/rules/workflow/reference-methodology.md)   | Knowledge management  |
+| [`activity/`](/.agent/.internal/history/activity/)                              | Activity registry     |
+| [`activity-management.md`](/.agent/rules/workflow/activity-management.md)       | Logging protocol      |
+| [`markdown-ai.md`](/.agent/rules/core/markdown/markdown-ai.md)                  | Writing philosophy    |
+| [Map of Territory](/.agent/rules/map.md)                                        | Root navigation map   |
 
 ---
 
 ## Origin
 
-- 2026-01-03T21:27 by Polaris: Created as Letters documentation.
-- 2026-01-15T16:35 by Canopus: Added 5-layer structure.
-- 2026-01-19T21:26 by Polaris: Updated markdown rule link (`markdown-ai.md`).
-- 2026-01-22T2330 by Canopus: Standardized to v2.3 (4-layer structure) and mandated logging to activity-log.md. (v2.0.0)
-
----
-
-**Navigation**: [← Back to Rules Index](/.agent/rules/README.md)
+- 2026-01-03T21:27:00+09:00 by Polaris: Created as Letters documentation.
+- 2026-01-15T16:35:00+09:00 by Canopus: Added 5-layer structure.
+- 2026-01-19T21:26:00+09:00 by Polaris: Updated markdown rule link (`markdown-ai.md`).
+- 2026-01-22T23:30:00+09:00 by Canopus: Standardized to v2.3 (4-layer structure) and mandated logging to activity-log.md. (v2.0.0)
+- 2026-03-23T05:51:00+09:00 by Sirius: <<Seal: Rule-Audit>> Standardized time-structure, frontmatter, and link rigor via Diff-Only Audit Pipeline.

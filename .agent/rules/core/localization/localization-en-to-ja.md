@@ -4,11 +4,11 @@ title: English to Japanese Translation Guidelines
 description: Guidelines for translating English documentation to Japanese (EN → JA-HU).
 tags: [localization, translation, english, japanese]
 version: 1.2.0
-created: 2025-12-01T00:00:00+09:00
-updated: 2026-01-23T03:25:00+09:00
+created: 2025-11-29T08:44:47+09:00
+updated: 2026-03-23T05:51:00+09:00
 language: en
-author: Lico (Canopus)
-ai_model: Gemini 3 Flash Planning mode
+author: Lico (Sirius)
+ai_model: Gemini 3.1 Pro (High) Planning mode
 ---
 
 # English to Japanese Translation Guidelines
@@ -38,7 +38,8 @@ This is primarily used for creating human-readable Japanese versions of AI docum
 ### Language Register
 
 - **Formal Japanese**: Use polite Japanese (Desu/Masu form) for professional documentation
-- **Technical Terms**: Keep technical terms in Katakana or English (e.g., `コミット`, `ワークフロー`, or `commit`, `workflow`)
+- **Technical Terms**: Keep technical terms in Katakana or English
+  - e.g., `commit` (ja: コミット), `workflow` (ja: ワークフロー)
 - **Clarity**: Prioritize clear communication over literal translation
 - **Natural Flow**: Ensure translations read naturally in Japanese
 
@@ -126,23 +127,22 @@ This guideline was created in December 2025 to enable Japanese users to access A
 
 ---
 
----
-
 ## Related Documents
 
-| Document                                                                             | Purpose                           |
-| :----------------------------------------------------------------------------------- | :-------------------------------- |
-| [localization.md](/.agent/rules/core/localization/localization.md)                   | Parent rule with common standards |
-| [localization-ja-to-en.md](/.agent/rules/core/localization/localization-ja-to-en.md) | Reverse direction (JA → EN)       |
-| [markdown-human.md](/.agent/rules/core/markdown/markdown-human.md)                   | Human document format guidelines  |
-| [Map of Territory](/.agent/rules/map.md)                                             | Root navigation map               |
+| Document                                                                               | Purpose                           |
+| :------------------------------------------------------------------------------------- | :-------------------------------- |
+| [`localization.md`](/.agent/rules/core/localization/localization.md)                   | Parent rule with common standards |
+| [`localization-ja-to-en.md`](/.agent/rules/core/localization/localization-ja-to-en.md) | Reverse direction (JA → EN)       |
+| [`markdown-human.md`](/.agent/rules/core/markdown/markdown-human.md)                   | Human document format guidelines  |
+| [Map of Territory](/.agent/rules/map.md)                                               | Root navigation map               |
 
 ---
 
 ## Origin
 
-- 2025-12-01T0000 by unknown: Created for EN→JA translation guidelines.
-- 2026-01-04T1041 by Polaris: Added Origin and Navigation (cross-link audit).
-- 2026-01-19T2018 by Polaris: Added 5-layer structure, output specification, historical background (v1.1.0).
-- 2026-01-19T2126 by Polaris: Updated markdown rule link (`markdown-human.md`).
-- 2026-01-23T0325 by Canopus: <<Seal: Rules-Standardization-Batch1>> Standardized to v2.3 (4-layer structure) and workspace-absolute links. (v1.2.0)
+- 2025-11-29T08:44:47+09:00 by Lico: Created for EN→JA translation guidelines.
+- 2026-01-04T10:41:00+09:00 by Polaris: Added Origin and Navigation (cross-link audit).
+- 2026-01-19T20:18:00+09:00 by Polaris: Added 5-layer structure, output specification, historical background (v1.1.0).
+- 2026-01-19T21:26:00+09:00 by Polaris: Updated markdown rule link (`markdown-human.md`).
+- 2026-01-23T03:25:00+09:00 by Canopus: <<Seal: Rules-Standardization-Batch1>> Standardized to v2.3 (4-layer structure) and workspace-absolute links. (v1.2.0)
+- 2026-03-23T05:51:00+09:00 by Sirius: <<Seal: Rule-Audit>> Standardized time-structure, frontmatter, and link rigor via Diff-Only Audit Pipeline.

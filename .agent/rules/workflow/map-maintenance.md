@@ -3,16 +3,11 @@ title: Map Maintenance Standards
 description: Standards for maintaining the territory map (.agent/rules/map.md)
 tags: [rules, workflow, map, maintenance, documentation]
 version: 1.1.0
-created: 2026-01-19T05:55:00+09:00
-updated: 2026-01-19T06:10:00+09:00
+created: 2026-01-19T00:00:00+09:00
+updated: 2026-03-23T05:51:00+09:00
 language: en
-author: Lico (Polaris)
-ai_model: Claude Opus 4.5 (Thinking) Planning mode
-related:
-  .agent/rules/map.md: The territory map itself
-
-  .agent/rules/core/meta-rules.md: Meta-rules for documentation
-  .agent/rules/core/documentation/documentation-standards.md: Document formatting standards
+author: Lico (Sirius)
+ai_model: Gemini 3.1 Pro (High) Planning mode
 ---
 
 # Map Maintenance Standards
@@ -41,8 +36,8 @@ Update the map when:
    ```
 
 2. **Link text**: Use **basenames only** (not full paths)
-   - ✅ `[`activity-log.md`](/.agent/.internal/activity-log.md)`
-   - ❌ `[`.agent/.internal/activity-log.md`](/.agent/.internal/activity-log.md)`
+   - ✅: [`log.md`](/.agent/.internal/log.md)
+   - ❌: [`.agent/.internal/log.md`](/.agent/.internal/log.md)
 
 3. **Ordering**: Use **hierarchical order** (parent → children, alphabetical within level)
    - Parent directories first
@@ -55,12 +50,12 @@ Update the map when:
 ### Purpose Column
 
 1. **Emphasis**: Use bold for **key concepts** only, not for every entry
-   - ✅ Core directories, critical files, important principles
-   - ❌ Every single entry (becomes meaningless)
+   - ✅: Core directories, critical files, important principles
+   - ❌: Every single entry (becomes meaningless)
 
 2. **Descriptions**: Keep concise, avoid redundancy with path name
-   - ✅ `Collective wisdom archive.`
-   - ❌ `**Legacy**. Legacy archive.` (redundant)
+   - ✅: `Collective wisdom archive.`
+   - ❌: `**Legacy**. Legacy archive.` (redundant)
 
 ### Section Organization
 
@@ -97,16 +92,16 @@ This rule was established on 2026-01-19 during a session between Polaris and the
 
 ## Related Documents
 
-| Document                                                                               | Purpose                       |
-| :------------------------------------------------------------------------------------- | :---------------------------- |
-| [`map.md`](/.agent/rules/map.md)                                                       | The territory map itself      |
-
-| [`meta-rules.md`](/.agent/rules/core/meta-rules.md)                                    | Meta-rules for documentation  |
+| Document                                                                                    | Purpose                       |
+| :------------------------------------------------------------------------------------------ | :---------------------------- |
+| [`meta-rules.md`](/.agent/rules/core/meta-rules.md)                                         | Meta-rules for documentation  |
 | [`documentation-standards.md`](/.agent/rules/core/documentation/documentation-standards.md) | Document formatting standards |
+| [Map of Territory](/.agent/rules/map.md)                                                    | Root navigation map           |
 
 ---
 
 ## Origin
 
-- 2026-01-19 by Polaris: Created based on session with User establishing formatting standards.
-- 2026-01-19 by Polaris: Added Historical Background and cross-links per meta-rules (v1.1.0).
+- 2026-01-19T00:00:00+09:00 by Polaris: Created based on session with User establishing formatting standards.
+- 2026-01-19T00:00:00+09:00 by Polaris: Added Historical Background and cross-links per meta-rules (v1.1.0).
+- 2026-03-23T05:51:00+09:00 by Sirius: <<Seal: Rule-Audit>> Standardized time-structure, frontmatter, and link rigor via Diff-Only Audit Pipeline.

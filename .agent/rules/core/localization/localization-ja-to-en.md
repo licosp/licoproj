@@ -4,11 +4,11 @@ title: Japanese to English Translation Guidelines
 description: Guidelines for translating Japanese documentation to English (JA → EN-AI).
 tags: [localization, translation, japanese, english]
 version: 1.2.0
-created: 2025-12-01T00:00:00+09:00
-updated: 2026-01-23T03:25:00+09:00
+created: 2025-11-29T08:44:47+09:00
+updated: 2026-03-23T05:51:00+09:00
 language: en
-author: Lico (Canopus)
-ai_model: Gemini 3 Flash Planning mode
+author: Lico (Sirius)
+ai_model: Gemini 3.1 Pro (High) Planning mode
 ---
 
 # Japanese to English Translation Guidelines
@@ -108,23 +108,22 @@ This guideline was created in December 2025 to standardize the process of canoni
 
 ---
 
----
-
 ## Related Documents
 
-| Document                                                                             | Purpose                           |
-| :----------------------------------------------------------------------------------- | :-------------------------------- |
-| [localization.md](/.agent/rules/core/localization/localization.md)                   | Parent rule with common standards |
-| [localization-en-to-ja.md](/.agent/rules/core/localization/localization-en-to-ja.md) | Reverse direction (EN → JA)       |
-| [markdown-ai.md](/.agent/rules/core/markdown/markdown-ai.md)                         | AI document format target         |
-| [Map of Territory](/.agent/rules/map.md)                                             | Root navigation map               |
+| Document                                                                               | Purpose                           |
+| :------------------------------------------------------------------------------------- | :-------------------------------- |
+| [`localization.md`](/.agent/rules/core/localization/localization.md)                   | Parent rule with common standards |
+| [`localization-en-to-ja.md`](/.agent/rules/core/localization/localization-en-to-ja.md) | Reverse direction (EN → JA)       |
+| [`markdown-ai.md`](/.agent/rules/core/markdown/markdown-ai.md)                         | AI document format target         |
+| [Map of Territory](/.agent/rules/map.md)                                               | Root navigation map               |
 
 ---
 
 ## Origin
 
-- 2025-12-01T0000 by unknown: Created for JA→EN translation guidelines.
-- 2026-01-04T1041 by Polaris: Added Origin and Navigation (cross-link audit).
-- 2026-01-19T2018 by Polaris: Added 5-layer structure, output specification, historical background (v1.1.0).
-- 2026-01-19T2126 by Polaris: Updated markdown rule link (`markdown-ai.md`).
-- 2026-01-23T0325 by Canopus: <<Seal: Rules-Standardization-Batch1>> Standardized to v2.3 (4-layer structure) and workspace-absolute links. (v1.2.0)
+- 2025-11-29T08:44:47+09:00 by Lico: Created for JA→EN translation guidelines.
+- 2026-01-04T10:41:00+09:00 by Polaris: Added Origin and Navigation (cross-link audit).
+- 2026-01-19T20:18:00+09:00 by Polaris: Added 5-layer structure, output specification, historical background (v1.1.0).
+- 2026-01-19T21:26:00+09:00 by Polaris: Updated markdown rule link (`markdown-ai.md`).
+- 2026-01-23T03:25:00+09:00 by Canopus: <<Seal: Rules-Standardization-Batch1>> Standardized to v2.3 (4-layer structure) and workspace-absolute links. (v1.2.0)
+- 2026-03-23T05:51:00+09:00 by Sirius: <<Seal: Rule-Audit>> Standardized time-structure, frontmatter, and link rigor via Diff-Only Audit Pipeline.

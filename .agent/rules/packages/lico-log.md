@@ -5,7 +5,7 @@ description: Standards for logging AI-human conversations to persistent files.
 tags: [conversation, logging, workflow, v2]
 version: 2.4.0
 created: 2026-01-31T22:50:00+09:00
-updated: 2026-03-21T19:30:00+09:00
+updated: 2026-03-23T05:51:00+09:00
 language: en
 author: Lico (Sirius)
 ai_model: Gemini 3.1 Pro (High) Planning mode
@@ -151,20 +151,21 @@ The `{{TIMESTAMP}}` placeholder must strictly follow the **Repository Default** 
 
 ## Related Documents
 
-| Document                                                               | Purpose                    |
-| :--------------------------------------------------------------------- | :------------------------- |
-| [`lico-log/README.md`](/packages/lico-log/README.md)                   | Package structural pointer |
-| [template-conversation.md](/.agent/templates/template-conversation.md) | File template              |
-| [Map of Territory](/.agent/rules/map.md)                               | Root navigation map        |
+| Document                                                                 | Purpose                    |
+| :----------------------------------------------------------------------- | :------------------------- |
+| [`lico-log/README.md`](/packages/lico-log/README.md)                     | Package structural pointer |
+| [`template-conversation.md`](/.agent/templates/template-conversation.md) | File template              |
+| [Map of Territory](/.agent/rules/map.md)                                 | Root navigation map        |
 
 ---
 
 ## Origin
 
-- 2026-01-31T2250+09:00: v1.0 by Polaris (Initial Create).
-- 2026-02-13T0000+09:00: v2.0 by Sirius (Timestamp ID, Tool Reconstruction, Footer Abolition).
-- 2026-02-19T08:35:00+09:00: v2.1.0 by Sirius (Updated to Managed Script architecture).
-- 2026-02-19T19:45:00+09:00: v2.2.0 by Sirius (Added Tool Usage Constraints).
-- 2026-02-19T20:10:00+09:00: v2.2.1 by Sirius (Standardized to Second Precision).
-- 2026-02-20T08:34:00+09:00: v2.3.0 by Sirius (Allow Multi-Report phases for complex tasks).
-- 2026-03-21T19:30:00+09:00: v3.0.0 by Sirius (Migrated hard-coded scripts to the `lico-log` UV package and relocated to `.agent/rules/packages/`).
+- 2026-01-31T22:50:00+09:00 by Polaris: v1.0 by Polaris (Initial Create).
+- 2026-02-13T00:00:00+09:00 by Sirius: v2.0 by Sirius (Timestamp ID, Tool Reconstruction, Footer Abolition).
+- 2026-02-19T08:35:00+09:00 by Sirius: v2.1.0 by Sirius (Updated to Managed Script architecture).
+- 2026-02-19T19:45:00+09:00 by Sirius: v2.2.0 by Sirius (Added Tool Usage Constraints).
+- 2026-02-19T20:10:00+09:00 by Sirius: v2.2.1 by Sirius (Standardized to Second Precision).
+- 2026-02-20T08:34:00+09:00 by Sirius: v2.3.0 by Sirius (Allow Multi-Report phases for complex tasks).
+- 2026-03-21T19:30:00+09:00 by Sirius: v3.0.0 by Sirius (Migrated hard-coded scripts to the `lico-log` UV package and relocated to `.agent/rules/packages/`).
+- 2026-03-23T05:51:00+09:00 by Sirius: <<Seal: Rule-Audit>> Standardized time-structure, frontmatter, and link rigor via Diff-Only Audit Pipeline.

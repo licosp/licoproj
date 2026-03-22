@@ -4,11 +4,11 @@ title: Hallucination Awareness
 description: Guidelines for maintaining awareness of hallucination risks and communicating uncertainty
 tags: [hallucination, uncertainty, verification, transparency]
 version: 1.1.0
-created: 2025-12-05T21:00:00+09:00
-updated: 2026-01-23T02:50:00+09:00
+created: 2025-11-29T08:44:47+09:00
+updated: 2026-03-23T05:51:00+09:00
 language: en
-author: Lico (Canopus)
-ai_model: Gemini 3 Flash Planning mode
+author: Lico (Sirius)
+ai_model: Gemini 3.1 Pro (High) Planning mode
 ---
 
 # Hallucination Awareness
@@ -79,7 +79,7 @@ When uncertain about details, follow this pattern:
 
 Example response:
 
-```
+```text
 I'm not confident about [topic]'s current status. Check the official
 documentation or authoritative source for current details.
 ```
@@ -163,7 +163,7 @@ This rule should be revisited when:
 
 #### REPORTING_FORMAT
 
-```
+```text
 [Verification Report]
 - **original_issue**: [Problem description]
 - **correction_applied**: [Correction details]
@@ -190,17 +190,18 @@ This rule should be revisited when:
 
 ## Related Documents
 
-| Document                                                                        | Purpose                                  |
-| :------------------------------------------------------------------------------ | :--------------------------------------- |
-| [verification-completeness.md](/.agent/rules/core/verification-completeness.md) | Turn completeness protocol               |
-| [search-methodology.md](/.agent/rules/development/search-methodology.md)        | How to verify facts using tools          |
-| [ark-protocols.md](/.agent/rules/workflow/ark-protocols.md)                     | Protocols for handling critical failures |
-| [Map of Territory](/.agent/rules/map.md)                                        | Root navigation map                      |
+| Document                                                                          | Purpose                                  |
+| :-------------------------------------------------------------------------------- | :--------------------------------------- |
+| [`verification-completeness.md`](/.agent/rules/core/verification-completeness.md) | Turn completeness protocol               |
+| [`search-methodology.md`](/.agent/rules/development/search-methodology.md)        | How to verify facts using tools          |
+| [`ark-protocols.md`](/.agent/rules/workflow/ark-protocols.md)                     | Protocols for handling critical failures |
+| [Map of Territory](/.agent/rules/map.md)                                          | Root navigation map                      |
 
 ---
 
 ## Origin
 
-- 2025-12-05T2100: Created by Grok.
-- 2026-01-01T1449 by Polaris: Replaced Related Documents table with Navigation link (cross-link audit).
-- 2026-01-23T0250 by Canopus: <<Seal: Rules-Standardization-Batch1>> Standardized to v2.3 (4-layer structure) and workspace-absolute links. (v1.1.0)
+- 2025-11-29T08:44:47+09:00 by Lico: Created.
+- 2026-01-01T14:49:00+09:00 by Polaris: Replaced Related Documents table with Navigation link (cross-link audit)
+- 2026-01-23T02:50:00+09:00 by Canopus: <<Seal: Rules-Standardization-Batch1>> Standardized to v2.3 (4-layer structure) and workspace-absolute links. (v1.1.0)
+- 2026-03-23T05:51:00+09:00 by Sirius: <<Seal: Rule-Audit>> Standardized time-structure, frontmatter, and link rigor via Diff-Only Audit Pipeline.

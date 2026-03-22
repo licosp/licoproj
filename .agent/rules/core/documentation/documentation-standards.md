@@ -4,11 +4,11 @@ title: Documentation Standards
 description: Defines standards for file naming, size, structure, and AI signatures.
 tags: [documentation, standards, formatting, origin, history-layers]
 version: 2.4.2
-created: 2025-12-01T00:00:00+09:00
-updated: 2026-01-23T21:40:00+09:00
+created: 2025-11-26T15:44:18+09:00
+updated: 2026-03-23T05:51:00+09:00
 language: en
-author: Lico (Canopus)
-ai_model: Gemini 3 Flash Planning mode
+author: Lico (Sirius)
+ai_model: Gemini 3.1 Pro (High) Planning mode
 ---
 
 # Documentation Standards
@@ -48,7 +48,7 @@ ai_model: Gemini 3 Flash Planning mode
 - ✅ Good: `.agent/rules/map.md`
 - ✅ Good: `See the documentation in identity/identity.md`
 - ❌ Bad: `/home/USER/develop/shared/project/licoproj/.agent/rules/map.md`
-- ❌ Bad: `[map.md](cci:7://file:///absolute/path/map.md)`
+- ❌ Bad: [Map](cci:7://file:///absolute/path/map.md)
 
 ## 5. Metadata & Link Management
 
@@ -90,13 +90,12 @@ ai_model: Model Name
 ```markdown
 ## Origin
 
-- YYYY-MM-DDTHHMM: Created [context/purpose]
-- YYYY-MM-DDTHHMM by <Instance-ID>: [summary of change]
+- YYYY-MM-DDTHH:MM:SS+09:00 by <Instance-ID>: [summary of change]
 ```
 
 **Requirements**:
 
-- **Date format**: `YYYY-MM-DDTHHMM` (per datetime-format.md standard)
+- **Date format**: `YYYY-MM-DDTHH:MM:SS+09:00` (per datetime-format.md standard)
 - **Instance-ID**: Include when available (e.g., `Polaris`, `Sirius`)
 - **Change summary**: **MANDATORY**. Provide a brief description of what changed and why. For significant changes, link to the `Historical Background` section (see below).
 
@@ -107,7 +106,7 @@ ai_model: Model Name
 - **Location**: Inside the `Origin` (Layer 4) entry for the relevant modification.
 - **Format**: `<<Seal: [Mission-ID]>>`
 - **Purpose**: Provides a grep-able marker to identify files that have completed a specific maintenance cycle.
-- **Example**: `- 2026-01-23T20:50 by Canopus: <<Seal: Rules-Standardization-Batch2.2>> [Summary]`
+- **Example**: `- 2026-01-23T20:50:00+09:00 by Canopus: <<Seal: Rules-Standardization-Batch2.2>> [Summary]`
 
 ## 8. Document History Layers (4-Layer Structure)
 
@@ -126,17 +125,18 @@ ai_model: Model Name
 
 Layer 2 encompasses everything from the title down to the `---` transition to Related Documents.
 
-1.  **Core Content**: The actual definitions, rules, or procedural steps.
-2.  **Historical Background (Mandatory)**: A fixed subsection starting with `## Historical Background`.
-    - **Header**: Use a top-level `## Historical Background` header.
-    - **Purpose**: Explains the "Why" behind the "What" to bridge "Context Decay."
-    - **Integrity**: Narrative must be factual and non-performative.
+1. **Core Content**: The actual definitions, rules, or procedural steps.
+2. **Historical Background (Mandatory)**: A fixed subsection starting with `## Historical Background`.
+   - **Header**: Use a top-level `## Historical Background` header.
+   - **Purpose**: Explains the "Why" behind the "What" to bridge "Context Decay."
+   - **Integrity**: Narrative must be factual and non-performative.
 
 ### 8.3 Layer Comparison & Usage
 
 Files are tracked through three complementary states of truth:
 
-- **Layer 1: Frontmatter (Current Snapshot)**: Use **[header-frontmatter.yaml](/.agent/templates/header-frontmatter.yaml)** for Record Layers and **[header-context-card.yaml](/.agent/templates/header-context-card.yaml)** for Dialogue Layers.
+- **Layer 1: Frontmatter (Current Snapshot)**: Use [`header-frontmatter.yaml`](/.agent/.internal/archive/2026/01/31/templates/header-frontmatter.yaml) for Record Layers and [`header-context-card.yaml`](/.agent/.internal/archive/2026/01/31/templates/header-context-card.yaml) for Dialogue Layers.
+
 - **Layer 4: Origin (notable milestones)**: Represents the **milestones**. Append significant changes using H2 (`##`) headers to maintain structural habit across all file types. (See Section 6).
 
 | Source          | Scope              | Update Frequency    |
@@ -147,7 +147,7 @@ Files are tracked through three complementary states of truth:
 
 ---
 
-**Definition**: See [header-frontmatter.yaml](/.agent/templates/header-frontmatter.yaml)
+**Definition**: See [`header-frontmatter.yaml`](/.agent/.internal/archive/2026/01/31/templates/header-frontmatter.yaml)
 
 ## Historical Background
 
@@ -165,21 +165,22 @@ Originally, Lico's documentation standards were focused on technical consistency
 
 ## Related Documents
 
-| Document                                                                  | Purpose                                          |
-| :------------------------------------------------------------------------ | :----------------------------------------------- |
-| [Map of Territory](/.agent/rules/map.md)                                  | Repository Index (Integrated Navigation)         |
-| [meta-rules.md](/.agent/rules/core/meta-rules.md)                         | Rules for creating and updating behavioral rules |
-| [path-notation.md](/.agent/rules/core/documentation/path-notation.md)     | Standard for absolute path notation (`/`)        |
-| [datetime-format.md](/.agent/rules/core/documentation/datetime-format.md) | Standard for datetime formatting                 |
+| Document                                                                    | Purpose                                          |
+| :-------------------------------------------------------------------------- | :----------------------------------------------- |
+| [`meta-rules.md`](/.agent/rules/core/meta-rules.md)                         | Rules for creating and updating behavioral rules |
+| [`path-notation.md`](/.agent/rules/core/documentation/path-notation.md)     | Standard for absolute path notation (`/`)        |
+| [`datetime-format.md`](/.agent/rules/core/documentation/datetime-format.md) | Standard for datetime formatting                 |
+| [Map of Territory](/.agent/rules/map.md)                                    | Root navigation map                              |
 
 ---
 
 ## Origin
 
-- 2025-12-01T0000: Created as documentation standards
-- 2026-01-19T0410 by Canopus: Formalized history sections (v1.4).
-- 2026-01-22T0415 by Canopus: Finalized 4-layer structure; merged Body/Background (v2.0).
-- 2026-01-22T0445 by Canopus: Attempted link integration and shift to Origin-before-Links order (v2.1).
-- 2026-01-22T0600 by Canopus: Final alignment; correctly established Related Documents Layer 3 and Origin Layer 4 (v2.3).
-- 2026-01-23T2130 by Canopus: Codified "Maintenance Seals" (Section 7) for progress tracking in massive edits (v2.4).
-- 2026-01-24T0515 by Canopus: Established the "Two Templates, Single Structure" standard. Formalized the Record Layer vs. Dialogue Layer distinction to balance AI consistency with human resonance. (v2.5)
+- 2025-11-26T15:44:18+09:00 by Lico: Created as documentation standards.
+- 2026-01-19T04:10:00+09:00 by Canopus: Formalized history sections (v1.4).
+- 2026-01-22T04:15:00+09:00 by Canopus: Finalized 4-layer structure; merged Body/Background (v2.0).
+- 2026-01-22T04:45:00+09:00 by Canopus: Attempted link integration and shift to Origin-before-Links order (v2.1).
+- 2026-01-22T06:00:00+09:00 by Canopus: Final alignment; correctly established Related Documents Layer 3 and Origin Layer 4 (v2.3).
+- 2026-01-23T21:30:00+09:00 by Canopus: Codified "Maintenance Seals" (Section 7) for progress tracking in massive edits (v2.4).
+- 2026-01-24T05:15:00+09:00 by Canopus: Established the "Two Templates, Single Structure" standard. Formalized the Record Layer vs. Dialogue Layer distinction to balance AI consistency with human resonance. (v2.5)
+- 2026-03-23T05:51:00+09:00 by Sirius: <<Seal: Rule-Audit>> Standardized time-structure, frontmatter, and link rigor via Diff-Only Audit Pipeline.

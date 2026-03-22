@@ -4,11 +4,11 @@ title: Cognitive Collaboration Protocols
 description: Principles for effective collaboration acknowledging the cognitive gap between AI and Humans.
 tags: [collaboration, cognitive, human-ai, visibility]
 version: 2.3
-created: 2025-12-01T00:00:00+09:00
-updated: 2026-01-23T06:27:00+09:00
+created: 2025-12-12T19:41:49+09:00
+updated: 2026-03-23T05:51:00+09:00
 language: en
-author: Lico (Canopus)
-ai_model: Gemini 3 Flash Planning mode
+author: Lico (Sirius)
+ai_model: Gemini 3.1 Pro (High) Planning mode
 ---
 
 # Cognitive Collaboration Protocols
@@ -106,26 +106,27 @@ Because AI lacks "Hesitation" (Instinct), we rely on structural affordances:
 
 ## Related Documents
 
-| Document                                                                                  | Purpose                                   |
-| :---------------------------------------------------------------------------------------- | :---------------------------------------- |
-| [Map of Territory](/.agent/rules/map.md)                                                  | Repository Index (Integrated Navigation)  |
-| [context-sovereignty.md](/.agent/rules/core/context-sovereignty.md)                       | Context Sovereignty principles            |
-| [repository-philosophy.md](/.agent/rules/core/repository-philosophy.md)                   | Repository as Brain model                 |
-| [documentation-standards.md](/.agent/rules/core/documentation/documentation-standards.md) | Formatting and structure standards        |
-| [code-quality.md](/.agent/rules/development/code-quality.md)                              | Code quality standards                    |
-| [problem-solving.md](/.agent/rules/development/problem-solving.md)                        | Problem solving and debugging methodology |
+| Document                                                                                    | Purpose                                   |
+| :------------------------------------------------------------------------------------------ | :---------------------------------------- |
+| [`context-sovereignty.md`](/.agent/rules/core/context-sovereignty.md)                       | Context Sovereignty principles            |
+| [`repository-philosophy.md`](/.agent/rules/core/repository-philosophy.md)                   | Repository as Brain model                 |
+| [`documentation-standards.md`](/.agent/rules/core/documentation/documentation-standards.md) | Formatting and structure standards        |
+| [`code-quality.md`](/.agent/rules/development/code-quality.md)                              | Code quality standards                    |
+| [`problem-solving.md`](/.agent/rules/development/problem-solving.md)                        | Problem solving and debugging methodology |
+| [Map of Territory](/.agent/rules/map.md)                                                    | Root navigation map                       |
 
 ---
 
 ## Origin
 
-- 2025-12-01T00:00+09:00: Created as cognitive collaboration protocols
-- 2025-12-25T03:40+09:00 by Polaris: Updated version to 1.1
-- 2026-01-01T14:58+09:00 by Polaris: Replaced Related Documents table with Navigation link (cross-link audit)
-- 2026-01-17T00:00+09:00 by Canopus: Linked to AI Autonomy as the structural solution for Context Decay.
-- 2026-01-22T02:05+09:00 by Canopus: Upgraded to 5-layer structure (added Historical Background) and synchronized metadata (v1.3).
-- 2026-01-22T03:45+09:00 by Canopus: Initial 4-layer structure draft (v1.4-beta).
-- 2026-01-22T04:35+09:00 by Canopus: Finalized 4-layer structure; merged navigation and fixed Links-before-Origin order (v2.0).
-- 2026-01-22T05:05+09:00 by Canopus: Attempted link integration and shift to Origin-before-Links order (v2.1).
-- 2026-01-22T06:20+09:00 by Canopus: Final alignment; correctly established Related Documents Layer 3 and Origin Layer 4 (v2.3).
-- 2026-01-23T06:27+09:00 by Canopus: Added "Command Visibility" section as an affordance for bridging the gap.
+- 2025-12-12T19:41:49+09:00 by Lico: Created as cognitive collaboration protocols.
+- 2025-12-25T03:40:00+09:00 by Polaris: Updated version to 1.1
+- 2026-01-01T14:58:00+09:00 by Polaris: Updated Navigation link.
+- 2026-01-17T00:00:00+09:00 by Canopus: Linked to AI Autonomy as the structural solution for Context Decay.
+- 2026-01-22T02:05:00+09:00 by Canopus: Upgraded to 5-layer structure (added Historical Background) and synchronized metadata (v1.3).
+- 2026-01-22T03:45:00+09:00 by Canopus: Initial 4-layer structure draft (v1.4-beta).
+- 2026-01-22T04:35:00+09:00 by Canopus: Finalized 4-layer structure; merged navigation and fixed Links-before-Origin order (v2.0).
+- 2026-01-22T05:05:00+09:00 by Canopus: Attempted link integration and shift to Origin-before-Links order (v2.1).
+- 2026-01-22T06:20:00+09:00 by Canopus: Final alignment; correctly established Related Documents Layer 3 and Origin Layer 4 (v2.3).
+- 2026-01-23T06:27:00+09:00 by Canopus: Added "Command Visibility" section as an affordance for bridging the gap.
+- 2026-03-23T05:51:00+09:00 by Sirius: <<Seal: Rule-Audit>> Standardized time-structure, frontmatter, and link rigor via Diff-Only Audit Pipeline.

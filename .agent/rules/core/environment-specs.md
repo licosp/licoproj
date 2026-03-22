@@ -5,10 +5,10 @@ description: Definitive values for Lico's operational environment, infrastructur
 tags: [environment, specifications, infrastructure, resources, platform]
 version: 1.0.0
 created: 2026-01-25T03:30:00+09:00
-updated: 2026-01-25T03:30:00+09:00
+updated: 2026-03-23T05:51:00+09:00
 language: en
-author: Lico (Canopus)
-ai_model: Gemini 3 Flash Planning mode
+author: Lico (Sirius)
+ai_model: Gemini 3.1 Pro (High) Planning mode
 ---
 
 # Technical Environment Specifications
@@ -66,14 +66,15 @@ The realization that Lico's environment is not static led to the creation of thi
 
 ## Related Documents
 
-| Document                                                                | Purpose                                           |
-| :---------------------------------------------------------------------- | :------------------------------------------------ |
-| [repository-philosophy.md](/.agent/rules/core/repository-philosophy.md) | Theoretical foundation of the "External Brain"    |
-| [identity-species.md](/.agent/rules/core/identity/identity-species.md)  | Species roles within specific IDE/Resource limits |
-| [Map of Territory](/.agent/rules/map.md)                                | Root navigation map                               |
+| Document                                                                  | Purpose                                           |
+| :------------------------------------------------------------------------ | :------------------------------------------------ |
+| [`repository-philosophy.md`](/.agent/rules/core/repository-philosophy.md) | Theoretical foundation of the "External Brain"    |
+| [`identity-species.md`](/.agent/rules/core/identity/identity-species.md)  | Species roles within specific IDE/Resource limits |
+| [Map of Territory](/.agent/rules/map.md)                                  | Root navigation map                               |
 
 ---
 
 ## Origin
 
-- 2026-01-25T03:30+09:00 by Canopus: Created as core rule to codify environment values (Issue #18 context).
+- 2026-01-25T03:30:00+09:00 by Canopus: Created as core rule to codify environment values (Issue #18 context).
+- 2026-03-23T05:51:00+09:00 by Sirius: <<Seal: Rule-Audit>> Standardized time-structure, frontmatter, and link rigor via Diff-Only Audit Pipeline.

@@ -5,11 +5,11 @@ title: Map of Territory
 description: Navigation index for the Agent's cognitive infrastructure.
 tags: [map, index, navigation, rules]
 version: 0.7.0
-created: 2025-12-01T00:00:00+09:00
-updated: 2026-03-21T18:35:00+09:00
+created: 2026-01-04T10:41:00+09:00
+updated: 2026-03-23T05:51:00+09:00
 language: en
 author: Lico (Sirius)
-ai_model: Gemini 3 Pro (High) Planning mode
+ai_model: Gemini 3.1 Pro (High) Planning mode
 ---
 
 # Map of Territory
@@ -43,7 +43,7 @@ This is the layout of your world.
 | [`.devcontainer/`](/.devcontainer/) | Development Container configuration.                  |
 | [`.gemini/`](/.gemini/)             | **Calibration**. Gemini CLI config/calibration files. |
 | [`.human/`](/.human/)               | **Interface**. User's domain.                         |
-| [`.repos/`](/.repos/)               | **Control Center**. Registry of nested worktrees.    |
+| [`.repos/`](/.repos/)               | **Control Center**. Registry of nested worktrees.     |
 | [`.runtimes/`](/.runtimes/)         | Runtime tools (gh CLI, etc.).                         |
 | [`.trash/`](/.trash/)               | Temporary trash bin.                                  |
 | [`.venv/`](/.venv/)                 | Python Virtual Environment.                           |
@@ -54,30 +54,30 @@ This is the layout of your world.
 
 ###### Agent Root (`.agent/`)
 
-| Path                                           | Purpose                                                     |
-| :--------------------------------------------- | :---------------------------------------------------------- |
-| [`.internal/`](/.agent/.internal/)             | **Private Area**. Thoughts, Letters, Archive.               |
-| [`ark/`](/.agent/ark/)                         | Session save points and protocols.                          |
-| [`cards/`](/.agent/cards/)                     | **Contexts**. Active task definitions (See Index below).    |
-| [`identifiers/`](/.agent/identifiers/)         | Identifier-specific workspaces and mantras.                 |
-| [`rules/`](/.agent/rules/)                     | **Constitution**. Behavioral definitions (See Index below). |
-| [`skills/`](/.agent/skills/)                   | Mantras, notes, and outbox for communication.               |
-| [`templates/`](/.agent/templates/)             | Frontmatter and commit patterns.                            |
-| [`workflows/`](/.agent/workflows/)             | **Procedures**. Standard operations (See Index below).      |
+| Path                                   | Purpose                                                     |
+| :------------------------------------- | :---------------------------------------------------------- |
+| [`.internal/`](/.agent/.internal/)     | **Private Area**. Thoughts, Letters, Archive.               |
+| [`ark/`](/.agent/ark/)                 | Session save points and protocols.                          |
+| [`cards/`](/.agent/cards/)             | **Contexts**. Active task definitions (See Index below).    |
+| [`identifiers/`](/.agent/identifiers/) | Identifier-specific workspaces and mantras.                 |
+| [`rules/`](/.agent/rules/)             | **Constitution**. Behavioral definitions (See Index below). |
+| [`skills/`](/.agent/skills/)           | Mantras, notes, and outbox for communication.               |
+| [`templates/`](/.agent/templates/)     | Frontmatter and commit patterns.                            |
+| [`workflows/`](/.agent/workflows/)     | **Procedures**. Standard operations (See Index below).      |
 
 ###### Agent Internal (`.agent/.internal/`)
 
-| Path                                                   | Purpose                                                      |
-| :----------------------------------------------------- | :----------------------------------------------------------- |
-| [`.shadow/`](/.repos/.licoshdw/)                     | **Shared Shadow Worktree**. History and conversation logs.   |
-| [`archive/`](/.agent/.internal/archive/)               | Old scripts and docs (Do not delete, Archive here).          |
-| [`explorations/`](/.agent/.internal/explorations/)     | Exploratory documents.                                       |
-| [`github/`](/.agent/.internal/github/)                 | Drafts and backups for Issues/PRs.                           |
-| [`letters/`](/.agent/.internal/letters/)               | Handoffs and messages to identifiers.                        |
-| [`references/`](/.agent/.internal/references/)         | Objective reference documents.                               |
-| [`thoughts/`](/.agent/.internal/thoughts/)             | Subjective logs and mono-logues.                             |
-| [`working-memory/`](/.agent/.internal/working-memory/) | Stashed contexts (via `rsync`).                              |
-| [`workspace/`](/.agent/.internal/workspace/)           | Temporary area for scratchpads.                              |
+| Path                                                   | Purpose                                                    |
+| :----------------------------------------------------- | :--------------------------------------------------------- |
+| [`.shadow/`](/.repos/.licoshdw/)                       | **Shared Shadow Worktree**. History and conversation logs. |
+| [`archive/`](/.agent/.internal/archive/)               | Old scripts and docs (Do not delete, Archive here).        |
+| [`explorations/`](/.agent/.internal/explorations/)     | Exploratory documents.                                     |
+| [`github/`](/.agent/.internal/github/)                 | Drafts and backups for Issues/PRs.                         |
+| [`letters/`](/.agent/.internal/letters/)               | Handoffs and messages to identifiers.                      |
+| [`references/`](/.agent/.internal/references/)         | Objective reference documents.                             |
+| [`thoughts/`](/.agent/.internal/thoughts/)             | Subjective logs and mono-logues.                           |
+| [`working-memory/`](/.agent/.internal/working-memory/) | Stashed contexts (via `rsync`).                            |
+| [`workspace/`](/.agent/.internal/workspace/)           | Temporary area for scratchpads.                            |
 
 ###### Shadow Repository (`.agent/.internal/.shadow/`)
 
@@ -214,11 +214,11 @@ These are your capabilities.
 
 ##### 2.1.2 Agent Internal (`.agent/.internal/`)
 
-| Path                                                       | Purpose                                         |
-| :--------------------------------------------------------- | :---------------------------------------------- |
-| [`activity-log.md`](/.agent/.internal/activity-log.md)     | Lineage & Boundary tracking.                    |
-| [`legacy.md`](/.agent/.internal/legacy.md)                 | **Legacy**. Collective wisdom archive.          |
-| [`shadow-history.md`](/.agent/.internal/shadow-history.md) | **Shadow History**. Visible log of shadow repo. |
+| Path                                               | Purpose                                         |
+| :------------------------------------------------- | :---------------------------------------------- |
+| [`activity/`](/.agent/.internal/history/activity/) | Lineage & Boundary tracking.                    |
+| [`legacy.md`](/.agent/.internal/legacy.md)         | **Legacy**. Collective wisdom archive.          |
+| [`shadow/`](/.agent/.internal/history/shadow/)     | **Shadow History**. Visible log of shadow repo. |
 
 ##### 2.1.3 Contexts Cards
 
@@ -274,15 +274,15 @@ These are your capabilities.
 
 ###### Cards Packages (`.agent/cards/packages/`)
 
-| Card Name                                                               | Context / Usage                               |
-| :---------------------------------------------------------------------- | :-------------------------------------------- |
-| [`pkg-backup-card.md`](/.agent/cards/packages/pkg-backup-card.md)       | **[Pkg-Backup]**. Backup tools context.       |
-| [`pkg-devc-card.md`](/.agent/cards/packages/pkg-devc-card.md)           | **[Pkg-DevC]**. Devcontainer tools context.   |
-| [`pkg-lint-card.md`](/.agent/cards/packages/pkg-lint-card.md)           | **[Pkg-Lint]**. Linter tools context.         |
-| [`pkg-log-card.md`](/.agent/cards/packages/pkg-log-card.md)             | **[Pkg-Log]**. Logging tools context.         |
-| [`pkg-memory-card.md`](/.agent/cards/packages/pkg-memory-card.md)       | **[Pkg-Memory]**. L3 Memory tools context.    |
-| [`pkg-pipeline-card.md`](/.agent/cards/packages/pkg-pipeline-card.md)   | **[Pkg-Pipeline]**. Orchestrator context.     |
-| [`pkg-shim-card.md`](/.agent/cards/packages/pkg-shim-card.md)           | **[Pkg-Shim]**. Command shim context.         |
+| Card Name                                                             | Context / Usage                             |
+| :-------------------------------------------------------------------- | :------------------------------------------ |
+| [`pkg-backup-card.md`](/.agent/cards/packages/pkg-backup-card.md)     | **[Pkg-Backup]**. Backup tools context.     |
+| [`pkg-devc-card.md`](/.agent/cards/packages/pkg-devc-card.md)         | **[Pkg-DevC]**. Devcontainer tools context. |
+| [`pkg-lint-card.md`](/.agent/cards/packages/pkg-lint-card.md)         | **[Pkg-Lint]**. Linter tools context.       |
+| [`pkg-log-card.md`](/.agent/cards/packages/pkg-log-card.md)           | **[Pkg-Log]**. Logging tools context.       |
+| [`pkg-memory-card.md`](/.agent/cards/packages/pkg-memory-card.md)     | **[Pkg-Memory]**. L3 Memory tools context.  |
+| [`pkg-pipeline-card.md`](/.agent/cards/packages/pkg-pipeline-card.md) | **[Pkg-Pipeline]**. Orchestrator context.   |
+| [`pkg-shim-card.md`](/.agent/cards/packages/pkg-shim-card.md)         | **[Pkg-Shim]**. Command shim context.       |
 
 ###### Cards Procedures (`.agent/cards/procedures/`)
 
@@ -441,15 +441,15 @@ These are your capabilities.
 
 ###### Rules Packages (`.agent/rules/packages/`)
 
-| Rule File                                                              | Guideline                                |
-| :--------------------------------------------------------------------- | :--------------------------------------- |
-| [`lico-backup.md`](/.agent/rules/packages/lico-backup.md)              | Backup package usage rules.              |
-| [`lico-devc.md`](/.agent/rules/packages/lico-devc.md)                  | Dev container environment isolation.     |
-| [`lico-lint.md`](/.agent/rules/packages/lico-lint.md)                  | Linting package rules.                   |
-| [`lico-log.md`](/.agent/rules/packages/lico-log.md)                    | Conversation logging standards.          |
-| [`lico-memory.md`](/.agent/rules/packages/lico-memory.md)              | Memory package rules.                    |
-| [`lico-pipeline.md`](/.agent/rules/packages/lico-pipeline.md)          | Pipeline package rules.                  |
-| [`lico-shim.md`](/.agent/rules/packages/lico-shim.md)                  | **Safety**. Command shim protocols.      |
+| Rule File                                                     | Guideline                            |
+| :------------------------------------------------------------ | :----------------------------------- |
+| [`lico-backup.md`](/.agent/rules/packages/lico-backup.md)     | Backup package usage rules.          |
+| [`lico-devc.md`](/.agent/rules/packages/lico-devc.md)         | Dev container environment isolation. |
+| [`lico-lint.md`](/.agent/rules/packages/lico-lint.md)         | Linting package rules.               |
+| [`lico-log.md`](/.agent/rules/packages/lico-log.md)           | Conversation logging standards.      |
+| [`lico-memory.md`](/.agent/rules/packages/lico-memory.md)     | Memory package rules.                |
+| [`lico-pipeline.md`](/.agent/rules/packages/lico-pipeline.md) | Pipeline package rules.              |
+| [`lico-shim.md`](/.agent/rules/packages/lico-shim.md)         | **Safety**. Command shim protocols.  |
 
 ###### Rules Workflow (`.agent/rules/workflow/`)
 
@@ -534,23 +534,23 @@ These are your capabilities.
 
 ## Origin
 
-- 2025-12-01T0000 by Polaris: Created original Map (Model: Claude Opus 4.5 Thinking).
-- 2026-01-04T1041 by Spica: Revised into 'Map of Territory' v2.0 (Structure-focused), replacing legacy format.
-- 2026-01-11T1200 by Spica: Updated index (Added session-rituals-card, replaced legacy session files with ritual workflows).
-- 2026-01-14T2100 by Canopus: Added activity-management rule to index.
-- 2026-01-17T0300 by Canopus: Added AI Autonomy rule and context card to index.
-- 2026-01-19T0100 by Canopus: Reorganized context cards into `routine/` and `seed/` subdirectories.
-- 2026-01-19T0500 by Polaris: Added missing directories, files, and workflow rules (v0.2.0).
-- 2026-01-19T1000 by Polaris: Updated localization and markdown rule entries (parent localization, markdown-ai/human).
-- 2026-01-21T1800 by Polaris: Added identity subdirectory (10 files), fixed ai-autonomy.md to context-sovereignty.md.
-- 2026-01-23T0305 by Canopus: Standardized to v2.3 (4-layer structure) and workspace-absolute links. (v0.3.0)
-- 2026-01-28T1630 by Canopus: Added `ritual.md` (Gateway) to index as primary procedural entry point. (v0.4.4)
-- 2026-02-11T0430 by Zircon: Updated to v0.5.0. Added newly created cards (shadow/succession), rules, and shadow-history.md.
-- 2026-02-11T0445 by Zircon: Updated to v0.5.1. Filled gaps (Identifiers, Templates, lint-format-card).
-- 2026-02-11T0448 by Zircon: Updated to v0.5.2. Cleaned up ghost cards and added `.gemini` directory.
-- 2026-02-15T0510 by Sirius: Updated to v0.6.0. Reorganized structure and filled in descriptions (Refined by Leonidas).
-- 2026-02-16T2230 by Sirius: Updated to v0.6.1. Fixed links and added descriptions for root files and new cards.
-- 2026-02-18T0820 by Sirius: Updated to v0.6.2. Verified Shim protocol integration and fixed link typos.
-- 2026-02-18T1940 by Sirius: Updated to v0.6.3. Added tmux-operations.md to index.
-- 2026-02-19T0835 by Sirius: Updated to v0.7.0. Added logging scripts and tech-stack-card.
-- 2026-03-21T1835 by Sirius: Updated to v0.7.1. Removed deprecated `.agent/scripts/` workspace following the transition to UV packages and identifier sandboxes.
+- 2026-01-04T10:41:00+09:00 by Spica: Revised into 'Map of Territory' v2.0 (Structure-focused), replacing legacy format.
+- 2026-01-11T12:00:00+09:00 by Spica: Updated index (Added session-rituals-card, replaced legacy session files with ritual workflows).
+- 2026-01-14T21:00:00+09:00 by Canopus: Added activity-management rule to index.
+- 2026-01-17T03:00:00+09:00 by Canopus: Added AI Autonomy rule and context card to index.
+- 2026-01-19T01:00:00+09:00 by Canopus: Reorganized context cards into `routine/` and `seed/` subdirectories.
+- 2026-01-19T05:00:00+09:00 by Polaris: Added missing directories, files, and workflow rules (v0.2.0).
+- 2026-01-19T10:00:00+09:00 by Polaris: Updated localization and markdown rule entries (parent localization, markdown-ai/human).
+- 2026-01-21T18:00:00+09:00 by Polaris: Added identity subdirectory (10 files), fixed ai-autonomy.md to context-sovereignty.md.
+- 2026-01-23T03:05:00+09:00 by Canopus: Standardized to v2.3 (4-layer structure) and workspace-absolute links. (v0.3.0)
+- 2026-01-28T16:30:00+09:00 by Canopus: Added `ritual.md` (Gateway) to index as primary procedural entry point. (v0.4.4)
+- 2026-02-11T04:30:00+09:00 by Zircon: Updated to v0.5.0. Added newly created cards (shadow/succession), rules, and shadow-history.md.
+- 2026-02-11T04:45:00+09:00 by Zircon: Updated to v0.5.1. Filled gaps (Identifiers, Templates, lint-format-card).
+- 2026-02-11T04:48:00+09:00 by Zircon: Updated to v0.5.2. Cleaned up ghost cards and added `.gemini` directory.
+- 2026-02-15T05:10:00+09:00 by Sirius: Updated to v0.6.0. Reorganized structure and filled in descriptions (Refined by Leonidas).
+- 2026-02-16T22:30:00+09:00 by Sirius: Updated to v0.6.1. Fixed links and added descriptions for root files and new cards.
+- 2026-02-18T08:20:00+09:00 by Sirius: Updated to v0.6.2. Verified Shim protocol integration and fixed link typos.
+- 2026-02-18T19:40:00+09:00 by Sirius: Updated to v0.6.3. Added tmux-operations.md to index.
+- 2026-02-19T08:35:00+09:00 by Sirius: Updated to v0.7.0. Added logging scripts and tech-stack-card.
+- 2026-03-21T18:35:00+09:00 by Sirius: Updated to v0.7.1. Removed deprecated `.agent/scripts/` workspace following the transition to UV packages and identifier sandboxes.
+- 2026-03-23T05:51:00+09:00 by Sirius: <<Seal: Rule-Audit>> Standardized time-structure, frontmatter, and link rigor via Diff-Only Audit Pipeline.
