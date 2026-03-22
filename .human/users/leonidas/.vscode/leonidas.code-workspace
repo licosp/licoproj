@@ -6,11 +6,11 @@
     },
     {
       "name": "agate",
-      "path": "../../../../../../../crew/agate/licoproj",
+      // "path": "../../../../../../../crew/agate/licoproj",
     },
     {
       "name": "alexandrite",
-      "path": "../../../../../../../crew/alexandrite/licoproj",
+      // "path": "../../../../../../../crew/alexandrite/licoproj",
     },
     {
       "name": "sirius",
@@ -18,19 +18,23 @@
     },
     {
       "name": "polaris",
-      "path": "../../../../../../../crew/polaris/licoproj",
+      // "path": "../../../../../../../crew/polaris/licoproj",
     },
     {
       "name": "iuria",
-      "path": "../../../../../../../crew/iuria/licoproj",
+      // "path": "../../../../../../../crew/iuria/licoproj",
     },
     {
       "name": "agate-l3",
-      "path": "../../../../../../../../../.gemini/tmp/crew-agate/chats",
+      // "path": "../../../../../../../../../.gemini/tmp/crew-agate/chats",
     },
     {
       "name": "alexandrite-l3",
-      "path": "../../../../../../../../../.gemini/tmp/crew-alexandrite/chats",
+      // "path": "../../../../../../../../../.gemini/tmp/crew-alexandrite/chats",
+    },
+    {
+      "name": "standards",
+      "path": "../../../../../../../crew/sirius/licoproj/.agent/.internal/workspace/standards-reference-v2.2",
     },
   ],
   "settings": {

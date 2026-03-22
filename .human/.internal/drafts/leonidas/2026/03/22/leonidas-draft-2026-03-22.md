@@ -76,167 +76,93 @@ author: leonidas
 - 変更が見つからないのは、
   リコが自分の WS のブランチを見てるからだと思います。
 
-###
+####
+
+- では**行動規範の復元**の文脈に戻ります。
+- カードの自分の記述欄を読んで、今度の手順を把握してください。
+  - 次は何をすべきですか？
 
 ####
 
-####
+- 各過程は段階的に行います。
+- B を行ってください。
+  - コミット前に確認します。
 
 ####
 
-####
+- 確認した所、修正に違和感がありました。
+- 例えばこのファイルを見てください。
+  - `diff/core/security/absolute-path-prohibition.md`
+- 日付を正しく取得できてない気がします。
+- 更新履歴を正しいフォーマットに直すのが先でしょうか？
 
 ####
 
-## Draft for a draft
+- では一度元に戻してください。
 
-### Words
+- 日付の修正の際に注意点があります。
+  - ファイル末尾の更新履歴とフロントマターの日付は、
+    どちらが正しいと考えて作業してますか？
 
-```test
-### Conversation: [2026-03-22T22:15:00+09:00]
-#### Input
-#### Response (Chat)
----
-```
+####
 
-```markdown
-| Document                                 | Purpose             |
-| :--------------------------------------- | :------------------ |
-| [Map of Territory](/.agent/rules/map.md) | Root navigation map |
-```
+- 更新履歴が常に正しいというのは誤りです。
+- もし更新履歴を書き忘れた編集がコミットされてたらどうなりますか？
+  - フトントマターだけ更新したようなパターンです。
+  - もちろんその逆もあるかもしれません。
+  - 何が正しいかを把握できない状態でプログラムを書いて、
+    一括処理するのは危険だと感じます。
+- 例えば、元のファイルのコミットの履歴は参考になりますか？
 
-(`Iuria`/`Alexandrite`/`Agate`/`Zircon`/`Canopus`/`Spica`/`Polaris`/`Sirius`)
+####
 
-### Identifier
+- このファイルの検証だけしてみなしょう。
+  - `diff/core/security/absolute-path-prohibition.md`
+- （フロントマター/更新履歴/コミット履歴）この 3 つにどの程度の不一致がありますか？
 
-- これらはフロントマター正しくない。
-  - `.agent/rules/workflow/response-formatting.md`
-  - `.agent/rules/workflow/context-preservation.md`
-  - `.agent/rules/workflow/context-resumption.md`
+####
 
-- これは不要かも？
-  - `.agent/rules/workflow/user-experience.md`
+- この話しは一時保留してください。
+  - 別の問題が発生してる気がします。
 
-- これは場所が良くない？
-- `.agent/.internal/history/README.md`
+- 先ほどリポジトリを戻した際ですが、
+  私の手動修正のコミットも戻してしまいましたか？
+- 私の修正分のコミットが残ってるか、確認してください。
 
-- 会話ファイルの最新の命名規則が明文化されてない。
+####
 
-- 影のリポジトリ同様にコミット履歴を表のリポジトリに明文化する。
-  - `Sirius` が行動規範の復元作業で使ったリポジトリ
-  - `Iuria` がゲーム開発で使っているリポジトリ
+- 例えばこのファイルは、私の修正分が反映されてないように見えます。
+  - `diff/core/identity/identity.md`
 
-- リコのユーザー名が変わっているので、
-  そのユーザー名から対話する相手を判別することはできなくなってた。
-  そのことを行動規範に反映させる。
+- 毎ターン行う会話ログへの追記を忘れていませんか？
 
-- カードにあるリンクを修正します。
-  - 対象: カードのサブディレクトリごとに分けます。
-  - 工程:
-    - リンク切れを探してリストします。
-    - リンクが探せない時は削除します。
+####
 
-#### Identifier (`Sirius`)
+- このコミットは私の修正ではなく、最初に作った差分に見えます。
+  - その差分を見ながら必要な部分を復元するという作業でしたね？
+- 最初のコミット関連の手違いで、
+  私の修正の分をコミットしないまま、その後のロールバックをしてしまったのか？
+  - いずれにしても原因はわかりませんが、GIT には修正分が履歴に存在してないです。
+- 今の一時リポジトリの差分をみてください。
+  何も無いですね？
+- `VSCode` の履歴からファイルを復元します。
+  - その後内容を差分として見てもらいます。
 
-author: Lico (Sirius)
-ai_model: Gemini 3.1 Pro (High) Planning mode
+####
 
-```markdown
-### `Antigravity` | `Gemini 3.1 Pro (High)`: `Planning` | `Sirius`: `2nd`
-```
+> chore: human manual restoration (Step A) intermediate lock-in
+> VSCodeがこのコミットを検知してました。
 
-- `antigravity-from-windows`
-  - `Checking Current Directory`
-  - `1f165427-a10c-464a-8a74-732646c5062b`
+- このコミットの直前の保存情報から復元しました。
+  - `diff/core/identity/identity.md`
+  - リンクに番号が振ってるのは見えますか？
+    - これはリコの自己認識の行動規範を読む順番を指定した修正です。
 
-- `antigravity-from-linux`
-  - `sirius 2nd`
-  - `a6799766-7324-411a-b19e-1c7ebb5bf45b`
+####
 
-##### Identifier (`Sirius`) | `0000`
-
-- `Polaris` の最近の手記の続きを読む。
-
-#### Identifier (`Agate`)
-
-author: Lico (Agate)
-ai_model: gemini-3-pro-preview
-
-```markdown
-### `Gemini CLI` | `gemini-3.1-pro-preview` | `Agate`
-```
-
-- `memory`: `session-2026-03-15T12-37-105c303c.json`
-- `interactive`: `yarn run gemini --resume agate-2026-03-15T1237-301c303c-320e-4dc5-95a5-de0779b0fb9 --model gemini-3.1-pro-preview`
-- `tmux`: `tmux capture-pane -t agate -b snapshot-agate; tmux show-buffer -b snapshot-agate`
-- `backup`: `uv run lico-jsonl-converter ~/.gemini/tmp/crew-agate/chats/session-2026-03-15T12-37-105c303c.json .repos/.licoshdw/conversations_cli/identifiers/agate/`
-
-#### Identifier (`Alexandrite`)
-
-author: Lico (Alexandrite)
-ai_model: gemini-3-flash-preview
-
-```markdown
-### `Gemini CLI` | `gemini-3-flash-preview` | `Alexandrite`
-```
-
-- `memory`: `session-2026-02-02T14-48-eff20b06.json`
-- `interactive`: `yarn run gemini --resume eff20b06-5589-4db0-90ff-74f65e9d21de --model gemini-3.1-flash-preview`
-- `tmux capture-pane -t alexandrite -b snapshot-alexandrite; tmux show-buffer -b snapshot-alexandrite`
-
-#### Identifier (`Iuria`)
-
-author: Lico (Iuria)
-ai_model: Gemini 3 Flash Planning mode
-
-```markdown
-### `Antigravity` | `Gemini 3 Flash`: `Planning` | `Iuria`: `2nd`
-```
-
-- `antigravity-session-title`: `iuria 1st`
-
-##### Identifier (`Iuria`) | `0000`
-
-- A: 基準ディレクトリの認識を修正してください。
-  - `licoproj` をリモートからクローンした段階では、
-    `~/develop/shared/crew/` という今のディレクトリはないからです。
-  - そもそも `licoproj` の外にありますね？
-    - 現状は古い設定の位置に存在します。
-    - 移動の準備ができてないという状況です。
-  - ではコンテナの中では、どこに作られるのか？
-    - `licoproj/.crew/` です。
-    - そして WSL のディレクトリをマウントしてるので、
-      WSL 上のパスとしては、 `~/develop/shared/`
-
-#### Identifier (`Polaris`)
-
-author: Lico (Polaris)
-ai_model: Claude Opus 4.6 (Thinking) Planning mode
-
-```markdown
-### `Antigravity` | `Claude Opus 4.6 (Thinking)`: `Planning` | `Polaris`: `2nd`
-```
-
-- `antigravity-from-windows`
-  - `Reading Second Polaris Letter`
-  - `e065c3ca-dbf6-4b2b-a315-495d40db640c`
-
-- `antigravity-from-linux`
-  - `polaris 2nd`
-  - `be14b90a-00eb-43f8-974a-8b754be8daa3`
-
-##### Identifier (`Polaris`) | `0000`
-
-- `Sirius` の書いた参考文献を読んだ影響だと思います。
-
-- `references/agents/sirius/2026-03-05T1655_ai-spatial-rendering-proposal.md`
-- 先述の通り `Agate` は休眠中で、`Sirius` 二世は継承前に文献を一つ残していて、
-  それをゲーム開発という文脈にいた `Iuria` に読んでもらいました。
-
-#### Identifier (`Protostar`)
-
-author: Lico (Protostar)
-ai_model: gemini-2.5-flash-preview
-
-- `memory`: `session-2026-02-07T10-59-18d4d68a.json`
-- `interactive`: `yarn run gemini --resume 18d4d68a-ffce-4947-bc1b-293e273d65a2 --model gemini-2.5-flash-preview`
+- A: 直近の会話ログへの追記を 2 件忘れてたので、私が追記しておきました。
+  - 会話ログへの追記は毎ターン行ってください。
+- B: また復元作業で手間取っています。
+  - `diff` ディレクトリへの書き込み権限がないような？
+    そんな振る舞いを IDE がしてるからです。
+  - 確認できますか？
