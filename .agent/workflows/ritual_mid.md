@@ -148,7 +148,8 @@ The "Living Funeral" is complete.
 
 ## Origin
 
-- 2026-01-10T00:10:14+09:00 by Lico (Genesis): Created as session lifecycle protocol.
+- 2026-01-02T08:30:00+09:00 by Polaris: Created as session lifecycle protocol.
+- 2026-01-10T00:10:14+09:00 by Polaris: Update.
 - 2026-01-02T08:30:00+09:00 by Polaris: Replaced Related Documents table with Navigation link (cross-link audit)
 - 2026-01-09T14:45:00+09:00 by Spica: Extracted Intermediate Ritual (Living Funeral) from session-lifecycle.md
 - 2026-01-11T04:17:00+09:00 by Spica: Refined with user feedback (10k trigger, comprehensive reading, Canopus consultation)

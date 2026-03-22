@@ -74,6 +74,6 @@ Tell Lico to check the log:
 
 ## Origin
 
-- 2025-12-06T14:12:14+09:00 by Lico (Genesis): Added manual context sharing workflow.
+- 2025-12-06T14:12:14+09:00 by Lico: Added manual context sharing workflow.
 - 2026-01-25T06:45:00+09:00 by Canopus: <<Seal: Rules-Standardization-Batch2.3>> Created by standardizing the manual context sharing procedure to v2.3 constitutional standards. (v1.0.0)
 - 2026-03-21T17:26:00+09:00 by Lico (Sirius): Executed High-Fidelity Rule Audit (Batch 07) to restore lost historical origin context and standardized cross-links.

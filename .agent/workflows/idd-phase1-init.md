@@ -313,7 +313,7 @@ unset ISSUE_NUMBER
 
 ## Origin
 
-- 2025-12-08T21:38:15+09:00 by Lico (Genesis): Created original Japanese version.
+- 2025-12-08T21:38:15+09:00 by Lico: Created original Japanese version.
 - 2026-01-15T04:40:00+09:00 by Canopus: [Localization] Fully translated to English and integrated 'Align' ritual standards.
 - 2026-01-15T23:55:00+09:00 by Polaris: Added github-comment.md cross-link to Section 7-2.
 - 2026-01-17T17:45:00+09:00 by Canopus: Standardized metadata and root-relative link patterns (v1.2).

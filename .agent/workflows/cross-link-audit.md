@@ -49,13 +49,13 @@ Execute this workflow on one directory at a time. All paths MUST be workspace-ro
 
 ## Related Documents
 
-| Document                                                                                     | Purpose                 |
-| :------------------------------------------------------------------------------------------- | :---------------------- |
-| [`meta-rules.md`](/.agent/rules/core/meta-rules.md)                                          | Cross-linking standards |
-| [`markdown-ai.md`](/.agent/rules/core/markdown/markdown-ai.md) | AI markdown format      |
-| [`cross-link-audit-plan.md`](/.agent/workflows/cross-link-audit-plan.md)                     | Master plan for audits  |
-| [`documentation-standards.md`](/.agent/rules/core/documentation/documentation-standards.md)  | Structural standards    |
-| [Map of Territory](/.agent/rules/map.md)                                                     | Root navigation map     |
+| Document                                                                                    | Purpose                 |
+| :------------------------------------------------------------------------------------------ | :---------------------- |
+| [`meta-rules.md`](/.agent/rules/core/meta-rules.md)                                         | Cross-linking standards |
+| [`markdown-ai.md`](/.agent/rules/core/markdown/markdown-ai.md)                              | AI markdown format      |
+| [`cross-link-audit-plan.md`](/.agent/workflows/cross-link-audit-plan.md)                    | Master plan for audits  |
+| [`documentation-standards.md`](/.agent/rules/core/documentation/documentation-standards.md) | Structural standards    |
+| [Map of Territory](/.agent/rules/map.md)                                                    | Root navigation map     |
 
 ---
 

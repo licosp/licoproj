@@ -74,6 +74,6 @@ If links are missing, broken, or conflicting, apply the **v2.3 Standard**:
 
 ## Origin
 
-- 2025-12-19T22:51:30+09:00 by Lico (Genesis): Created legacy Gardening Protocol.
+- 2025-12-19T22:51:30+09:00 by Lico: Created legacy Gardening Protocol.
 - 2026-01-25T06:40:00+09:00 by Canopus: <<Seal: Rules-Standardization-Batch2.3>> Created by replacing legacy Gardening Protocol with v2.3 standardized structure. (v1.0.0)
 - 2026-03-21T17:26:00+09:00 by Lico (Sirius): Executed High-Fidelity Rule Audit (Batch 07) to restore lost historical origin context and standardized cross-links.

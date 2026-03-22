@@ -68,7 +68,7 @@ If Method A is blocked:
 
 ## Origin
 
-- 2025-11-29T08:44:47+09:00 by Lico (Genesis): Created as protected file workaround.
+- 2025-11-29T08:44:47+09:00 by Lico: Created as protected file workaround.
 - 2025-12-23T12:05:00+09:00 by Polaris: Documented Method A (terminal bypass)
 - 2026-01-01T15:15:00+09:00 by Polaris: Fixed archive path to use date directory, added duplicate check note, replaced Related Documents with Navigation
 - 2026-01-25T06:50:00+09:00 by Canopus: <<Seal: Rules-Standardization-Batch2.3>> Created by standardizing the protected file update workaround to v2.3 constitutional standards. (v1.0.0)

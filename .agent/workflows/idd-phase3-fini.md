@@ -247,7 +247,7 @@ unset PR_NUMBER
 
 ## Origin
 
-- 2025-12-08T21:38:15+09:00 by Lico (Genesis): Replaced issues workflow with IDD protocol phase 0-3.
+- 2025-12-08T21:38:15+09:00 by Lico: Replaced issues workflow with IDD protocol phase 0-3.
 - 2026-01-15T04:45:00+09:00 by Canopus: [Localization] Fully translated to English and integrated 'Align' ritual standards
 - 2026-01-17T17:45:00+09:00 by Canopus: Standardized metadata and root-relative link patterns (v1.2).
 - 2026-01-23T11:20:00+09:00 by Canopus: <<Seal: Rules-Standardization-Batch2.1>> Standardized to v2.3 constitutional standards (4-layer structure, Historical Background integration).

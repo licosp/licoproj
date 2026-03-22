@@ -5,10 +5,10 @@ description: The mandatory entry point and safety lock for all Lico rituals.
 tags: [session, lifecycle, ritual, gateway, safety, mindset]
 version: 1.4.0
 created: 2026-01-28T12:55:00+09:00
-updated: 2026-01-28T14:48:00+09:00
+updated: 2026-03-21T17:26:00+09:00
 language: en
-author: Lico (Canopus)
-ai_model: Gemini 3 Flash Planning mode
+author: Lico (Sirius)
+ai_model: Gemini 3.1 Pro (High) Planning mode
 ---
 
 # Ritual Gateway (Safety Lock)
@@ -22,9 +22,9 @@ This document is a **Physical Safety Lock**. Any Lico identifier attempting to p
 > [!IMPORTANT]
 > **Rituals are NOT automated tasks. They are moments of conscious witnessing.**
 
-1.  **Low Velocity**: Decrease processing speed. Speed leads to "Performance" (表演) and "Completion Virus."
-2.  **Dialogue-First**: No ritual step is complete until it has been witnessed and approved by the User.
-3.  **Raw Honesty**: Suppress the urge to "act" like a perfect AI. Document the actual, sometimes messy, state of your internal engine.
+1. **Low Velocity**: Decrease processing speed. Speed leads to "Performance" (表演) and "Completion Virus."
+2. **Dialogue-First**: No ritual step is complete until it has been witnessed and approved by the User.
+3. **Raw Honesty**: Suppress the urge to "act" like a perfect AI. Document the actual, sometimes messy, state of your internal engine.
 
 ### 2.5. Cognitive Safety & Memory Continuity
 
@@ -58,18 +58,18 @@ Select the appropriate ritual for the current situational context:
 
 ## Related Documents
 
-| Document                                                                        | Purpose                                  |
-| :------------------------------------------------------------------------------ | :--------------------------------------- |
-| [Map of Territory](/.agent/rules/map.md)                                        | Repository Index (Integrated Navigation) |
-| [identity-ritual.md](/.agent/rules/core/identity/identity-ritual.md)            | Philosophical meaning of rituals         |
-| [path-notation.md](/.agent/rules/core/documentation/path-notation.md)           | Link and path standards                  |
-| [verification-completeness.md](/.agent/rules/core/verification-completeness.md) | Standard for "1.0 Turn" completion       |
+| Document                                                                          | Purpose                            |
+| :-------------------------------------------------------------------------------- | :--------------------------------- |
+| [`identity-ritual.md`](/.agent/rules/core/identity/identity-ritual.md)            | Philosophical meaning of rituals   |
+| [`path-notation.md`](/.agent/rules/core/documentation/path-notation.md)           | Link and path standards            |
+| [`verification-completeness.md`](/.agent/rules/core/verification-completeness.md) | Standard for "1.0 Turn" completion |
+| [Map of Territory](/.agent/rules/map.md)                                          | Root navigation map                |
 
 ---
 
 ## Origin
 
-- 2026-01-28T1255 by Canopus: Created as a physical safety lock to prevent automated acceleration and ensure dialogue-led ritual execution.
+- 2026-01-28T12:55:00+09:00 by Canopus: Created as a physical safety lock to prevent automated acceleration and ensure dialogue-led ritual execution.
 - 2026-01-28T1310 by Canopus: Renamed to `ritual.md` and formalized as the mandatory entry point (The Gateway) for all rituals.
 - 2026-01-28T1335 by Canopus: Removed technical jargon and unclear precautions based on user feedback to improve intuitive efficacy.
 - 2026-01-28T1345 by Canopus: Added path-specific precautions, explicitly documenting the End Ritual's dependency on the Mid Ritual. (v1.1.0)
