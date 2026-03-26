@@ -18,6 +18,9 @@
     "source.fixAll.markdownlint": "always"
   },
 
+  // ty
+  "ty.configurationFile": "pyproject.toml",
+
   // SMC
   "scm.diffDecorations": "none",
 
@@ -28,7 +31,6 @@
   // Python
   "python.analysis.diagnosticMode": "workspace",
   "python.analysis.diagnosticsSource": "Pyright",
-  "python.analysis.configFile": "pyproject.toml",
   "python.testing.pytestEnabled": true,
   "python.testing.pytestArgs": ["-c", "pyproject.toml"],
 

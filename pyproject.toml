@@ -17,9 +17,10 @@ dev = [
   "pyright>=1.1.408",
   "pytest>=9.0.2",
   "pyyaml>=6.0.3",
-  "ruff>=0.15.1",
+  "ruff>=0.15.7",
   "shellcheck-py>=0.10.0.1",
   "shfmt-py>=3.8.0.1",
+  "ty>=0.0.25",
 ]
 
 [project.optional-dependencies]
@@ -77,7 +78,7 @@ exclude = [
 ]
 line-length = 79
 respect-gitignore = true
-target-version = "py315"
+target-version = "py314"
 
 [tool.ruff.format]
 docstring-code-format = true
@@ -95,6 +96,7 @@ ignore = [
   "S603",
   "S606",
   "S607",
+  "S101",
 ]
 preview = true
 
@@ -103,6 +105,16 @@ convention = "google"
 
 [tool.ruff.lint.mccabe]
 max-complexity = 5
+
+[tool.ty.environment]
+python-version = "3.14"
+
+[tool.ty.rules]
+invalid-assignment = "error"
+unsupported-operator = "error"
+call-non-callable = "error"
+index-out-of-bounds = "error"
+deprecated = "error"
 
 [tool.pyright]
 typeCheckingMode = "strict"
@@ -126,6 +138,7 @@ extraPaths = [
   "packages/lico-shim/src",
   "packages/lico-memory/src",
   "packages/lico-backup/src",
+  "packages/lico-pipeline",
 ]
 reportUnknownVariableType = "error"
 reportUnknownMemberType = "error"
