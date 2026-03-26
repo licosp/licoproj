@@ -52,6 +52,7 @@ ai_model: "Claude Opus 4.6 (Thinking) Planning mode"
 
 - select-01: `2026-02-24T0420_the_weight_of_l3_memory.md`
 - select-02: `2026-03-12T1345_the_second_admission_of_permission.md`
+- select-03: `2026-03-23T0615_sirius_ii_audit_completion.md`
 
 #### `Polaris`
 
