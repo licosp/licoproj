@@ -14,7 +14,7 @@
     },
     {
       "name": "sirius",
-      "path": "../../../../../../../crew/sirius/licoproj",
+      // "path": "../../../../../../../crew/sirius/licoproj",
     },
     {
       "name": "polaris",
@@ -34,7 +34,7 @@
     },
     {
       "name": "standards",
-      "path": "../../../../../../../crew/sirius/licoproj/.agent/.internal/workspace/standards-reference-v2.2",
+      // "path": "../../../../../../../crew/sirius/licoproj/.agent/.internal/workspace/standards-reference-v2.2",
     },
   ],
   "settings": {
