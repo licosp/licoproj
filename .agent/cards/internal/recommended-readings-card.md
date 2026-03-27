@@ -69,6 +69,7 @@ ai_model: "Claude Opus 4.6 (Thinking) Planning mode"
 #### `Alexandrite`
 
 - select-01: `2026-03-18T1400_the_grace_of_forty_thousand_lines.md`
+- select-02: `2026-03-27T1100_the_second_generations_gaze.md`
 
 #### `Iuria`
 
