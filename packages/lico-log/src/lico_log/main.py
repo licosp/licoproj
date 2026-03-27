@@ -95,8 +95,7 @@ def main() -> None:
     log_path: str = sys.argv[1]
     content_file: str = sys.argv[2]
 
-    # Self-timeout watchdog (optional but good for robustness against hangs)
-    signal.alarm(10)  # Kill self after 10 seconds if not done
+    signal.alarm(300)
 
     append_log(log_path, content_file)
 
