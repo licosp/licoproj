@@ -7,19 +7,27 @@ class EmptyDirLinter:
 
     def __init__(self, root_dir: str | None = None) -> None:
         self.root_dir = root_dir or os.getcwd()
-        self.exclude_dirs = {".git", ".venv", "node_modules", "__pycache__", ".temp", ".repos", ".trash"}
+        self.exclude_dirs = {
+            ".git",
+            ".venv",
+            "node_modules",
+            "__pycache__",
+            ".temp",
+            ".repos",
+            ".trash",
+        }
 
     def is_empty_dir(self, path: str) -> bool:
         """Check if a directory is empty (no files or sub-directories)."""
         try:
             # Check if there is anything inside
             return not any(os.scandir(path))
-        except (PermissionError, FileNotFoundError):
+        except PermissionError, FileNotFoundError:
             return False
 
     def scan(self) -> bool:
         """Scan the directory tree for empty directories.
-        
+
         Returns:
             bool: True if empty directories were found, False otherwise.
         """
@@ -29,14 +37,20 @@ class EmptyDirLinter:
         # Use os.walk to find all directories
         for root, dirs, _ in os.walk(self.root_dir):
             # In-place modify dirs to skip excluded ones and hidden ones
-            dirs[:] = [d for d in dirs if d not in self.exclude_dirs and not d.startswith(".")]
+            dirs[:] = [
+                d
+                for d in dirs
+                if d not in self.exclude_dirs and not d.startswith(".")
+            ]
 
             # Don't report the root itself
             if root == self.root_dir:
                 continue
 
             if self.is_empty_dir(root):
-                print(f"[Warning] Empty directory detected: {os.path.relpath(root, self.root_dir)}")
+                print(
+                    f"[Warning] Empty directory detected: {os.path.relpath(root, self.root_dir)}"
+                )
                 found_empty = True
 
         if found_empty:

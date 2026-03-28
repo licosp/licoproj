@@ -41,7 +41,9 @@ def test_is_empty_dir_logic(test_env: Path) -> None:
     assert linter.is_empty_dir(str(test_env / "non_empty_subdir")) is False
 
 
-def test_scanner_reports_correctly(test_env: Path, capsys: CaptureFixture[str]) -> None:
+def test_scanner_reports_correctly(
+    test_env: Path, capsys: CaptureFixture[str]
+) -> None:
     """Test the full scanner reporting."""
     linter = EmptyDirLinter(root_dir=str(test_env))
     linter.scan()
