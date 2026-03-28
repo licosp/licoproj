@@ -22,7 +22,7 @@ def find_workspace_root() -> Path:
 def handle_rm(args: list[str]) -> None:
     """Move files to .trash instead of deleting."""
     root = find_workspace_root()
-    timestamp = datetime.datetime.now(tz=datetime.timezone.utc).strftime(
+    timestamp = datetime.datetime.now(tz=datetime.UTC).strftime(
         "%Y-%m-%dT%H%M%S"
     )
     trash_path = root / ".trash" / timestamp
