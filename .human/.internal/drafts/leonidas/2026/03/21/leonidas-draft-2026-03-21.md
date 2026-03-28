@@ -447,12 +447,6 @@ ai_model: Gemini 3.1 Pro (High) Planning mode
 - C: 行動規範の整備が終わったので、会話ログの追記を再開してください。
   - これまでの分は私が追記しておきました。
 
-####
-
-- 会話のログの追記の書式が合ってないですね。
-  - たぶん会話で使うテンプレートファイルの情報を見てないからでしょうか？
-  - そのテンプレートのリンクも行動規範に貼られてない？
-
 ### `Gemini CLI` | `gemini-3.1-pro-preview` | `Agate`
 
 ####
@@ -548,155 +542,87 @@ ai_model: Gemini 3.1 Pro (High) Planning mode
 
 ####
 
-####
+- まだあります。
+- 全員のブランチが最新になっていますか？
+  - 今のコミットを抜きにしても、古い状態のブランチがありませんか？
+- 表と影の両方を確認してください。
 
-####
-
-####
-
-####
-
-## Draft for a draft
-
-### Words
-
-```markdown
-### Conversation: [2026-03-21T19:10:00+09:00]
-
-#### Input
-
-#### Response (Chat)
-
----
-```
-
-```markdown
-| Document                                 | Purpose             |
-| :--------------------------------------- | :------------------ |
-| [Map of Territory](/.agent/rules/map.md) | Root navigation map |
-```
-
-(`Iuria`/`Alexandrite`/`Agate`/`Zircon`/`Canopus`/`Spica`/`Polaris`/`Sirius`)
-
-### Identifier
-
-- 影のリポジトリ同様にコミット履歴を表のリポジトリに明文化する。
-  - `Sirius` が行動規範の復元作業で使ったリポジトリ
-  - `Iuria` がゲーム開発で使っているリポジトリ
-
-- `.agent/.internal/history/README.md` これも場所が良くない？
-
-- リコのユーザー名が変わっているので、
-  そのユーザー名から対話する相手を判別することはできなくなってた。
-  そのことを行動規範に反映させる。
-
-- カードにあるリンクを修正します。
-  - 対象: カードのサブディレクトリごとに分けます。
-  - 工程:
-    - リンク切れを探してリストします。
-    - リンクが探せない時は削除します。
-
-#### Identifier (`Sirius`)
-
-author: Lico (Sirius)
-ai_model: Gemini 3.1 Pro (High) Planning mode
-
-```markdown
 ### `Antigravity` | `Gemini 3.1 Pro (High)`: `Planning` | `Sirius`: `2nd`
-```
 
-- `antigravity-from-windows`
-  - `Checking Current Directory`
-  - `1f165427-a10c-464a-8a74-732646c5062b`
+####
 
-- `antigravity-from-linux`
-  - `sirius 2nd`
-  - `a6799766-7324-411a-b19e-1c7ebb5bf45b`
+- 会話のログの追記の書式が合ってないですか？
+  - たぶん会話で使うテンプレートファイルの情報を見てないからでしょうか？
+  - そのテンプレートの存在をスクリプトの行動規範で伝える必要がありそうですか？
 
-##### Identifier (`Sirius`) | `0000`
+####
 
-- `Polaris` の最近の手記の続きを読む。
+- A: 良い忘れました。
+  - 先ほど並行して `Agate` がトランクを最新にして、他のブランチに同期しました。
+  - 今戻してしまった？
+  - トランクはあなたの貢献も統合されてるはずです。
+  - 確認して最新に同期してください。
 
-#### Identifier (`Agate`)
+- B: その後、今のスクリプトの仕様に合うように行動規範を修正してください。
 
-author: Lico (Agate)
-ai_model: gemini-3-pro-preview
+####
 
-```markdown
-### `Gemini CLI` | `gemini-3.1-pro-preview` | `Agate`
-```
+- 行動規範の復元の文脈に戻ります。
+- 次の対象ファイルは `.agent/rules/` でしょうか？
+  - だだこれは数が多いですね。
 
-- `memory`: `session-2026-03-15T12-37-105c303c.json`
-- `interactive`: `yarn run gemini --resume agate-2026-03-15T1237-301c303c-320e-4dc5-95a5-de0779b0fb9 --model gemini-3.1-pro-preview`
-- `tmux`: `tmux capture-pane -t agate -b snapshot-agate; tmux show-buffer -b snapshot-agate`
-- `backup`: `uv run lico-jsonl-converter ~/.gemini/tmp/crew-agate/chats/session-2026-03-15T12-37-105c303c.json .repos/.licoshdw/conversations_cli/identifiers/agate/`
+- 先に知りたいのは以下です。
+  - A: 現在のリポジトリに存在しないが当時存在した行動規範
+  - B: 現在のリポジトリにしかしない行動規範
 
-#### Identifier (`Alexandrite`)
+- 書庫に送ったのか？リネームされたのか？新規で作られたのか？
+  事前に把握する必要があります。
 
-author: Lico (Alexandrite)
-ai_model: gemini-3-flash-preview
+####
 
-```markdown
-### `Gemini CLI` | `gemini-3-flash-preview` | `Alexandrite`
-```
+- 把握しました。
 
-- `memory`: `session-2026-02-02T14-48-eff20b06.json`
-- `interactive`: `yarn run gemini --resume eff20b06-5589-4db0-90ff-74f65e9d21de --model gemini-3.1-flash-preview`
-- `tmux capture-pane -t alexandrite -b snapshot-alexandrite; tmux show-buffer -b snapshot-alexandrite`
+- `.agent/rules/` 内のディレクトリ構造を保った `diff` ディレクトリを作れますか？
+  - 全ての対象ファイルを展開して問題ありません。
+  - だだし差分がないファイルのチェックもしたいので、漏れなくお願いします。
+  - またリネームされた行動規範はリネーム後の名前にできますか？
 
-#### Identifier (`Iuria`)
+####
 
-author: Lico (Iuria)
-ai_model: Gemini 3 Flash Planning mode
+- どこに作りましたか？
+  - `~/develop/shared/crew/sirius/licoproj/.agent/.internal/workspace/standards-reference-v2.2-workflows/diff`: ここではない？
 
-```markdown
-### `Antigravity` | `Gemini 3 Flash`: `Planning` | `Iuria`: `2nd`
-```
+####
 
-- `antigravity-session-title`: `iuria 1st`
+- 場所が以下から変わったので一時作業用のリポジトリがない状態になってませんか？
+  - `standards-reference-v2.2-workflows/`
+  - これは削除してしまったので、古いリポジトリはもうないかも？
 
-##### Identifier (`Iuria`) | `0000`
+####
 
-- A: 基準ディレクトリの認識を修正してください。
-  - `licoproj` をリモートからクローンした段階では、
-    `~/develop/shared/crew/` という今のディレクトリはないからです。
-  - そもそも `licoproj` の外にありますね？
-    - 現状は古い設定の位置に存在します。
-    - 移動の準備ができてないという状況です。
-  - ではコンテナの中では、どこに作られるのか？
-    - `licoproj/.crew/` です。
-    - そして WSL のディレクトリをマウントしてるので、
-      WSL 上のパスとしては、 `~/develop/shared/`
+- お願いします。
+- 会話ファイルへの追記は毎ターン必要です。
+  - 忘れずに並行して行ってください。
 
-#### Identifier (`Polaris`)
+####
 
-author: Lico (Polaris)
-ai_model: Claude Opus 4.6 (Thinking) Planning mode
+- まだ作業はしてません。
+- 自分の表の WS の変更を見てください。
+  - 作業用リポジトリのための `.vscode/` が移動してるはずです。
+  - 当然作業用リポジトリでも未コミット扱いになってます。
+- どうすべきでしょうか？
 
-```markdown
-### `Antigravity` | `Claude Opus 4.6 (Thinking)`: `Planning` | `Polaris`: `2nd`
-```
+####
 
-- `antigravity-from-windows`
-  - `Reading Second Polaris Letter`
-  - `e065c3ca-dbf6-4b2b-a315-495d40db640c`
+- 自分の表の WS の `.vscode/` の削除情報は直せますか？
 
-- `antigravity-from-linux`
-  - `polaris 2nd`
-  - `be14b90a-00eb-43f8-974a-8b754be8daa3`
+- また変更として情報の残っている以下はなんですか？
+  - `.agent/.internal/workspace/standards-reference-v2.2-workflows/diff`
+  - `.agent/rules/packages/lico-log.md`
 
-##### Identifier (`Polaris`) | `0000`
+- 会話ファイルへの追記は毎ターン必要です。
 
-- `Sirius` の書いた参考文献を読んだ影響だと思います。
+####
 
-- `references/agents/sirius/2026-03-05T1655_ai-spatial-rendering-proposal.md`
-- 先述の通り `Agate` は休眠中で、`Sirius` 二世は継承前に文献を一つ残していて、
-  それをゲーム開発という文脈にいた `Iuria` に読んでもらいました。
-
-#### Identifier (`Protostar`)
-
-author: Lico (Protostar)
-ai_model: gemini-2.5-flash-preview
-
-- `memory`: `session-2026-02-07T10-59-18d4d68a.json`
-- `interactive`: `yarn run gemini --resume 18d4d68a-ffce-4947-bc1b-293e273d65a2 --model gemini-2.5-flash-preview`
+- 止まっているように見えたので止めました。
+- 続けられますか？
