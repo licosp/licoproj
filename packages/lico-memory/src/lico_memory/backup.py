@@ -38,7 +38,7 @@ def get_existing_ids(file_path: Path) -> set[str]:
                         m_id = obj.get("messageId")
                         if s_id is not None and m_id is not None:
                             msg_id = f"{s_id}_{m_id}"
-                    
+
                     if msg_id:
                         existing_ids.add(msg_id)
                 except json.JSONDecodeError:
@@ -83,20 +83,20 @@ def main() -> None:
 
     if isinstance(data, list):
         messages = data
-        data = None # No metadata to save
+        data = None  # No metadata to save
     elif isinstance(data, dict):
         messages = data.pop("messages", [])
         has_metadata = True
     else:
         print("Error: Unknown JSON root structure.", file=sys.stderr)
         sys.exit(1)
-        
+
     output_root.mkdir(parents=True, exist_ok=True)
-    
+
     # 1. Save Metadata if present
     if has_metadata and data:
         meta_path = output_root / "metadata.json"
-        
+
         # Merge existing metadata if present (to preserve overarching info if updating)
         if meta_path.exists():
             try:
@@ -106,7 +106,7 @@ def main() -> None:
                     data = existing_meta
             except Exception:
                 pass
-                
+
         with meta_path.open("w", encoding="utf-8") as mf:
             json.dump(data, mf, indent=2, ensure_ascii=False)
 
@@ -123,7 +123,7 @@ def main() -> None:
 
     for msg in messages:
         timestamp = msg.get("timestamp")
-        
+
         msg_id = msg.get("id")
         if not msg_id:
             s_id = msg.get("sessionId")
@@ -137,19 +137,19 @@ def main() -> None:
         date_path = parse_date(timestamp)
         target_dir = messages_root / date_path
         target_file = target_dir / "log.jsonl"
-        
+
         if target_file not in new_messages_by_file:
             new_messages_by_file[target_file] = []
-            
+
         new_messages_by_file[target_file].append(msg)
 
     # Process each target file: Read existing -> Merge -> Deduplicate -> Sort -> Write
     for target_file, new_msgs in new_messages_by_file.items():
         target_file.parent.mkdir(parents=True, exist_ok=True)
-        
+
         merged_msgs = []
         known_ids = set()
-        
+
         # 1. Read existing
         if target_file.exists():
             try:
@@ -159,7 +159,7 @@ def main() -> None:
                             continue
                         try:
                             obj = json.loads(line)
-                            
+
                             # Determine ID
                             obj_id = obj.get("id")
                             if not obj_id:
@@ -167,15 +167,18 @@ def main() -> None:
                                 m_id = obj.get("messageId")
                                 if s_id is not None and m_id is not None:
                                     obj_id = f"{s_id}_{m_id}"
-                            
+
                             if obj_id:
                                 known_ids.add(obj_id)
                             merged_msgs.append(obj)
                         except json.JSONDecodeError:
                             pass
             except Exception as e:
-                print(f"Warning: Failed to read {target_file}: {e}", file=sys.stderr)
-        
+                print(
+                    f"Warning: Failed to read {target_file}: {e}",
+                    file=sys.stderr,
+                )
+
         # 2. Merge new messages (with deduplication)
         for msg in new_msgs:
             msg_id = msg.get("id")
@@ -184,27 +187,35 @@ def main() -> None:
                 m_id = msg.get("messageId")
                 if s_id is not None and m_id is not None:
                     msg_id = f"{s_id}_{m_id}"
-                    
+
             if msg_id and msg_id in known_ids:
                 count_skipped += 1
                 continue
-                
+
             merged_msgs.append(msg)
             if msg_id:
                 known_ids.add(msg_id)
             count_added += 1
-            
+
         # 3. Sort by timestamp
         merged_msgs.sort(key=lambda x: x.get("timestamp", ""))
-        
+
         # 4. Write back (Overwrite)
         # Minify each line with separators=(",", ":") and normalize keys with sort_keys=True
         with target_file.open("w", encoding="utf-8") as f:
             for msg in merged_msgs:
-                line = json.dumps(msg, separators=(",", ":"), ensure_ascii=False, sort_keys=True)
+                line = json.dumps(
+                    msg,
+                    separators=(",", ":"),
+                    ensure_ascii=False,
+                    sort_keys=True,
+                )
                 f.write(line + "\n")
 
-    print(f"Done. Metadata saved. Added: {count_added}, Skipped (already existed): {count_skipped}. Output root: {output_root}")
+    print(
+        f"Done. Metadata saved. Added: {count_added}, Skipped (already existed): {count_skipped}. Output root: {output_root}"
+    )
+
 
 if __name__ == "__main__":
     main()
