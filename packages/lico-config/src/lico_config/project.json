@@ -1,0 +1,38 @@
+{
+  "app": {
+    "sleep": 5,
+    "label": "Tactics Ogre Reborn.exe",
+    "commands": [
+      "/mnt/d/develop/shared/project/licotor/tools/version/1.0.8/tor.exe"
+    ]
+  },
+  "sync": {
+    "branch": { "hub": "trunk", "windows": "deneb-windows" },
+    "target": [
+      "packages",
+      "tools",
+      ".python-version",
+      "package-lock.json",
+      "package.json",
+      "pyproject.toml",
+      "uv.lock",
+      "yarn.lock"
+    ]
+  },
+  "windows": {
+    "system": {
+      "tasklist": "/mnt/c/Windows/System32/tasklist.exe",
+      "taskkill": "/mnt/c/Windows/System32/taskkill.exe",
+      "powershell": "/mnt/c/Windows/System32/WindowsPowerShell/v1.0/powershell.exe"
+    },
+    "tools": {
+      "git": "/mnt/d/develop/tools/install/outside/git/bin/git.exe",
+      "uv": "/mnt/d/develop/tools/install/outside/uv/uv.exe",
+      "yarn": "/mnt/d/develop/tools/install/outside/yarn/bin/yarn.exe"
+    },
+    "vision": {
+      "capture": "/mnt/d/develop/shared/project/licotor/crew/deneb/packages/lico-vision/src/lico_vision/capture.ps1",
+      "screen": "/mnt/d/develop/shared/project/licotor/crew/deneb/packages/lico-vision/.temp/vision/screen-latest.png"
+    }
+  }
+}

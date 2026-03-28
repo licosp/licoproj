@@ -1,0 +1,26 @@
+{
+  "app": {
+    "sleep": 10,
+    "label": "TestApp.exe",
+    "commands": ["test_app.exe", "--arg"]
+  },
+  "sync": {
+    "branch": { "hub": "test-trunk", "windows": "test-windows" },
+    "target": ["src", "tests"]
+  },
+  "windows": {
+    "system": {
+      "tasklist": "/mnt/c/sys/tasklist.exe",
+      "taskkill": "/mnt/c/sys/taskkill.exe",
+      "powershell": "/mnt/c/sys/ps/powershell.exe"
+    },
+    "tools": {
+      "uv": "/mnt/c/bin/uv.exe",
+      "git": "/mnt/c/bin/git.exe"
+    },
+    "vision": {
+      "capture": "/mnt/d/test/root/pkg/vision/src/vision/capture.ps1",
+      "screen": "/mnt/d/test/root/screen.webp"
+    }
+  }
+}

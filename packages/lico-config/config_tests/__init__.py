@@ -1,0 +1,1 @@
+"""Lico Config tests."""
