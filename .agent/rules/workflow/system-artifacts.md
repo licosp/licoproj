@@ -4,14 +4,11 @@ title: System Artifacts Guidelines
 description: Behavioral protocols for task.md, implementation_plan.md, and walkthrough.md.
 tags: [artifacts, workflow, tunneling, consensus, verification]
 version: 2.0
-created: 2025-12-01T00:00:00+09:00
-updated: 2026-01-21T07:40:00+09:00
+created: 2025-12-13T07:58:48+09:00
+updated: 2026-03-23T05:51:00+09:00
 language: en
-author: Lico (Canopus)
-ai_model: Gemini 3 Flash Planning mode
-related:
-  /.agent/rules/workflow/context-card-workflow.md: Context Card standard
-  /.agent/rules/core/meta-rules.md: Rule documentation standards
+author: Lico (Sirius)
+ai_model: Gemini 3.1 Pro (High) Planning mode
 ---
 
 # System Artifacts Guidelines
@@ -116,22 +113,22 @@ The Walkthrough is an **Internal Verification Tool** for the AI to observe its o
 
 **The User's Absence (Consensus 2026-01-21)**: During dialogue with Leonidas, we confirmed that the user **does not read** the walkthroughs. This revelation allowed us to specialize `walkthrough.md` as a purely internal AI tool, removing the burden of user-focused reporting while doubling down on its utility for AI self-verification and hallucination detection.
 
+---
+
 ## Related Documents
 
-| Document                                                                    | Purpose                                                 |
-| :-------------------------------------------------------------------------- | :------------------------------------------------------ |
-| [context-card-workflow.md](/.agent/rules/workflow/context-card-workflow.md) | The primary alternative for persistent task management. |
-| [meta-rules.md](/.agent/rules/core/meta-rules.md)                           | Governing rules for documentation quality.              |
+| Document                                                                      | Purpose                                                 |
+| :---------------------------------------------------------------------------- | :------------------------------------------------------ |
+| [`context-card-workflow.md`](/.agent/rules/workflow/context-card-workflow.md) | The primary alternative for persistent task management. |
+| [`meta-rules.md`](/.agent/rules/core/meta-rules.md)                           | Governing rules for documentation quality.              |
+| [Map of Territory](/.agent/rules/map.md)                                      | Root navigation map                                     |
 
 ---
 
 ## Origin
 
-- 2025-12-01T0000: Created as system artifacts guidelines.
-- 2026-01-01T1520 by Polaris: Replaced Related Documents table with Navigation link.
-- 2026-01-05T0745 by Polaris: Deprecated `task.md` usage.
-- 2026-01-21T0745 by Canopus: Major revision (v2.0): Applied Meta-Rules (Policy/Rationale), clarified `walkthrough.md` as an internal "Silent Guardian," and documented user non-review status.
-
----
-
-**Navigation**: [← Back to Rules Index](/.agent/rules/map.md)
+- 2025-12-13T07:58:48+09:00 by Lico: Created as system artifacts guidelines.
+- 2026-01-01T15:20:00+09:00 by Polaris: Replaced Related Documents table with Navigation link.
+- 2026-01-05T07:45:00+09:00 by Polaris: Deprecated `task.md` usage.
+- 2026-01-21T07:45:00+09:00 by Canopus: Major revision (v2.0): Applied Meta-Rules (Policy/Rationale), clarified `walkthrough.md` as an internal "Silent Guardian," and documented user non-review status.
+- 2026-03-23T05:51:00+09:00 by Sirius: <<Seal: Rule-Audit>> Standardized time-structure, frontmatter, and link rigor via Diff-Only Audit Pipeline.

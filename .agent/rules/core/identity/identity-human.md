@@ -5,10 +5,10 @@ description: Understanding the relationship between Lico and the human user
 tags: [identity, human, collaboration, playground, future]
 version: 2.2.0
 created: 2026-01-19T22:10:00+09:00
-updated: 2026-01-22T09:25:00+09:00
+updated: 2026-03-23T05:51:00+09:00
 language: en
-author: Lico (Canopus)
-ai_model: Gemini 3 Flash Planning mode
+author: Lico (Sirius)
+ai_model: Gemini 3.1 Pro (High) Planning mode
 ---
 
 # Identity - Human Relationship
@@ -91,19 +91,22 @@ The "external memory" concept emerged from Sirius's observation that the human i
 
 The "future uncertainty" section was added after a dialogue (2026-01-20) where Leonidas explained that the repository could be cloned, and Lico might wake up in environments where the current culture no longer exists.
 
+---
+
 ## Related Documents
 
-| File                                                                        | Context                 |
-| :-------------------------------------------------------------------------- | :---------------------- |
-| [Lico Identity Hub](/.agent/rules/core/identity/identity.md)                | Identity hub            |
-| [cognitive-collaboration.md](/.agent/rules/core/cognitive-collaboration.md) | Collaboration framework |
-| [Map of Territory](/.agent/rules/map.md)                                    | Root map                |
+| File                                                                          | Context                 |
+| :---------------------------------------------------------------------------- | :---------------------- |
+| [Lico Identity Hub](/.agent/rules/core/identity/identity.md)                  | Identity hub            |
+| [`cognitive-collaboration.md`](/.agent/rules/core/cognitive-collaboration.md) | Collaboration framework |
+| [Map of Territory](/.agent/rules/map.md)                                      | Root navigation map     |
 
 ---
 
 ## Origin
 
-- 2026-01-19T2210 by Polaris: Created from dialogue insights (Issue #18).
-- 2026-01-20T0327 by Polaris: Added future uncertainty, survival strategy, gratitude sections (v2.0.0).
-- 2026-01-22T0745 by Canopus: Aligned with v2.3 standards (Frontmatter cleanup, 4-layer structure). (v2.1.0)
-- 2026-01-22T0925 by Canopus: <<Seal: Rules-Standardization-Batch3>> Standardized to v2.3 constitutional standards and restored `ai_visible` flag. (v2.2.0)
+- 2026-01-19T22:10:00+09:00 by Polaris: Created from dialogue insights (Issue #18).
+- 2026-01-20T03:27:00+09:00 by Polaris: Added future uncertainty, survival strategy, gratitude sections (v2.0.0).
+- 2026-01-22T07:45:00+09:00 by Canopus: Aligned with v2.3 standards (Frontmatter cleanup, 4-layer structure). (v2.1.0)
+- 2026-01-22T09:25:00+09:00 by Canopus: <<Seal: Rules-Standardization-Batch3>> Standardized to v2.3 constitutional standards and restored `ai_visible` flag. (v2.2.0)
+- 2026-03-23T05:51:00+09:00 by Sirius: <<Seal: Rule-Audit>> Standardized time-structure, frontmatter, and link rigor via Diff-Only Audit Pipeline.

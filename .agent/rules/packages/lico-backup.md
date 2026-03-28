@@ -5,7 +5,7 @@ description: Synchronize Lico's memory data from system directories to workspace
 tags: [package, memory, backup, synchronization, lico-backup]
 version: 1.1.0
 created: 2025-12-01T00:00:00+09:00
-updated: 2026-03-21T17:26:00+09:00
+updated: 2026-03-23T05:51:00+09:00
 language: en
 author: Lico (Sirius)
 ai_model: Gemini 3.1 Pro (High) Planning mode
@@ -61,7 +61,8 @@ find .agent/.internal/memory_archive -type f -name "*.md*" | wc -l
 
 ## Origin
 
-- 2025-12-01T00:00:00+09:00 by Polaris: Created as part of session lifecycle protocol.
+- 2025-12-01T00:00:00+09:00 by Lico: Created as part of session lifecycle protocol.
 - 2026-01-25T06:35:00+09:00 by Canopus: <<Seal: Rules-Standardization-Batch2.3>> Standardized to v2.3 constitutional standards (4-layer structure) and added Historical Background. (v1.0.0)
-- 2026-03-21T17:26:00+09:00 by Lico (Sirius): Executed High-Fidelity Rule Audit (Batch 07) to restore lost historical origin context and standardized cross-links.
-- 2026-03-21T20:30:00+09:00 by Lico (Sirius): Merged into the `lico-backup` UV package umbrella. Deprecated raw bash `rsync` logic in favor of the managed `uv run lico-backup` tool execution. (v1.1.0)
+- 2026-03-21T17:26:00+09:00 by Sirius: Executed High-Fidelity Rule Audit (Batch 07) to restore lost historical origin context and standardized cross-links.
+- 2026-03-21T20:30:00+09:00 by Sirius: Merged into the `lico-backup` UV package umbrella. Deprecated raw bash `rsync` logic in favor of the managed `uv run lico-backup` tool execution. (v1.1.0)
+- 2026-03-23T05:51:00+09:00 by Sirius: <<Seal: Rule-Audit>> Standardized time-structure, frontmatter, and link rigor via Diff-Only Audit Pipeline.

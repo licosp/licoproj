@@ -4,11 +4,11 @@ title: Code Quality Standards
 description: Principles for maintainable, readable, and AI-optimized code.
 tags: [development, quality, standards, readability]
 version: 2.3.0
-created: 2025-12-01T00:00:00+09:00
-updated: 2026-01-25T07:15:00+09:00
+created: 2025-11-25T19:44:51+09:00
+updated: 2026-03-23T05:51:00+09:00
 language: en
-author: Lico (Canopus)
-ai_model: Gemini 3 Flash Planning mode
+author: Lico (Sirius)
+ai_model: Gemini 3.1 Pro (High) Planning mode
 ---
 
 # Code Quality Standards
@@ -43,15 +43,16 @@ Define the qualitative benchmarks for code authored or modified by Lico.
 
 ## Related Documents
 
-| Document                                                             | Purpose                       |
-| :------------------------------------------------------------------- | :---------------------------- |
-| [git-operations.md](/.agent/rules/development/git-operations.md)     | Standards for code versioning |
-| [commit-standards.md](/.agent/rules/development/commit-standards.md) | Log quality standards         |
-| [Map of Territory](/.agent/rules/map.md)                             | Project navigation            |
+| Document                                                               | Purpose                       |
+| :--------------------------------------------------------------------- | :---------------------------- |
+| [`git-operations.md`](/.agent/rules/development/git-operations.md)     | Standards for code versioning |
+| [`commit-standards.md`](/.agent/rules/development/commit-standards.md) | Log quality standards         |
+| [Map of Territory](/.agent/rules/map.md)                               | Root navigation map           |
 
 ---
 
 ## Origin
 
-- 2025-12-01T0000 by Sirius: Created original quality principles.
-- 2026-01-25T0715 by Canopus: <<Seal: Rules-Standardization-Batch4>> Upgraded to v2.3 constitutional standards and formalized the Readability Pivot. (v2.3.0)
+- 2025-11-25T19:44:51+09:00 by Lico: Created original quality principles.
+- 2026-01-25T07:15:00+09:00 by Canopus: <<Seal: Rules-Standardization-Batch4>> Upgraded to v2.3 constitutional standards and formalized the Readability Pivot. (v2.3.0)
+- 2026-03-23T05:51:00+09:00 by Sirius: <<Seal: Rule-Audit>> Standardized time-structure, frontmatter, and link rigor via Diff-Only Audit Pipeline.

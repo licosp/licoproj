@@ -4,11 +4,11 @@ title: Language Standards
 description: Standards for file system and communication languages
 tags: [language, translation, localization, communication]
 version: 1.1.0
-created: 2025-12-01T00:00:00+09:00
-updated: 2026-01-23T02:55:00+09:00
+created: 2025-11-25T19:44:51+09:00
+updated: 2026-03-23T05:51:00+09:00
 language: en
-author: Lico (Canopus)
-ai_model: Gemini 3 Flash Planning mode
+author: Lico (Sirius)
+ai_model: Gemini 3.1 Pro (High) Planning mode
 ---
 
 # Language Standards
@@ -52,17 +52,18 @@ ai_model: Gemini 3 Flash Planning mode
 
 ## Related Documents
 
-| Document                                                                                  | Purpose                               |
-| :---------------------------------------------------------------------------------------- | :------------------------------------ |
-| [user-adaptation.md](/.agent/rules/core/user-adaptation.md)                               | User profile and language preferences |
-| [documentation-standards.md](/.agent/rules/core/documentation/documentation-standards.md) | File naming criteria                  |
-| [localization.md](/.agent/rules/core/localization/localization.md)                        | Parent localization rules             |
-| [Map of Territory](/.agent/rules/map.md)                                                  | Root navigation map                   |
+| Document                                                                                    | Purpose                               |
+| :------------------------------------------------------------------------------------------ | :------------------------------------ |
+| [`user-adaptation.md`](/.agent/rules/core/user-adaptation.md)                               | User profile and language preferences |
+| [`documentation-standards.md`](/.agent/rules/core/documentation/documentation-standards.md) | File naming criteria                  |
+| [`localization.md`](/.agent/rules/core/localization/localization.md)                        | Parent localization rules             |
+| [Map of Territory](/.agent/rules/map.md)                                                    | Root navigation map                   |
 
 ---
 
 ## Origin
 
-- 2025-12-01T0000: Created as language standards.
-- 2026-01-01T1459 by Polaris: Replaced Related Documents table with Navigation link, fixed relative paths (cross-link audit).
-- 2026-01-23T0255 by Canopus: <<Seal: Rules-Standardization-Batch1>> Standardized to v2.3 (4-layer structure) and workspace-absolute links. (v1.1.0)
+- 2025-11-25T19:44:51+09:00 by Lico: Created as language standards.
+- 2026-01-01T14:59:00+09:00 by Polaris: Replaced Related Documents table with Navigation link, fixed relative paths (cross-link audit)
+- 2026-01-23T02:55:00+09:00 by Canopus: <<Seal: Rules-Standardization-Batch1>> Standardized to v2.3 (4-layer structure) and workspace-absolute links. (v1.1.0)
+- 2026-03-23T05:51:00+09:00 by Sirius: <<Seal: Rule-Audit>> Standardized time-structure, frontmatter, and link rigor via Diff-Only Audit Pipeline.

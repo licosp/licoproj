@@ -1,9 +1,14 @@
 ---
-description: Protocols for emergency offloading of cognitive context (Cognitive Stashing)
-related:
-  .agent/rules/workflow/context-resumption.md: How to restore context after preservation
-  .agent/rules/workflow/letters-documentation.md: For handoff to other identifiers (use letters)
-  .agent/rules/workflow/context-card-workflow.md: For structured ongoing work (use cards)
+ai_visible: true
+title: "Context Preservation (Cognitive Stashing)"
+description: "Protocols for emergency offloading of cognitive context (Cognitive Stashing)"
+tags: ["workflow", "context", "preservation", "stash"]
+version: 1.2.0
+created: 2025-12-13T00:07:43+09:00
+updated: 2026-03-23T05:51:00+09:00
+language: en
+author: Lico (Sirius)
+ai_model: Gemini 3.1 Pro (High) Planning mode
 ---
 
 # Context Preservation (Cognitive Stashing)
@@ -18,21 +23,21 @@ When facing cognitive overload or emergency situations, the Agent offloads curre
 
 Stash is for **emergency context evacuation**:
 
-| Use Case | Description |
-|:---------|:------------|
-| **No Card Available** | The context doesn't fit any existing card |
-| **Too Small for Card** | Not worth creating a dedicated card |
-| **Multiple Contexts** | Holding several threads, need to write one out |
-| **Cognitive Overload** | "I am confused" or "Too many files open" |
-| **Sudden Interruption** | User asks to "pause this and do that" |
+| Use Case                | Description                                    |
+| :---------------------- | :--------------------------------------------- |
+| **No Card Available**   | The context doesn't fit any existing card      |
+| **Too Small for Card**  | Not worth creating a dedicated card            |
+| **Multiple Contexts**   | Holding several threads, need to write one out |
+| **Cognitive Overload**  | "I am confused" or "Too many files open"       |
+| **Sudden Interruption** | User asks to "pause this and do that"          |
 
 ## When NOT to Use Stash
 
-| Situation | Use Instead |
-|:----------|:------------|
-| Ongoing structured work | **Card** (`.agent/cards/`) |
+| Situation                  | Use Instead                              |
+| :------------------------- | :--------------------------------------- |
+| Ongoing structured work    | **Card** (`.agent/cards/`)               |
 | Passing to next identifier | **Letter** (`.agent/.internal/letters/`) |
-| End of session handoff | **Letter** |
+| End of session handoff     | **Letter**                               |
 
 ---
 
@@ -66,8 +71,9 @@ Stash is for **emergency context evacuation**:
 
 ```markdown
 # Stash: Rule Candidate Review
+
 - **Status**: Analyzed 15 files.
-- **Decisions**: 
+- **Decisions**:
   - Adopt: A, B, C
   - Archive: D, E
 - **Next Step**: Create move commands for Group 2.
@@ -78,19 +84,27 @@ Stash is for **emergency context evacuation**:
 
 ## Location
 
-| State | Location |
-|:------|:---------|
-| **Active Stash** | `.agent/.internal/workspace/` |
+| State              | Location                                        |
+| :----------------- | :---------------------------------------------- |
+| **Active Stash**   | `.agent/.internal/workspace/`                   |
 | **Archived Stash** | `.agent/.internal/working-memory/{identifier}/` |
+
+---
+
+## Related Documents
+
+| Document                                                                      | Purpose                                        |
+| :---------------------------------------------------------------------------- | :--------------------------------------------- |
+| [`context-resumption.md`](/.agent/rules/workflow/context-resumption.md)       | How to restore context after preservation      |
+| [`letters-documentation.md`](/.agent/rules/workflow/letters-documentation.md) | For handoff to other identifiers (use letters) |
+| [`context-card-workflow.md`](/.agent/rules/workflow/context-card-workflow.md) | For structured ongoing work (use cards)        |
+| [Map of Territory](/.agent/rules/map.md)                                      | Root navigation map                            |
 
 ---
 
 ## Origin
 
-- 2025-12-01T0000: Created as context preservation protocol
-- 2026-01-01T1520 by Polaris: Replaced Related Documents table with Navigation link (cross-link audit)
-- 2026-01-03T2156 by Polaris: Clarified stash as emergency evacuation only, removed handoff (now in letters)
-
----
-
-**Navigation**: [← Back to Rules Index](.agent/rules/README.md)
+- 2025-12-13T00:07:43+09:00 by Lico: Created as context preservation protocol.
+- 2026-01-01T15:20:00+09:00 by Polaris: Replaced Related Documents table with Navigation link (cross-link audit)
+- 2026-01-03T21:56:00+09:00 by Polaris: Clarified stash as emergency evacuation only, removed handoff (now in letters)
+- 2026-03-23T05:51:00+09:00 by Sirius: <<Seal: Rule-Audit>> Standardized time-structure, frontmatter, and link rigor via Diff-Only Audit Pipeline.

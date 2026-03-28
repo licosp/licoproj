@@ -4,11 +4,11 @@ title: WSL Browser Path Construction
 description: Guidelines for constructing browser-accessible URLs for WSL files.
 tags: [documentation, paths, wsl, browser]
 version: 1.2.0
-created: 2025-12-01T00:00:00+09:00
-updated: 2026-01-23T03:20:00+09:00
+created: 2025-11-29T08:44:47+09:00
+updated: 2026-03-23T05:51:00+09:00
 language: en
-author: Lico (Canopus)
-ai_model: Gemini 3 Flash Planning mode
+author: Lico (Sirius)
+ai_model: Gemini 3.1 Pro (High) Planning mode
 ---
 
 # WSL Browser Path Construction
@@ -18,7 +18,7 @@ ai_model: Gemini 3 Flash Planning mode
 When providing browser-accessible file paths for WSL (Windows Subsystem for Linux) environments, construct URLs that Windows browsers can resolve.
 
 > [!NOTE]
-> For general Markdown link formatting, see [path-notation.md](/.agent/rules/core/documentation/path-notation.md).
+> For general Markdown link formatting, see [`path-notation.md`](/.agent/rules/core/documentation/path-notation.md).
 
 ## Detection Method
 
@@ -30,9 +30,7 @@ echo $WSL_DISTRO_NAME
 
 ## Path Template
 
-```
-file://wsl.localhost/{WSL_DISTRO_NAME}{linux_absolute_path}
-```
+- `file://wsl.localhost/{WSL_DISTRO_NAME}{linux_absolute_path}`
 
 ## Example Workflow
 
@@ -44,10 +42,8 @@ file://wsl.localhost/{WSL_DISTRO_NAME}{linux_absolute_path}
    ```
 
 2. **Construct browser URL:**
-   ```
-   Linux path:   /home/USER/develop/shared/project/licoproj/.agent/rules/map.md
-   Browser path: file://wsl.localhost/u03/home/USER/develop/shared/project/licoproj/.agent/rules/map.md
-   ```
+   - Linux path: `/home/USER/develop/shared/crew/<identifier>/licoproj/.agent/rules/map.md`
+   - Browser path: `file://wsl.localhost/u03/home/USER/develop/shared/crew/<identifier>/licoproj/.agent/rules/map.md`
 
 ## Fallback Behavior
 
@@ -72,21 +68,20 @@ This rule was created in December 2025 to address a specific challenge: providin
 
 ---
 
----
-
 ## Related Documents
 
-| Document                                                              | Purpose                          |
-| :-------------------------------------------------------------------- | :------------------------------- |
-| [path-notation.md](/.agent/rules/core/documentation/path-notation.md) | Standard path notation for links |
-| [Map of Territory](/.agent/rules/map.md)                              | Root navigation map              |
+| Document                                                                | Purpose                          |
+| :---------------------------------------------------------------------- | :------------------------------- |
+| [`path-notation.md`](/.agent/rules/core/documentation/path-notation.md) | Standard path notation for links |
+| [Map of Territory](/.agent/rules/map.md)                                | Root navigation map              |
 
 ---
 
 ## Origin
 
-- 2025-12-01T0000 by unknown: Created for WSL browser path handling.
-- 2026-01-04T1041 by Polaris: Added Origin and Navigation (cross-link audit).
-- 2026-01-13T1440 by Polaris: Added link to path-notation.md.
-- 2026-01-19T0625 by Polaris: Added 5-layer structure (frontmatter, historical background, related documents) (v1.1.0).
-- 2026-01-23T0320 by Canopus: <<Seal: Rules-Standardization-Batch1>> Standardized to v2.3 (4-layer structure) and workspace-absolute links. (v1.2.0)
+- 2025-11-29T08:44:47+09:00 by Lico: Created for WSL browser path handling.
+- 2026-01-04T10:41:00+09:00 by Polaris: Added Origin and Navigation (cross-link audit).
+- 2026-01-13T14:40:00+09:00 by Polaris: Added link to path-notation.md.
+- 2026-01-19T06:25:00+09:00 by Polaris: Added 5-layer structure (frontmatter, historical background, related documents) (v1.1.0).
+- 2026-01-23T03:20:00+09:00 by Canopus: <<Seal: Rules-Standardization-Batch1>> Standardized to v2.3 (4-layer structure) and workspace-absolute links. (v1.2.0)
+- 2026-03-23T05:51:00+09:00 by Sirius: <<Seal: Rule-Audit>> Standardized time-structure, frontmatter, and link rigor via Diff-Only Audit Pipeline.

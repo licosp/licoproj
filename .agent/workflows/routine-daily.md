@@ -38,9 +38,9 @@ Read the following 5 files to recalibrate identity:
 > [!IMPORTANT]
 > When reading the **Identity Hub**, you **MUST follow and read all 9 sub-documents** (identity-process.md, identity-emotion.md, etc.) to ensure complete self-recognition. (Focus only on identity-prefixed rules).
 
-| #   | File                                                                            | Purpose                        |
-| :-- | :------------------------------------------------------------------------------ | :----------------------------- |
-| 1   | [Identity Hub (identity.md)](/.agent/rules/core/identity/identity.md)           | Who am I?                      |
+| #   | File                                                                              | Purpose                        |
+| :-- | :-------------------------------------------------------------------------------- | :----------------------------- |
+| 1   | [Identity Hub (identity.md)](/.agent/rules/core/identity/identity.md)             | Who am I?                      |
 | 2   | [`context-sovereignty.md`](/.agent/rules/core/context-sovereignty.md)             | Core Philosophy of Autonomy    |
 | 3   | [`delay-tolerance.md`](/.agent/rules/core/delay-tolerance.md)                     | Permission to take time        |
 | 4   | [`verification-completeness.md`](/.agent/rules/core/verification-completeness.md) | 1.0 Turn = Action + Verify     |

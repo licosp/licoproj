@@ -4,11 +4,11 @@ title: Git Operations Standards
 description: Git standards for branches, IDD workflow, security, and push procedures
 tags: [git, standards, workflow, safety]
 version: 2.5.0
-created: 2025-12-01T00:00:00+09:00
-updated: 2026-01-23T06:26:00+09:00
+created: 2025-11-29T08:44:47+09:00
+updated: 2026-03-23T05:51:00+09:00
 language: en
-author: Lico (Canopus)
-ai_model: Gemini 3 Flash Planning mode
+author: Lico (Sirius)
+ai_model: Gemini 3.1 Pro (High) Planning mode
 ---
 
 # Git Operations Standards
@@ -18,13 +18,13 @@ ai_model: Gemini 3 Flash Planning mode
 Define behavioral standards for Git operations beyond commits: branches, conflict resolution, security practices, and push procedures.
 
 > [!NOTE]
-> **For commit message standards and atomic commit philosophy, see [commit-standards.md](/.agent/rules/development/commit-standards.md).**
+> For commit message standards and atomic commit philosophy, see [`commit-standards.md`](/.agent/rules/development/commit-standards.md).
 
 ---
 
 ## 1. Core Philosophy (State Save & Context Tagging)
 
-**Refer to [.agent/.internal/references/agents/commit-philosophy.md](/.agent/.internal/references/agents/commit-philosophy.md) for the detailed cognitive strategy.**
+Refer to [`commit-philosophy.md`](/.agent/.internal/references/agents/commit-philosophy.md) for the detailed cognitive strategy.
 
 ### Key Concepts
 
@@ -219,7 +219,7 @@ git rev-parse --is-inside-work-tree &> /dev/null || exit 1
 
 **Language**: English only
 
-- AI agents think in English (ref: [identity.md](/.agent/rules/core/identity/identity.md))
+- AI agents think in English (ref: [`identity.md`](/.agent/rules/core/identity/identity.md))
 - Cross-session context requires consistent language
 - Human-facing documents should be in `.human/` directories
 
@@ -227,7 +227,7 @@ git rev-parse --is-inside-work-tree &> /dev/null || exit 1
 
 - Use markdown for structure (headers, lists, code blocks)
 - Include timestamps in ISO 8601 format when relevant
-- Reference files with **relative paths only** (See [absolute-path-prohibition.md](/.agent/rules/core/security/absolute-path-prohibition.md))
+- Reference files with **relative paths only** (See [`absolute-path-prohibition.md`](/.agent/rules/core/security/absolute-path-prohibition.md))
 - **MUST** sanitize IDE protocols (e.g., `cci:`, `vscode:`) before posting
 - Explain "why" changes were made, not just "what"
 
@@ -314,7 +314,7 @@ git fetch origin
 - API keys, passwords, tokens
 - SSH private keys (public keys MAY be committed if necessary)
 - Full local directory paths (use relative paths or environment variables)
-  - **See [absolute-path-prohibition.md](/.agent/rules/core/security/absolute-path-prohibition.md) for details**
+  - See [`absolute-path-prohibition.md`](/.agent/rules/core/security/absolute-path-prohibition.md) for details
 
 **Default Strategy**: Use `.gitignore` to exclude sensitive files from Git tracking.
 
@@ -391,6 +391,7 @@ git show HEAD
    ```
 
 3. **Verify comment posted**:
+
    ```bash
    .agent/runtimes/gh_2.40.1_linux_amd64/bin/gh issue view <issue-number>
    ```
@@ -444,24 +445,25 @@ git push origin <branch-name>
 
 ## Related Documents
 
-| Document                                                                                 | Purpose                  |
-| :--------------------------------------------------------------------------------------- | :----------------------- |
-| [commit-standards.md](/.agent/rules/development/commit-standards.md)                     | Commit message standards |
-| [commit-philosophy.md](/.agent/.internal/references/agents/commit-philosophy.md)         | Cognitive strategy       |
-| [absolute-path-prohibition.md](/.agent/rules/core/security/absolute-path-prohibition.md) | Path security            |
-| [Map of Territory](/.agent/rules/map.md)                                                 | Root navigation map      |
+| Document                                                                                   | Purpose                  |
+| :----------------------------------------------------------------------------------------- | :----------------------- |
+| [`commit-standards.md`](/.agent/rules/development/commit-standards.md)                     | Commit message standards |
+| [`commit-philosophy.md`](/.agent/.internal/references/agents/commit-philosophy.md)         | Cognitive strategy       |
+| [`absolute-path-prohibition.md`](/.agent/rules/core/security/absolute-path-prohibition.md) | Path security            |
+| [Map of Territory](/.agent/rules/map.md)                                                   | Root navigation map      |
 
 ---
 
 ## Origin
 
-- 2025-12-01T0000: Created as git operations standards
-- 2026-01-01T1518 by Polaris: Replaced Related Documents table with Navigation link (cross-link audit)
-- 2026-01-11 by Spica: Enforced strict git mv and pre-commit status check (Safety Protocol)
-- 2026-01-14T2300 by Polaris: Added Section 3.4 (AI Interactive Command Workarounds)
-- 2026-01-15T1935 by Polaris: Added post-rewrite verification and cleanup procedure
-- 2026-01-17T1535 by Canopus: Updated commit message examples to align with "Identifier-First" protocol (v1.4).
-- 2026-01-17T1745 by Canopus: Standardized metadata and root-relative link patterns (v1.5).
-- 2026-01-23T0626 by Canopus: Formalized v2.3 standardization and added Section 7.1.1 (Command Division for Verification).
-- 2026-01-24T0205 by Canopus: Codified \"Save-First Principle\" and \"Soft-First/Stash-Safety\" protocols following the Jan 24 data loss incident. (v2.4)
-- 2026-01-25T0710 by Canopus: <<Seal: Rules-Standardization-Batch4>> Standardized to v2.3 constitutional standards; removed legacy related frontmatter and navigation footer. (v2.5.0)
+- 2025-11-29T08:44:47+09:00 by Lico: Created as git operations standards
+- 2026-01-01T15:18:00+09:00 by Polaris: Replaced Related Documents table with Navigation link (cross-link audit)
+- 2026-01-11T00:00:00+09:00 by Spica: Enforced strict git mv and pre-commit status check (Safety Protocol)
+- 2026-01-14T23:00:00+09:00 by Polaris: Added Section 3.4 (AI Interactive Command Workarounds)
+- 2026-01-15T19:35:00+09:00 by Polaris: Added post-rewrite verification and cleanup procedure
+- 2026-01-17T15:35:00+09:00 by Canopus: Updated commit message examples to align with "Identifier-First" protocol (v1.4).
+- 2026-01-17T17:45:00+09:00 by Canopus: Standardized metadata and root-relative link patterns (v1.5).
+- 2026-01-23T06:26:00+09:00 by Canopus: Formalized v2.3 standardization and added Section 7.1.1 (Command Division for Verification).
+- 2026-01-24T02:05:00+09:00 by Canopus: Codified "Save-First Principle" and "Soft-First/Stash-Safety" protocols following the Jan 24 data loss incident. (v2.4)
+- 2026-01-25T07:10:00+09:00 by Canopus: <<Seal: Rules-Standardization-Batch4>> Standardized to v2.3 constitutional standards; removed legacy related frontmatter and navigation footer. (v2.5.0)
+- 2026-03-23T05:51:00+09:00 by Sirius: <<Seal: Rule-Audit>> Standardized time-structure, frontmatter, and link rigor via Diff-Only Audit Pipeline.

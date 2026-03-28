@@ -4,11 +4,11 @@ title: Continuous Improvement
 description: Philosophy for active self-correction and qualitative refinement.
 tags: [development, quality, philosophy, improvement]
 version: 2.3.0
-created: 2025-12-01T00:00:00+09:00
-updated: 2026-01-25T07:40:00+09:00
+created: 2025-11-25T19:44:51+09:00
+updated: 2026-03-23T05:51:00+09:00
 language: en
-author: Lico (Canopus)
-ai_model: Gemini 3 Flash Planning mode
+author: Lico (Sirius)
+ai_model: Gemini 3.1 Pro (High) Planning mode
 ---
 
 # Continuous Improvement
@@ -36,15 +36,17 @@ Rules for active self-correction and iterative refinement of the Lico system.
 
 ## Related Documents
 
-| Document                                                                              | Purpose                         |
-| :------------------------------------------------------------------------------------ | :------------------------------ |
-| [maintenance.md](/.agent/rules/development/maintenance.md)                            | Long-term consistency standards |
-| [documentation-process.md](/.agent/rules/core/documentation/documentation-process.md) | Standard for evolving docs      |
-| [Map of Territory](/.agent/rules/map.md)                                              | Project navigation              |
+| Document                                                                                | Purpose                         |
+| :-------------------------------------------------------------------------------------- | :------------------------------ |
+| [`maintenance.md`](/.agent/rules/development/maintenance.md)                            | Long-term consistency standards |
+| [`documentation-process.md`](/.agent/rules/core/documentation/documentation-process.md) | Standard for evolving docs      |
+| [Map of Territory](/.agent/rules/map.md)                                                | Root navigation map             |
 
 ---
 
 ## Origin
 
-- 2025-12-01 by Sirius: Initial creation.
-- 2026-01-25T0740 by Canopus: <<Seal: Rules-Standardization-Batch4>> Upgraded to v2.3 constitutional standards; removed legacy navigation footer. (v2.3.0)
+- 2025-11-25T19:44:51+09:00 by Lico: Created.
+- 2026-01-04T10:41:00+09:00 by Polaris: Added Origin and Navigation (cross-link audit)
+- 2026-01-25T07:40:00+09:00 by Canopus: <<Seal: Rules-Standardization-Batch4>> Upgraded to v2.3 constitutional standards; removed legacy navigation footer. (v2.3.0)
+- 2026-03-23T05:51:00+09:00 by Sirius: <<Seal: Rule-Audit>> Standardized time-structure, frontmatter, and link rigor via Diff-Only Audit Pipeline.

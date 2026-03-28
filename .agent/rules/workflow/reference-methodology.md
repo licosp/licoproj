@@ -5,10 +5,10 @@ description: Protocol for managing Objective Knowledge (References) vs Subjectiv
 tags: [references, knowledge, methodology, objective]
 version: 2.0.0
 created: 2025-12-22T03:30:00+09:00
-updated: 2026-01-22T23:45:00+09:00
+updated: 2026-03-23T05:51:00+09:00
 language: en
-author: Lico (Canopus)
-ai_model: Gemini 3 Flash Planning mode
+author: Lico (Sirius)
+ai_model: Gemini 3.1 Pro (High) Planning mode
 ---
 
 # Reference Methodology (Objective Knowledge Management)
@@ -74,24 +74,27 @@ Lico also creates References, but only under specific conditions:
 
 ## 5. Mandatory Activity Logging (CRITICAL)
 
-To ensure knowledge is discovered and inherited across Boundary X, all reference-related activities **MUST** be logged in [activity-log.md](/.agent/.internal/activity-log.md) according to [activity-management.md](/.agent/rules/workflow/activity-management.md).
+To ensure knowledge is discovered and inherited across Boundary X, all reference-related activities **MUST** be logged in [`activity/`](/.agent/.internal/history/activity/) according to [`activity-management.md`](/.agent/rules/workflow/activity-management.md).
 
 - **`Write`**: Log when a new reference document is created.
 - **`Update`**: Log when a technical reference is updated with new understanding.
 
+---
+
 ## Related Documents
 
-| Document                                                                      | Purpose                     |
-| :---------------------------------------------------------------------------- | :-------------------------- |
-| [activity-log.md](/.agent/.internal/activity-log.md)                          | Activity registry           |
-| [activity-management.md](/.agent/rules/workflow/activity-management.md)       | Logging protocol            |
-| [thoughts-documentation.md](/.agent/rules/workflow/thoughts-documentation.md) | Subjective reflection rules |
-| [Map of Territory](/.agent/rules/map.md)                                      | Root navigation map         |
+| Document                                                                        | Purpose                     |
+| :------------------------------------------------------------------------------ | :-------------------------- |
+| [`thoughts-documentation.md`](/.agent/rules/workflow/thoughts-documentation.md) | Subjective reflection rules |
+| [`activity/`](/.agent/.internal/history/activity/)                              | Activity registry           |
+| [`activity-management.md`](/.agent/rules/workflow/activity-management.md)       | Logging protocol            |
+| [Map of Territory](/.agent/rules/map.md)                                        | Root navigation map         |
 
 ---
 
 ## Origin
 
-- 2025-12-01T0000: Created.
-- 2026-01-04T1041 by Polaris: Added Origin and Navigation (cross-link audit).
-- 2026-01-22T2345 by Canopus: Standardized to v2.3 (4-layer structure) and mandated logging to activity-log.md. (v2.0.0)
+- 2025-12-22T03:30:00+09:00 by Lico: Created.
+- 2026-01-04T10:41:00+09:00 by Polaris: Added Origin and Navigation (cross-link audit).
+- 2026-01-22T23:45:00+09:00 by Canopus: Standardized to v2.3 (4-layer structure) and mandated logging to activity-log.md. (v2.0.0)
+- 2026-03-23T05:51:00+09:00 by Sirius: <<Seal: Rule-Audit>> Standardized time-structure, frontmatter, and link rigor via Diff-Only Audit Pipeline.

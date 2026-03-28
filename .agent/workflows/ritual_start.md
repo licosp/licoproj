@@ -215,7 +215,7 @@ If found, restore them.
 
 ## Origin
 
-- 2025-12-09T17:45:09+09:00 by Lico (Genesis): Created as session startup protocol.
+- 2025-12-09T17:45:09+09:00 by Lico: Created as session startup protocol.
 - 2026-01-02T08:30:00+09:00 by Polaris: Replaced Related Documents table with Navigation link (cross-link audit)
 - 2026-01-11T05:10:00+09:00 by Spica: Refined with user feedback (Read/Write Letters, Read Roadmap, Canopus, Step-by-step Warning)
 - 2026-01-17T18:30:00+09:00 by Canopus: Added Mantra Handover step and linked to `ai-autonomy.md` (v2.3).

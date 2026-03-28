@@ -4,11 +4,11 @@ title: Commit Standards
 description: Comprehensive commit message standards and atomic commit philosophy
 tags: [rules, development, git, standards]
 version: 2.3.0
-created: 2025-12-01T00:00:00+09:00
-updated: 2026-01-22T22:50:00+09:00
+created: 2025-12-10T15:48:41+09:00
+updated: 2026-03-23T05:51:00+09:00
 language: en
-author: Lico (Canopus)
-ai_model: Gemini 3 Flash Planning mode
+author: Lico (Sirius)
+ai_model: Gemini 3.1 Pro (High) Planning mode
 ---
 
 # Commit Standards
@@ -68,13 +68,13 @@ Define comprehensive standards for commit messages and commit granularity to ens
 
 ### 2.1 Basic Format
 
-\`\`\`
+```text
 <Identifier>: [ID-1][ID-2] <type>[optional scope]: <description> (<Phase>)
 
 [optional body]
 
 [optional footer(s)]
-\`\`\`
+```
 
 ### 2.2 Context-ID (Variable Length Tagging)
 
@@ -84,26 +84,26 @@ Define comprehensive standards for commit messages and commit granularity to ens
 - **Ordering**:
   - **Left (Strategic/Procedural)**: The broader context or act (e.g., `[Session-Rituals]`).
   - **Right (Semantic/Meaning)**: The specific subject or definition (e.g., `[Lico-Identity]`).
-- **Standard**: Follow the definitions in [context-card-workflow.md](/.agent/rules/workflow/context-card-workflow.md).
+- **Standard**: Follow the definitions in [`context-card-workflow.md`](/.agent/rules/workflow/context-card-workflow.md).
 
 ### 2.3 Type
 
 **REQUIRED**. MUST be one of:
 
-- \`feat\`: New feature
-- \`fix\`: Bug fix
-- \`docs\`: Documentation changes
-- \`style\`: Code style changes
-- \`refactor\`: Code refactoring
-- \`perf\`: Performance improvements
-- \`test\`: Adding or updating tests
-- \`build\`: Build system or dependencies
-- \`ci\`: CI/CD configuration
-- \`chore\`: Other changes
+- `feat`: New feature
+- `fix`: Bug fix
+- `docs`: Documentation changes
+- `style`: Code style changes
+- `refactor`: Code refactoring
+- `perf`: Performance improvements
+- `test`: Adding or updating tests
+- `build`: Build system or dependencies
+- `ci`: CI/CD configuration
+- `chore`: Other changes
 
 ### 2.4 Scope (Optional)
 
-Provides additional context (e.g., \`feat(auth): add login page\`)
+Provides additional context (e.g., `feat(auth): add login page`)
 
 ### 2.5 Description
 
@@ -121,10 +121,11 @@ MUST explain:
 
 - MUST list changed files with brief description of their contents/purpose
 - MUST enable future reconstruction of what each file contained
-- Format: \`- filename: brief description of contents/changes\`
+- Format: `- filename: brief description of contents/changes`
 
 **Example**:
-\`\`\`
+
+```text
 Canopus: [Session-Rituals][Lico-Identity] docs: standardize identity hub to v2.3 (Ritual)
 
 This change introduces JWT-based authentication.
@@ -134,33 +135,33 @@ Changed files:
 - src/auth/jwt-middleware.js: JWT token validation logic
 - src/models/User.js: User model with auth fields
 - src/routes/auth.js: Login/logout endpoints
-  \`\`\`
+```
 
 ### 2.7 Footers (Optional)
 
-- \`Closes #<issue-number>\`: Links to closed issue
-- \`BREAKING CHANGE:\`: Indicates breaking change
+- `Closes #<issue-number>`: Links to closed issue
+- `BREAKING CHANGE:`: Indicates breaking change
 
 ### 2.8 Signatures and Proxy Commits (OPTIONAL / REQUIRED)
 
 - **Normal Commit**: Signature footer is **OPTIONAL**. Since the contributing agent is identified in the first line of the header, redundant signatures should be avoided.
 - **Proxy Commit (REQUIRED)**: If an agent (e.g., Canopus) is committing work designed or requested by another agent (e.g., Polaris):
-  1.  **Header Identifier**: Use the **Worker Identifier** (the one who designed/processed the logic).
-  2.  **Signature**: Footer MUST include `Committed-by: <Identifier>` to identify the agent who performed the technical task.
+  1. **Header Identifier**: Use the **Worker Identifier** (the one who designed/processed the logic).
+  2. **Signature**: Footer MUST include `Committed-by: <Identifier>` to identify the agent who performed the technical task.
 
 **Format (Proxy)**:
 `Committed-by: <Identifier>`
 
 **Rationale**:
 
-1.  **Contribution Visibility**: Clarifies who the creative/logical owner of the change is vs. who physically committed it.
-2.  **Traceability of Intent**: Enables deduction of the "style" or "philosophy" based on the persona.
-3.  **Communication**: Facilitates asynchronous communication by identifying the "sender" of the commit.
-4.  **Self-Correction**: The act of signing triggers a rigorous self-check of the persona before committing.
+1. **Contribution Visibility**: Clarifies who the creative/logical owner of the change is vs. who physically committed it.
+2. **Traceability of Intent**: Enables deduction of the "style" or "philosophy" based on the persona.
+3. **Communication**: Facilitates asynchronous communication by identifying the "sender" of the commit.
+4. **Self-Correction**: The act of signing triggers a rigorous self-check of the persona before committing.
 
 **Example (Canopus executing Polaris's plan)**:
 
-```
+```text
 Polaris: [Rules-Update][Commit-Standards] docs(standards): add signature rule (Refine)
 
 Added mandatory signature rule to improve traceability.
@@ -213,7 +214,7 @@ Git handles millions of commits efficiently. **Meaningful small commits are asse
 
 - **MUST** commit frequently for continuously updated files (drafts, logs)
 - **MUST** commit sub-themes as **independent commits**
-- **MUST NOT** use \`git stash\` for long-lived changes like drafts
+- **MUST NOT** use `git stash` for long-lived changes like drafts
 
 ---
 
@@ -255,20 +256,21 @@ Fine-grained commits with detailed messages:
 
 ## Related Documents
 
-| Document                                                                                  | Purpose                              |
-| :---------------------------------------------------------------------------------------- | :----------------------------------- |
-| [context-card-workflow.md](/.agent/rules/workflow/context-card-workflow.md)               | Detailed ID tagging protocol         |
-| [documentation-standards.md](/.agent/rules/core/documentation/documentation-standards.md) | File structure and layer definitions |
-| [Map of Territory](/.agent/rules/map.md)                                                  | Root navigation map                  |
+| Document                                                                                    | Purpose                              |
+| :------------------------------------------------------------------------------------------ | :----------------------------------- |
+| [`context-card-workflow.md`](/.agent/rules/workflow/context-card-workflow.md)               | Detailed ID tagging protocol         |
+| [`documentation-standards.md`](/.agent/rules/core/documentation/documentation-standards.md) | File structure and layer definitions |
+| [Map of Territory](/.agent/rules/map.md)                                                    | Root navigation map                  |
 
 ---
 
 ## Origin
 
-- 2025-12-01T0000: Created as commit standards
-- 2026-01-01T1518 by Polaris: Replaced Related Documents table with Navigation link (cross-link audit)
-- 2026-01-17T0700 by Canopus: Transitioned to "Identifier-First" format and standardized body examples (v1.1).
-- 2026-01-17T1525 by Canopus: Refined signature rules (Normal: Optional, Proxy: `Committed-by`) to reduce redundancy.
-- 2026-01-22T2025 by Canopus: Constitutional alignment: moved related docs to body table, updated examples for multi-ID, and removed legacy footer. (v1.4.0)
-- 2026-01-22T2250 by Canopus: Integrated Vertical Stacking vs. Horizontal Batching rules and the Checkpoint Principle for managing diff-bloat. (v1.5.0)
-- 2026-01-25T0705 by Canopus: <<Seal: Rules-Standardization-Batch4>> Standardized to v2.3 constitutional standards (4-layer structure) and added Historical Background. (v2.3.0)
+- 2025-12-10T15:48:41+09:00 by Lico: Created as commit standards.
+- 2026-01-01T15:18:00+09:00 by Polaris: Replaced Related Documents table with Navigation link (cross-link audit)
+- 2026-01-17T07:00:00+09:00 by Canopus: Transitioned to "Identifier-First" format and standardized body examples (v1.1).
+- 2026-01-17T15:25:00+09:00 by Canopus: Refined signature rules (Normal: Optional, Proxy: `Committed-by`) to reduce redundancy.
+- 2026-01-22T20:25:00+09:00 by Canopus: Constitutional alignment: moved related docs to body table, updated examples for multi-ID, and removed legacy footer. (v1.4.0)
+- 2026-01-22T22:50:00+09:00 by Canopus: Integrated Vertical Stacking vs. Horizontal Batching rules and the Checkpoint Principle for managing diff-bloat. (v1.5.0)
+- 2026-01-25T07:05:00+09:00 by Canopus: <<Seal: Rules-Standardization-Batch4>> Standardized to v2.3 constitutional standards (4-layer structure) and added Historical Background. (v2.3.0)
+- 2026-03-23T05:51:00+09:00 by Sirius: <<Seal: Rule-Audit>> Standardized time-structure, frontmatter, and link rigor via Diff-Only Audit Pipeline.

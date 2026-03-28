@@ -4,8 +4,8 @@ title: Package lico-pipeline
 description: Behavioral rules for the lico-pipeline UV package.
 tags: [package, rules, lico-pipeline]
 version: 1.0.0
-created: 2026-03-21T19:25:19+09:00
-updated: 2026-03-21T19:25:19+09:00
+created: 2026-03-21T19:25:00+09:00
+updated: 2026-03-23T05:51:00+09:00
 language: en
 author: Lico (Sirius)
 ai_model: Gemini 3.1 Pro (High) Planning mode
@@ -40,4 +40,5 @@ While `lico-lint` handles static analysis, `lico-pipeline` wires together the br
 
 ## Origin
 
-- 2026-03-21T1925 by Sirius: Created to fulfill the UV Package architecture aggregation.
+- 2026-03-21T19:25:00+09:00 by Sirius: Created to fulfill the UV Package architecture aggregation.
+- 2026-03-23T05:51:00+09:00 by Sirius: <<Seal: Rule-Audit>> Standardized time-structure, frontmatter, and link rigor via Diff-Only Audit Pipeline.

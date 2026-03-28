@@ -5,10 +5,10 @@ description: AI-specific script philosophy emphasizing disposability over reusab
 tags: [scripts, philosophy, disposable, ai]
 version: 2.5.0
 created: 2025-12-02T00:00:00+09:00
-updated: 2026-02-28T04:15:00+09:00
+updated: 2026-03-23T05:51:00+09:00
 language: en
 author: Lico (Sirius)
-ai_model: Gemini 3 Pro (High) Planning mode
+ai_model: Gemini 3.1 Pro (High) Planning mode
 ---
 
 # AI Script Philosophy
@@ -21,7 +21,7 @@ ai_model: Gemini 3 Pro (High) Planning mode
 
 ### 1.1 Different Cost Structure
 
-Human programming assumes high creation and maintenance costs, making reuse rational. For Lico, script creation takes seconds and rewriting cost is near zero, while maintenance carries the high risk of \"Rule Divergence.\"
+Human programming assumes high creation and maintenance costs, making reuse rational. For Lico, script creation takes seconds and rewriting cost is near zero, while maintenance carries the high risk of "Rule Divergence."
 
 ### 1.2 Rule Evolution Risk
 
@@ -78,18 +78,21 @@ When a task recurs, do not find the old script. **Write a new one** to ensure al
 
 ## Related Documents
 
-| Document                                                       | Purpose                       |
-| :------------------------------------------------------------- | :---------------------------- |
-| [maintenance.md](/.agent/rules/development/maintenance.md)     | Long-term project consistency |
-| [file-deletion.md](/.agent/rules/development/file-deletion.md) | Archive vs deletion policy    |
-| [Map of Territory](/.agent/rules/map.md)                       | Root navigation map           |
+| Document                                                         | Purpose                       |
+| :--------------------------------------------------------------- | :---------------------------- |
+| [`maintenance.md`](/.agent/rules/development/maintenance.md)     | Long-term project consistency |
+| [`file-deletion.md`](/.agent/rules/development/file-deletion.md) | Archive vs deletion policy    |
+| [Map of Territory](/.agent/rules/map.md)                         | Root navigation map           |
 
 ---
 
 ## Origin
 
-- 2025-12-02T0000 by Polaris: Created as original AI script philosophy.
-- 2026-01-25T0725 by Canopus: <<Seal: Rules-Standardization-Batch4>> Upgraded to v2.3 constitutional standards; removed legacy navigation footer. (v2.3.0)
-- 2026-02-19T0830 by Sirius: Added Rule 4 (Complexity Threshold) for Strict Python vs Shell. (v2.4.0)
-- 2026-02-28T0415 by Sirius: Added abstraction and DRY requirement to Strict Python rules. (v2.5.0)
-- 2026-03-21T1935 by Sirius: Re-defined Script Ownership philosophy to mandate `packages/` constraints for tools and `workspace/<identifier>/` for temporary sandboxes. (v2.6.0)
+- 2025-12-02T00:00:00+09:00 by Sirius: Created as AI script philosophy.
+- 2025-12-23T12:10:00+09:00 by Polaris: Updated version to 1.1
+- 2026-01-01T15:17:00+09:00 by Polaris: Replaced Related Documents table with Navigation link (cross-link audit)
+- 2026-01-25T07:25:00+09:00 by Canopus: <<Seal: Rules-Standardization-Batch4>> Upgraded to v2.3 constitutional standards; removed legacy navigation footer. (v2.3.0)
+- 2026-02-19T08:30:00+09:00 by Sirius: Added Rule 4 (Complexity Threshold) for Strict Python vs Shell. (v2.4.0)
+- 2026-02-28T04:15:00+09:00 by Sirius: Added abstraction and DRY requirement to Strict Python rules. (v2.5.0)
+- 2026-03-21T19:35:00+09:00 by Sirius: Re-defined Script Ownership philosophy to mandate `packages/` constraints for tools and `workspace/<identifier>/` for temporary sandboxes. (v2.6.0)
+- 2026-03-23T05:51:00+09:00 by Sirius: <<Seal: Rule-Audit>> Standardized time-structure, frontmatter, and link rigor via Diff-Only Audit Pipeline.

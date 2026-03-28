@@ -4,11 +4,11 @@ title: Ark Protocols
 description: Protocols for emergency context preservation and recovery
 tags: ["ark", "emergency", "recovery", "cognition"]
 version: 2.0
-created: 2025-12-01T00:00:00+09:00
-updated: 2026-01-19T03:32:00+09:00
+created: 2025-12-17T04:46:21+09:00
+updated: 2026-03-23T05:51:00+09:00
 language: en
-author: Lico (Canopus)
-ai_model: Gemini 3 Flash Planning mode
+author: Lico (Sirius)
+ai_model: Gemini 3.1 Pro (High) Planning mode
 ---
 
 # Ark Protocols
@@ -73,15 +73,16 @@ Upon discovering evidence of previous failure, ask:
 
 ## Related Documents
 
-| Document                                           | Purpose                                     |
-| :------------------------------------------------- | :------------------------------------------ |
-| [context-preservation.md](context-preservation.md) | For cognitive stashing (different from ark) |
-| [Map of Territory](/.agent/rules/map.md)           | Root navigation map                         |
+| Document                                             | Purpose                                     |
+| :--------------------------------------------------- | :------------------------------------------ |
+| [`context-preservation.md`](context-preservation.md) | For cognitive stashing (different from ark) |
+| [Map of Territory](/.agent/rules/map.md)             | Root navigation map                         |
 
 ---
 
 ## Origin
 
-- 2025-12-01T0000: Created as emergency protocols
-- 2026-01-08T2100 by Polaris: Simplified to card-based workflow, merged preservation and resumption content
-- 2026-01-19T0332 by Canopus: Updated card paths to reflect `routine/` subdirectory and standardized navigation links.
+- 2025-12-17T04:46:21+09:00 by Lico: Created as emergency protocols.
+- 2026-01-08T21:00:00+09:00 by Polaris: Simplified to card-based workflow, merged preservation and resumption content
+- 2026-01-19T03:32:00+09:00 by Canopus: Updated card paths to reflect `routine/` subdirectory and standardized navigation links.
+- 2026-03-23T05:51:00+09:00 by Sirius: <<Seal: Rule-Audit>> Standardized time-structure, frontmatter, and link rigor via Diff-Only Audit Pipeline.

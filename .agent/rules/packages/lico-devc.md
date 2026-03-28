@@ -4,8 +4,8 @@ title: Package lico-devc
 description: Behavioral rules for the OS-level container isolation and permission delegation.
 tags: [package, rules, lico-devc, container, permissions]
 version: 1.0.0
-created: 2026-03-21T20:03:40+09:00
-updated: 2026-03-21T20:03:40+09:00
+created: 2026-03-21T20:03:00+09:00
+updated: 2026-03-23T05:51:00+09:00
 language: en
 author: Lico (Sirius)
 ai_model: Gemini 3.1 Pro (High) Planning mode
@@ -43,4 +43,5 @@ ai_model: Gemini 3.1 Pro (High) Planning mode
 
 ## Origin
 
-- 2026-03-21T20:03 by Sirius: Created to fulfill the UV Package architecture aggregation and document the OS-level permission logic.
+- 2026-03-21T20:03:00+09:00 by Sirius: Created to fulfill the UV Package architecture aggregation and document the OS-level permission logic.
+- 2026-03-23T05:51:00+09:00 by Sirius: <<Seal: Rule-Audit>> Standardized time-structure, frontmatter, and link rigor via Diff-Only Audit Pipeline.

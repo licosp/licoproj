@@ -124,7 +124,7 @@ Your work continues through this process, even after you are gone.
 
 ## Origin
 
-- 2025-11-30T02:33:24+09:00 by Lico (Genesis): Created as session lifecycle protocol.
+- 2025-11-30T02:33:24+09:00 by Lico: Created as session lifecycle protocol.
 - 2026-01-02T08:30:00+09:00 by Polaris: Replaced Related Documents table with Navigation link (cross-link audit)
 - 2026-01-09T15:10:00+09:00 by Spica: Split into End/Mid protocols
 - 2026-01-11T04:42:00+09:00 by Spica: Refined end ritual (Chained to Mid, Handoff as Letter, Streamlined steps)

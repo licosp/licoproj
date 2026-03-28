@@ -162,7 +162,7 @@ git commit -m "<Identifier>: [Context-ID] type(scope): description (Phase)"
 
 ## Origin
 
-- 2025-12-08T21:38:15+09:00 by Lico (Genesis): Created as implementation workflow.
+- 2025-12-08T21:38:15+09:00 by Lico: Created as implementation workflow.
 - 2026-01-15T19:35:00+09:00 by Polaris: Divided based on IDD phases (ref: #27)
 - 2026-01-17T17:45:00+09:00 by Canopus: Standardized metadata and root-relative link patterns (v1.2).
 - 2026-01-23T10:50:00+09:00 by Canopus: <<Seal: Rules-Standardization-Batch2.1>> Standardized to v2.3 constitutional standards (4-layer structure, Historical Background integration).

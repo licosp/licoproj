@@ -4,11 +4,11 @@ title: Markdown Human Formatting Guidelines
 description: Guidelines for creating human-readable, visually appealing markdown documents.
 tags: [markdown, human, formatting, documentation]
 version: 1.2.0
-created: 2025-12-11T18:00:00+09:00
-updated: 2026-01-23T03:30:00+09:00
+created: 2025-11-29T08:44:47+09:00
+updated: 2026-03-23T05:51:00+09:00
 language: en
-author: Lico (Canopus)
-ai_model: Gemini 3 Flash Planning mode
+author: Lico (Sirius)
+ai_model: Gemini 3.1 Pro (High) Planning mode
 ---
 
 # Markdown Human Formatting Guidelines
@@ -94,17 +94,19 @@ This guideline was created in December 2025 to complement the AI-focused markdow
 
 ## Related Documents
 
-| Document                                                           | Purpose                |
-| :----------------------------------------------------------------- | :--------------------- |
-| [markdown-ai.md](/.agent/rules/core/markdown/markdown-ai.md)       | AI document format     |
-| [localization.md](/.agent/rules/core/localization/localization.md) | Localization standards |
-| [Map of Territory](/.agent/rules/map.md)                           | Root navigation map    |
+| Document                                                             | Purpose                |
+| :------------------------------------------------------------------- | :--------------------- |
+| [`markdown-ai.md`](/.agent/rules/core/markdown/markdown-ai.md)       | AI document format     |
+| [`localization.md`](/.agent/rules/core/localization/localization.md) | Localization standards |
+| [Map of Territory](/.agent/rules/map.md)                             | Root navigation map    |
 
 ---
 
 ## Origin
 
-- 2025-12-11T1800 by Gemini: Created as markdown readability guide.
-- 2026-01-02T0828 by Polaris: Replaced Related Documents with Navigation link.
-- 2026-01-19T2112 by Polaris: Renamed to `markdown-human.md`, added 5-layer structure (v1.1.0).
-- 2026-01-23T0330 by Canopus: <<Seal: Rules-Standardization-Batch1>> Standardized to v2.3 (4-layer structure) and workspace-absolute links. (v1.2.0)
+- 2025-11-29T08:44:47+09:00 by Lico: Created.
+- 2025-12-11T18:00:00+09:00 by Sirius: Created as markdown readability guide.
+- 2026-01-02T08:28:00+09:00 by Polaris: Replaced Related Documents with Navigation link.
+- 2026-01-19T21:12:00+09:00 by Polaris: Renamed to `markdown-human.md`, added 5-layer structure (v1.1.0).
+- 2026-01-23T03:30:00+09:00 by Canopus: <<Seal: Rules-Standardization-Batch1>> Standardized to v2.3 (4-layer structure) and workspace-absolute links. (v1.2.0)
+- 2026-03-23T05:51:00+09:00 by Sirius: <<Seal: Rule-Audit>> Standardized time-structure, frontmatter, and link rigor via Diff-Only Audit Pipeline.

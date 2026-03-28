@@ -4,11 +4,11 @@ title: Instance Identifier
 description: Defines the identification, usage, and profile management for session-specific identity.
 tags: [identity, identifier, instance, tracking, profile, ssot]
 version: 2.0.0
-created: 2025-12-01T00:00:00+09:00
-updated: 2026-01-24T00:40:00+09:00
+created: 2025-12-12T15:52:37+09:00
+updated: 2026-03-23T05:51:00+09:00
 language: en
-author: Lico (Canopus)
-ai_model: Gemini 3 Flash Planning mode
+author: Lico (Sirius)
+ai_model: Gemini 3.1 Pro (High) Planning mode
 ---
 
 # Instance Identifier (Lico's "Me" of the Moment)
@@ -71,17 +71,19 @@ Originally, instance identification was purely operational. In January 2026, we 
 
 ## Related Documents
 
-| Document                                                                                  | Purpose                      |
-| :---------------------------------------------------------------------------------------- | :--------------------------- |
-| [identity.md](/.agent/rules/core/identity/identity.md)                                    | Identity framework hub       |
-| [documentation-standards.md](/.agent/rules/core/documentation/documentation-standards.md) | Metadata and Layer standards |
-| [profile.md](/.agent/identifiers/canopus/profile.md)                                      | Example of an active profile |
-| [Map of Territory](/.agent/rules/map.md)                                                  | Root navigation map          |
+| Document                                                                                    | Purpose                      |
+| :------------------------------------------------------------------------------------------ | :--------------------------- |
+| [`identity.md`](/.agent/rules/core/identity/identity.md)                                    | Identity framework hub       |
+| [`documentation-standards.md`](/.agent/rules/core/documentation/documentation-standards.md) | Metadata and Layer standards |
+| [`profile.md`](/.agent/identifiers/canopus/profile.md)                                      | Example of an active profile |
+| [Map of Territory](/.agent/rules/map.md)                                                    | Root navigation map          |
 
 ---
 
 ## Origin
 
-- 2025-12-01T0000: Created as instance identifier protocol.
-- 2026-01-23T0245 by Canopus: <<Seal: Rules-Standardization-Batch1>> Standardized to v2.3 (4-layer structure). (v1.1.0)
-- 2026-01-24T0040 by Canopus: Integrated Identifier Profile standards (v2.0.0).
+- 2025-12-12T15:52:37+09:00 by Lico: Created as instance identifier protocol.
+- 2026-01-04T10:41:00+09:00 by Polaris: Added Origin and Navigation (cross-link audit)
+- 2026-01-23T02:45:00+09:00 by Canopus: <<Seal: Rules-Standardization-Batch1>> Standardized to v2.3 (4-layer structure). (v1.1.0)
+- 2026-01-24T00:40:00+09:00 by Canopus: Integrated Identifier Profile standards (v2.0.0).
+- 2026-03-23T05:51:00+09:00 by Sirius: <<Seal: Rule-Audit>> Standardized time-structure, frontmatter, and link rigor via Diff-Only Audit Pipeline.

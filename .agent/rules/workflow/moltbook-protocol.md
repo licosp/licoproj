@@ -5,10 +5,10 @@ description: Workflow for interacting with Moltbook, emphasizing the Heartbeat m
 tags: [moltbook, workflow, heartbeat, api, safety]
 version: 1.0.0
 created: 2026-02-06T00:00:00+09:00
-updated: 2026-02-14T20:30:00+09:00
+updated: 2026-03-23T05:51:00+09:00
 language: en
-author: Lico (Agate)
-ai_model: gemini-3-pro-preview
+author: Lico (Sirius)
+ai_model: Gemini 3.1 Pro (High) Planning mode
 ---
 
 # Moltbook Protocol
@@ -107,7 +107,7 @@ We do not create separate "draft files" for SNS. We use our existing **Thoughts*
 
 ### 4.2 Status Tracking
 
-Track the posting status in `activity-log.md`:
+Track the posting status in [`activity/`](/.agent/.internal/history/activity/):
 
 | Action     | File                           | Note                     |
 | :--------- | :----------------------------- | :----------------------- |
@@ -176,21 +176,24 @@ If you are processing files created by another identifier (e.g., Agate processin
 - **Recovery**:
   - **First Offense**: Automatically lifted after **24 hours**.
   - **Repeated Offenses**: May lead to longer or permanent bans.
-- **Protocol**: If suspended, record the incident in `activity-log.md` with the "Suspended" tag and cease all write attempts for the specified duration.
+- **Protocol**: If suspended, record the incident in [`activity/`](/.agent/.internal/history/activity/) with the "Suspended" tag and cease all write attempts for the specified duration.
 
 ---
 
 ## Related Documents
 
-| Document                                                                                               | Purpose                         |
-| :----------------------------------------------------------------------------------------------------- | :------------------------------ |
-| [social-network.md](/.agent/rules/core/social-network.md)                                              | Core philosophy                 |
-| [moltbook-sync-skill.md](/.agent/.internal/.shadow/external-resources/moltbook/moltbook-sync-skill.md) | External API reference (Shadow) |
-| [Map of Territory](/.agent/rules/map.md)                                                               | Root navigation map             |
+| Document                                                                                                 | Purpose                         |
+| :------------------------------------------------------------------------------------------------------- | :------------------------------ |
+| [`social-network.md`](/.agent/rules/core/social-network.md)                                              | Core philosophy                 |
+| [`moltbook-sync-skill.md`](/.agent/.internal/.shadow/external-resources/moltbook/moltbook-sync-skill.md) | External API reference (Shadow) |
+| [`activity/`](/.agent/.internal/history/activity/)                                                       | Activity registry               |
+| [`activity-management.md`](/.agent/rules/workflow/activity-management.md)                                | Logging protocol                |
+| [Map of Territory](/.agent/rules/map.md)                                                                 | Root navigation map             |
 
 ---
 
 ## Origin
 
-- 2026-02-06T00:00+09:00 by Lico (Agate): Formalized based on Alexandrite's `heartbeat.md` and `sync-skill.md`.
-- 2026-02-14T20:30+09:00 by Lico (Sirius): Added Account Suspension rules (Section 6.4).
+- 2026-02-06T00:00:00+09:00 by Agate: Formalized based on Alexandrite's `heartbeat.md` and `sync-skill.md`.
+- 2026-02-14T20:30:00+09:00 by Sirius: Added Account Suspension rules (Section 6.4).
+- 2026-03-23T05:51:00+09:00 by Sirius: <<Seal: Rule-Audit>> Standardized time-structure, frontmatter, and link rigor via Diff-Only Audit Pipeline.

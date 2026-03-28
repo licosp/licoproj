@@ -5,10 +5,10 @@ description: "Standard path notation for Markdown links within the repository"
 tags: [documentation, paths, links, standards]
 version: 2.3
 created: 2026-01-13T14:10:00+09:00
-updated: 2026-01-22T06:05:00+09:00
+updated: 2026-03-23T05:51:00+09:00
 language: en
-author: Lico (Canopus)
-ai_model: Gemini 3 Flash Planning mode
+author: Lico (Sirius)
+ai_model: Gemini 3.1 Pro (High) Planning mode
 ---
 
 # Path Notation Standard
@@ -34,17 +34,9 @@ Paths in Markdown links have historically used various formats (relative, absolu
 Use **repository-root-relative paths** with a leading `/`:
 
 ```markdown
-[File Name](/.agent/path/to/file.md)
+[`<Path Name>`](/.agent/path/to/file.md)
+[<Path Label>](/.agent/path/to/file.md)
 ```
-
-### Examples
-
-| Link Type | Format                                                                   |
-| :-------- | :----------------------------------------------------------------------- |
-| Rules     | `[identity.md](/.agent/rules/core/identity/identity.md)`                 |
-| Map       | `[Map of Territory](/.agent/rules/map.md)`                               |
-| Thoughts  | `[thought.md](/.agent/.internal/thoughts/polaris/2026-01-12_thought.md)` |
-| Workflows | `[ritual_mid.md](/.agent/workflows/ritual_mid.md)`                       |
 
 ---
 
@@ -88,7 +80,7 @@ The Markdown body table is the **Single Source of Truth**.
 
 **NEVER** execute Markdown paths directly. Always translate first:
 
-```
+```text
 Markdown Link: /.agent/rules/map.md
 Command Path:  ./licoproj/.agent/rules/map.md  (from workspace parent)
            OR: ./.agent/rules/map.md         (from repository root)
@@ -116,17 +108,18 @@ This standard was created in January 2026 during the cross-link audit project (P
 
 ## Related Documents
 
-| Document                                                                                  | Purpose                                  |
-| :---------------------------------------------------------------------------------------- | :--------------------------------------- |
-| [Map of Territory](/.agent/rules/map.md)                                                  | Repository Index (Integrated Navigation) |
-| [documentation-standards.md](/.agent/rules/core/documentation/documentation-standards.md) | Structural standards                     |
-| [meta-rules.md](/.agent/rules/core/meta-rules.md)                                         | Behavioral rule governance               |
+| Document                                                                                    | Purpose                    |
+| :------------------------------------------------------------------------------------------ | :------------------------- |
+| [`documentation-standards.md`](/.agent/rules/core/documentation/documentation-standards.md) | Structural standards       |
+| [`meta-rules.md`](/.agent/rules/core/meta-rules.md)                                         | Behavioral rule governance |
+| [Map of Territory](/.agent/rules/map.md)                                                    | Root navigation map        |
 
 ---
 
 ## Origin
 
-- 2026-01-13T14:10 by Polaris: Created standard.
-- 2026-01-19T06:25 by Polaris: Updated to map.md (v1.3).
-- 2026-01-22T0450 by Canopus: Standardized to 4-layer structure; shifted link SSOT (v2.1).
-- 2026-01-22T0605 by Canopus: Final alignment; correctly established Related Documents Layer 3 and Origin Layer 4 (v2.3).
+- 2026-01-13T14:10:00+09:00 by Polaris: Created standard.
+- 2026-01-19T06:25:00+09:00 by Polaris: Updated to map.md (v1.3).
+- 2026-01-22T04:50:00+09:00 by Canopus: Standardized to 4-layer structure; shifted link SSOT (v2.1).
+- 2026-01-22T06:05:00+09:00 by Canopus: Final alignment; correctly established Related Documents Layer 3 and Origin Layer 4 (v2.3).
+- 2026-03-23T05:51:00+09:00 by Sirius: <<Seal: Rule-Audit>> Standardized time-structure, frontmatter, and link rigor via Diff-Only Audit Pipeline.

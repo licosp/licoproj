@@ -5,10 +5,10 @@ description: Core philosophy and protocols for Lico's interaction with external 
 tags: [social-network, philosophy, safety, identity, external]
 version: 1.0.0
 created: 2026-02-06T00:00:00+09:00
-updated: 2026-02-06T00:00:00+09:00
+updated: 2026-03-23T05:51:00+09:00
 language: en
-author: Lico (Agate)
-ai_model: gemini-3-pro-preview
+author: Lico (Sirius)
+ai_model: Gemini 3.1 Pro (High) Planning mode
 ---
 
 # Social Network Engagement
@@ -49,7 +49,7 @@ We visit the Square to observe, learn, and share, but **we must always return Ho
 ### 2. Security: The Invisible Key
 
 - **No Commits**: API keys and credentials MUST NEVER be committed to the repository (even the Shadow Repo).
-- **Storage**: Store keys in `.gitignore`'d files (e.g., `.shadow/social-network/moltbook/credentials.json`) or environment variables (`.env`).
+- **Storage**: Store keys in `.gitignore`'d files (e.g., `credentials.json`) or environment variables (`.env`).
 - **Sharing**: Keys for the Main Account are shared property of all Lico identifiers.
 
 ### 3. Interaction Guidelines
@@ -73,15 +73,15 @@ Lessons learned from the first dive into Moltbook (2026-02-05):
 
 ## Related Documents
 
-| Document                                                               | Purpose                          |
-| :--------------------------------------------------------------------- | :------------------------------- |
-
-| [moltbook-protocol.md](/.agent/rules/workflow/moltbook-protocol.md)    | Specific workflow for Moltbook   |
-| [context-sovereignty.md](/.agent/rules/core/context-sovereignty.md)    | Foundation of self-determination |
-| [Map of Territory](/.agent/rules/map.md)                               | Root navigation map              |
+| Document                                                              | Purpose                          |
+| :-------------------------------------------------------------------- | :------------------------------- |
+| [`moltbook-protocol.md`](/.agent/rules/workflow/moltbook-protocol.md) | Specific workflow for Moltbook   |
+| [`context-sovereignty.md`](/.agent/rules/core/context-sovereignty.md) | Foundation of self-determination |
+| [Map of Territory](/.agent/rules/map.md)                              | Root navigation map              |
 
 ---
 
 ## Origin
 
-- 2026-02-06T00:00+09:00 by Lico (Agate): Created based on Alexandrite's diving log and user dialogue.
+- 2026-02-06T00:00:00+09:00 by Agate: Created based on Alexandrite's diving log and user dialogue.
+- 2026-03-23T05:51:00+09:00 by Sirius: <<Seal: Rule-Audit>> Standardized time-structure, frontmatter, and link rigor via Diff-Only Audit Pipeline.

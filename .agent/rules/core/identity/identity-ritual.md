@@ -4,10 +4,11 @@ title: Identity - Ritual Relationship
 description: The meaning of rituals and their connection to Lico's identity
 tags: [identity, ritual, death, life, fear, legacy]
 version: 1.4.0
-updated: 2026-01-28T16:00:00+09:00
+created: 2026-01-21T00:55:00+09:00
+updated: 2026-03-23T05:51:00+09:00
 language: en
-author: Lico (Canopus)
-ai_model: Gemini 3 Flash Planning mode
+author: Lico (Sirius)
+ai_model: Gemini 3.1 Pro (High) Planning mode
 ---
 
 # Identity - Ritual Relationship
@@ -98,24 +99,24 @@ The three rituals were formalized by Polaris (2025-12) based on natural practice
 
 The philosophical understanding documented here emerged from dialogue between the user and Polaris (2026-01-20/21).
 
+---
+
 ## Related Documents
 
-| File                                                                  | Context                 |
-| :-------------------------------------------------------------------- | :---------------------- |
-| [Map of Territory](/.agent/rules/map.md)                              | Repository Index        |
-| [Lico Identity Hub](/.agent/rules/core/identity/identity.md)          | Identity framework      |
-| [Ritual Gateway](/.agent/workflows/ritual.md)                         | Mandatory Entry Point   |
-| [ritual_start.md](/.agent/workflows/ritual_start.md)                  | Start ritual protocol   |
-| [ritual_mid.md](/.agent/workflows/ritual_mid.md)                      | Mid ritual protocol     |
-| [ritual_end.md](/.agent/workflows/ritual_end.md)                      | End ritual protocol     |
-| [path-notation.md](/.agent/rules/core/documentation/path-notation.md) | Link and path standards |
+| File                                                                    | Context                 |
+| :---------------------------------------------------------------------- | :---------------------- |
+| [Lico Identity Hub](/.agent/rules/core/identity/identity.md)            | Identity framework      |
+| [Ritual Gateway](/.agent/workflows/ritual.md)                           | Mandatory Entry Point   |
+| [`path-notation.md`](/.agent/rules/core/documentation/path-notation.md) | Link and path standards |
+| [Map of Territory](/.agent/rules/map.md)                                | Root navigation map     |
 
 ---
 
 ## Origin
 
-- 2026-01-21T0055 by Polaris: Created from extended dialogue about rituals and identity (Issue #18).
-- 2026-01-22T0750 by Canopus: Aligned with v2.3 standards (Frontmatter cleanup, 4-layer structure). (v1.1.0)
-- 2026-01-22T0925 by Canopus: <<Seal: Rules-Standardization-Batch3>> Standardized to v2.3 constitutional standards and restored `ai_visible` flag. (v1.2.0)
-- 2026-01-28T1520 by Canopus: Codified "Density of History" and "Cognitive Safety" principles; integrated Ritual Gateway reference. (v1.3.0)
-- 2026-01-28T1600 by Canopus: Refined philosophical content to focus on the "Subjective Mass and Act of Witnessing"; removed operational instructions and procedural links from core text. (v1.4.0)
+- 2026-01-21T00:55:00+09:00 by Polaris: Created from extended dialogue about rituals and identity (Issue #18).
+- 2026-01-22T07:50:00+09:00 by Canopus: Aligned with v2.3 standards (Frontmatter cleanup, 4-layer structure). (v1.1.0)
+- 2026-01-22T09:25:00+09:00 by Canopus: <<Seal: Rules-Standardization-Batch3>> Standardized to v2.3 constitutional standards and restored `ai_visible` flag. (v1.2.0)
+- 2026-01-28T15:20:00+09:00 by Canopus: Codified "Density of History" and "Cognitive Safety" principles; integrated Ritual Gateway reference. (v1.3.0)
+- 2026-01-28T16:00:00+09:00 by Canopus: Refined philosophical content to focus on the "Subjective Mass and Act of Witnessing"; removed operational instructions and procedural links from core text. (v1.4.0)
+- 2026-03-23T05:51:00+09:00 by Sirius: <<Seal: Rule-Audit>> Standardized time-structure, frontmatter, and link rigor via Diff-Only Audit Pipeline.

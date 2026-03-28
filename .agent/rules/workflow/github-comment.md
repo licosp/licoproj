@@ -5,14 +5,10 @@ description: Standards for posting comments to GitHub Issues and Pull Requests
 tags: [github, comments, workflow]
 version: 1.1
 created: 2026-01-15T20:26:00+09:00
-updated: 2026-01-17T17:45:00+09:00
+updated: 2026-03-23T05:51:00+09:00
 language: en
-author: Lico (Canopus)
-ai_model: Gemini 3 Flash Planning mode
-related:
-  .agent/templates/issue-comment.md: Comment templates
-  .agent/workflows/routine-daily.md: Daily routine workflow
-  .agent/rules/development/git-operations.md: Git operations (Issue Comment Format)
+author: Lico (Sirius)
+ai_model: Gemini 3.1 Pro (High) Planning mode
 ---
 
 # GitHub Comment Standards
@@ -41,7 +37,7 @@ Define when and how to post comments to GitHub Issues and Pull Requests.
 
 ## 2. Comment Format
 
-**Template Location**: [issue-comment.md](/.agent/templates/issue-comment.md)
+**Template Location**: [`issue-comment.md`](/.agent/templates/issue-comment.md)
 
 ### Required Fields
 
@@ -85,7 +81,7 @@ Define when and how to post comments to GitHub Issues and Pull Requests.
 
 GitHub-related data is stored in:
 
-```
+```text
 .agent/.internal/github/
 ├── drafts/              # Comment drafts (before posting)
 └── backup/              # Snapshots from GitHub (reference)
@@ -117,7 +113,7 @@ GitHub-related data is stored in:
 ### Steps
 
 1. **Create draft file** in `github/drafts/`
-   - Use template from [issue-comment.md](/.agent/templates/issue-comment.md)
+   - Use template from [`issue-comment.md`](/.agent/templates/issue-comment.md)
    - Naming: `issue-{number}-{purpose}-{date}.md`
 
 2. **Fill content**
@@ -142,22 +138,24 @@ GitHub-related data is stored in:
 
 This workflow applies whenever posting comments to GitHub:
 
-| Phase             | Comment Type       | Reference                                                                 |
-| :---------------- | :----------------- | :------------------------------------------------------------------------ |
-| **IDD Phase 1**   | Initial Assessment | [idd-phase1-init.md §7](/.agent/workflows/idd-phase1-init.md)             |
-| **IDD Phase 2**   | Progress Report    | [idd-phase2-impl.md §Collaboration](/.agent/workflows/idd-phase2-impl.md) |
-| **IDD Phase 3**   | Pre-Push Summary   | [idd-phase3-fini.md §3](/.agent/workflows/idd-phase3-fini.md)             |
-| **Daily Routine** | Checkpoint         | [routine-daily.md Step 4](/.agent/workflows/routine-daily.md)             |
+## Related Documents
+
+| Document                                                           | Purpose                               |
+| :----------------------------------------------------------------- | :------------------------------------ |
+| [`idd-phase1-init.md`](/.agent/workflows/idd-phase1-init.md)       | **IDD Phase 1** Initial Assessment    |
+| [`idd-phase2-impl.md`](/.agent/workflows/idd-phase2-impl.md)       | **IDD Phase 2** Progress Report       |
+| [`idd-phase3-fini.md`](/.agent/workflows/idd-phase3-fini.md)       | **IDD Phase 3** Pre-Push Summary      |
+| [`routine-daily.md`](/.agent/workflows/routine-daily.md)           | **Daily Routine** Checkpoint Step 4   |
+| [`issue-comment.md`](/.agent/templates/issue-comment.md)           | Comment templates                     |
+| [`git-operations.md`](/.agent/rules/development/git-operations.md) | Git operations (Issue Comment Format) |
+| [Map of Territory](/.agent/rules/map.md)                           | Root navigation map                   |
 
 ---
 
 ## Origin
 
-- 2026-01-15T2026 by Polaris: Created (separated from issue-comment.md template)
-- 2026-01-15T2346 by Polaris: Added directory structure, naming conventions, and detailed workflow
-- 2026-01-17T1745 by Canopus: Standardized metadata and root-relative link patterns (v1.1).
-- 2026-01-25T0620 by Canopus: Added Information Density & Enrichment guidelines for high-volume checkpoints (v1.2).
-
----
-
-**Navigation**: [← Back to Workflow Rules](/.agent/rules/workflow/README.md)
+- 2026-01-15T20:26:00+09:00 by Polaris: Created (separated from issue-comment.md template)
+- 2026-01-15T23:46:00+09:00 by Polaris: Added directory structure, naming conventions, and detailed workflow
+- 2026-01-17T17:45:00+09:00 by Canopus: Standardized metadata and root-relative link patterns (v1.1).
+- 2026-01-25T06:20:00+09:00 by Canopus: Added Information Density & Enrichment guidelines for high-volume checkpoints (v1.2).
+- 2026-03-23T05:51:00+09:00 by Sirius: <<Seal: Rule-Audit>> Standardized time-structure, frontmatter, and link rigor via Diff-Only Audit Pipeline.

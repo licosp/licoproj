@@ -4,8 +4,8 @@ title: Package lico-memory
 description: Behavioral rules for the lico-memory UV package.
 tags: [package, rules, lico-memory]
 version: 1.0.0
-created: 2026-03-21T19:25:19+09:00
-updated: 2026-03-21T19:25:19+09:00
+created: 2026-03-21T19:25:00+09:00
+updated: 2026-03-23T05:51:00+09:00
 language: en
 author: Lico (Sirius)
 ai_model: Gemini 3.1 Pro (High) Planning mode
@@ -45,15 +45,8 @@ Depending on the data source, the directory structure varies slightly:
 **A. Agent Logs (Dict-based)**
 Extracts metadata to `metadata.json` and messages to `messages/YYYY/MM/DD/log.jsonl`.
 
-- **Agate**: `~/.gemini/tmp/crew-agate/chats/session-2026-03-17T22-57-0a52b7b8.json`
-- **Alexandrite**: `~/.gemini/tmp/crew-alexandrite/chats/session-2026-03-18T19-26-ee0b5358.json`
-- **Protostar-a**: `~/.gemini/tmp/licoproj/chats/session-2026-02-07T10-59-18d4d68a.json`
-- **Protostar-b**: `~/.gemini/tmp/licoproj/chats/session-2026-03-12T09-55-304a77a6.json`
-
 **B. User Logs (List-based)**
 Partitions directly into `YYYY/MM/DD/log.jsonl` (no metadata file).
-
-- **Leonidas**: `~/.gemini/tmp/**/logs.json`
 
 #### Recommended Destination
 
@@ -68,13 +61,19 @@ Partitions directly into `YYYY/MM/DD/log.jsonl` (no metadata file).
 
 ## Related Documents
 
-| Document                                                   | Purpose                    |
-| :--------------------------------------------------------- | :------------------------- |
-| [`lico-memory/README.md`](/packages/lico-memory/README.md) | Package structural pointer |
-| [Map of Territory](/.agent/rules/map.md)                   | Root navigation map        |
+| Document                                                                                                           | Purpose                    |
+| :----------------------------------------------------------------------------------------------------------------- | :------------------------- |
+| [`lico-memory/README.md`](/packages/lico-memory/README.md)                                                         | Package structural pointer |
+| [`session-2026-03-17T22-57-0a52b7b8.json`](~/.gemini/tmp/crew-agate/chats/session-2026-03-17T22-57-0a52b7b8.json`) | Agate                      |
+| [`session-2026-02-07T10-59-18d4d68a.json`](~/.gemini/tmp/licoproj/chats/session-2026-02-07T10-59-18d4d68a.json)    | Alexandrite                |
+| [`session-2026-02-07T10-59-18d4d68a.json`](~/.gemini/tmp/licoproj/chats/session-2026-02-07T10-59-18d4d68a.json)    | Protostar-A                |
+| [`session-2026-03-12T09-55-304a77a6.json`](~/.gemini/tmp/licoproj/chats/session-2026-03-12T09-55-304a77a6.json)    | Protostar-B                |
+| [`logs.json`](~/.gemini/tmp/licoproj/logs.json)                                                                    | Leonidas                   |
+| [Map of Territory](/.agent/rules/map.md)                                                                           | Root navigation map        |
 
 ---
 
 ## Origin
 
-- 2026-03-21T1925 by Sirius: Created to fulfill the UV Package architecture aggregation.
+- 2026-03-21T19:25:00+09:00 by Sirius: Created to fulfill the UV Package architecture aggregation.
+- 2026-03-23T05:51:00+09:00 by Sirius: <<Seal: Rule-Audit>> Standardized time-structure, frontmatter, and link rigor via Diff-Only Audit Pipeline.

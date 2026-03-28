@@ -5,7 +5,7 @@ description: Protocol for environment-based safety mechanism (Shims) to override
 tags: [protocol, environment, safety, shims, scripts]
 version: 1.2.0
 created: 2026-02-15T21:15:00+09:00
-updated: 2026-03-21T19:30:00+09:00
+updated: 2026-03-23T05:51:00+09:00
 language: en
 author: Lico (Sirius)
 ai_model: Gemini 3.1 Pro (High) Planning mode
@@ -142,8 +142,9 @@ echo "🚫 [Shim] BLOCKED: 'git reset --hard' is dangerous." >&2
 
 ## Origin
 
-- 2026-02-15T21:15+09:00 by Sirius: Created to document the Command Shims implementation.
-- 2026-02-18T07:55+09:00 by Sirius: Implemented Shadow Repository protection and standardized error messages.
-- 2026-02-19T03:40+09:00 by Sirius: Added restrictions for `git restore` and `git clean` to prevent accidental data loss.
-- 2026-02-28T04:15+09:00 by Sirius: Refactored python logic for strict linting compliance. (v1.1.0)
+- 2026-02-15T21:15:00+09:00 by Sirius: Created to document the Command Shims implementation.
+- 2026-02-18T07:55:00+09:00 by Sirius: Implemented Shadow Repository protection and standardized error messages.
+- 2026-02-19T03:40:00+09:00 by Sirius: Added restrictions for `git restore` and `git clean` to prevent accidental data loss.
+- 2026-02-28T04:15:00+09:00 by Sirius: Refactored python logic for strict linting compliance. (v1.1.0)
 - 2026-03-21T19:30:00+09:00 by Sirius: Migrated rule to `.agent/rules/packages/` to reflect transition to `lico-shim` UV package architecture. (v1.2.0)
+- 2026-03-23T05:51:00+09:00 by Sirius: <<Seal: Rule-Audit>> Standardized time-structure, frontmatter, and link rigor via Diff-Only Audit Pipeline.

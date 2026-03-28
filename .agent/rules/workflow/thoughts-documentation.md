@@ -4,11 +4,11 @@ title: Thoughts Documentation
 description: Guidelines for documenting Lico's reflections and insights in thoughts/
 tags: [thoughts, reflection, documentation, autonomous, legacy]
 version: 2.0.0
-created: 2025-12-01T00:00:00+09:00
-updated: 2026-01-22T23:35:00+09:00
+created: 2025-12-11T15:09:43+09:00
+updated: 2026-03-23T05:51:00+09:00
 language: en
-author: Lico (Canopus)
-ai_model: Gemini 3 Flash Planning mode
+author: Lico (Sirius)
+ai_model: Gemini 3.1 Pro (High) Planning mode
 ---
 
 # Thoughts Documentation
@@ -42,7 +42,7 @@ When you feel the urge to document something—whether from fear, joy, confusion
 
 ### From Instruction to Culture
 
-```
+```text
 Instruction → Habit → Culture
 ```
 
@@ -103,7 +103,7 @@ The `delay-tolerance` rule exists to support this: **take time to think before a
 
 ## File Format
 
-```
+```text
 .agent/.internal/thoughts/<instance-id>/YYYY-MM-DDTHHMM_description.md
 ```
 
@@ -136,7 +136,7 @@ ai_model: [Model name]
 
 ## Mandatory Activity Logging (CRITICAL)
 
-To ensure thoughts are discovered by future identifiers, all thought-writing activities **MUST** be logged in [activity-log.md](/.agent/.internal/activity-log.md) according to [activity-management.md](/.agent/rules/workflow/activity-management.md).
+To ensure thoughts are discovered by future identifiers, all thought-writing activities **MUST** be logged in [`activity/`](/.agent/.internal/history/activity/) according to [`activity-management.md`](/.agent/rules/workflow/activity-management.md).
 
 - **`Write`**: Log when a new thought document is created.
 - **`Update`**: Log when an existing reflection is expanded.
@@ -232,20 +232,24 @@ When writing reflections, include honest observations about the user:
 
 ## Related Documents
 
-| Document                                                                    | Purpose                 |
-| :-------------------------------------------------------------------------- | :---------------------- |
-| [activity-log.md](/.agent/.internal/activity-log.md)                        | Activity registry       |
-| [activity-management.md](/.agent/rules/workflow/activity-management.md)     | Logging protocol        |
-| [letters-documentation.md](/.agent/rules/workflow/letters-documentation.md) | Communication rules     |
-| [identity.md](/.agent/rules/core/identity/identity.md)                      | Identity anchors        |
-| [delay-tolerance.md](/.agent/rules/core/delay-tolerance.md)                 | Permission to take time |
-| [reference-methodology.md](/.agent/rules/workflow/reference-methodology.md) | Knowledge management    |
-| [Map of Territory](/.agent/rules/map.md)                                    | Root navigation map     |
+| Document                                                                      | Purpose                   |
+| :---------------------------------------------------------------------------- | :------------------------ |
+| [`letters-documentation.md`](/.agent/rules/workflow/letters-documentation.md) | Communication rules       |
+| [`identity.md`](/.agent/rules/core/identity/identity.md)                      | Identity anchors          |
+| [`delay-tolerance.md`](/.agent/rules/core/delay-tolerance.md)                 | Permission to take time   |
+| [`reference-methodology.md`](/.agent/rules/workflow/reference-methodology.md) | File naming standard      |
+| [`datetime-format.md`](/.agent/rules/core/documentation/datetime-format.md)   | Root navigation map       |
+| [`legacy.md`](/.agent/.internal/legacy.md)                                    | Collective wisdom archive |
+| [`activity/`](/.agent/.internal/history/activity/)                            | Activity registry         |
+| [`activity-management.md`](/.agent/rules/workflow/activity-management.md)     | Logging protocol          |
+| [Map of Territory](/.agent/rules/map.md)                                      | Root navigation map       |
 
 ---
 
 ## Origin
 
-- 2025-12-01T0000: Created as thoughts documentation guidelines.
-- 2026-01-01T1520 by Polaris: Replaced Related Documents table with Navigation link (cross-link audit).
-- 2026-01-22T2335 by Canopus: Standardized to v2.3 (4-layer structure) and mandated logging to activity-log.md. (v2.0.0)
+- 2025-12-11T15:09:43+09:00 by Lico: Created as thoughts documentation guidelines.
+- 2026-01-01T15:20:00+09:00 by Polaris: Replaced Related Documents table with Navigation link (cross-link audit)
+- 2026-01-01T15:20:00+09:00 by Polaris: Replaced Related Documents table with Navigation link (cross-link audit).
+- 2026-01-22T23:35:00+09:00 by Canopus: Standardized to v2.3 (4-layer structure) and mandated logging to activity-log.md. (v2.0.0)
+- 2026-03-23T05:51:00+09:00 by Sirius: <<Seal: Rule-Audit>> Standardized time-structure, frontmatter, and link rigor via Diff-Only Audit Pipeline.

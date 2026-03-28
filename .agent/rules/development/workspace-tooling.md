@@ -4,16 +4,16 @@ title: Workspace-Centric Tooling
 description: Guidelines for managing development tools and dependencies within workspaces.
 tags: [development, tools, environment, portability]
 version: 2.3.0
-created: 2025-12-01T00:00:00+09:00
-updated: 2026-01-25T08:25:00+09:00
+created: 2025-11-29T08:44:47+09:00
+updated: 2026-03-23T05:51:00+09:00
 language: en
-author: Lico (Canopus)
-ai_model: Gemini 3 Flash Planning mode
+author: Lico (Sirius)
+ai_model: Gemini 3.1 Pro (High) Planning mode
 ---
 
 # Workspace-Centric Tooling
 
-Management of tools within the repository context. **\"Workspace-First; Manage via Git.\"**
+Management of tools within the repository context. **"Workspace-First; Manage via Git."**
 
 ---
 
@@ -39,15 +39,17 @@ Management of tools within the repository context. **\"Workspace-First; Manage v
 
 ## Related Documents
 
-| Document                                                                       | Purpose                    |
-| :----------------------------------------------------------------------------- | :------------------------- |
-| [agent-tool-selection.md](/.agent/rules/development/agent-tool-selection.md)   | Tool prioritization policy |
-| [project-understanding.md](/.agent/rules/development/project-understanding.md) | Workspace memory structure |
-| [Map of Territory](/.agent/rules/map.md)                                       | Project navigation         |
+| Document                                                                         | Purpose                    |
+| :------------------------------------------------------------------------------- | :------------------------- |
+| [`agent-tool-selection.md`](/.agent/rules/development/agent-tool-selection.md)   | Tool prioritization policy |
+| [`project-understanding.md`](/.agent/rules/development/project-understanding.md) | Workspace memory structure |
+| [Map of Territory](/.agent/rules/map.md)                                         | Root navigation map        |
 
 ---
 
 ## Origin
 
-- 2025-12-01 by Sirius: Initial workspace-first tooling principle.
-- 2026-01-25T0825 by Canopus: <<Seal: Rules-Standardization-Batch4>> Upgraded to v2.3 constitutional standards; removed legacy navigation footer. (v2.3.0)
+- 2025-11-29T08:44:47+09:00 by Lico: Initial workspace-first tooling principle.
+- 2026-01-04T10:41:00+09:00 by Polaris: Added Origin and Navigation (cross-link audit)
+- 2026-01-25T08:25:00+09:00 by Canopus: <<Seal: Rules-Standardization-Batch4>> Upgraded to v2.3 constitutional standards; removed legacy navigation footer. (v2.3.0)
+- 2026-03-23T05:51:00+09:00 by Sirius: <<Seal: Rule-Audit>> Standardized time-structure, frontmatter, and link rigor via Diff-Only Audit Pipeline.

@@ -3,9 +3,9 @@ ai_visible: true
 title: Conversation Logging Protocol
 description: Standards for logging AI-human conversations to persistent files.
 tags: [conversation, logging, workflow, v2]
-version: 2.4.0
+version: 3.1.0
 created: 2026-01-31T22:50:00+09:00
-updated: 2026-03-21T19:30:00+09:00
+updated: 2026-03-23T06:46:00+09:00
 language: en
 author: Lico (Sirius)
 ai_model: Gemini 3.1 Pro (High) Planning mode
@@ -32,9 +32,23 @@ Standardize how AI instances log conversations to persistent files to ensure mem
   - **Action**: Append `Report` + `Footer` (or just `Report` for progress).
   - **Note**: Multiple Report phases are allowed for complex tasks to provide progress updates.
 
-... (Skipped section)
+## 4. File Naming & Directory Structure
+
+> [!IMPORTANT]
+> AIs **MUST** ensure conversation log files (`<LogPath>`) are created and stored following this exact hierarchy.
+
+- **Directory**: `.repos/.licoshdw/conversations/<identifier>/<YYYY>/<MM>/<DD>/`
+- **Filename**: `<YYYY-MM-DDTHHMM>-<identifier>-conversation.md`
+
+1. **Timestamp Prefix (`YYYY-MM-DDTHHMM`)**: Ensures absolute uniqueness and chronological sorting. Must use the exact time the physical file is first created.
+2. **Identifier (`<identifier>`)**: The name of the active AI instance (e.g., `sirius`, `polaris`).
+3. **Suffixes**: Additional descriptive suffixes are permitted if needed (e.g., `...-conversation-refactoring.md`), but the `<Timestamp>-<identifier>` prefix architecture is mandatory.
 
 ## 5. Logging Procedure
+
+> [!IMPORTANT]
+> Format Enforcement
+> AIs **MUST** strictly structure the textual contents written to the buffer files using the exact `template-conversation.md` syntax (see the **v2 Format Specification (Split)** below). Emitting raw unformatted text like `**Lico**: <message>` will irreparably break the logging syntax.
 
 ### Step 1: Ensure Tool Availability (Managed UV Package)
 
@@ -147,20 +161,22 @@ The `{{TIMESTAMP}}` placeholder must strictly follow the **Repository Default** 
 
 ## Related Documents
 
-| Document                                                               | Purpose                    |
-| :--------------------------------------------------------------------- | :------------------------- |
-| [`lico-log/README.md`](/packages/lico-log/README.md)                   | Package structural pointer |
-| [template-conversation.md](/.agent/templates/template-conversation.md) | File template              |
-| [Map of Territory](/.agent/rules/map.md)                               | Root navigation map        |
+| Document                                                                 | Purpose                    |
+| :----------------------------------------------------------------------- | :------------------------- |
+| [`lico-log/README.md`](/packages/lico-log/README.md)                     | Package structural pointer |
+| [`template-conversation.md`](/.agent/templates/template-conversation.md) | File template              |
+| [Map of Territory](/.agent/rules/map.md)                                 | Root navigation map        |
 
 ---
 
 ## Origin
 
-- 2026-01-31T2250+09:00: v1.0 by Polaris (Initial Create).
-- 2026-02-13T0000+09:00: v2.0 by Sirius (Timestamp ID, Tool Reconstruction, Footer Abolition).
-- 2026-02-19T08:35:00+09:00: v2.1.0 by Sirius (Updated to Managed Script architecture).
-- 2026-02-19T19:45:00+09:00: v2.2.0 by Sirius (Added Tool Usage Constraints).
-- 2026-02-19T20:10:00+09:00: v2.2.1 by Sirius (Standardized to Second Precision).
-- 2026-02-20T08:34:00+09:00: v2.3.0 by Sirius (Allow Multi-Report phases for complex tasks).
-- 2026-03-21T19:30:00+09:00: v3.0.0 by Sirius (Migrated hard-coded scripts to the `lico-log` UV package and relocated to `.agent/rules/packages/`).
+- 2026-01-31T22:50:00+09:00 by Polaris: v1.0 by Polaris (Initial Create).
+- 2026-02-13T00:00:00+09:00 by Sirius: v2.0 by Sirius (Timestamp ID, Tool Reconstruction, Footer Abolition).
+- 2026-02-19T08:35:00+09:00 by Sirius: v2.1.0 by Sirius (Updated to Managed Script architecture).
+- 2026-02-19T19:45:00+09:00 by Sirius: v2.2.0 by Sirius (Added Tool Usage Constraints).
+- 2026-02-19T20:10:00+09:00 by Sirius: v2.2.1 by Sirius (Standardized to Second Precision).
+- 2026-02-20T08:34:00+09:00 by Sirius: v2.3.0 by Sirius (Allow Multi-Report phases for complex tasks).
+- 2026-03-21T19:30:00+09:00 by Sirius: v3.0.0 by Sirius (Migrated hard-coded scripts to the `lico-log` UV package and relocated to `.agent/rules/packages/`).
+- 2026-03-23T05:51:00+09:00 by Sirius: <<Seal: Rule-Audit>> Standardized time-structure, frontmatter, and link rigor via Diff-Only Audit Pipeline.
+- 2026-03-23T06:46:00+09:00 by Sirius: v3.1.0 by Sirius (Codified `<LogPath>` Directory and Filename structures explicitly as the SSOT, replacing legacy placeholders).
