@@ -12,6 +12,9 @@ lico-shim = ["lico-shim"]
 lico-memory = ["lico-memory"]
 lico-backup = ["lico-backup"]
 lico-pipeline = ["lico-pipeline"]
+lico-config = ["lico-config"]
+lico-exec = ["lico-exec"]
+lico-logger = ["lico-logger"]
 
 dev = [
   "pyright>=1.1.408",
@@ -31,6 +34,9 @@ lico-shim = ["lico-shim"]
 lico-memory = ["lico-memory"]
 lico-backup = ["lico-backup"]
 lico-pipeline = ["lico-pipeline"]
+lico-config = ["lico-config"]
+lico-exec = ["lico-exec"]
+lico-logger = ["lico-logger"]
 
 [tool.uv]
 cache-dir = "./.temp/cache/uv"
@@ -43,6 +49,9 @@ default-groups = [
   "lico-memory",
   "lico-backup",
   "lico-pipeline",
+  "lico-config",
+  "lico-exec",
+  "lico-logger",
 ]
 
 [tool.uv.sources]
@@ -53,6 +62,9 @@ lico-shim = { workspace = true }
 lico-memory = { workspace = true }
 lico-backup = { workspace = true }
 lico-pipeline = { workspace = true }
+lico-config = { workspace = true }
+lico-exec = { workspace = true }
+lico-logger = { workspace = true }
 
 [tool.uv.workspace]
 members = [
@@ -63,6 +75,9 @@ members = [
   "packages/lico-memory",
   "packages/lico-backup",
   "packages/lico-pipeline",
+  "packages/lico-config",
+  "packages/lico-exec",
+  "packages/lico-logger",
 ]
 
 [tool.ruff]
@@ -139,6 +154,9 @@ extraPaths = [
   "packages/lico-memory/src",
   "packages/lico-backup/src",
   "packages/lico-pipeline",
+  "packages/lico-config/src",
+  "packages/lico-exec/src",
+  "packages/lico-logger/src",
 ]
 reportUnknownVariableType = "error"
 reportUnknownMemberType = "error"
@@ -172,6 +190,9 @@ pythonpath = [
   "packages/lico-memory",
   "packages/lico-backup",
   "packages/lico-pipeline",
+  "packages/lico-config",
+  "packages/lico-exec",
+  "packages/lico-logger",
 ]
 testpaths = [
   "packages/lico-lint/tests",
@@ -181,4 +202,7 @@ testpaths = [
   "packages/lico-memory/tests",
   "packages/lico-backup/tests",
   "packages/lico-pipeline/tests",
+  "packages/lico-config/tests",
+  "packages/lico-exec/tests",
+  "packages/lico-logger/tests",
 ]
