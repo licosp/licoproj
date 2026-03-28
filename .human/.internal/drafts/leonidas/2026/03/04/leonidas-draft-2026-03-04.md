@@ -7,7 +7,7 @@ version: 1.0.0
 created: 2026-03-04T00:00:00+09:00
 updated: 2026-03-04T00:00:00+09:00
 language: (en/ja)
-author: hasta
+author: leonidas
 ---
 
 # Draft
