@@ -1,12 +1,16 @@
 import os
 import sys
+from pathlib import Path
+from lico_logger import LicoMsg, get_logger
+
+logger = get_logger(__name__)
 
 
 class EmptyDirLinter:
     """Linter to detect and notify about empty directories."""
 
     def __init__(self, root_dir: str | None = None) -> None:
-        self.root_dir = root_dir or os.getcwd()
+        self.root_dir = root_dir or str(Path.cwd())
         self.exclude_dirs = {
             ".git",
             ".venv",
@@ -22,7 +26,7 @@ class EmptyDirLinter:
         try:
             # Check if there is anything inside
             return not any(os.scandir(path))
-        except PermissionError, FileNotFoundError:
+        except (PermissionError, FileNotFoundError):
             return False
 
     def scan(self) -> bool:
@@ -48,9 +52,8 @@ class EmptyDirLinter:
                 continue
 
             if self.is_empty_dir(root):
-                print(
-                    f"[Warning] Empty directory detected: {os.path.relpath(root, self.root_dir)}"
-                )
+                rel_path = os.path.relpath(root, self.root_dir)
+                logger.warning(LicoMsg.LINT.EMPTY_DIR_FOUND.format(path=rel_path))
                 found_empty = True
 
         if found_empty:
