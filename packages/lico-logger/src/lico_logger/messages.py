@@ -47,6 +47,20 @@ LicoMsg = SimpleNamespace(
         PACK_SAVED="Saved to: {path}",
         ERR_NOT_FOUND="Error: File not found: {path}",
     ),
+    # Shim related messages (lico-shim)
+    SHIM=SimpleNamespace(
+        BLOCKED_SHADOW="❌ [Shim] BLOCKED: Operating on .shadow/ from root is forbidden. cd first.",
+        BLOCKED_RESTRICTED="❌ [Shim] BLOCKED: 'git {arg}' is restricted to prevent data loss.",
+        BLOCKED_RESET_HARD="❌ [Shim] BLOCKED: 'git reset --hard' destroys history. Use --soft or bypass.",
+        USAGE="Usage: lico-shim <command> [args...]",
+        ERR_UNKNOWN="❌ [Shim] ERROR: Unknown shim command '{command}'.",
+    ),
+    # Pipeline related messages (lico-pipeline)
+    PIPELINE=SimpleNamespace(
+        START="\n🚀 Starting Lico Pipeline ({mode} | {targets})...\n",
+        TOOL_HEADER="--- {tool} ---",
+        SEPARATOR="",
+    ),
     # Config related messages (lico-config)
     CONFIG=SimpleNamespace(
         LOAD_SUCCESS="Configuration loaded from: {path}",
