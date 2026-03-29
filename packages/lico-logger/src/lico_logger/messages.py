@@ -20,6 +20,10 @@ LicoMsg = SimpleNamespace(
         SUCCESS="Workspace backup complete.",
         ERR_SRC_NOT_FOUND="Error: Source directory {src} does not exist.",
         ERR_FAILED="Error during workspace backup: {error}",
+        ARTIFACT_START="Syncing {src} -> {dest}",
+        ARTIFACT_ERR="Error syncing {src}: {error}",
+        ARTIFACT_SUCCESS="Artifact backup complete.",
+
     ),
     # Memory related messages (lico-memory)
     MEMORY=SimpleNamespace(

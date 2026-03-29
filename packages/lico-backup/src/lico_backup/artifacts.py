@@ -1,4 +1,7 @@
 import argparse
+from lico_logger import get_logger, LicoMsg
+
+logger = get_logger(__name__)
 import subprocess
 import sys
 from pathlib import Path
@@ -8,7 +11,7 @@ def sync_dir(src: Path, dest: Path, is_history: bool = False):
     if not src.exists() or not src.is_dir():
         return
 
-    print(f"Syncing {src} -> {dest}")
+    logger.info(LicoMsg.BACKUP.ARTIFACT_START.format(src=src, dest=dest))
     dest.mkdir(parents=True, exist_ok=True)
 
     # Base rsync command: archive mode, verbose
@@ -40,7 +43,7 @@ def sync_dir(src: Path, dest: Path, is_history: bool = False):
     try:
         subprocess.run(cmd, check=True)
     except subprocess.CalledProcessError as e:
-        print(f"Error syncing {src}: {e}", file=sys.stderr)
+        logger.error(LicoMsg.BACKUP.ARTIFACT_ERR.format(src=src, error=e))
 
 
 def main():
@@ -74,7 +77,7 @@ def main():
             dest_path = archive_base / "history" / name
             sync_dir(history_path, dest_path, is_history=True)
 
-    print("Artifact backup complete.")
+    logger.info(LicoMsg.BACKUP.ARTIFACT_SUCCESS)
 
 
 if __name__ == "__main__":
