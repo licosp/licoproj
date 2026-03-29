@@ -6,6 +6,9 @@ import sys
 from abc import ABC, abstractmethod
 from dataclasses import dataclass
 from pathlib import Path
+from lico_logger import get_logger, LicoMsg
+
+logger = get_logger(__name__)
 
 logging.basicConfig(
     level=logging.INFO, format="%(message)s", stream=sys.stdout
@@ -408,21 +411,21 @@ def main() -> None:
         if selected_tags
         else "Targets: ALL"
     )
-    print(f"\n🚀 Starting Lico Pipeline ({mode_str} | {targets_str})...\n")
+    logger.info(LicoMsg.PIPELINE.START.format(mode=mode_str, targets=targets_str))
 
     if not toolsToRun:
         logger.warning("No tools match the selected targets.")
         sys.exit(0)
 
     for tool in toolsToRun:
-        print(f"--- {tool.name} ---")
+        logger.info(LicoMsg.PIPELINE.TOOL_HEADER.format(tool=tool.name))
         result = tool.run(target_path, fix_mode=fix_mode)
         if not result.success:
             success = False
             logger.error(f"❌ {tool.name} failed!")
         else:
             logger.info(f"✅ {tool.name} passed.")
-        print()
+        logger.info(LicoMsg.PIPELINE.SEPARATOR)
 
     if success:
         logger.info("🎉 All selected checks passed!")
