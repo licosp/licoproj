@@ -31,7 +31,7 @@ class EmptyDirLinter:
         Returns:
             bool: True if empty directories were found, False otherwise.
         """
-        print(f"--- lico-lint-empty-dir Scan: {self.root_dir} ---")
+        logger.info(LicoMsg.LINT.EMPTY_DIR_START.format(path=self.root_dir))
         found_empty = False
 
         # Use os.walk to find all directories
@@ -54,9 +54,9 @@ class EmptyDirLinter:
                 found_empty = True
 
         if found_empty:
-            print("--- Scan Complete: Issues found ---")
+            logger.info(LicoMsg.LINT.EMPTY_DIR_ISSUE)
         else:
-            print("--- Scan Complete: No empty directories found ---")
+            logger.info(LicoMsg.LINT.EMPTY_DIR_NONE)
 
         return found_empty
 
