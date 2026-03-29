@@ -23,7 +23,27 @@ LicoMsg = SimpleNamespace(
         ARTIFACT_START="Syncing {src} -> {dest}",
         ARTIFACT_ERR="Error syncing {src}: {error}",
         ARTIFACT_SUCCESS="Artifact backup complete.",
-
+    ),
+    # Pipeline related messages (lico-pipeline)
+    PIPELINE=SimpleNamespace(
+        START="\n🚀 Starting Lico Pipeline ({mode} | {targets})...\n",
+        TOOL_HEADER="--- {tool} ---",
+        SEPARATOR="",
+    ),
+    # Shim related messages (lico-shim)
+    SHIM=SimpleNamespace(
+        BLOCKED_SHADOW="❌ [Shim] BLOCKED: Operating on .shadow/ from root is forbidden. cd first.",
+        BLOCKED_RESTRICTED="❌ [Shim] BLOCKED: 'git {arg}' is restricted to prevent data loss.",
+        BLOCKED_RESET_HARD="❌ [Shim] BLOCKED: 'git reset --hard' destroys history. Use --soft or bypass.",
+        USAGE="Usage: lico-shim <command> [args...]",
+        ERR_UNKNOWN="❌ [Shim] ERROR: Unknown shim command '{command}'.",
+    ),
+    # Lint related messages (lico-lint)
+    LINT=SimpleNamespace(
+        EMPTY_DIR_START="--- lico-lint-empty-dir Scan: {path} ---",
+        EMPTY_DIR_FOUND="[Warning] Empty directory detected: {path}",
+        EMPTY_DIR_ISSUE="--- Scan Complete: Issues found ---",
+        EMPTY_DIR_NONE="--- Scan Complete: No empty directories found ---",
     ),
     # Memory related messages (lico-memory)
     MEMORY=SimpleNamespace(
@@ -31,6 +51,7 @@ LicoMsg = SimpleNamespace(
         FILTER_SCANNING="Reading: {file}",
         FILTER_SUMMARY_HEADER="--- Extraction Summary ---",
         FILTER_QUOTA="Target Quota: Stage1={s1}, Stage2={s2}",
+        FILTER_ACTUAL_COLLECTED="Actually Collected: Stage1={s1}, Stage2={s2}",
         FILTER_FOUND="Found {count} message objects.",
         FILTER_FILES_ACCESSED="Files accessed (newest to oldest):",
         FILTER_FILE_ENTRY="  - {file}",
@@ -50,27 +71,7 @@ LicoMsg = SimpleNamespace(
         PACK_SIZE="Final JSON Size: {size} bytes",
         PACK_SAVED="Saved to: {path}",
         ERR_NOT_FOUND="Error: File not found: {path}",
-    ),
-    # Shim related messages (lico-shim)
-    SHIM=SimpleNamespace(
-        BLOCKED_SHADOW="❌ [Shim] BLOCKED: Operating on .shadow/ from root is forbidden. cd first.",
-        BLOCKED_RESTRICTED="❌ [Shim] BLOCKED: 'git {arg}' is restricted to prevent data loss.",
-        BLOCKED_RESET_HARD="❌ [Shim] BLOCKED: 'git reset --hard' destroys history. Use --soft or bypass.",
-        USAGE="Usage: lico-shim <command> [args...]",
-        ERR_UNKNOWN="❌ [Shim] ERROR: Unknown shim command '{command}'.",
-    ),
-    # Pipeline related messages (lico-pipeline)
-    PIPELINE=SimpleNamespace(
-        START="\n🚀 Starting Lico Pipeline ({mode} | {targets})...\n",
-        TOOL_HEADER="--- {tool} ---",
-        SEPARATOR="",
-    ),
-    # Lint related messages (lico-lint)
-    LINT=SimpleNamespace(
-        EMPTY_DIR_START="--- lico-lint-empty-dir Scan: {path} ---",
-        EMPTY_DIR_FOUND="[Warning] Empty directory detected: {path}",
-        EMPTY_DIR_ISSUE="--- Scan Complete: Issues found ---",
-        EMPTY_DIR_NONE="--- Scan Complete: No empty directories found ---",
+        ERR_INVALID_JSON="Warning: Failed to parse line in {path}: {error}",
     ),
     # Config related messages (lico-config)
     CONFIG=SimpleNamespace(
