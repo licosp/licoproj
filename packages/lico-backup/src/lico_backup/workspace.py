@@ -2,6 +2,9 @@ import argparse
 import subprocess
 import sys
 from pathlib import Path
+from lico_logger import get_logger, LicoMsg
+
+logger = get_logger(__name__)
 
 
 def main():
@@ -15,13 +18,10 @@ def main():
     dest_dir = home / "develop" / "shared-backup"
 
     if not src_dir.exists() or not src_dir.is_dir():
-        print(
-            f"Error: Source directory {src_dir} does not exist.",
-            file=sys.stderr,
-        )
+        logger.error(LicoMsg.BACKUP.ERR_SRC_NOT_FOUND.format(src=src_dir))
         sys.exit(1)
 
-    print(f"Syncing full workspace: {src_dir} -> {dest_dir}")
+    logger.info(LicoMsg.BACKUP.START.format(src=src_dir, dest=dest_dir))
     dest_dir.mkdir(parents=True, exist_ok=True)
 
     cmd = [
@@ -37,11 +37,12 @@ def main():
 
     try:
         subprocess.run(cmd, check=True)
-        print("Workspace backup complete.")
+        logger.info(LicoMsg.BACKUP.SUCCESS)
     except subprocess.CalledProcessError as e:
-        print(f"Error during workspace backup: {e}", file=sys.stderr)
+        logger.error(LicoMsg.BACKUP.ERR_FAILED.format(error=e))
         sys.exit(1)
 
 
 if __name__ == "__main__":
     main()
+
