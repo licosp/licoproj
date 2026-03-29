@@ -1,10 +1,10 @@
-logger = get_logger(__name__)
-
 import argparse
 import json
-from lico_logger import get_logger, LicoMsg
 import sys
 from pathlib import Path
+from lico_logger import LicoMsg, get_logger
+
+logger = get_logger(__name__)
 
 
 def main():
@@ -42,19 +42,13 @@ def main():
     stage2_quota = args.stage2
 
     if not l4_root.exists() or not l4_root.is_dir():
-        print(
-            f"Error: Input directory {l4_root} does not exist or is not a directory.",
-            file=sys.stderr,
-        )
+        logger.error(LicoMsg.MEMORY.ERR_NOT_FOUND.format(path=l4_root))
         sys.exit(1)
 
     messages_dir = l4_root / "messages"
 
     if not messages_dir.exists():
-        print(
-            f"Error: Messages directory {messages_dir} not found.",
-            file=sys.stderr,
-        )
+        logger.error(LicoMsg.MEMORY.ERR_NOT_FOUND.format(path=messages_dir))
         sys.exit(1)
 
     # Gather and sort JSONL files (newest first)
@@ -73,71 +67,56 @@ def main():
 
         files_touched.append(str(jsonl_file.relative_to(l4_root)))
 
-        # Read all lines in file and reverse them to process newest first
         try:
             with jsonl_file.open("r", encoding="utf-8") as f:
                 lines = [line.strip() for line in f if line.strip()]
         except Exception as e:
-            print(
-                f"Warning: Failed to read {jsonl_file}: {e}", file=sys.stderr
-            )
+            logger.warning(f"Warning: Failed to read {jsonl_file}: {e}")
             continue
 
         lines.reverse()
 
         for line in lines:
             if len(stage1_lines) < stage1_quota:
-                # Stage 1: Keep everything
                 try:
                     obj = json.loads(line)
                     stage1_lines.append(obj)
-                except:
+                except json.JSONDecodeError:
                     pass
             elif len(stage2_lines) < stage2_quota:
-                # Stage 2: Filter A (User) and B (Gemini with content)
                 try:
                     obj = json.loads(line)
                     msg_type = obj.get("type")
                     content = obj.get("content", "")
-
-                    is_user = msg_type == "user"
-                    # Check if content is truthy (non-empty string or non-empty list)
                     has_content = bool(content)
-                    is_gemini_with_content = (
-                        msg_type == "gemini" or msg_type == "model"
-                    ) and has_content
+                    is_gemini_with_content = (msg_type in ("gemini", "model")) and has_content
 
-                    if is_user or is_gemini_with_content:
+                    if msg_type == "user" or is_gemini_with_content:
                         if "toolCalls" in obj:
                             del obj["toolCalls"]
                         stage2_lines.append(obj)
-                except:
+                except json.JSONDecodeError:
                     pass
             else:
-                break  # Both quotas met
+                break
 
-    # Reverse the collected lists so they are chronological (oldest to newest)
     stage2_lines.reverse()
     stage1_lines.reverse()
-
     final_messages = stage2_lines + stage1_lines
 
     logger.info(LicoMsg.MEMORY.FILTER_SUMMARY_HEADER)
     logger.info(LicoMsg.MEMORY.FILTER_QUOTA.format(s1=stage1_quota, s2=stage2_quota))
-    print(
-        f"Actually Collected: Stage1={len(stage1_lines)}, Stage2={len(stage2_lines)}"
-    )
+    logger.info(LicoMsg.MEMORY.FILTER_ACTUAL_COLLECTED.format(s1=len(stage1_lines), s2=len(stage2_lines)))
     logger.info(LicoMsg.MEMORY.FILTER_FILES_ACCESSED)
     for f in files_touched:
         logger.info(LicoMsg.MEMORY.FILTER_FILE_ENTRY.format(file=f))
 
     if final_messages:
         oldest = final_messages[0]
-        logger.info(LicoMsg.MEMORY.FILTER_OLDEST_TIMESTAMP.format(ts=oldest.get('timestamp')))
+        logger.info(LicoMsg.MEMORY.FILTER_OLDEST_TIMESTAMP.format(ts=oldest.get("timestamp")))
 
     logger.info(LicoMsg.MEMORY.FILTER_TOTAL_TURNS.format(count=len(final_messages)))
 
-    # Write to output JSONL
     output_path.parent.mkdir(parents=True, exist_ok=True)
     with output_path.open("w", encoding="utf-8") as f:
         for msg in final_messages:

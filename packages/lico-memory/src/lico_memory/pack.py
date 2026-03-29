@@ -1,12 +1,12 @@
-logger = get_logger(__name__)
-
 import argparse
 import json
-from lico_logger import get_logger, LicoMsg
 import sys
 import uuid
 from datetime import UTC, datetime
 from pathlib import Path
+from lico_logger import LicoMsg, get_logger
+
+logger = get_logger(__name__)
 
 
 def main():
@@ -55,12 +55,9 @@ def main():
     output_dir = Path(args.output_dir).expanduser().resolve()
 
     if not jsonl_path.exists():
-        print(
-            f"Error: Input JSONL {jsonl_path} does not exist.", file=sys.stderr
-        )
+        logger.error(LicoMsg.MEMORY.ERR_NOT_FOUND.format(path=jsonl_path))
         sys.exit(1)
 
-    # 1. Read metadata
     session_data = {}
     base_id = "unknown"
     if meta_path.exists():
@@ -68,45 +65,29 @@ def main():
             session_data = json.load(f)
             base_id = session_data.get("sessionId", "unknown")
     else:
-        print(
-            f"Warning: Metadata file {meta_path} not found. Creating a generic session structure.",
-            file=sys.stderr,
-        )
+        logger.warning(f"Warning: Metadata file {meta_path} not found. Creating a generic session structure.")
         session_data = {}
 
-    # 2. Generate New Identity and Timestamps
     new_uuid = str(uuid.uuid4())
     short_hash = new_uuid[:8]
-
     now_utc = datetime.now(UTC)
-    now_local = (
-        datetime.now()
-    )  # Using system local time for filename as Gemini CLI does
+    now_local = datetime.now()
 
-    # Format: 2026-03-15T12-37
     filename_date = now_local.strftime("%Y-%m-%dT%H-%M")
     output_filename = f"session-{filename_date}-{short_hash}.json"
     output_path = output_dir / output_filename
 
-    # Update Session Data
     session_data["sessionId"] = new_uuid
-    # Format: 2026-03-15T12:37:00.000Z
-    session_data["startTime"] = (
-        now_utc.strftime("%Y-%m-%dT%H:%M:%S.%f")[:-3] + "Z"
-    )
+    session_data["startTime"] = now_utc.strftime("%Y-%m-%dT%H:%M:%S.%f")[:-3] + "Z"
     session_data["lastUpdated"] = session_data["startTime"]
 
-    # 3. Create JSON Summary
     summary_obj = {
         "id": args.id,
         "baseId": base_id,
         "lines": {"s1": args.s1, "s2": args.s2},
     }
-    session_data["summary"] = json.dumps(
-        summary_obj, separators=(",", ":"), ensure_ascii=False
-    )
+    session_data["summary"] = json.dumps(summary_obj, separators=(",", ":"), ensure_ascii=False)
 
-    # 4. Read messages from JSONL
     messages = []
     with jsonl_path.open("r", encoding="utf-8") as f:
         for line in f:
@@ -115,22 +96,13 @@ def main():
                     obj = json.loads(line)
                     messages.append(obj)
                 except json.JSONDecodeError as e:
-                    print(
-                        f"Warning: Failed to parse line in {jsonl_path}: {e}",
-                        file=sys.stderr,
-                    )
+                    logger.warning(LicoMsg.MEMORY.ERR_INVALID_JSON.format(path=jsonl_path, error=e))
 
-    # 5. Assemble
     session_data["messages"] = messages
-
-    # 6. Write final JSON
     output_dir.mkdir(parents=True, exist_ok=True)
 
-    # Check for accidental overwrite (highly unlikely with UUID, but defensive)
     if output_path.exists():
-        output_path = (
-            output_dir / f"session-{filename_date}-{short_hash}-restored.json"
-        )
+        output_path = output_dir / f"session-{filename_date}-{short_hash}-restored.json"
 
     with output_path.open("w", encoding="utf-8") as f:
         json.dump(session_data, f, separators=(",", ":"), ensure_ascii=False)
@@ -139,7 +111,7 @@ def main():
     logger.info(LicoMsg.MEMORY.PACK_COUNT.format(count=len(messages)))
     logger.info(LicoMsg.MEMORY.PACK_SESSION_ID.format(id=new_uuid))
     logger.info(LicoMsg.MEMORY.PACK_BASE_ID.format(id=base_id))
-    logger.info(LicoMsg.MEMORY.PACK_SUMMARY_TEXT.format(text=session_data['summary']))
+    logger.info(LicoMsg.MEMORY.PACK_SUMMARY_TEXT.format(text=session_data["summary"]))
     logger.info(LicoMsg.MEMORY.PACK_SIZE.format(size=output_path.stat().st_size))
     logger.info(LicoMsg.MEMORY.PACK_SAVED.format(path=output_path))
 
