@@ -45,6 +45,14 @@ LicoMsg = SimpleNamespace(
         EMPTY_DIR_ISSUE="--- Scan Complete: Issues found ---",
         EMPTY_DIR_NONE="--- Scan Complete: No empty directories found ---",
     ),
+    # Log appender messages (lico-log)
+    LOG_APPENDER=SimpleNamespace(
+        SIGNAL_EXIT="Error: Received signal {sig}. Exiting...",
+        CONTENT_NOT_FOUND="Error: Content file '{file}' not found.",
+        READ_FAILED="Error: Failed to read content file: {error}",
+        WRITE_FAILED="Error: Failed to write to log file: {error}",
+        USAGE="Usage: lico-log <log_path> <content_file>",
+    ),
     # Memory related messages (lico-memory)
     MEMORY=SimpleNamespace(
         FILTER_START="Scanning memory files from: {path}",
