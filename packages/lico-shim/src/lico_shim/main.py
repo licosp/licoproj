@@ -1,3 +1,5 @@
+logger = get_logger(__name__)
+
 """Unified Command Shim for Lico.
 
 Provides safety nets for destructive commands and environment routing.
@@ -7,6 +9,7 @@ import datetime
 import os
 import subprocess
 import sys
+from lico_logger import get_logger, LicoMsg
 from pathlib import Path
 
 
@@ -67,23 +70,14 @@ def handle_git(args: list[str]) -> None:
     """Block dangerous git commands."""
     for arg in args:
         if ".shadow/" in arg:
-            print(
-                "❌ [Shim] BLOCKED: Operating on .shadow/ from root is forbidden. cd first.",
-                file=sys.stderr,
-            )
+            logger.error(LicoMsg.SHIM.BLOCKED_SHADOW)
             sys.exit(1)
         if arg in ("restore", "clean"):
-            print(
-                f"❌ [Shim] BLOCKED: 'git {arg}' is restricted to prevent data loss.",
-                file=sys.stderr,
-            )
+            logger.error(LicoMsg.SHIM.BLOCKED_RESTRICTED.format(arg=arg))
             sys.exit(1)
 
     if "reset" in args and "--hard" in args:
-        print(
-            "❌ [Shim] BLOCKED: 'git reset --hard' destroys history. Use --soft or bypass.",
-            file=sys.stderr,
-        )
+        logger.error(LicoMsg.SHIM.BLOCKED_RESET_HARD)
         sys.exit(1)
 
     os.execvp("/usr/bin/git", ["git", *args])
@@ -97,7 +91,7 @@ def handle_python(args: list[str]) -> None:
 def main() -> None:
     """Entry point for lico-shim."""
     if len(sys.argv) < 2:
-        print("Usage: lico-shim <command> [args...]", file=sys.stderr)
+        logger.error(LicoMsg.SHIM.USAGE)
         sys.exit(1)
 
     command = sys.argv[1]
@@ -116,10 +110,7 @@ def main() -> None:
         handler(args)
     else:
         # Fallback to normal execution if command is not shimmed but somehow passed here
-        print(
-            f"❌ [Shim] ERROR: Unknown shim command '{command}'.",
-            file=sys.stderr,
-        )
+        logger.error(LicoMsg.SHIM.ERR_UNKNOWN.format(command=command))
         sys.exit(1)
 
 
