@@ -1,5 +1,8 @@
+logger = get_logger(__name__)
+
 import argparse
 import json
+from lico_logger import get_logger, LicoMsg
 import sys
 import uuid
 from datetime import UTC, datetime
@@ -132,13 +135,13 @@ def main():
     with output_path.open("w", encoding="utf-8") as f:
         json.dump(session_data, f, separators=(",", ":"), ensure_ascii=False)
 
-    print("--- Packaging Summary ---")
-    print(f"Messages packed: {len(messages)}")
-    print(f"New Session ID: {new_uuid}")
-    print(f"Base Session ID: {base_id}")
-    print(f"Summary generated: {session_data['summary']}")
-    print(f"Final JSON Size: {output_path.stat().st_size} bytes")
-    print(f"Saved to: {output_path}")
+    logger.info(LicoMsg.MEMORY.PACK_SUMMARY_HEADER)
+    logger.info(LicoMsg.MEMORY.PACK_COUNT.format(count=len(messages)))
+    logger.info(LicoMsg.MEMORY.PACK_SESSION_ID.format(id=new_uuid))
+    logger.info(LicoMsg.MEMORY.PACK_BASE_ID.format(id=base_id))
+    logger.info(LicoMsg.MEMORY.PACK_SUMMARY_TEXT.format(text=session_data['summary']))
+    logger.info(LicoMsg.MEMORY.PACK_SIZE.format(size=output_path.stat().st_size))
+    logger.info(LicoMsg.MEMORY.PACK_SAVED.format(path=output_path))
 
 
 if __name__ == "__main__":

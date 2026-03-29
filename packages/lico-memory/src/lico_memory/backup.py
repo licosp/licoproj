@@ -1,7 +1,10 @@
+logger = get_logger(__name__)
+
 """JSON to JSONL converter for Lico CLI logs."""
 
 import argparse
 import json
+from lico_logger import get_logger, LicoMsg
 import sys
 from datetime import datetime
 from pathlib import Path
@@ -68,14 +71,14 @@ def main() -> None:
     output_root = Path(args.output_root)
 
     if not input_path.exists():
-        print(f"Error: Input file '{input_path}' not found.", file=sys.stderr)
+        logger.error(LicoMsg.MEMORY.ERR_NOT_FOUND.format(path=input_path))
         sys.exit(1)
 
     try:
         with input_path.open("r", encoding="utf-8") as f:
             data = json.load(f)
     except json.JSONDecodeError as e:
-        print(f"Error: Failed to parse JSON: {e}", file=sys.stderr)
+        logger.error(LicoMsg.MEMORY.BACKUP_JSON_ERROR.format(error=e))
         sys.exit(1)
 
     messages = []
@@ -88,7 +91,7 @@ def main() -> None:
         messages = data.pop("messages", [])
         has_metadata = True
     else:
-        print("Error: Unknown JSON root structure.", file=sys.stderr)
+        logger.error(LicoMsg.MEMORY.BACKUP_STRUCT_ERROR)
         sys.exit(1)
 
     output_root.mkdir(parents=True, exist_ok=True)
@@ -111,7 +114,7 @@ def main() -> None:
             json.dump(data, mf, indent=2, ensure_ascii=False)
 
     if not messages:
-        print("No messages found in JSON.", file=sys.stderr)
+        logger.error(LicoMsg.MEMORY.BACKUP_NO_MSG)
         sys.exit(0)
 
     messages_root = output_root / "messages" if has_metadata else output_root

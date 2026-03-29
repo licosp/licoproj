@@ -1,5 +1,8 @@
+logger = get_logger(__name__)
+
 import argparse
 import json
+from lico_logger import get_logger, LicoMsg
 import sys
 from pathlib import Path
 
@@ -119,20 +122,20 @@ def main():
 
     final_messages = stage2_lines + stage1_lines
 
-    print("--- Extraction Summary ---")
-    print(f"Target Quota: Stage1={stage1_quota}, Stage2={stage2_quota}")
+    logger.info(LicoMsg.MEMORY.FILTER_SUMMARY_HEADER)
+    logger.info(LicoMsg.MEMORY.FILTER_QUOTA.format(s1=stage1_quota, s2=stage2_quota))
     print(
         f"Actually Collected: Stage1={len(stage1_lines)}, Stage2={len(stage2_lines)}"
     )
-    print("Files accessed (newest to oldest):")
+    logger.info(LicoMsg.MEMORY.FILTER_FILES_ACCESSED)
     for f in files_touched:
-        print(f"  - {f}")
+        logger.info(LicoMsg.MEMORY.FILTER_FILE_ENTRY.format(file=f))
 
     if final_messages:
         oldest = final_messages[0]
-        print(f"\nOldest extracted line timestamp: {oldest.get('timestamp')}")
+        logger.info(LicoMsg.MEMORY.FILTER_OLDEST_TIMESTAMP.format(ts=oldest.get('timestamp')))
 
-    print(f"Total extracted turns: {len(final_messages)}")
+    logger.info(LicoMsg.MEMORY.FILTER_TOTAL_TURNS.format(count=len(final_messages)))
 
     # Write to output JSONL
     output_path.parent.mkdir(parents=True, exist_ok=True)
@@ -141,7 +144,7 @@ def main():
             line = json.dumps(msg, separators=(",", ":"), ensure_ascii=False)
             f.write(line + "\n")
 
-    print(f"Saved filtered JSONL to: {output_path}")
+    logger.info(LicoMsg.MEMORY.FILTER_SAVED.format(path=output_path))
 
 
 if __name__ == "__main__":
