@@ -61,6 +61,13 @@ LicoMsg = SimpleNamespace(
         TOOL_HEADER="--- {tool} ---",
         SEPARATOR="",
     ),
+    # Lint related messages (lico-lint)
+    LINT=SimpleNamespace(
+        EMPTY_DIR_START="--- lico-lint-empty-dir Scan: {path} ---",
+        EMPTY_DIR_FOUND="[Warning] Empty directory detected: {path}",
+        EMPTY_DIR_ISSUE="--- Scan Complete: Issues found ---",
+        EMPTY_DIR_NONE="--- Scan Complete: No empty directories found ---",
+    ),
     # Config related messages (lico-config)
     CONFIG=SimpleNamespace(
         LOAD_SUCCESS="Configuration loaded from: {path}",
