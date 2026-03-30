@@ -47,7 +47,7 @@ def get_existing_ids(file_path: Path) -> set[str]:
                 except json.JSONDecodeError:
                     pass
     except Exception as e:
-        logger.warning(f"Warning: Failed to read existing IDs from {file_path}: {e}")
+        logger.warning(LicoMsg.MEMORY.BACKUP_READ_IDS_ERR.format(path=file_path, error=e))
 
     return existing_ids
 
@@ -165,7 +165,7 @@ def main() -> None:
                         except (json.JSONDecodeError, KeyError):
                             pass
             except Exception as e:
-                logger.warning(f"Warning: Failed to read {target_file}: {e}")
+                logger.warning(LicoMsg.MEMORY.BACKUP_READ_LOG_ERR.format(file=target_file, error=e))
 
         for msg in new_msgs:
             msg_id = msg.get("id") or f"{msg.get('sessionId')}_{msg.get('messageId')}"

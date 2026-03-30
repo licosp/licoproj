@@ -71,7 +71,7 @@ def main():
             with jsonl_file.open("r", encoding="utf-8") as f:
                 lines = [line.strip() for line in f if line.strip()]
         except Exception as e:
-            logger.warning(f"Warning: Failed to read {jsonl_file}: {e}")
+            logger.warning(LicoMsg.MEMORY.FILTER_READ_ERR.format(file=jsonl_file, error=e))
             continue
 
         lines.reverse()

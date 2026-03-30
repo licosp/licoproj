@@ -65,7 +65,7 @@ def main():
             session_data = json.load(f)
             base_id = session_data.get("sessionId", "unknown")
     else:
-        logger.warning(f"Warning: Metadata file {meta_path} not found. Creating a generic session structure.")
+        logger.warning(LicoMsg.MEMORY.PACK_META_NOT_FOUND.format(path=meta_path))
         session_data = {}
 
     new_uuid = str(uuid.uuid4())
