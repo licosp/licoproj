@@ -39,7 +39,7 @@ def get_logger(name: str, level: int = logging.INFO) -> logging.Logger:
     # Standard format: [TIME][LEVEL][NAME] MESSAGE
     formatter = logging.Formatter(
         "[%(asctime)s][%(levelname)s][%(name)s] %(message)s",
-        datefmt="%H:%M:%S"
+        datefmt="%H:%M:%S",
     )
 
     # 1. Stdout Handler (INFO and below)

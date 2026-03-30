@@ -1,6 +1,7 @@
 import os
 import sys
 from pathlib import Path
+
 from lico_logger import LicoMsg, get_logger
 
 logger = get_logger(__name__)
@@ -26,7 +27,7 @@ class EmptyDirLinter:
         try:
             # Check if there is anything inside
             return not any(os.scandir(path))
-        except (PermissionError, FileNotFoundError):
+        except PermissionError, FileNotFoundError:
             return False
 
     def scan(self) -> bool:
@@ -53,7 +54,9 @@ class EmptyDirLinter:
 
             if self.is_empty_dir(root):
                 rel_path = os.path.relpath(root, self.root_dir)
-                logger.warning(LicoMsg.LINT.EMPTY_DIR_FOUND.format(path=rel_path))
+                logger.warning(
+                    LicoMsg.LINT.EMPTY_DIR_FOUND.format(path=rel_path)
+                )
                 found_empty = True
 
         if found_empty:

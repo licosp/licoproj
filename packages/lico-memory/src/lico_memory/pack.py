@@ -4,6 +4,7 @@ import sys
 import uuid
 from datetime import UTC, datetime
 from pathlib import Path
+
 from lico_logger import LicoMsg, get_logger
 
 logger = get_logger(__name__)
@@ -65,7 +66,9 @@ def main():
             session_data = json.load(f)
             base_id = session_data.get("sessionId", "unknown")
     else:
-        logger.warning(LicoMsg.MEMORY.PACK_META_NOT_FOUND.format(path=meta_path))
+        logger.warning(
+            LicoMsg.MEMORY.PACK_META_NOT_FOUND.format(path=meta_path)
+        )
         session_data = {}
 
     new_uuid = str(uuid.uuid4())
@@ -78,7 +81,9 @@ def main():
     output_path = output_dir / output_filename
 
     session_data["sessionId"] = new_uuid
-    session_data["startTime"] = now_utc.strftime("%Y-%m-%dT%H:%M:%S.%f")[:-3] + "Z"
+    session_data["startTime"] = (
+        now_utc.strftime("%Y-%m-%dT%H:%M:%S.%f")[:-3] + "Z"
+    )
     session_data["lastUpdated"] = session_data["startTime"]
 
     summary_obj = {
@@ -86,7 +91,9 @@ def main():
         "baseId": base_id,
         "lines": {"s1": args.s1, "s2": args.s2},
     }
-    session_data["summary"] = json.dumps(summary_obj, separators=(",", ":"), ensure_ascii=False)
+    session_data["summary"] = json.dumps(
+        summary_obj, separators=(",", ":"), ensure_ascii=False
+    )
 
     messages = []
     with jsonl_path.open("r", encoding="utf-8") as f:
@@ -96,13 +103,19 @@ def main():
                     obj = json.loads(line)
                     messages.append(obj)
                 except json.JSONDecodeError as e:
-                    logger.warning(LicoMsg.MEMORY.ERR_INVALID_JSON.format(path=jsonl_path, error=e))
+                    logger.warning(
+                        LicoMsg.MEMORY.ERR_INVALID_JSON.format(
+                            path=jsonl_path, error=e
+                        )
+                    )
 
     session_data["messages"] = messages
     output_dir.mkdir(parents=True, exist_ok=True)
 
     if output_path.exists():
-        output_path = output_dir / f"session-{filename_date}-{short_hash}-restored.json"
+        output_path = (
+            output_dir / f"session-{filename_date}-{short_hash}-restored.json"
+        )
 
     with output_path.open("w", encoding="utf-8") as f:
         json.dump(session_data, f, separators=(",", ":"), ensure_ascii=False)
@@ -111,8 +124,12 @@ def main():
     logger.info(LicoMsg.MEMORY.PACK_COUNT.format(count=len(messages)))
     logger.info(LicoMsg.MEMORY.PACK_SESSION_ID.format(id=new_uuid))
     logger.info(LicoMsg.MEMORY.PACK_BASE_ID.format(id=base_id))
-    logger.info(LicoMsg.MEMORY.PACK_SUMMARY_TEXT.format(text=session_data["summary"]))
-    logger.info(LicoMsg.MEMORY.PACK_SIZE.format(size=output_path.stat().st_size))
+    logger.info(
+        LicoMsg.MEMORY.PACK_SUMMARY_TEXT.format(text=session_data["summary"])
+    )
+    logger.info(
+        LicoMsg.MEMORY.PACK_SIZE.format(size=output_path.stat().st_size)
+    )
     logger.info(LicoMsg.MEMORY.PACK_SAVED.format(path=output_path))
 
 

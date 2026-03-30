@@ -9,8 +9,9 @@ import datetime
 import os
 import subprocess
 import sys
-from lico_logger import get_logger, LicoMsg
 from pathlib import Path
+
+from lico_logger import LicoMsg
 
 
 def find_workspace_root() -> Path:

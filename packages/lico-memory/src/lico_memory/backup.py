@@ -5,6 +5,7 @@ import json
 import sys
 from datetime import datetime
 from pathlib import Path
+
 from lico_logger import LicoMsg, get_logger
 
 logger = get_logger(__name__)
@@ -47,7 +48,9 @@ def get_existing_ids(file_path: Path) -> set[str]:
                 except json.JSONDecodeError:
                     pass
     except Exception as e:
-        logger.warning(LicoMsg.MEMORY.BACKUP_READ_IDS_ERR.format(path=file_path, error=e))
+        logger.warning(
+            LicoMsg.MEMORY.BACKUP_READ_IDS_ERR.format(path=file_path, error=e)
+        )
 
     return existing_ids
 
@@ -159,29 +162,48 @@ def main() -> None:
                             continue
                         try:
                             obj = json.loads(line)
-                            obj_id = obj.get("id") or f"{obj.get('sessionId')}_{obj.get('messageId')}"
+                            obj_id = (
+                                obj.get("id")
+                                or f"{obj.get('sessionId')}_{obj.get('messageId')}"
+                            )
                             known_ids.add(obj_id)
                             merged_msgs.append(obj)
-                        except (json.JSONDecodeError, KeyError):
+                        except json.JSONDecodeError, KeyError:
                             pass
             except Exception as e:
-                logger.warning(LicoMsg.MEMORY.BACKUP_READ_LOG_ERR.format(file=target_file, error=e))
+                logger.warning(
+                    LicoMsg.MEMORY.BACKUP_READ_LOG_ERR.format(
+                        file=target_file, error=e
+                    )
+                )
 
         for msg in new_msgs:
-            msg_id = msg.get("id") or f"{msg.get('sessionId')}_{msg.get('messageId')}"
+            msg_id = (
+                msg.get("id")
+                or f"{msg.get('sessionId')}_{msg.get('messageId')}"
+            )
             if msg_id in known_ids:
                 count_skipped += 1
                 continue
             merged_msgs.append(msg)
             known_ids.add(msg_id)
             count_added += 1
-            logger.info(LicoMsg.MEMORY.BACKUP_ENTRY.format(id=msg_id, ts=msg.get("timestamp")))
+            logger.info(
+                LicoMsg.MEMORY.BACKUP_ENTRY.format(
+                    id=msg_id, ts=msg.get("timestamp")
+                )
+            )
 
         merged_msgs.sort(key=lambda x: x.get("timestamp", ""))
 
         with target_file.open("w", encoding="utf-8") as f:
             for msg in merged_msgs:
-                line = json.dumps(msg, separators=(",", ":"), ensure_ascii=False, sort_keys=True)
+                line = json.dumps(
+                    msg,
+                    separators=(",", ":"),
+                    ensure_ascii=False,
+                    sort_keys=True,
+                )
                 f.write(line + "\n")
 
     logger.info(LicoMsg.MEMORY.PACK_SAVED.format(path=output_root))

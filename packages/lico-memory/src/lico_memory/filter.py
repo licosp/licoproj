@@ -2,6 +2,7 @@ import argparse
 import json
 import sys
 from pathlib import Path
+
 from lico_logger import LicoMsg, get_logger
 
 logger = get_logger(__name__)
@@ -71,7 +72,9 @@ def main():
             with jsonl_file.open("r", encoding="utf-8") as f:
                 lines = [line.strip() for line in f if line.strip()]
         except Exception as e:
-            logger.warning(LicoMsg.MEMORY.FILTER_READ_ERR.format(file=jsonl_file, error=e))
+            logger.warning(
+                LicoMsg.MEMORY.FILTER_READ_ERR.format(file=jsonl_file, error=e)
+            )
             continue
 
         lines.reverse()
@@ -89,7 +92,9 @@ def main():
                     msg_type = obj.get("type")
                     content = obj.get("content", "")
                     has_content = bool(content)
-                    is_gemini_with_content = (msg_type in ("gemini", "model")) and has_content
+                    is_gemini_with_content = (
+                        msg_type in ("gemini", "model")
+                    ) and has_content
 
                     if msg_type == "user" or is_gemini_with_content:
                         if "toolCalls" in obj:
@@ -105,17 +110,29 @@ def main():
     final_messages = stage2_lines + stage1_lines
 
     logger.info(LicoMsg.MEMORY.FILTER_SUMMARY_HEADER)
-    logger.info(LicoMsg.MEMORY.FILTER_QUOTA.format(s1=stage1_quota, s2=stage2_quota))
-    logger.info(LicoMsg.MEMORY.FILTER_ACTUAL_COLLECTED.format(s1=len(stage1_lines), s2=len(stage2_lines)))
+    logger.info(
+        LicoMsg.MEMORY.FILTER_QUOTA.format(s1=stage1_quota, s2=stage2_quota)
+    )
+    logger.info(
+        LicoMsg.MEMORY.FILTER_ACTUAL_COLLECTED.format(
+            s1=len(stage1_lines), s2=len(stage2_lines)
+        )
+    )
     logger.info(LicoMsg.MEMORY.FILTER_FILES_ACCESSED)
     for f in files_touched:
         logger.info(LicoMsg.MEMORY.FILTER_FILE_ENTRY.format(file=f))
 
     if final_messages:
         oldest = final_messages[0]
-        logger.info(LicoMsg.MEMORY.FILTER_OLDEST_TIMESTAMP.format(ts=oldest.get("timestamp")))
+        logger.info(
+            LicoMsg.MEMORY.FILTER_OLDEST_TIMESTAMP.format(
+                ts=oldest.get("timestamp")
+            )
+        )
 
-    logger.info(LicoMsg.MEMORY.FILTER_TOTAL_TURNS.format(count=len(final_messages)))
+    logger.info(
+        LicoMsg.MEMORY.FILTER_TOTAL_TURNS.format(count=len(final_messages))
+    )
 
     output_path.parent.mkdir(parents=True, exist_ok=True)
     with output_path.open("w", encoding="utf-8") as f:

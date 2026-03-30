@@ -8,13 +8,14 @@ within the Resident Rico container.
 from __future__ import annotations
 
 import json
-from lico_logger import LicoMsg, get_logger
 import os
 import subprocess
 import sys
 from contextlib import suppress
 from pathlib import Path
 from typing import cast
+
+from lico_logger import LicoMsg, get_logger
 
 from .manifest import (
     CrewMember,
@@ -64,9 +65,13 @@ def run(
         cwd=str(cwd) if cwd else None,
     )
     if result.stdout:
-        logger.info(LicoMsg.EXEC.STDOUT_CAPTURE.format(content=result.stdout.strip()))
+        logger.info(
+            LicoMsg.EXEC.STDOUT_CAPTURE.format(content=result.stdout.strip())
+        )
     if result.stderr:
-        logger.error(LicoMsg.EXEC.STDERR_CAPTURE.format(content=result.stderr.strip()))
+        logger.error(
+            LicoMsg.EXEC.STDERR_CAPTURE.format(content=result.stderr.strip())
+        )
     return result
 
 
@@ -178,7 +183,9 @@ def setup_single_repo(repo: RepoConfig, repos_dir: Path) -> None:
         if local_path and local_path.exists():
             run(["cp", "-r", str(local_path), str(target_path)])
         else:
-            logger.warning(LicoMsg.DEVC.WARN_LOCAL_SOURCE_NOT_FOUND.format(name=name))
+            logger.warning(
+                LicoMsg.DEVC.WARN_LOCAL_SOURCE_NOT_FOUND.format(name=name)
+            )
 
 
 def ensure_repos(repos: list[RepoConfig]) -> None:
@@ -208,7 +215,9 @@ def setup_worktree_for_member(
     if wt_path.exists():
         return
 
-    logger.info(LicoMsg.DEVC.CREW_LINK.format(member=member_name, name=wt_name))
+    logger.info(
+        LicoMsg.DEVC.CREW_LINK.format(member=member_name, name=wt_name)
+    )
 
     if wt_name in {"licoproj", "workspace"}:
         if (ACTIVE_ROOT / ".git").exists():
@@ -217,7 +226,9 @@ def setup_worktree_for_member(
                 cwd=ACTIVE_ROOT,
             )
         else:
-            logger.warning(LicoMsg.DEVC.WARN_NOT_GIT_REPO.format(path=ACTIVE_ROOT))
+            logger.warning(
+                LicoMsg.DEVC.WARN_NOT_GIT_REPO.format(path=ACTIVE_ROOT)
+            )
     else:
         repo_source = WS_ROOT / ".repos" / wt_name
         if repo_source.exists():
@@ -226,7 +237,9 @@ def setup_worktree_for_member(
                 cwd=member_dir,
             )
         else:
-            logger.warning(LicoMsg.DEVC.WARN_REPO_NOT_FOUND.format(name=wt_name))
+            logger.warning(
+                LicoMsg.DEVC.WARN_REPO_NOT_FOUND.format(name=wt_name)
+            )
 
 
 def ensure_crew_worktrees(crew_list: list[CrewMember]) -> None:
@@ -455,7 +468,9 @@ def _check_host_gid() -> None:
     with suppress(Exception):
         ws_stat = WS_ROOT.stat()
         if ws_stat.st_gid != COMMON_GID:
-            logger.warning(LicoMsg.DEVC.WARN_GID_MISMATCH.format(gid=ws_stat.st_gid))
+            logger.warning(
+                LicoMsg.DEVC.WARN_GID_MISMATCH.format(gid=ws_stat.st_gid)
+            )
 
 
 def _add_crew_aliases(member_name: str, crew: list[CrewMember]) -> None:

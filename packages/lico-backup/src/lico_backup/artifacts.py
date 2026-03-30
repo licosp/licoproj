@@ -1,9 +1,9 @@
 import argparse
-from lico_logger import get_logger, LicoMsg
+
+from lico_logger import LicoMsg, get_logger
 
 logger = get_logger(__name__)
 import subprocess
-import sys
 from pathlib import Path
 
 

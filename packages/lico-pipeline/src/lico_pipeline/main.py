@@ -5,7 +5,8 @@ import sys
 from abc import ABC, abstractmethod
 from dataclasses import dataclass
 from pathlib import Path
-from lico_logger import get_logger, LicoMsg
+
+from lico_logger import LicoMsg, get_logger
 
 logger = get_logger(__name__)
 
@@ -32,7 +33,7 @@ class LintTool(ABC):
     def _run_subprocess(
         self, cmd: list[str], cwd: Path | None = None
     ) -> ToolResult:
-        logger.info(LicoMsg.PIPELINE.RUNNING_CMD.format(cmd=' '.join(cmd)))
+        logger.info(LicoMsg.PIPELINE.RUNNING_CMD.format(cmd=" ".join(cmd)))
         try:
             result = subprocess.run(
                 cmd, capture_output=False, check=False, shell=False, cwd=cwd
@@ -43,7 +44,9 @@ class LintTool(ABC):
                 return_code=result.returncode,
             )
         except FileNotFoundError:
-            logger.exception(LicoMsg.PIPELINE.ERR_CMD_NOT_FOUND.format(cmd=cmd[0]))
+            logger.exception(
+                LicoMsg.PIPELINE.ERR_CMD_NOT_FOUND.format(cmd=cmd[0])
+            )
             return ToolResult(name=self.name, success=False, return_code=-1)
 
 
@@ -71,7 +74,11 @@ class PythonTool(LintTool):
     def run(self, target_path: Path, fix_mode: bool = False) -> ToolResult:
         executable = self._resolve_executable()
         if not executable:
-            logger.error(LicoMsg.PIPELINE.ERR_EXECUTABLE_NOT_FOUND.format(cmd=self.command, tool=self.name))
+            logger.error(
+                LicoMsg.PIPELINE.ERR_EXECUTABLE_NOT_FOUND.format(
+                    cmd=self.command, tool=self.name
+                )
+            )
             return ToolResult(name=self.name, success=False, return_code=-1)
 
         current_args = self.args
@@ -109,7 +116,11 @@ class NodeTool(LintTool):
 
         executable = self._resolve_executable(root_dir)
         if not executable:
-            logger.error(LicoMsg.PIPELINE.ERR_EXECUTABLE_NOT_FOUND.format(cmd=self.command, tool=self.name))
+            logger.error(
+                LicoMsg.PIPELINE.ERR_EXECUTABLE_NOT_FOUND.format(
+                    cmd=self.command, tool=self.name
+                )
+            )
             return ToolResult(name=self.name, success=False, return_code=-1)
 
         current_args = self.args
@@ -143,7 +154,11 @@ class ShellcheckTool(PythonTool):
     def run(self, target_path: Path, fix_mode: bool = False) -> ToolResult:
         executable = self._resolve_executable()
         if not executable:
-            logger.error(LicoMsg.PIPELINE.ERR_EXECUTABLE_NOT_FOUND.format(cmd=self.command, tool=self.name))
+            logger.error(
+                LicoMsg.PIPELINE.ERR_EXECUTABLE_NOT_FOUND.format(
+                    cmd=self.command, tool=self.name
+                )
+            )
             return ToolResult(name=self.name, success=False, return_code=-1)
 
         files_to_check: list[Path] = []
@@ -388,7 +403,9 @@ def main() -> None:
         if selected_tags
         else "Targets: ALL"
     )
-    logger.info(LicoMsg.PIPELINE.START.format(mode=mode_str, targets=targets_str))
+    logger.info(
+        LicoMsg.PIPELINE.START.format(mode=mode_str, targets=targets_str)
+    )
 
     if not toolsToRun:
         logger.warning(LicoMsg.PIPELINE.NO_TOOLS_MATCH)

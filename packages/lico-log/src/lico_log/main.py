@@ -2,7 +2,6 @@
 
 import datetime
 import fcntl
-import os
 import signal
 import sys
 from pathlib import Path
@@ -39,7 +38,7 @@ def append_log(log_path: str, content_file: str) -> None:
             f.write(final_content + "\n")
             fcntl.flock(f, fcntl.LOCK_UN)
 
-    except (OSError, IOError) as e:
+    except OSError as e:
         logger.error(LicoMsg.LOG_APPENDER.WRITE_FAILED.format(error=e))
         sys.exit(1)
     except Exception as e:

@@ -2,7 +2,6 @@
 
 from types import SimpleNamespace
 
-
 # Message Catalog
 LicoMsg = SimpleNamespace(
     # General execution messages (lico-exec)
@@ -15,7 +14,6 @@ LicoMsg = SimpleNamespace(
         ERR_OUTPUT="Error output: {stderr}",
         STDOUT_CAPTURE="[Captured Stdout] {content}",
         STDERR_CAPTURE="[Captured Stderr] {content}",
-
     ),
     # Backup related messages (lico-backup)
     BACKUP=SimpleNamespace(
@@ -36,14 +34,11 @@ LicoMsg = SimpleNamespace(
         RUNNING_CMD="Running: {cmd}",
         ERR_CMD_NOT_FOUND="Error: Command '{cmd}' not found.",
         ERR_EXECUTABLE_NOT_FOUND="Error: Executable '{cmd}' not found for {tool}.",
-
         SKIPPING_TOOL="Skipping {name}: No matching files found.",
         TOOL_FAILED="❌ {name} failed!",
         TOOL_PASSED="✅ {name} passed.",
         ALL_PASSED="🎉 All selected checks passed!",
         SOME_FAILED="💥 Some checks failed.",
-
-
     ),
     # Shim related messages (lico-shim)
     SHIM=SimpleNamespace(
@@ -80,10 +75,8 @@ LicoMsg = SimpleNamespace(
         ERR_HABITAT_NOT_FOUND="[Error] Habitat config not found.",
         ERR_START_FAILED="[Error] Failed to start container",
         ERR_BOOT_FATAL="[Fatal] Unexpected error",
-
         PROVISION_EXEC="[Provision] Executing: {cmd}",
         LOAD_LEGACY_SECRETS="[Provision] Loading secrets legacy vault: {path}",
-
     ),
     # Memory related messages (lico-memory)
     MEMORY=SimpleNamespace(
@@ -116,7 +109,6 @@ LicoMsg = SimpleNamespace(
         BACKUP_READ_IDS_ERR="Warning: Failed to read existing IDs from {path}: {error}",
         BACKUP_READ_LOG_ERR="Warning: Failed to read {file}: {error}",
         PACK_META_NOT_FOUND="Warning: Metadata file {path} not found. Creating a generic session structure.",
-
     ),
     # Config related messages (lico-config)
     CONFIG=SimpleNamespace(

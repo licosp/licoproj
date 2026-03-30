@@ -1,10 +1,11 @@
 """Lico Container Bootstrapper (Bare Spark)."""
 
-from lico_logger import LicoMsg, get_logger
 import os
 import subprocess
 import sys
 from pathlib import Path
+
+from lico_logger import LicoMsg, get_logger
 
 from .manifest import load_habitat_config
 
@@ -41,7 +42,11 @@ class Habitat:
         actual_abs = project_root.resolve()
 
         if expected_abs != actual_abs:
-            logger.error(LicoMsg.DEVC.ERR_ENV_MISMATCH.format(expected=expected_abs, actual=actual_abs))
+            logger.error(
+                LicoMsg.DEVC.ERR_ENV_MISMATCH.format(
+                    expected=expected_abs, actual=actual_abs
+                )
+            )
             sys.exit(1)
 
     @staticmethod
@@ -68,7 +73,9 @@ class Habitat:
         # Normalize and expand for check
         cred_path = Path(env_path).expanduser().resolve()
         if not cred_path.exists():
-            logger.warning(LicoMsg.DEVC.WARN_CRED_MISSING.format(path=cred_path))
+            logger.warning(
+                LicoMsg.DEVC.WARN_CRED_MISSING.format(path=cred_path)
+            )
             sys.exit(1)
 
 

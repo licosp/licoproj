@@ -2,7 +2,8 @@ import argparse
 import subprocess
 import sys
 from pathlib import Path
-from lico_logger import get_logger, LicoMsg
+
+from lico_logger import LicoMsg, get_logger
 
 logger = get_logger(__name__)
 
@@ -45,4 +46,3 @@ def main():
 
 if __name__ == "__main__":
     main()
-
