@@ -414,7 +414,7 @@ def main() -> None:
     logger.info(LicoMsg.PIPELINE.START.format(mode=mode_str, targets=targets_str))
 
     if not toolsToRun:
-        logger.warning("No tools match the selected targets.")
+        logger.warning(LicoMsg.PIPELINE.NO_TOOLS_MATCH)
         sys.exit(0)
 
     for tool in toolsToRun:
