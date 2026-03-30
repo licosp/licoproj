@@ -1,5 +1,4 @@
 import argparse
-import logging
 import shutil
 import subprocess
 import sys
@@ -9,11 +8,6 @@ from pathlib import Path
 from lico_logger import get_logger, LicoMsg
 
 logger = get_logger(__name__)
-
-logging.basicConfig(
-    level=logging.INFO, format="%(message)s", stream=sys.stdout
-)
-logger = logging.getLogger(__name__)
 
 
 @dataclass
@@ -77,9 +71,7 @@ class PythonTool(LintTool):
     def run(self, target_path: Path, fix_mode: bool = False) -> ToolResult:
         executable = self._resolve_executable()
         if not executable:
-            logger.error(
-                f"Error: Executable '{self.command}' not found for {self.name}."
-            )
+            logger.error(LicoMsg.PIPELINE.ERR_EXECUTABLE_NOT_FOUND.format(cmd=self.command, tool=self.name))
             return ToolResult(name=self.name, success=False, return_code=-1)
 
         current_args = self.args
@@ -117,9 +109,7 @@ class NodeTool(LintTool):
 
         executable = self._resolve_executable(root_dir)
         if not executable:
-            logger.error(
-                f"Error: Executable '{self.command}' not found for {self.name}."
-            )
+            logger.error(LicoMsg.PIPELINE.ERR_EXECUTABLE_NOT_FOUND.format(cmd=self.command, tool=self.name))
             return ToolResult(name=self.name, success=False, return_code=-1)
 
         current_args = self.args
@@ -147,24 +137,19 @@ class ShellcheckTool(PythonTool):
         args: list[str],
         tags: list[str] | None = None,
     ):
-        # Inherit from PythonTool since shellcheck-py puts the binary in .venv/bin
         super().__init__(name, command, args, tags=tags)
-        self.extensions = [".sh", ".bash"]  # override Python extensions
+        self.extensions = [".sh", ".bash"]
 
     def run(self, target_path: Path, fix_mode: bool = False) -> ToolResult:
         executable = self._resolve_executable()
         if not executable:
-            logger.error(
-                f"Error: Executable '{self.command}' not found for {self.name}."
-            )
+            logger.error(LicoMsg.PIPELINE.ERR_EXECUTABLE_NOT_FOUND.format(cmd=self.command, tool=self.name))
             return ToolResult(name=self.name, success=False, return_code=-1)
 
-        # Shellcheck requires explicit files, not directories.
         files_to_check: list[Path] = []
         if target_path.is_dir():
             files_to_check.extend(target_path.rglob("*.sh"))
             files_to_check.extend(target_path.rglob("*.bash"))
-            # Filter out ignored directories to prevent noise
             files_to_check = [
                 f
                 for f in files_to_check
@@ -200,7 +185,6 @@ def main() -> None:
         help="Automatically fix and format code where possible",
     )
 
-    # Workflow Target Flags
     group = parser.add_argument_group("Workflow Targets")
     group.add_argument(
         "--python", action="store_true", help="Run only Python-related tools"
@@ -225,7 +209,6 @@ def main() -> None:
     target_path = Path(args.path).absolute()
     fix_mode = args.fix
 
-    # Determine selected tags
     selected_tags = set()
     if args.python:
         selected_tags.add("python")
@@ -236,9 +219,7 @@ def main() -> None:
     if args.shell:
         selected_tags.add("shell")
 
-    # Define Tools
     tools: list[LintTool] = [
-        # Python Tools
         PythonTool(
             "Ruff Check",
             "ruff",
@@ -262,7 +243,6 @@ def main() -> None:
         PythonTool(
             "Pytest", "pytest", args=["-c", "pyproject.toml"], tags=["python"]
         ),
-        # Node Tools
         NodeTool(
             "Prettier",
             "prettier",
@@ -375,7 +355,6 @@ def main() -> None:
             ["*"],
             tags=["docs", "web", "python", "shell"],
         ),
-        # Shell Tools (Now managed by uv via PyPI wrappers)
         PythonTool(
             "shfmt",
             "shfmt",
@@ -389,7 +368,6 @@ def main() -> None:
             args=["--rcfile", ".vscode/.shellcheckrc"],
             tags=["shell"],
         ),
-        # Custom Tools
         PythonTool(
             "Lico Empty Dir",
             "lico-lint-empty-dir",
@@ -398,11 +376,10 @@ def main() -> None:
         ),
     ]
 
-    # Filter tools based on tags
     if selected_tags:
         toolsToRun = [tool for tool in tools if set(tool.tags) & selected_tags]
     else:
-        toolsToRun = tools  # Run all if no flags specified
+        toolsToRun = tools
 
     success = True
     mode_str = "FIX Mode 🔧" if fix_mode else "CHECK Mode 🔍"

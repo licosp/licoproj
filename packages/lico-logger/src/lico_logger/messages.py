@@ -35,6 +35,8 @@ LicoMsg = SimpleNamespace(
         NO_TOOLS_MATCH="No tools match the selected targets.",
         RUNNING_CMD="Running: {cmd}",
         ERR_CMD_NOT_FOUND="Error: Command '{cmd}' not found.",
+        ERR_EXECUTABLE_NOT_FOUND="Error: Executable '{cmd}' not found for {tool}.",
+
         SKIPPING_TOOL="Skipping {name}: No matching files found.",
         TOOL_FAILED="❌ {name} failed!",
         TOOL_PASSED="✅ {name} passed.",
