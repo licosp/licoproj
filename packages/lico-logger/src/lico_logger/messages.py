@@ -29,6 +29,8 @@ LicoMsg = SimpleNamespace(
         START="\n🚀 Starting Lico Pipeline ({mode} | {targets})...\n",
         TOOL_HEADER="--- {tool} ---",
         SEPARATOR="",
+        NO_TOOLS_MATCH="No tools match the selected targets.",
+
     ),
     # Shim related messages (lico-shim)
     SHIM=SimpleNamespace(
@@ -97,6 +99,11 @@ LicoMsg = SimpleNamespace(
         PACK_SAVED="Saved to: {path}",
         ERR_NOT_FOUND="Error: File not found: {path}",
         ERR_INVALID_JSON="Warning: Failed to parse line in {path}: {error}",
+        FILTER_READ_ERR="Warning: Failed to read {file}: {error}",
+        BACKUP_READ_IDS_ERR="Warning: Failed to read existing IDs from {path}: {error}",
+        BACKUP_READ_LOG_ERR="Warning: Failed to read {file}: {error}",
+        PACK_META_NOT_FOUND="Warning: Metadata file {path} not found. Creating a generic session structure.",
+
     ),
     # Config related messages (lico-config)
     CONFIG=SimpleNamespace(
