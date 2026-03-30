@@ -8,7 +8,7 @@ within the Resident Rico container.
 from __future__ import annotations
 
 import json
-import logging
+from lico_logger import LicoMsg, get_logger
 import os
 import subprocess
 import sys
@@ -39,7 +39,7 @@ MIN_QUOTE_LEN = 2
 logging.basicConfig(
     level=logging.INFO, format="%(message)s", stream=sys.stdout
 )
-logger = logging.getLogger(__name__)
+logger = get_logger(__name__)
 
 
 def run(
@@ -477,7 +477,7 @@ def _add_crew_aliases(member_name: str, crew: list[CrewMember]) -> None:
 
 def main() -> None:
     """Entry point for Village Provisioning."""
-    logger.info("--- Lico Village Provisioning System (Habitat) ---")
+    logger.info(LicoMsg.DEVC.PROVISION_START)
 
     cfg_p = HABITAT_CONFIG
     if not cfg_p.exists():
@@ -485,7 +485,7 @@ def main() -> None:
         if fallback.exists():
             cfg_p = fallback
         else:
-            logger.error("[Error] Habitat config not found.")
+            logger.error(LicoMsg.DEVC.ERR_HABITAT_NOT_FOUND)
             sys.exit(1)
 
     _check_host_gid()

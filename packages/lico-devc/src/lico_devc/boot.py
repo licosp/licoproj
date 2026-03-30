@@ -104,7 +104,7 @@ def main() -> None:
     # 3. Discover Universe Root
     hub_root = find_hub_root()
     active_rel = project_root.relative_to(hub_root)
-    logger.info("[Hub] Root: %s | Active: %s", hub_root, active_rel)
+    logger.info(LicoMsg.DEVC.HUB_INFO.format(root=hub_root, active=active_rel))
 
     env = os.environ.copy()
     env.update(
@@ -127,7 +127,7 @@ def main() -> None:
             env=env,
             check=True,
         )
-        logger.info("[Success] Container is running. Connect via VS Code/SSH.")
+        logger.info(LicoMsg.DEVC.SUCCESS_RUNNING)
     except subprocess.CalledProcessError:
         logger.exception("[Error] Failed to start container")
         sys.exit(1)
