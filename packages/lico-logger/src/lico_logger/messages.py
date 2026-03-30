@@ -45,13 +45,30 @@ LicoMsg = SimpleNamespace(
         EMPTY_DIR_ISSUE="--- Scan Complete: Issues found ---",
         EMPTY_DIR_NONE="--- Scan Complete: No empty directories found ---",
     ),
-    # Log appender messages (lico-log)
-    LOG_APPENDER=SimpleNamespace(
-        SIGNAL_EXIT="Error: Received signal {sig}. Exiting...",
-        CONTENT_NOT_FOUND="Error: Content file '{file}' not found.",
-        READ_FAILED="Error: Failed to read content file: {error}",
-        WRITE_FAILED="Error: Failed to write to log file: {error}",
-        USAGE="Usage: lico-log <log_path> <content_file>",
+    # Environment management messages (lico-devc)
+    DEVC=SimpleNamespace(
+        BOOT_START="--- Lico Container Bootstrapper (Bare Spark) ---",
+        ERR_ENV_MISMATCH="[Error] Environment Mismatch. Expected: {expected}, Actual: {actual}",
+        WARN_CRED_MISSING="[Warning] Credentials Missing at {path}. Please ensure your Vault is active.",
+        HUB_INFO="[Hub] Root: {root} | Active: {active}",
+        SUCCESS_RUNNING="[Success] Container is running. Connect via VS Code/SSH.",
+        PROVISION_START="--- Lico Village Provisioning System (Habitat) ---",
+        REPO_ALREADY_EXISTS="[Repo] Already exists: {name}",
+        REPO_SETUP="[Repo] Setting up: {name} (from {source})",
+        WARN_LOCAL_SOURCE_NOT_FOUND="[Warn] Local source not found: {name}",
+        CREW_LINK="[Crew] Link/worktree {member}: {name}",
+        WARN_NOT_GIT_REPO="[Warn] {path} is not a git repo.",
+        WARN_REPO_NOT_FOUND="[Warning] Repository {name} not found.",
+        LOAD_SECRETS="[Provision] Loading secrets: {path}",
+        RESIDENT_SETUP="[Resident] Setting up: {name} (UID:{uid})",
+        WARN_GID_MISMATCH="[Warn] Host GID {gid} mismatch.",
+        ERR_HABITAT_NOT_FOUND="[Error] Habitat config not found.",
+        ERR_START_FAILED="[Error] Failed to start container",
+        ERR_BOOT_FATAL="[Fatal] Unexpected error",
+
+        PROVISION_EXEC="[Provision] Executing: {cmd}",
+        LOAD_LEGACY_SECRETS="[Provision] Loading secrets legacy vault: {path}",
+
     ),
     # Memory related messages (lico-memory)
     MEMORY=SimpleNamespace(
