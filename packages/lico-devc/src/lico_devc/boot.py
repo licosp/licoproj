@@ -129,10 +129,10 @@ def main() -> None:
         )
         logger.info(LicoMsg.DEVC.SUCCESS_RUNNING)
     except subprocess.CalledProcessError:
-        logger.exception("[Error] Failed to start container")
+        logger.exception(LicoMsg.DEVC.ERR_START_FAILED)
         sys.exit(1)
     except Exception:
-        logger.exception("[Fatal] Unexpected error")
+        logger.exception(LicoMsg.DEVC.ERR_BOOT_FATAL)
         sys.exit(1)
 
 
