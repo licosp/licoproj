@@ -64,9 +64,9 @@ def run(
         cwd=str(cwd) if cwd else None,
     )
     if result.stdout:
-        logger.info(result.stdout.strip())
+        logger.info(LicoMsg.EXEC.STDOUT_CAPTURE.format(content=result.stdout.strip()))
     if result.stderr:
-        logger.error(result.stderr.strip())
+        logger.error(LicoMsg.EXEC.STDERR_CAPTURE.format(content=result.stderr.strip()))
     return result
 
 

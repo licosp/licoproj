@@ -13,6 +13,9 @@ LicoMsg = SimpleNamespace(
         CMD_FAILURE="Command failed [{code}]: {label}",
         PROCESS_STARTED="Asynchronous process started: {label} (PID: {pid})",
         ERR_OUTPUT="Error output: {stderr}",
+        STDOUT_CAPTURE="[Captured Stdout] {content}",
+        STDERR_CAPTURE="[Captured Stderr] {content}",
+
     ),
     # Backup related messages (lico-backup)
     BACKUP=SimpleNamespace(
@@ -30,6 +33,14 @@ LicoMsg = SimpleNamespace(
         TOOL_HEADER="--- {tool} ---",
         SEPARATOR="",
         NO_TOOLS_MATCH="No tools match the selected targets.",
+        RUNNING_CMD="Running: {cmd}",
+        ERR_CMD_NOT_FOUND="Error: Command '{cmd}' not found.",
+        SKIPPING_TOOL="Skipping {name}: No matching files found.",
+        TOOL_FAILED="❌ {name} failed!",
+        TOOL_PASSED="✅ {name} passed.",
+        ALL_PASSED="🎉 All selected checks passed!",
+        SOME_FAILED="💥 Some checks failed.",
+
 
     ),
     # Shim related messages (lico-shim)

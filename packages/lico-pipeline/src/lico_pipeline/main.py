@@ -38,7 +38,7 @@ class LintTool(ABC):
     def _run_subprocess(
         self, cmd: list[str], cwd: Path | None = None
     ) -> ToolResult:
-        logger.info(f"Running: {' '.join(cmd)}")
+        logger.info(LicoMsg.PIPELINE.RUNNING_CMD.format(cmd=' '.join(cmd)))
         try:
             result = subprocess.run(
                 cmd, capture_output=False, check=False, shell=False, cwd=cwd
@@ -49,7 +49,7 @@ class LintTool(ABC):
                 return_code=result.returncode,
             )
         except FileNotFoundError:
-            logger.exception(f"Error: Command '{cmd[0]}' not found.")
+            logger.exception(LicoMsg.PIPELINE.ERR_CMD_NOT_FOUND.format(cmd=cmd[0]))
             return ToolResult(name=self.name, success=False, return_code=-1)
 
 
@@ -176,7 +176,7 @@ class ShellcheckTool(PythonTool):
             files_to_check.append(target_path)
 
         if not files_to_check:
-            logger.info(f"Skipping {self.name}: No matching files found.")
+            logger.info(LicoMsg.PIPELINE.SKIPPING_TOOL.format(name=self.name))
             return ToolResult(name=self.name, success=True, return_code=0)
 
         current_args = self.args
@@ -422,16 +422,16 @@ def main() -> None:
         result = tool.run(target_path, fix_mode=fix_mode)
         if not result.success:
             success = False
-            logger.error(f"❌ {tool.name} failed!")
+            logger.error(LicoMsg.PIPELINE.TOOL_FAILED.format(name=tool.name))
         else:
-            logger.info(f"✅ {tool.name} passed.")
+            logger.info(LicoMsg.PIPELINE.TOOL_PASSED.format(name=tool.name))
         logger.info(LicoMsg.PIPELINE.SEPARATOR)
 
     if success:
-        logger.info("🎉 All selected checks passed!")
+        logger.info(LicoMsg.PIPELINE.ALL_PASSED)
         sys.exit(0)
     else:
-        logger.error("💥 Some checks failed.")
+        logger.error(LicoMsg.PIPELINE.SOME_FAILED)
         sys.exit(1)
 
 
