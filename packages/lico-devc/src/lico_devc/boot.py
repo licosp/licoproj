@@ -1,6 +1,6 @@
 """Lico Container Bootstrapper (Bare Spark)."""
 
-import logging
+from lico_logger import LicoMsg, get_logger
 import os
 import subprocess
 import sys
@@ -12,7 +12,7 @@ from .manifest import load_habitat_config
 logging.basicConfig(
     level=logging.INFO, format="%(message)s", stream=sys.stdout
 )
-logger = logging.getLogger(__name__)
+logger = get_logger(__name__)
 
 
 class Habitat:
@@ -94,7 +94,7 @@ def find_hub_root() -> Path:
 
 def main() -> None:
     """Entry point for the Lico Container Bootstrapper."""
-    logger.info("--- Lico Container Bootstrapper (Bare Spark) ---")
+    logger.info(LicoMsg.DEVC.BOOT_START)
 
     # 1. Pivot to Project Root (Universal Invocation)
     # Script: <root>/packages/lico-devc/src/lico_devc/boot.py
