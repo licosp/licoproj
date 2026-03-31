@@ -20,7 +20,11 @@ Provides safety nets for destructive commands and environment routing.
 
 
 def find_workspace_root() -> Path:
-    """Find the root of the project."""
+    """Find the root of the project.
+
+    Returns:
+        Path: The absolute path to the workspace root.
+    """
     current = Path.cwd()
     for parent in [current, *current.parents]:
         if (parent / ".git").exists() or (parent / "pyproject.toml").exists():

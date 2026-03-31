@@ -14,7 +14,14 @@ if TYPE_CHECKING:
 
 @pytest.fixture  # type: ignore[misc]
 def test_env(tmp_path: Path) -> Path:
-    """Set up a temporary directory structure for testing."""
+    """Set up a temporary directory structure for testing.
+
+    Args:
+        tmp_path (Path): pytest fixture.
+
+    Returns:
+        Path: The root path of the test environment.
+    """
     root = tmp_path / "test_root"
     root.mkdir()
 

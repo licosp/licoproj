@@ -25,7 +25,14 @@ class EmptyDirLinter:
         }
 
     def is_empty_dir(self, path: str) -> bool:
-        """Check if a directory is empty (no files or sub-directories)."""
+        """Check if a directory is empty (no files or sub-directories).
+
+        Args:
+            path (str): The path to check.
+
+        Returns:
+            bool: True if the directory is empty, False otherwise.
+        """
         try:
             # Check if there is anything inside
             return not any(os.scandir(path))

@@ -12,7 +12,14 @@ logger = get_logger(__name__)
 
 
 def parse_date(timestamp_str: str) -> str:
-    """Extract YYYY/MM/DD from an ISO 8601 timestamp string."""
+    """Extract YYYY/MM/DD from an ISO 8601 timestamp string.
+
+    Args:
+        timestamp_str (str): The raw ISO 8601 timestamp.
+
+    Returns:
+        str: The extracted date in YYYY/MM/DD format.
+    """
     try:
         # e.g., "2026-02-07T11:00:15.692Z" -> "2026/02/07"
         dt = datetime.fromisoformat(timestamp_str.replace("Z", "+00:00"))
@@ -23,7 +30,14 @@ def parse_date(timestamp_str: str) -> str:
 
 
 def get_existing_ids(file_path: Path) -> set[str]:
-    """Read an existing JSONL file and return a set of all message IDs."""
+    """Read an existing JSONL file and return a set of all message IDs.
+
+    Args:
+        file_path (Path): Path to the JSONL file.
+
+    Returns:
+        set[str]: A set containing all unique message IDs found.
+    """
     existing_ids = set()
     if not file_path.exists():
         return existing_ids

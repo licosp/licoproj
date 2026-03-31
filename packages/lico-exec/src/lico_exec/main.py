@@ -25,7 +25,14 @@ class Commander:
     def _prepare_env(
         self, env: Mapping[str, str] | None = None
     ) -> dict[str, str]:
-        """Prepare environment variables."""
+        """Prepare environment variables.
+
+        Args:
+            env (Mapping[str, str] | None): Optional additional environment.
+
+        Returns:
+            dict[str, str]: The merged environment dictionary.
+        """
         full_env = os.environ.copy()
         if env:
             full_env.update(env)
