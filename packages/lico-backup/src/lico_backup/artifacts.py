@@ -1,18 +1,15 @@
 """IDE artifacts backup tool for the LicoTor ecosystem."""
 
 import argparse
-from lico_logger import LicoMsg, get_logger
 import subprocess
 from pathlib import Path
+
+from lico_logger import LicoMsg, get_logger
 
 logger = get_logger(__name__)
 
 
-
-
-
-
-def sync_dir(src: Path, dest: Path, is_history: bool = False):
+def sync_dir(src: Path, dest: Path, *, is_history: bool = False):
     if not src.exists() or not src.is_dir():
         return
 
@@ -24,24 +21,20 @@ def sync_dir(src: Path, dest: Path, is_history: bool = False):
 
     if is_history:
         # For history, we only want readable markdown files
-        cmd.extend(
-            [
-                "--include=*/",
-                "--exclude=*.json",
-                "--include=*.md*",
-                "--exclude=*",
-            ]
-        )
+        cmd.extend([
+            "--include=*/",
+            "--exclude=*.json",
+            "--include=*.md*",
+            "--exclude=*",
+        ])
     else:
         # For brain/code_tracker, same rules applied in the original script
-        cmd.extend(
-            [
-                "--include=*/",
-                "--exclude=*.json",
-                "--include=*.md*",
-                "--exclude=*",
-            ]
-        )
+        cmd.extend([
+            "--include=*/",
+            "--exclude=*.json",
+            "--include=*.md*",
+            "--exclude=*",
+        ])
 
     cmd.extend([str(src) + "/", str(dest) + "/"])
 
