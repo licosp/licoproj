@@ -62,7 +62,10 @@ def main() -> None:
     parser.add_argument("input_json", help="Path to the monolithic .json file")
     parser.add_argument(
         "output_root",
-        help="Root directory for output (e.g., .repos/.licoshdw/conversations_cli/identifiers/agate/)",
+        help=(
+            "Root directory for output (e.g., "
+            ".repos/.licoshdw/conversations_cli/identifiers/agate/)"
+        ),
     )
 
     args = parser.parse_args()
@@ -100,7 +103,8 @@ def main() -> None:
     if has_metadata and data:
         meta_path = output_root / "metadata.json"
 
-        # Merge existing metadata if present (to preserve overarching info if updating)
+        # Merge existing metadata if present
+        # (to preserve overarching info if updating)
         if meta_path.exists():
             try:
                 with meta_path.open("r", encoding="utf-8") as mf:
@@ -162,9 +166,8 @@ def main() -> None:
                             continue
                         try:
                             obj = json.loads(line)
-                            obj_id = (
-                                obj.get("id")
-                                or f"{obj.get('sessionId')}_{obj.get('messageId')}"
+                            obj_id = obj.get("id") or "{}_{}".format(
+                                obj.get("sessionId"), obj.get("messageId")
                             )
                             known_ids.add(obj_id)
                             merged_msgs.append(obj)
