@@ -1,3 +1,5 @@
+"""Security and consistency shim for Git and FS operations."""
+
 logger = get_logger(__name__)
 
 """Unified Command Shim for Lico.
