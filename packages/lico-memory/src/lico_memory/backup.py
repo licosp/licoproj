@@ -56,6 +56,7 @@ def get_existing_ids(file_path: Path) -> set[str]:
 
 
 def main() -> None:
+    """Entry point for JSON to JSONL conversion."""
     parser = argparse.ArgumentParser(
         description="Convert Gemini CLI JSON to date-partitioned JSONL."
     )

@@ -13,6 +13,7 @@ logger = get_logger(__name__)
 
 
 def main():
+    """Entry point for session packaging."""
     parser = argparse.ArgumentParser(
         description=(
             "Pack a filtered JSONL file and a metadata file into a final "

@@ -192,6 +192,7 @@ class ShellcheckTool(PythonTool):
 
 
 def main() -> None:
+    """Entry point for the quality pipeline orchestrator."""
     parser = argparse.ArgumentParser(
         description="Orchestrator for Lico linting pipelines"
     )

@@ -11,6 +11,7 @@ logger = get_logger(__name__)
 
 
 def main():
+    """Entry point for workspace backup."""
     parser = argparse.ArgumentParser(
         description="Backup the entire shared crew workspace."
     )

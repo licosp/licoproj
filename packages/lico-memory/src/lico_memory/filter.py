@@ -11,6 +11,7 @@ logger = get_logger(__name__)
 
 
 def main():
+    """Entry point for log filtering."""
     parser = argparse.ArgumentParser(
         description=(
             "Extract and filter L4 JSONL logs into a single condensed "

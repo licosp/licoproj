@@ -10,6 +10,13 @@ logger = get_logger(__name__)
 
 
 def sync_dir(src: Path, dest: Path, *, is_history: bool = False):
+    """Sync a directory to the destination using rsync.
+
+    Args:
+        src (Path): The source directory to sync.
+        dest (Path): The destination directory.
+        is_history (bool): Whether to handle the sync as a historical record.
+    """
     if not src.exists() or not src.is_dir():
         return
 
@@ -45,6 +52,7 @@ def sync_dir(src: Path, dest: Path, *, is_history: bool = False):
 
 
 def main():
+    """Entry point for IDE artifacts backup."""
     parser = argparse.ArgumentParser(
         description=(
             "Backup IDE artifacts (Antigravity, Cursor, VSCode) "
