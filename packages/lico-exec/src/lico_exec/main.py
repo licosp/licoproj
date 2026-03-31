@@ -37,6 +37,7 @@ class Commander:
         label: str,
         cwd: Path | str | None = None,
         env: Mapping[str, str] | None = None,
+        *,
         check: bool = True,
         capture_output: bool = True,
         text: bool = True,
