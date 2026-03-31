@@ -1,3 +1,5 @@
+"""Full workspace backup tool for the LicoTor ecosystem."""
+
 import argparse
 import subprocess
 import sys

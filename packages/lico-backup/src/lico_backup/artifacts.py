@@ -1,3 +1,5 @@
+"""IDE artifacts backup tool for the LicoTor ecosystem."""
+
 import argparse
 
 from lico_logger import LicoMsg, get_logger
