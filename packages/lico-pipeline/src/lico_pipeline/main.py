@@ -408,7 +408,7 @@ def main() -> None:
     )
 
     if not toolsToRun:
-        logger.warning(LicoMsg.PIPELINE.NO_TOOLS_MATCH)
+        logger.info(LicoMsg.PIPELINE.NO_TOOLS_MATCH)
         sys.exit(0)
 
     for tool in toolsToRun:
