@@ -46,7 +46,7 @@ def append_log(log_path: str, content_file: str) -> None:
         sys.exit(1)
 
 
-def handle_signal(signum, frame):
+def handle_signal(signum, frame) -> None:
     """Handle termination signals."""
     logger.error(LicoMsg.LOG_APPENDER.SIGNAL_EXIT.format(sig=signum))
     sys.exit(1)

@@ -10,7 +10,7 @@ from lico_logger import LicoMsg, get_logger
 logger = get_logger(__name__)
 
 
-def main():
+def main() -> None:
     """Entry point for workspace backup."""
     parser = argparse.ArgumentParser(
         description="Backup the entire shared crew workspace."

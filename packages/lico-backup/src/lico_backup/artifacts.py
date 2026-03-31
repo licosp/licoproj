@@ -9,7 +9,7 @@ from lico_logger import LicoMsg, get_logger
 logger = get_logger(__name__)
 
 
-def sync_dir(src: Path, dest: Path, *, is_history: bool = False):
+def sync_dir(src: Path, dest: Path, *, is_history: bool = False) -> None:
     """Sync a directory to the destination using rsync.
 
     Args:
@@ -51,7 +51,7 @@ def sync_dir(src: Path, dest: Path, *, is_history: bool = False):
         logger.exception(LicoMsg.BACKUP.ARTIFACT_ERR.format(src=src, error=e))
 
 
-def main():
+def main() -> None:
     """Entry point for IDE artifacts backup."""
     parser = argparse.ArgumentParser(
         description=(
