@@ -1,3 +1,5 @@
+"""Central orchestrator for the LicoTor quality pipeline."""
+
 import argparse
 import shutil
 import subprocess
