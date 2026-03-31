@@ -10,29 +10,44 @@ logger = get_logger(__name__)
 
 def main():
     parser = argparse.ArgumentParser(
-        description="Extract and filter L4 JSONL logs into a single condensed JSONL file."
+        description=(
+            "Extract and filter L4 JSONL logs into a single condensed "
+            "JSONL file."
+        )
     )
     parser.add_argument(
         "input_dir",
         type=str,
-        help="Path to the identifier's L4 directory (e.g., .repos/.licoshdw/conversations_cli/identifiers/agate)",
+        help=(
+            "Path to the identifier's L4 directory (e.g., "
+            ".repos/.licoshdw/conversations_cli/identifiers/agate)"
+        ),
     )
     parser.add_argument(
         "output_file",
         type=str,
-        help="Path to the output filtered JSONL file (e.g., filtered_memory.jsonl)",
+        help=(
+            "Path to the output filtered JSONL file (e.g., "
+            "filtered_memory.jsonl)"
+        ),
     )
     parser.add_argument(
         "--stage1",
         type=int,
         default=500,
-        help="Quota for Stage 1 (Full retention of recent turns). Default: 500",
+        help=(
+            "Quota for Stage 1 (Full retention of recent turns). "
+            "Default: 500"
+        ),
     )
     parser.add_argument(
         "--stage2",
         type=int,
         default=500,
-        help="Quota for Stage 2 (Filter out tool calls, keep conversation/thoughts). Default: 500",
+        help=(
+            "Quota for Stage 2 (Filter out tool calls, keep "
+            "conversation/thoughts). Default: 500"
+        ),
     )
 
     args = parser.parse_args()
