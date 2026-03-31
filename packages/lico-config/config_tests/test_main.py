@@ -129,7 +129,7 @@ def test_validation_missing_section(tmp_path: Path) -> None:
         '{"app": {"sleep": 1, "label": "x", "commands": []}}'
     )
 
-    with pytest.raises(ValueError, match="Missing or invalid 'sync' section"):
+    with pytest.raises(TypeError, match="Missing or invalid 'sync' section"):
         ConfigManager(config_path=config_file)
 
 
@@ -148,7 +148,7 @@ def test_validation_wrong_type(tmp_path: Path) -> None:
     }
     config_file.write_text(json.dumps(content))
 
-    with pytest.raises(ValueError, match="'app.commands' must be a list"):
+    with pytest.raises(TypeError, match="'app.commands' must be a list"):
         ConfigManager(config_path=config_file)
 
 
@@ -166,7 +166,7 @@ def test_validation_non_absolute_path(tmp_path: Path) -> None:
     }
     config_file.write_text(json.dumps(content))
 
-    with pytest.raises(ValueError, match="Path for 'uv' must be absolute"):
+    with pytest.raises(TypeError, match="Path for 'uv' must be absolute"):
         ConfigManager(config_path=config_file)
 
 
@@ -184,5 +184,5 @@ def test_validation_windows_style_path(tmp_path: Path) -> None:
     }
     config_file.write_text(json.dumps(content))
 
-    with pytest.raises(ValueError, match="Path for 'uv' must be absolute"):
+    with pytest.raises(TypeError, match="Path for 'uv' must be absolute"):
         ConfigManager(config_path=config_file)

@@ -58,32 +58,32 @@ class ConfigManager:
         try:
             # app
             if not isinstance(self._config.get("app"), dict):
-                raise ValueError(LicoMsg.CONFIG.ERR_APP_SECTION)
+                raise TypeError(LicoMsg.CONFIG.ERR_APP_SECTION)
             if "sleep" not in self._config["app"]:
-                raise ValueError(LicoMsg.CONFIG.ERR_APP_SLEEP)
+                raise TypeError(LicoMsg.CONFIG.ERR_APP_SLEEP)
             if not isinstance(self._config["app"].get("commands"), list):
-                raise ValueError(LicoMsg.CONFIG.ERR_APP_COMMANDS)
+                raise TypeError(LicoMsg.CONFIG.ERR_APP_COMMANDS)
 
             # sync
             sync = self._config.get("sync")
             if not isinstance(sync, dict):
-                raise ValueError(LicoMsg.CONFIG.ERR_SYNC_SECTION)
+                raise TypeError(LicoMsg.CONFIG.ERR_SYNC_SECTION)
             if not isinstance(sync.get("branch"), dict):
-                raise ValueError(LicoMsg.CONFIG.ERR_SYNC_BRANCH)
+                raise TypeError(LicoMsg.CONFIG.ERR_SYNC_BRANCH)
             if not isinstance(sync.get("target"), list):
-                raise ValueError(LicoMsg.CONFIG.ERR_SYNC_TARGET)
+                raise TypeError(LicoMsg.CONFIG.ERR_SYNC_TARGET)
 
             # windows
             win = self._config.get("windows")
             if not isinstance(win, dict):
-                raise ValueError(LicoMsg.CONFIG.ERR_WINDOWS_SECTION)
+                raise TypeError(LicoMsg.CONFIG.ERR_WINDOWS_SECTION)
 
             # Level 2: Path formats for windows section
             self._validate_paths(win)
 
         except (KeyError, TypeError) as e:
             msg = LicoMsg.CONFIG.ERR_STRUCT.format(error=e)
-            raise ValueError(msg) from e
+            raise TypeError(msg) from e
 
     def _validate_paths(self, win_config: dict[str, Any]) -> None:
         """Recursively validate that all values in windows section
@@ -105,10 +105,10 @@ class ConfigManager:
                     msg = LicoMsg.CONFIG.ERR_PATH_ABSOLUTE.format(
                         key=key, path=value
                     )
-                    raise ValueError(msg)
+                    raise TypeError(msg)
             else:
                 msg = LicoMsg.CONFIG.ERR_INVALID_TYPE.format(key=key)
-                raise ValueError(msg)
+                raise TypeError(msg)
 
     @property
     def sleep_duration(self) -> int:
