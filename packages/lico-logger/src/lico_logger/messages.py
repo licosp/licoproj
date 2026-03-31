@@ -33,7 +33,9 @@ LicoMsg = SimpleNamespace(
         NO_TOOLS_MATCH="No tools match the selected targets.",
         RUNNING_CMD="Running: {cmd}",
         ERR_CMD_NOT_FOUND="Error: Command '{cmd}' not found.",
-        ERR_EXECUTABLE_NOT_FOUND="Error: Executable '{cmd}' not found for {tool}.",
+        ERR_EXECUTABLE_NOT_FOUND=(
+            "Error: Executable '{cmd}' not found for {tool}."
+        ),
         SKIPPING_TOOL="Skipping {name}: No matching files found.",
         TOOL_FAILED="❌ {name} failed!",
         TOOL_PASSED="✅ {name} passed.",
@@ -42,9 +44,18 @@ LicoMsg = SimpleNamespace(
     ),
     # Shim related messages (lico-shim)
     SHIM=SimpleNamespace(
-        BLOCKED_SHADOW="❌ [Shim] BLOCKED: Operating on .shadow/ from root is forbidden. cd first.",
-        BLOCKED_RESTRICTED="❌ [Shim] BLOCKED: 'git {arg}' is restricted to prevent data loss.",
-        BLOCKED_RESET_HARD="❌ [Shim] BLOCKED: 'git reset --hard' destroys history. Use --soft or bypass.",
+        BLOCKED_SHADOW=(
+            "❌ [Shim] BLOCKED: Operating on .shadow/ from root is forbidden. "
+            "cd first."
+        ),
+        BLOCKED_RESTRICTED=(
+            "❌ [Shim] BLOCKED: 'git {arg}' is restricted to "
+            "prevent data loss."
+        ),
+        BLOCKED_RESET_HARD=(
+            "❌ [Shim] BLOCKED: 'git reset --hard' destroys history. "
+            "Use --soft or bypass."
+        ),
         USAGE="Usage: lico-shim <command> [args...]",
         ERR_UNKNOWN="❌ [Shim] ERROR: Unknown shim command '{command}'.",
     ),
@@ -58,10 +69,18 @@ LicoMsg = SimpleNamespace(
     # Environment management messages (lico-devc)
     DEVC=SimpleNamespace(
         BOOT_START="--- Lico Container Bootstrapper (Bare Spark) ---",
-        ERR_ENV_MISMATCH="[Error] Environment Mismatch. Expected: {expected}, Actual: {actual}",
-        WARN_CRED_MISSING="[Warning] Credentials Missing at {path}. Please ensure your Vault is active.",
+        ERR_ENV_MISMATCH=(
+            "[Error] Environment Mismatch. Expected: {expected}, "
+            "Actual: {actual}"
+        ),
+        WARN_CRED_MISSING=(
+            "[Warning] Credentials Missing at {path}. "
+            "Please ensure your Vault is active."
+        ),
         HUB_INFO="[Hub] Root: {root} | Active: {active}",
-        SUCCESS_RUNNING="[Success] Container is running. Connect via VS Code/SSH.",
+        SUCCESS_RUNNING=(
+            "[Success] Container is running. Connect via VS Code/SSH."
+        ),
         PROVISION_START="--- Lico Village Provisioning System (Habitat) ---",
         REPO_ALREADY_EXISTS="[Repo] Already exists: {name}",
         REPO_SETUP="[Repo] Setting up: {name} (from {source})",
@@ -106,9 +125,14 @@ LicoMsg = SimpleNamespace(
         ERR_NOT_FOUND="Error: File not found: {path}",
         ERR_INVALID_JSON="Warning: Failed to parse line in {path}: {error}",
         FILTER_READ_ERR="Warning: Failed to read {file}: {error}",
-        BACKUP_READ_IDS_ERR="Warning: Failed to read existing IDs from {path}: {error}",
+        BACKUP_READ_IDS_ERR=(
+            "Warning: Failed to read existing IDs from {path}: {error}"
+        ),
         BACKUP_READ_LOG_ERR="Warning: Failed to read {file}: {error}",
-        PACK_META_NOT_FOUND="Warning: Metadata file {path} not found. Creating a generic session structure.",
+        PACK_META_NOT_FOUND=(
+            "Warning: Metadata file {path} not found. "
+            "Creating a generic session structure."
+        ),
     ),
     # Config related messages (lico-config)
     CONFIG=SimpleNamespace(
