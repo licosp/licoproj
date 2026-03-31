@@ -12,7 +12,10 @@ logger = get_logger(__name__)
 
 def main():
     parser = argparse.ArgumentParser(
-        description="Pack a filtered JSONL file and a metadata file into a final L3 JSON session file."
+        description=(
+            "Pack a filtered JSONL file and a metadata file into a final "
+            "L3 JSON session file."
+        )
     )
     parser.add_argument(
         "input_jsonl",
@@ -27,7 +30,10 @@ def main():
     parser.add_argument(
         "output_dir",
         type=str,
-        help="Path to the output directory (e.g., ~/.gemini/tmp/crew-agate/chats/)",
+        help=(
+            "Path to the output directory (e.g., "
+            "~/.gemini/tmp/crew-agate/chats/)"
+        ),
     )
 
     parser.add_argument(
