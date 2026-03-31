@@ -1,3 +1,5 @@
+"""L4 log filtering and thought extraction tool."""
+
 import argparse
 import json
 import sys

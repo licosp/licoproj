@@ -1,3 +1,5 @@
+"""L3 session packaging tool for Lico memory management."""
+
 import argparse
 import json
 import sys
