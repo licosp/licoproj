@@ -1,3 +1,5 @@
+"""Linter to detect and notify about empty directories."""
+
 import os
 import sys
 from pathlib import Path
