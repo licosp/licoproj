@@ -73,11 +73,11 @@ class Commander:
             self.logger.info(LicoMsg.EXEC.CMD_SUCCESS.format(label=label))
             return result
         except subprocess.CalledProcessError as e:
-            self.logger.error(
+            self.logger.exception(
                 LicoMsg.EXEC.CMD_FAILURE.format(label=label, code=e.returncode)
             )
             if e.stderr:
-                self.logger.error(
+                self.logger.exception(
                     LicoMsg.EXEC.ERR_OUTPUT.format(stderr=e.stderr)
                 )
             raise
