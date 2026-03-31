@@ -1,3 +1,5 @@
+"""Centralized command runner for the LicoTor ecosystem."""
+
 import os
 import subprocess
 from collections.abc import Mapping
