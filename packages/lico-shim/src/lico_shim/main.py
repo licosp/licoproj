@@ -110,7 +110,7 @@ def main() -> None:
     if handler:
         handler(args)
     else:
-        # Fallback to normal execution if command is not shimmed but somehow passed here
+        # Fallback if command is not shimmed but somehow passed here
         logger.error(LicoMsg.SHIM.ERR_UNKNOWN.format(command=command))
         sys.exit(1)
 
