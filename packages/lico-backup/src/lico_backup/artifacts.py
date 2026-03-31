@@ -43,7 +43,7 @@ def sync_dir(src: Path, dest: Path, is_history: bool = False):
     try:
         subprocess.run(cmd, check=True)
     except subprocess.CalledProcessError as e:
-        logger.error(LicoMsg.BACKUP.ARTIFACT_ERR.format(src=src, error=e))
+        logger.exception(LicoMsg.BACKUP.ARTIFACT_ERR.format(src=src, error=e))
 
 
 def main():
