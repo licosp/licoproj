@@ -48,14 +48,17 @@ def sync_dir(src: Path, dest: Path, is_history: bool = False):
 
 def main():
     parser = argparse.ArgumentParser(
-        description="Backup IDE artifacts (Antigravity, Cursor, VSCode) to the memory archive."
+        description=(
+            "Backup IDE artifacts (Antigravity, Cursor, VSCode) "
+            "to the memory archive."
+        )
     )
     args = parser.parse_args()
 
     home = Path.home()
-    # We always run this from within a specific identifier's workspace (e.g., agate),
-    # but the archive is shared in the bare repo or local to the workspace?
-    # Usually it's run in the active workspace.
+    # We always run this from within a specific identifier's workspace
+    # (e.g., agate), but the archive is shared in the bare repo or local
+    # to the workspace? Usually it's run in the active workspace.
     cwd = Path.cwd()
     archive_base = cwd / ".agent" / ".internal" / "memory_archive"
 
