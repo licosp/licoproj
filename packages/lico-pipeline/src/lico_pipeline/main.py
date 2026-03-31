@@ -24,6 +24,13 @@ class LintTool(ABC):
     def __init__(
         self, name: str, extensions: list[str], tags: list[str] | None = None
     ):
+        """Initialize the lint tool.
+
+        Args:
+            name (str): Tool name.
+            extensions (list[str]): Supported file extensions.
+            tags (list[str] | None): Tool tags for filtering.
+        """
         self.name = name
         self.extensions = extensions
         self.tags = tags or []
@@ -61,6 +68,15 @@ class PythonTool(LintTool):
         fix_args: list[str] | None = None,
         tags: list[str] | None = None,
     ):
+        """Initialize Python tool.
+
+        Args:
+            name: Tool name.
+            command: Executable command.
+            args: Standard arguments.
+            fix_args: Arguments for fixing.
+            tags: Tool tags.
+        """
         super().__init__(name, [".py", ".pyi"], tags)
         self.command = command
         self.args = args
@@ -101,6 +117,16 @@ class NodeTool(LintTool):
         fix_args: list[str] | None = None,
         tags: list[str] | None = None,
     ):
+        """Initialize Node.js tool.
+
+        Args:
+            name: Tool name.
+            command: bin command name.
+            args: Arguments.
+            extensions: Extensions.
+            fix_args: Fix arguments.
+            tags: Tool tags.
+        """
         super().__init__(name, extensions, tags)
         self.command = command
         self.args = args
@@ -150,6 +176,14 @@ class ShellcheckTool(PythonTool):
         args: list[str],
         tags: list[str] | None = None,
     ):
+        """Initialize Shellcheck tool.
+
+        Args:
+            name: Tool name.
+            command: Command name.
+            args: Standard arguments.
+            tags: Tool tags.
+        """
         super().__init__(name, command, args, tags=tags)
         self.extensions = [".sh", ".bash"]
 

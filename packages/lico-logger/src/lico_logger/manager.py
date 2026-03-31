@@ -8,6 +8,11 @@ class MaxLevelFilter(logging.Filter):
     """Filter to allow only logs BELOW a certain level."""
 
     def __init__(self, max_level: int) -> None:
+        """Initialize the filter.
+
+        Args:
+            max_level (int): Maximum logging level allowed.
+        """
         super().__init__()
         self.max_level = max_level
 

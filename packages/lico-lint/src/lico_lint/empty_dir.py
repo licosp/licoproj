@@ -13,6 +13,11 @@ class EmptyDirLinter:
     """Linter to detect and notify about empty directories."""
 
     def __init__(self, root_dir: str | None = None) -> None:
+        """Initialize the linter.
+
+        Args:
+            root_dir (str | None): The root directory to scan.
+        """
         self.root_dir = root_dir or str(Path.cwd())
         self.exclude_dirs = {
             ".git",
