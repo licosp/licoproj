@@ -29,7 +29,7 @@ class LintTool(ABC):
         self.tags = tags or []
 
     @abstractmethod
-    def run(self, target_path: Path, fix_mode: bool = False) -> ToolResult:
+    def run(self, target_path: Path, *, fix_mode: bool = False) -> ToolResult:
         pass
 
     def _run_subprocess(
@@ -73,7 +73,7 @@ class PythonTool(LintTool):
             return str(candidate)
         return shutil.which(self.command)
 
-    def run(self, target_path: Path, fix_mode: bool = False) -> ToolResult:
+    def run(self, target_path: Path, *, fix_mode: bool = False) -> ToolResult:
         executable = self._resolve_executable()
         if not executable:
             logger.error(
@@ -112,7 +112,7 @@ class NodeTool(LintTool):
             return str(candidate)
         return shutil.which(self.command)
 
-    def run(self, target_path: Path, fix_mode: bool = False) -> ToolResult:
+    def run(self, target_path: Path, *, fix_mode: bool = False) -> ToolResult:
         current = Path.cwd()
         root_dir = current
 
@@ -153,7 +153,7 @@ class ShellcheckTool(PythonTool):
         super().__init__(name, command, args, tags=tags)
         self.extensions = [".sh", ".bash"]
 
-    def run(self, target_path: Path, fix_mode: bool = False) -> ToolResult:
+    def run(self, target_path: Path, *, fix_mode: bool = False) -> ToolResult:
         executable = self._resolve_executable()
         if not executable:
             logger.error(
