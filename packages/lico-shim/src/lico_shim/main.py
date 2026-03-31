@@ -1,19 +1,22 @@
 """Security and consistency shim for Git and FS operations."""
 
+import datetime
+import os
+import subprocess
+import sys
+from pathlib import Path
+from lico_logger import LicoMsg
+
 logger = get_logger(__name__)
+
+
 
 """Unified Command Shim for Lico.
 
 Provides safety nets for destructive commands and environment routing.
 """
 
-import datetime
-import os
-import subprocess
-import sys
-from pathlib import Path
 
-from lico_logger import LicoMsg
 
 
 def find_workspace_root() -> Path:
