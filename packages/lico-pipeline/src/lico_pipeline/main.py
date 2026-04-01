@@ -75,6 +75,7 @@ class PythonTool(LintTool):
         self,
         name: str,
         command: str,
+        *,
         args: list[str],
         fix_args: list[str] | None = None,
         tags: list[str] | None = None,
@@ -133,6 +134,7 @@ class NodeTool(LintTool):
         self,
         name: str,
         command: str,
+        *,
         args: list[str],
         extensions: list[str],
         fix_args: list[str] | None = None,
@@ -204,6 +206,7 @@ class ShellcheckTool(PythonTool):
         self,
         name: str,
         command: str,
+        *,
         args: list[str],
         tags: list[str] | None = None,
      ) -> None:
@@ -435,7 +438,7 @@ def main() -> None:
         NodeTool(
             "CSpell",
             "cspell",
-            [
+            args=[
                 "-c",
                 ".vscode/cspell.json",
                 "--no-progress",
@@ -444,7 +447,7 @@ def main() -> None:
                 "--cache-location",
                 ".temp/cache/cspell/",
             ],
-            ["*"],
+            extensions=["*"],
             tags=["docs", "web", "python", "shell"],
         ),
         PythonTool(
