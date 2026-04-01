@@ -25,7 +25,7 @@ class LintTool(ABC):
     """Abstract base class for all linting tools."""
     def __init__(
         self, name: str, extensions: list[str], tags: list[str] | None = None
-    ):
+     ) -> None:
         """Initialize the lint tool.
 
         Args:
@@ -79,7 +79,7 @@ class PythonTool(LintTool):
         args: list[str],
         fix_args: list[str] | None = None,
         tags: list[str] | None = None,
-    ):
+    ) -> None:
         """Initialize Python tool.
 
         Args:
@@ -138,7 +138,7 @@ class NodeTool(LintTool):
         extensions: list[str],
         fix_args: list[str] | None = None,
         tags: list[str] | None = None,
-    ):
+    ) -> None:
         """Initialize Node.js tool.
 
         Args:
@@ -207,7 +207,7 @@ class ShellcheckTool(PythonTool):
         command: str,
         args: list[str],
         tags: list[str] | None = None,
-    ):
+     ) -> None:
         """Initialize Shellcheck tool.
 
         Args:
