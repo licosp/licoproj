@@ -1,39 +1,52 @@
-"""Append content to a log file with timestamp and locking."""
+"""Standard dual-stream log appender for LicoTor ecosystem."""
 
-import datetime
+from __future__ import annotations
+
 import fcntl
 import signal
 import sys
+from datetime import UTC, datetime
 from pathlib import Path
+from typing import TYPE_CHECKING
 
 from lico_logger import LicoMsg, get_logger
+
+if TYPE_CHECKING:
+    from types import FrameType
 
 logger = get_logger(__name__)
 
 
-def append_log(log_path: str, content_file: str) -> None:
-    """Read content and append to log with lock and timestamp."""
+def handle_signal(signum: int, _frame: FrameType | None) -> None:
+    """Handle termination signals.
+
+    Args:
+        signum (int): Signal number.
+        _frame (FrameType | None): Current stack frame (unused).
+    """
+    logger.error(LicoMsg.LOG_APPENDER.SIGNAL_EXIT.format(sig=signum))
+    sys.exit(1)
+
+
+# Setup signal handlers
+signal.signal(signal.SIGINT, handle_signal)
+signal.signal(signal.SIGTERM, handle_signal)
+
+
+def append_to_log(file_path: Path, content: str) -> None:
+    """Append content to a log file with timestamp and locking.
+
+    Args:
+        file_path (Path): Path to the log file.
+        content (str): Text content to append.
+    """
+    now = datetime.now(UTC)
+    timestamp = now.strftime("[%Y-%m-%dT%H:%M:%S.%f]")
+    final_content = f"{timestamp} {content}"
+
     try:
-        content_path = Path(content_file)
-        if not content_path.exists():
-            logger.error(
-                LicoMsg.LOG_APPENDER.CONTENT_NOT_FOUND.format(
-                    file=content_file
-                )
-            )
-            sys.exit(1)
-
-        content = content_path.read_text(encoding="utf-8")
-
-        # Replace {{TIMESTAMP}} with current ISO 8601 JST
-        now_jst = datetime.datetime.now(
-            datetime.timezone(datetime.timedelta(hours=9))
-        )
-        timestamp = now_jst.strftime("%Y-%m-%dT%H:%M:%S+09:00")
-        final_content = content.replace("{{TIMESTAMP}}", timestamp)
-
-        # Append with exclusive lock
-        with Path(log_path).open("a", encoding="utf-8") as f:
+        with file_path.open("a", encoding="utf-8") as f:
+            # Simple advisory locking
             fcntl.flock(f, fcntl.LOCK_EX)
             f.write(final_content + "\n")
             fcntl.flock(f, fcntl.LOCK_UN)
@@ -46,13 +59,8 @@ def append_log(log_path: str, content_file: str) -> None:
         sys.exit(1)
 
 
-def handle_signal(signum, frame) -> None:
-    """Handle termination signals."""
-    logger.error(LicoMsg.LOG_APPENDER.SIGNAL_EXIT.format(sig=signum))
-    sys.exit(1)
-
-
 REQUIRED_ARGS = 3
+
 
 def main() -> None:
     """CLI Entry point."""
@@ -60,15 +68,10 @@ def main() -> None:
         logger.error(LicoMsg.LOG_APPENDER.USAGE)
         sys.exit(1)
 
-    signal.signal(signal.SIGINT, handle_signal)
-    signal.signal(signal.SIGTERM, handle_signal)
+    log_path = Path(sys.argv[1])
+    log_content = sys.argv[2]
 
-    log_path: str = sys.argv[1]
-    content_file: str = sys.argv[2]
-
-    signal.alarm(300)  # Extended to 5 minutes based on Leonidas instruction.
-
-    append_log(log_path, content_file)
+    append_to_log(log_path, log_content)
 
 
 if __name__ == "__main__":
