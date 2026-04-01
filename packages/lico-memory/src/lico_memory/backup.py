@@ -61,7 +61,7 @@ def get_existing_ids(file_path: Path) -> set[str]:
                         existing_ids.add(msg_id)
                 except json.JSONDecodeError:
                     pass
-    except Exception as e:
+    except OSError as e:
         logger.warning(
             LicoMsg.MEMORY.BACKUP_READ_IDS_ERR.format(path=file_path, error=e)
         )
@@ -126,7 +126,7 @@ def main() -> None:
                     existing_meta = json.load(mf)
                     existing_meta.update(data)
                     data = existing_meta
-            except Exception:
+            except (KeyError, AttributeError, TypeError):
                 pass
 
         with meta_path.open("w", encoding="utf-8") as mf:
@@ -188,7 +188,7 @@ def main() -> None:
                             merged_msgs.append(obj)
                         except json.JSONDecodeError, KeyError:
                             pass
-            except Exception as e:
+            except OSError as e:
                 logger.warning(
                     LicoMsg.MEMORY.BACKUP_READ_LOG_ERR.format(
                         file=target_file, error=e
