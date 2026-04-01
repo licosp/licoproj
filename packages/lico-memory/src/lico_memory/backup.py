@@ -22,7 +22,7 @@ def parse_date(timestamp_str: str) -> str:
     """
     try:
         # e.g., "2026-02-07T11:00:15.692Z" -> "2026/02/07"
-        dt = datetime.fromisoformat(timestamp_str.replace("Z", "+00:00"))
+        dt = datetime.fromisoformat(timestamp_str)
         return dt.strftime("%Y/%m/%d")
     except ValueError:
         # Fallback if parsing fails

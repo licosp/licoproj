@@ -98,8 +98,8 @@ def handle_python(args: list[str]) -> None:
 
 def main() -> None:
     """Entry point for lico-shim."""
-    MIN_ARGS = 2
-    if len(sys.argv) < MIN_ARGS:
+    min_args = 2
+    if len(sys.argv) < min_args:
         logger.error(LicoMsg.SHIM.USAGE)
         sys.exit(1)
 
