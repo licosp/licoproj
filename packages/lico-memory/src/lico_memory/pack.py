@@ -83,7 +83,7 @@ def main() -> None:
     new_uuid = str(uuid.uuid4())
     short_hash = new_uuid[:8]
     now_utc = datetime.now(UTC)
-    now_local = datetime.now()
+    now_local = datetime.now(UTC)
 
     filename_date = now_local.strftime("%Y-%m-%dT%H-%M")
     output_filename = f"session-{filename_date}-{short_hash}.json"

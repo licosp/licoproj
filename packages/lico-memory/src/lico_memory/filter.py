@@ -71,7 +71,7 @@ def main() -> None:
         sys.exit(1)
 
     # Gather and sort JSONL files (newest first)
-    jsonl_files = sorted(list(messages_dir.rglob("*.jsonl")), reverse=True)
+    jsonl_files = sorted(messages_dir.rglob("*.jsonl"), reverse=True)
 
     stage1_lines = []
     stage2_lines = []
