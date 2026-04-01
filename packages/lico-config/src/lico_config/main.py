@@ -86,11 +86,15 @@ class ConfigManager:
             raise TypeError(msg) from e
 
     def _validate_paths(self, win_config: dict[str, Any]) -> None:
-        """Recursively validate that all values in windows section
-        are absolute.
+        """Recursively validate all values in the windows section.
+
+        Ensures that all paths are absolute.
 
         Args:
             win_config (dict[str, Any]): The windows configuration subtree.
+
+        Raises:
+            TypeError: If a path is not absolute.
         """
 
         def is_absolute_path(val: str) -> bool:
