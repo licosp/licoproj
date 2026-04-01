@@ -8,6 +8,7 @@ within the Resident Rico container.
 from __future__ import annotations
 
 import json
+import logging
 import os
 import subprocess
 import sys
@@ -15,7 +16,6 @@ from contextlib import suppress
 from pathlib import Path
 from typing import cast
 
-import logging
 from lico_logger import LicoMsg, get_logger
 
 from .manifest import (
