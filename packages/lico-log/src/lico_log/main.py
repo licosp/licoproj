@@ -52,9 +52,11 @@ def handle_signal(signum, frame) -> None:
     sys.exit(1)
 
 
+REQUIRED_ARGS = 3
+
 def main() -> None:
     """CLI Entry point."""
-    if len(sys.argv) < 3:
+    if len(sys.argv) < REQUIRED_ARGS:
         logger.error(LicoMsg.LOG_APPENDER.USAGE)
         sys.exit(1)
 

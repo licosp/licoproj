@@ -469,7 +469,9 @@ def main() -> None:
     ]
 
     if selected_tags:
-        tools_to_run = [tool for tool in tools if set(tool.tags) & selected_tags]
+        tools_to_run = [
+            tool for tool in tools if set(tool.tags) & selected_tags
+        ]
     else:
         tools_to_run = tools
 
