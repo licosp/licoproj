@@ -29,7 +29,8 @@ class EmptyDirLinter:
             ".trash",
         }
 
-    def is_empty_dir(self, path: str) -> bool:
+    @staticmethod
+    def is_empty_dir(path: str) -> bool:
         """Check if a directory is empty (no files or sub-directories).
 
         Args:

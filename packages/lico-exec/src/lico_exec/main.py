@@ -25,8 +25,9 @@ class Commander:
         )
         self.logger = get_logger(__name__)
 
+    @staticmethod
     def _prepare_env(
-        self, env: Mapping[str, str] | None = None
+        env: Mapping[str, str] | None = None
     ) -> dict[str, str]:
         """Prepare environment variables.
 
