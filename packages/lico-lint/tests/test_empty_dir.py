@@ -28,11 +28,9 @@ def test_env(tmp_path: Path) -> Path:
     # Truly empty
     (root / "empty_dir").mkdir()
 
-    # Non-empty (file)
     (root / "non_empty_file").mkdir()
     (root / "non_empty_file" / "file.txt").write_text("content")
 
-    # Non-empty (subdir)
     (root / "non_empty_subdir").mkdir()
     (root / "non_empty_subdir" / "subdir").mkdir()
 
