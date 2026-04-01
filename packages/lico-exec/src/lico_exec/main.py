@@ -2,7 +2,10 @@
 
 import os
 import subprocess
-from collections.abc import Mapping
+from typing import TYPE_CHECKING
+
+if TYPE_CHECKING:
+    from collections.abc import Mapping
 from pathlib import Path
 
 from lico_logger import LicoMsg, get_logger
