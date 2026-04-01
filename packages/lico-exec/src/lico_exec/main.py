@@ -62,6 +62,10 @@ class Commander:
 
         Returns:
             subprocess.CompletedProcess: result.
+
+        Raises:
+            subprocess.CalledProcessError: If the command fails and
+                check is True.
         """
         exec_cwd = Path(cwd) if cwd else self.workspace_root
         cmd_str = cmd if isinstance(cmd, str) else " ".join(cmd)
