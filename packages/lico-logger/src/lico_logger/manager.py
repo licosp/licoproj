@@ -17,6 +17,14 @@ class MaxLevelFilter(logging.Filter):
         self.max_level = max_level
 
     def filter(self, record: logging.LogRecord) -> bool:
+        """Allow logs only if their level is below or equal to max_level.
+
+        Args:
+            record (logging.LogRecord): The log record to check.
+
+        Returns:
+            bool: True if the log should be passed, False otherwise.
+        """
         return record.levelno <= self.max_level
 
 

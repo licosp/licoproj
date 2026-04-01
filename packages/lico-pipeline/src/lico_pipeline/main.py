@@ -37,6 +37,15 @@ class LintTool(ABC):
 
     @abstractmethod
     def run(self, target_path: Path, *, fix_mode: bool = False) -> ToolResult:
+        """Execute the tool on the target path.
+
+        Args:
+            target_path (Path): Path to scan or fix.
+            fix_mode (bool): Whether to apply automated fixes.
+
+        Returns:
+            ToolResult: Result of the tool execution.
+        """
         pass
 
     def _run_subprocess(
@@ -90,6 +99,15 @@ class PythonTool(LintTool):
         return shutil.which(self.command)
 
     def run(self, target_path: Path, *, fix_mode: bool = False) -> ToolResult:
+        """Run the Python-based linting tool.
+
+        Args:
+            target_path (Path): Path to check.
+            fix_mode (bool): If True, use fix_args instead of standard args.
+
+        Returns:
+            ToolResult: Execution outcome.
+        """
         executable = self._resolve_executable()
         if not executable:
             logger.error(
@@ -139,6 +157,15 @@ class NodeTool(LintTool):
         return shutil.which(self.command)
 
     def run(self, target_path: Path, *, fix_mode: bool = False) -> ToolResult:
+        """Run the Node.js-based linting tool.
+
+        Args:
+            target_path (Path): Path to check.
+            fix_mode (bool): If True, apply write/fix flags.
+
+        Returns:
+            ToolResult: Execution outcome.
+        """
         current = Path.cwd()
         root_dir = current
 
@@ -188,6 +215,15 @@ class ShellcheckTool(PythonTool):
         self.extensions = [".sh", ".bash"]
 
     def run(self, target_path: Path, *, fix_mode: bool = False) -> ToolResult:
+        """Run the Python-based linting tool.
+
+        Args:
+            target_path (Path): Path to check.
+            fix_mode (bool): If True, use fix_args instead of standard args.
+
+        Returns:
+            ToolResult: Execution outcome.
+        """
         executable = self._resolve_executable()
         if not executable:
             logger.error(
