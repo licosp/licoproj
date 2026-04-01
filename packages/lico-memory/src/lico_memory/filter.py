@@ -111,7 +111,7 @@ def main() -> None:
                     content = obj.get("content", "")
                     has_content = bool(content)
                     is_gemini_with_content = (
-                        msg_type in ("gemini", "model")
+                        msg_type in {"gemini", "model"}
                     ) and has_content
 
                     if msg_type == "user" or is_gemini_with_content:

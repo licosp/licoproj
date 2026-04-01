@@ -80,7 +80,7 @@ def handle_git(args: list[str]) -> None:
         if ".shadow/" in arg:
             logger.error(LicoMsg.SHIM.BLOCKED_SHADOW)
             sys.exit(1)
-        if arg in ("restore", "clean"):
+        if arg in {"restore", "clean"}:
             logger.error(LicoMsg.SHIM.BLOCKED_RESTRICTED.format(arg=arg))
             sys.exit(1)
 
