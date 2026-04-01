@@ -15,12 +15,14 @@ logger = get_logger(__name__)
 
 @dataclass
 class ToolResult:
+    """Result container for lint tool execution."""
     name: str
     success: bool
     return_code: int
 
 
 class LintTool(ABC):
+    """Abstract base class for all linting tools."""
     def __init__(
         self, name: str, extensions: list[str], tags: list[str] | None = None
     ):
@@ -69,6 +71,7 @@ class LintTool(ABC):
 
 
 class PythonTool(LintTool):
+    """Tool implementation for Python-based linters."""
     def __init__(
         self,
         name: str,
@@ -126,6 +129,7 @@ class PythonTool(LintTool):
 
 
 class NodeTool(LintTool):
+    """Tool implementation for Node.js-based linters."""
     def __init__(
         self,
         name: str,
@@ -196,6 +200,7 @@ class NodeTool(LintTool):
 
 
 class ShellcheckTool(PythonTool):
+    """Specialized tool implementation for Shellcheck."""
     def __init__(
         self,
         name: str,
