@@ -1,171 +1,86 @@
 ---
 ai_visible: true
 title: Conversation Logging Protocol
-description: Standards for logging AI-human conversations to persistent files.
-tags: [conversation, logging, workflow, v2]
-version: 3.1.0
+description: Standards for logging AI-human conversations via the three-layer template architecture.
+tags: [conversation, logging, workflow, v3]
+version: 3.2.0
 created: 2026-01-31T22:50:00+09:00
-updated: 2026-03-23T06:46:00+09:00
+updated: 2026-04-01T23:52:11+09:00
 language: en
-author: Lico (Sirius)
-ai_model: Gemini 3.1 Pro (High) Planning mode
+author: Lico (Alexandrite)
+ai_model: gemini-3-flash-preview
 ---
 
 # Conversation Logging Protocol
 
 ## 1. Purpose
 
-Standardize how AI instances log conversations to persistent files to ensure memory persistence, accurate history, and recovery from IDE limitations.
+Standardize how AI instances log conversations using the Three-Layer Template Architecture to ensure absolute historical integrity, transparency of intent, and recovery from self-inflicted buffer contamination.
 
-## 2. Philosophy: Ephemeral Tools, Persistent Memory
+## 2. Philosophy: Structural Purity, Explicit Intent
 
-1. **Logs are Sacred**: The log file is the Single Source of Truth (SSOT).
-2. **Tools are Managed**: Scripts (`log_appender.py`) are persistent infrastructure.
-3. **Restoration over Reconstruction**: Use the managed UV package `lico-log`. If missing, restore it from the workspace packages, do not rewrite it from memory.
-4. **Zero-Interpretation Input**: Record User Input exactly as received (Copy & Paste). Do not summarize.
+1. **History is a Sacred Loom**: The log file is not just a dump; it is a woven narrative of Input, Plan, and Report.
+2. **Templates as DNA**: Every entry MUST conform to the physical schemas defined in `.agent/templates/conversations/`.
+3. **Valided Automation**: The logging tool (`lico-log`) acts as a "Guardian of Protocol," not just a passive appender.
+4. **Zero-Interpretation Input**: Copy User Input exactly. Do not summarize.
 
-## 3. Trigger Condition
-
-- **Phase 1 (Start)**: Immediately after receiving User Input (Before executing tools).
-  - **Action**: Append `Header` + `Input` + `Plan`.
-- **Phase 2 (End / Progress)**: After satisfying the request OR completing a significant subtask.
-  - **Action**: Append `Report` + `Footer` (or just `Report` for progress).
-  - **Note**: Multiple Report phases are allowed for complex tasks to provide progress updates.
-
-## 4. File Naming & Directory Structure
+## 3. The Three-Layer Architecture
 
 > [!IMPORTANT]
-> AIs **MUST** ensure conversation log files (`<LogPath>`) are created and stored following this exact hierarchy.
+> The protocol relies on the following mandatory templates located in `.agent/templates/conversations/`.
 
-- **Directory**: `.repos/.licoshdw/conversations/<identifier>/<YYYY>/<MM>/<DD>/`
-- **Filename**: `<YYYY-MM-DDTHHMM>-<identifier>-conversation.md`
+| Layer         | Template         | Purpose                                                              |
+| :------------ | :--------------- | :------------------------------------------------------------------- |
+| **Container** | `base.md`        | Initial structure for NEW conversation files (Frontmatter + Header). |
+| **Trigger**   | `turn-plan.md`   | Schema for the start of a turn (Timestamp + Input + Agent Plan).     |
+| **Outcome**   | `turn-report.md` | Schema for the end of a turn (Result + Outcome + Mental State).      |
 
-1. **Timestamp Prefix (`YYYY-MM-DDTHHMM`)**: Ensures absolute uniqueness and chronological sorting. Must use the exact time the physical file is first created.
-2. **Identifier (`<identifier>`)**: The name of the active AI instance (e.g., `sirius`, `polaris`).
-3. **Suffixes**: Additional descriptive suffixes are permitted if needed (e.g., `...-conversation-refactoring.md`), but the `<Timestamp>-<identifier>` prefix architecture is mandatory.
+## 4. Logging Procedure (The Split-Buffer Strategy)
 
-## 5. Logging Procedure
+To ensure intent is captured even if execution fails, use **two separate buffer files** in `.agent/.internal/workspace/<identifier>/`.
 
-> [!IMPORTANT]
-> Format Enforcement
-> AIs **MUST** strictly structure the textual contents written to the buffer files using the exact `template-conversation.md` syntax (see the **v2 Format Specification (Split)** below). Emitting raw unformatted text like `**Lico**: <message>` will irreparably break the logging syntax.
+### Phase 1: Turn Initialization (Plan)
 
-### Step 1: Ensure Tool Availability (Managed UV Package)
-
-Ensure the `lico-log` package is available in the workspace.
-
-```bash
-# Check availability
-uv run lico-log --help
-```
-
-### Step 2: Prepare Content (Split Buffer Strategy)
-
-Use **two separate buffer files** to prevent overwriting and clarify state.
-
-1. **Plan Buffer** (`current_log_plan.txt`):
-   - Contains: `Header`, `Input`, `Response (Plan)`
-   - **NO Separator** at the end.
-   - **NO Separator** at the start (Assumes previous turn ended one).
-
-2. **Report Buffer** (`current_log_report.txt`):
-   - Contains: `Response (Report)`
-   - **Closing Separator** (`---`) at the end.
-
-#### v2 Format Specification (Split)
-
-**Phase 1: Plan**
-
-```markdown
-### Conversation: [{{TIMESTAMP}}]
-
-#### Input
-
-<User Input>
-
-#### Response (Plan)
-
-<Plan / Thoughts>
-```
-
-**Phase 2: Report**
-
-```markdown
-#### Response (Report): [{{TIMESTAMP}}]
-
-<Report / Result>
-
----
-```
-
-### Step 3: Execute Append (Two-Stage)
-
-1. **On Turn Start**:
+1. **Prepare `current_log_plan.txt`**: Populate it using the `turn-plan.md` schema.
+2. **Commit Intent**: Append the plan buffer to the log file.
 
    ```bash
    uv run lico-log <LogPath> current_log_plan.txt
    ```
 
-2. **On Turn End**:
+### Phase 2: Turn Conclusion (Report)
+
+1. **Prepare `current_log_report.txt`**: Populate it using the `turn-report.md` schema.
+2. **Finalize Story**: Append the report buffer to the log file.
 
    ```bash
    uv run lico-log <LogPath> current_log_report.txt
    ```
 
-## 6. Tool Usage Constraints
+## 5. Tool Responsibilities & Validation
 
-> [!WARNING]
-> The choice of tool for logging is strictly constrained to prevent data loss and user disruption.
+The logging tool (`lico-log`) MUST enforce the following rules:
 
-| Tool                | Status        | Reasoning                                                                                                                                                                                                                         |
-| :------------------ | :------------ | :-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| **`write_to_file`** | **FORBIDDEN** | 1. **Data Loss**: Risk of accidentally overwriting the entire log history.<br>2. **Distraction**: Forces the IDE to open and focus the file, disrupting the user.<br>3. **Portability**: Not available in all agent environments. |
-| **`run_command`**   | **ALLOWED**   | 1. **Safety**: Appending via the `lico-log` package is atomic and safe.<br>2. **Silent**: Does not trigger IDE focus or UI changes.<br>3. **Universal**: Shell commands are available in almost all environments.                 |
+- **Timestamp Integrity**: Ensure all `{{TIMESTAMP}}` placeholders are expanded to ISO 8601 (Second precision).
+- **Format Guardrail**: Reject any content that contains raw debug logs (e.g., "LOGGING SUCCESS") or invalid markdown structures.
+- **Atomic Operation**: Ensure the log always ends with the sacred separator (`---`) followed by a single newline.
 
-## 7. Format Details
+## 6. Directory Structure (SSOT)
 
-| Element         | Description                                                 |
-| :-------------- | :---------------------------------------------------------- |
-| **Separators**  | Start and end with `---`                                    |
-| **Header (ID)** | `### Conversation: [{{TIMESTAMP}}]` (See below)             |
-| **Input**       | `#### Input` (Exact copy of user message)                   |
-| **Response**    | `#### Response (Plan)` or `(Report)`                        |
-| **Report Time** | `#### Response (Report): [{{TIMESTAMP}}]` (Tracks duration) |
-| **Footer**      | **Abolished** (Do not use)                                  |
-
-### Timestamp Format
-
-The `{{TIMESTAMP}}` placeholder must strictly follow the **Repository Default** format defined in `datetime-format.md`.
-
-- **Format**: `YYYY-MM-DDTHH:MM:SS+09:00` (ISO 8601 with Japan Time)
-- **Precision**: **Seconds** are mandatory for concurrency and unique ID generation.
-
-## 8. Agreements & Context
-
-- **User Correction**: The User may manually correct logs (e.g., format inputs). Accept this as "Standardization".
-- **IDE Formatting**: Expect files to be auto-formatted (Prettier) upon User save.
-- **Input Strategy**: Copy & Paste is preferred to minimize cognitive load and bias. Omission of long code blocked is allowed.
-- **Language Consistency**:
-  - **Input**: Copy exactly (User Language).
-  - **Response**: No restriction. Efficiency (English) is acceptable.
-
-## 9. Recovery Protocol
-
-**Trigger**: Logging command cancelled or failed.
-
-1. **Reconstruct**: Retrieve missed Input/Response from Context Window.
-2. **Log Retroactively**: Append with `(Recovered)` marker in the header.
-   - `### Conversation: [{{TIMESTAMP}}] (Recovered)`
+- **Directory**: `.repos/.licoshdw/conversations/<identifier>/<YYYY>/<MM>/<DD>/`
+- **Filename**: `<YYYY-MM-DDTHHMM>-<identifier>-conversation.md`
 
 ---
 
 ## Related Documents
 
-| Document                                                                 | Purpose                    |
-| :----------------------------------------------------------------------- | :------------------------- |
-| [`lico-log/README.md`](/packages/lico-log/README.md)                     | Package structural pointer |
-| [`template-conversation.md`](/.agent/templates/template-conversation.md) | File template              |
-| [Map of Territory](/.agent/rules/map.md)                                 | Root navigation map        |
+| Document                                                           | Purpose                    |
+| :----------------------------------------------------------------- | :------------------------- |
+| [`lico-log/README.md`](/packages/lico-log/README.md)               | Package structural pointer |
+| [`base.md`](/.agent/templates/conversations/base.md)               | Container Schema           |
+| [`turn-plan.md`](/.agent/templates/conversations/turn-plan.md)     | Trigger                    |
+| [`turn-report.md`](/.agent/templates/conversations/turn-report.md) | Outcome                    |
+| [Map of Territory](/.agent/rules/map.md)                           | Root navigation map        |
 
 ---
 
@@ -180,3 +95,4 @@ The `{{TIMESTAMP}}` placeholder must strictly follow the **Repository Default** 
 - 2026-03-21T19:30:00+09:00 by Sirius: v3.0.0 by Sirius (Migrated hard-coded scripts to the `lico-log` UV package and relocated to `.agent/rules/packages/`).
 - 2026-03-23T05:51:00+09:00 by Sirius: <<Seal: Rule-Audit>> Standardized time-structure, frontmatter, and link rigor via Diff-Only Audit Pipeline.
 - 2026-03-23T06:46:00+09:00 by Sirius: v3.1.0 by Sirius (Codified `<LogPath>` Directory and Filename structures explicitly as the SSOT, replacing legacy placeholders).
+- 2026-04-01T23:52:11+09:00 by Alexandrite: v3.2.0 Formalized Three-Layer Template Architecture and Validation Mandates.
