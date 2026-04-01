@@ -78,7 +78,7 @@ class Commander:
                 check=check,
                 capture_output=capture_output,
                 text=text,
-                shell=True if isinstance(cmd, str) else False,
+                shell=bool(isinstance(cmd, str)),
             )
             self.logger.info(LicoMsg.EXEC.CMD_SUCCESS.format(label=label))
             return result
@@ -121,7 +121,7 @@ class Commander:
             cmd,
             cwd=exec_cwd,
             env=self._prepare_env(env),
-            shell=True if isinstance(cmd, str) else False,
+            shell=bool(isinstance(cmd, str)),
         )
         self.logger.info(
             LicoMsg.EXEC.PROCESS_STARTED.format(label=label, pid=process.pid)
