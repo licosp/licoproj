@@ -1,3 +1,1 @@
-from .main import Commander
-
-__all__ = ["Commander"]
+"""Centralized command execution package."""
