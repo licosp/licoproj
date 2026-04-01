@@ -52,35 +52,35 @@ class ConfigManager:
         """Validate the configuration structure and values (Level 1 & 2).
 
         Raises:
-            ValueError: If the configuration is invalid.
+            TypeError: If the configuration is invalid.
         """
-        # Level 1: Structure and Types
+        # Level 1: Structure and Types (Validation outside of try block)
+        # app
+        app = self._config.get("app")
+        if not isinstance(app, dict):
+            raise TypeError(LicoMsg.CONFIG.ERR_APP_SECTION)
+        if "sleep" not in app:
+            raise TypeError(LicoMsg.CONFIG.ERR_APP_SLEEP)
+        if not isinstance(app.get("commands"), list):
+            raise TypeError(LicoMsg.CONFIG.ERR_APP_COMMANDS)
+
+        # sync
+        sync = self._config.get("sync")
+        if not isinstance(sync, dict):
+            raise TypeError(LicoMsg.CONFIG.ERR_SYNC_SECTION)
+        if not isinstance(sync.get("branch"), dict):
+            raise TypeError(LicoMsg.CONFIG.ERR_SYNC_BRANCH)
+        if not isinstance(sync.get("target"), list):
+            raise TypeError(LicoMsg.CONFIG.ERR_SYNC_TARGET)
+
+        # windows
+        win = self._config.get("windows")
+        if not isinstance(win, dict):
+            raise TypeError(LicoMsg.CONFIG.ERR_WINDOWS_SECTION)
+
+        # Level 2: Path formats for windows section (Execution inside try block)
         try:
-            # app
-            if not isinstance(self._config.get("app"), dict):
-                raise TypeError(LicoMsg.CONFIG.ERR_APP_SECTION)
-            if "sleep" not in self._config["app"]:
-                raise TypeError(LicoMsg.CONFIG.ERR_APP_SLEEP)
-            if not isinstance(self._config["app"].get("commands"), list):
-                raise TypeError(LicoMsg.CONFIG.ERR_APP_COMMANDS)
-
-            # sync
-            sync = self._config.get("sync")
-            if not isinstance(sync, dict):
-                raise TypeError(LicoMsg.CONFIG.ERR_SYNC_SECTION)
-            if not isinstance(sync.get("branch"), dict):
-                raise TypeError(LicoMsg.CONFIG.ERR_SYNC_BRANCH)
-            if not isinstance(sync.get("target"), list):
-                raise TypeError(LicoMsg.CONFIG.ERR_SYNC_TARGET)
-
-            # windows
-            win = self._config.get("windows")
-            if not isinstance(win, dict):
-                raise TypeError(LicoMsg.CONFIG.ERR_WINDOWS_SECTION)
-
-            # Level 2: Path formats for windows section
             self._validate_paths(win)
-
         except (KeyError, TypeError) as e:
             msg = LicoMsg.CONFIG.ERR_STRUCT.format(error=e)
             raise TypeError(msg) from e
