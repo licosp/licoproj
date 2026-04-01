@@ -43,7 +43,7 @@ def main() -> None:
         subprocess.run(cmd, check=True)
         logger.info(LicoMsg.BACKUP.SUCCESS)
     except subprocess.CalledProcessError as e:
-        logger.exception(LicoMsg.BACKUP.ERR_FAILED.format(error=e))
+        logger.exception(LicoMsg.BACKUP.ERR_FAILED)
         sys.exit(1)
 
 

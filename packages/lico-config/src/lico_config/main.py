@@ -78,7 +78,7 @@ class ConfigManager:
         if not isinstance(win, dict):
             raise TypeError(LicoMsg.CONFIG.ERR_WINDOWS_SECTION)
 
-        # Level 2: Path formats for windows section (Execution inside try block)
+        # Level 2: Path formats for windows (Execution inside try block)
         try:
             self._validate_paths(win)
         except (KeyError, TypeError) as e:

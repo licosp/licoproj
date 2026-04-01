@@ -39,10 +39,10 @@ def append_log(log_path: str, content_file: str) -> None:
             fcntl.flock(f, fcntl.LOCK_UN)
 
     except OSError as e:
-        logger.exception(LicoMsg.LOG_APPENDER.WRITE_FAILED.format(error=e))
+        logger.exception(LicoMsg.LOG_APPENDER.WRITE_FAILED)
         sys.exit(1)
     except Exception as e:
-        logger.exception(LicoMsg.LOG_APPENDER.READ_FAILED.format(error=e))
+        logger.exception(LicoMsg.LOG_APPENDER.READ_FAILED)
         sys.exit(1)
 
 
