@@ -47,7 +47,7 @@ def sync_dir(src: Path, dest: Path, *, is_history: bool = False) -> None:
 
     try:
         subprocess.run(cmd, check=True)
-    except subprocess.CalledProcessError as e:
+    except subprocess.CalledProcessError:
         logger.exception(LicoMsg.BACKUP.ARTIFACT_ERR.format(src=src))
 
 
@@ -59,7 +59,7 @@ def main() -> None:
             "to the memory archive."
         )
     )
-    args = parser.parse_args()
+    parser.parse_args()
 
     home = Path.home()
     # We always run this from within a specific identifier's workspace

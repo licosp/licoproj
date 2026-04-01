@@ -15,7 +15,7 @@ def main() -> None:
     parser = argparse.ArgumentParser(
         description="Backup the entire shared crew workspace."
     )
-    args = parser.parse_args()
+    parser.parse_args()
 
     home = Path.home()
     src_dir = home / "develop" / "shared"
@@ -42,7 +42,7 @@ def main() -> None:
     try:
         subprocess.run(cmd, check=True)
         logger.info(LicoMsg.BACKUP.SUCCESS)
-    except subprocess.CalledProcessError as e:
+    except subprocess.CalledProcessError:
         logger.exception(LicoMsg.BACKUP.ERR_FAILED)
         sys.exit(1)
 

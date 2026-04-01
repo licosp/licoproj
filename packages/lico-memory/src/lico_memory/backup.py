@@ -95,7 +95,7 @@ def main() -> None:
     try:
         with input_path.open("r", encoding="utf-8") as f:
             data = json.load(f)
-    except json.JSONDecodeError as e:
+    except json.JSONDecodeError:
         logger.exception(LicoMsg.MEMORY.BACKUP_JSON_ERROR)
         sys.exit(1)
 
