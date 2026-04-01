@@ -5,18 +5,16 @@ import os
 import subprocess
 import sys
 from pathlib import Path
+
 from lico_logger import LicoMsg, get_logger
 
 logger = get_logger(__name__)
-
 
 
 """Unified Command Shim for Lico.
 
 Provides safety nets for destructive commands and environment routing.
 """
-
-
 
 
 def find_workspace_root() -> Path:
