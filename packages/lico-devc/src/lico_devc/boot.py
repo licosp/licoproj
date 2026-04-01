@@ -5,6 +5,7 @@ import subprocess
 import sys
 from pathlib import Path
 
+import logging
 from lico_logger import LicoMsg, get_logger
 
 from .manifest import load_habitat_config

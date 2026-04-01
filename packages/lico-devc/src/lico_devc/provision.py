@@ -15,6 +15,7 @@ from contextlib import suppress
 from pathlib import Path
 from typing import cast
 
+import logging
 from lico_logger import LicoMsg, get_logger
 
 from .manifest import (

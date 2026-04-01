@@ -5,7 +5,7 @@ import os
 import subprocess
 import sys
 from pathlib import Path
-from lico_logger import LicoMsg
+from lico_logger import LicoMsg, get_logger
 
 logger = get_logger(__name__)
 
