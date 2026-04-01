@@ -148,7 +148,7 @@ def test_validation_wrong_type(tmp_path: Path) -> None:
     }
     config_file.write_text(json.dumps(content))
 
-    with pytest.raises(TypeError, match="'app.commands' must be a list"):
+    with pytest.raises(TypeError, match=r"'app.commands' must be a list"):
         ConfigManager(config_path=config_file)
 
 
