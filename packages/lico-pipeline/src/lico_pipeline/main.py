@@ -48,7 +48,6 @@ class LintTool(ABC):
         Returns:
             ToolResult: Result of the tool execution.
         """
-        pass
 
     def _run_subprocess(
         self, cmd: list[str], cwd: Path | None = None
@@ -470,9 +469,9 @@ def main() -> None:
     ]
 
     if selected_tags:
-        toolsToRun = [tool for tool in tools if set(tool.tags) & selected_tags]
+        tools_to_run = [tool for tool in tools if set(tool.tags) & selected_tags]
     else:
-        toolsToRun = tools
+        tools_to_run = tools
 
     success = True
     mode_str = "FIX Mode 🔧" if fix_mode else "CHECK Mode 🔍"
@@ -485,11 +484,11 @@ def main() -> None:
         LicoMsg.PIPELINE.START.format(mode=mode_str, targets=targets_str)
     )
 
-    if not toolsToRun:
+    if not tools_to_run:
         logger.info(LicoMsg.PIPELINE.NO_TOOLS_MATCH)
         sys.exit(0)
 
-    for tool in toolsToRun:
+    for tool in tools_to_run:
         logger.info(LicoMsg.PIPELINE.TOOL_HEADER.format(tool=tool.name))
         result = tool.run(target_path, fix_mode=fix_mode)
         if not result.success:
