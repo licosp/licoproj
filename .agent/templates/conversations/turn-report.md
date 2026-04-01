@@ -2,12 +2,8 @@
 
 <Agent Report: Detailed results and insights>
 
-**Outcome:**
+##### Read files
 
-- <Physical change 1>
-- <Physical change 2>
-
-> [Mental State: <Identity>]
-> <Subjective reflection and internal calibration>
+- [](/.)<path path 1>
 
 ---
