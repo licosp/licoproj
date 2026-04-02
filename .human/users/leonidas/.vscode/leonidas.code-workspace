@@ -84,16 +84,24 @@
 
     // * Outside tools
     // Python
-    "python.languageServer": "Pylance",
+    "python.languageServer": "None",
+
+    // Ruff
+    "ruff.importStrategy": "fromEnvironment",
+    "ruff.trace.server": "verbose",
+
+    // Ty
+    "ty.interpreter": ["${workspaceFolder}/.venv/bin/python"],
+    "ty.path": ["${workspaceFolder}/.venv/bin/ty"],
+    "ty.diagnosticMode": "workspace",
+    "ty.importStrategy": "fromEnvironment",
+    "ty.trace.server": "verbose",
 
     // Docstring
     "autoDocstring.docstringFormat": "google",
 
     // ShellCheck
     "shellcheck.logLevel": "debug",
-
-    // Git Lens
-    "gitlens.hovers.enabled": false,
 
     // shfmt
     "shellformat.useEditorConfig": true,
@@ -102,9 +110,6 @@
     "bashIde.logLevel": "debug",
     "bashIde.shellcheckPath": "", // Disable lint
     "bashIde.shfmt.path": "", // Disable format
-
-    // Markdown Table
-    "markdowntable.showMenu.tsvToTable": true,
 
     // Powershell
     "powershell.scriptAnalysis.settingsPath": ".vscode/PSScriptAnalyzerSettings.psd1",
