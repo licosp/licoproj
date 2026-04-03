@@ -84,6 +84,7 @@ members = [
 cache-dir = "./.temp/cache/ruff"
 src = [
   "packages/lico-lint/src",
+
   "packages/lico-devc/src",
   "packages/lico-log/src",
   "packages/lico-shim/src",
@@ -103,6 +104,7 @@ src = [
   "packages/lico-config/tests",
   "packages/lico-exec/tests",
   "packages/lico-logger/tests",
+
 ]
 exclude = [
   "**/.temp/**",
@@ -219,9 +221,11 @@ extraPaths = [
   "packages/lico-memory/src",
   "packages/lico-backup/src",
   "packages/lico-pipeline/src",
+
   "packages/lico-config/src",
   "packages/lico-exec/src",
   "packages/lico-logger/src",
+
 ]
 reportUnknownVariableType = "error"
 reportUnknownMemberType = "error"
