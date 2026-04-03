@@ -1,39 +1,51 @@
+"""Full workspace backup tool for the LicoTor ecosystem."""
+
 import argparse
 import subprocess
 import sys
 from pathlib import Path
 
-def main():
-    parser = argparse.ArgumentParser(description="Backup the entire shared crew workspace.")
-    args = parser.parse_args()
-    
+from lico_logger import LicoMsg, get_logger
+
+logger = get_logger(__name__)
+
+
+def main() -> None:
+    """Entry point for workspace backup."""
+    parser = argparse.ArgumentParser(
+        description="Backup the entire shared crew workspace."
+    )
+    parser.parse_args()
+
     home = Path.home()
     src_dir = home / "develop" / "shared"
     dest_dir = home / "develop" / "shared-backup"
-    
+
     if not src_dir.exists() or not src_dir.is_dir():
-        print(f"Error: Source directory {src_dir} does not exist.", file=sys.stderr)
+        logger.error(LicoMsg.BACKUP.ERR_SRC_NOT_FOUND.format(src=src_dir))
         sys.exit(1)
-        
-    print(f"Syncing full workspace: {src_dir} -> {dest_dir}")
+
+    logger.info(LicoMsg.BACKUP.START.format(src=src_dir, dest=dest_dir))
     dest_dir.mkdir(parents=True, exist_ok=True)
-    
+
     cmd = [
-        "rsync", "-av",
+        "rsync",
+        "-av",
         "--exclude=.venv/",
         "--exclude=node_modules/",
         "--exclude=.temp/",
         "--exclude=.trash/",
         str(src_dir) + "/",
-        str(dest_dir) + "/"
+        str(dest_dir) + "/",
     ]
-    
+
     try:
         subprocess.run(cmd, check=True)
-        print("Workspace backup complete.")
-    except subprocess.CalledProcessError as e:
-        print(f"Error during workspace backup: {e}", file=sys.stderr)
+        logger.info(LicoMsg.BACKUP.SUCCESS)
+    except subprocess.CalledProcessError:
+        logger.exception(LicoMsg.BACKUP.ERR_FAILED)
         sys.exit(1)
+
 
 if __name__ == "__main__":
     main()

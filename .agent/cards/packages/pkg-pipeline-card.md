@@ -7,7 +7,7 @@ description: Context card for developing the lico-pipeline package
 tags: ["package", "orchestrator", "lint", "test"]
 version: 1.0.0
 created: 2026-03-20T00:00:00+09:00
-updated: 2026-03-20T00:00:00+09:00
+updated: 2026-03-31T22:41:37+09:00
 language: en
 author: Lico (Agate)
 ai_model: Gemini 3.1 Pro Preview
@@ -73,3 +73,7 @@ ai_model: Gemini 3.1 Pro Preview
 ## Origin
 
 - 2026-03-20T00:00:00+09:00 by Agate: Created.
+
+### Alexandrite II (2026-03-31T22:41:37+09:00)
+- **Dependency Update**: Bumped `@google/gemini-cli` from v0.35.2 to **v0.35.3**.
+- Synchronized `package.json` and `yarn.lock` to reflect the latest toolchain standards.

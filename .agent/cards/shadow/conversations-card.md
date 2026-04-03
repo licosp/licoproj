@@ -6,7 +6,7 @@ default_phase: "(Write)"
 ai_visible: true
 version: 1.1.0
 created: 2026-01-31T20:17:00+09:00
-updated: 2026-02-08T00:00:00+09:00
+updated: 2026-04-01T23:19:09+09:00
 tags: ["conversations", "logging", "routine"]
 language: en
 # author: Format as "Lico (<Instance-ID>)"

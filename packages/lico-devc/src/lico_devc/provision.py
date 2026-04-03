@@ -16,6 +16,8 @@ from contextlib import suppress
 from pathlib import Path
 from typing import cast
 
+from lico_logger import LicoMsg, get_logger
+
 from .manifest import (
     CrewMember,
     EnvConfig,
@@ -39,7 +41,7 @@ MIN_QUOTE_LEN = 2
 logging.basicConfig(
     level=logging.INFO, format="%(message)s", stream=sys.stdout
 )
-logger = logging.getLogger(__name__)
+logger = get_logger(__name__)
 
 
 def run(
@@ -55,7 +57,7 @@ def run(
     Returns:
         The completed process object.
     """
-    logger.info("[Provision] Executing: %s", " ".join(cmd))
+    logger.info(LicoMsg.DEVC.PROVISION_EXEC.format(cmd=" ".join(cmd)))
     result = subprocess.run(
         cmd,
         check=check,
@@ -64,9 +66,13 @@ def run(
         cwd=str(cwd) if cwd else None,
     )
     if result.stdout:
-        logger.info(result.stdout.strip())
+        logger.info(
+            LicoMsg.EXEC.STDOUT_CAPTURE.format(content=result.stdout.strip())
+        )
     if result.stderr:
-        logger.error(result.stderr.strip())
+        logger.error(
+            LicoMsg.EXEC.STDERR_CAPTURE.format(content=result.stderr.strip())
+        )
     return result
 
 
@@ -164,13 +170,13 @@ def setup_single_repo(repo: RepoConfig, repos_dir: Path) -> None:
     name = repo["name"]
     target_path = repos_dir / name
     if target_path.exists():
-        logger.info("[Repo] Already exists: %s", name)
+        logger.info(LicoMsg.DEVC.REPO_ALREADY_EXISTS.format(name=name))
         return
 
     source_from = repo.get("source_from", "remote")
     source = cast("dict[str, str]", repo.get("source", {}))
 
-    logger.info("[Repo] Setting up: %s (from %s)", name, source_from)
+    logger.info(LicoMsg.DEVC.REPO_SETUP.format(name=name, source=source_from))
     if source_from == "remote" and source.get("remote"):
         run(["git", "clone", source["remote"], str(target_path)])
     elif source_from == "local" and source.get("local"):
@@ -178,7 +184,9 @@ def setup_single_repo(repo: RepoConfig, repos_dir: Path) -> None:
         if local_path and local_path.exists():
             run(["cp", "-r", str(local_path), str(target_path)])
         else:
-            logger.warning("[Warn] Local source not found: %s", name)
+            logger.warning(
+                LicoMsg.DEVC.WARN_LOCAL_SOURCE_NOT_FOUND.format(name=name)
+            )
 
 
 def ensure_repos(repos: list[RepoConfig]) -> None:
@@ -208,7 +216,9 @@ def setup_worktree_for_member(
     if wt_path.exists():
         return
 
-    logger.info("[Crew] Link/worktree %s: %s", member_name, wt_name)
+    logger.info(
+        LicoMsg.DEVC.CREW_LINK.format(member=member_name, name=wt_name)
+    )
 
     if wt_name in {"licoproj", "workspace"}:
         if (ACTIVE_ROOT / ".git").exists():
@@ -217,7 +227,9 @@ def setup_worktree_for_member(
                 cwd=ACTIVE_ROOT,
             )
         else:
-            logger.warning("[Warn] %s is not a git repo.", ACTIVE_ROOT)
+            logger.warning(
+                LicoMsg.DEVC.WARN_NOT_GIT_REPO.format(path=ACTIVE_ROOT)
+            )
     else:
         repo_source = WS_ROOT / ".repos" / wt_name
         if repo_source.exists():
@@ -226,7 +238,9 @@ def setup_worktree_for_member(
                 cwd=member_dir,
             )
         else:
-            logger.warning("[Warning] Repository %s not found.", wt_name)
+            logger.warning(
+                LicoMsg.DEVC.WARN_REPO_NOT_FOUND.format(name=wt_name)
+            )
 
 
 def ensure_crew_worktrees(crew_list: list[CrewMember]) -> None:
@@ -264,7 +278,7 @@ def load_env_meta_secrets(
     if not (env_path and env_path.exists()):
         return
 
-    logger.info("[Provision] Loading secrets: %s", env_path)
+    logger.info(LicoMsg.DEVC.LOAD_SECRETS.format(path=env_path))
     raw_env = parse_env_file(env_path)
     # Using cast here because "env-keys" contains a dash
     keys_to_load = cast("list[str]", env_meta.get("env-keys", []))
@@ -291,7 +305,7 @@ def load_legacy_secrets(
     if not cred_p.exists():
         return
 
-    logger.info("[Provision] Loading secrets legacy vault: %s", cred_p)
+    logger.info(LicoMsg.DEVC.LOAD_LEGACY_SECRETS.format(path=cred_p))
     with cred_p.open("r", encoding="utf-8") as f:
         creds_data = cast("dict[str, object]", json.load(f))
         crew_creds = cast("list[dict[str, str]]", creds_data.get("crew", []))
@@ -410,7 +424,7 @@ def setup_resident(
     shell = acc.get("shell", "/bin/bash")
     password = passwords.get(name, "lico")
 
-    logger.info("[Resident] Setting up: %s (UID:%s)", name, uid)
+    logger.info(LicoMsg.DEVC.RESIDENT_SETUP.format(name=name, uid=uid))
     with suppress(Exception):
         run(["groupadd", "-g", str(gid), name], check=False)
 
@@ -455,7 +469,9 @@ def _check_host_gid() -> None:
     with suppress(Exception):
         ws_stat = WS_ROOT.stat()
         if ws_stat.st_gid != COMMON_GID:
-            logger.warning("[Warn] Host GID %s mismatch.", ws_stat.st_gid)
+            logger.warning(
+                LicoMsg.DEVC.WARN_GID_MISMATCH.format(gid=ws_stat.st_gid)
+            )
 
 
 def _add_crew_aliases(member_name: str, crew: list[CrewMember]) -> None:
@@ -477,7 +493,7 @@ def _add_crew_aliases(member_name: str, crew: list[CrewMember]) -> None:
 
 def main() -> None:
     """Entry point for Village Provisioning."""
-    logger.info("--- Lico Village Provisioning System (Habitat) ---")
+    logger.info(LicoMsg.DEVC.PROVISION_START)
 
     cfg_p = HABITAT_CONFIG
     if not cfg_p.exists():
@@ -485,7 +501,7 @@ def main() -> None:
         if fallback.exists():
             cfg_p = fallback
         else:
-            logger.error("[Error] Habitat config not found.")
+            logger.error(LicoMsg.DEVC.ERR_HABITAT_NOT_FOUND)
             sys.exit(1)
 
     _check_host_gid()

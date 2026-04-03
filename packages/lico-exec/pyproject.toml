@@ -1,0 +1,14 @@
+[project]
+name = "lico-exec"
+version = "0.1.0"
+description = "Centralized command execution module for Lycoris"
+readme = "README.md"
+requires-python = ">=3.14"
+dependencies = ["lico-logger"]
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/lico_exec"]
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"

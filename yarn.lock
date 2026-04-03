@@ -685,10 +685,10 @@
   resolved "https://registry.yarnpkg.com/@google-cloud/promisify/-/promisify-4.1.0.tgz#df8b060f0121c6462233f5420738dcda09c6df4a"
   integrity sha512-G/FQx5cE/+DqBbOpA5jKsegGwdPniU6PuIEMt+qxWgFxvxuFOzVmp6zYchtYuwAWV5/8Dgs0yAmjvNZv3uXLQg==
 
-"@google/gemini-cli-core@0.35.2":
-  version "0.35.2"
-  resolved "https://registry.yarnpkg.com/@google/gemini-cli-core/-/gemini-cli-core-0.35.2.tgz#ecc3bd4351490d7cea6fcda56ec9a442c2a9dccb"
-  integrity sha512-Loc6csOAlrymAXd0ve0pMiPnXqfpmYaLNsk1lcwXnl3va6fhLhh1le9GASpgfdpu5v/iYpRhiiyw/xakm+d1yg==
+"@google/gemini-cli-core@0.35.3":
+  version "0.35.3"
+  resolved "https://registry.yarnpkg.com/@google/gemini-cli-core/-/gemini-cli-core-0.35.3.tgz#7c48e2ae9187bf7fd86de6d44206d1488148da57"
+  integrity sha512-MwOmeYjtHpDzaNcesk1KSVEhHhNFVhODYFuXEmd/7vXCCmzdBOPiA/3g7PrsNCJvmzYGQZeFv5mw3ziKw9MUrg==
   dependencies:
     "@a2a-js/sdk" "0.3.11"
     "@bufbuild/protobuf" "^2.11.0"
@@ -766,13 +766,13 @@
     keytar "^7.9.0"
     node-pty "^1.0.0"
 
-"@google/gemini-cli@^0.35.2":
-  version "0.35.2"
-  resolved "https://registry.yarnpkg.com/@google/gemini-cli/-/gemini-cli-0.35.2.tgz#d68f0e605d96327530dc0b37740ff2a1d6af9ffd"
-  integrity sha512-NfmGSgaaSl+TB68lnTltu31FbUE1fmUD8e0iM5R1eHRAvlcPTe4bai6NPCwxbPbvU4AMnrfMdt8VUvlg0CZ8og==
+"@google/gemini-cli@^0.35.3":
+  version "0.35.3"
+  resolved "https://registry.yarnpkg.com/@google/gemini-cli/-/gemini-cli-0.35.3.tgz#a645e08b1f7bf1dacf116441eaf18d06bd35b374"
+  integrity sha512-88kHZEQ6Bcl0XOQ3bnqTnUAsCZ9NvNkhx9TzSBSN4RmAhN9mQlQ/5QRI8kk3vz+isRnuXVbQaXOo8h3Wd1t8iA==
   dependencies:
     "@agentclientprotocol/sdk" "^0.12.0"
-    "@google/gemini-cli-core" "0.35.2"
+    "@google/gemini-cli-core" "0.35.3"
     "@google/genai" "1.30.0"
     "@iarna/toml" "^2.2.5"
     "@modelcontextprotocol/sdk" "^1.23.0"

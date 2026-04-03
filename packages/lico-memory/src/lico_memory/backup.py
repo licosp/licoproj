@@ -6,12 +6,23 @@ import sys
 from datetime import datetime
 from pathlib import Path
 
+from lico_logger import LicoMsg, get_logger
+
+logger = get_logger(__name__)
+
 
 def parse_date(timestamp_str: str) -> str:
-    """Extract YYYY/MM/DD from an ISO 8601 timestamp string."""
+    """Extract YYYY/MM/DD from an ISO 8601 timestamp string.
+
+    Args:
+        timestamp_str (str): The raw ISO 8601 timestamp.
+
+    Returns:
+        str: The extracted date in YYYY/MM/DD format.
+    """
     try:
         # e.g., "2026-02-07T11:00:15.692Z" -> "2026/02/07"
-        dt = datetime.fromisoformat(timestamp_str.replace("Z", "+00:00"))
+        dt = datetime.fromisoformat(timestamp_str)
         return dt.strftime("%Y/%m/%d")
     except ValueError:
         # Fallback if parsing fails
@@ -19,7 +30,14 @@ def parse_date(timestamp_str: str) -> str:
 
 
 def get_existing_ids(file_path: Path) -> set[str]:
-    """Read an existing JSONL file and return a set of all message IDs."""
+    """Read an existing JSONL file and return a set of all message IDs.
+
+    Args:
+        file_path (Path): Path to the JSONL file.
+
+    Returns:
+        set[str]: A set containing all unique message IDs found.
+    """
     existing_ids = set()
     if not file_path.exists():
         return existing_ids
@@ -38,28 +56,31 @@ def get_existing_ids(file_path: Path) -> set[str]:
                         m_id = obj.get("messageId")
                         if s_id is not None and m_id is not None:
                             msg_id = f"{s_id}_{m_id}"
-                    
+
                     if msg_id:
                         existing_ids.add(msg_id)
                 except json.JSONDecodeError:
                     pass
-    except Exception as e:
-        print(
-            f"Warning: Failed to read existing IDs from {file_path}: {e}",
-            file=sys.stderr,
+    except OSError as e:
+        logger.warning(
+            LicoMsg.MEMORY.BACKUP_READ_IDS_ERR.format(path=file_path, error=e)
         )
 
     return existing_ids
 
 
 def main() -> None:
+    """Entry point for JSON to JSONL conversion."""
     parser = argparse.ArgumentParser(
         description="Convert Gemini CLI JSON to date-partitioned JSONL."
     )
     parser.add_argument("input_json", help="Path to the monolithic .json file")
     parser.add_argument(
         "output_root",
-        help="Root directory for output (e.g., .repos/.licoshdw/conversations_cli/identifiers/agate/)",
+        help=(
+            "Root directory for output (e.g., "
+            ".repos/.licoshdw/conversations_cli/identifiers/agate/)"
+        ),
     )
 
     args = parser.parse_args()
@@ -68,14 +89,14 @@ def main() -> None:
     output_root = Path(args.output_root)
 
     if not input_path.exists():
-        print(f"Error: Input file '{input_path}' not found.", file=sys.stderr)
+        logger.error(LicoMsg.MEMORY.ERR_NOT_FOUND.format(path=input_path))
         sys.exit(1)
 
     try:
         with input_path.open("r", encoding="utf-8") as f:
             data = json.load(f)
-    except json.JSONDecodeError as e:
-        print(f"Error: Failed to parse JSON: {e}", file=sys.stderr)
+    except json.JSONDecodeError:
+        logger.exception(LicoMsg.MEMORY.BACKUP_JSON_ERROR)
         sys.exit(1)
 
     messages = []
@@ -83,47 +104,49 @@ def main() -> None:
 
     if isinstance(data, list):
         messages = data
-        data = None # No metadata to save
+        data = None  # No metadata to save
     elif isinstance(data, dict):
         messages = data.pop("messages", [])
         has_metadata = True
     else:
-        print("Error: Unknown JSON root structure.", file=sys.stderr)
+        logger.error(LicoMsg.MEMORY.BACKUP_STRUCT_ERROR)
         sys.exit(1)
-        
+
     output_root.mkdir(parents=True, exist_ok=True)
-    
+
     # 1. Save Metadata if present
     if has_metadata and data:
         meta_path = output_root / "metadata.json"
-        
-        # Merge existing metadata if present (to preserve overarching info if updating)
+
+        # Merge existing metadata if present
+        # (to preserve overarching info if updating)
         if meta_path.exists():
             try:
                 with meta_path.open("r", encoding="utf-8") as mf:
                     existing_meta = json.load(mf)
                     existing_meta.update(data)
                     data = existing_meta
-            except Exception:
+            except (KeyError, AttributeError, TypeError):
                 pass
-                
+
         with meta_path.open("w", encoding="utf-8") as mf:
             json.dump(data, mf, indent=2, ensure_ascii=False)
 
     if not messages:
-        print("No messages found in JSON.", file=sys.stderr)
+        logger.error(LicoMsg.MEMORY.BACKUP_NO_MSG)
         sys.exit(0)
 
+    logger.info(LicoMsg.MEMORY.BACKUP_START.format(path=input_path))
     messages_root = output_root / "messages" if has_metadata else output_root
 
     # Group new messages by their target file path
-    new_messages_by_file: dict[Path, list[dict]] = {}
+    new_messages_by_file = {}
     count_skipped = 0
     count_added = 0
 
     for msg in messages:
         timestamp = msg.get("timestamp")
-        
+
         msg_id = msg.get("id")
         if not msg_id:
             s_id = msg.get("sessionId")
@@ -137,20 +160,19 @@ def main() -> None:
         date_path = parse_date(timestamp)
         target_dir = messages_root / date_path
         target_file = target_dir / "log.jsonl"
-        
+
         if target_file not in new_messages_by_file:
             new_messages_by_file[target_file] = []
-            
+
         new_messages_by_file[target_file].append(msg)
 
-    # Process each target file: Read existing -> Merge -> Deduplicate -> Sort -> Write
+    # Process each target file
     for target_file, new_msgs in new_messages_by_file.items():
         target_file.parent.mkdir(parents=True, exist_ok=True)
-        
+
         merged_msgs = []
         known_ids = set()
-        
-        # 1. Read existing
+
         if target_file.exists():
             try:
                 with target_file.open("r", encoding="utf-8") as f:
@@ -159,52 +181,51 @@ def main() -> None:
                             continue
                         try:
                             obj = json.loads(line)
-                            
-                            # Determine ID
-                            obj_id = obj.get("id")
-                            if not obj_id:
-                                s_id = obj.get("sessionId")
-                                m_id = obj.get("messageId")
-                                if s_id is not None and m_id is not None:
-                                    obj_id = f"{s_id}_{m_id}"
-                            
-                            if obj_id:
-                                known_ids.add(obj_id)
+                            obj_id = obj.get("id") or "{}_{}".format(
+                                obj.get("sessionId"), obj.get("messageId")
+                            )
+                            known_ids.add(obj_id)
                             merged_msgs.append(obj)
-                        except json.JSONDecodeError:
+                        except json.JSONDecodeError, KeyError:
                             pass
-            except Exception as e:
-                print(f"Warning: Failed to read {target_file}: {e}", file=sys.stderr)
-        
-        # 2. Merge new messages (with deduplication)
+            except OSError as e:
+                logger.warning(
+                    LicoMsg.MEMORY.BACKUP_READ_LOG_ERR.format(
+                        file=target_file, error=e
+                    )
+                )
+
         for msg in new_msgs:
-            msg_id = msg.get("id")
-            if not msg_id:
-                s_id = msg.get("sessionId")
-                m_id = msg.get("messageId")
-                if s_id is not None and m_id is not None:
-                    msg_id = f"{s_id}_{m_id}"
-                    
-            if msg_id and msg_id in known_ids:
+            msg_id = (
+                msg.get("id")
+                or f"{msg.get('sessionId')}_{msg.get('messageId')}"
+            )
+            if msg_id in known_ids:
                 count_skipped += 1
                 continue
-                
             merged_msgs.append(msg)
-            if msg_id:
-                known_ids.add(msg_id)
+            known_ids.add(msg_id)
             count_added += 1
-            
-        # 3. Sort by timestamp
+            logger.info(
+                LicoMsg.MEMORY.BACKUP_ENTRY.format(
+                    id=msg_id, ts=msg.get("timestamp")
+                )
+            )
+
         merged_msgs.sort(key=lambda x: x.get("timestamp", ""))
-        
-        # 4. Write back (Overwrite)
-        # Minify each line with separators=(",", ":") and normalize keys with sort_keys=True
+
         with target_file.open("w", encoding="utf-8") as f:
             for msg in merged_msgs:
-                line = json.dumps(msg, separators=(",", ":"), ensure_ascii=False, sort_keys=True)
+                line = json.dumps(
+                    msg,
+                    separators=(",", ":"),
+                    ensure_ascii=False,
+                    sort_keys=True,
+                )
                 f.write(line + "\n")
 
-    print(f"Done. Metadata saved. Added: {count_added}, Skipped (already existed): {count_skipped}. Output root: {output_root}")
+    logger.info(LicoMsg.MEMORY.PACK_SAVED.format(path=output_root))
+
 
 if __name__ == "__main__":
     main()

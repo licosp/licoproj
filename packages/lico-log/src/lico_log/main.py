@@ -1,103 +1,125 @@
-"""Append content to a log file with timestamp and locking."""
+"""Log appender for LicoTor (v3.2.0).
 
-import datetime
+Guardian of historical integrity and template rules.
+"""
+
+from __future__ import annotations
+
 import fcntl
-import os
 import signal
 import sys
+from datetime import UTC, datetime
 from pathlib import Path
+from typing import TYPE_CHECKING
 
-# Strict Type Enforcement
-# This script is designed to be checked with mypy
+from lico_logger import LicoMsg, get_logger
 
+if TYPE_CHECKING:
+    from types import FrameType
 
-def handle_signal(signum: int, _frame: object | None) -> None:
-    """Handle termination signals to ensure cleanup.
-
-    Args:
-        signum (int): The signal number received.
-        _frame (object | None): The current stack frame (unused).
-
-    """
-    # Print to stderr to capture in logs if possible
-    sys.stderr.write(f"Error: Received signal {signum}. Exiting...\n")
-    sys.exit(128 + signum)
+logger = get_logger(__name__)
 
 
-def append_log(log_path: str, content_file: str) -> None:
-    """Append content from content_file to log_path with a header.
-
-    Uses file locking to prevent race conditions.
+def handle_signal(signum: int, _frame: FrameType | None) -> None:
+    """Handle termination signals.
 
     Args:
-        log_path (str): The path to the log file to append to.
-        content_file (str): The path to the temporary file containing content.
-
+        signum (int): Signal number.
+        _frame (FrameType | None): Current stack frame (unused).
     """
-    if not Path(content_file).exists():
-        sys.stderr.write(f"Error: Content file '{content_file}' not found.\n")
+    logger.error(LicoMsg.LOG_APPENDER.SIGNAL_EXIT.format(sig=signum))
+    sys.exit(1)
+
+
+# Setup signal handlers
+signal.signal(signal.SIGINT, handle_signal)
+signal.signal(signal.SIGTERM, handle_signal)
+
+
+def validate_content(content: str) -> bool:
+    """Validate that the content is a legitimate logging block.
+
+    Args:
+        content (str): The content to validate.
+
+    Returns:
+        bool: True if valid, False otherwise.
+    """
+    # 1. Reject empty or whitespace-only content
+    stripped = content.strip()
+    if not stripped:
+        return False
+
+    # 2. Reject accidental debug logs mixed in
+    forbidden_keywords = {
+        "LOGGING SUCCESS",
+        "Exit Code:",
+        "Process Group PGID:",
+        "Successfully modified file:",
+    }
+    if any(kw in content for kw in forbidden_keywords):
+        return False
+
+    # 3. Ensure it starts with a valid header or section
+    valid_starts = (
+        "### Conversation:",
+        "#### Response (Report):",
+        "#### Response (Plan):",
+    )
+    return stripped.startswith(valid_starts)
+
+
+def append_to_log(file_path: Path, content: str) -> None:
+    """Append content to a log file with strict validation and locking.
+
+    Args:
+        file_path (Path): Path to the log file.
+        content (str): Text content to append.
+    """
+    if not validate_content(content):
+        logger.error("Refusing to append invalid or contaminated content.")
         sys.exit(1)
 
     try:
-        content = Path(content_file).read_text(encoding="utf-8")
-    except (OSError, ValueError) as e:
-        sys.stderr.write(f"Error: Failed to read content file: {e}\n")
+        with file_path.open("a", encoding="utf-8") as f:
+            # Simple advisory locking
+            fcntl.flock(f, fcntl.LOCK_EX)
+            # Ensure proper spacing between blocks
+            f.write("\n" + content.strip() + "\n")
+            fcntl.flock(f, fcntl.LOCK_UN)
+
+    except OSError:
+        logger.exception(LicoMsg.LOG_APPENDER.WRITE_FAILED)
         sys.exit(1)
 
-    # Generate Timestamp
-    # Generate Timestamp (ISO 8601 with JST and seconds)
-    jst = datetime.timezone(datetime.timedelta(hours=9))
-    timestamp: str = datetime.datetime.now(jst).isoformat(timespec="seconds")
 
-    # Replace placeholder
-    # If the content doesn't have the placeholder, we might want to prepend a
-    # header, but the current protocol assumes the AI generates the header
-    # with the placeholder.
-    final_content: str = content.replace("{{TIMESTAMP}}", timestamp)
-
-    # Atomic Append with Locking
-    try:
-        # Open in Append mode
-        # mode 'a' is atomic on POSIX for small writes generally,
-        # but we use flock for safety across processes.
-        with Path(log_path).open("a", encoding="utf-8") as f_dest:
-            # Blocking Exclusive Lock
-            # This ensures that if multiple appenders run, they wait for
-            # each other (serialized) instead of crashing or interleaving.
-            fcntl.flock(f_dest, fcntl.LOCK_EX)
-            try:
-                f_dest.write(final_content)
-                f_dest.write("\n")  # Ensure newline at end
-                f_dest.flush()
-                # fsync to force write to disk? Maybe overkill but safe.
-                os.fsync(f_dest.fileno())
-            finally:
-                fcntl.flock(f_dest, fcntl.LOCK_UN)
-
-    except (OSError, ValueError) as e:
-        sys.stderr.write(f"Error: Failed to write to log file: {e}\n")
-        sys.exit(1)
+REQUIRED_ARGS = 3
 
 
 def main() -> None:
-    """Execute the log appender logic."""
-    # Register Signal Handlers
-    signal.signal(signal.SIGTERM, handle_signal)
-    signal.signal(signal.SIGINT, handle_signal)
-
-    arg_count_min = 3
-    if len(sys.argv) < arg_count_min:
-        sys.stderr.write(
-            "Usage: lico-log <log_path> <content_file>\n",
-        )
+    """CLI Entry point for lico-log."""
+    if len(sys.argv) < REQUIRED_ARGS:
+        logger.error(LicoMsg.LOG_APPENDER.USAGE)
         sys.exit(1)
 
-    log_path: str = sys.argv[1]
-    content_file: str = sys.argv[2]
+    log_path = Path(sys.argv[1])
+    input_buffer_path = Path(sys.argv[2])
 
-    signal.alarm(300)
+    if not input_buffer_path.exists():
+        logger.error("Input buffer not found: %s", input_buffer_path)
+        sys.exit(1)
 
-    append_log(log_path, content_file)
+    try:
+        content = input_buffer_path.read_text(encoding="utf-8")
+        # Pre-process content: Expand {{TIMESTAMP}} to standard format
+        # Format: YYYY-MM-DDTHH:MM:SS+09:00
+        now_ts = datetime.now(UTC).astimezone().isoformat(timespec="seconds")
+        content = content.replace("{{TIMESTAMP}}", now_ts)
+
+        append_to_log(log_path, content)
+    except OSError:
+        logger.exception("Failed to read input buffer.")
+        sys.exit(1)
 
 
 if __name__ == "__main__":

@@ -1,0 +1,10 @@
+[project]
+name = "lico-logger"
+version = "0.1.0"
+description = "Centralized logging and message constants for licotor"
+authors = [{ name = "Antigravity" }]
+dependencies = []
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"

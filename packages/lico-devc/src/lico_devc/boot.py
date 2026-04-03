@@ -6,13 +6,15 @@ import subprocess
 import sys
 from pathlib import Path
 
+from lico_logger import LicoMsg, get_logger
+
 from .manifest import load_habitat_config
 
 # Configure logging for discrete CLI feedback
 logging.basicConfig(
     level=logging.INFO, format="%(message)s", stream=sys.stdout
 )
-logger = logging.getLogger(__name__)
+logger = get_logger(__name__)
 
 
 class Habitat:
@@ -41,10 +43,11 @@ class Habitat:
         actual_abs = project_root.resolve()
 
         if expected_abs != actual_abs:
-            logger.error("[Error] Environment Mismatch.")
-            logger.error("        Expected Root: %s", expected_abs)
-            logger.error("        Actual Root:   %s", actual_abs)
-            logger.error("        Please ensure you are at the Village Root.")
+            logger.error(
+                LicoMsg.DEVC.ERR_ENV_MISMATCH.format(
+                    expected=expected_abs, actual=actual_abs
+                )
+            )
             sys.exit(1)
 
     @staticmethod
@@ -71,9 +74,9 @@ class Habitat:
         # Normalize and expand for check
         cred_path = Path(env_path).expanduser().resolve()
         if not cred_path.exists():
-            logger.warning("[Warning] Credentials Missing.")
-            logger.warning("          Path: %s", cred_path)
-            logger.warning("          Please ensure your Vault is active.")
+            logger.warning(
+                LicoMsg.DEVC.WARN_CRED_MISSING.format(path=cred_path)
+            )
             sys.exit(1)
 
 
@@ -94,7 +97,7 @@ def find_hub_root() -> Path:
 
 def main() -> None:
     """Entry point for the Lico Container Bootstrapper."""
-    logger.info("--- Lico Container Bootstrapper (Bare Spark) ---")
+    logger.info(LicoMsg.DEVC.BOOT_START)
 
     # 1. Pivot to Project Root (Universal Invocation)
     # Script: <root>/packages/lico-devc/src/lico_devc/boot.py
@@ -109,7 +112,7 @@ def main() -> None:
     # 3. Discover Universe Root
     hub_root = find_hub_root()
     active_rel = project_root.relative_to(hub_root)
-    logger.info("[Hub] Root: %s | Active: %s", hub_root, active_rel)
+    logger.info(LicoMsg.DEVC.HUB_INFO.format(root=hub_root, active=active_rel))
 
     env = os.environ.copy()
     env.update(
@@ -132,12 +135,12 @@ def main() -> None:
             env=env,
             check=True,
         )
-        logger.info("[Success] Container is running. Connect via VS Code/SSH.")
+        logger.info(LicoMsg.DEVC.SUCCESS_RUNNING)
     except subprocess.CalledProcessError:
-        logger.exception("[Error] Failed to start container")
+        logger.exception(LicoMsg.DEVC.ERR_START_FAILED)
         sys.exit(1)
     except Exception:
-        logger.exception("[Fatal] Unexpected error")
+        logger.exception(LicoMsg.DEVC.ERR_BOOT_FATAL)
         sys.exit(1)
 
 

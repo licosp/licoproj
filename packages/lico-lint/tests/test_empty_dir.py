@@ -1,7 +1,11 @@
+"""Tests for the EmptyDirLinter module."""
+
 from __future__ import annotations
 
-from pathlib import Path
 from typing import TYPE_CHECKING
+
+if TYPE_CHECKING:
+    from pathlib import Path
 
 import pytest
 from lico_lint_empty_dir.main import EmptyDirLinter
@@ -12,18 +16,23 @@ if TYPE_CHECKING:
 
 @pytest.fixture  # type: ignore[misc]
 def test_env(tmp_path: Path) -> Path:
-    """Set up a temporary directory structure for testing."""
+    """Set up a temporary directory structure for testing.
+
+    Args:
+        tmp_path (Path): pytest fixture.
+
+    Returns:
+        Path: The root path of the test environment.
+    """
     root = tmp_path / "test_root"
     root.mkdir()
 
     # Truly empty
     (root / "empty_dir").mkdir()
 
-    # Non-empty (file)
     (root / "non_empty_file").mkdir()
     (root / "non_empty_file" / "file.txt").write_text("content")
 
-    # Non-empty (subdir)
     (root / "non_empty_subdir").mkdir()
     (root / "non_empty_subdir" / "subdir").mkdir()
 
@@ -41,7 +50,9 @@ def test_is_empty_dir_logic(test_env: Path) -> None:
     assert linter.is_empty_dir(str(test_env / "non_empty_subdir")) is False
 
 
-def test_scanner_reports_correctly(test_env: Path, capsys: CaptureFixture[str]) -> None:
+def test_scanner_reports_correctly(
+    test_env: Path, capsys: CaptureFixture[str]
+) -> None:
     """Test the full scanner reporting."""
     linter = EmptyDirLinter(root_dir=str(test_env))
     linter.scan()
