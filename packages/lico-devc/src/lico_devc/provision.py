@@ -1,4 +1,4 @@
-#!/usr/bin/env python3
+# !/usr/bin/env python3
 """Lico Village Provisioning System (Habitat).
 
 Handles user creation, worktree orchestration, and environment configuration
@@ -27,22 +27,26 @@ from .manifest import (
 )
 
 # In the Monolith Brain, /workspace is the Hub Root (e.g., shared/)
+
 WS_ROOT = Path("/workspace")
+
 # LICO_ACTIVE_REL points to the project root (e.g., project/licoproj)
+
 ACTIVE_REL = os.environ.get("LICO_ACTIVE_REL", "")
 ACTIVE_ROOT = WS_ROOT / ACTIVE_REL if ACTIVE_REL else WS_ROOT
 
-# Manifest is in the active project, while tools are in /app.
+# Manifest is in the active project, while tools are in /app
+
 HABITAT_CONFIG = ACTIVE_ROOT / "packages/lico-devc/habitat.json"
 COMMON_GID = 2000
 MIN_QUOTE_LEN = 2
 
 # Configure logging
+
 logging.basicConfig(
     level=logging.INFO, format="%(message)s", stream=sys.stdout
 )
 logger = get_logger(__name__)
-
 
 def run(
     cmd: list[str], *, check: bool = True, cwd: str | Path | None = None
@@ -75,7 +79,6 @@ def run(
         )
     return result
 
-
 def resolve_habitat_path(path_str: str | None) -> Path | None:
     """Translate habitat.json paths into container-centric paths.
 
@@ -97,7 +100,6 @@ def resolve_habitat_path(path_str: str | None) -> Path | None:
     # Monolith/Relative path
     return WS_ROOT / path_str
 
-
 def _strip_quotes(value: str) -> str:
     """Remove surrounding quotes from a string.
 
@@ -113,7 +115,6 @@ def _strip_quotes(value: str) -> str:
     ):
         return value[1:-1]
     return value
-
 
 def _parse_env_line(line: str) -> tuple[str, str] | None:
     """Parse a single line from an .env file.
@@ -137,7 +138,6 @@ def _parse_env_line(line: str) -> tuple[str, str] | None:
         return key.strip(), _strip_quotes(val.strip())
     return None
 
-
 def parse_env_file(path: Path) -> dict[str, str]:
     """Parse .env files supporting comments and quotes.
 
@@ -158,7 +158,6 @@ def parse_env_file(path: Path) -> dict[str, str]:
                 key, val = parsed
                 env_data[key] = val
     return env_data
-
 
 def setup_single_repo(repo: RepoConfig, repos_dir: Path) -> None:
     """Setup a single repository.
@@ -188,7 +187,6 @@ def setup_single_repo(repo: RepoConfig, repos_dir: Path) -> None:
                 LicoMsg.DEVC.WARN_LOCAL_SOURCE_NOT_FOUND.format(name=name)
             )
 
-
 def ensure_repos(repos: list[RepoConfig]) -> None:
     """Orchestrate base repositories into .repos/.
 
@@ -200,7 +198,6 @@ def ensure_repos(repos: list[RepoConfig]) -> None:
 
     for repo in repos:
         setup_single_repo(repo, repos_dir)
-
 
 def setup_worktree_for_member(
     member_name: str, member_dir: Path, wt_name: str
@@ -242,7 +239,6 @@ def setup_worktree_for_member(
                 LicoMsg.DEVC.WARN_REPO_NOT_FOUND.format(name=wt_name)
             )
 
-
 def ensure_crew_worktrees(crew_list: list[CrewMember]) -> None:
     """Orchestrate worktrees and links for all residents.
 
@@ -260,7 +256,6 @@ def ensure_crew_worktrees(crew_list: list[CrewMember]) -> None:
         worktrees = member.get("worktree", [])
         for wt_name in worktrees:
             setup_worktree_for_member(name, member_dir, wt_name)
-
 
 def load_env_meta_secrets(
     env_meta: EnvConfig,
@@ -291,7 +286,6 @@ def load_env_meta_secrets(
                 name = k.replace("LICOPROJ_CREW_PASS_", "").lower()
                 passwords[name] = v
 
-
 def load_legacy_secrets(
     passwords: dict[str, str], site_secrets: dict[str, str]
 ) -> None:
@@ -315,7 +309,6 @@ def load_legacy_secrets(
             cast("dict[str, str]", creds_data.get("secrets", {}))
         )
 
-
 def load_village_secrets(
     config: HabitatConfig,
 ) -> tuple[dict[str, str], dict[str, str]]:
@@ -338,7 +331,6 @@ def load_village_secrets(
         load_legacy_secrets(passwords, site_secrets)
 
     return passwords, site_secrets
-
 
 def configure_bashrc(
     name: str,
@@ -382,26 +374,23 @@ def configure_bashrc(
             "TZ": site_config.get("TZ", "UTC"),
         }
         env_vars.update(site_secrets)
-        env_vars.update(
-            {
-                "PYTHONPYCACHEPREFIX": f"{cd_path}/.temp/cache/pycache",
-                "PYRIGHT_PYTHON_CACHE_DIR": f"{cd_path}/.temp/cache/pyright",
-                "UV_CACHE_DIR": f"{cd_path}/.temp/cache/uv",
-                "YARN_CACHE_FOLDER": f"{cd_path}/.temp/cache/yarn",
-                "RUFF_CACHE_DIR": f"{cd_path}/.temp/cache/ruff",
-                "MYPY_CACHE_DIR": f"{cd_path}/.temp/cache/mypy",
-                "PIP_CACHE_DIR": f"{cd_path}/.temp/cache/pip",
-                "npm_config_cache": f"{cd_path}/.temp/cache/npm",
-                "PYTEST_ADDOPTS": f"-o cache_dir={cd_path}/.temp/cache/pytest",
-            }
-        )
+        env_vars.update({
+            "PYTHONPYCACHEPREFIX": f"{cd_path}/.temp/cache/pycache",
+            "PYRIGHT_PYTHON_CACHE_DIR": f"{cd_path}/.temp/cache/pyright",
+            "UV_CACHE_DIR": f"{cd_path}/.temp/cache/uv",
+            "YARN_CACHE_FOLDER": f"{cd_path}/.temp/cache/yarn",
+            "RUFF_CACHE_DIR": f"{cd_path}/.temp/cache/ruff",
+            "MYPY_CACHE_DIR": f"{cd_path}/.temp/cache/mypy",
+            "PIP_CACHE_DIR": f"{cd_path}/.temp/cache/pip",
+            "npm_config_cache": f"{cd_path}/.temp/cache/npm",
+            "PYTEST_ADDOPTS": f"-o cache_dir={cd_path}/.temp/cache/pytest",
+        })
 
         for k, v in env_vars.items():
             bashrc.write(f'export {k}="{v}"\n')
 
         bashrc.write("\n# Village Identity Aliases\n")
         # Aliases will be added by setup_resident loop for others
-
 
 def setup_resident(
     member: CrewMember,
@@ -463,7 +452,6 @@ def setup_resident(
         name, member, context["site_config"], context["site_secrets"]
     )
 
-
 def _check_host_gid() -> None:
     """Check if /workspace has the correct GID."""
     with suppress(Exception):
@@ -472,7 +460,6 @@ def _check_host_gid() -> None:
             logger.warning(
                 LicoMsg.DEVC.WARN_GID_MISMATCH.format(gid=ws_stat.st_gid)
             )
-
 
 def _add_crew_aliases(member_name: str, crew: list[CrewMember]) -> None:
     """Add aliases for other residents in .bashrc."""
@@ -489,7 +476,6 @@ def _add_crew_aliases(member_name: str, crew: list[CrewMember]) -> None:
             bashrc_p = Path(f"/home/{member_name}/.bashrc")
             with bashrc_p.open("a", encoding="utf-8") as b:
                 b.write(f"alias {other_name}='cd {other_cd}'\n")
-
 
 def main() -> None:
     """Entry point for Village Provisioning."""
@@ -534,7 +520,6 @@ def main() -> None:
     run(["chmod", "-R", "g+w", str(WS_ROOT)], check=False)
     Path("/var/run/sshd").mkdir(exist_ok=True, parents=True)
     os.execv("/usr/sbin/sshd", ["/usr/sbin/sshd", "-D"])
-
 
 if __name__ == "__main__":
     main()
