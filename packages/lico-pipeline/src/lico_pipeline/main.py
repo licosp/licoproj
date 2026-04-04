@@ -12,20 +12,20 @@ from lico_logger import LicoMsg, get_logger
 
 logger = get_logger(__name__)
 
-
 @dataclass
 class ToolResult:
     """Result container for lint tool execution."""
+
     name: str
     success: bool
     return_code: int
 
-
 class LintTool(ABC):
     """Abstract base class for all linting tools."""
+
     def __init__(
         self, name: str, extensions: list[str], tags: list[str] | None = None
-     ) -> None:
+    ) -> None:
         """Initialize the lint tool.
 
         Args:
@@ -68,9 +68,9 @@ class LintTool(ABC):
             )
             return ToolResult(name=self.name, success=False, return_code=-1)
 
-
 class PythonTool(LintTool):
     """Tool implementation for Python-based linters."""
+
     def __init__(
         self,
         name: str,
@@ -127,9 +127,9 @@ class PythonTool(LintTool):
         full_cmd = [executable, *current_args, str(target_path)]
         return self._run_subprocess(full_cmd)
 
-
 class NodeTool(LintTool):
     """Tool implementation for Node.js-based linters."""
+
     def __init__(
         self,
         name: str,
@@ -199,9 +199,9 @@ class NodeTool(LintTool):
 
         return self._run_subprocess(full_cmd)
 
-
 class ShellcheckTool(PythonTool):
     """Specialized tool implementation for Shellcheck."""
+
     def __init__(
         self,
         name: str,
@@ -209,7 +209,7 @@ class ShellcheckTool(PythonTool):
         *,
         args: list[str],
         tags: list[str] | None = None,
-     ) -> None:
+    ) -> None:
         """Initialize Shellcheck tool.
 
         Args:
@@ -266,7 +266,6 @@ class ShellcheckTool(PythonTool):
             str(f) for f in files_to_check
         ]
         return self._run_subprocess(full_cmd)
-
 
 def main() -> None:
     """Entry point for the quality pipeline orchestrator."""
@@ -336,7 +335,10 @@ def main() -> None:
             tags=["python"],
         ),
         PythonTool(
-            "Pytest", "pytest", args=["-c", ".vscode/pytest.ini"], tags=["python"]
+            "Pytest",
+            "pytest",
+            args=["-c", ".vscode/pytest.ini"],
+            tags=["python"],
         ),
         PythonTool(
             "Ty",
@@ -515,7 +517,6 @@ def main() -> None:
     else:
         logger.error(LicoMsg.PIPELINE.SOME_FAILED)
         sys.exit(1)
-
 
 if __name__ == "__main__":
     main()
