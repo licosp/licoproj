@@ -218,7 +218,7 @@ class ShellcheckTool(PythonTool):
             args: Standard arguments.
             tags: Tool tags.
         """
-        super().__init__(name, command, args, tags=tags)
+        super().__init__(name, command, args=args, tags=tags)
         self.extensions = [".sh", ".bash"]
 
     def run(self, target_path: Path, *, fix_mode: bool = False) -> ToolResult:
@@ -318,25 +318,31 @@ def main() -> None:
         PythonTool(
             "Ruff Check",
             "ruff",
-            args=["check", "--no-fix", "--config", "pyproject.toml"],
-            fix_args=["check", "--fix", "--config", "pyproject.toml"],
+            args=["check", "--no-fix", "--config", ".vscode/ruff.toml"],
+            fix_args=["check", "--fix", "--config", ".vscode/ruff.toml"],
             tags=["python"],
         ),
         PythonTool(
             "Ruff Format",
             "ruff",
-            args=["format", "--check", "--config", "pyproject.toml"],
-            fix_args=["format", "--config", "pyproject.toml"],
+            args=["format", "--check", "--config", ".vscode/ruff.toml"],
+            fix_args=["format", "--config", ".vscode/ruff.toml"],
             tags=["python"],
         ),
         PythonTool(
             "Pyright",
             "pyright",
-            args=["--project", "pyproject.toml"],
+            args=[],
             tags=["python"],
         ),
         PythonTool(
-            "Pytest", "pytest", args=["-c", "pyproject.toml"], tags=["python"]
+            "Pytest", "pytest", args=["-c", ".vscode/pytest.ini"], tags=["python"]
+        ),
+        PythonTool(
+            "Ty",
+            "ty",
+            args=["check", "--config-file", ".vscode/ty.toml"],
+            tags=["python"],
         ),
         NodeTool(
             "Prettier",
@@ -466,7 +472,7 @@ def main() -> None:
         PythonTool(
             "Lico Empty Dir",
             "lico-lint-empty-dir",
-            [],
+            args=[],
             tags=["python", "web", "docs", "shell"],
         ),
     ]
