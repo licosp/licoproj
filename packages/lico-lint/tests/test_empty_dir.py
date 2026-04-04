@@ -11,8 +11,7 @@ import pytest
 from lico_lint_empty_dir.main import EmptyDirLinter
 
 if TYPE_CHECKING:
-    from _pytest.capture import CaptureFixture
-
+    from_pytest.capture import CaptureFixture
 
 @pytest.fixture  # type: ignore[misc]
 def test_env(tmp_path: Path) -> Path:
@@ -41,14 +40,12 @@ def test_env(tmp_path: Path) -> Path:
 
     return root
 
-
 def test_is_empty_dir_logic(test_env: Path) -> None:
     """Test the core empty check logic."""
     linter = EmptyDirLinter()
     assert linter.is_empty_dir(str(test_env / "empty_dir")) is True
     assert linter.is_empty_dir(str(test_env / "non_empty_file")) is False
     assert linter.is_empty_dir(str(test_env / "non_empty_subdir")) is False
-
 
 def test_scanner_reports_correctly(
     test_env: Path, capsys: CaptureFixture[str]
