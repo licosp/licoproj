@@ -12,9 +12,7 @@
     "**/.human/.internal/archive",
     "**/.repos/.licoshdw/archive"
   ],
-  "include": [
-    "packages"
-  ],
+  "include": ["packages"],
   "extraPaths": [
     "packages/lico-backup/src",
     "packages/lico-config/src",
