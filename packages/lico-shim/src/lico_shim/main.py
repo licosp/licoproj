@@ -10,12 +10,10 @@ from lico_logger import LicoMsg, get_logger
 
 logger = get_logger(__name__)
 
-
 """Unified Command Shim for Lico.
 
 Provides safety nets for destructive commands and environment routing.
 """
-
 
 def find_workspace_root() -> Path:
     """Find the root of the project.
@@ -28,7 +26,6 @@ def find_workspace_root() -> Path:
         if (parent / ".git").exists() or (parent / "pyproject.toml").exists():
             return parent
     return current
-
 
 def handle_rm(args: list[str]) -> None:
     """Move files to .trash instead of deleting."""
@@ -59,7 +56,6 @@ def handle_rm(args: list[str]) -> None:
                 check=False,
             )
 
-
 def handle_mv(args: list[str]) -> None:
     """Try git mv first, fallback to native mv."""
     result = subprocess.run(
@@ -71,8 +67,7 @@ def handle_mv(args: list[str]) -> None:
         git_mv = subprocess.run(["/usr/bin/git", "mv", *args], check=False)
         if git_mv.returncode == 0:
             return
-    os.execvp("/bin/mv", ["mv", *args])
-
+    os.execvp("/bin/mv", ["mv",*args])
 
 def handle_git(args: list[str]) -> None:
     """Block dangerous git commands."""
@@ -90,11 +85,9 @@ def handle_git(args: list[str]) -> None:
 
     os.execvp("/usr/bin/git", ["git", *args])
 
-
 def handle_python(args: list[str]) -> None:
     """Route python to uv run python."""
     os.execvp("uv", ["uv", "run", "python", *args])
-
 
 def main() -> None:
     """Entry point for lico-shim."""
@@ -121,7 +114,6 @@ def main() -> None:
         # Fallback if command is not shimmed but somehow passed here
         logger.error(LicoMsg.SHIM.ERR_UNKNOWN.format(command=command))
         sys.exit(1)
-
 
 if __name__ == "__main__":
     main()
