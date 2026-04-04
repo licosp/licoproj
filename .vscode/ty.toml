@@ -1,4 +1,5 @@
 [environment]
+python-version = "3.14"
 extra-paths = [
   "packages/lico-backup/src",
   "packages/lico-config/src",
@@ -11,31 +12,13 @@ extra-paths = [
   "packages/lico-pipeline/src",
   "packages/lico-shim/src",
 ]
-python-version = "3.14"
+
+[analysis]
+respect-type-ignore-comments = true
+allowed-unresolved-imports = []
 
 [src]
-include = [
-  "packages/lico-backup/src",
-  "packages/lico-backup/tests",
-  "packages/lico-config/src",
-  "packages/lico-config/tests",
-  "packages/lico-devc/src",
-  "packages/lico-devc/tests",
-  "packages/lico-exec/src",
-  "packages/lico-exec/tests",
-  "packages/lico-lint/src",
-  "packages/lico-lint/tests",
-  "packages/lico-log/src",
-  "packages/lico-log/tests",
-  "packages/lico-logger/src",
-  "packages/lico-logger/tests",
-  "packages/lico-memory/src",
-  "packages/lico-memory/tests",
-  "packages/lico-pipeline/src",
-  "packages/lico-pipeline/tests",
-  "packages/lico-shim/src",
-  "packages/lico-shim/tests",
-]
+include = ["packages"]
 exclude = [
   "**/.venv",
   "**/.temp",
@@ -48,13 +31,4 @@ exclude = [
 ]
 
 [rules]
-unknown-parameter-type = "error"
-unknown-argument-type = "error"
-unknown-variable-type = "error"
-unknown-member-access = "error"
-unknown-return-type = "error"
-report-missing-imports = "error"
-possibly-unbound-attribute = "error"
-redundant-cast = "error"
-unused-ignore = "error"
-deprecated = "error"
+all = "error"

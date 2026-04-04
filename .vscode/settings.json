@@ -19,7 +19,7 @@
   },
 
   // ty
-  "ty.configurationFile": "pyproject.toml",
+  "ty.configurationFile": ".vscode/ty.toml",
 
   // SMC
   "scm.diffDecorations": "none",
