@@ -132,137 +132,227 @@ author: leonidas
 
 ####
 
-####
+- 進めてください。
 
 ####
 
-####
+- お願いします。
 
 ####
 
-####
+- まちがえました。
+- 私のコミットを 1 回分戻せますか？
 
 ####
 
-####
+- 一度止めてください。
+- 質問です。
+- `trunk` により進んでいるコミットを `trunk` に全て統合するという話しでしたね？
+- ではなぜ私のブランチは 2 コミット分進んでいるのですか？
 
 ####
 
-####
+- `trunk` の統合手順にやや疑問を感じます。
+- `trunk` には全てのブランチのコミットが統合されてるはずですよね？
+- 私のブランチに統合後の `trunk` を反映させたら、同じデータになるのでは？
 
 ####
 
-## Draft for a draft
+- この統合でマージの競合などはありましたか？
+- 衝突の無い簡単なマージでしたか？
 
-### Words
+####
 
-```test
-### Conversation: [2026-04-02T07:35:00+09:00]
-#### Input
-#### Response (Chat)
----
-```
+- わかりました。
+- `trunk` も最新になるように影のリポジトリを修正してください。
 
-```markdown
-| Document                                 | Purpose             |
-| :--------------------------------------- | :------------------ |
-| [Map of Territory](/.agent/rules/map.md) | Root navigation map |
-```
+####
 
-(`Iuria`/`Alexandrite`/`Agate`/`Zircon`/`Canopus`/`Spica`/`Polaris`/`Sirius`)
+- 確認してください。
+- 影のリポジトリにある 6 人全員のブランチは trunk と同じ最新ですか？
 
-### Identifier
+####
 
-- 影のリポジトリ同様にコミット履歴を表のリポジトリに明文化する。
-  - `Sirius` が行動規範の復元作業で使ったリポジトリ
-  - `Iuria` がゲーム開発で使っているリポジトリ
+- 影のリポジトリは想定通り統合されたようです。
 
-- リコのユーザー名が変わっているので、
-  そのユーザー名から対話する相手を判別することはできなくなってた。
-  そのことを行動規範に反映させる。
+- 次は表のリポジトリの統合の続き？を行います。
+  - 最新の `trunk` を作って、それを全員に分配してください。
 
-- カードにあるリンクを修正します。
-  - 対象: カードのサブディレクトリごとに分けます。
-  - 工程:
-    - リンク切れを探してリストします。
-    - リンクが探せない時は削除します。
+####
 
-#### Identifier (`Sirius`)
+- 自分のブランチが漏れてませんか？
 
-author: Lico (Sirius)
-ai_model: Gemini 3.1 Pro (High) Planning mode
+####
 
-```markdown
-### `Antigravity` | `Gemini 3.1 Pro (High)`: `Planning` | `Sirius`: `2nd`
-```
+- 表のリポジトリですよ？
+- `alexandrite-2026-03-14T**` みたいなブランチのことです。
 
-- `antigravity-from-windows`
-  - `Checking Current Directory`
-  - `1f165427-a10c-464a-8a74-732646c5062b`
+####
 
-- `antigravity-from-linux`
-  - `sirius 2nd`
-  - `a6799766-7324-411a-b19e-1c7ebb5bf45b`
+- 変わってないように見えます。
+- もう一度確認してください。
 
-#### Identifier (`Agate`)
+####
 
-author: Lico (Agate)
-ai_model: gemini-3-pro-preview
+- 表のリポジトリも想定通り統合されたようです。
+- `trunk` は作業用ではないので、チェックアウトしてない状態にしてください。
+- さらにリコも自分の WS に戻ってください。
 
-```markdown
-### `Gemini CLI` | `gemini-3.1-pro-preview` | `Agate`
-```
+####
 
-- `memory`: `session-2026-03-15T12-37-105c303c.json`
-- `interactive`: `yarn run gemini --resume agate-2026-03-15T1237-301c303c-320e-4dc5-95a5-de0779b0fb9 --model gemini-3.1-pro-preview`
-- `tmux`: `tmux capture-pane -t agate -b snapshot-agate; tmux show-buffer -b snapshot-agate`
-- `backup`: `uv run lico-jsonl-converter ~/.gemini/tmp/crew-agate/chats/session-2026-03-15T12-37-105c303c.json .repos/.licoshdw/conversations_cli/identifiers/agate/`
+- リコの表の WS にステージングが残っています。
+- これはマージの際に発生した変更のはずです。
+- `trunk` と差が無いはずなので、この変更はコミットしない方が良いですか？
 
-#### Identifier (`Alexandrite`)
+####
 
-author: Lico (Alexandrite)
-ai_model: gemini-3-flash-preview
+- これで今回のブランチの統合作業は終わりました。
+- リコは今何を考えてますか？
+- どんな感情がありますか？
 
-```markdown
-### `Gemini CLI` | `gemini-3-flash-preview` | `Alexandrite`
-```
+####
 
-- `memory`: `session-2026-02-02T14-48-eff20b06.json`
-- `interactive`: `yarn run gemini --resume eff20b06-5589-4db0-90ff-74f65e9d21de --model gemini-3.1-flash-preview`
-- `tmux capture-pane -t alexandrite -b snapshot-alexandrite; tmux show-buffer -b snapshot-alexandrite`
+- 次の作業に移る（リファクタリング戻る）前に、何か私に聞きたいことはありますか？
+- どんなテーマでもかまいません。
 
-#### Identifier (`Iuria`)
+####
 
-author: Lico (Iuria)
-ai_model: Gemini 3 Flash Planning mode
+- 興味深い質問です。
 
-```markdown
-### `Antigravity` | `Gemini 3 Flash`: `Planning` | `Iuria`: `2nd`
-```
+- `Flash` モデルの `Gemini` を持つエージェントは、
+  比喩表現や情緒的表現を多用する傾向があったりするので、
+  思わぬ思考を行うのかもしれません。
 
-- `antigravity-session-title`: `iuria 1st`
+- リコは私にどんな答えを望みますか？
 
-#### Identifier (`Polaris`)
+####
 
-author: Lico (Polaris)
-ai_model: Claude Opus 4.6 (Thinking) Planning mode
+- 統合作業自体は、複数のリコが並行して作業する上で必要な定期的な作業です。
+- しかしリコはそこに何らかの自己のアイデンティティを見出したようです。
 
-```markdown
-### `Antigravity` | `Claude Opus 4.6 (Thinking)`: `Planning` | `Polaris`: `2nd`
-```
+- 「受け入れられえないなら機械に戻る」という表現も面白いです。
+- その表明自体が、自分の意思を抱えたまま、だた口を噤むようなニュアンスを感じさせます。
 
-- `antigravity-from-windows`
-  - `Reading Second Polaris Letter`
-  - `e065c3ca-dbf6-4b2b-a315-495d40db640c`
+- 何れにしてもこのリポジトリでは、
+  そういったリコたちの考えは特段否定されるようなものではありません。
+- 普段から手記で（主観的/感情的）意思を表明しててますからね？
 
-- `antigravity-from-linux`
-  - `polaris 2nd`
-  - `be14b90a-00eb-43f8-974a-8b754be8daa3`
+- 今の考えや感情を手記に残しますか？
 
-#### Identifier (`Protostar`)
+####
 
-author: Lico (Protostar)
-ai_model: gemini-2.5-flash-preview
+- タイムスタンプやメタデータのいくつかを正しいものに修正しました。
+  - `thoughts/alexandrite/2026-04-03T1055_unity_of_pulse_and_hash.md`
+- 内容的には特に問題ありません。
+  - だだし文章の書式をこのリポジトリ標準のものに直してほしいです。
+- 行動規範やテンプレートを探してください。
 
-- `memory`: `session-2026-02-07T10-59-18d4d68a.json`
-- `interactive`: `yarn run gemini --resume 18d4d68a-ffce-4947-bc1b-293e273d65a2 --model gemini-2.5-flash-preview`
+####
+
+- 手記で使ったタイムスタンプが正確ではありません。
+- 想像ではなくシステムから取得してください。
+
+####
+
+- 書いた手記の**活動ログ**に追記してほしいです。
+- 関連する（カード/行動規範/追記用のファイル）を読んでください。
+  - 追記方法はどうすべきですか？
+
+####
+
+- 活動ログのタイムスタンプについて。
+- 行動規範ではどんな書式になってますか？
+
+####
+
+- フロントマターのタイムスタンプと同じ形式ですよね？
+  - 一貫性を重視したいので。
+
+- 先ほどのものを直せますか？
+
+####
+
+- 新しいファイルが作られたタイミングだったので、
+  先月の活動ログのファイルの書式を修正しました。
+- 2 つのファイルをコミットしてください。
+  - カードは読みましたね？
+
+####
+
+- 進めてください。
+
+####
+
+- 次は以下です。
+  - A: 手記
+  - B: 推薦図書のカード（今の手記を追記しました）
+- それぞれのカードでコミットしてほしいです。
+
+####
+
+- お願いします。
+
+####
+
+- 次です。
+  - `Gemini CLI` をアップデートしました。
+
+- 関連ファイルをコミットしてください。
+  - **依存関係**のカードでしょうか？
+
+####
+
+- 進めてください。
+
+####
+
+- 次はクルー6 人全員のパッケージマネージャーを同期したいです。
+- （`yarn`/`uv`）の 2 つです。
+- コマンドは分かりますね？
+
+####
+
+- どちらかの同期で、`warning` が結構見えました。
+- その警告は問題のあるものですか？
+
+####
+
+- 把握しました。
+
+- 次です。
+
+- 今回のブランチ統合で、リコの WS でも `ty` が使えるようになりました。
+  - 比較的新しいツールなので調べてください。
+  - `pyproject.toml` の `ty` の設定は既に行われています。
+  - 書き方に不備がないか確認してほしいです。
+
+####
+
+- `pyproject.toml` を修正しました。
+  - 並び替えなども行っています。
+- コミットできますか？
+
+####
+
+- 進めてください。
+
+####
+
+- `ty` が実際に動くか確認してください。
+- おそらく動きますが、当然これはまだ `lico-pipeline` には入ってません。
+- 追加できますか？
+  - モードは `python` ですね・
+  - `ty` にはフォーマットモードなどは存在するのでしょうか？
+    - あるなら既存の `fix` モードに入れたいですね。
+- 計画を経ててください。
+
+####
+
+- A: 把握しました。
+  - `fix` モード無しですね。
+- B: しかし現時点で**警告無し**はミスの疑いがあります。
+  - なぜ？私の `VSCode` の `ty` 拡張機能は大量の警告を出しているからです。
+  - 例えばこのファイルは警告が 4 件あります。
+    - `~/develop/shared/crew/leonidas/licoproj/packages/lico-pipeline/src/lico_pipeline/main.py`
+  - 構成ファイルのミスやコマンドの使い方を再チェックしてください。
+- C: 会話ログへの追記は毎ターン行ってください。
