@@ -1,4 +1,5 @@
 """Configuration management for LicoTor."""
+
 # ruff: noqa: PLR0904
 
 import json
@@ -6,7 +7,6 @@ from pathlib import Path
 from typing import Any
 
 from lico_logger import LicoMsg, get_logger
-
 
 class ConfigManager:
     """Manages project configuration and paths."""
