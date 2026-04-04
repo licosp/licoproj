@@ -36,7 +36,7 @@
   "python.defaultInterpreterPath": "${workspaceFolder}/.venv/bin/python",
 
   // Ruff
-  "ruff.configuration": "pyproject.toml",
+  "ruff.configuration": ".vscode/ruff.toml",
   "ruff.interpreter": ["${workspaceFolder}/.venv/bin/python"],
   "ruff.path": ["${workspaceFolder}/.venv/bin/ruff"],
   "ruff.format.backend": "uv",

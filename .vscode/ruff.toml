@@ -1,26 +1,5 @@
 cache-dir = "./.temp/cache/ruff"
-src = [
-  "packages/lico-backup/src",
-  "packages/lico-backup/tests",
-  "packages/lico-config/src",
-  "packages/lico-config/tests",
-  "packages/lico-devc/src",
-  "packages/lico-devc/tests",
-  "packages/lico-exec/src",
-  "packages/lico-exec/tests",
-  "packages/lico-lint/src",
-  "packages/lico-lint/tests",
-  "packages/lico-log/src",
-  "packages/lico-log/tests",
-  "packages/lico-logger/src",
-  "packages/lico-logger/tests",
-  "packages/lico-memory/src",
-  "packages/lico-memory/tests",
-  "packages/lico-pipeline/src",
-  "packages/lico-pipeline/tests",
-  "packages/lico-shim/src",
-  "packages/lico-shim/tests",
-]
+src = ["packages/*/src"]
 exclude = [
   "**/.temp/**",
   "**/.venv/**",
