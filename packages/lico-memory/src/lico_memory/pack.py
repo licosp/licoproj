@@ -11,7 +11,6 @@ from lico_logger import LicoMsg, get_logger
 
 logger = get_logger(__name__)
 
-
 def main() -> None:
     """Entry point for session packaging."""
     parser = argparse.ArgumentParser(
@@ -140,7 +139,6 @@ def main() -> None:
         LicoMsg.MEMORY.PACK_SIZE.format(size=output_path.stat().st_size)
     )
     logger.info(LicoMsg.MEMORY.PACK_SAVED.format(path=output_path))
-
 
 if __name__ == "__main__":
     main()
