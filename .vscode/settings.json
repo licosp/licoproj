@@ -51,7 +51,7 @@
 
   // ShellCheck
   "shellcheck.customArgs": ["--rcfile=.vscode/.shellcheckrc"],
-  "shellcheck.executablePath": "shellcheck",
+  "shellcheck.executablePath": "${workspaceFolder}/.venv/bin/shellcheck",
   "shellcheck.useWorkspaceRootAsCwd": true,
 
   // Markdownlint

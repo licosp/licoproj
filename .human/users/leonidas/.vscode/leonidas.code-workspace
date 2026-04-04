@@ -105,11 +105,12 @@
 
     // shfmt
     "shellformat.useEditorConfig": true,
+    "shellformat.path": "${workspaceFolder}/.venv/bin/shfmt",
 
     // Bash IDE
     "bashIde.logLevel": "debug",
-    "bashIde.shellcheckPath": "", // Disable lint
-    "bashIde.shfmt.path": "", // Disable format
+    "bashIde.shellcheckPath": ".venv/bin/shellcheck",
+    "bashIde.shfmt.path": ".venv/bin/shfmt",
 
     // Powershell
     "powershell.scriptAnalysis.settingsPath": ".vscode/PSScriptAnalyzerSettings.psd1",
