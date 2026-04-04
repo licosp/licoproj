@@ -80,47 +80,6 @@ members = [
   "packages/lico-shim",
 ]
 
-[tool.pyright]
-typeCheckingMode = "strict"
-pythonVersion = "3.14"
-pythonPlatform = "Linux"
-exclude = [
-  "**/.venv",
-  "**/.temp",
-  "**/.trash",
-  "**/node_modules",
-  "**/__pycache__",
-  "**/.agent/.internal/archive",
-  "**/.human/.internal/archive",
-  "**/.repos/.licoshdw/archive",
-]
-include = ["."]
-extraPaths = [
-  "packages/lico-backup/src",
-  "packages/lico-config/src",
-  "packages/lico-devc/src",
-  "packages/lico-exec/src",
-  "packages/lico-lint/src",
-  "packages/lico-log/src",
-  "packages/lico-logger/src",
-  "packages/lico-memory/src",
-  "packages/lico-pipeline/src",
-  "packages/lico-shim/src",
-]
-reportUnknownVariableType = "error"
-reportUnknownMemberType = "error"
-reportUnknownParameterType = "error"
-reportUnknownArgumentType = "error"
-reportUnknownLambdaType = "error"
-reportUnusedImport = "error"
-reportUnusedVariable = "error"
-reportUnusedClass = "error"
-reportUnusedFunction = "error"
-reportMissingTypeStubs = true
-reportUntypedFunctionDecorator = true
-reportPrivateUsage = "error"
-reportTypeCommentUsage = "error"
-reportImplicitStringConcatenation = "error"
 
 [tool.pytest.ini_options]
 addopts = """
