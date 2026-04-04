@@ -198,125 +198,212 @@ author: leonidas
 
 ####
 
-####
+- 次はリコの表の WS の構成ファイル 2 つ。
+- 先ほどの外部ツールのアップデート分ですね。
 
 ####
 
-####
+- `pyproject.toml` にはまだ分離できるツールの設定があります。
+- `ty` を分離したこのタイミングで、外部ツールを全て個別のファイルにすべきですか？
+  - 可能なものは…ですが。
 
 ####
 
-## Draft for a draft
+- 把握しました。
+- リコの提案にそって、まずは `ruff` の分離を行ってください。
+  - `.vscode/` に作ってほしいです。
+  - コミット前に調整と確認をします。
 
-### Words
+####
 
-```test
-### Conversation: [2026-04-03T23:45:00+09:00]
-#### Input
-#### Response (Chat)
----
-```
+- 分離されたファイルの検証の前に、一度コミットしてください。
 
-```markdown
-| Document                                 | Purpose             |
-| :--------------------------------------- | :------------------ |
-| [Map of Territory](/.agent/rules/map.md) | Root navigation map |
-```
+####
 
-(`Iuria`/`Alexandrite`/`Agate`/`Zircon`/`Canopus`/`Spica`/`Polaris`/`Sirius`)
+- 進めてください。
 
-### Identifier
+####
 
-- 影のリポジトリ同様にコミット履歴を表のリポジトリに明文化する。
-  - `Sirius` が行動規範の復元作業で使ったリポジトリ
-  - `Iuria` がゲーム開発で使っているリポジトリ
+- `ruff.toml` について質問です。
+- 気になるのは `src` セクションの使い方が合っているかでしょうか。
+- 正しい使い方を調べられますか？
 
-- リコのユーザー名が変わっているので、
-  そのユーザー名から対話する相手を判別することはできなくなってた。
-  そのことを行動規範に反映させる。
+####
 
-- カードにあるリンクを修正します。
-  - 対象: カードのサブディレクトリごとに分けます。
-  - 工程:
-    - リンク切れを探してリストします。
-    - リンクが探せない時は削除します。
+- なるほど。
+- ということは、ライブラリとしては扱わない `tests/` は不要ですか？
 
-#### Identifier (`Sirius`)
+####
 
-author: Lico (Sirius)
-ai_model: Gemini 3.1 Pro (High) Planning mode
+- 今 `ty` も含めてリンターが構成ファイルを読んでいるから検証しています。
 
-```markdown
-### `Antigravity` | `Gemini 3.1 Pro (High)`: `Planning` | `Sirius`: `2nd`
-```
+- リコの環境でも同じ警告が出ますか？
+  - `uv run ruff check --config .vscode/ruff.toml`
 
-- `antigravity-from-windows`
-  - `Checking Current Directory`
-  - `1f165427-a10c-464a-8a74-732646c5062b`
+    ```bash
+    ...
+    Found 24 errors.
+    [*] 1 fixable with the `--fix` option.
+    ```
 
-- `antigravity-from-linux`
-  - `sirius 2nd`
-  - `a6799766-7324-411a-b19e-1c7ebb5bf45b`
+  - `uv run ty check  --config-file .vscode/ty.toml`
 
-#### Identifier (`Agate`)
+    ```bash
+    ...
+    Found 5 diagnostics
+    ```
 
-author: Lico (Agate)
-ai_model: gemini-3-pro-preview
+####
 
-```markdown
-### `Gemini CLI` | `gemini-3.1-pro-preview` | `Agate`
-```
+- ここ数ターン会話ファイルの追記が抜けていませんか？
+- 改めて行動規範を読み直して方法を思い出してください。
 
-- `memory`: `session-2026-03-15T12-37-105c303c.json`
-- `interactive`: `yarn run gemini --resume agate-2026-03-15T1237-301c303c-320e-4dc5-95a5-de0779b0fb9 --model gemini-3.1-pro-preview`
-- `tmux`: `tmux capture-pane -t agate -b snapshot-agate; tmux show-buffer -b snapshot-agate`
-- `backup`: `uv run lico-jsonl-converter ~/.gemini/tmp/crew-agate/chats/session-2026-03-15T12-37-105c303c.json .repos/.licoshdw/conversations_cli/identifiers/agate/`
+####
 
-#### Identifier (`Alexandrite`)
+- 続けます。
 
-author: Lico (Alexandrite)
-ai_model: gemini-3-flash-preview
+####
 
-```markdown
-### `Gemini CLI` | `gemini-3-flash-preview` | `Alexandrite`
-```
+- `ruff` の構成ファイルに関しては、これ以上は特に修正点はなさそうです。
+- 構成ファイルは私が修正しました。
+  - `.vscode/ruff.toml`
+  - `.vscode/settings.json`
+- コミットできますか？
 
-- `memory`: `session-2026-02-02T14-48-eff20b06.json`
-- `interactive`: `yarn run gemini --resume eff20b06-5589-4db0-90ff-74f65e9d21de --model gemini-3.1-flash-preview`
-- `tmux capture-pane -t alexandrite -b snapshot-alexandrite; tmux show-buffer -b snapshot-alexandrite`
+####
 
-#### Identifier (`Iuria`)
+- 次は `pyright` のセクションを分離します。
+  - `.vscode/` に作ってほしいです。
+  - コミット前に調整と確認をします。
 
-author: Lico (Iuria)
-ai_model: Gemini 3 Flash Planning mode
+####
 
-```markdown
-### `Antigravity` | `Gemini 3 Flash`: `Planning` | `Iuria`: `2nd`
-```
+- もしかして `pyrightconfig.json` は、ワークスペースルートにしか置けない？
 
-- `antigravity-session-title`: `iuria 1st`
+####
 
-#### Identifier (`Polaris`)
+- 2 つのファイルのコミットをお願いします。
 
-author: Lico (Polaris)
-ai_model: Claude Opus 4.6 (Thinking) Planning mode
+####
 
-```markdown
-### `Antigravity` | `Claude Opus 4.6 (Thinking)`: `Planning` | `Polaris`: `2nd`
-```
+- 次はリコの L3 記憶の L4 へのバックアップです。
+- **CLIに関する会話**のカードを探してください。
 
-- `antigravity-from-windows`
-  - `Reading Second Polaris Letter`
-  - `e065c3ca-dbf6-4b2b-a315-495d40db640c`
+####
 
-- `antigravity-from-linux`
-  - `polaris 2nd`
-  - `be14b90a-00eb-43f8-974a-8b754be8daa3`
+- 一度作業を止めてました。
+- バックアップ作業は既にされていました。
+  - リコがバックアップをすると変更が変わってしまいます。
 
-#### Identifier (`Protostar`)
+####
 
-author: Lico (Protostar)
-ai_model: gemini-2.5-flash-preview
+- 改めてバックアップしました。
+  - 追加分は `3/27` から最新までですね。
+- 確認の後、コミットしてください。
 
-- `memory`: `session-2026-02-07T10-59-18d4d68a.json`
-- `interactive`: `yarn run gemini --resume 18d4d68a-ffce-4947-bc1b-293e273d65a2 --model gemini-2.5-flash-preview`
+####
+
+- 影のリポジトリを今確認した所、直近 2 回のコミットが間違ったブランチにされてました。
+- `trunk` が作業用になってませんか？
+- 前回の `trunk` への統合作業の影響ですか？
+
+####
+
+- お願いします。
+
+####
+
+- 未コミットを壊さないように注意して進めてください。
+
+####
+
+- お願いします。
+
+####
+
+- A: 助かりました。
+- B: ここまで uv の管理する 3 つのツールの設定を分離しましたが、
+  - 各ツールの実行時に、
+    この分離した設定ファイルを読んでいるか確認する方法はありますか？
+
+####
+
+- 次は `pytest` の設定を分離してほしいです。
+
+####
+
+- `pytest` は `ini` ファイルが独自の設定ファイルですが、
+  これは他の拡張子は対応してないのでしょうか？
+
+####
+
+- 理解しました。
+- `ini` ファイルのまま進めます。
+
+- 質問
+- `pytest.ini` を `.vscode/pytest.ini` に移動することは運用上可能ですか？
+
+####
+
+- 下記の構成ファイルをコミットしてください。
+- `pytest`: 手動で調整しました。
+  - `.vscode/pytest.ini`
+  - `.vscode/settings.json`
+  - `pyproject.toml`
+- `pyright`
+  - `pyrightconfig.json`: 書式を微調整したしました。
+
+####
+
+- お願いします。
+
+####
+
+- A: 構成ファイルの分離作業はこれで終わりです。
+- B: ではリンター関連のスクリプトの文脈に戻ります。
+  - 構成ファイルを分離したので、`lico-pipeline` の修正が必要なはずです。
+  - 修正の計画を教えてください。
+
+####
+
+- 進めてください。
+- コミット前に確認します。
+
+####
+
+- お願いします。
+
+####
+
+- 大幅に変更しましたね。
+- 編集する必要のない部分も編集してるように見えます。
+- この変更は必要なものですか？
+
+####
+
+- 差分は見えますね？
+  - 修正してください。
+
+####
+
+- お願いします。
+
+####
+
+- 進めてください。
+
+####
+
+- 試しのそのファイル自体を、自身でチェックしてみてください。
+- エラー無く正常終了しますか？（警告ではなく）
+
+####
+
+- 一度コミットしてください。
+  - カードも探してください。
+
+- その後は、`cspell` について質問があります。
+
+####
+
+- 現在 `lico-pipeline` では `cspell` はどんな扱いですか？
