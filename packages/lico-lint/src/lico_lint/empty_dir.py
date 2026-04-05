@@ -8,6 +8,7 @@ from lico_logger import LicoMsg, get_logger
 
 logger = get_logger(__name__)
 
+
 class EmptyDirLinter:
     """Linter to detect and notify about empty directories."""
 
@@ -80,6 +81,7 @@ class EmptyDirLinter:
 
         return found_empty
 
+
 def main() -> None:
     """Entry point for the linter CLI."""
     linter = EmptyDirLinter()
@@ -87,6 +89,7 @@ def main() -> None:
     # For now, we always exit with 0 to keep the pulse going in prototypes.
     # In production, this might be sys.exit(1 if found else 0).
     sys.exit(0)
+
 
 if __name__ == "__main__":
     main()
