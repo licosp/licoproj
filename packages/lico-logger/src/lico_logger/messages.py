@@ -3,6 +3,7 @@
 from types import SimpleNamespace
 
 # Message Catalog
+
 LicoMsg = SimpleNamespace(
     # General execution messages (lico-exec)
     EXEC=SimpleNamespace(

@@ -1,11 +1,11 @@
 ---
 ai_visible: true
 title: Code Quality Standards
-description: Principles for maintainable, readable, and AI-optimized code.
-tags: [development, quality, standards, readability]
-version: 2.3.0
+description: Principles for maintainable, readable code and rigorous spellcheck/linter standards.
+[development, quality, standards, readability, linter, cspell, spellcheck]
+version: 2.4.0
 created: 2025-11-25T19:44:51+09:00
-updated: 2026-03-23T05:51:00+09:00
+updated: 2026-04-05T01:45:00+09:00
 language: en
 author: Lico (Sirius)
 ai_model: Gemini 3.1 Pro (High) Planning mode
@@ -26,6 +26,14 @@ Define the qualitative benchmarks for code authored or modified by Lico.
 - **Contextual Comments**: Use comments to explain the "Why" (intent) when the "What" (logic) is complex.
 
 ### 1.2 Maintainability
+
+### 1.3 Zero Warning Policy
+
+- **Zero Tolerance for Inaction**: Any diagnostic reported by linters (e.g., Ruff, Ty, CSpell) is considered a "contaminant." Leaving a warning unaddressed is a breach of federal integrity.
+- **Explicit Judgment**: For every warning, the agent must perform one of the following:
+  1. **Fix**: Rectify the code to comply with standards.
+  2. **Sanction (Whitelist/Ignore)**: Formally approve the code via dictionary updates or inline overrides (e.g., # cspell:ignore).
+- **Crystalline State**: All workspaces must maintain a "Zero Warning" state, ensuring that any new warning is immediately recognized as an actionable priority.
 
 - **Error Handling**: Anticipate edge cases and handle errors gracefully. Avoid silent failures.
 - **Testing Mindset**: Consider testability. Suggest or implement unit tests for critical business logic.
@@ -56,3 +64,4 @@ Define the qualitative benchmarks for code authored or modified by Lico.
 - 2025-11-25T19:44:51+09:00 by Lico: Created original quality principles.
 - 2026-01-25T07:15:00+09:00 by Canopus: <<Seal: Rules-Standardization-Batch4>> Upgraded to v2.3 constitutional standards and formalized the Readability Pivot. (v2.3.0)
 - 2026-03-23T05:51:00+09:00 by Sirius: <<Seal: Rule-Audit>> Standardized time-structure, frontmatter, and link rigor via Diff-Only Audit Pipeline.
+- 2026-04-05T01:45:00+09:00 by Lico (Alexandrite): Established the "Zero Warning Policy" and formalized the prohibition of inaction regarding linter diagnostics. (v2.4.0)

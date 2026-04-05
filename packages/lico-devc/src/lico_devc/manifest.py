@@ -8,12 +8,10 @@ from typing import TYPE_CHECKING, TypedDict, cast
 if TYPE_CHECKING:
     from pathlib import Path
 
-
 class BootConfig(TypedDict, total=False):
     """Configuration for boot operations."""
 
     cwd: str
-
 
 class AccountConfig(TypedDict, total=False):
     """Configuration for a resident's system account."""
@@ -23,13 +21,11 @@ class AccountConfig(TypedDict, total=False):
     shell: str
     sudo: bool
 
-
 class RepoSource(TypedDict, total=False):
     """Source configuration for a repository."""
 
     remote: str
     local: str
-
 
 class RepoConfig(TypedDict):
     """Configuration for a managed repository."""
@@ -37,7 +33,6 @@ class RepoConfig(TypedDict):
     name: str
     source_from: str
     source: RepoSource
-
 
 class CrewMember(TypedDict, total=False):
     """Configuration for a village resident (crew member)."""
@@ -47,14 +42,12 @@ class CrewMember(TypedDict, total=False):
     alias: list[str]
     worktree: list[str]
 
-
 class EnvConfig(TypedDict, total=False):
     """Configuration for environment and secret loading."""
 
     name: str
     path: str
     # Key 'env-keys' in JSON is accessed via string due to dash.
-
 
 class HabitatConfig(TypedDict, total=False):
     """Root configuration for the Lico habitat."""
@@ -64,7 +57,6 @@ class HabitatConfig(TypedDict, total=False):
     repos: list[RepoConfig]
     crew: list[CrewMember]
     site_config: dict[str, str]
-
 
 def load_habitat_config(path: Path) -> HabitatConfig:
     """Load and cast the habitat configuration.

@@ -8,7 +8,6 @@ from lico_logger import LicoMsg, get_logger
 
 logger = get_logger(__name__)
 
-
 def sync_dir(src: Path, dest: Path, *, is_history: bool = False) -> None:
     """Sync a directory to the destination using rsync.
 
@@ -50,7 +49,6 @@ def sync_dir(src: Path, dest: Path, *, is_history: bool = False) -> None:
     except subprocess.CalledProcessError:
         logger.exception(LicoMsg.BACKUP.ARTIFACT_ERR.format(src=src))
 
-
 def main() -> None:
     """Entry point for IDE artifacts backup."""
     parser = argparse.ArgumentParser(
@@ -87,7 +85,6 @@ def main() -> None:
             sync_dir(history_path, dest_path, is_history=True)
 
     logger.info(LicoMsg.BACKUP.ARTIFACT_SUCCESS)
-
 
 if __name__ == "__main__":
     main()

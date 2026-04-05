@@ -1,0 +1,41 @@
+cache-dir = "./.temp/cache/ruff"
+src = ["packages/*/src"]
+exclude = [
+  "**/.temp/**",
+  "**/.venv/**",
+  "**/node_modules/**",
+  "**/.trash/**",
+  "**/.agent/.internal/archive/**",
+  "**/.human/.internal/archive/**",
+  "**/.repos/.licoshdw/archive/**",
+]
+line-length = 79
+respect-gitignore = true
+target-version = "py314"
+preview = true
+
+[format]
+docstring-code-format = true
+line-ending = "lf"
+
+[lint]
+select = ["ALL"]
+ignore = [
+  "CPY001",
+  "D203",
+  "D213",
+  "COM812",
+  "ISC001",
+  "S404",
+  "S603",
+  "S606",
+  "S607",
+  "S101",
+]
+preview = true
+
+[lint.pydocstyle]
+convention = "google"
+
+[lint.mccabe]
+max-complexity = 5

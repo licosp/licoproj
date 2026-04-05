@@ -19,7 +19,7 @@
   },
 
   // ty
-  "ty.configurationFile": "pyproject.toml",
+  "ty.configurationFile": ".vscode/ty.toml",
 
   // SMC
   "scm.diffDecorations": "none",
@@ -32,11 +32,11 @@
   "python.analysis.diagnosticMode": "workspace",
   "python.analysis.diagnosticsSource": "Pyright",
   "python.testing.pytestEnabled": true,
-  "python.testing.pytestArgs": ["-c", "pyproject.toml"],
+  "python.testing.pytestArgs": ["-c", ".vscode/pytest.ini"],
   "python.defaultInterpreterPath": "${workspaceFolder}/.venv/bin/python",
 
   // Ruff
-  "ruff.configuration": "pyproject.toml",
+  "ruff.configuration": ".vscode/ruff.toml",
   "ruff.interpreter": ["${workspaceFolder}/.venv/bin/python"],
   "ruff.path": ["${workspaceFolder}/.venv/bin/ruff"],
   "ruff.format.backend": "uv",
@@ -51,7 +51,7 @@
 
   // ShellCheck
   "shellcheck.customArgs": ["--rcfile=.vscode/.shellcheckrc"],
-  "shellcheck.executablePath": "shellcheck",
+  "shellcheck.executablePath": "${workspaceFolder}/.venv/bin/shellcheck",
   "shellcheck.useWorkspaceRootAsCwd": true,
 
   // Markdownlint

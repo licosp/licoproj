@@ -10,7 +10,6 @@ from pathlib import Path
 
 from lico_logger import LicoMsg, get_logger
 
-
 class Commander:
     """Centralized command runner for external processes."""
 
@@ -26,9 +25,7 @@ class Commander:
         self.logger = get_logger(__name__)
 
     @staticmethod
-    def _prepare_env(
-        env: Mapping[str, str] | None = None
-    ) -> dict[str, str]:
+    def _prepare_env(env: Mapping[str, str] | None = None) -> dict[str, str]:
         """Prepare environment variables.
 
         Args:

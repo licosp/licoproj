@@ -1,0 +1,34 @@
+[environment]
+python-version = "3.14"
+extra-paths = [
+  "packages/lico-backup/src",
+  "packages/lico-config/src",
+  "packages/lico-devc/src",
+  "packages/lico-exec/src",
+  "packages/lico-lint/src",
+  "packages/lico-log/src",
+  "packages/lico-logger/src",
+  "packages/lico-memory/src",
+  "packages/lico-pipeline/src",
+  "packages/lico-shim/src",
+]
+
+[analysis]
+respect-type-ignore-comments = true
+allowed-unresolved-imports = []
+
+[src]
+include = ["packages"]
+exclude = [
+  "**/.venv",
+  "**/.temp",
+  "**/.trash",
+  "**/node_modules",
+  "**/__pycache__",
+  "**/.agent/.internal/archive",
+  "**/.human/.internal/archive",
+  "**/.repos/.licoshdw/archive",
+]
+
+[rules]
+all = "error"
