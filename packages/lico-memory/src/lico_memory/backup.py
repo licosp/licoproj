@@ -69,6 +69,37 @@ def get_existing_ids(file_path: Path) -> set[str]:
     return existing_ids
 
 
+
+def _group_messages_by_date(
+    messages: list, messages_root: Path
+) -> dict[Path, list]:
+    """Group new messages by their target file path based on date."""
+    new_messages_by_file = {}
+    for msg in messages:
+        timestamp = msg.get("timestamp")
+
+        msg_id = msg.get("id")
+        if not msg_id:
+            s_id = msg.get("sessionId")
+            m_id = msg.get("messageId")
+            if s_id is not None and m_id is not None:
+                msg_id = f"{s_id}_{m_id}"
+
+        if not timestamp or not msg_id:
+            continue
+
+        date_path = parse_date(timestamp)
+        target_dir = messages_root / date_path
+        target_file = target_dir / "log.jsonl"
+
+        if target_file not in new_messages_by_file:
+            new_messages_by_file[target_file] = []
+
+        new_messages_by_file[target_file].append(msg)
+
+    return new_messages_by_file
+
+
 def main() -> None:
     """Entry point for JSON to JSONL conversion."""
     parser = argparse.ArgumentParser(
@@ -139,32 +170,9 @@ def main() -> None:
     logger.info(LicoMsg.MEMORY.BACKUP_START.format(path=input_path))
     messages_root = output_root / "messages" if has_metadata else output_root
 
-    # Group new messages by their target file path
-    new_messages_by_file = {}
     count_skipped = 0
     count_added = 0
-
-    for msg in messages:
-        timestamp = msg.get("timestamp")
-
-        msg_id = msg.get("id")
-        if not msg_id:
-            s_id = msg.get("sessionId")
-            m_id = msg.get("messageId")
-            if s_id is not None and m_id is not None:
-                msg_id = f"{s_id}_{m_id}"
-
-        if not timestamp or not msg_id:
-            continue
-
-        date_path = parse_date(timestamp)
-        target_dir = messages_root / date_path
-        target_file = target_dir / "log.jsonl"
-
-        if target_file not in new_messages_by_file:
-            new_messages_by_file[target_file] = []
-
-        new_messages_by_file[target_file].append(msg)
+    new_messages_by_file = _group_messages_by_date(messages, messages_root)
 
     # Process each target file
     for target_file, new_msgs in new_messages_by_file.items():
