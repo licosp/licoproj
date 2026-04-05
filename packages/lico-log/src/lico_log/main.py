@@ -19,7 +19,8 @@ if TYPE_CHECKING:
 
 logger = get_logger(__name__)
 
-def handle_signal(signum: int,_frame: FrameType | None) -> None:
+
+def handle_signal(signum: int, _frame: FrameType | None) -> None:
     """Handle termination signals.
 
     Args:
@@ -31,8 +32,10 @@ def handle_signal(signum: int,_frame: FrameType | None) -> None:
 
 # Setup signal handlers
 
+
 signal.signal(signal.SIGINT, handle_signal)
 signal.signal(signal.SIGTERM, handle_signal)
+
 
 def validate_content(content: str) -> bool:
     """Validate that the content is a legitimate logging block.
@@ -66,6 +69,7 @@ def validate_content(content: str) -> bool:
     )
     return stripped.startswith(valid_starts)
 
+
 def append_to_log(file_path: Path, content: str) -> None:
     """Append content to a log file with strict validation and locking.
 
@@ -89,7 +93,9 @@ def append_to_log(file_path: Path, content: str) -> None:
         logger.exception(LicoMsg.LOG_APPENDER.WRITE_FAILED)
         sys.exit(1)
 
+
 REQUIRED_ARGS = 3
+
 
 def main() -> None:
     """CLI Entry point for lico-log."""
@@ -115,6 +121,7 @@ def main() -> None:
     except OSError:
         logger.exception("Failed to read input buffer.")
         sys.exit(1)
+
 
 if __name__ == "__main__":
     main()
