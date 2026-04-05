@@ -3,6 +3,7 @@
 import logging
 import sys
 
+
 class MaxLevelFilter(logging.Filter):
     """Filter to allow only logs BELOW a certain level."""
 
@@ -25,6 +26,7 @@ class MaxLevelFilter(logging.Filter):
             bool: True if the log should be passed, False otherwise.
         """
         return record.levelno <= self.max_level
+
 
 def get_logger(name: str, level: int = logging.INFO) -> logging.Logger:
     """Get a configured logger with dual-stream licotor format.
