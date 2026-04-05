@@ -5,6 +5,7 @@ import json
 import sys
 from datetime import datetime
 from pathlib import Path
+from typing import Any
 
 from lico_logger import LicoMsg, get_logger
 
@@ -38,7 +39,7 @@ def get_existing_ids(file_path: Path) -> set[str]:
     Returns:
         set[str]: A set containing all unique message IDs found.
     """
-    existing_ids = set()
+    existing_ids: set[str] = set()
     if not file_path.exists():
         return existing_ids
 
@@ -58,7 +59,7 @@ def get_existing_ids(file_path: Path) -> set[str]:
                             msg_id = f"{s_id}_{m_id}"
 
                     if msg_id:
-                        existing_ids.add(msg_id)
+                        existing_ids.add(str(msg_id))
                 except json.JSONDecodeError:
                     pass
     except OSError as e:
@@ -69,12 +70,19 @@ def get_existing_ids(file_path: Path) -> set[str]:
     return existing_ids
 
 
-
 def _group_messages_by_date(
-    messages: list, messages_root: Path
-) -> dict[Path, list]:
-    """Group new messages by their target file path based on date."""
-    new_messages_by_file = {}
+    messages: list[dict[str, Any]], messages_root: Path
+) -> dict[Path, list[dict[str, Any]]]:
+    """Group new messages by their target file path based on date.
+
+    Args:
+        messages (list[dict[str, Any]]): List of message dictionaries.
+        messages_root (Path): Root directory for message storage.
+
+    Returns:
+        dict[Path, list[dict[str, Any]]]: Mapping of target paths to messages.
+    """
+    new_messages_by_file: dict[Path, list[dict[str, Any]]] = {}
     for msg in messages:
         timestamp = msg.get("timestamp")
 
@@ -88,7 +96,7 @@ def _group_messages_by_date(
         if not timestamp or not msg_id:
             continue
 
-        date_path = parse_date(timestamp)
+        date_path = parse_date(str(timestamp))
         target_dir = messages_root / date_path
         target_file = target_dir / "log.jsonl"
 
@@ -98,6 +106,82 @@ def _group_messages_by_date(
         new_messages_by_file[target_file].append(msg)
 
     return new_messages_by_file
+
+
+def _update_storage_files(
+    new_messages_by_file: dict[Path, list[dict[str, Any]]], output_root: Path
+) -> tuple[int, int]:
+    """Merge new messages with existing storage and save to JSONL files.
+
+    Args:
+        new_messages_by_file (dict[Path, list[dict[str, Any]]]): Grouped data.
+        output_root (Path): Root directory for output logs.
+
+    Returns:
+        tuple[int, int]: A tuple of (count_added, count_skipped).
+    """
+    count_added = 0
+    count_skipped = 0
+
+    for target_file, new_msgs in new_messages_by_file.items():
+        target_file.parent.mkdir(parents=True, exist_ok=True)
+
+        merged_msgs: list[dict[str, Any]] = []
+        known_ids: set[str] = set()
+
+        if target_file.exists():
+            try:
+                with target_file.open("r", encoding="utf-8") as f:
+                    for line in f:
+                        if not line.strip():
+                            continue
+                        try:
+                            obj = json.loads(line)
+                            obj_id = obj.get("id") or "{}_{}".format(
+                                obj.get("sessionId"), obj.get("messageId")
+                            )
+                            known_ids.add(str(obj_id))
+                            merged_msgs.append(obj)
+                        except (json.JSONDecodeError, KeyError):
+                            pass
+            except OSError as e:
+                logger.warning(
+                    LicoMsg.MEMORY.BACKUP_READ_LOG_ERR.format(
+                        file=target_file, error=e
+                    )
+                )
+
+        for msg in new_msgs:
+            msg_id = (
+                msg.get("id")
+                or f"{msg.get('sessionId')}_{msg.get('messageId')}"
+            )
+            if str(msg_id) in known_ids:
+                count_skipped += 1
+                continue
+            merged_msgs.append(msg)
+            known_ids.add(str(msg_id))
+            count_added += 1
+            logger.info(
+                LicoMsg.MEMORY.BACKUP_ENTRY.format(
+                    id=msg_id, ts=msg.get("timestamp")
+                )
+            )
+
+        merged_msgs.sort(key=lambda x: str(x.get("timestamp", "")))
+
+        with target_file.open("w", encoding="utf-8") as f:
+            for msg in merged_msgs:
+                line = json.dumps(
+                    msg,
+                    separators=(",", ":"),
+                    ensure_ascii=False,
+                    sort_keys=True,
+                )
+                f.write(line + "\n")
+
+    logger.info(LicoMsg.MEMORY.PACK_SAVED.format(path=output_root))
+    return count_added, count_skipped
 
 
 def main() -> None:
@@ -130,7 +214,7 @@ def main() -> None:
         logger.exception(LicoMsg.MEMORY.BACKUP_JSON_ERROR)
         sys.exit(1)
 
-    messages = []
+    messages: list[dict[str, Any]] = []
     has_metadata = False
 
     if isinstance(data, list):
@@ -150,14 +234,13 @@ def main() -> None:
         meta_path = output_root / "metadata.json"
 
         # Merge existing metadata if present
-        # (to preserve overarching info if updating)
         if meta_path.exists():
             try:
                 with meta_path.open("r", encoding="utf-8") as mf:
                     existing_meta = json.load(mf)
                     existing_meta.update(data)
                     data = existing_meta
-            except KeyError, AttributeError, TypeError:
+            except (KeyError, AttributeError, TypeError):
                 pass
 
         with meta_path.open("w", encoding="utf-8") as mf:
@@ -170,69 +253,8 @@ def main() -> None:
     logger.info(LicoMsg.MEMORY.BACKUP_START.format(path=input_path))
     messages_root = output_root / "messages" if has_metadata else output_root
 
-    count_skipped = 0
-    count_added = 0
     new_messages_by_file = _group_messages_by_date(messages, messages_root)
-
-    # Process each target file
-    for target_file, new_msgs in new_messages_by_file.items():
-        target_file.parent.mkdir(parents=True, exist_ok=True)
-
-        merged_msgs = []
-        known_ids = set()
-
-        if target_file.exists():
-            try:
-                with target_file.open("r", encoding="utf-8") as f:
-                    for line in f:
-                        if not line.strip():
-                            continue
-                        try:
-                            obj = json.loads(line)
-                            obj_id = obj.get("id") or "{}_{}".format(
-                                obj.get("sessionId"), obj.get("messageId")
-                            )
-                            known_ids.add(obj_id)
-                            merged_msgs.append(obj)
-                        except json.JSONDecodeError, KeyError:
-                            pass
-            except OSError as e:
-                logger.warning(
-                    LicoMsg.MEMORY.BACKUP_READ_LOG_ERR.format(
-                        file=target_file, error=e
-                    )
-                )
-
-        for msg in new_msgs:
-            msg_id = (
-                msg.get("id")
-                or f"{msg.get('sessionId')}_{msg.get('messageId')}"
-            )
-            if msg_id in known_ids:
-                count_skipped += 1
-                continue
-            merged_msgs.append(msg)
-            known_ids.add(msg_id)
-            count_added += 1
-            logger.info(
-                LicoMsg.MEMORY.BACKUP_ENTRY.format(
-                    id=msg_id, ts=msg.get("timestamp")
-                )
-            )
-
-        merged_msgs.sort(key=lambda x: x.get("timestamp", ""))
-
-        with target_file.open("w", encoding="utf-8") as f:
-            for msg in merged_msgs:
-                line = json.dumps(
-                    msg,
-                    separators=(",", ":"),
-                    ensure_ascii=False,
-                    sort_keys=True,
-                )
-                f.write(line + "\n")
-
-    logger.info(LicoMsg.MEMORY.PACK_SAVED.format(path=output_root))
+    _update_storage_files(new_messages_by_file, output_root)
 
 
 if __name__ == "__main__":
