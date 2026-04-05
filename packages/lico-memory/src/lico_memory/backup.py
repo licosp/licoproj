@@ -30,6 +30,24 @@ def parse_date(timestamp_str: str) -> str:
         return "unknown_date"
 
 
+def _extract_message_id(msg: dict[str, Any]) -> str | None:
+    """Generate a unique ID for a message from its fields.
+
+    Args:
+        msg (dict[str, Any]): The message dictionary.
+
+    Returns:
+        str | None: The extracted ID or None if not found.
+    """
+    msg_id = msg.get("id")
+    if not msg_id:
+        s_id = msg.get("sessionId")
+        m_id = msg.get("messageId")
+        if s_id is not None and m_id is not None:
+            msg_id = f"{s_id}_{m_id}"
+    return str(msg_id) if msg_id else None
+
+
 def get_existing_ids(file_path: Path) -> set[str]:
     """Read an existing JSONL file and return a set of all message IDs.
 
@@ -50,16 +68,9 @@ def get_existing_ids(file_path: Path) -> set[str]:
                     continue
                 try:
                     obj = json.loads(line)
-                    # Try to find a unique identifier
-                    msg_id = obj.get("id")
-                    if not msg_id:
-                        s_id = obj.get("sessionId")
-                        m_id = obj.get("messageId")
-                        if s_id is not None and m_id is not None:
-                            msg_id = f"{s_id}_{m_id}"
-
+                    msg_id = _extract_message_id(obj)
                     if msg_id:
-                        existing_ids.add(str(msg_id))
+                        existing_ids.add(msg_id)
                 except json.JSONDecodeError:
                     pass
     except OSError as e:
@@ -84,14 +95,8 @@ def _group_messages_by_date(
     """
     new_messages_by_file: dict[Path, list[dict[str, Any]]] = {}
     for msg in messages:
+        msg_id = _extract_message_id(msg)
         timestamp = msg.get("timestamp")
-
-        msg_id = msg.get("id")
-        if not msg_id:
-            s_id = msg.get("sessionId")
-            m_id = msg.get("messageId")
-            if s_id is not None and m_id is not None:
-                msg_id = f"{s_id}_{m_id}"
 
         if not timestamp or not msg_id:
             continue
@@ -130,19 +135,15 @@ def _update_storage_files(
         known_ids: set[str] = set()
 
         if target_file.exists():
+            known_ids = get_existing_ids(target_file)
             try:
                 with target_file.open("r", encoding="utf-8") as f:
                     for line in f:
                         if not line.strip():
                             continue
                         try:
-                            obj = json.loads(line)
-                            obj_id = obj.get("id") or "{}_{}".format(
-                                obj.get("sessionId"), obj.get("messageId")
-                            )
-                            known_ids.add(str(obj_id))
-                            merged_msgs.append(obj)
-                        except (json.JSONDecodeError, KeyError):
+                            merged_msgs.append(json.loads(line))
+                        except json.JSONDecodeError:
                             pass
             except OSError as e:
                 logger.warning(
@@ -152,15 +153,13 @@ def _update_storage_files(
                 )
 
         for msg in new_msgs:
-            msg_id = (
-                msg.get("id")
-                or f"{msg.get('sessionId')}_{msg.get('messageId')}"
-            )
-            if str(msg_id) in known_ids:
+            msg_id = _extract_message_id(msg)
+            if msg_id in known_ids:
                 count_skipped += 1
                 continue
             merged_msgs.append(msg)
-            known_ids.add(str(msg_id))
+            if msg_id:
+                known_ids.add(msg_id)
             count_added += 1
             logger.info(
                 LicoMsg.MEMORY.BACKUP_ENTRY.format(
