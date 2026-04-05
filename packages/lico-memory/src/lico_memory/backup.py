@@ -10,6 +10,7 @@ from lico_logger import LicoMsg, get_logger
 
 logger = get_logger(__name__)
 
+
 def parse_date(timestamp_str: str) -> str:
     """Extract YYYY/MM/DD from an ISO 8601 timestamp string.
 
@@ -26,6 +27,7 @@ def parse_date(timestamp_str: str) -> str:
     except ValueError:
         # Fallback if parsing fails
         return "unknown_date"
+
 
 def get_existing_ids(file_path: Path) -> set[str]:
     """Read an existing JSONL file and return a set of all message IDs.
@@ -65,6 +67,7 @@ def get_existing_ids(file_path: Path) -> set[str]:
         )
 
     return existing_ids
+
 
 def main() -> None:
     """Entry point for JSON to JSONL conversion."""
@@ -222,6 +225,7 @@ def main() -> None:
                 f.write(line + "\n")
 
     logger.info(LicoMsg.MEMORY.PACK_SAVED.format(path=output_root))
+
 
 if __name__ == "__main__":
     main()

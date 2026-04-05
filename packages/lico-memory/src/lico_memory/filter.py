@@ -9,6 +9,7 @@ from lico_logger import LicoMsg, get_logger
 
 logger = get_logger(__name__)
 
+
 def main() -> None:
     """Entry point for log filtering."""
     parser = argparse.ArgumentParser(
@@ -157,6 +158,7 @@ def main() -> None:
             f.write(line + "\n")
 
     logger.info(LicoMsg.MEMORY.FILTER_SAVED.format(path=output_path))
+
 
 if __name__ == "__main__":
     main()
