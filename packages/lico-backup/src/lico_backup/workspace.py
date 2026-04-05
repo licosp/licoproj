@@ -9,6 +9,7 @@ from lico_logger import LicoMsg, get_logger
 
 logger = get_logger(__name__)
 
+
 def main() -> None:
     """Entry point for workspace backup."""
     parser = argparse.ArgumentParser(
@@ -44,6 +45,7 @@ def main() -> None:
     except subprocess.CalledProcessError:
         logger.exception(LicoMsg.BACKUP.ERR_FAILED)
         sys.exit(1)
+
 
 if __name__ == "__main__":
     main()
