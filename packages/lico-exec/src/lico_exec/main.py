@@ -10,6 +10,7 @@ from pathlib import Path
 
 from lico_logger import LicoMsg, get_logger
 
+
 class Commander:
     """Centralized command runner for external processes."""
 
