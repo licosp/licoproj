@@ -1,6 +1,7 @@
 """L4 log filtering and thought extraction tool."""
 
 import argparse
+import contextlib
 import json
 import sys
 from pathlib import Path
@@ -9,6 +10,37 @@ from typing import Any
 from lico_logger import LicoMsg, get_logger
 
 logger = get_logger(__name__)
+
+
+
+def _process_message_stages(
+    line: str,
+    stage1_lines: list[dict[str, Any]],
+    stage2_lines: list[dict[str, Any]],
+    stage1_quota: int,
+    stage2_quota: int,
+) -> bool:
+    """Process a single log line into Stage 1 or Stage 2."""
+    if len(stage1_lines) < stage1_quota:
+        with contextlib.suppress(json.JSONDecodeError):
+            stage1_lines.append(json.loads(line))
+        return True
+    
+    if len(stage2_lines) < stage2_quota:
+        with contextlib.suppress(json.JSONDecodeError):
+            obj = json.loads(line)
+            msg_type = obj.get("type")
+            content = str(obj.get("content", ""))
+            is_model = msg_type in {"gemini", "model"}
+            is_gemini_with_content = is_model and bool(content)
+
+            if msg_type == "user" or is_gemini_with_content:
+                if "toolCalls" in obj:
+                    del obj["toolCalls"]
+                stage2_lines.append(obj)
+        return True
+    
+    return False
 
 
 def _filter_log_files(
@@ -50,26 +82,9 @@ def _filter_log_files(
         lines.reverse()
 
         for line in lines:
-            if len(stage1_lines) < stage1_quota:
-                try:
-                    stage1_lines.append(json.loads(line))
-                except json.JSONDecodeError:
-                    pass
-            elif len(stage2_lines) < stage2_quota:
-                try:
-                    obj = json.loads(line)
-                    msg_type = obj.get("type")
-                    content = str(obj.get("content", ""))
-                    is_model = msg_type in {"gemini", "model"}
-                    is_gemini_with_content = is_model and bool(content)
-
-                    if msg_type == "user" or is_gemini_with_content:
-                        if "toolCalls" in obj:
-                            del obj["toolCalls"]
-                        stage2_lines.append(obj)
-                except json.JSONDecodeError:
-                    pass
-            else:
+            if not _process_message_stages(
+                line, stage1_lines, stage2_lines, stage1_quota, stage2_quota
+            ):
                 break
 
     return stage1_lines, stage2_lines, files_touched
