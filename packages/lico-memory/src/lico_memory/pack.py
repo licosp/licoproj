@@ -58,6 +58,53 @@ def _prepare_session_data(
     return session_data, new_uuid, base_id
 
 
+
+def _integrate_and_save_session(
+    jsonl_path: Path,
+    session_data: dict[str, Any],
+    out_file: Path,
+    out_dir: Path,
+    new_uuid: str,
+    base_id: str,
+) -> None:
+    """Read messages, merge into session, and save to final JSON."""
+    messages: list[dict[str, Any]] = []
+    with jsonl_path.open("r", encoding="utf-8") as f:
+        for line in f:
+            if not (stripped := line.strip()):
+                continue
+            try:
+                messages.append(json.loads(stripped))
+            except json.JSONDecodeError as e:
+                logger.warning(
+                    LicoMsg.MEMORY.ERR_INVALID_JSON.format(
+                        path=jsonl_path, error=e
+                    )
+                )
+
+    session_data["messages"] = messages
+    out_dir.mkdir(parents=True, exist_ok=True)
+
+    # Final path adjustment
+    final_path = out_file
+    if final_path.exists():
+        filename_date = datetime.now(UTC).strftime("%Y-%m-%dT%H-%M")
+        final_path = out_dir / f"session-{filename_date}-{new_uuid[:8]}-r.json"
+
+    with final_path.open("w", encoding="utf-8") as f:
+        json.dump(session_data, f, separators=((",", ":")), ensure_ascii=False)
+
+    logger.info(LicoMsg.MEMORY.PACK_SUMMARY_HEADER)
+    logger.info(LicoMsg.MEMORY.PACK_COUNT.format(count=len(messages)))
+    logger.info(LicoMsg.MEMORY.PACK_SESSION_ID.format(id=new_uuid))
+    logger.info(LicoMsg.MEMORY.PACK_BASE_ID.format(id=base_id))
+    logger.info(
+        LicoMsg.MEMORY.PACK_SUMMARY_TEXT.format(text=session_data["summary"])
+    )
+    logger.info(LicoMsg.MEMORY.PACK_SIZE.format(size=final_path.stat().st_size))
+    logger.info(LicoMsg.MEMORY.PACK_SAVED.format(path=final_path))
+
+
 def main() -> None:
     """Entry point for session packaging."""
     parser = argparse.ArgumentParser(
@@ -85,38 +132,9 @@ def main() -> None:
     filename_date = datetime.now(UTC).strftime("%Y-%m-%dT%H-%M")
     out_file = out_dir / f"session-{filename_date}-{new_uuid[:8]}.json"
 
-    messages: list[dict[str, Any]] = []
-    with jsonl_path.open("r", encoding="utf-8") as f:
-        for line in f:
-            if not (stripped := line.strip()):
-                continue
-            try:
-                messages.append(json.loads(stripped))
-            except json.JSONDecodeError as e:
-                logger.warning(
-                    LicoMsg.MEMORY.ERR_INVALID_JSON.format(
-                        path=jsonl_path, error=e
-                    )
-                )
-
-    session_data["messages"] = messages
-    out_dir.mkdir(parents=True, exist_ok=True)
-
-    if out_file.exists():
-        out_file = out_dir / f"session-{filename_date}-{new_uuid[:8]}-r.json"
-
-    with out_file.open("w", encoding="utf-8") as f:
-        json.dump(session_data, f, separators=(",", ":"), ensure_ascii=False)
-
-    logger.info(LicoMsg.MEMORY.PACK_SUMMARY_HEADER)
-    logger.info(LicoMsg.MEMORY.PACK_COUNT.format(count=len(messages)))
-    logger.info(LicoMsg.MEMORY.PACK_SESSION_ID.format(id=new_uuid))
-    logger.info(LicoMsg.MEMORY.PACK_BASE_ID.format(id=base_id))
-    logger.info(
-        LicoMsg.MEMORY.PACK_SUMMARY_TEXT.format(text=session_data["summary"])
+    _integrate_and_save_session(
+        jsonl_path, session_data, out_file, out_dir, new_uuid, base_id
     )
-    logger.info(LicoMsg.MEMORY.PACK_SIZE.format(size=out_file.stat().st_size))
-    logger.info(LicoMsg.MEMORY.PACK_SAVED.format(path=out_file))
 
 
 if __name__ == "__main__":
