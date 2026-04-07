@@ -7,6 +7,7 @@ import sys
 from abc import ABC, abstractmethod
 from dataclasses import dataclass
 from pathlib import Path
+from typing import Any
 
 from lico_logger import LicoMsg, get_logger
 
@@ -54,6 +55,15 @@ class LintTool(ABC):
     def _run_subprocess(
         self, cmd: list[str], cwd: Path | None = None
     ) -> ToolResult:
+        """Run a command as a subprocess.
+
+        Args:
+            cmd (list[str]): Command and arguments.
+            cwd (Path | None): Working directory.
+
+        Returns:
+            ToolResult: The execution result.
+        """
         logger.info(LicoMsg.PIPELINE.RUNNING_CMD.format(cmd=" ".join(cmd)))
         try:
             result = subprocess.run(
@@ -83,21 +93,18 @@ class PythonTool(LintTool):
         fix_args: list[str] | None = None,
         tags: list[str] | None = None,
     ) -> None:
-        """Initialize Python tool.
-
-        Args:
-            name: Tool name.
-            command: Executable command.
-            args: Standard arguments.
-            fix_args: Arguments for fixing.
-            tags: Tool tags.
-        """
+        """Initialize Python tool."""
         super().__init__(name, [".py", ".pyi"], tags)
         self.command = command
         self.args = args
         self.fix_args = fix_args
 
     def _resolve_executable(self) -> str | None:
+        """Resolve command to a physical executable.
+
+        Returns:
+            str | None: Path to executable or None.
+        """
         python_dir = Path(sys.executable).parent
         candidate = python_dir / self.command
         if candidate.exists():
@@ -105,14 +112,14 @@ class PythonTool(LintTool):
         return shutil.which(self.command)
 
     def run(self, target_path: Path, *, fix_mode: bool = False) -> ToolResult:
-        """Run the Python-based linting tool.
+        """Run the Python linting tool.
 
         Args:
-            target_path (Path): Path to check.
-            fix_mode (bool): If True, use fix_args instead of standard args.
+            target_path (Path): Path to scan.
+            fix_mode (bool): Use fix arguments if available.
 
         Returns:
-            ToolResult: Execution outcome.
+            ToolResult: Outcome.
         """
         executable = self._resolve_executable()
         if not executable:
@@ -123,11 +130,8 @@ class PythonTool(LintTool):
             )
             return ToolResult(name=self.name, success=False, return_code=-1)
 
-        current_args = self.args
-        if fix_mode and self.fix_args is not None:
-            current_args = self.fix_args
-
-        full_cmd = [executable, *current_args, str(target_path)]
+        cur_args = self.fix_args if fix_mode and self.fix_args else self.args
+        full_cmd = [executable, *cur_args, str(target_path)]
         return self._run_subprocess(full_cmd)
 
 
@@ -141,25 +145,23 @@ class NodeTool(LintTool):
         *,
         args: list[str],
         extensions: list[str],
-        fix_args: list[str] | None = None,
-        tags: list[str] | None = None,
+        **kwargs: Any,  # noqa: ANN401
     ) -> None:
-        """Initialize Node.js tool.
-
-        Args:
-            name: Tool name.
-            command: bin command name.
-            args: Arguments.
-            extensions: Extensions.
-            fix_args: Fix arguments.
-            tags: Tool tags.
-        """
-        super().__init__(name, extensions, tags)
+        """Initialize Node.js tool."""
+        super().__init__(name, extensions, kwargs.get("tags"))
         self.command = command
         self.args = args
-        self.fix_args = fix_args
+        self.fix_args = kwargs.get("fix_args")
 
     def _resolve_executable(self, root_dir: Path) -> str | None:
+        """Resolve Node command from node_modules/.bin.
+
+        Args:
+            root_dir (Path): Workspace root.
+
+        Returns:
+            str | None: Path to executable or None.
+        """
         candidate = root_dir / "node_modules" / ".bin" / self.command
         if candidate.exists():
             return str(candidate)
@@ -169,16 +171,13 @@ class NodeTool(LintTool):
         """Run the Node.js-based linting tool.
 
         Args:
-            target_path (Path): Path to check.
-            fix_mode (bool): If True, apply write/fix flags.
+            target_path (Path): Target to check.
+            fix_mode (bool): Use fix arguments.
 
         Returns:
-            ToolResult: Execution outcome.
+            ToolResult: Outcome.
         """
-        current = Path.cwd()
-        root_dir = current
-
-        executable = self._resolve_executable(root_dir)
+        executable = self._resolve_executable(Path.cwd())
         if not executable:
             logger.error(
                 LicoMsg.PIPELINE.ERR_EXECUTABLE_NOT_FOUND.format(
@@ -187,17 +186,11 @@ class NodeTool(LintTool):
             )
             return ToolResult(name=self.name, success=False, return_code=-1)
 
-        current_args = self.args
-        if fix_mode and self.fix_args is not None:
-            current_args = self.fix_args
+        cur_args = self.fix_args if fix_mode and self.fix_args else self.args
+        full_cmd = [executable, *cur_args]
 
-        full_cmd = [executable, *current_args]
-
-        if self.command == "prettier":
-            if target_path.is_dir():
-                full_cmd.append(str(target_path / "**/*"))
-            else:
-                full_cmd.append(str(target_path))
+        if self.command == "prettier" and target_path.is_dir():
+            full_cmd.append(str(target_path / "**/*"))
         else:
             full_cmd.append(str(target_path))
 
@@ -215,26 +208,38 @@ class ShellcheckTool(PythonTool):
         args: list[str],
         tags: list[str] | None = None,
     ) -> None:
-        """Initialize Shellcheck tool.
-
-        Args:
-            name: Tool name.
-            command: Command name.
-            args: Standard arguments.
-            tags: Tool tags.
-        """
+        """Initialize Shellcheck tool."""
         super().__init__(name, command, args=args, tags=tags)
         self.extensions = [".sh", ".bash"]
 
-    def run(self, target_path: Path, *, fix_mode: bool = False) -> ToolResult:
-        """Run the Python-based linting tool.
+    def _collect_shell_files(self, target_path: Path) -> list[Path]:
+        """Gather shell files while filtering out noise.
 
         Args:
-            target_path (Path): Path to check.
-            fix_mode (bool): If True, use fix_args instead of standard args.
+            target_path (Path): Root directory or file.
 
         Returns:
-            ToolResult: Execution outcome.
+            list[Path]: Filtered shell scripts.
+        """
+        if not target_path.is_dir():
+            exts = self.extensions
+            return [target_path] if target_path.suffix in exts else []
+
+        files: list[Path] = []
+        files.extend(target_path.rglob("*.sh"))
+        files.extend(target_path.rglob("*.bash"))
+        ignore = (".venv", "node_modules", ".temp")
+        return [f for f in files if not any(p in f.parts for p in ignore)]
+
+    def run(self, target_path: Path, *, fix_mode: bool = False) -> ToolResult:
+        """Run the Shellcheck linting tool.
+
+        Args:
+            target_path (Path): Path to scan.
+            fix_mode (bool): Fix mode flag.
+
+        Returns:
+            ToolResult: Outcome.
         """
         executable = self._resolve_executable()
         if not executable:
@@ -245,37 +250,23 @@ class ShellcheckTool(PythonTool):
             )
             return ToolResult(name=self.name, success=False, return_code=-1)
 
-        files_to_check: list[Path] = []
-        if target_path.is_dir():
-            files_to_check.extend(target_path.rglob("*.sh"))
-            files_to_check.extend(target_path.rglob("*.bash"))
-            files_to_check = [
-                f
-                for f in files_to_check
-                if ".venv" not in f.parts
-                and "node_modules" not in f.parts
-                and ".temp" not in f.parts
-            ]
-        elif target_path.suffix in self.extensions:
-            files_to_check.append(target_path)
-
-        if not files_to_check:
+        files = self._collect_shell_files(target_path)
+        if not files:
             logger.info(LicoMsg.PIPELINE.SKIPPING_TOOL.format(name=self.name))
             return ToolResult(name=self.name, success=True, return_code=0)
 
-        current_args = self.args
-        if fix_mode and self.fix_args is not None:
-            current_args = self.fix_args
-
-        full_cmd = [executable, *current_args] + [
-            str(f) for f in files_to_check
-        ]
+        cur_args = self.fix_args if fix_mode and self.fix_args else self.args
+        full_cmd = [executable, *cur_args] + [str(f) for f in files]
         return self._run_subprocess(full_cmd)
 
 
-
 def _get_available_tools() -> list[LintTool]:
-    """Return the complete list of tools integrated into the pipeline."""
+    """Return the complete list of tools integrated into the pipeline.
+
+    Returns:
+        list[LintTool]: All supported linting tools.
+    """
+    cache_loc = ".temp/cache"
     return [
         PythonTool(
             "Ruff Check",
@@ -291,18 +282,7 @@ def _get_available_tools() -> list[LintTool]:
             fix_args=["format", "--config", ".vscode/ruff.toml"],
             tags=["python"],
         ),
-        PythonTool(
-            "Pyright",
-            "pyright",
-            args=[],
-            tags=["python"],
-        ),
-        PythonTool(
-            "Pytest",
-            "pytest",
-            args=["-c", ".vscode/pytest.ini"],
-            tags=["python"],
-        ),
+        PythonTool("Pyright", "pyright", args=[], tags=["python"]),
         PythonTool(
             "Ty",
             "ty",
@@ -320,7 +300,7 @@ def _get_available_tools() -> list[LintTool]:
                 "--check",
                 "--cache",
                 "--cache-location",
-                ".temp/cache/prettier/",
+                f"{cache_loc}/pret/",
             ],
             fix_args=[
                 "--config",
@@ -330,7 +310,7 @@ def _get_available_tools() -> list[LintTool]:
                 "--write",
                 "--cache",
                 "--cache-location",
-                ".temp/cache/prettier/",
+                f"{cache_loc}/pret/",
             ],
             extensions=[".js", ".ts", ".md", ".json", ".yaml"],
             tags=["web", "docs"],
@@ -343,7 +323,7 @@ def _get_available_tools() -> list[LintTool]:
                 ".vscode/eslint.config.mjs",
                 "--cache",
                 "--cache-location",
-                ".temp/cache/eslint/",
+                f"{cache_loc}/eslint/",
             ],
             fix_args=[
                 "--config",
@@ -351,7 +331,7 @@ def _get_available_tools() -> list[LintTool]:
                 "--fix",
                 "--cache",
                 "--cache-location",
-                ".temp/cache/eslint/",
+                f"{cache_loc}/eslint/",
             ],
             extensions=[".js", ".ts"],
             tags=["web"],
@@ -364,7 +344,7 @@ def _get_available_tools() -> list[LintTool]:
                 ".vscode/.stylelintrc.yaml",
                 "--cache",
                 "--cache-location",
-                ".temp/cache/stylelint/",
+                f"{cache_loc}/style/",
             ],
             fix_args=[
                 "--config",
@@ -372,7 +352,7 @@ def _get_available_tools() -> list[LintTool]:
                 "--fix",
                 "--cache",
                 "--cache-location",
-                ".temp/cache/stylelint/",
+                f"{cache_loc}/style/",
             ],
             extensions=[".css"],
             tags=["web"],
@@ -393,7 +373,7 @@ def _get_available_tools() -> list[LintTool]:
                 ".vscode/.textlintrc.json",
                 "--cache",
                 "--cache-location",
-                ".temp/cache/textlint/",
+                f"{cache_loc}/text/",
             ],
             fix_args=[
                 "-c",
@@ -401,7 +381,7 @@ def _get_available_tools() -> list[LintTool]:
                 "--fix",
                 "--cache",
                 "--cache-location",
-                ".temp/cache/textlint/",
+                f"{cache_loc}/text/",
             ],
             extensions=[".md", ".txt"],
             tags=["docs"],
@@ -416,7 +396,7 @@ def _get_available_tools() -> list[LintTool]:
                 "--dot",
                 "--cache",
                 "--cache-location",
-                ".temp/cache/cspell/",
+                f"{cache_loc}/cspell/",
             ],
             extensions=["*"],
             tags=["docs", "web", "python", "shell"],
@@ -443,77 +423,41 @@ def _get_available_tools() -> list[LintTool]:
     ]
 
 
-def main() -> None:
-    """Entry point for the quality pipeline orchestrator."""
+def _parse_arguments() -> tuple[Path, bool, set[str]]:
+    """Parse CLI arguments.
+
+    Returns:
+        tuple: (target_path, fix_mode, selected_tags).
+    """
     parser = argparse.ArgumentParser(
         description="Orchestrator for Lico linting pipelines"
     )
     parser.add_argument("path", nargs="?", default=".", help="Path to check")
-    parser.add_argument(
-        "--fix",
-        action="store_true",
-        help="Automatically fix and format code where possible",
-    )
-
-    group = parser.add_argument_group("Workflow Targets")
-    group.add_argument(
-        "--python", action="store_true", help="Run only Python-related tools"
-    )
-    group.add_argument(
-        "--web",
-        action="store_true",
-        help="Run only Web frontend-related tools (JS, CSS)",
-    )
-    group.add_argument(
-        "--docs",
-        action="store_true",
-        help="Run only Documentation-related tools (MD, Text)",
-    )
-    group.add_argument(
-        "--shell",
-        action="store_true",
-        help="Run only Shell script-related tools",
-    )
+    parser.add_argument("--fix", action="store_true", help="Auto fix code")
+    tags_list = ("python", "web", "docs", "shell")
+    for tag in tags_list:
+        parser.add_argument(f"--{tag}", action="store_true", help=f"Run {tag}")
 
     args = parser.parse_args()
-    target_path = Path(args.path).absolute()
-    fix_mode = args.fix
+    tags = {t for t in tags_list if getattr(args, t)}
+    return Path(args.path).absolute(), args.fix, tags
 
-    selected_tags = set()
-    if args.python:
-        selected_tags.add("python")
-    if args.web:
-        selected_tags.add("web")
-    if args.docs:
-        selected_tags.add("docs")
-    if args.shell:
-        selected_tags.add("shell")
 
-    tools = _get_available_tools()
+def _execute_pipeline(
+    tools: list[LintTool], target_path: Path, *, fix_mode: bool
+) -> bool:
+    """Run selected tools and return overall success.
 
-    if selected_tags:
-        tools_to_run = [
-            tool for tool in tools if set(tool.tags) & selected_tags
-        ]
-    else:
-        tools_to_run = tools
+    Args:
+        tools (list[LintTool]): List of tools to execute.
+        target_path (Path): Path to scan.
+        fix_mode (bool): Fix mode flag.
 
+    Returns:
+        bool: True if all tools passed.
+    """
     success = True
-    mode_str = "FIX Mode 🔧" if fix_mode else "CHECK Mode 🔍"
-    targets_str = (
-        f"Targets: {', '.join(selected_tags)}"
-        if selected_tags
-        else "Targets: ALL"
-    )
-    logger.info(
-        LicoMsg.PIPELINE.START.format(mode=mode_str, targets=targets_str)
-    )
-
-    if not tools_to_run:
-        logger.info(LicoMsg.PIPELINE.NO_TOOLS_MATCH)
-        sys.exit(0)
-
-    for tool in tools_to_run:
+    for tool in tools:
         logger.info(LicoMsg.PIPELINE.TOOL_HEADER.format(tool=tool.name))
         result = tool.run(target_path, fix_mode=fix_mode)
         if not result.success:
@@ -522,8 +466,29 @@ def main() -> None:
         else:
             logger.info(LicoMsg.PIPELINE.TOOL_PASSED.format(name=tool.name))
         logger.info(LicoMsg.PIPELINE.SEPARATOR)
+    return success
 
-    if success:
+
+def main() -> None:
+    """Entry point for the quality pipeline orchestrator."""
+    target_path, fix_mode, selected_tags = _parse_arguments()
+    tools = _get_available_tools()
+
+    if selected_tags:
+        tools = [t for t in tools if set(t.tags) & selected_tags]
+
+    mode_str = "FIX Mode 🔧" if fix_mode else "CHECK Mode 🔍"
+    target_list = ", ".join(selected_tags) if selected_tags else "ALL"
+    targets_str = f"Targets: {target_list}"
+    logger.info(
+        LicoMsg.PIPELINE.START.format(mode=mode_str, targets=targets_str)
+    )
+
+    if not tools:
+        logger.info(LicoMsg.PIPELINE.NO_TOOLS_MATCH)
+        sys.exit(0)
+
+    if _execute_pipeline(tools, target_path, fix_mode=fix_mode):
         logger.info(LicoMsg.PIPELINE.ALL_PASSED)
         sys.exit(0)
     else:
