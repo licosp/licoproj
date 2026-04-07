@@ -19,7 +19,7 @@ ai_model: gemini-3-flash-preview
 
 ### Search by Intent
 
-Eliminate logical complexity across all federal packages to achieve a "Zero Warning" state. Focus on dismantling C901 (Cyclomatic Complexity) and PLR1702 (Nested Blocks) through minimal surgical refactoring (Extract Method).
+Eliminate logical complexity across all federal packages to achieve a "Zero Warning" state. Focus on dismantling DONE (Cyclomatic Complexity) and DONE (Nested Blocks) through minimal surgical refactoring (Extract Method).
 
 ### Notes
 
@@ -33,16 +33,16 @@ Eliminate logical complexity across all federal packages to achieve a "Zero Warn
 
 | Package       | File      | Symbol (Class/Func)              | Issue               | Severity   |
 | :------------ | :-------- | :------------------------------- | :------------------ | :--------- |
-| lico-config   | main.py   | `ConfigManager._validate_config` | C901                | 9 > 5      |
-| lico-config   | main.py   | `ConfigManager._validate_paths`  | C901                | 6 > 5      |
-| lico-memory   | backup.py | `get_existing_ids`               | C901, PLR1702       | 9 > 5      |
-| lico-memory   | backup.py | `main`                           | C901, PLR0912/14/15 | **23 > 5** |
-| lico-memory   | backup.py | (Loop at line 170)               | PLR1702             | 6 > 5      |
-| lico-memory   | filter.py | `main`                           | C901, PLR0912/14/15 | 16 > 5     |
-| lico-memory   | filter.py | (Loop at line 79)                | PLR1702             | 6 > 5      |
-| lico-memory   | pack.py   | `main`                           | C901, PLR0914/15    | 7 > 5      |
-| lico-pipeline | main.py   | `ShellcheckTool.run`             | C901                | 6 > 5      |
-| lico-pipeline | main.py   | `main`                           | C901                | 10 > 5     |
+| lico-config   | main.py   | `ConfigManager._validate_config` | DONE                | DONE      |
+| lico-config   | main.py   | `ConfigManager._validate_paths`  | DONE                | DONE      |
+| lico-memory   | backup.py | `get_existing_ids`               | DONE, DONE       | DONE      |
+| lico-memory   | backup.py | `main`                           | DONE, DONE | **DONE** |
+| lico-memory   | backup.py | (Loop at line 170)               | DONE             | DONE      |
+| lico-memory   | filter.py | `main`                           | DONE, DONE | 1DONE     |
+| lico-memory   | filter.py | (Loop at line 79)                | DONE             | DONE      |
+| lico-memory   | pack.py   | `main`                           | DONE, DONE    | DONE      |
+| lico-pipeline | main.py   | `ShellcheckTool.run`             | DONE                | DONE      |
+| lico-pipeline | main.py   | `main`                           | DONE                | DONE     |
 
 ## Related Documents
 
