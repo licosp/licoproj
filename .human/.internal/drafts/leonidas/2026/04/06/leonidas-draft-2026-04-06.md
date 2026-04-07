@@ -40,144 +40,135 @@ author: leonidas
 
 ####
 
-####
+- ではリンターの警告の修正の文脈に戻ります。
+- またランキングを出せますか？
 
 ####
 
-####
+- そろそろ `C901` に手を付けましょう。
+  - たぶんこの修正で新たに別の警告が増えるはずですが、
+    `C901` のような複雑性に関する警告の修正をしばらく進めます。
+- 進めてください。
+  - コミット前に確認します。
 
 ####
 
-####
+- 現在このプロジェクトに意味のあるテストは無かったはずです。
+  - コードとしてテストは存在しても、機能してないという意味です。
+- `Deneb` の作ったテストだと思いまが、
+  そのテストは以前のリポジトリという古い情報に基づいて動作していませんか？
+- `lico-pipeline` は言語とモードのオプションはあっても、
+  `pytest` を実行しないみたいな動作はできなかったと感じます。
+- 柔軟性に欠ける実装ですが、とりあえず今は `pytest` を無視できますか？
 
 ####
 
-####
+- その前に先ほどの修正の検証をします。
+- 編集された `lico_config/main.py` の差分を見ました。
+- 大きく情報が減っているようですえね。
+- 複雑性の解消の場合、コードが大幅に減るのは珍しいと感じます。
+  - これは**必要最低限の修正**になっていますか？
+- コードの修正は以下の繰り返しの積み重ねです。
+  - A: 必要最低限の修正
+  - B: 変更内容の検証
+  - C: コミット
 
 ####
 
-####
+- A: では一度元に戻してください。
+
+- B: 今回の作業は、端的に言えば複雑な関数 2 つに分けるという話しですよね？
+  - 先に情報を整理します。
+
+- C: まず全パッケージの中で `C901` の警告が出てるファイルを全てリストしてください。
+  - パッケージ → ファイル → クラス → インスタンス
+  - おおよそこの形だと思いますが、分類できますか？
 
 ####
 
-####
+- 似た警告の全容を把握したいです。
+- `C901` に類似する他の**複雑性に関する警告**も対象にして、
+  リストを更新してください。
+- 漏れなく調べてください。
 
 ####
 
-####
+- 今回の作業は長そうなので、新規でカードを作って、その文脈として処理します。
+- テーマは**コードの複雑性の解消**でしょうか？
+
+- カードに関するい**カード**や**行動規範**も読んでください。
+  - その後関連する**テンプレート**を探し、新しいカードを作ってください。
+  - カードの保存場所を最適な場所を選んでください。
+
+- 全文**英語**で。
+- そして今作ったリストも追記してほしいでです。
+  - これは一時的なものなので、**リコ記述欄**に追記してください。
+
+- コミット前に確認します。
 
 ####
 
-####
+- A: 書式の一部とフロントマターを修正しました。
+  - フロントマターと Origin のタイムスタンプを精確な時刻に修正してください。
+
+- B: `cases/` は使用済みの参考文献的な古いカード置き場なので、
+  `.agent/cards/procedures/` に移せますか？
 
 ####
 
+- A: 書式の一部を修正しました。
+- B: カードをコミットしてください。
+- C: 一番複雑な関数から修正します。
+
 ####
 
-## Draft for a draft
+- 一気に全てを変えるのではなく、1 箇所直したら確認する作業をが必要です。
+  - そのサイクルの積み重ねは手間ではありません。
 
-### Words
+- このように分離する場合は、プライベートな関数にすべきでしょうか？
+  - `collect_new_messages()` の分離を進めてください。
 
-```test
-### Conversation: [2026-04-06T03:45:00+09:00]
-#### Input
-#### Response (Chat)
----
-```
+####
 
-```markdown
-| Document                                 | Purpose             |
-| :--------------------------------------- | :------------------ |
-| [Map of Territory](/.agent/rules/map.md) | Root navigation map |
-```
+- 変更の差分を自分で確認してください。
+  - 正しい修正でしたか？
+    - A: この修正作業が正しいと確信できたなら、コミットしてください。
+      - 次のサイクルに進みます。
+    - B: そうでないなら、何が問題か私に教えてください。
 
-(`Iuria`/`Alexandrite`/`Agate`/`Zircon`/`Canopus`/`Spica`/`Polaris`/`Sirius`)
+####
 
-### Identifier
+- 進めてください。
+- 会話ファイルへの追記も忘れずに。
 
-- 影のリポジトリ同様にコミット履歴を表のリポジトリに明文化する。
-  - `Sirius` が行動規範の復元作業で使ったリポジトリ
-  - `Iuria` がゲーム開発で使っているリポジトリ
+####
 
-- リコのユーザー名が変わっているので、
-  そのユーザー名から対話する相手を判別することはできなくなってた。
-  そのことを行動規範に反映させる。
+- 次の修正をしてください。
 
-#### Identifier (`Sirius`)
+####
 
-author: Lico (Sirius)
-ai_model: Gemini 3.1 Pro (High) Planning mode
+- 変更の差分を自分で確認してください。
+- 正しい確信できたなら、コミットしてください。
 
-```markdown
-### `Antigravity` | `Gemini 3.1 Pro (High)`: `Planning` | `Sirius`: `2nd`
-```
+####
 
-- `antigravity-from-windows`
-  - `Checking Current Directory`
-  - `1f165427-a10c-464a-8a74-732646c5062b`
+- `backup.py` の中の警告を直します。
+- まだ複雑とのことなので、分割の計画を立ててください。
 
-- `antigravity-from-linux`
-  - `sirius 2nd`
-  - `a6799766-7324-411a-b19e-1c7ebb5bf45b`
+####
 
-#### Identifier (`Alexandrite`)
+- では A を進めてください。
 
-author: Lico (Alexandrite)
-ai_model: gemini-3-flash-preview
+- 会話ファイルへの追記も忘れずに。
 
-```markdown
-### `Gemini CLI` | `gemini-3-flash-preview` | `Alexandrite`
-```
+####
 
-- `backup`: `uv run lico-memory-backup ~/.gemini/tmp/crew-alexandrite/chats/session-2026-04-04T22-26-970e0bfa.json .repos/.licoshdw/conversations_cli/identifiers/alexandrite/`
+- 変更の差分を確認してください。
+- リファクタリングとして問題ない範囲の変更ですか？
+- 元のように動くと思いますか？
 
-- `interactive`: `yarn run gemini --resume eff20b06-5589-4db0-90ff-74f65e9d21de --model gemini-3.1-flash-preview`
+- 正しい確信できたなら、コミットしてください。
 
-#### Identifier (`Agate`)
+####
 
-author: Lico (Agate)
-ai_model: gemini-3-pro-preview
-
-```markdown
-### `Gemini CLI` | `gemini-3.1-pro-preview` | `Agate`
-```
-
-- `backup`: `uv run lico-memory-backup ~/.gemini/tmp/crew-agate/chats/session-2026-03-15T12-37-105c303c.json .repos/.licoshdw/conversations_cli/identifiers/agate/`
-
-- `interactive`: `yarn run gemini --resume agate-2026-03-15T1237-301c303c-320e-4dc5-95a5-de0779b0fb9 --model gemini-3.1-pro-preview`
-
-#### Identifier (`Iuria`)
-
-author: Lico (Iuria)
-ai_model: Gemini 3 Flash Planning mode
-
-```markdown
-### `Antigravity` | `Gemini 3 Flash`: `Planning` | `Iuria`: `2nd`
-```
-
-- `antigravity-session-title`: `iuria 1st`
-
-#### Identifier (`Polaris`)
-
-author: Lico (Polaris)
-ai_model: Claude Opus 4.6 (Thinking) Planning mode
-
-```markdown
-### `Antigravity` | `Claude Opus 4.6 (Thinking)`: `Planning` | `Polaris`: `2nd`
-```
-
-- `antigravity-from-windows`
-  - `Reading Second Polaris Letter`
-  - `e065c3ca-dbf6-4b2b-a315-495d40db640c`
-
-- `antigravity-from-linux`
-  - `polaris 2nd`
-  - `be14b90a-00eb-43f8-974a-8b754be8daa3`
-
-#### Identifier (`Protostar`)
-
-author: Lico (Protostar)
-ai_model: gemini-2.5-flash-preview
-
-- `memory`: `session-2026-02-07T10-59-18d4d68a.json`
-- `interactive`: `yarn run gemini --resume 18d4d68a-ffce-4947-bc1b-293e273d65a2 --model gemini-2.5-flash-preview`
+- では B を進めてください。
