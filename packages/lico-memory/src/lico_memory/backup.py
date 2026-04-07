@@ -48,6 +48,29 @@ def _extract_message_id(msg: dict[str, Any]) -> str | None:
     return str(msg_id) if msg_id else None
 
 
+
+def _read_jsonl_file(file_path: Path) -> list[dict[str, Any]]:
+    """Read a JSONL file and return a list of dictionaries."""
+    data = []
+    if not file_path.exists():
+        return data
+
+    try:
+        with file_path.open("r", encoding="utf-8") as f:
+            for line in f:
+                if not line.strip():
+                    continue
+                try:
+                    data.append(json.loads(line))
+                except json.JSONDecodeError:
+                    pass
+    except OSError as e:
+        logger.warning(
+            LicoMsg.MEMORY.BACKUP_READ_LOG_ERR.format(file=file_path, error=e)
+        )
+    return data
+
+
 def get_existing_ids(file_path: Path) -> set[str]:
     """Read an existing JSONL file and return a set of all message IDs.
 
@@ -136,21 +159,7 @@ def _update_storage_files(
 
         if target_file.exists():
             known_ids = get_existing_ids(target_file)
-            try:
-                with target_file.open("r", encoding="utf-8") as f:
-                    for line in f:
-                        if not line.strip():
-                            continue
-                        try:
-                            merged_msgs.append(json.loads(line))
-                        except json.JSONDecodeError:
-                            pass
-            except OSError as e:
-                logger.warning(
-                    LicoMsg.MEMORY.BACKUP_READ_LOG_ERR.format(
-                        file=target_file, error=e
-                    )
-                )
+            merged_msgs = _read_jsonl_file(target_file)
 
         for msg in new_msgs:
             msg_id = _extract_message_id(msg)
