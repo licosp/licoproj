@@ -4,77 +4,30 @@ import argparse
 import json
 import sys
 from pathlib import Path
+from typing import Any
 
 from lico_logger import LicoMsg, get_logger
 
 logger = get_logger(__name__)
 
 
-def main() -> None:
-    """Entry point for log filtering."""
-    parser = argparse.ArgumentParser(
-        description=(
-            "Extract and filter L4 JSONL logs into a single condensed "
-            "JSONL file."
-        )
-    )
-    parser.add_argument(
-        "input_dir",
-        type=str,
-        help=(
-            "Path to the identifier's L4 directory (e.g., "
-            ".repos/.licoshdw/conversations_cli/identifiers/agate)"
-        ),
-    )
-    parser.add_argument(
-        "output_file",
-        type=str,
-        help=(
-            "Path to the output filtered JSONL file (e.g., "
-            "filtered_memory.jsonl)"
-        ),
-    )
-    parser.add_argument(
-        "--stage1",
-        type=int,
-        default=500,
-        help=(
-            "Quota for Stage 1 (Full retention of recent turns). Default: 500"
-        ),
-    )
-    parser.add_argument(
-        "--stage2",
-        type=int,
-        default=500,
-        help=(
-            "Quota for Stage 2 (Filter out tool calls, keep "
-            "conversation/thoughts). Default: 500"
-        ),
-    )
+def _filter_log_files(
+    jsonl_files: list[Path], l4_root: Path, stage1_quota: int, stage2_quota: int
+) -> tuple[list[dict[str, Any]], list[dict[str, Any]], list[str]]:
+    """Iterate over files and collect messages for Stage 1 & 2.
 
-    args = parser.parse_args()
+    Args:
+        jsonl_files (list[Path]): List of JSONL files to process.
+        l4_root (Path): Root directory for path relativization.
+        stage1_quota (int): Quota for full retention turns.
+        stage2_quota (int): Quota for condensed turns.
 
-    l4_root = Path(args.input_dir)
-    output_path = Path(args.output_file)
-    stage1_quota = args.stage1
-    stage2_quota = args.stage2
-
-    if not l4_root.exists() or not l4_root.is_dir():
-        logger.error(LicoMsg.MEMORY.ERR_NOT_FOUND.format(path=l4_root))
-        sys.exit(1)
-
-    messages_dir = l4_root / "messages"
-
-    if not messages_dir.exists():
-        logger.error(LicoMsg.MEMORY.ERR_NOT_FOUND.format(path=messages_dir))
-        sys.exit(1)
-
-    # Gather and sort JSONL files (newest first)
-    jsonl_files = sorted(messages_dir.rglob("*.jsonl"), reverse=True)
-
-    stage1_lines = []
-    stage2_lines = []
-    files_touched = []
+    Returns:
+        tuple: (stage1_lines, stage2_lines, files_touched).
+    """
+    stage1_lines: list[dict[str, Any]] = []
+    stage2_lines: list[dict[str, Any]] = []
+    files_touched: list[str] = []
 
     for jsonl_file in jsonl_files:
         if (
@@ -99,19 +52,16 @@ def main() -> None:
         for line in lines:
             if len(stage1_lines) < stage1_quota:
                 try:
-                    obj = json.loads(line)
-                    stage1_lines.append(obj)
+                    stage1_lines.append(json.loads(line))
                 except json.JSONDecodeError:
                     pass
             elif len(stage2_lines) < stage2_quota:
                 try:
                     obj = json.loads(line)
                     msg_type = obj.get("type")
-                    content = obj.get("content", "")
-                    has_content = bool(content)
-                    is_gemini_with_content = (
-                        msg_type in {"gemini", "model"}
-                    ) and has_content
+                    content = str(obj.get("content", ""))
+                    is_model = msg_type in {"gemini", "model"}
+                    is_gemini_with_content = is_model and bool(content)
 
                     if msg_type == "user" or is_gemini_with_content:
                         if "toolCalls" in obj:
@@ -121,6 +71,37 @@ def main() -> None:
                     pass
             else:
                 break
+
+    return stage1_lines, stage2_lines, files_touched
+
+
+def main() -> None:
+    """Entry point for log filtering."""
+    parser = argparse.ArgumentParser(
+        description="Extract and filter L4 JSONL logs."
+    )
+    parser.add_argument("input_dir", help="Path to identifier's L4 directory")
+    parser.add_argument("output_file", help="Path to output JSONL file")
+    parser.add_argument("--stage1", type=int, default=500, help="Stage 1 quota")
+    parser.add_argument("--stage2", type=int, default=500, help="Stage 2 quota")
+
+    args = parser.parse_args()
+    l4_root, output_path = Path(args.input_dir), Path(args.output_file)
+    stage1_quota, stage2_quota = args.stage1, args.stage2
+
+    if not l4_root.exists() or not l4_root.is_dir():
+        logger.error(LicoMsg.MEMORY.ERR_NOT_FOUND.format(path=l4_root))
+        sys.exit(1)
+
+    messages_dir = l4_root / "messages"
+    if not messages_dir.exists():
+        logger.error(LicoMsg.MEMORY.ERR_NOT_FOUND.format(path=messages_dir))
+        sys.exit(1)
+
+    jsonl_files = sorted(messages_dir.rglob("*.jsonl"), reverse=True)
+    stage1_lines, stage2_lines, files_touched = _filter_log_files(
+        jsonl_files, l4_root, stage1_quota, stage2_quota
+    )
 
     stage2_lines.reverse()
     stage1_lines.reverse()
@@ -140,10 +121,9 @@ def main() -> None:
         logger.info(LicoMsg.MEMORY.FILTER_FILE_ENTRY.format(file=f))
 
     if final_messages:
-        oldest = final_messages[0]
         logger.info(
             LicoMsg.MEMORY.FILTER_OLDEST_TIMESTAMP.format(
-                ts=oldest.get("timestamp")
+                ts=final_messages[0].get("timestamp")
             )
         )
 
