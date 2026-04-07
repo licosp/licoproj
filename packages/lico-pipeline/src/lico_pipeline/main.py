@@ -273,53 +273,10 @@ class ShellcheckTool(PythonTool):
         return self._run_subprocess(full_cmd)
 
 
-def main() -> None:
-    """Entry point for the quality pipeline orchestrator."""
-    parser = argparse.ArgumentParser(
-        description="Orchestrator for Lico linting pipelines"
-    )
-    parser.add_argument("path", nargs="?", default=".", help="Path to check")
-    parser.add_argument(
-        "--fix",
-        action="store_true",
-        help="Automatically fix and format code where possible",
-    )
 
-    group = parser.add_argument_group("Workflow Targets")
-    group.add_argument(
-        "--python", action="store_true", help="Run only Python-related tools"
-    )
-    group.add_argument(
-        "--web",
-        action="store_true",
-        help="Run only Web frontend-related tools (JS, CSS)",
-    )
-    group.add_argument(
-        "--docs",
-        action="store_true",
-        help="Run only Documentation-related tools (MD, Text)",
-    )
-    group.add_argument(
-        "--shell",
-        action="store_true",
-        help="Run only Shell script-related tools",
-    )
-
-    args = parser.parse_args()
-    target_path = Path(args.path).absolute()
-    fix_mode = args.fix
-
-    selected_tags = set()
-    if args.python:
-        selected_tags.add("python")
-    if args.web:
-        selected_tags.add("web")
-    if args.docs:
-        selected_tags.add("docs")
-    if args.shell:
-        selected_tags.add("shell")
-
-    tools: list[LintTool] = [
+def _get_available_tools() -> list[LintTool]:
+    """Return the complete list of tools integrated into the pipeline."""
+    return [
         PythonTool(
             "Ruff Check",
             "ruff",
@@ -484,6 +441,55 @@ def main() -> None:
             tags=["python", "web", "docs", "shell"],
         ),
     ]
+
+
+def main() -> None:
+    """Entry point for the quality pipeline orchestrator."""
+    parser = argparse.ArgumentParser(
+        description="Orchestrator for Lico linting pipelines"
+    )
+    parser.add_argument("path", nargs="?", default=".", help="Path to check")
+    parser.add_argument(
+        "--fix",
+        action="store_true",
+        help="Automatically fix and format code where possible",
+    )
+
+    group = parser.add_argument_group("Workflow Targets")
+    group.add_argument(
+        "--python", action="store_true", help="Run only Python-related tools"
+    )
+    group.add_argument(
+        "--web",
+        action="store_true",
+        help="Run only Web frontend-related tools (JS, CSS)",
+    )
+    group.add_argument(
+        "--docs",
+        action="store_true",
+        help="Run only Documentation-related tools (MD, Text)",
+    )
+    group.add_argument(
+        "--shell",
+        action="store_true",
+        help="Run only Shell script-related tools",
+    )
+
+    args = parser.parse_args()
+    target_path = Path(args.path).absolute()
+    fix_mode = args.fix
+
+    selected_tags = set()
+    if args.python:
+        selected_tags.add("python")
+    if args.web:
+        selected_tags.add("web")
+    if args.docs:
+        selected_tags.add("docs")
+    if args.shell:
+        selected_tags.add("shell")
+
+    tools = _get_available_tools()
 
     if selected_tags:
         tools_to_run = [
