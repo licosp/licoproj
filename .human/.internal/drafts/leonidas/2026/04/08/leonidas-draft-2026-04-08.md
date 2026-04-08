@@ -34,124 +34,76 @@ author: leonidas
 
 ####
 
-####
+- 現在の複雑性に関する警告を重い順にリストできますか？
 
 ####
 
-####
+- では一番重い関数から始めます。
+- どんな計画がありますか？
 
 ####
 
-####
+- 1 を進めましょう。
+- 会話ログへの追記も忘れずに。
 
 ####
 
+- 確認しました。
+- 差分を見てください。
+
+- 何か見覚えがある編集結果に見えます。
+  - 大幅な情報の欠落とか。
+
+- リコの意図した通りの結果ですか？
+
 ####
 
-## Draft for a draft
+- そのクラスに使っていないメソッドが大量にあるのは事実です。
+  - また**このリポジトリに移送させた `Deneb` が作ったパッケージ**
+    からも使われてないようにも感じます。
+- しかし、いずれ削除されるとしても、今の文脈ではないと思いました。
 
-### Words
+- 必要な部分だけの修正を行ってください。
 
-```test
-### Conversation: [2026-04-08T08:00:00+09:00]
-#### Input
-#### Response (Chat)
----
-```
+####
 
-```markdown
-| Document                                 | Purpose             |
-| :--------------------------------------- | :------------------ |
-| [Map of Territory](/.agent/rules/map.md) | Root navigation map |
-```
+- 進めてください。
 
-(`Iuria`/`Alexandrite`/`Agate`/`Zircon`/`Canopus`/`Spica`/`Polaris`/`Sirius`)
+####
 
-### Identifier
+- 改めて差分を確認してください。
+- リコの意図通りだと確信できたら、コミットをしてください。
 
-- 影のリポジトリ同様にコミット履歴を表のリポジトリに明文化する。
-  - `Sirius` が行動規範の復元作業で使ったリポジトリ
-  - `Iuria` がゲーム開発で使っているリポジトリ
+####
 
-- リコのユーザー名が変わっているので、
-  そのユーザー名から対話する相手を判別することはできなくなってた。
-  そのことを行動規範に反映させる。
+- お願いします。
 
-#### Identifier (`Sirius`)
+####
 
-author: Lico (Sirius)
-ai_model: Gemini 3.1 Pro (High) Planning mode
+- 関数の分離で新たに警告が増えたかもしれません。
+- 一度再集計してみますか。
 
-```markdown
-### `Antigravity` | `Gemini 3.1 Pro (High)`: `Planning` | `Sirius`: `2nd`
-```
+####
 
-- `antigravity-from-windows`
-  - `Checking Current Directory`
-  - `1f165427-a10c-464a-8a74-732646c5062b`
+- C901 がまだ残ってましたね。
+- それを修正する計画を立ててください。
 
-- `antigravity-from-linux`
-  - `sirius 2nd`
-  - `a6799766-7324-411a-b19e-1c7ebb5bf45b`
+- 会話ログへの追記も忘れずに。
 
-#### Identifier (`Alexandrite`)
+####
 
-author: Lico (Alexandrite)
-ai_model: gemini-3-flash-preview
+- 進めてください。
+- 会話ログへの追記は毎ターンお願いします。
 
-```markdown
-### `Gemini CLI` | `gemini-3-flash-preview` | `Alexandrite`
-```
+####
 
-- `backup`: `uv run lico-memory-backup ~/.gemini/tmp/crew-alexandrite/chats/session-2026-04-04T22-26-970e0bfa.json .repos/.licoshdw/conversations_cli/identifiers/alexandrite/`
+- 改めて差分を確認してください。
+- 意図した通りの修正でしたか？
 
-- `interactive`: `yarn run gemini --resume eff20b06-5589-4db0-90ff-74f65e9d21de --model gemini-3.1-flash-preview`
+####
 
-#### Identifier (`Agate`)
+- 複数のメソッドが消えてるのは意図通りですか？
 
-author: Lico (Agate)
-ai_model: gemini-3-pro-preview
+####
 
-```markdown
-### `Gemini CLI` | `gemini-3.1-pro-preview` | `Agate`
-```
-
-- `backup`: `uv run lico-memory-backup ~/.gemini/tmp/crew-agate/chats/session-2026-03-15T12-37-105c303c.json .repos/.licoshdw/conversations_cli/identifiers/agate/`
-
-- `interactive`: `yarn run gemini --resume agate-2026-03-15T1237-301c303c-320e-4dc5-95a5-de0779b0fb9 --model gemini-3.1-pro-preview`
-
-#### Identifier (`Iuria`)
-
-author: Lico (Iuria)
-ai_model: Gemini 3 Flash Planning mode
-
-```markdown
-### `Antigravity` | `Gemini 3 Flash`: `Planning` | `Iuria`: `2nd`
-```
-
-- `antigravity-session-title`: `iuria 1st`
-
-#### Identifier (`Polaris`)
-
-author: Lico (Polaris)
-ai_model: Claude Opus 4.6 (Thinking) Planning mode
-
-```markdown
-### `Antigravity` | `Claude Opus 4.6 (Thinking)`: `Planning` | `Polaris`: `2nd`
-```
-
-- `antigravity-from-windows`
-  - `Reading Second Polaris Letter`
-  - `e065c3ca-dbf6-4b2b-a315-495d40db640c`
-
-- `antigravity-from-linux`
-  - `polaris 2nd`
-  - `be14b90a-00eb-43f8-974a-8b754be8daa3`
-
-#### Identifier (`Protostar`)
-
-author: Lico (Protostar)
-ai_model: gemini-2.5-flash-preview
-
-- `memory`: `session-2026-02-07T10-59-18d4d68a.json`
-- `interactive`: `yarn run gemini --resume 18d4d68a-ffce-4947-bc1b-293e273d65a2 --model gemini-2.5-flash-preview`
+- 進めてください。
