@@ -207,22 +207,22 @@ def _update_storage_files(
 
 
 def _normalize_input_data(
-    data: object,
+    data: Any,  # noqa: ANN401
 ) -> tuple[list[dict[str, Any]], dict[str, Any] | None, bool]:
     """Normalize input JSON into messages and metadata.
 
     Args:
-        data (object): Raw parsed JSON.
+        data (Any): Raw parsed JSON.
 
     Returns:
         tuple: (messages, metadata, has_metadata_flag).
     """
     if isinstance(data, list):
-        return data, None, False
+        return data, None, False  # type: ignore[invalid-return-type]
     if isinstance(data, dict):
         # messages is expected to be a list in the dict
         messages = data.pop("messages", [])
-        return messages, data, True
+        return messages, data, True  # type: ignore[invalid-return-type]
 
     logger.error(LicoMsg.MEMORY.BACKUP_STRUCT_ERROR)
     sys.exit(1)

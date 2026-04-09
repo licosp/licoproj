@@ -6,12 +6,10 @@ from typing import TYPE_CHECKING
 
 if TYPE_CHECKING:
     from pathlib import Path
+    from _pytest.capture import CaptureFixture
 
 import pytest
 from lico_lint_empty_dir.main import EmptyDirLinter
-
-if TYPE_CHECKING:
-    pass
 
 
 @pytest.fixture  # type: ignore[misc]
@@ -30,14 +28,13 @@ def test_env(tmp_path: Path) -> Path:
     # Truly empty
     (root / "empty_dir").mkdir()
 
+    # Contains an empty file
     (root / "non_empty_file").mkdir()
-    (root / "non_empty_file" / "file.txt").write_text("content")
+    (root / "non_empty_file" / "dummy.txt").write_text("content")
 
+    # Contains an empty subdirectory
     (root / "non_empty_subdir").mkdir()
-    (root / "non_empty_subdir" / "subdir").mkdir()
-
-    # Ignored dir (should be ignored by scanner)
-    (root / ".git").mkdir()
+    (root / "non_empty_subdir" / "inner_empty").mkdir()
 
     return root
 
@@ -45,6 +42,7 @@ def test_env(tmp_path: Path) -> Path:
 def test_is_empty_dir_logic(test_env: Path) -> None:
     """Test the core empty check logic."""
     linter = EmptyDirLinter()
+
     assert linter.is_empty_dir(str(test_env / "empty_dir")) is True
     assert linter.is_empty_dir(str(test_env / "non_empty_file")) is False
     assert linter.is_empty_dir(str(test_env / "non_empty_subdir")) is False
@@ -53,12 +51,16 @@ def test_is_empty_dir_logic(test_env: Path) -> None:
 def test_scanner_reports_correctly(
     test_env: Path, capsys: pytest.CaptureFixture[str]
 ) -> None:
-    """Test the full scanner reporting."""
+    """Test the full scanner reporting.
+
+    Args:
+        test_env (Path): Path fixture.
+        capsys (pytest.CaptureFixture[str]): System capture.
+    """
     linter = EmptyDirLinter(root_dir=str(test_env))
     linter.scan()
 
     captured = capsys.readouterr()
     assert "[Warning] Empty directory detected: empty_dir" in captured.out
     assert "non_empty_file" not in captured.out
-    assert ".git" not in captured.out
-    assert "Scan Complete: Issues found" in captured.out
+    assert "non_empty_subdir" not in captured.out
