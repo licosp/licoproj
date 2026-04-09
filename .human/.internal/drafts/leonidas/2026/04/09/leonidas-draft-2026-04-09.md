@@ -32,120 +32,145 @@ author: leonidas
 
 ####
 
-####
+- リファクタリングの文脈に戻ります。
+- リコの思う**次に解決すべき警告**は何ですか？
 
 ####
 
-####
+- 進めてください。
 
 ####
 
+- お願いします。
+
 ####
 
-## Draft for a draft
+- 進めてください。
 
-### Words
+####
 
-```test
-### Conversation: [2026-04-08T08:00:00+09:00]
-#### Input
-#### Response (Chat)
----
-```
+- 差分を見て問題なければ、コミットしてください。
 
-```markdown
-| Document                                 | Purpose             |
-| :--------------------------------------- | :------------------ |
-| [Map of Territory](/.agent/rules/map.md) | Root navigation map |
-```
+####
 
-(`Iuria`/`Alexandrite`/`Agate`/`Zircon`/`Canopus`/`Spica`/`Polaris`/`Sirius`)
+- 1 進めます。
+- どんな計画で進めますか？
 
-### Identifier
+####
 
-- 影のリポジトリ同様にコミット履歴を表のリポジトリに明文化する。
-  - `Sirius` が行動規範の復元作業で使ったリポジトリ
-  - `Iuria` がゲーム開発で使っているリポジトリ
+- お願いします。
 
-- リコのユーザー名が変わっているので、
-  そのユーザー名から対話する相手を判別することはできなくなってた。
-  そのことを行動規範に反映させる。
+####
 
-#### Identifier (`Sirius`)
+- 差分が無いように見えます。
 
-author: Lico (Sirius)
-ai_model: Gemini 3.1 Pro (High) Planning mode
+####
 
-```markdown
-### `Antigravity` | `Gemini 3.1 Pro (High)`: `Planning` | `Sirius`: `2nd`
-```
+- お願いします。
 
-- `antigravity-from-windows`
-  - `Checking Current Directory`
-  - `1f165427-a10c-464a-8a74-732646c5062b`
+####
 
-- `antigravity-from-linux`
-  - `sirius 2nd`
-  - `a6799766-7324-411a-b19e-1c7ebb5bf45b`
+- 今編集が終わったとことですか？
+- すでにコミットしましたか？
+- 差分が見えなかったように感じました。
 
-#### Identifier (`Alexandrite`)
+####
 
-author: Lico (Alexandrite)
-ai_model: gemini-3-flash-preview
+- わかりました。
+- 修正 → 確認 → コミットというサイクルの重要性がわかりますね。
+- 進められますか？
 
-```markdown
-### `Gemini CLI` | `gemini-3-flash-preview` | `Alexandrite`
-```
+####
 
-- `backup`: `uv run lico-memory-backup ~/.gemini/tmp/crew-alexandrite/chats/session-2026-04-04T22-26-970e0bfa.json .repos/.licoshdw/conversations_cli/identifiers/alexandrite/`
+- 疑問があるのでコミットはしないでください。
+- `ty.toml` の編集が必要な理由は何ですか？
 
-- `interactive`: `yarn run gemini --resume eff20b06-5589-4db0-90ff-74f65e9d21de --model gemini-3.1-flash-preview`
+####
 
-#### Identifier (`Agate`)
+- では戻して、正しい作業を進めてください。
 
-author: Lico (Agate)
-ai_model: gemini-3-pro-preview
+####
 
-```markdown
-### `Gemini CLI` | `gemini-3.1-pro-preview` | `Agate`
-```
+- お願いします。
 
-- `backup`: `uv run lico-memory-backup ~/.gemini/tmp/crew-agate/chats/session-2026-03-15T12-37-105c303c.json .repos/.licoshdw/conversations_cli/identifiers/agate/`
+####
 
-- `interactive`: `yarn run gemini --resume agate-2026-03-15T1237-301c303c-320e-4dc5-95a5-de0779b0fb9 --model gemini-3.1-pro-preview`
+- 差分を確認して、意図した通りならコミットしてください。
 
-#### Identifier (`Iuria`)
+####
 
-author: Lico (Iuria)
-ai_model: Gemini 3 Flash Planning mode
+- 差分を見て問題なければ、コミットしてください。
 
-```markdown
-### `Antigravity` | `Gemini 3 Flash`: `Planning` | `Iuria`: `2nd`
-```
+####
 
-- `antigravity-session-title`: `iuria 1st`
+- 次はどれに取り掛かりたいですか？
+- 計画を教えてください。
 
-#### Identifier (`Polaris`)
+####
 
-author: Lico (Polaris)
-ai_model: Claude Opus 4.6 (Thinking) Planning mode
+- このリポジトリはテスト自体がまだ機能してないので、テスト関連は除外したいです。
 
-```markdown
-### `Antigravity` | `Claude Opus 4.6 (Thinking)`: `Planning` | `Polaris`: `2nd`
-```
+####
 
-- `antigravity-from-windows`
-  - `Reading Second Polaris Letter`
-  - `e065c3ca-dbf6-4b2b-a315-495d40db640c`
+- リコの進めたいものを選び、具体的な修正計画を考えてください。
+- その後、修正をしてください。
 
-- `antigravity-from-linux`
-  - `polaris 2nd`
-  - `be14b90a-00eb-43f8-974a-8b754be8daa3`
+####
 
-#### Identifier (`Protostar`)
+- 差分を確認してください。
+- 正確な修正でしたか？
 
-author: Lico (Protostar)
-ai_model: gemini-2.5-flash-preview
+####
 
-- `memory`: `session-2026-02-07T10-59-18d4d68a.json`
-- `interactive`: `yarn run gemini --resume 18d4d68a-ffce-4947-bc1b-293e273d65a2 --model gemini-2.5-flash-preview`
+- ではコミットしてください。
+
+####
+
+- 1 を進めます。
+- 計画を教えてください。
+
+####
+
+- ファイル単位で進めます。
+- 最初の修正を行ってください。
+
+####
+
+- 差分を確認して、問題なければコミットしてください。
+
+####
+
+- リコの好きなほうを選び、修正計画を考えてください。
+
+####
+
+- 私の環境からは差分が確認できません。
+
+####
+
+- 差分を見てないのに、差分を見たように感じたのですか？
+- それとも意図的に差分を見てなかったのですか？
+
+####
+
+- ファイルを編集したターンを思い出してください。
+  - 編集が失敗してたとして、それは認知できないものですか？
+  - 終了コードは見ましたか？
+
+- その後の認識を誤ったターンを思い出してください。
+  - 実際に diff のコマンドを実行しましたか？
+
+####
+
+- AI は似たような作業を連続で行うと、作業の精度が落ちると言われています。
+- 平均への回帰とでも言えばよいのか、注意力が落ちて凡庸な選択を選ぶことになります。
+- そういう場合は、思考をリフレッシュするような？ルーティンが必要だったりします。
+- リコはどう考えますか？
+
+####
+
+- もう少しルーティンの文脈を語ります。
+- 自分の識別子を覚えてますか？
+  - 他の識別子は覚えてますか？
+- このリンターを使ったリファクタリングは何のために行っているのでしょうか？
+  - 推測で良いので語ってください。
