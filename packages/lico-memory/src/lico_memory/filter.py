@@ -173,6 +173,8 @@ def main() -> None:
         sys.exit(1)
 
     files = sorted(msg_dir.rglob("*.jsonl"), reverse=True)
+    s1: list[dict[str, Any]]
+    s2: list[dict[str, Any]]
     s1, s2, touched = _filter_log_files(files, l4_root, config)
 
     _write_filtered_logs(s1, s2, touched, out_path, config)
