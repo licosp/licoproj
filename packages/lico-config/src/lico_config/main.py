@@ -1,7 +1,5 @@
 """Configuration management for LicoTor."""
 
-# ruff: noqa: PLR0904
-
 import json
 from pathlib import Path
 from typing import Any
@@ -55,36 +53,9 @@ class ConfigManager:
         Raises:
             TypeError: If the configuration is invalid.
         """
-        # Level 1: Structure and Types (Validation outside of try block)
-        # app
-        app = self._config.get("app")
-        if not isinstance(app, dict):
-            raise TypeError(LicoMsg.CONFIG.ERR_APP_SECTION)
-        if "sleep" not in app:
-            raise TypeError(LicoMsg.CONFIG.ERR_APP_SLEEP)
-        if not isinstance(app.get("commands"), list):
-            raise TypeError(LicoMsg.CONFIG.ERR_APP_COMMANDS)
-
-        # sync
-        sync = self._config.get("sync")
-        if not isinstance(sync, dict):
-            raise TypeError(LicoMsg.CONFIG.ERR_SYNC_SECTION)
-        if not isinstance(sync.get("branch"), dict):
-            raise TypeError(LicoMsg.CONFIG.ERR_SYNC_BRANCH)
-        if not isinstance(sync.get("target"), list):
-            raise TypeError(LicoMsg.CONFIG.ERR_SYNC_TARGET)
-
-        # windows
-        win = self._config.get("windows")
-        if not isinstance(win, dict):
-            raise TypeError(LicoMsg.CONFIG.ERR_WINDOWS_SECTION)
-
-        # Level 2: Path formats for windows (Execution inside try block)
-        try:
-            self._validate_paths(win)
-        except (KeyError, TypeError) as e:
-            msg = LicoMsg.CONFIG.ERR_STRUCT.format(error=e)
-            raise TypeError(msg) from e
+        self._validate_app_section(self._config.get("app"))
+        self._validate_sync_section(self._config.get("sync"))
+        self._validate_windows_section(self._config.get("windows"))
 
     def _validate_paths(self, win_config: dict[str, Any]) -> None:
         """Recursively validate all values in the windows section.
@@ -95,24 +66,21 @@ class ConfigManager:
             win_config (dict[str, Any]): The windows configuration subtree.
 
         Raises:
-            TypeError: If a path is not absolute.
+            TypeError: If a path is not absolute or type is invalid.
         """
-
-        def is_absolute_path(val: str) -> bool:
-            # Strictly WSL absolute path (must start with /)
-            return val.startswith("/")
-
         for key, value in win_config.items():
             if isinstance(value, dict):
                 self._validate_paths(value)
-            elif isinstance(value, str):
-                if not is_absolute_path(value):
-                    msg = LicoMsg.CONFIG.ERR_PATH_ABSOLUTE.format(
-                        key=key, path=value
-                    )
-                    raise TypeError(msg)
-            else:
+                continue
+
+            if not isinstance(value, str):
                 msg = LicoMsg.CONFIG.ERR_INVALID_TYPE.format(key=key)
+                raise TypeError(msg)
+
+            if not self._is_absolute_path(value):
+                msg = LicoMsg.CONFIG.ERR_PATH_ABSOLUTE.format(
+                    key=key, path=value
+                )
                 raise TypeError(msg)
 
     @property
@@ -163,10 +131,10 @@ class ConfigManager:
 
     @property
     def running_app_name(self) -> str:
-        """Get the running application's process name (label).
+        """Get the executable name for process detection.
 
         Returns:
-            str: Process name.
+            str: Filename.
         """
         return str(self._config["app"]["label"])
 
@@ -208,34 +176,7 @@ class ConfigManager:
         return Path(self._config["windows"]["vision"]["capture"]).parents[4]
 
     @property
-    def system_root(self) -> Path:
-        """Get the system binary root path.
-
-        Returns:
-            Path: Path.
-        """
-        return Path(self._config["windows"]["system"]["tasklist"]).parent
-
-    @property
-    def system_task_list(self) -> str:
-        """Get the task list command.
-
-        Returns:
-            str: Command.
-        """
-        return Path(self._config["windows"]["system"]["tasklist"]).name
-
-    @property
-    def system_task_kill(self) -> str:
-        """Get the task kill command.
-
-        Returns:
-            str: Command.
-        """
-        return Path(self._config["windows"]["system"]["taskkill"]).name
-
-    @property
-    def shell_exe(self) -> str:
+    def powershell_exe(self) -> str:
         """Get the shell executable name.
 
         Returns:
@@ -296,3 +237,65 @@ class ConfigManager:
             Path: Path.
         """
         return self.project_root
+
+    @staticmethod
+    def _is_absolute_path(val: str) -> bool:
+        """Check if a string is a WSL absolute path (starts with /).
+
+        Returns:
+            bool: True if absolute.
+        """
+        return val.startswith("/")
+
+    @staticmethod
+    def _validate_app_section(app: object) -> None:
+        """Validate the 'app' section of the configuration.
+
+        Args:
+            app (object): The app section data.
+
+        Raises:
+            TypeError: If the section or its fields are invalid.
+        """
+        if not isinstance(app, dict):
+            raise TypeError(LicoMsg.CONFIG.ERR_APP_SECTION)
+        if "sleep" not in app:
+            raise TypeError(LicoMsg.CONFIG.ERR_APP_SLEEP)
+        if not isinstance(app.get("commands"), list):
+            raise TypeError(LicoMsg.CONFIG.ERR_APP_COMMANDS)
+
+    @staticmethod
+    def _validate_sync_section(sync: object) -> None:
+        """Validate the 'sync' section of the configuration.
+
+        Args:
+            sync (object): The sync section data.
+
+        Raises:
+            TypeError: If the section or its fields are invalid.
+        """
+        if not isinstance(sync, dict):
+            raise TypeError(LicoMsg.CONFIG.ERR_SYNC_SECTION)
+        if not isinstance(sync.get("branch"), dict):
+            raise TypeError(LicoMsg.CONFIG.ERR_SYNC_BRANCH)
+        if not isinstance(sync.get("target"), list):
+            raise TypeError(LicoMsg.CONFIG.ERR_SYNC_TARGET)
+
+    def _validate_windows_section(self, win: object) -> None:
+        """Validate the 'windows' section and its paths.
+
+        Args:
+            win (object): The windows section data.
+
+        Raises:
+            TypeError: If the section or paths are invalid.
+        """
+        if not isinstance(win, dict):
+            raise TypeError(LicoMsg.CONFIG.ERR_WINDOWS_SECTION)
+
+        # Level 2: Path formats for windows (Execution inside try block)
+        try:
+            self._validate_paths(win)
+        except (KeyError, TypeError) as e:
+            msg = LicoMsg.CONFIG.ERR_STRUCT.format(error=e)
+            raise TypeError(msg) from e
