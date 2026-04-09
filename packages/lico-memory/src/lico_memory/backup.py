@@ -6,7 +6,7 @@ import json
 import sys
 from datetime import datetime
 from pathlib import Path
-from typing import Any
+from typing import Any, cast
 
 from lico_logger import LicoMsg, get_logger
 
@@ -218,10 +218,10 @@ def _normalize_input_data(
         tuple: (messages, metadata, has_metadata_flag).
     """
     if isinstance(data, list):
-        return data, None, False  # type: ignore[invalid-return-type]
+        return cast(list[dict[str, Any]], data), None, False  # type: ignore[invalid-return-type]
     if isinstance(data, dict):
         # messages is expected to be a list in the dict
-        messages = data.pop("messages", [])
+        messages = cast(list[dict[str, Any]], data.pop("messages", []))
         return messages, data, True  # type: ignore[invalid-return-type]
 
     logger.error(LicoMsg.MEMORY.BACKUP_STRUCT_ERROR)
