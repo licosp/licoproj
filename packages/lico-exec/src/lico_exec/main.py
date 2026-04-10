@@ -1,52 +1,50 @@
 """Centralized command runner for the LicoTor ecosystem."""
 
-import os
 import subprocess
+from pathlib import Path
 from typing import TYPE_CHECKING
 
 if TYPE_CHECKING:
     from collections.abc import Mapping
-from pathlib import Path
-
-from lico_logger import LicoMsg, get_logger
 
 
 class Commander:
     """Centralized command runner for external processes."""
 
-    def __init__(self, workspace_root: Path | str | None = None) -> None:
+    def __init__(
+        self,
+        workspace_root: Path | str | None = None,
+        env: "Mapping[str, str] | None" = None,
+    ) -> None:
         """Initialize Commander.
 
         Args:
             workspace_root (Path | str | None): default CWD for commands.
+            env (Mapping[str, str] | None): Base environment variables.
         """
         self.workspace_root = (
             Path(workspace_root) if workspace_root else Path.cwd()
         )
+        self.env = env
         self.logger = get_logger(__name__)
 
-    @staticmethod
-    def _prepare_env(env: Mapping[str, str] | None = None) -> dict[str, str]:
+    def _prepare_env(self) -> dict[str, str]:
         """Prepare environment variables.
-
-        Args:
-            env (Mapping[str, str] | None): Optional additional environment.
 
         Returns:
             dict[str, str]: The merged environment dictionary.
         """
+        import os
         full_env = os.environ.copy()
-        if env:
-            full_env.update(env)
+        if self.env:
+            full_env.update(self.env)
         return full_env
 
     def run(
         self,
         cmd: str | list[str],
         label: str,
-        cwd: Path | str | None = None,
         *,
-        env: Mapping[str, str] | None = None,
         check: bool = True,
         capture_output: bool = True,
         text: bool = True,
@@ -56,31 +54,19 @@ class Commander:
         Args:
             cmd: Command string or list.
             label: Human-readable label for logging.
-            cwd: Directory to run in.
-            env: Environment variables.
             check: Whether to raise on error.
             capture_output: Capture stdout/stderr.
             text: Return output as string.
 
         Returns:
-            subprocess.CompletedProcess: result.
-
-        Raises:
-            subprocess.CalledProcessError: If the command fails and
-                check is True.
+            subprocess.CompletedProcess: Result of execution.
         """
-        exec_cwd = Path(cwd) if cwd else self.workspace_root
-        cmd_str = cmd if isinstance(cmd, str) else " ".join(cmd)
-
-        self.logger.info(
-            LicoMsg.EXEC.START_RUN.format(label=label, cmd=cmd_str)
-        )
-
+        self.logger.info(LicoMsg.EXEC.RUNNING_CMD.format(label=label))
         try:
             result = subprocess.run(
                 cmd,
-                cwd=exec_cwd,
-                env=self._prepare_env(env),
+                cwd=self.workspace_root,
+                env=self._prepare_env(),
                 check=check,
                 capture_output=capture_output,
                 text=text,
@@ -92,7 +78,7 @@ class Commander:
                 LicoMsg.EXEC.CMD_FAILURE.format(label=label, code=e.returncode)
             )
             if e.stderr:
-                self.logger.exception(
+                self.logger.error(
                     LicoMsg.EXEC.ERR_OUTPUT.format(stderr=e.stderr)
                 )
             raise
@@ -103,34 +89,23 @@ class Commander:
         self,
         cmd: str | list[str],
         label: str,
-        cwd: Path | str | None = None,
-        env: Mapping[str, str] | None = None,
     ) -> subprocess.Popen:
-        """Launch an asynchronous command.
+        """Launch a background process.
 
         Args:
             cmd: Command string or list.
-            label: Human-readable label for logging.
-            cwd: Directory to run in.
-            env: Environment variables.
+            label: Descriptive label.
 
         Returns:
-            subprocess.Popen: process object.
+            subprocess.Popen: Process handle.
         """
-        exec_cwd = Path(cwd) if cwd else self.workspace_root
-        cmd_str = cmd if isinstance(cmd, str) else " ".join(cmd)
-
-        self.logger.info(
-            LicoMsg.EXEC.START_LAUNCH.format(label=label, cmd=cmd_str)
-        )
-
-        process = subprocess.Popen(
+        self.logger.info(LicoMsg.EXEC.RUNNING_CMD.format(label=label))
+        return subprocess.Popen(
             cmd,
-            cwd=exec_cwd,
-            env=self._prepare_env(env),
+            cwd=self.workspace_root,
+            env=self._prepare_env(),
             shell=bool(isinstance(cmd, str)),
         )
-        self.logger.info(
-            LicoMsg.EXEC.PROCESS_STARTED.format(label=label, pid=process.pid)
-        )
-        return process
+
+
+from lico_logger import LicoMsg, get_logger
