@@ -87,7 +87,6 @@ class Commander:
                 shell=bool(isinstance(cmd, str)),
             )
             self.logger.info(LicoMsg.EXEC.CMD_SUCCESS.format(label=label))
-            return result
         except subprocess.CalledProcessError as e:
             self.logger.exception(
                 LicoMsg.EXEC.CMD_FAILURE.format(label=label, code=e.returncode)
@@ -97,6 +96,8 @@ class Commander:
                     LicoMsg.EXEC.ERR_OUTPUT.format(stderr=e.stderr)
                 )
             raise
+        else:
+            return result
 
     def launch(
         self,
