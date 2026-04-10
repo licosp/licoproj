@@ -48,11 +48,7 @@ class ConfigManager:
             return json.load(f)
 
     def _validate_config(self) -> None:
-        """Validate the configuration structure and values (Level 1 & 2).
-
-        Raises:
-            TypeError: If the configuration is invalid.
-        """
+        """Validate the configuration structure and values (Level 1 & 2)."""
         self._validate_app_section(self._config.get("app"))
         self._validate_sync_section(self._config.get("sync"))
         self._validate_windows_section(self._config.get("windows"))
