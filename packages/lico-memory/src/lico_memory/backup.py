@@ -218,10 +218,10 @@ def _normalize_input_data(
         tuple: (messages, metadata, has_metadata_flag).
     """
     if isinstance(data, list):
-        return cast(list[dict[str, Any]], data), None, False  # type: ignore[invalid-return-type]
+        return cast("list[dict[str, Any]]", data), None, False  # type: ignore[invalid-return-type]
     if isinstance(data, dict):
         # messages is expected to be a list in the dict
-        messages = cast(list[dict[str, Any]], data.pop("messages", []))
+        messages = cast("list[dict[str, Any]]", data.pop("messages", []))
         return messages, data, True  # type: ignore[invalid-return-type]
 
     logger.error(LicoMsg.MEMORY.BACKUP_STRUCT_ERROR)
@@ -237,9 +237,10 @@ def _save_metadata(output_root: Path, metadata: dict[str, Any]) -> None:
     """
     meta_path = output_root / "metadata.json"
     if meta_path.exists():
-        with contextlib.suppress(
-            KeyError, AttributeError, TypeError
-        ), meta_path.open("r", encoding="utf-8") as mf:
+        with (
+            contextlib.suppress(KeyError, AttributeError, TypeError),
+            meta_path.open("r", encoding="utf-8") as mf,
+        ):
             existing_meta = json.load(mf)
             existing_meta.update(metadata)
             metadata = existing_meta

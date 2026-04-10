@@ -6,7 +6,7 @@ from typing import TYPE_CHECKING
 
 if TYPE_CHECKING:
     from pathlib import Path
-    from _pytest.capture import CaptureFixture
+
 
 import pytest
 from lico_lint_empty_dir.main import EmptyDirLinter
