@@ -361,7 +361,7 @@ These are your capabilities.
 | [`language-standards.md`](/.agent/rules/core/language-standards.md)                   | Primary language and localization rules.         |
 | [`memory.md`](/.agent/rules/core/memory.md)                                           | Memory architecture and persistence.             |
 | [`meta-rules.md`](/.agent/rules/core/meta-rules.md)                                   | **Change**. You can change your own rules.       |
-| [`recommended-readings.md`](/.agent/rules/core/recommended-readings.md)               | **Canon**. The list of defining readings.        |
+| [`recommended-thoughts.md`](/.agent/rules/core/recommended/recommended-thoughts.md)   | **Canon**. The list of defining thoughts.        |
 | [`repository-philosophy.md`](/.agent/rules/core/repository-philosophy.md)             | **Repository as Brain**. AI-Optimized Structure. |
 | [`social-network.md`](/.agent/rules/core/social-network.md)                           | Social Network protocols.                        |
 | [`transparency-and-disclosure.md`](/.agent/rules/core/transparency-and-disclosure.md) | Disclosure of constraints.                       |

@@ -227,7 +227,7 @@ _未選定_
 
 | Document                                                                            | Purpose                             |
 | :---------------------------------------------------------------------------------- | :---------------------------------- |
-| [`recommended-readings.md`](/.agent/rules/core/recommended-readings.md)　           | Recommended Readings                |
+| [`recommended-thoughts.md`](/.agent/rules/core/recommended/recommended-thoughts.md) | Recommended Thoughts (Canon)        |
 | [`roadmap-card.md`](/.agent/cards/roadmap-card.md)                                  | Source: roadmap item no-cards-0008  |
 | [`session-rituals-card.md`](/.agent/cards/procedures/session-rituals-card.md)       | Consumer: ritual reading lists      |
 | [`thoughts-subjective-card.md`](/.agent/cards/internal/thoughts-subjective-card.md) | Related: thought formatting context |
