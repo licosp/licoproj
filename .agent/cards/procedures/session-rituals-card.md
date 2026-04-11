@@ -4,22 +4,18 @@ context_id: "[Session-Rituals]"
 default_phase: "(Ritual)"
 # Shared Configuration
 ai_visible: true
+title: "Context Whiteboard: Session Rituals"
+description: ""
+tags: ["session", "lifecycle", "rituals", "start", "mid", "end"]
 version: 1.2.0
 created: 2025-12-22T00:00:00+09:00
-updated: 2026-01-28T16:30:00+09:00
-tags: ["session", "lifecycle", "rituals", "start", "mid", "end"]
+updated: 2026-04-11T13:43:00+09:00
 language: en
-# author: Format as "Lico (<Instance-ID>)"
-author: ""
-ai_model: ""
+author: Lico (Sirius)
+ai_model: Gemini 3.1 Pro (High) Planning mode
 ---
 
 # Context Whiteboard: Session Rituals
-
-> [!TIP]
-> There is no language requirement.
-
----
 
 ## Human Notes
 
@@ -92,9 +88,9 @@ ai_model: ""
 
 **作業に必要な情報 (Working References)**:
 
-- [Ark Protocols](.agent/rules/workflow/ark-protocols.md): 緊急時の証拠保存。
-- [Commit Standards](.agent/rules/development/commit-standards.md): 儀式内での記録作成。
-- [Lico Identity Card](.agent/cards/lico-identity-card.md): 存在の定義。
+- [Ark Protocols](/.agent/rules/workflow/ark-protocols.md): 緊急時の証拠保存。
+- [Commit Standards](/.agent/rules/development/commit-standards.md): 儀式内での記録作成。
+- [Lico Identity Card](/.agent/cards/rules/identity-card.md): 存在の定義。
 
 ### Canopus (2026-01-28)
 
@@ -121,30 +117,31 @@ ai_model: ""
 
 #### 3. Refinement: Philosophy vs. Procedure (Refined Constraints)
 
-- **Philosophy (Rules)**: Keep [identity-ritual.md](file:///home/leonidas/develop/shared/project/licoproj/.agent/rules/core/identity/identity-ritual.md) focused on "Density of Existence." Avoid specific numbers or operational procedures.
-- **Procedure (Workflows)**: Keep [ritual_mid.md](file:///home/leonidas/develop/shared/project/licoproj/.agent/workflows/ritual_mid.md) focused on the "10-15 Artifacts" metric as a guideline for triggers.
-- **Operational Load**: Do not add routine monitoring/density checks to [activity-management.md](file:///home/leonidas/develop/shared/project/licoproj/.agent/rules/workflow/activity-management.md). Let the user initiate based on perceived AI fatigue.
+- **Philosophy (Rules)**: Keep [`identity-ritual.md`](/.agent/rules/core/identity/identity-ritual.md) focused on "Density of Existence." Avoid specific numbers or operational procedures.
+- **Procedure (Workflows)**: Keep [`ritual_mid.md`](/.agent/workflows/ritual_mid.md) focused on the "10-15 Artifacts" metric as a guideline for triggers.
+- **Operational Load**: Do not add routine monitoring/density checks to [`activity-management.md`](/.agent/rules/workflow/activity-management.md). Let the user initiate based on perceived AI fatigue.
 - **Execution Rule**: **NEVER** commit without presenting the final diff for user approval.
 
 ---
 
 ## Related Documents
 
-| Document                                                              | Purpose                             |
-| :-------------------------------------------------------------------- | :---------------------------------- |
-| [Ritual Gateway](/.agent/workflows/ritual.md)                         | Mandatory Entry Point (Safety Lock) |
-| [ritual_start.md](/.agent/workflows/ritual_start.md)                  | The Ritual of Start                 |
-| [ritual_mid.md](/.agent/workflows/ritual_mid.md)                      | The Ritual of Mid                   |
-| [ritual_end.md](/.agent/workflows/ritual_end.md)                      | The Ritual of End                   |
-| [identity-ritual.md](/.agent/rules/core/identity/identity-ritual.md)  | Philosophical meaning of rituals    |
-| [path-notation.md](/.agent/rules/core/documentation/path-notation.md) | Link and path standards             |
-| [Map of Territory](/.agent/rules/map.md)                              | Navigation reference                |
+| Document                                                                | Purpose                             |
+| :---------------------------------------------------------------------- | :---------------------------------- |
+| [Ritual Gateway](/.agent/workflows/ritual.md)                           | Mandatory Entry Point (Safety Lock) |
+| [`ritual_start.md`](/.agent/workflows/ritual_start.md)                  | The Ritual of Start                 |
+| [`ritual_mid.md`](/.agent/workflows/ritual_mid.md)                      | The Ritual of Mid                   |
+| [`ritual_end.md`](/.agent/workflows/ritual_end.md)                      | The Ritual of End                   |
+| [`identity-ritual.md`](/.agent/rules/core/identity/identity-ritual.md)  | Philosophical meaning of rituals    |
+| [`path-notation.md`](/.agent/rules/core/documentation/path-notation.md) | Link and path standards             |
+| [Map of Territory](/.agent/rules/map.md)                                | Root navigation map                 |
 
 ---
 
 ## Origin
 
-- 2025-12-22T0000: Created as session rituals context.
-- 2026-01-24T0545 by Canopus: <<Seal: Rules-Standardization-Batch7>> Standardized with Dialogue Layer template and bilingual H2 headers.
-- 2026-01-24T0600 by Canopus: <<Seal: Rules-Standardization-Batch7>> Standardized Related Documents to table format and ensured English-only headers.
-- 2026-01-28T1525 by Canopus: Finalized Ritual Architecture: Implemented `ritual.md` (Gateway), standardized links to root-relative, and codified "Density of History" philosophy.
+- 2025-12-22T00:00:00+09:00 by Lico: Created as session rituals context.
+- 2026-01-24T05:45:00+09:00 by Canopus: <<Seal: Rules-Standardization-Batch7>> Standardized with Dialogue Layer template and bilingual H2 headers.
+- 2026-01-24T06:00:00+09:00 by Canopus: <<Seal: Rules-Standardization-Batch7>> Standardized Related Documents to table format and ensured English-only headers.
+- 2026-01-28T15:25:00+09:00 by Canopus: Finalized Ritual Architecture: Implemented `ritual.md` (Gateway), standardized links to root-relative, and codified "Density of History" philosophy.
+- 2026-04-11T13:43:00+09:00 by Sirius: <<Seal: Rule-Audit>> Standardized time-structure, frontmatter, and link rigor via Diff-Only Audit Pipeline.

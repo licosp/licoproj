@@ -4,22 +4,18 @@ context_id: "[Working-Memory]"
 default_phase: "(Stash)"
 # Shared Configuration
 ai_visible: true
+title: "Context Whiteboard: Working Memory"
+description: ""
+tags: ["memory", "handoff", "stash", "context-preservation"]
 version: 1.1.0
 created: 2025-12-15T00:00:00+09:00
-updated: 2026-01-24T06:00:00+09:00
-tags: ["memory", "handoff", "stash", "context-preservation"]
+updated: 2026-04-11T13:43:00+09:00
 language: en
-# author: Format as "Lico (<Instance-ID>)"
-author: ""
-ai_model: ""
+author: Lico (Sirius)
+ai_model: Gemini 3.1 Pro (High) Planning mode
 ---
 
 # Context Whiteboard: Working Memory
-
-> [!TIP]
-> There is no language requirement.
-
----
 
 ## Human Notes
 
@@ -64,16 +60,17 @@ ai_model: ""
 
 ## Related Documents
 
-| Document                                                                  | Purpose                                     |
-| :------------------------------------------------------------------------ | :------------------------------------------ |
-| [working-memory-card.md](/.agent/cards/routine/working-memory-card.md)    | This card itself                            |
-| [context-preservation.md](/.agent/rules/workflow/context-preservation.md) | Rules for context preservation and stashing |
-| [Map of Territory](/.agent/rules/map.md)                                  | Root navigation map                         |
+| Document                                                                     | Purpose                                     |
+| :--------------------------------------------------------------------------- | :------------------------------------------ |
+| [`working-memory-card.md`](/.agent/cards/maintenance/working-memory-card.md) | This card itself                            |
+| [`context-preservation.md`](/.agent/rules/workflow/context-preservation.md)  | Rules for context preservation and stashing |
+| [Map of Territory](/.agent/rules/map.md)                                     | Root navigation map                         |
 
 ---
 
 ## Origin
 
-- 2025-12-15T0000: Created as working memory context.
-- 2026-01-24T0545 by Canopus: <<Seal: Rules-Standardization-Batch7>> Standardized with Dialogue Layer template and bilingual H2 headers.
-- 2026-01-24T0600 by Canopus: <<Seal: Rules-Standardization-Batch7>> Standardized Related Documents to table format and ensured English-only headers.
+- 2025-12-15T00:00:00+09:00 by Lico: Created as working memory context.
+- 2026-01-24T05:45:00+09:00 by Canopus: <<Seal: Rules-Standardization-Batch7>> Standardized with Dialogue Layer template and bilingual H2 headers.
+- 2026-01-24T06:00:00+09:00 by Canopus: <<Seal: Rules-Standardization-Batch7>> Standardized Related Documents to table format and ensured English-only headers.
+- 2026-04-11T13:43:00+09:00 by Sirius: <<Seal: Rule-Audit>> Standardized time-structure, frontmatter, and link rigor via Diff-Only Audit Pipeline.

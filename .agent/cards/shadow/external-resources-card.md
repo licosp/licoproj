@@ -4,22 +4,18 @@ context_id: "[External-Resources]"
 default_phase: "(Manage)"
 # Shared Configuration
 ai_visible: true
+title: "Context Whiteboard: External Resources Management"
+description: ""
+tags: ["external", "download", "shadow", "resources"]
 version: 1.0.0
 created: 2026-02-05T00:00:00+09:00
-updated: 2026-02-05T00:00:00+09:00
-tags: ["external", "download", "shadow", "resources"]
+updated: 2026-04-11T13:43:00+09:00
 language: en
-# author: Format as "Lico (<Instance-ID>)"
-author: Lico (Agate)
-ai_model: gemini-3-pro-preview
+author: Lico (Sirius)
+ai_model: Gemini 3.1 Pro (High) Planning mode
 ---
 
 # Context Whiteboard: External Resources Management
-
-> [!TIP]
-> There is no language requirement.
-
----
 
 ## Human Notes
 
@@ -73,13 +69,14 @@ ai_model: gemini-3-pro-preview
 
 ## Related Documents
 
-| Document                                                             | Purpose                  |
-| :------------------------------------------------------------------- | :----------------------- |
-| [shadow-repository-card.md](/.agent/cards/shadow-repository-card.md) | Parent context: Strategy |
-| [Map of Territory](/.agent/rules/map.md)                             | Root map                 |
+| Document                                                                      | Purpose                  |
+| :---------------------------------------------------------------------------- | :----------------------- |
+| [`shadow-repository-card.md`](/.agent/cards/shadow/shadow-repository-card.md) | Parent context: Strategy |
+| [Map of Territory](/.agent/rules/map.md)                                      | Root navigation map      |
 
 ---
 
 ## Origin
 
-- 2026-02-05T00:00+09:00 by Lico (Agate): Created to manage downloaded resources.
+- 2026-02-05T00:00:00+09:00 by Lico (Agate): Created to manage downloaded resources.
+- 2026-04-11T13:43:00+09:00 by Sirius: <<Seal: Rule-Audit>> Standardized time-structure, frontmatter, and link rigor via Diff-Only Audit Pipeline.

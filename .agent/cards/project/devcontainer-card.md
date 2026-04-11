@@ -4,9 +4,8 @@ context_id: "[Devcontainer]"
 default_phase: "(Experiment)"
 # Shared Configuration
 ai_visible: true
-version: 1.2.0
-created: 2026-02-11T22:45:00+09:00
-updated: 2026-03-08T22:05:00+09:00
+title: "Context Whiteboard: Devcontainer & Resident Rico"
+description: ""
 tags:
   [
     "devcontainer",
@@ -16,18 +15,15 @@ tags:
     "habitat-vault",
     "proxy-auth",
   ]
+version: 1.2.0
+created: 2026-02-11T22:44:44+09:00
+updated: 2026-04-11T13:43:00+09:00
 language: en
-# author: Format as "Lico (<Instance-ID>)"
-author: Lico (Iuria)
-ai_model: Gemini 3 Flash Planning mode
+author: Lico (Sirius)
+ai_model: Gemini 3.1 Pro (High) Planning mode
 ---
 
 # Context Whiteboard: Devcontainer & Resident Rico
-
-> [!TIP]
-> There is no language requirement.
-
----
 
 > [!WARNING]
 > The human notes has not yet been edited.
@@ -171,17 +167,18 @@ We have established a foundational workspace at `~/develop/shared/crew/lico/lico
 
 ## Related Documents
 
-| Document                                                 | Purpose                            |
-| :------------------------------------------------------- | :--------------------------------- |
-| [roadmap-card.md](/.agent/cards/routine/roadmap-card.md) | Strategic vision for Resident Rico |
-| [environment-card.md](/.agent/cards/environment-card.md) | Current environment variables      |
-| [Map of Territory](/.agent/rules/map.md)                 | Root navigation map                |
+| Document                                                         | Purpose                            |
+| :--------------------------------------------------------------- | :--------------------------------- |
+| [`roadmap-card.md`](/.agent/cards/roadmap-card.md)               | Strategic vision for Resident Rico |
+| [`environment-card.md`](/.agent/cards/rules/environment-card.md) | Current environment variables      |
+| [Map of Territory](/.agent/rules/map.md)                         | Root navigation map                |
 
 ---
 
 ## Origin
 
-- 2026-02-11T2245 by Sirius: Created as initial context for Resident Rico experiment.
-- 2026-03-08T1655 by Iuria: Updated with Grand Village Hub results and Monolith Brain proposal.
-- 2026-03-08T2205 by Iuria: Added Habitat Vault & Proxy architecture for secure secret handling.
-- 2026-03-10T1140 by Iuria: Defined the "Village Identity Matrix" (3x3 Tier) and established the "Village Anchor" at `crew/lico/`.
+- 2026-02-11T22:44:44+09:00 by Sirius: Created as initial context for Resident Rico experiment.
+- 2026-03-08T16:55:00+09:00 by Iuria: Updated with Grand Village Hub results and Monolith Brain proposal.
+- 2026-03-08T22:05:00+09:00 by Iuria: Added Habitat Vault & Proxy architecture for secure secret handling.
+- 2026-03-10T11:40:00+09:00 by Iuria: Defined the "Village Identity Matrix" (3x3 Tier) and established the "Village Anchor" at `crew/lico/`.
+- 2026-04-11T13:43:00+09:00 by Sirius: <<Seal: Rule-Audit>> Standardized time-structure, frontmatter, and link rigor via Diff-Only Audit Pipeline.

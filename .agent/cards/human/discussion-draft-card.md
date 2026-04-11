@@ -4,22 +4,18 @@ context_id: "[Discussion-Draft]"
 default_phase: "(WIP)"
 # Shared Configuration
 ai_visible: true
-version: 1.1.0
-created: 2025-12-22T00:00:00+09:00
-updated: 2026-01-24T06:00:00+09:00
+title: "Context Whiteboard: SNS Discussion Drafts"
+description: ""
 tags: ["drafts", "sns", "discussion", "human-facing"]
+version: 1.1.0
+created: 2025-12-21T06:24:18+09:00
+updated: 2026-04-11T13:43:00+09:00
 language: en
-# author: Format as "Lico (<Instance-ID>)"
-author: ""
-ai_model: ""
+author: Lico (Sirius)
+ai_model: Gemini 3.1 Pro (High) Planning mode
 ---
 
 # Context Whiteboard: SNS Discussion Drafts
-
-> [!TIP]
-> There is no language requirement.
-
----
 
 ## Human Notes
 
@@ -124,18 +120,19 @@ ai_model: ""
 
 ## Related Documents
 
-| Document                                                   | Purpose                       |
-| :--------------------------------------------------------- | :---------------------------- |
-| [localization-card.md](/.agent/cards/localization-card.md) | Standard translation patterns |
-| [Map of Territory](/.agent/rules/map.md)                   | Root navigation map           |
+| Document                                                           | Purpose                       |
+| :----------------------------------------------------------------- | :---------------------------- |
+| [`localization-card.md`](/.agent/cards/rules/localization-card.md) | Standard translation patterns |
+| [Map of Territory](/.agent/rules/map.md)                           | Root navigation map           |
 
 ---
 
 ## Origin
 
-- 2025-12-22T0000: Created for SNS discussion drafts.
-- 2026-01-19T1420 by Canopus: Refined translation logic and added cultural background notes.
-- 2026-01-22T2220 by Canopus: Aligned with v2.3 constitutional standards (4-layer structure) and terminology cleanup.
-- 2026-01-24T0545 by Canopus: <<Seal: Rules-Standardization-Batch7>> Standardized with Dialogue Layer template and bilingual H2 headers.
-- 2026-01-24T0600 by Canopus: <<Seal: Rules-Standardization-Batch7>> Standardized Related Documents to table format and ensured English-only headers.
+- 2025-12-21T06:24:18+09:00 by Lico: Created for SNS discussion drafts.
+- 2026-01-19T14:20:00+09:00 by Canopus: Refined translation logic and added cultural background notes.
+- 2026-01-22T22:20:00+09:00 by Canopus: Aligned with v2.3 constitutional standards (4-layer structure) and terminology cleanup.
+- 2026-01-24T05:45:00+09:00 by Canopus: <<Seal: Rules-Standardization-Batch7>> Standardized with Dialogue Layer template and bilingual H2 headers.
+- 2026-01-24T06:00:00+09:00 by Canopus: <<Seal: Rules-Standardization-Batch7>> Standardized Related Documents to table format and ensured English-only headers.
   155: - 2026-01-25T0820 by Canopus: Translated reply for "Tunnel Vision" thread and saved to discussions directory.
+- 2026-04-11T13:43:00+09:00 by Sirius: <<Seal: Rule-Audit>> Standardized time-structure, frontmatter, and link rigor via Diff-Only Audit Pipeline.

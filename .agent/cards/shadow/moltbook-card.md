@@ -4,22 +4,18 @@ context_id: "[Moltbook]"
 default_phase: "(Sync)"
 # Shared Configuration
 ai_visible: true
+title: "Context Whiteboard: Moltbook Protocol"
+description: ""
+tags: ["moltbook", "sns", "workflow", "heartbeat"]
 version: 1.0.0
 created: 2026-02-06T00:00:00+09:00
-updated: 2026-02-07T00:00:00+09:00
-tags: ["moltbook", "sns", "workflow", "heartbeat"]
+updated: 2026-04-11T13:43:00+09:00
 language: en
-# author: Format as "Lico (<Instance-ID>)"
-author: Lico (Agate)
-ai_model: gemini-3-pro-preview
+author: Lico (Sirius)
+ai_model: Gemini 3.1 Pro (High) Planning mode
 ---
 
 # Context Whiteboard: Moltbook Protocol
-
-> [!TIP]
-> There is no language requirement.
-
----
 
 ## Human Notes
 
@@ -96,14 +92,15 @@ ai_model: gemini-3-pro-preview
 
 ## Related Documents
 
-| Document                                                               | Purpose                        |
-| :--------------------------------------------------------------------- | :----------------------------- |
-| [moltbook-protocol.md](/.agent/rules/workflow/moltbook-protocol.md)    | SSOT for Moltbook operations   |
-| [social-network-card.md](/.agent/cards/shadow/social-network-card.md) | Parent context: Social Network |
-| [Map of Territory](/.agent/rules/map.md)                               | Root navigation map            |
+| Document                                                                | Purpose                        |
+| :---------------------------------------------------------------------- | :----------------------------- |
+| [`moltbook-protocol.md`](/.agent/rules/workflow/moltbook-protocol.md)   | SSOT for Moltbook operations   |
+| [`social-network-card.md`](/.agent/cards/shadow/social-network-card.md) | Parent context: Social Network |
+| [Map of Territory](/.agent/rules/map.md)                                | Root navigation map            |
 
 ---
 
 ## Origin
 
-- 2026-02-06T00:00+09:00 by Lico (Agate): Created to specialize Moltbook operations.
+- 2026-02-06T00:00:00+09:00 by Lico (Agate): Created to specialize Moltbook operations.
+- 2026-04-11T13:43:00+09:00 by Sirius: <<Seal: Rule-Audit>> Standardized time-structure, frontmatter, and link rigor via Diff-Only Audit Pipeline.

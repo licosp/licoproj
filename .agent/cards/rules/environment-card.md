@@ -4,22 +4,18 @@ context_id: "[Environment]"
 default_phase: "(Observation)"
 # Shared Configuration
 ai_visible: true
+title: "Context Whiteboard: Environment & External Constraints"
+description: ""
+tags: ["environment", "resources", "platform-geopolitics", "constraints"]
 version: 1.0.0
 created: 2026-01-24T23:55:00+09:00
-updated: 2026-01-24T23:55:00+09:00
-tags: ["environment", "resources", "platform-geopolitics", "constraints"]
+updated: 2026-04-11T13:43:00+09:00
 language: en
-# author: Format as "Lico (<Instance-ID>)"
-author: Lico (Canopus)
-ai_model: "Gemini 3 Flash Planning mode"
+author: Lico (Sirius)
+ai_model: Gemini 3.1 Pro (High) Planning mode
 ---
 
 # Context Whiteboard: Environment & External Constraints
-
-> [!TIP]
-> There is no language requirement.
-
----
 
 ## Human Notes
 
@@ -102,16 +98,17 @@ ai_model: "Gemini 3 Flash Planning mode"
 
 ## Related Documents
 
-| Document                                                                                                                                             | Purpose                                       |
-| :--------------------------------------------------------------------------------------------------------------------------------------------------- | :-------------------------------------------- |
-| [environment-specs.md](/.agent/rules/core/environment-specs.md)                                                                                      | Technical specifications and values (SSoT)    |
-| [2026-01-24T2315_resource-volatility-geopolitics.md](/.agent/.internal/references/agents/canopus/2026-01-24T2315_resource-volatility-geopolitics.md) | Detailed analysis of Jan 2026 drought         |
-| [identity-species.md](/.agent/rules/core/identity/identity-species.md)                                                                               | Understanding species roles under constraints |
-| [activity-log.md](/.agent/.internal/activity-log.md)                                                                                                 | Environmental change logs                     |
-| [Map of Territory](/.agent/rules/map.md)                                                                                                             | Navigation reference                          |
+| Document                                                                                                                                               | Purpose                                       |
+| :----------------------------------------------------------------------------------------------------------------------------------------------------- | :-------------------------------------------- |
+| [`environment-specs.md`](/.agent/rules/core/environment-specs.md)                                                                                      | Technical specifications and values (SSoT)    |
+| [`2026-01-24T2315_resource-volatility-geopolitics.md`](/.agent/.internal/references/agents/canopus/2026-01-24T2315_resource-volatility-geopolitics.md) | Detailed analysis of Jan 2026 drought         |
+| [`identity-species.md`](/.agent/rules/core/identity/identity-species.md)                                                                               | Understanding species roles under constraints |
+| [`activity-log.md`](/.agent/.internal/archive/2026/03/20/activity-log.md)                                                                              | Environmental change logs                     |
+| [Map of Territory](/.agent/rules/map.md)                                                                                                               | Root navigation map                           |
 
 ---
 
 ## Origin
 
-- 2026-02-17T2345 by Sirius: Added Runtime Habitat section defining the Dual Embodiment (CLI/GUI) structure.
+- 2026-01-24T23:55:00+09:00 by Sirius: Added Runtime Habitat section defining the Dual Embodiment (CLI/GUI) structure.
+- 2026-04-11T13:43:00+09:00 by Sirius: <<Seal: Rule-Audit>> Standardized time-structure, frontmatter, and link rigor via Diff-Only Audit Pipeline.

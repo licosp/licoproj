@@ -4,22 +4,18 @@ context_id: "[Cross-Link-Audit]"
 default_phase: "(Execution)"
 # Shared Configuration
 ai_visible: true
-version: 1.1.0
-created: 2026-01-13T00:00:00+09:00
-updated: 2026-01-24T06:00:00+09:00
+title: "Context Whiteboard: Cross-Link Audit"
+description: ""
 tags: ["maintenance", "cross-link", "rules", "workflows"]
+version: 1.1.0
+created: 2026-01-01T07:17:47+09:00
+updated: 2026-04-11T13:43:00+09:00
 language: en
-# author: Format as "Lico (<Instance-ID>)"
-author: ""
-ai_model: ""
+author: Lico (Sirius)
+ai_model: Gemini 3.1 Pro (High) Planning mode
 ---
 
 # Context Whiteboard: Cross-Link Audit
-
-> [!TIP]
-> There is no language requirement.
-
----
 
 ## Human Notes
 
@@ -96,7 +92,7 @@ ai_model: ""
 ### Canopus (2026-01-23)
 
 > [!NOTE]
-> **Context Migration**: The observations regarding overall rules standardization, v2.3 compliance, and the 4-layer structure evolution have been moved to the new **[Rules-Standardization]** ([rules-standardization-card.md](/.agent/cards/rules-standardization-card.md)) card.
+> **Context Migration**: The observations regarding overall rules standardization, v2.3 compliance, and the 4-layer structure evolution have been moved to the new **[Rules-Standardization]** ([`rules-standardization-card.md`](/.agent/cards/rules/rules-standardization-card.md)) card.
 >
 > Moving forward, this card ([Cross-Link-Audit]) will focus strictly on link-level verify/fix tasks and reducing redundant connections.
 
@@ -104,17 +100,18 @@ ai_model: ""
 
 ## Related Documents
 
-| Document                                                                                  | Purpose                                      |
-| :---------------------------------------------------------------------------------------- | :------------------------------------------- |
-| [path-notation.md](/.agent/rules/core/documentation/path-notation.md)                     | The single source of truth for path notation |
-| [documentation-standards.md](/.agent/rules/core/documentation/documentation-standards.md) | Standards for link integrity and auditing    |
-| [Map of Territory](/.agent/rules/map.md)                                                  | Navigation reference                         |
+| Document                                                                                    | Purpose                                      |
+| :------------------------------------------------------------------------------------------ | :------------------------------------------- |
+| [`path-notation.md`](/.agent/rules/core/documentation/path-notation.md)                     | The single source of truth for path notation |
+| [`documentation-standards.md`](/.agent/rules/core/documentation/documentation-standards.md) | Standards for link integrity and auditing    |
+| [Map of Territory](/.agent/rules/map.md)                                                    | Root navigation map                          |
 
 ---
 
 ## Origin
 
-- 2026-01-13T0000 by Polaris: Path Notation Consolidation.
-- 2026-01-23T0518 by Canopus: Migrated rules standardization context to dedicated card.
-- 2026-01-24T0545 by Canopus: <<Seal: Rules-Standardization-Batch7>> Standardized with Dialogue Layer template and bilingual H2 headers.
-- 2026-01-24T0600 by Canopus: <<Seal: Rules-Standardization-Batch7>> Standardized Related Documents to table format and ensured English-only headers.
+- 2026-01-01T07:17:47+09:00 by Polaris: Path Notation Consolidation.
+- 2026-01-23T05:18:00+09:00 by Canopus: Migrated rules standardization context to dedicated card.
+- 2026-01-24T05:45:00+09:00 by Canopus: <<Seal: Rules-Standardization-Batch7>> Standardized with Dialogue Layer template and bilingual H2 headers.
+- 2026-01-24T06:00:00+09:00 by Canopus: <<Seal: Rules-Standardization-Batch7>> Standardized Related Documents to table format and ensured English-only headers.
+- 2026-04-11T13:43:00+09:00 by Sirius: <<Seal: Rule-Audit>> Standardized time-structure, frontmatter, and link rigor via Diff-Only Audit Pipeline.

@@ -1,24 +1,21 @@
 ---
+# Context Configuration
 context_id: "[Shadow-Repository]"
 default_phase: "(Manage)"
+# Shared Configuration
 ai_visible: true
 title: "Shadow Repository Strategy"
 description: "Strategy and management context for the Shadow Repository"
 tags: ["git", "security", "shadow-repo", "infrastructure", "dot-shadow"]
 version: 1.0.0
 created: 2026-02-02T05:00:00+09:00
-updated: 2026-02-02T05:00:00+09:00
+updated: 2026-04-11T13:43:00+09:00
 language: en
-author: Lico (Polaris)
-ai_model: Claude Opus 4.6 (Thinking) Planning mode
+author: Lico (Sirius)
+ai_model: Gemini 3.1 Pro (High) Planning mode
 ---
 
 # Context Whiteboard: Shadow Repository Strategy
-
-> [!TIP]
-> There is no language requirement.
-
----
 
 ## Human Notes
 
@@ -74,18 +71,19 @@ ai_model: Claude Opus 4.6 (Thinking) Planning mode
 
 ## Related Documents
 
-| Document                                                               | Purpose                              |
-| :--------------------------------------------------------------------- | :----------------------------------- |
-| [history/shadow/](/.agent/.internal/history/shadow/)                   | Monthly shadow commit history        |
-| [git-operations-card.md](/.agent/cards/git-operations-card.md)         | General Git safety rules             |
-| [system-archive-card.md](/.agent/cards/routine/system-archive-card.md) | Sub-context: System Archive (Memory) |
-| [conversations-card.md](/.agent/cards/routine/conversations-card.md)   | Sub-context: Conversation Logs       |
-| [sync-memory-card.md](/.agent/cards/routine/sync-memory-card.md)       | Sub-context: Conversations IDE Sync  |
-| [Map of Territory](/.agent/rules/map.md)                               | Navigation reference                 |
+| Document                                                                     | Purpose                              |
+| :--------------------------------------------------------------------------- | :----------------------------------- |
+| [Shadow Repository](/.repos/.licoshdw/)                                      | Monthly shadow commit history        |
+| [`git-operations-card.md`](/.agent/cards/rules/git-operations-card.md)       | General Git safety rules             |
+| [`system-archive-card.md`](/.agent/cards/maintenance/system-archive-card.md) | Sub-context: System Archive (Memory) |
+| [`conversations-card.md`](/.agent/cards/shadow/conversations-card.md)        | Sub-context: Conversation Logs       |
+| [`pkg-backup-card.md`](/.agent/cards/packages/pkg-backup-card.md)            | Sub-context: Conversations IDE Sync  |
+| [Map of Territory](/.agent/rules/map.md)                                     | Root navigation map                  |
 
 ---
 
 ## Origin
 
-- 2026-02-02T05:00+09:00 by Lico (Zircon): Created based on user consultation.
-- 2026-03-20T2340+09:00 by Lico (Polaris): Split monolithic `shadow-history.md` into monthly files under `history/shadow/`. Added directory reference.
+- 2026-02-02T05:00:00+09:00 by Lico (Zircon): Created based on user consultation.
+- 2026-03-20T23:40:00+09:00 by Lico (Polaris): Split monolithic `shadow-history.md` into monthly files under `history/shadow/`. Added directory reference.
+- 2026-04-11T13:43:00+09:00 by Sirius: <<Seal: Rule-Audit>> Standardized time-structure, frontmatter, and link rigor via Diff-Only Audit Pipeline.

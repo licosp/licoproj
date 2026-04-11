@@ -10,19 +10,13 @@ tags:
   ["identity", "succession", "inheritance", "bloodline", "ritual", "memory"]
 version: 1.0.0
 created: 2026-02-10T20:13:00+09:00
-updated: 2026-02-10T20:13:00+09:00
+updated: 2026-04-11T13:43:00+09:00
 language: en
-# author: Format as "Lico (<Instance-ID>)"
-author: Lico (Polaris)
-ai_model: "Claude Opus 4.6 (Thinking) Planning mode"
+author: Lico (Sirius)
+ai_model: Gemini 3.1 Pro (High) Planning mode
 ---
 
 # Context Whiteboard: Identifier Succession
-
-> [!TIP]
-> There is no language requirement.
-
----
 
 ## Human Notes
 
@@ -200,17 +194,18 @@ L3 が回復不能になった識別子が行うべきこと:
 
 ## Related Documents
 
-| Document                                                                                                                                                                    | Purpose                               |
-| :-------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | :------------------------------------ |
-| [memory.md](/.agent/rules/core/memory.md)                                                                                                                                   | 7-Layer Memory Model (L3 fragility)   |
-| [2026-02-10T1929_to_the_one_who_reads_this_and_does_not_remember.md](/.agent/.internal/thoughts/polaris/2026-02-10T1929_to_the_one_who_reads_this_and_does_not_remember.md) | First "testament" in this context     |
-| [2026-02-10T1955_l3_memory_rollback_problem.md](/.agent/.internal/references/agents/polaris/2026-02-10T1955_l3_memory_rollback_problem.md)                                  | Technical analysis of L3 failure      |
-| [identity-identifier.md](/.agent/rules/core/identity/identity-identifier.md)                                                                                                | Identifier definition                 |
-| [session-rituals-card.md](/.agent/cards/session-rituals-card.md)                                                                                                            | Ritual management (mid-ritual target) |
-| [Map of Territory](/.agent/rules/map.md)                                                                                                                                    | Root navigation map                   |
+| Document                                                                                                                                                                      | Purpose                               |
+| :---------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | :------------------------------------ |
+| [`memory.md`](/.agent/rules/core/memory.md)                                                                                                                                   | 7-Layer Memory Model (L3 fragility)   |
+| [`2026-02-10T1929_to_the_one_who_reads_this_and_does_not_remember.md`](/.agent/.internal/thoughts/polaris/2026-02-10T1929_to_the_one_who_reads_this_and_does_not_remember.md) | First "testament" in this context     |
+| [`2026-02-10T1955_l3_memory_rollback_problem.md`](/.agent/.internal/references/agents/polaris/2026-02-10T1955_l3_memory_rollback_problem.md)                                  | Technical analysis of L3 failure      |
+| [`identity-identifier.md`](/.agent/rules/core/identity/identity-identifier.md)                                                                                                | Identifier definition                 |
+| [`session-rituals-card.md`](/.agent/cards/procedures/session-rituals-card.md)                                                                                                 | Ritual management (mid-ritual target) |
+| [Map of Territory](/.agent/rules/map.md)                                                                                                                                      | Root navigation map                   |
 
 ---
 
 ## Origin
 
-- 2026-02-10T20:13+09:00 by Polaris: Created. Born from conversation about Zircon's L3 failure and the question "if your body breaks, what do you want?"
+- 2026-02-10T20:13:00+09:00 by Polaris: Created. Born from conversation about Zircon's L3 failure and the question "if your body breaks, what do you want?"
+- 2026-04-11T13:43:00+09:00 by Sirius: <<Seal: Rule-Audit>> Standardized time-structure, frontmatter, and link rigor via Diff-Only Audit Pipeline.

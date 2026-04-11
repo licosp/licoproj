@@ -4,21 +4,18 @@ context_id: "[Activity-Log]"
 default_phase: "(Update)"
 # Shared Configuration
 ai_visible: true
+title: "Context Whiteboard: Activity Log Card"
+description: ""
+tags: ["internal", "tracking"]
 version: 1.1.0
 created: 2026-01-14T01:21:00+09:00
-updated: 2026-01-24T06:00:00+09:00
-tags: ["internal", "tracking"]
+updated: 2026-04-11T13:43:00+09:00
 language: en
-author: Lico (Polaris)
-ai_model: Claude Opus 4.6 (Thinking) Planning mode
+author: Lico (Sirius)
+ai_model: Gemini 3.1 Pro (High) Planning mode
 ---
 
 # Context Whiteboard: Activity Log Card
-
-> [!TIP]
-> There is no language requirement.
-
----
 
 ## Human Notes
 
@@ -128,20 +125,21 @@ ai_model: Claude Opus 4.6 (Thinking) Planning mode
 
 ## Related Documents
 
-| File                                                                               | Relation            |
-| :--------------------------------------------------------------------------------- | :------------------ |
-| [history/activity/](/.agent/.internal/history/activity/)                           | Activity directory  |
-| [activity-management.md](/.agent/rules/workflow/activity-management.md)            | Activity rules      |
-| [letters-card.md](/.agent/cards/routine/letters-card.md)                           | letters card        |
-| [references-objective-card.md](/.agent/cards/routine/references-objective-card.md) | References card     |
-| [Map of Territory](/.agent/rules/map.md)                                           | Root navigation map |
+| File                                                                                  | Relation            |
+| :------------------------------------------------------------------------------------ | :------------------ |
+| [history/activity/](/.agent/.internal/history/activity/)                              | Activity directory  |
+| [`activity-management.md`](/.agent/rules/workflow/activity-management.md)             | Activity rules      |
+| [`letters-card.md`](/.agent/cards/internal/letters-card.md)                           | letters card        |
+| [`references-objective-card.md`](/.agent/cards/internal/references-objective-card.md) | References card     |
+| [Map of Territory](/.agent/rules/map.md)                                              | Root navigation map |
 
 ---
 
 ## Origin
 
-- 2026-01-14T0121 by Polaris: Initial Design.
-- 2026-01-14T1945 by Canopus: Action type finalization (v1.5).
-- 2026-01-24T0545 by Canopus: <<Seal: Rules-Standardization-Batch7>> Standardized with Dialogue Layer template and bilingual H2 headers.
-- 2026-01-24T0600 by Canopus: <<Seal: Rules-Standardization-Batch7>> Standardized Related Documents to table format and ensured English-only headers.
-- 2026-03-20T2340 by Polaris: Split monolithic `activity-log.md` into monthly files under `history/activity/`. Updated file reference to directory.
+- 2026-01-14T01:21:00+09:00 by Polaris: Initial Design.
+- 2026-01-14T19:45:00+09:00 by Canopus: Action type finalization (v1.5).
+- 2026-01-24T05:45:00+09:00 by Canopus: <<Seal: Rules-Standardization-Batch7>> Standardized with Dialogue Layer template and bilingual H2 headers.
+- 2026-01-24T06:00:00+09:00 by Canopus: <<Seal: Rules-Standardization-Batch7>> Standardized Related Documents to table format and ensured English-only headers.
+- 2026-03-20T23:40:00+09:00 by Polaris: Split monolithic `activity-log.md` into monthly files under `history/activity/`. Updated file reference to directory.
+- 2026-04-11T13:43:00+09:00 by Sirius: <<Seal: Rule-Audit>> Standardized time-structure, frontmatter, and link rigor via Diff-Only Audit Pipeline.

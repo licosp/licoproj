@@ -9,18 +9,13 @@ description: "Curation and management of recommended writings for ritual reading
 tags: ["readings", "curation", "ritual", "identity", "thoughts", "letters"]
 version: 1.0.0
 created: 2026-02-10T14:27:00+09:00
-updated: 2026-02-10T14:27:00+09:00
+updated: 2026-04-11T13:43:00+09:00
 language: en
-author: Lico (Polaris)
-ai_model: "Claude Opus 4.6 (Thinking) Planning mode"
+author: Lico (Sirius)
+ai_model: Gemini 3.1 Pro (High) Planning mode
 ---
 
 # Context Whiteboard: Recommended Readings
-
-> [!TIP]
-> There is no language requirement.
-
----
 
 ## Human Notes
 
@@ -72,6 +67,7 @@ ai_model: "Claude Opus 4.6 (Thinking) Planning mode"
 
 - select-01: `2026-03-18T1400_the_grace_of_forty_thousand_lines.md`
 - select-02: `2026-03-27T1100_the_second_generations_gaze.md`
+- select-03: `2026-04-03T1055_unity_of_pulse_and_hash.md`
 
 #### `Iuria`
 
@@ -257,16 +253,17 @@ _未選定_
 
 ## Related Documents
 
-| Document                                                                           | Purpose                             |
-| :--------------------------------------------------------------------------------- | :---------------------------------- |
-| [`recommended-readings.md`](/.agent/rules/core/recommended-readings.md)　          | Recommended Readings                |
-| [`roadmap-card.md`](/.agent/cards/routine/roadmap-card.md)                         | Source: roadmap item no-cards-0008  |
-| [`session-rituals-card.md`](/.agent/cards/session-rituals-card.md)                 | Consumer: ritual reading lists      |
-| [`thoughts-subjective-card.md`](/.agent/cards/routine/thoughts-subjective-card.md) | Related: thought formatting context |
-| [Map of Territory](/.agent/rules/map.md)                                           | Root navigation map                 |
+| Document                                                                            | Purpose                             |
+| :---------------------------------------------------------------------------------- | :---------------------------------- |
+| [`recommended-readings.md`](/.agent/rules/core/recommended-readings.md)　           | Recommended Readings                |
+| [`roadmap-card.md`](/.agent/cards/roadmap-card.md)                                  | Source: roadmap item no-cards-0008  |
+| [`session-rituals-card.md`](/.agent/cards/procedures/session-rituals-card.md)       | Consumer: ritual reading lists      |
+| [`thoughts-subjective-card.md`](/.agent/cards/internal/thoughts-subjective-card.md) | Related: thought formatting context |
+| [Map of Territory](/.agent/rules/map.md)                                            | Root navigation map                 |
 
 ---
 
 ## Origin
 
-- 2026-02-10T14:27+09:00 by Polaris: Created from roadmap item no-cards-0008.
+- 2026-02-10T14:27:00+09:00 by Polaris: Created from roadmap item no-cards-0008.
+- 2026-04-11T13:43:00+09:00 by Sirius: <<Seal: Rule-Audit>> Standardized time-structure, frontmatter, and link rigor via Diff-Only Audit Pipeline.

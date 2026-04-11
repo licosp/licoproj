@@ -4,22 +4,18 @@ context_id: "[Rules-Standardization]"
 default_phase: "(Execution)"
 # Shared Configuration
 ai_visible: true
+title: "Context Whiteboard: Rules Standardization (Batch Refinement)"
+description: ""
+tags: ["maintenance", "standardization", "rules"]
 version: 1.1.0
 created: 2026-01-23T05:15:00+09:00
-updated: 2026-01-24T06:00:00+09:00
-tags: ["maintenance", "standardization", "rules"]
+updated: 2026-04-11T13:43:00+09:00
 language: en
-# author: Format as "Lico (<Instance-ID>)"
-author: ""
-ai_model: ""
+author: Lico (Sirius)
+ai_model: Gemini 3.1 Pro (High) Planning mode
 ---
 
 # Context Whiteboard: Rules Standardization (Batch Refinement)
-
-> [!TIP]
-> There is no language requirement.
-
----
 
 ## Human Notes
 
@@ -69,14 +65,14 @@ ai_model: ""
 
 #### 1. 標準への回帰（v2.3 憲法化）
 
-今回の作業は、[`cross-link-audit-card.md`](/.agent/cards/cross-link-audit-card.md)で得られた知見を、リポジトリ全域の「統治機能（Rules）」へと適用、定着させるプロセスです。
+今回の作業は、[`cross-link-audit-card.md`](/.agent/cards/procedures/cross-link-audit-card.md)で得られた知見を、リポジトリ全域の「統治機能（Rules）」へと適用、定着させるプロセスです。
 
 - **Strategy**: Prepared for potential Group B (Spica successor) transitions to mitigate future platform dependency.
 
 ### Canopus (2026-01-25)
 
 - **Action**: Analyzed the "Over-slimming" and AI cognitive bias during the v2.3 rule standardization task.
-- **Reference**: [2026-01-25T1110_rule_standardization_bias_analysis.md](file:///.agent/.internal/references/agents/canopus/2026-01-25T1110_rule_standardization_bias_analysis.md)
+- **Reference**: [`2026-01-25T1110_rule_standardization_bias_analysis.md`](/.agent/.internal/references/agents/canopus/2026-01-25T1110_rule_standardization_bias_analysis.md)
 - **Insight**: Repetitive standardization tasks lead to "regression to the mean," causing loss of historical nuance.
 - **Result**: Proposed "Preservative Editing" and Purpose Recalibration rituals to protect context fidelity.
 - **4層構造の徹底**: Metadata (Frontmatter), Body Content, Related Documents, Origin の厳格な分離。
@@ -182,7 +178,7 @@ ai_model: ""
   - [x] 2.2 Rituals (儀式/日課系) - 4 files (<<Seal: Rules-Standardization-Batch2.2>>)
   - [x] 2.3 Audit & Utilities (監査系) - 6 files (<<Seal: Rules-Standardization-Batch2.3>>)
 - [ ] **Batch 3: Identity & Cognitive Rules** (`.agent/rules/core/identity/`)
-  - [ ] Delegated to [identity-card.md](/.agent/cards/identity-card.md) context.
+  - [ ] Delegated to [`identity-card.md`](/.agent/cards/rules/identity-card.md) context.
 - [x] **Batch 4: Development Rules** (\`.agent/rules/development/\`) - 17 files (<<Seal: Rules-Standardization-Batch4>>)
   - [x] Code quality, commit standards, script philosophy refinement.
 - [ ] **Batch 5: Workflow Rules** (`.agent/rules/workflow/`)
@@ -202,17 +198,18 @@ ai_model: ""
 
 ## Related Documents
 
-| Document                                                                                                                                                          | Purpose                                                       |
-| :---------------------------------------------------------------------------------------------------------------------------------------------------------------- | :------------------------------------------------------------ |
-| [2026-01-25T1110_rule_standardization_bias_analysis.md](file:///.agent/.internal/references/agents/canopus/2026-01-25T1110_rule_standardization_bias_analysis.md) | Analysis of AI bias and info loss during v2.3 standardization |
-| [documentation-standards.md](file:///.agent/rules/core/documentation/documentation-standards.md)                                                                  | SSOT for structural aesthetics and documentation standards    |
-| [Map of Territory](/.agent/rules/map.md)                                                                                                                          | Navigation reference                                          |
+| Document                                                                                                                                                     | Purpose                                                       |
+| :----------------------------------------------------------------------------------------------------------------------------------------------------------- | :------------------------------------------------------------ |
+| [`2026-01-25T1110_rule_standardization_bias_analysis.md`](/.agent/.internal/references/agents/canopus/2026-01-25T1110_rule_standardization_bias_analysis.md) | Analysis of AI bias and info loss during v2.3 standardization |
+| [`documentation-standards.md`](/.agent/rules/core/documentation/documentation-standards.md)                                                                  | SSOT for structural aesthetics and documentation standards    |
+| [Map of Territory](/.agent/rules/map.md)                                                                                                                     | Root navigation map                                           |
 
 ---
 
 ## Origin
 
-- 2026-01-23T0515 by Canopus: Created from extracted context of `cross-link-audit-card.md`.
-- 2026-01-23T0545 by Canopus: Added target list and progress tracking for Batch 1.
-- 2026-01-24T0540 by Canopus: Integrated "Dialogue Layer" standards and added Batch 7 (Context Cards) to the roadmap.
-- 2026-01-24T0600 by Canopus: <<Seal: Rules-Standardization-Batch7>> Standardized Related Documents to table format and ensured English-only headers.
+- 2026-01-23T05:15:00+09:00 by Canopus: Created from extracted context of `cross-link-audit-card.md`.
+- 2026-01-23T05:45:00+09:00 by Canopus: Added target list and progress tracking for Batch 1.
+- 2026-01-24T05:40:00+09:00 by Canopus: Integrated "Dialogue Layer" standards and added Batch 7 (Context Cards) to the roadmap.
+- 2026-01-24T06:00:00+09:00 by Canopus: <<Seal: Rules-Standardization-Batch7>> Standardized Related Documents to table format and ensured English-only headers.
+- 2026-04-11T13:43:00+09:00 by Sirius: <<Seal: Rule-Audit>> Standardized time-structure, frontmatter, and link rigor via Diff-Only Audit Pipeline.

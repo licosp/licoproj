@@ -4,24 +4,18 @@ context_id: "[Tmux]"
 default_phase: "(Manage)"
 # Shared Configuration
 ai_visible: true
-title: Tmux Operations
-description: Context for terminal multiplexing, session management, and inter-process communication via tmux.
+title: "Tmux Operations"
+description: "Context for terminal multiplexing, session management, and inter-process communication via tmux."
 tags: ["tmux", "terminal", "ipc", "communication", "session"]
 version: 1.1.0
 created: 2026-02-08T00:00:00+09:00
-updated: 2026-02-08T00:00:00+09:00
+updated: 2026-04-11T13:43:00+09:00
 language: en
-# author: Format as "Lico (<Instance-ID>)"
-author: Lico (Agate)
-ai_model: Gemini 3 Pro
+author: Lico (Sirius)
+ai_model: Gemini 3.1 Pro (High) Planning mode
 ---
 
 # Context Whiteboard: Tmux Operations
-
-> [!TIP]
-> There is no language requirement.
-
----
 
 ## Human Notes
 
@@ -89,14 +83,15 @@ ai_model: Gemini 3 Pro
 
 ## Related Documents
 
-| Document                                                                           | Purpose                                 |
-| :--------------------------------------------------------------------------------- | :-------------------------------------- |
-| [gemini-cli-card.md](/.agent/cards/routine/gemini-cli-card.md)                     | CLI environment context (Child context) |
-| [terminal-auto-execution.md](/.agent/rules/development/terminal-auto-execution.md) | Safety rules for shell commands         |
-| [Map of Territory](/.agent/rules/map.md)                                           | Root map                                |
+| Document                                                                             | Purpose                                 |
+| :----------------------------------------------------------------------------------- | :-------------------------------------- |
+| [`gemini-cli-card.md`](/.agent/cards/rules/gemini-cli-card.md)                       | CLI environment context (Child context) |
+| [`terminal-auto-execution.md`](/.agent/rules/development/terminal-auto-execution.md) | Safety rules for shell commands         |
+| [Map of Territory](/.agent/rules/map.md)                                             | Root navigation map                     |
 
 ---
 
 ## Origin
 
-- 2026-02-08T00:00+09:00 by Lico (Agate): Created to separate tmux operations from specific CLI environment rules.
+- 2026-02-08T00:00:00+09:00 by Lico (Agate): Created to separate tmux operations from specific CLI environment rules.
+- 2026-04-11T13:43:00+09:00 by Sirius: <<Seal: Rule-Audit>> Standardized time-structure, frontmatter, and link rigor via Diff-Only Audit Pipeline.

@@ -9,18 +9,13 @@ description: "Management of the repository's library and historical records."
 tags: ["archive", "history", "library", "preservation"]
 version: 1.0.0
 created: 2026-02-15T02:10:00+09:00
-updated: 2026-02-15T02:10:00+09:00
+updated: 2026-04-11T13:43:00+09:00
 language: en
 author: Lico (Sirius)
-ai_model: "Gemini 3 Pro (High)"
+ai_model: Gemini 3.1 Pro (High) Planning mode
 ---
 
 # Context Whiteboard: Archive Management
-
-> [!TIP]
-> There is no language requirement.
-
----
 
 ## Human Notes
 
@@ -69,13 +64,14 @@ ai_model: "Gemini 3 Pro (High)"
 
 ## Related Documents
 
-| Document                                                                 | Purpose                           |
-| :----------------------------------------------------------------------- | :-------------------------------- |
-| [archive-management.md](/.agent/rules/development/archive-management.md) | Principles for archive management |
-| [Map of Territory](/.agent/rules/map.md)                                 | Root navigation map               |
+| Document                                                                   | Purpose                           |
+| :------------------------------------------------------------------------- | :-------------------------------- |
+| [`archive-management.md`](/.agent/rules/development/archive-management.md) | Principles for archive management |
+| [Map of Territory](/.agent/rules/map.md)                                   | Root navigation map               |
 
 ---
 
 ## Origin
 
-- 2026-02-15T02:10+09:00 by Sirius: Created to standardize archive management.
+- 2026-02-15T02:10:00+09:00 by Sirius: Created to standardize archive management.
+- 2026-04-11T13:43:00+09:00 by Sirius: <<Seal: Rule-Audit>> Standardized time-structure, frontmatter, and link rigor via Diff-Only Audit Pipeline.

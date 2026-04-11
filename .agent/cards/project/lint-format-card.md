@@ -4,22 +4,18 @@ context_id: "[Lint-Format]"
 default_phase: "(Setup)"
 # Shared Configuration
 ai_visible: true
+title: "Context Whiteboard: Lint & Format Tools"
+description: ""
+tags: ["tooling", "lint", "format", "markdown", "quality"]
 version: 1.0.0
 created: 2026-01-31T18:36:00+09:00
-updated: 2026-01-31T18:36:00+09:00
-tags: ["tooling", "lint", "format", "markdown", "quality"]
+updated: 2026-04-11T13:43:00+09:00
 language: en
-# author: Format as "Lico (<Instance-ID>)"
-author: Lico (Polaris)
-ai_model: Claude Opus 4.5 (Thinking) Planning mode
+author: Lico (Sirius)
+ai_model: Gemini 3.1 Pro (High) Planning mode
 ---
 
 # Context Whiteboard: Lint & Format Tools
-
-> [!TIP]
-> There is no language requirement.
-
----
 
 ## Human Notes
 
@@ -131,14 +127,15 @@ To prevent formatting conflicts and diff noise, strictly avoid the following pat
 
 ## Related Documents
 
-| Document                                                     | Purpose                          |
-| :----------------------------------------------------------- | :------------------------------- |
-| [code-quality.md](/.agent/rules/development/code-quality.md) | Code and documentation standards |
-| [markdown-ai.md](/.agent/rules/core/markdown/markdown-ai.md) | Markdown formatting rules for AI |
-| [Map of Territory](/.agent/rules/map.md)                     | Navigation reference             |
+| Document                                                       | Purpose                          |
+| :------------------------------------------------------------- | :------------------------------- |
+| [`code-quality.md`](/.agent/rules/development/code-quality.md) | Code and documentation standards |
+| [`markdown-ai.md`](/.agent/rules/core/markdown/markdown-ai.md) | Markdown formatting rules for AI |
+| [Map of Territory](/.agent/rules/map.md)                       | Root navigation map              |
 
 ---
 
 ## Origin
 
-- 2026-01-31T1836 by Polaris: Created seed card for lint/format tooling context.
+- 2026-01-31T18:36:00+09:00 by Polaris: Created seed card for lint/format tooling context.
+- 2026-04-11T13:43:00+09:00 by Sirius: <<Seal: Rule-Audit>> Standardized time-structure, frontmatter, and link rigor via Diff-Only Audit Pipeline.

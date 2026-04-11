@@ -4,22 +4,18 @@ context_id: "[Worktree-Eval]"
 default_phase: "(Analysis)"
 # Shared Configuration
 ai_visible: true
+title: "Context Whiteboard: 1 Agent = 1 Worktree Evaluation"
+description: ""
+tags: ["git", "worktree", "multi-agent", "structure"]
 version: 1.1.0
 created: 2026-01-10T00:00:00+09:00
-updated: 2026-01-24T06:00:00+09:00
-tags: ["git", "worktree", "multi-agent", "structure"]
+updated: 2026-04-11T13:43:00+09:00
 language: en
-# author: Format as "Lico (<Instance-ID>)"
-author: ""
-ai_model: ""
+author: Lico (Sirius)
+ai_model: Gemini 3.1 Pro (High) Planning mode
 ---
 
 # Context Whiteboard: 1 Agent = 1 Worktree Evaluation
-
-> [!TIP]
-> There is no language requirement.
-
----
 
 > [!WARNING]
 > The human notes has not yet been edited.
@@ -54,16 +50,17 @@ ai_model: ""
 
 ## Related Documents
 
-| Document                                                                      | Purpose                            |
-| :---------------------------------------------------------------------------- | :--------------------------------- |
-| [roadmap-card.md](/.agent/cards/routine/roadmap-card.md)                      | Strategic goals and vision roadmap |
-| [worktree-evaluation-card.md](/.agent/cards/seed/worktree-evaluation-card.md) | This analysis card itself          |
-| [Map of Territory](/.agent/rules/map.md)                                      | Navigation reference               |
+| Document                                                                               | Purpose                            |
+| :------------------------------------------------------------------------------------- | :--------------------------------- |
+| [`roadmap-card.md`](/.agent/cards/roadmap-card.md)                                     | Strategic goals and vision roadmap |
+| [`worktree-evaluation-card.md`](/.agent/cards/maintenance/worktree-evaluation-card.md) | This analysis card itself          |
+| [Map of Territory](/.agent/rules/map.md)                                               | Root navigation map                |
 
 ---
 
 ## Origin
 
-- 2026-01-10 by Canopus: Created for multi-agent worktree analysis.
-- 2026-01-24T0545 by Canopus: <<Seal: Rules-Standardization-Batch7>> Standardized with Dialogue Layer template and bilingual H2 headers.
-- 2026-01-24T0600 by Canopus: <<Seal: Rules-Standardization-Batch7>> Standardized Related Documents to table format and ensured English-only headers.
+- 2026-01-10T00:00:00+09:00 by Canopus: Created for multi-agent worktree analysis.
+- 2026-01-24T05:45:00+09:00 by Canopus: <<Seal: Rules-Standardization-Batch7>> Standardized with Dialogue Layer template and bilingual H2 headers.
+- 2026-01-24T06:00:00+09:00 by Canopus: <<Seal: Rules-Standardization-Batch7>> Standardized Related Documents to table format and ensured English-only headers.
+- 2026-04-11T13:43:00+09:00 by Sirius: <<Seal: Rule-Audit>> Standardized time-structure, frontmatter, and link rigor via Diff-Only Audit Pipeline.
