@@ -84,8 +84,8 @@ ai_model: Gemini 3.1 Pro (High) Planning mode
 
 - [`identifier-profile-card.md`](/.agent/cards/agent/identifier-profile-card.md)
 - [`log-sanitization-card.md`](/.agent/cards/shadow/log-sanitization-card.md)
-- [`drafts-cleanup-card.md`](/.agent/cards/human/drafts-cleanup-card.md)
-- [`worktree-evaluation-card.md`](/.agent/cards/maintenance/worktree-evaluation-card.md)
+- [`drafts-cleanup-card.md`](/.agent/cards/cases/2026-04-11T1410_drafts-cleanup-card.md)
+- [`worktree-evaluation-card.md`](/.agent/cards/cases/2026-04-11T1410_worktree-evaluation-card.md)
 - [`datetime-standardize-card.md`](/.agent/cards/rules/datetime-standardize-card.md)
 - [`directory-reorganize-card.md`](/.agent/cards/procedures/directory-reorganize-card.md)
 

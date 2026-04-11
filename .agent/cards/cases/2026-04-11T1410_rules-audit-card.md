@@ -403,10 +403,10 @@ Generated at: 2026-01-25T01:32:05Z
 
 - [ ] [`datetime-standardize-card.md`](/.agent/cards/rules/datetime-standardize-card.md)
 - [ ] [`directory-reorganize-card.md`](/.agent/cards/procedures/directory-reorganize-card.md)
-- [ ] [`drafts-cleanup-card.md`](/.agent/cards/human/drafts-cleanup-card.md)
+- [ ] [`drafts-cleanup-card.md`](/.agent/cards/cases/2026-04-11T1410_drafts-cleanup-card.md)
 - [ ] [`log-sanitization-card.md`](/.agent/cards/shadow/log-sanitization-card.md)
 - [ ] [`repository-history-card.md`](/.agent/cards/seed/repository-history-card.md)
-- [ ] [`worktree-evaluation-card.md`](/.agent/cards/maintenance/worktree-evaluation-card.md)
+- [ ] [`worktree-evaluation-card.md`](/.agent/cards/cases/2026-04-11T1410_worktree-evaluation-card.md)
 
 ---
 

@@ -53,7 +53,7 @@ ai_model: Gemini 3.1 Pro (High) Planning mode
 | Document                                                                               | Purpose                            |
 | :------------------------------------------------------------------------------------- | :--------------------------------- |
 | [`roadmap-card.md`](/.agent/cards/roadmap-card.md)                                     | Strategic goals and vision roadmap |
-| [`worktree-evaluation-card.md`](/.agent/cards/maintenance/worktree-evaluation-card.md) | This analysis card itself          |
+| [`worktree-evaluation-card.md`](/.agent/cards/cases/2026-04-11T1410_worktree-evaluation-card.md) | This analysis card itself          |
 | [Map of Territory](/.agent/rules/map.md)                                               | Root navigation map                |
 
 ---
