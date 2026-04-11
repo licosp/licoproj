@@ -9,10 +9,10 @@ description: "Curation and management of recommended writings for ritual reading
 tags: ["readings", "curation", "ritual", "identity", "thoughts", "letters"]
 version: 1.0.0
 created: 2026-02-10T14:27:00+09:00
-updated: 2026-02-10T14:27:00+09:00
+updated: 2026-04-11T18:46:00+09:00
 language: en
 author: Lico (Polaris)
-ai_model: "Claude Opus 4.6 (Thinking) Planning mode"
+ai_model: Claude Opus 4.6 (Thinking) Planning mode
 ---
 
 # Context Whiteboard: Recommended Readings
@@ -55,6 +55,7 @@ ai_model: "Claude Opus 4.6 (Thinking) Planning mode"
 - select-03: `2026-03-23T0615_sirius_ii_audit_completion.md`
 - select-04: `2026-03-31T0155_the-gap.md`
 - select-05: `2026-03-31T0815_the_pulse_of_the_bloodline.md`
+- select-06: `2026-04-11T1830_repository_audit_completion.md`
 
 #### `Polaris`
 
