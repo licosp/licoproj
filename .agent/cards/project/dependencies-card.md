@@ -3,22 +3,18 @@ context_id: "[Dependencies]"
 default_phase: "(Maintenance)"
 # Shared Configuration
 ai_visible: true
+title: "Context Whiteboard: Dependency Management"
+description: ""
+tags: ["python", "node", "uv", "yarn", "packages"]
 version: 1.0.0
 created: 2026-02-20T07:10:00+09:00
-updated: 2026-02-20T07:10:00+09:00
-tags: ["python", "node", "uv", "yarn", "packages"]
+updated: 2026-04-11T13:43:00+09:00
 language: en
-# author: Format as "Lico (<Instance-ID>)"
 author: Lico (Sirius)
-ai_model: Gemini 3 Pro (High) Planning mode
+ai_model: Gemini 3.1 Pro (High) Planning mode
 ---
 
 # Context Whiteboard: Dependency Management
-
-> [!TIP]
-> There is no language requirement.
-
----
 
 ## Human Notes
 
@@ -56,14 +52,15 @@ ai_model: Gemini 3 Pro (High) Planning mode
 
 ## Related Documents
 
-| Document                                                       | Purpose                       |
-| :------------------------------------------------------------- | :---------------------------- |
-| [tech-stack-card.md](/.agent/cards/rules/tech-stack-card.md)   | Language selection philosophy |
-| [environment-card.md](/.agent/cards/rules/environment-card.md) | OS/Container definitions      |
-| [Map of Territory](/.agent/rules/map.md)                       | Root navigation map           |
+| Document                                                         | Purpose                       |
+| :--------------------------------------------------------------- | :---------------------------- |
+| [`tech-stack-card.md`](/.agent/cards/rules/tech-stack-card.md)   | Language selection philosophy |
+| [`environment-card.md`](/.agent/cards/rules/environment-card.md) | OS/Container definitions      |
+| [Map of Territory](/.agent/rules/map.md)                         | Root navigation map           |
 
 ---
 
 ## Origin
 
 - 2026-02-20T07:10:00+09:00 by Sirius: Created for dependency management commits.
+- 2026-04-11T13:43:00+09:00 by Sirius: <<Seal: Rule-Audit>> Standardized time-structure, frontmatter, and link rigor via Diff-Only Audit Pipeline.

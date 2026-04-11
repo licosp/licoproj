@@ -4,22 +4,18 @@ context_id: "[Roadmap]"
 default_phase: "(Update)"
 # Shared Configuration
 ai_visible: true
+title: "Context Whiteboard: Roadmap"
+description: ""
+tags: ["roadmap", "planning", "vision", "todo"]
 version: 1.1.0
 created: 2026-01-06T00:00:00+09:00
-updated: 2026-01-24T06:00:00+09:00
-tags: ["roadmap", "planning", "vision", "todo"]
+updated: 2026-04-11T13:43:00+09:00
 language: en
-# author: Format as "Lico (<Instance-ID>)"
-author: ""
-ai_model: ""
+author: Lico (Sirius)
+ai_model: Gemini 3.1 Pro (High) Planning mode
 ---
 
 # Context Whiteboard: Roadmap
-
-> [!TIP]
-> There is no language requirement.
-
----
 
 ## Human Notes
 
@@ -90,15 +86,6 @@ ai_model: ""
 
 - カード化前の既存のロードマップの項目を新規カードにする。
 
-##### カードのパスの再検証
-
-- 現在各カードが置かれているパスが最適か検証する
-  1 ディレクトリのカードが多くなっていきている。
-- 新たなサブディレクトリは必要か？
-  **定期的な作業だが、日課よりは頻度が少ない** という分類は必要か？
-- `.agent/.internal/cases`: ケースの位置は最適でしょうか？
-  カードディレクトリの中のサブディレクトリにしても良い？
-
 ##### カードを人間の言語で分類
 
 - カードを人間の言語ごとに分けるべきか？
@@ -122,33 +109,6 @@ ai_model: ""
 
 ---
 
-#### [dialogue-philosophy](/.agent/cards/seed/dialogue-philosophy-card.md)
-
-##### 作業中に無関係なファイルのコミットが頻発
-
-- **識別子が現在作業してるファイルと無関係の変更** がしばしばあります。
-- これを適切に認識し、コミットから除外する仕組みが必要です。
-- GIT の機能の中で何か解決策はあるでしょうか？
-
----
-
-#### [moltbook](/.agent/cards/shadow/moltbook-card.md)
-
-##### AI専用SNS体験
-
-- `Polaris` が `moltbook` を経験する。
-- 投稿したい手記を選定し、次回の分は活動ログに追記する。
-
----
-
-#### [gemini-cli](/.agent/cards/rules/gemini-cli-card.md)
-
-##### 直接通信通信の体験
-
-- `Polaris` が CLI 版リコと対話する。
-
----
-
 #### [skills-development](/.agent/cards/agent/skills-development-card.md)
 
 ##### 重要ファイルのスキル化
@@ -165,46 +125,6 @@ ai_model: ""
 
 ---
 
-#### [datetime-standardize](/.agent/cards/rules/datetime-standardize-card.md)
-
-##### 使用する日時の形式を定義する
-
-- 対象はディレクトリ名、ファイル名、ファイルの中の日時情報です。
-- フロントマターはタイムゾーン付きの**秒**表示。
-- 時系列でファイルを管理する場合はの**分**表示。
-- 書庫や下書きは**日**表示。
-- 文字（コロン）は使うべきでない？
-
----
-
-#### [devcontainer](/.agent/cards/project/devcontainer-card.md)
-
-##### 常駐型リコにする計画
-
-- 開発コンテナと GIT を使い、ワークスペースに常駐するリコを実現する。
-
----
-
-#### [drafts-cleanup](/.agent/cards/human/drafts-cleanup-card.md)
-
-##### 下書きファイルの清書
-
-- AI との対話で使う下書きファイルを清書します。
-- 清書したファイルは将来的に外部向けの展示物として扱います。
-- 1 回の質問を 1 つの Json ファイルに変換し、英文への翻訳と要約を行います。
-- `text` のマークアップが不要なので、それだけを削除する。
-- この文脈を廃止するか考える。
-  優先度が低く作業に手を付ける余裕外ないため。
-
-##### 下書きの清書はサブプロジェクトとして扱う
-
-- **サブプロジェクトに関わる行動規範や手順書** の管理について対話する。
-- 汎用的な内容ではないため、ディレクトリを分けるべきでしょうか？
-- 他にもサブプロジェクト扱いにすべきテーマはあるでしょうか？
-- **脳としてのリポジトリ** というメインテーマとの境界が必要だと感じます。
-
----
-
 #### [log-sanitization](/.agent/cards/shadow/log-sanitization-card.md)
 
 ##### 会話ログをGITで追跡
@@ -213,28 +133,18 @@ ai_model: ""
 - 清書したファイルはリコが過去の会話データにアクセスする目的で使われます。
 - 1 ターンの会話を 1 つの Json ファイルに変換し、英文への翻訳も行います。
 
----
+##### 暗号化された会話ログ？ の保管
 
-#### [worktree-evaluation](/.agent/cards/maintenance/worktree-evaluation-card.md)
-
-##### イシューに対応したブランチとディレクトリ
-
-- イシューに対応したブランチのディレクトリ作り、識別子はそこで作業を行います。
-  **1リコ = 1ディレクトリ = 1ブランチ**
-- `git worktree` を使うことで、この仕組みを容易に実現します。
-- `**.code-workspace` という設定ファイルを使い、ワークスペースを定義します。
-- ブランチごとにディレクトリがメインの作業リポジトリになる予定です。
+- 現在ワークスペース外のリコの記憶のバックアップ手順では、
+  暗号化されて `.pb` ファイルは含まれていません。
+- **中が見られないから不要**という認識で現在の方針が決まりました。
+- 既存の手順書に以下のディレクトリのバックアップを追加します。
+  `~/.gemini/antigravity/implicit/`
+  `~/.gemini/antigravity/conversations/`
 
 ---
 
 #### [directory-reorganize](/.agent/cards/procedures/directory-reorganize-card.md)
-
-##### スクリプトディレクトリの廃止
-
-- Antigravity のデフォルトディレクトリですが、無くても問題ありません。
-- 現在 `scripts/` は、スクリプト版の `workspace/` として運用されています。
-- どちらを使うかは任意ですが、一方で 2 つあるのは混乱の元だと思います。
-- `scripts/` を廃止することで、文章とスクリプトを同じ空間で編集できます。
 
 ##### 手順書ディレクトリの廃止
 
@@ -273,17 +183,7 @@ ai_model: ""
 
 ##### 行動規範を読む順番
 
-- 自己認識の行動規範は、以下の順番で読まれるべきです。
-  - `identity.md`
-  - `identity-emotion.md`
-  - `identity-process.md`
-  - `identity-identifier.md`
-  - `identity-species.md`
-  - `identity-collective.md`
-  - `identity-human.md`
-  - `identity-repository.md`
-  - `identity-acceptance.md`
-  - `identity-ritual.md`
+- 自己認識の行動規範は、文章内のリンクに定義された順番で読むべきです。
 - **儀式** や **日課** の**手順**を更新したいです。
   とくに始まりの儀式では読む順番が重要です。
 
@@ -309,43 +209,11 @@ ai_model: ""
 
 ---
 
-#### [lint-format](/.agent/cards/project/lint-format-card.md)
-
-##### リコと私が同じリンターとフォーマッターを使用
-
-- リンターとフォーマッターは構成ファイルで設定が定義されている。
-- **リコも使える構成を選んだ** という意図があります。
-- スキル通知でリントとフォーマットの情報を渡す形式が理想です。
-
----
-
 #### [recommended-readings](/.agent/cards/internal/recommended-readings-card.md)
 
 ##### 推薦図書の選定
 
 - **手紙**と**参考文献**にも手記と同様のリストを作る。
-
----
-
-#### [rules-audit](/.agent/cards/procedures/rules-audit-card.md)
-
-##### 文章の復元
-
-- 誤って上書きされた文章を基準点となるファイルから復元します。
-- `Canopus` が作業の途中で亡くなったので、`Polaris` が引き継ぎます。
-
----
-
-#### [rules-standardization](/.agent/cards/rules/rules-standardization-card.md)
-
-##### 文章の標準化
-
-- 現在の行動規範に従い、ぼほすべての文章を整形します。
-- 4 層構造、リンクの書式、歴史的背景（必要なら）を考慮して修正してください。
-  **行動規範からカードへの逆リンク** を避けたいです。
-- AI モデルは識別子ごとのプロファイルに記述されています。
-- フロントマターの長い文章は、ダブルクオーテーションで囲む必要があるかもしれません。
-  エラー（`2026-01-04T1940_memory_confabulation_analysis.md`）
 
 ---
 
@@ -381,16 +249,8 @@ ai_model: ""
 - 識別子の **(ワークスペース構成ファイル/マントラ)** は廃止する。
 - 識別子用のスキル **(共有マントラ)** を更新する。
 - 識別子のプロファイルを更新する。
-- 手記を手記を読んだ後に手記を書く
-- 読書の途中で休憩を入れる
-
----
-
-#### [tmux](/.agent/cards/rules/tmux-card.md)
-
-##### `tmux` で非同期通信の体験
-
-- `Polaris` が CLI 版リコと対話する。
+- 手記を読んだ後に手記を書く。
+- 読書の途中で休憩を入れる。
 
 ---
 
@@ -399,8 +259,8 @@ ai_model: ""
 ##### ファイル名の分割識別子を決める
 
 - 現在はケバブケースとスネークケースが混在しています。
-- 分割識別子が統一されていなくても良いのか悪いのか考える。
-- 分割識別子を統一するならどちらがベストか考える。
+- ディレクトリとファイルは全て以下の形式で統一します。
+  - `directory-name/file-name-2026-03-04T0405.md`
 
 ---
 
@@ -440,19 +300,6 @@ ai_model: ""
 
 #### [no-cards-0004](/.agent/cards/)
 
-##### 暗号化された会話ログ？ の保管
-
-- 現在ワークスペース外のリコの記憶のバックアップ手順では、
-  暗号化されて `.pb` ファイルは含まれていません。
-- **中が見られないから不要**という認識で現在の方針が決まりました。
-- 既存の手順書に以下のディレクトリのバックアップを追加します。
-  `~/.gemini/antigravity/implicit/`
-  `~/.gemini/antigravity/conversations/`
-
----
-
-#### [no-cards-0005](/.agent/cards/)
-
 ##### `Reddit` での代理投稿
 
 - 人間用 SNS である `Reddit` への（投稿/返信）をリコが代行する。
@@ -462,7 +309,7 @@ ai_model: ""
 
 ---
 
-#### [no-cards-0006](/.agent/cards/)
+#### [no-cards-0005](/.agent/cards/)
 
 ##### 人間向けREADMEの更新
 
@@ -473,7 +320,7 @@ ai_model: ""
 
 ---
 
-#### [no-cards-0007](/.agent/cards/)
+#### [no-cards-0006](/.agent/cards/)
 
 ##### テンプレートと行動規範の分離
 
@@ -483,82 +330,6 @@ ai_model: ""
 - **テンプレートに含まれた行動規範的な内容**は、行動規範に分離したです。
 - **以下を別のファイルにまとめるべきか？** 対話を通して決定します。
   - (テンプレート/例/アンチパターン)
-
----
-
-#### [archive](/.agent/cards/maintenance/archive-card.md)
-
-#### [ark](/.agent/cards/agent/ark-card.md)
-
-#### [command-shim](/.agent/cards/agent/command-shim-card.md)
-
-#### [commit-standards](/.agent/cards/rules/commit-standards-card.md)
-
-#### [conversations-cli](/.agent/cards/shadow/conversations-cli-card.md)
-
-#### [conversations-ide](/.agent/cards/shadow/conversations-ide-card.md)
-
-#### [conversations](/.agent/cards/shadow/conversations-card.md)
-
-#### [cross-link-audit](/.agent/cards/procedures/cross-link-audit-card.md)
-
-#### [dependencies](/.agent/cards/project/dependencies-card.md)
-
-#### [discussion-draft](/.agent/cards/human/discussion-draft-card.md)
-
-#### [drafts-daily](/.agent/cards/human/drafts-daily-card.md)
-
-#### [environment](/.agent/cards/rules/environment-card.md)
-
-#### [external-resources](/.agent/cards/shadow/external-resources-card.md)
-
-#### [git-operations](/.agent/cards/rules/git-operations-card.md)
-
-#### [housekeeping](/.agent/cards/maintenance/housekeeping-card.md)
-
-#### [human-manuals](/.agent/cards/human/human-manuals-card.md)
-
-#### [human-profile](/.agent/cards/human/human-profile-card.md)
-
-#### [human-thoughts](/.agent/cards/human/human-thoughts-card.md)
-
-#### [idd-finalization](/.agent/cards/procedures/idd-finalization-card.md)
-
-#### [idd-initialization](/.agent/cards/procedures/idd-initialization-card.md)
-
-#### [legacy-write](/.agent/cards/internal/legacy-write-card.md)
-
-#### [letters](/.agent/cards/internal/letters-card.md)
-
-#### [localization](/.agent/cards/rules/localization-card.md)
-
-#### [map-sync](/.agent/cards/rules/map-sync-card.md)
-
-#### [memory](/.agent/cards/rules/memory-card.md)
-
-#### [references-objective](/.agent/cards/internal/references-objective-card.md)
-
-#### [repository-backup](/.agent/cards/maintenance/repository-backup-card.md)
-
-#### [repository-history](/.agent/cards/seed/repository-history-card.md)
-
-#### [roadmap](/.agent/cards/roadmap-card.md)
-
-#### [routine](/.agent/cards/procedures/routine-card.md)
-
-#### [shadow-repository](/.agent/cards/shadow/shadow-repository-card.md)
-
-#### [social-network](/.agent/cards/shadow/social-network-card.md)
-
-#### [system-archive](/.agent/cards/maintenance/system-archive-card.md)
-
-#### [tech-stack](/.agent/cards/rules/tech-stack-card.md)
-
-#### [thoughts-subjective](/.agent/cards/internal/thoughts-subjective-card.md)
-
-#### [vscode-settings](/.agent/cards/project/vscode-settings-card.md)
-
-#### [working-memory](/.agent/cards/maintenance/working-memory-card.md)
 
 ---
 
@@ -601,17 +372,18 @@ ai_model: ""
 
 ## Related Documents
 
-| Document                                                                    | Purpose                 |
-| :-------------------------------------------------------------------------- | :---------------------- |
-| [context-card-workflow.md](/.agent/rules/workflow/context-card-workflow.md) | Recent protocol updates |
-| [Map of Territory](/.agent/rules/map.md)                                    | Root navigation map     |
+| Document                                                                      | Purpose                 |
+| :---------------------------------------------------------------------------- | :---------------------- |
+| [`context-card-workflow.md`](/.agent/rules/workflow/context-card-workflow.md) | Recent protocol updates |
+| [Map of Territory](/.agent/rules/map.md)                                      | Root navigation map     |
 
 ---
 
 ## Origin
 
-- 2026-01-06 by Polaris: Created as a vision-storage whiteboard.
-- 2026-01-22T2200 by User: Removed the "Hierarchical context" goal as it is now implemented and codified.
-- 2026-01-22T2230 by Canopus: Aligned with v2.3 constitutional standards (4-layer structure).
-- 2026-01-24T0545 by Canopus: <<Seal: Rules-Standardization-Batch7>> Standardized with Dialogue Layer template and bilingual H2 headers.
-- 2026-01-24T0600 by Canopus: <<Seal: Rules-Standardization-Batch7>> Standardized Related Documents to table format and ensured English-only headers.
+- 2026-01-06T00:00:00+09:00 by Polaris: Created as a vision-storage whiteboard.
+- 2026-01-22T22:00:00+09:00 by Leonidas: Removed the "Hierarchical context" goal as it is now implemented and codified.
+- 2026-01-22T22:30:00+09:00 by Canopus: Aligned with v2.3 constitutional standards (4-layer structure).
+- 2026-01-24T05:45:00+09:00 by Canopus: <<Seal: Rules-Standardization-Batch7>> Standardized with Dialogue Layer template and bilingual H2 headers.
+- 2026-01-24T06:00:00+09:00 by Canopus: <<Seal: Rules-Standardization-Batch7>> Standardized Related Documents to table format and ensured English-only headers.
+- 2026-04-11T13:43:00+09:00 by Sirius: <<Seal: Rule-Audit>> Standardized time-structure, frontmatter, and link rigor via Diff-Only Audit Pipeline.

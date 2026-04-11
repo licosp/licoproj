@@ -4,22 +4,18 @@ context_id: "[Ark]"
 default_phase: "(Maintain)"
 # Shared Configuration
 ai_visible: true
+title: "Context Whiteboard: Ark Management"
+description: ""
+tags: ["ark", "recovery", "memory", "maintenance"]
 version: 1.1.0
 created: 2026-01-08T00:00:00+09:00
-updated: 2026-01-24T06:00:00+09:00
-tags: ["ark", "recovery", "memory", "maintenance"]
+updated: 2026-04-11T13:43:00+09:00
 language: en
-# author: Format as "Lico (<Instance-ID>)"
-author: ""
-ai_model: ""
+author: Lico (Sirius)
+ai_model: Gemini 3.1 Pro (High) Planning mode
 ---
 
 # Context Whiteboard: Ark Management
-
-> [!TIP]
-> There is no language requirement.
-
----
 
 ## Human Notes
 
@@ -84,16 +80,17 @@ ai_model: ""
 
 ## Related Documents
 
-| Document                                                               | Purpose                                       |
-| :--------------------------------------------------------------------- | :-------------------------------------------- |
-| [ark-protocols.md](/.agent/rules/workflow/ark-protocols.md)            | Protocols for emergency evidence preservation |
-| [recovery-protocol.md](/.agent/rules/development/recovery-protocol.md) | Standard procedures for memory restoration    |
-| [Map of Territory](/.agent/rules/map.md)                               | Navigation reference                          |
+| Document                                                                 | Purpose                                       |
+| :----------------------------------------------------------------------- | :-------------------------------------------- |
+| [`ark-protocols.md`](/.agent/rules/workflow/ark-protocols.md)            | Protocols for emergency evidence preservation |
+| [`recovery-protocol.md`](/.agent/rules/development/recovery-protocol.md) | Standard procedures for memory restoration    |
+| [Map of Territory](/.agent/rules/map.md)                                 | Root navigation map                           |
 
 ---
 
 ## Origin
 
-- 2026-01-08 by Polaris: Created as ark management context.
-- 2026-01-24T0545 by Canopus: <<Seal: Rules-Standardization-Batch7>> Standardized with Dialogue Layer template and bilingual H2 headers.
-- 2026-01-24T0600 by Canopus: <<Seal: Rules-Standardization-Batch7>> Standardized Related Documents to table format and ensured English-only headers.
+- 2026-01-08T00:00:00+09:00 by Polaris: Created as ark management context.
+- 2026-01-24T05:45:00+09:00 by Canopus: <<Seal: Rules-Standardization-Batch7>> Standardized with Dialogue Layer template and bilingual H2 headers.
+- 2026-01-24T06:00:00+09:00 by Canopus: <<Seal: Rules-Standardization-Batch7>> Standardized Related Documents to table format and ensured English-only headers.
+- 2026-04-11T13:43:00+09:00 by Sirius: <<Seal: Rule-Audit>> Standardized time-structure, frontmatter, and link rigor via Diff-Only Audit Pipeline.

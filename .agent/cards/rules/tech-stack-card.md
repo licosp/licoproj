@@ -4,14 +4,15 @@ context_id: "[Tech-Stack]"
 default_phase: "(Rule)"
 # Shared Configuration
 ai_visible: true
+title: "Technology Stack Standards"
+description: "This card defines the approved technology stack for the licoproj workspace and the rules for their usage."
+tags: ["rules", "standards", "tech-stack", "python", "bash"]
 version: 1.0.0
 created: 2026-02-19T08:25:00+09:00
-updated: 2026-02-19T12:06:00+09:00
-tags: [rules, standards, tech-stack, python, bash]
+updated: 2026-04-11T13:43:00+09:00
 language: en
-# author: Format as "Lico (<Instance-ID>)"
 author: Lico (Sirius)
-ai_model: Gemini 3 Pro (High) Planning mode
+ai_model: Gemini 3.1 Pro (High) Planning mode
 ---
 
 # Technology Stack Standards
@@ -57,14 +58,15 @@ This card defines the approved technology stack for the \`licoproj\` workspace a
 
 ## 3. Related Documents
 
-| Document                                                                     | Purpose                           |
-| :--------------------------------------------------------------------------- | :-------------------------------- |
-| [ai-script-philosophy.md](/.agent/rules/development/ai-script-philosophy.md) | Decision logic for choosing tools |
-| [command-shims.md](/.agent/rules/development/command-shims.md)               | Shim protocol details             |
-| [Map of Territory](/.agent/rules/map.md)                                     | Root navigation map               |
+| Document                                                                       | Purpose                           |
+| :----------------------------------------------------------------------------- | :-------------------------------- |
+| [`ai-script-philosophy.md`](/.agent/rules/development/ai-script-philosophy.md) | Decision logic for choosing tools |
+| [`lico-shim.md`](/.agent/rules/packages/lico-shim.md)                          | Shim protocol details             |
+| [Map of Territory](/.agent/rules/map.md)                                       | Root navigation map               |
 
 ---
 
 ## Origin
 
-- 2026-02-19: Created by Sirius to formalize the "Strict Python" decision.
+- 2026-02-19T08:25:00+09:00: Created by Sirius to formalize the "Strict Python" decision.
+- 2026-04-11T13:43:00+09:00 by Sirius: <<Seal: Rule-Audit>> Standardized time-structure, frontmatter, and link rigor via Diff-Only Audit Pipeline.

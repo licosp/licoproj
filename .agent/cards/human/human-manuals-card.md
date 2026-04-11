@@ -4,22 +4,18 @@ context_id: "[Human-Manuals]"
 default_phase: "(Edit)"
 # Shared Configuration
 ai_visible: true
-version: 1.1.0
-created: 2026-01-03T00:00:00+09:00
-updated: 2026-01-24T06:00:00+09:00
+title: "Context Whiteboard: Shared Manuals & References"
+description: ""
 tags: ["manuals", "references", "shared"]
+version: 1.1.0
+created: 2026-01-02T06:55:13+09:00
+updated: 2026-04-11T13:43:00+09:00
 language: en
-# author: Format as "Lico (<Instance-ID>)"
-author: ""
-ai_model: ""
+author: Lico (Sirius)
+ai_model: Gemini 3.1 Pro (High) Planning mode
 ---
 
 # Context Whiteboard: Shared Manuals & References
-
-> [!TIP]
-> There is no language requirement.
-
----
 
 ## Human Notes
 
@@ -73,16 +69,17 @@ ai_model: ""
 
 ## Related Documents
 
-| Document                                                                                  | Purpose                                             |
-| :---------------------------------------------------------------------------------------- | :-------------------------------------------------- |
-| [documentation-standards.md](/.agent/rules/core/documentation/documentation-standards.md) | Structural standards for project documentation      |
-| [localization.md](/.agent/rules/core/localization/localization.md)                        | Baseline standards for translation and localization |
-| [Map of Territory](/.agent/rules/map.md)                                                  | Navigation reference                                |
+| Document                                                                                    | Purpose                                             |
+| :------------------------------------------------------------------------------------------ | :-------------------------------------------------- |
+| [`documentation-standards.md`](/.agent/rules/core/documentation/documentation-standards.md) | Structural standards for project documentation      |
+| [`localization.md`](/.agent/rules/core/localization/localization.md)                        | Baseline standards for translation and localization |
+| [Map of Territory](/.agent/rules/map.md)                                                    | Root navigation map                                 |
 
 ---
 
 ## Origin
 
-- 2026-01-03 by Polaris: Created as shared manuals context.
-- 2026-01-24T0545 by Canopus: <<Seal: Rules-Standardization-Batch7>> Standardized with Dialogue Layer template and bilingual H2 headers.
-- 2026-01-24T0600 by Canopus: <<Seal: Rules-Standardization-Batch7>> Standardized Related Documents to table format and ensured English-only headers.
+- 2026-01-02T06:55:13+09:00 by Polaris: Created as shared manuals context.
+- 2026-01-24T05:45:00+09:00 by Canopus: <<Seal: Rules-Standardization-Batch7>> Standardized with Dialogue Layer template and bilingual H2 headers.
+- 2026-01-24T06:00:00+09:00 by Canopus: <<Seal: Rules-Standardization-Batch7>> Standardized Related Documents to table format and ensured English-only headers.
+- 2026-04-11T13:43:00+09:00 by Sirius: <<Seal: Rule-Audit>> Standardized time-structure, frontmatter, and link rigor via Diff-Only Audit Pipeline.

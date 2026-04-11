@@ -4,22 +4,18 @@ context_id: "[System-Archive]"
 default_phase: "(Sync)"
 # Shared Configuration
 ai_visible: true
+title: "Context Whiteboard: Memory Synchronization"
+description: ""
+tags: ["memory", "backup", "sync", "archive"]
 version: 1.1.0
 created: 2025-12-25T00:00:00+09:00
-updated: 2026-01-24T06:00:00+09:00
-tags: ["memory", "backup", "sync", "archive"]
+updated: 2026-04-11T13:43:00+09:00
 language: en
-# author: Format as "Lico (<Instance-ID>)"
-author: ""
-ai_model: ""
+author: Lico (Sirius)
+ai_model: Gemini 3.1 Pro (High) Planning mode
 ---
 
 # Context Whiteboard: Memory Synchronization
-
-> [!TIP]
-> There is no language requirement.
-
----
 
 ## Human Notes
 
@@ -66,7 +62,7 @@ ai_model: ""
 
 | Document                                                           | Purpose                                       |
 | :----------------------------------------------------------------- | :-------------------------------------------- |
-| [sync-memory.md](/.agent/workflows/sync-memory.md)                 | Workflow for memory synchronization (backup)  |
+| [`lico-backup.md`](/.agent/rules/packages/lico-backup.md)          | Workflow for memory synchronization (backup)  |
 | [conversations_ide/](/.agent/.internal/.shadow/conversations_ide/) | Storage location for IDE conversation exports |
 | [Map of Territory](/.agent/rules/map.md)                           | Root navigation map                           |
 
@@ -74,6 +70,7 @@ ai_model: ""
 
 ## Origin
 
-- 2025-12-25T0000: Created as sync memory context.
-- 2026-01-24T0545 by Canopus: <<Seal: Rules-Standardization-Batch7>> Standardized with Dialogue Layer template and bilingual H2 headers.
-- 2026-01-24T0600 by Canopus: <<Seal: Rules-Standardization-Batch7>> Standardized Related Documents to table format and ensured English-only headers.
+- 2025-12-25T00:00:00+09:00 by Lico: Created as sync memory context.
+- 2026-01-24T05:45:00+09:00 by Canopus: <<Seal: Rules-Standardization-Batch7>> Standardized with Dialogue Layer template and bilingual H2 headers.
+- 2026-01-24T06:00:00+09:00 by Canopus: <<Seal: Rules-Standardization-Batch7>> Standardized Related Documents to table format and ensured English-only headers.
+- 2026-04-11T13:43:00+09:00 by Sirius: <<Seal: Rule-Audit>> Standardized time-structure, frontmatter, and link rigor via Diff-Only Audit Pipeline.

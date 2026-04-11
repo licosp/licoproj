@@ -7,18 +7,13 @@ description: "Context for full repository backup operations"
 tags: ["backup", "infrastructure", "safety", "routine"]
 version: 1.0.0
 created: 2026-02-02T05:20:00+09:00
-updated: 2026-02-02T05:20:00+09:00
+updated: 2026-04-11T13:43:00+09:00
 language: en
-author: Lico (Zircon)
-ai_model: Gemini 3 Pro (High) Planning mode
+author: Lico (Sirius)
+ai_model: Gemini 3.1 Pro (High) Planning mode
 ---
 
 # Context Whiteboard: Repository Backup
-
-> [!TIP]
-> There is no language requirement.
-
----
 
 ## Human Notes
 
@@ -69,14 +64,15 @@ ai_model: Gemini 3 Pro (High) Planning mode
 
 ## Related Documents
 
-| Document                                                         | Purpose                          |
-| :--------------------------------------------------------------- | :------------------------------- |
-| [sync-memory-card.md](/.agent/cards/routine/sync-memory-card.md) | Source context (currently mixed) |
-| [shadow-repository-card.md](/.agent/cards/-repository-card.md)   | Adjacent strategy context        |
-| [Map of Territory](/.agent/rules/map.md)                         | Root navigation map              |
+| Document                                                          | Purpose                          |
+| :---------------------------------------------------------------- | :------------------------------- |
+| [`pkg-backup-card.md`](/.agent/cards/packages/pkg-backup-card.md) | Source context (currently mixed) |
+| [`shadow-repository-card.md`](/.agent/cards/-repository-card.md)  | Adjacent strategy context        |
+| [Map of Territory](/.agent/rules/map.md)                          | Root navigation map              |
 
 ---
 
 ## Origin
 
-- 2026-02-02T05:20+09:00 by Lico (Zircon): Created as a placeholder for separating repository backup logic.
+- 2026-02-02T05:20:00+09:00 by Lico (Zircon): Created as a placeholder for separating repository backup logic.
+- 2026-04-11T13:43:00+09:00 by Sirius: <<Seal: Rule-Audit>> Standardized time-structure, frontmatter, and link rigor via Diff-Only Audit Pipeline.

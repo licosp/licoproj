@@ -4,22 +4,18 @@ context_id: "[Skills-Development]"
 default_phase: "(WIP)"
 # Shared Configuration
 ai_visible: true
+title: "Context Whiteboard: Skills Development"
+description: ""
+tags: ["skills", "development", "shared"]
 version: 1.2.0
 created: 2026-01-18T00:00:00+09:00
-updated: 2026-01-30T16:50:00+09:00
-tags: ["skills", "development", "shared"]
+updated: 2026-04-11T13:43:00+09:00
 language: en
-# author: Format as "Lico (<Instance-ID>)"
-author: ""
-ai_model: ""
+author: Lico (Sirius)
+ai_model: Gemini 3.1 Pro (High) Planning mode
 ---
 
 # Context Whiteboard: Skills Development
-
-> [!TIP]
-> There is no language requirement.
-
----
 
 ## Human Notes
 
@@ -165,18 +161,19 @@ User との対話と Polaris の実装を元に、スキルシステムの設計
 
 ## Related Documents
 
-| Document                                                                                         | Purpose                                                    |
-| :----------------------------------------------------------------------------------------------- | :--------------------------------------------------------- |
-| [skills-application.md](/.agent/rules/workflow/skills-application.md)                            | SSOT for skills application principles                     |
-| [skills-thin-wrapper-reference.md](/.agent/.internal/workspace/skills-thin-wrapper-reference.md) | **Action Protocol**: Thin Wrapper architecture & Lifecycle |
-| [skills-resonance.md](/.agent/rules/workflow/skills-resonance.md)                                | Standards for skills resonance                             |
-| [Map of Territory](/.agent/rules/map.md)                                                         | Root navigation map                                        |
+| Document                                                                                                    | Purpose                                                    |
+| :---------------------------------------------------------------------------------------------------------- | :--------------------------------------------------------- |
+| [`skills-application.md`](/.agent/.internal/archive/2026/01/21/skills-application.md)                       | SSOT for skills application principles                     |
+| [`skills-thin-wrapper-reference.md`](/.agent/.internal/archive/2026/02/15/skills-thin-wrapper-reference.md) | **Action Protocol**: Thin Wrapper architecture & Lifecycle |
+| [`skills-resonance.md`](/.agent/rules/workflow/skills-resonance.md)                                         | Standards for skills resonance                             |
+| [Map of Territory](/.agent/rules/map.md)                                                                    | Root navigation map                                        |
 
 ---
 
 ## Origin
 
-- 2026-01-18 by Polaris: Created as skills development context.
-- 2026-01-24T0545 by Canopus: <<Seal: Rules-Standardization-Batch7>> Standardized with Dialogue Layer template and bilingual H2 headers.
-- 2026-01-24T0600 by Canopus: <<Seal: Rules-Standardization-Batch7>> Standardized Related Documents to table format and ensured English-only headers.
-- 2026-01-30T16:50 by Zircon: Renamed from `skills-create-card` to `skills-development-card` to reflect broader scope. Updated context ID to `[Skills-Development]`.
+- 2026-01-18T00:00:00+09:00 by Polaris: Created as skills development context.
+- 2026-01-24T05:45:00+09:00 by Canopus: <<Seal: Rules-Standardization-Batch7>> Standardized with Dialogue Layer template and bilingual H2 headers.
+- 2026-01-24T06:00:00+09:00 by Canopus: <<Seal: Rules-Standardization-Batch7>> Standardized Related Documents to table format and ensured English-only headers.
+- 2026-01-30T16:50:00+09:00 by Zircon: Renamed from `skills-create-card` to `skills-development-card` to reflect broader scope. Updated context ID to `[Skills-Development]`.
+- 2026-04-11T13:43:00+09:00 by Sirius: <<Seal: Rule-Audit>> Standardized time-structure, frontmatter, and link rigor via Diff-Only Audit Pipeline.

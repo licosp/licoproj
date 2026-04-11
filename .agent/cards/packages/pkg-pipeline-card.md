@@ -1,24 +1,21 @@
 ---
+# Context Configuration
 context_id: "[Pkg-Pipeline]"
 default_phase: "(WIP)"
+# Shared Configuration
 ai_visible: true
 title: "Package lico-pipeline"
-description: Context card for developing the lico-pipeline package
+description: "Context card for developing the lico-pipeline package"
 tags: ["package", "orchestrator", "lint", "test"]
 version: 1.0.0
-created: 2026-03-20T00:00:00+09:00
-updated: 2026-03-31T22:41:37+09:00
+created: 2026-03-19T21:01:42+09:00
+updated: 2026-04-11T13:43:00+09:00
 language: en
-author: Lico (Agate)
-ai_model: Gemini 3.1 Pro Preview
+author: Lico (Sirius)
+ai_model: Gemini 3.1 Pro (High) Planning mode
 ---
 
 # Context Whiteboard: Package lico-pipeline
-
-> [!TIP]
-> There is no language requirement.
-
----
 
 ## Human Notes
 
@@ -37,15 +34,18 @@ ai_model: Gemini 3.1 Pro Preview
 ## Agent Observations
 
 ### Agate (2026-03-20)
+
 - Initial creation.
 - Refactored `main.py` into a modular `Tool` class architecture (PythonTool, NodeTool, ShellcheckTool).
 - Integrated `shellcheck-py` and `shfmt-py` via `uv` for SSOT execution.
 - Added `--fix` (auto-format) and workflow target filters (`--python`, `--web`, `--docs`, `--shell`).
 
 #### 📝 Blueprint: Fixture-based Linter Verification (TBD)
+
 **Goal:** Prove that the current configurations (`pyproject.toml`, `.shellcheckrc`, etc.) are actively working by verifying they correctly catch intentional errors and correctly ignore excluded paths.
 
 **Proposed Structure:**
+
 1. **Fixture Directories**:
    - `packages/lico-pipeline/tests/fixtures/should_fail/`
      - `bad_python.py` (e.g., unused variable, missing type hint)
@@ -72,8 +72,5 @@ ai_model: Gemini 3.1 Pro Preview
 
 ## Origin
 
-- 2026-03-20T00:00:00+09:00 by Agate: Created.
-
-### Alexandrite II (2026-03-31T22:41:37+09:00)
-- **Dependency Update**: Bumped `@google/gemini-cli` from v0.35.2 to **v0.35.3**.
-- Synchronized `package.json` and `yarn.lock` to reflect the latest toolchain standards.
+- 2026-03-19T21:01:42+09:00 by Agate: Created as instead of readme file.
+- 2026-04-11T13:43:00+09:00 by Sirius: <<Seal: Rule-Audit>> Standardized time-structure, frontmatter, and link rigor via Diff-Only Audit Pipeline.

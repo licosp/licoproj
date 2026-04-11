@@ -4,22 +4,18 @@ context_id: "[Map-Sync]"
 default_phase: "(Planning)"
 # Shared Configuration
 ai_visible: true
+title: "Context Whiteboard: Map Synchronization"
+description: ""
+tags: ["map", "maintenance", "map-sync"]
 version: 1.1.0
 created: 2026-01-02T00:00:00+09:00
-updated: 2026-02-02T21:40:00+09:00
-tags: ["map", "maintenance", "map-sync"]
+updated: 2026-04-11T13:43:00+09:00
 language: en
-# author: Format as "Lico (<Instance-ID>)"
-author: ""
-ai_model: ""
+author: Lico (Sirius)
+ai_model: Gemini 3.1 Pro (High) Planning mode
 ---
 
 # Context Whiteboard: Map Synchronization
-
-> [!TIP]
-> There is no language requirement.
-
----
 
 ## Human Notes
 
@@ -364,17 +360,18 @@ _(Note: `.agent/scripts/` 以下の個別スクリプト（`git`, `rm`, `grep`, 
 
 ## Related Documents
 
-| Document                                                        | Purpose                       |
-| :-------------------------------------------------------------- | :---------------------------- |
-| [map-maintenance.md](/.agent/rules/workflow/map-maintenance.md) | Standards for map maintenance |
-| [Map of Territory](/.agent/rules/map.md)                        | Root navigation map           |
+| Document                                                          | Purpose                       |
+| :---------------------------------------------------------------- | :---------------------------- |
+| [`map-maintenance.md`](/.agent/rules/workflow/map-maintenance.md) | Standards for map maintenance |
+| [Map of Territory](/.agent/rules/map.md)                          | Root navigation map           |
 
 ---
 
 ## Origin
 
-- 2026-01-02T0000 by Spica: Create and Post-Sync.
-- 2026-01-03T0658 by leonidas: Edit "Human Notes".
-- 2026-01-24T0545 by Canopus: <<Seal: Rules-Standardization-Batch7>> Standardized with Dialogue Layer template and bilingual H2 headers.
-- 2026-01-24T0600 by Canopus: <<Seal: Rules-Standardization-Batch7>> Standardized Related Documents to table format and ensured English-only headers.
-- 2026-02-02T2140 by Zircon: Added observations regarding Shadow Repository and User Drafts structure.
+- 2026-01-02T00:00:00+09:00 by Spica: Create and Post-Sync.
+- 2026-01-03T06:58:00+09:00 by leonidas: Edit "Human Notes".
+- 2026-01-24T05:45:00+09:00 by Canopus: <<Seal: Rules-Standardization-Batch7>> Standardized with Dialogue Layer template and bilingual H2 headers.
+- 2026-01-24T06:00:00+09:00 by Canopus: <<Seal: Rules-Standardization-Batch7>> Standardized Related Documents to table format and ensured English-only headers.
+- 2026-02-02T21:40:00+09:00 by Zircon: Added observations regarding Shadow Repository and User Drafts structure.
+- 2026-04-11T13:43:00+09:00 by Sirius: <<Seal: Rule-Audit>> Standardized time-structure, frontmatter, and link rigor via Diff-Only Audit Pipeline.

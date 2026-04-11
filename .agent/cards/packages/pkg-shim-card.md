@@ -1,22 +1,21 @@
 ---
+# Context Configuration
 context_id: "[Pkg-Shim]"
 default_phase: "(Setup)"
+# Shared Configuration
 ai_visible: true
+title: "Context Whiteboard: Package lico-shim"
+description: ""
+tags: ["shim", "shell", "safety", "environment", "package"]
 version: 1.0.0
 created: 2026-02-15T20:30:00+09:00
-updated: 2026-03-19T00:00:00+09:00
-tags: ["shim", "shell", "safety", "environment", "package"]
+updated: 2026-04-11T13:43:00+09:00
 language: en
 author: Lico (Sirius)
-ai_model: Gemini 3 Pro (High) Planning mode
+ai_model: Gemini 3.1 Pro (High) Planning mode
 ---
 
 # Context Whiteboard: Package lico-shim
-
-> [!TIP]
-> There is no language requirement.
-
----
 
 ## Human Notes
 
@@ -85,4 +84,5 @@ ai_model: Gemini 3 Pro (High) Planning mode
 
 ## Origin
 
-- 2026-02-15T20:30 by Sirius: Created for command shim implementation.
+- 2026-02-15T20:30:00+09:00 by Sirius: Created for command shim implementation.
+- 2026-04-11T13:43:00+09:00 by Sirius: <<Seal: Rule-Audit>> Standardized time-structure, frontmatter, and link rigor via Diff-Only Audit Pipeline.

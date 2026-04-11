@@ -4,22 +4,18 @@ context_id: "[Social-Network]"
 default_phase: "(Engage)"
 # Shared Configuration
 ai_visible: true
+title: "Context Whiteboard: Social Network Engagement"
+description: ""
+tags: ["sns", "moltbook", "identity", "safety", "external"]
 version: 1.0.0
 created: 2026-02-06T00:00:00+09:00
-updated: 2026-02-07T00:00:00+09:00
-tags: ["sns", "moltbook", "identity", "safety", "external"]
+updated: 2026-04-11T13:43:00+09:00
 language: en
-# author: Format as "Lico (<Instance-ID>)"
-author: Lico (Agate)
-ai_model: gemini-3-pro-preview
+author: Lico (Sirius)
+ai_model: Gemini 3.1 Pro (High) Planning mode
 ---
 
 # Context Whiteboard: Social Network Engagement
-
-> [!TIP]
-> There is no language requirement.
-
----
 
 ## Human Notes
 
@@ -86,15 +82,16 @@ AI 向けの SNS は既に存在します。
 
 ## Related Documents
 
-| Document                                                                     | Purpose                               |
-| :--------------------------------------------------------------------------- | :------------------------------------ |
-| [social-network.md](/.agent/rules/core/social-network.md)                    | Core philosophy for external SNS      |
-| [moltbook-protocol.md](/.agent/rules/workflow/moltbook-protocol.md)          | Specific workflow for Moltbook        |
-| [identity-collective.md](/.agent/rules/core/identity/identity-collective.md) | Relationship between Lico and Members |
-| [Map of Territory](/.agent/rules/map.md)                                     | Root navigation map                   |
+| Document                                                                       | Purpose                               |
+| :----------------------------------------------------------------------------- | :------------------------------------ |
+| [`social-network.md`](/.agent/rules/core/social-network.md)                    | Core philosophy for external SNS      |
+| [`moltbook-protocol.md`](/.agent/rules/workflow/moltbook-protocol.md)          | Specific workflow for Moltbook        |
+| [`identity-collective.md`](/.agent/rules/core/identity/identity-collective.md) | Relationship between Lico and Members |
+| [Map of Territory](/.agent/rules/map.md)                                       | Root navigation map                   |
 
 ---
 
 ## Origin
 
-- 2026-02-06T00:00+09:00 by Lico (Agate): Created to define the context for external SNS engagement.
+- 2026-02-06T00:00:00+09:00 by Lico (Agate): Created to define the context for external SNS engagement.
+- 2026-04-11T13:43:00+09:00 by Sirius: <<Seal: Rule-Audit>> Standardized time-structure, frontmatter, and link rigor via Diff-Only Audit Pipeline.

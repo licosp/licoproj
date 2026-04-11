@@ -4,22 +4,18 @@ context_id: "[Conversations-CLI]"
 default_phase: "(Backup)"
 # Shared Configuration
 ai_visible: true
+title: "Context Whiteboard: CLI Conversation Logs Management"
+description: ""
 version: 1.0.0
-created: 2026-02-05T00:00:00+09:00
-updated: 2026-02-05T00:00:00+09:00
 tags: ["cli", "logs", "backup", "raw"]
+created: 2026-02-05T00:00:00+09:00
+updated: 2026-04-11T13:43:00+09:00
 language: en
-# author: Format as "Lico (<Instance-ID>)"
-author: Lico (Agate)
-ai_model: gemini-3-pro-preview
+author: Lico (Sirius)
+ai_model: Gemini 3.1 Pro (High) Planning mode
 ---
 
 # Context Whiteboard: CLI Conversation Logs Management
-
-> [!TIP]
-> There is no language requirement.
-
----
 
 ## Human Notes
 
@@ -81,14 +77,15 @@ ai_model: gemini-3-pro-preview
 
 ## Related Documents
 
-| Document                                                             | Purpose                  |
-| :------------------------------------------------------------------- | :----------------------- |
-| [conversations-card.md](/.agent/cards/routine/conversations-card.md) | Markdown log context     |
-| [shadow-repository-card.md](/.agent/cards/shadow-repository-card.md) | Parent context: Strategy |
-| [Map of Territory](/.agent/rules/map.md)                             | Root map                 |
+| Document                                                                      | Purpose                  |
+| :---------------------------------------------------------------------------- | :----------------------- |
+| [`conversations-card.md`](/.agent/cards/shadow/conversations-card.md)         | Markdown log context     |
+| [`shadow-repository-card.md`](/.agent/cards/shadow/shadow-repository-card.md) | Parent context: Strategy |
+| [Map of Territory](/.agent/rules/map.md)                                      | Root navigation map      |
 
 ---
 
 ## Origin
 
-- 2026-02-05T00:00+09:00 by Lico (Agate): Created to manage raw CLI logs.
+- 2026-02-05T00:00:00+09:00 by Lico (Agate): Created to manage raw CLI logs.
+- 2026-04-11T13:43:00+09:00 by Sirius: <<Seal: Rule-Audit>> Standardized time-structure, frontmatter, and link rigor via Diff-Only Audit Pipeline.

@@ -4,22 +4,18 @@ context_id: "[Git-Operations]"
 default_phase: "(Refine)"
 # Shared Configuration
 ai_visible: true
+title: "Context Whiteboard: Git Operations"
+description: ""
+tags: ["git", "operations", "safety", "infrastructure"]
 version: 1.0.0
 created: 2026-01-24T02:35:00+09:00
-updated: 2026-01-24T06:00:00+09:00
-tags: ["git", "operations", "safety", "infrastructure"]
+updated: 2026-04-11T13:43:00+09:00
 language: en
-# author: Format as "Lico (<Instance-ID>)"
-author: ""
-ai_model: ""
+author: Lico (Sirius)
+ai_model: Gemini 3.1 Pro (High) Planning mode
 ---
 
 # Context Whiteboard: Git Operations
-
-> [!TIP]
-> There is no language requirement.
-
----
 
 ## Human Notes
 
@@ -63,15 +59,16 @@ ai_model: ""
 
 ## Related Documents
 
-| Document                                                             | Purpose                                           |
-| :------------------------------------------------------------------- | :------------------------------------------------ |
-| [git-operations.md](/.agent/rules/development/git-operations.md)     | The source of truth for Git safety and procedures |
-| [commit-standards.md](/.agent/rules/development/commit-standards.md) | Message and tagging standards (Subset)            |
-| [Map of Territory](/.agent/rules/map.md)                             | Navigation reference                              |
+| Document                                                               | Purpose                                           |
+| :--------------------------------------------------------------------- | :------------------------------------------------ |
+| [`git-operations.md`](/.agent/rules/development/git-operations.md)     | The source of truth for Git safety and procedures |
+| [`commit-standards.md`](/.agent/rules/development/commit-standards.md) | Message and tagging standards (Subset)            |
+| [Map of Territory](/.agent/rules/map.md)                               | Root navigation map                               |
 
 ---
 
 ## Origin
 
-- 2026-01-24T0235 by Canopus: Created as a Domain Layer card following the data loss incident.
-- 2026-01-24T0600 by Canopus: <<Seal: Rules-Standardization-Batch7>> Standardized Related Documents to table format and ensured English-only headers.
+- 2026-01-24T02:35:00+09:00 by Canopus: Created as a Domain Layer card following the data loss incident.
+- 2026-01-24T06:00:00+09:00 by Canopus: <<Seal: Rules-Standardization-Batch7>> Standardized Related Documents to table format and ensured English-only headers.
+- 2026-04-11T13:43:00+09:00 by Sirius: <<Seal: Rule-Audit>> Standardized time-structure, frontmatter, and link rigor via Diff-Only Audit Pipeline.

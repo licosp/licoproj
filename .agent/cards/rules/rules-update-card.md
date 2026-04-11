@@ -4,22 +4,18 @@ context_id: "[Rules-Update]"
 default_phase: "(Refine)"
 # Shared Configuration
 ai_visible: true
+title: "Context Whiteboard: Rules Update"
+description: ""
+tags: ["rules", "maintenance", "behavioral"]
 version: 1.1.0
 created: 2025-12-01T00:00:00+09:00
-updated: 2026-01-24T06:00:00+09:00
-tags: ["rules", "maintenance", "behavioral"]
+updated: 2026-04-11T13:43:00+09:00
 language: en
-# author: Format as "Lico (<Instance-ID>)"
-author: ""
-ai_model: ""
+author: Lico (Sirius)
+ai_model: Gemini 3.1 Pro (High) Planning mode
 ---
 
 # Context Whiteboard: Rules Update
-
-> [!TIP]
-> There is no language requirement.
-
----
 
 ## Human Notes
 
@@ -140,17 +136,18 @@ ai_model: ""
 
 ## Related Documents
 
-| Document                                                                                  | Purpose                          |
-| :---------------------------------------------------------------------------------------- | :------------------------------- |
-| [meta-rules.md](/.agent/rules/core/meta-rules.md)                                         | Guidelines for rule creation     |
-| [documentation-standards.md](/.agent/rules/core/documentation/documentation-standards.md) | Standards for document structure |
-| [Map of Territory](/.agent/rules/map.md)                                                  | Navigation reference             |
+| Document                                                                                    | Purpose                          |
+| :------------------------------------------------------------------------------------------ | :------------------------------- |
+| [`meta-rules.md`](/.agent/rules/core/meta-rules.md)                                         | Guidelines for rule creation     |
+| [`documentation-standards.md`](/.agent/rules/core/documentation/documentation-standards.md) | Standards for document structure |
+| [Map of Territory](/.agent/rules/map.md)                                                    | Root navigation map              |
 
 ---
 
 ## Origin
 
-- 2025-12-01T0000: Created as rules update context.
-- 2026-01-19T0332 by Canopus: Formally integrated into card system.
-- 2026-01-24T0545 by Canopus: <<Seal: Rules-Standardization-Batch7>> Standardized with Dialogue Layer template and bilingual H2 headers.
-- 2026-01-24T0600 by Canopus: <<Seal: Rules-Standardization-Batch7>> Standardized Related Documents to table format and ensured English-only headers.
+- 2025-12-01T00:00:00+09:00 by Lico: Created as rules update context.
+- 2026-01-19T03:32:00+09:00 by Canopus: Formally integrated into card system.
+- 2026-01-24T05:45:00+09:00 by Canopus: <<Seal: Rules-Standardization-Batch7>> Standardized with Dialogue Layer template and bilingual H2 headers.
+- 2026-01-24T06:00:00+09:00 by Canopus: <<Seal: Rules-Standardization-Batch7>> Standardized Related Documents to table format and ensured English-only headers.
+- 2026-04-11T13:43:00+09:00 by Sirius: <<Seal: Rule-Audit>> Standardized time-structure, frontmatter, and link rigor via Diff-Only Audit Pipeline.

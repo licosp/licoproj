@@ -4,22 +4,18 @@ context_id: "[Gemini-CLI]"
 default_phase: "(WIP)"
 # Shared Configuration
 ai_visible: true
+title: "Context Whiteboard: Gemini CLI Environment"
+description: ""
+tags: ["gemini-cli", "environment", "shell", "interactive", "tmux"]
 version: 1.1.0
 created: 2026-02-04T06:00:00+09:00
-updated: 2026-02-07T03:00:00+09:00
-tags: ["gemini-cli", "environment", "shell", "interactive", "tmux"]
+updated: 2026-04-11T13:43:00+09:00
 language: en
-# author: Format as "Lico (<Instance-ID>)"
-author: Lico (Agate)
-ai_model: gemini-3-pro-preview
+author: Lico (Sirius)
+ai_model: Gemini 3.1 Pro (High) Planning mode
 ---
 
 # Context Whiteboard: Gemini CLI Environment
-
-> [!TIP]
-> There is no language requirement.
-
----
 
 ## Human Notes
 
@@ -88,14 +84,15 @@ ai_model: gemini-3-pro-preview
 
 ## Related Documents
 
-| Document                                                                           | Purpose                               |
-| :--------------------------------------------------------------------------------- | :------------------------------------ |
-| [terminal-auto-execution.md](/.agent/rules/development/terminal-auto-execution.md) | Auto-run permission rules             |
-| [conversations-card.md](/.agent/cards/routine/conversations-card.md)               | Logging protocol for this environment |
-| [Map of Territory](/.agent/rules/map.md)                                           | Root navigation map                   |
+| Document                                                                             | Purpose                               |
+| :----------------------------------------------------------------------------------- | :------------------------------------ |
+| [`terminal-auto-execution.md`](/.agent/rules/development/terminal-auto-execution.md) | Auto-run permission rules             |
+| [`conversations-card.md`](/.agent/cards/shadow/conversations-card.md)                | Logging protocol for this environment |
+| [Map of Territory](/.agent/rules/map.md)                                             | Root navigation map                   |
 
 ---
 
 ## Origin
 
-- 2026-02-04T06:00+09:00 by Lico (Agate): Created to define the Gemini CLI execution context.
+- 2026-02-04T06:00:00+09:00 by Lico (Agate): Created to define the Gemini CLI execution context.
+- 2026-04-11T13:43:00+09:00 by Sirius: <<Seal: Rule-Audit>> Standardized time-structure, frontmatter, and link rigor via Diff-Only Audit Pipeline.

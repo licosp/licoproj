@@ -4,22 +4,18 @@ context_id: "[Context-Cards]"
 default_phase: "(WIP)"
 # Shared Configuration
 ai_visible: true
+title: "Context Whiteboard: Templates Management"
+description: ""
+tags: ["templates", "active"]
 version: 1.1.0
 created: 2025-12-01T00:00:00+09:00
-updated: 2026-01-24T06:00:00+09:00
-tags: ["templates", "active"]
+updated: 2026-04-11T13:43:00+09:00
 language: en
-# author: Format as "Lico (<Instance-ID>)"
-author: ""
-ai_model: ""
+author: Lico (Sirius)
+ai_model: Gemini 3.1 Pro (High) Planning mode
 ---
 
 # Context Whiteboard: Templates Management
-
-> [!TIP]
-> There is no language requirement.
-
----
 
 ## Human Notes
 
@@ -76,30 +72,30 @@ ai_model: ""
 
 メンテナンス頻度が高いカードをここに集約。
 
-- [housekeeping-card.md](/.agent/cards/routine/housekeeping-card.md)
-- [working-memory-card.md](/.agent/cards/internal/working-memory-card.md)
-- [vscode-settings-card.md](/.agent/cards/routine/vscode-settings-card.md) (単語リスト等)
-- [readme-sync-card.md](/.agent/cards/routine/readme-sync-card.md) (地図更新)
-- [context-cards-card.md](/.agent/cards/routine/context-cards-card.md) (このカード自体)
+- [`housekeeping-card.md`](/.agent/cards/maintenance/housekeeping-card.md)
+- [`working-memory-card.md`](/.agent/cards/maintenance/working-memory-card.md)
+- [`vscode-settings-card.md`](/.agent/cards/project/vscode-settings-card.md) (単語リスト等)
+- [`map-sync-card.md`](/.agent/cards/rules/map-sync-card.md) (地図更新)
+- [`context-cards-card.md`](/.agent/cards/agent/context-cards-card.md) (このカード自体)
 
 #### 2. `seed/` (修正前/未発芽)
 
 「人間の記述領域の編集がまだ終わっていません」警告があるカードを隔離し、誤用を防ぐ。
 
-- [identifier-profile-card.md](/.agent/cards/seed/identifier-profile-card.md)
-- [log-sanitization-card.md](/.agent/cards/seed/log-sanitization-card.md)
-- [drafts-cleanup-card.md](/.agent/cards/seed/drafts-cleanup-card.md)
-- [worktree-evaluation-card.md](/.agent/cards/seed/worktree-evaluation-card.md)
-- [datetime-standardize-card.md](/.agent/cards/seed/datetime-standardize-card.md)
-- [directory-reorganize-card.md](/.agent/cards/seed/directory-reorganize-card.md)
+- [`identifier-profile-card.md`](/.agent/cards/agent/identifier-profile-card.md)
+- [`log-sanitization-card.md`](/.agent/cards/shadow/log-sanitization-card.md)
+- [`drafts-cleanup-card.md`](/.agent/cards/cases/2026-04-11T1410_drafts-cleanup-card.md)
+- [`worktree-evaluation-card.md`](/.agent/cards/cases/2026-04-11T1410_worktree-evaluation-card.md)
+- [`datetime-standardize-card.md`](/.agent/cards/rules/datetime-standardize-card.md)
+- [`directory-reorganize-card.md`](/.agent/cards/procedures/directory-reorganize-card.md)
 
 #### 3. Root (据え置き/基盤)
 
 フェーズ管理（IDD）、儀式、その他基盤的な定義カード。
 
-- [idd-init-card.md](/.agent/cards/idd-init-card.md) / [idd-impl-card.md](/.agent/cards/idd-impl-card.md) / [idd-fini-card.md](/.agent/cards/idd-fini-card.md) (非定型・統合維持)
-- [session-rituals-card.md](/.agent/cards/session-rituals-card.md) (低頻度)
-- [commit-standards-card.md](/.agent/cards/routine/commit-standards-card.md) (規約・履歴)
+- [`idd-initialization-card.md`](/.agent/cards/procedures/idd-initialization-card.md) / [`idd-implementation-card.md`](/.agent/cards/procedures/idd-implementation-card.md) / [`idd-finalization-card.md`](/.agent/cards/procedures/idd-finalization-card.md) (非定型・統合維持)
+- [`session-rituals-card.md`](/.agent/cards/procedures/session-rituals-card.md) (低頻度)
+- [`commit-standards-card.md`](/.agent/cards/rules/commit-standards-card.md) (規約・履歴)
 - その他、上記以外。
 
 ### Canopus (2026-01-22)
@@ -120,29 +116,32 @@ ai_model: ""
 現在、フラットな `cards/routine` や `cards/seed` を、より意味のあるサブディレクトリへ分類する作業が進行中です。
 
 ### Completed
+
 - [x] **Shadow Context** (`cards/shadow/`)
   - `conversations-*.md`, `log-sanitization-card.md`, `shadow-repository-card.md` etc.
 - [x] **Human Context** (`cards/human/`)
   - `human-manuals-card.md`, `human-profile-card.md`, `drafts-*.md` etc.
 
 ### Remaining Tasks (To Be Resumed)
+
 以下の分類案に基づき、残りのカードを移動・整理する必要があります。
 
-1.  **System / Infra** (`cards/system/` or `infra/`)
-    - `git-operations-card.md`, `devcontainer-card.md`, `worktree-evaluation-card.md`
-    - `vscode-settings-card.md`, `environment-card.md`
-2.  **Procedure / Ops** (`cards/ops/` or `procedure/`)
-    - `routine-card.md`, `housekeeping-card.md`, `repository-backup-card.md`
-    - `activity-log-card.md`, `session-rituals-card.md`
-3.  **Governance / Meta** (`cards/governance/`)
-    - `roadmap-card.md`, `context-cards-card.md`, `rules-*.md`
-    - `license-card.md`, `lint-format-card.md`
-4.  **Identity** (`cards/identity/`)
-    - `lico-identity-card.md`, `identifier-profile-card.md`, `ai-autonomy-card.md`
-5.  **Project / Issue** (`cards/project/`)
-    - `idd-*.md`, `cross-link-audit-card.md`
+1. **System / Infra** (`cards/system/` or `infra/`)
+   - `git-operations-card.md`, `devcontainer-card.md`, `worktree-evaluation-card.md`
+   - `vscode-settings-card.md`, `environment-card.md`
+2. **Procedure / Ops** (`cards/ops/` or `procedure/`)
+   - `routine-card.md`, `housekeeping-card.md`, `repository-backup-card.md`
+   - `activity-log-card.md`, `session-rituals-card.md`
+3. **Governance / Meta** (`cards/governance/`)
+   - `roadmap-card.md`, `context-cards-card.md`, `rules-*.md`
+   - `license-card.md`, `lint-format-card.md`
+4. **Identity** (`cards/identity/`)
+   - `lico-identity-card.md`, `identifier-profile-card.md`, `ai-autonomy-card.md`
+5. **Project / Issue** (`cards/project/`)
+   - `idd-*.md`, `cross-link-audit-card.md`
 
 ### Note on Resumption
+
 - 作業再開時は、このリストを元に `git mv` と `map.md` の更新を行ってください。
 - 各移動において、必ず `grep` で参照箇所（特に Rules からのリンク）を確認し、修正/削除してください。
 
@@ -168,18 +167,19 @@ Directories marked as **(Rule-Linked)** have a direct correspondence to the `.ag
 
 ## Related Documents
 
-| Document                                                                    | Purpose                                    |
-| :-------------------------------------------------------------------------- | :----------------------------------------- |
-| [context-card-workflow.md](/.agent/rules/workflow/context-card-workflow.md) | Methodology for context card usage         |
-| [commit-standards.md](/.agent/rules/development/commit-standards.md)        | Commit rules and multi-ID tagging protocol |
-| [Map of Territory](/.agent/rules/map.md)                                    | Root navigation map                        |
+| Document                                                                      | Purpose                                    |
+| :---------------------------------------------------------------------------- | :----------------------------------------- |
+| [`context-card-workflow.md`](/.agent/rules/workflow/context-card-workflow.md) | Methodology for context card usage         |
+| [`commit-standards.md`](/.agent/rules/development/commit-standards.md)        | Commit rules and multi-ID tagging protocol |
+| [Map of Territory](/.agent/rules/map.md)                                      | Root navigation map                        |
 
 ---
 
 ## Origin
 
-- 2025-12-01T0000: Created for template management.
-- 2026-01-19T0930 by Canopus: Proposed reorganization into `routine/` and `seed/`.
-- 2026-01-22T2000 by Canopus: Integrated 1-3 variable length Context ID tagging protocol.
-- 2026-01-24T0545 by Canopus: <<Seal: Rules-Standardization-Batch7>> Standardized with Dialogue Layer template and bilingual H2 headers.
-- 2026-01-24T0600 by Canopus: <<Seal: Rules-Standardization-Batch7>> Standardized Related Documents to table format and ensured English-only headers.
+- 2025-12-01T00:00:00+09:00 by Lico: Created for template management.
+- 2026-01-19T09:30:00+09:00 by Canopus: Proposed reorganization into `routine/` and `seed/`.
+- 2026-01-22T20:00:00+09:00 by Canopus: Integrated 1-3 variable length Context ID tagging protocol.
+- 2026-01-24T05:45:00+09:00 by Canopus: <<Seal: Rules-Standardization-Batch7>> Standardized with Dialogue Layer template and bilingual H2 headers.
+- 2026-01-24T06:00:00+09:00 by Canopus: <<Seal: Rules-Standardization-Batch7>> Standardized Related Documents to table format and ensured English-only headers.
+- 2026-04-11T13:43:00+09:00 by Sirius: <<Seal: Rule-Audit>> Standardized time-structure, frontmatter, and link rigor via Diff-Only Audit Pipeline.

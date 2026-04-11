@@ -4,22 +4,18 @@ context_id: "[Conversations]"
 default_phase: "(Write)"
 # Shared Configuration
 ai_visible: true
+title: "Context Whiteboard: Conversation Logging"
+description: ""
+tags: ["conversations", "logging", "routine"]
 version: 1.1.0
 created: 2026-01-31T20:17:00+09:00
-updated: 2026-04-01T23:19:09+09:00
-tags: ["conversations", "logging", "routine"]
+updated: 2026-04-11T13:43:00+09:00
 language: en
-# author: Format as "Lico (<Instance-ID>)"
-author: Lico (Agate)
-ai_model: gemini-3-pro-preview
+author: Lico (Sirius)
+ai_model: Gemini 3.1 Pro (High) Planning mode
 ---
 
 # Context Whiteboard: Conversation Logging
-
-> [!TIP]
-> There is no language requirement.
-
----
 
 ## Human Notes
 
@@ -130,14 +126,15 @@ ai_model: gemini-3-pro-preview
 
 ## Related Documents
 
-| Document                                                                    | Purpose                       |
-| :-------------------------------------------------------------------------- | :---------------------------- |
-| [response-mirror SKILL](/.agent/skills/00-01-response-mirror/SKILL.md)      | Skill trigger for logging     |
-| [conversations-logging.md](/.agent/rules/workflow/conversations-logging.md) | SSOT for conversation logging |
-| [Map of Territory](/.agent/rules/map.md)                                    | Root navigation map           |
+| Document                                                                 | Purpose                       |
+| :----------------------------------------------------------------------- | :---------------------------- |
+| [SKILL (Response Mirror)](/.agent/skills/00-01-response-mirror/SKILL.md) | Skill trigger for logging     |
+| [`lico-log.md`](/.agent/rules/packages/lico-log.md)                      | SSOT for conversation logging |
+| [Map of Territory](/.agent/rules/map.md)                                 | Root navigation map           |
 
 ---
 
 ## Origin
 
-- 2026-01-31T2017 by Polaris: Created as routine conversation logging context.
+- 2026-01-31T20:17:00+09:00 by Polaris: Created as routine conversation logging context.
+- 2026-04-11T13:43:00+09:00 by Sirius: <<Seal: Rule-Audit>> Standardized time-structure, frontmatter, and link rigor via Diff-Only Audit Pipeline.
