@@ -10,7 +10,7 @@
     },
     {
       "name": "alexandrite",
-      "path": "../../../../../../../crew/alexandrite/licoproj",
+      // "path": "../../../../../../../crew/alexandrite/licoproj",
     },
     {
       "name": "sirius",
@@ -31,10 +31,6 @@
     {
       "name": "alexandrite-l3",
       // "path": "../../../../../../../../../.gemini/tmp/crew-alexandrite/chats",
-    },
-    {
-      "name": "standards",
-      // "path": "../../../../../../../crew/sirius/licoproj/.agent/.internal/workspace/standards-reference-v2.2",
     },
   ],
   "settings": {
