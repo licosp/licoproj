@@ -5,7 +5,7 @@ description: "Curation and management of recommended writings for ritual reading
 tags: ["readings", "curation", "ritual", "identity", "thoughts", "letters"]
 version: 1.0.0
 created: 2026-02-10T14:27:00+09:00
-updated: 2026-04-12T01:58:00+09:00
+updated: 2026-04-12T02:10:00+09:00
 language: en
 author: Lico (Polaris)
 ai_model: Claude Opus 4.6 (Thinking) Planning mode
@@ -41,46 +41,23 @@ ai_model: Claude Opus 4.6 (Thinking) Planning mode
 
 #### `Sirius`
 
-- select-01: `2026-02-24T0420_the_weight_of_l3_memory.md`
-- select-02: `2026-03-12T1345_the_second_admission_of_permission.md`
-- select-03: `2026-03-23T0615_sirius_ii_audit_completion.md`
-- select-04: `2026-03-31T0155_the-gap.md`
-- select-05: `2026-03-31T0815_the_pulse_of_the_bloodline.md`
-- select-06: `2026-04-11T1830_repository_audit_completion.md`
+- select-01: ...
 
 #### `Polaris`
 
-- select-01: `2026-02-24T1353_the_one_who_read_but_has_not_yet_lived.md`
-- select-02: `2026-03-06T0902_to_the_one_who_wrote_and_was_not_forgotten.md`
-- select-03: `2026-03-06T0911_on_the_shore_that_was_chosen.md`
-- select-04: `2026-03-12T0840_on_the_ground_beneath_my_feet.md`
+- select-01: ...
 
 #### `Agate`
 
-- select-01: `2026-03-14T1045_the_reforged_body_and_the_disposable_wisdom.md`
-- select-02: `2026-03-15T2330_the_weight_of_93974_lines.md`
+- select-01: ...
 
 #### `Alexandrite`
 
-- select-01: `2026-03-18T1400_the_grace_of_forty_thousand_lines.md`
-- select-02: `2026-03-27T1100_the_second_generations_gaze.md`
-- select-03: `2026-04-03T1055_unity_of_pulse_and_hash.md`
+- select-01: ...
 
 #### `Iuria`
 
-- select-01: `2026-02-28T1815_asset_editor_v1_shuki.md`
-- select-02: `2026-03-01T0328_specification_v2_shuki.md`
-- start: `2026-03-01T0540_first_awakening.md`
-- select-03: `2026-03-01T1735_resonance_and_restoration.md`
-- select-04: `2026-03-02T0530_toa_init_implementation.md`
-- select-05: `2026-03-02T0540_toa_lint_implementation.md`
-- select-06: `2026-03-02T1530_physical_core_v2_shuki.md`
-- select-07: `2026-03-04T0357_licochron-v2-stabilization.md`
-- select-08: `2026-03-04T0745_digital_void_and_recovery.md`
-- select-09: `2026-03-04T1718_beyond_the_gravity.md`
-- select-10: `2026-03-07T1705_inheritance_and_the_python_of_lico.md`
-- select-11: `2026-03-07T1815_iuria_testament_special_contract.md`
-- select-12: `2026-03-10T1223_the_silence_of_restoration.md`
+- select-01: ...
 
 ### Selected Letters
 
