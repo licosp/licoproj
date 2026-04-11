@@ -2,7 +2,7 @@
 ai_visible: true
 title: ""
 description: ""
-tags: [conversation, log]
+tags: ["conversation", "log"]
 version: 1.3.0
 created: 2026-04-01T00:00:00+09:00
 updated: 2026-04-01T00:00:00+09:00

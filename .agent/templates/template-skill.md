@@ -7,6 +7,7 @@ description: >
 # Shared Configuration
 ai_visible: true
 title: ""
+description: ""
 tags: ["skill"]
 version: 1.0.0
 created: 2026-01-31T00:00:00+09:00
