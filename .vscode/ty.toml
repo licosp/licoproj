@@ -15,7 +15,7 @@ extra-paths = [
 
 [analysis]
 respect-type-ignore-comments = true
-allowed-unresolved-imports = []
+allowed-unresolved-imports = ["lico_lint_empty_dir.main"]
 
 [src]
 include = ["packages"]

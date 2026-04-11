@@ -17,6 +17,7 @@ logging.basicConfig(
 )
 logger = get_logger(__name__)
 
+
 class Habitat:
     """Validator for the Initial Spark environment."""
 
@@ -79,6 +80,7 @@ class Habitat:
             )
             sys.exit(1)
 
+
 def find_hub_root() -> Path:
     """Discover Hub Root by looking for 'project/crew' folders.
 
@@ -92,6 +94,7 @@ def find_hub_root() -> Path:
         current = current.parent
     # Fallback: traverse up from script location
     return Path(__file__).resolve().parents[4]
+
 
 def main() -> None:
     """Entry point for the Lico Container Bootstrapper."""
@@ -141,6 +144,7 @@ def main() -> None:
     except Exception:
         logger.exception(LicoMsg.DEVC.ERR_BOOT_FATAL)
         sys.exit(1)
+
 
 if __name__ == "__main__":
     main()
