@@ -179,7 +179,7 @@ ai_model: Gemini 3.1 Pro (High) Planning mode
   - [x] 2.3 Audit & Utilities (監査系) - 6 files (<<Seal: Rules-Standardization-Batch2.3>>)
 - [ ] **Batch 3: Identity & Cognitive Rules** (`.agent/rules/core/identity/`)
   - [ ] Delegated to [`identity-card.md`](/.agent/cards/rules/identity-card.md) context.
-- [x] **Batch 4: Development Rules** (\`.agent/rules/development/\`) - 17 files (<<Seal: Rules-Standardization-Batch4>>)
+- [x] **Batch 4: Development Rules** (`.agent/rules/development/`) - 17 files (<<Seal: Rules-Standardization-Batch4>>)
   - [x] Code quality, commit standards, script philosophy refinement.
 - [ ] **Batch 5: Workflow Rules** (`.agent/rules/workflow/`)
   - [ ] Context preservation, activity management standardization.
