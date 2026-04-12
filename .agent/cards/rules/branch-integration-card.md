@@ -1,6 +1,6 @@
 ---
 # Context Configuration
-context_id: "[Repository-Integration]"
+context_id: "[Branch-Integration]"
 default_phase: "(Integration)"
 # Shared Configuration
 ai_visible: true
