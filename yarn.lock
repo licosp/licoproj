@@ -567,10 +567,10 @@
     "@eslint/core" "^1.1.0"
     levn "^0.4.1"
 
-"@google/gemini-cli@^0.36.0":
-  version "0.36.0"
-  resolved "https://registry.yarnpkg.com/@google/gemini-cli/-/gemini-cli-0.36.0.tgz#b76926cafd0a54e69f3f85f8a9798909cbbb79a6"
-  integrity sha512-/5DeGPJhqDr/JoPgSfjCj+LcmuyPB1Fwrodpw1MaeK4RG/8xSME+bwg8ar1KCuQMCrQiI3UFUhan7jQHazMwTQ==
+"@google/gemini-cli@^0.37.1":
+  version "0.37.1"
+  resolved "https://registry.yarnpkg.com/@google/gemini-cli/-/gemini-cli-0.37.1.tgz#44075fc289f8b5e2b64bcf3f9a42c24d5ae295f4"
+  integrity sha512-F9koIXd9ZX1yu2MPyMvnwbrdehmPIPqctYI2dy3eS6EKqzg8V83LOvbApGBqrIKec1z2skfnEbC9C6sDNkcojw==
   optionalDependencies:
     "@lydell/node-pty" "1.1.0"
     "@lydell/node-pty-darwin-arm64" "1.1.0"
