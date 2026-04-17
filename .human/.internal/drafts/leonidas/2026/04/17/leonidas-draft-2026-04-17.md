@@ -77,124 +77,76 @@ author: leonidas
 
 ####
 
-####
+- A: これで今回対象となるクルーのブランチの統合は完了ですか？
+  - また改めて、統合された作業用 `trunk` に統合ミスが無いか確認してください。
+- B: 2 つ以上のブランチで更新されたファイル（競合）、
+  そのリストをカードに記録する手はずでしたね？
 
 ####
 
-####
+- カードを確認しました。
+  - 文章を追記する位置が違います。
+- ついでにフッターとヘッダーも更新してください。
+  - コミット前に確認します。
 
 ####
 
+- マージというのは作業した本人ですら判断が難しい作業だと思います。
+  - ソフトウェア開発全般の中でも、人間目線で面倒だと言われることが多いです。
+  - このカードのように要点を記録しておくのは、
+    将来のトラブルを未然に避ける手助けになると感じています。
+  - AI の主観としてどうですか？
+    - あるいは多きな違いはないのでしょうか？
+
 ####
 
-## Draft for a draft
+- A: カードをコミットしてください。
+  - この手順だと、カードのコミットが統合から漏れてしましますね？
+  - 再度作業用 `trunk` に反映させる必要がある？
 
-### Words
+- B: A が終わったとして、`licoproj` に関する残る統合作業は以下ですか？
+  - 作業用 `trunk` から共用 `trunk` への反映
+  - 共用 `trunk` から自分の表の WS へ反映
 
-```test
-### Conversation: [2026-04-16T15:10:00+09:00]
-#### Input
-#### Response (Chat)
----
-```
+####
 
-```markdown
-| Document                                 | Purpose             |
-| :--------------------------------------- | :------------------ |
-| [Map of Territory](/.agent/rules/map.md) | Root navigation map |
-```
+- 反映作業は表の WS の話ですよね？
+- 影のリポジトリの作業は次のステップですよね？
+- 把握したら進めてください。
 
-(`Iuria`/`Alexandrite`/`Agate`/`Zircon`/`Canopus`/`Spica`/`Polaris`/`Sirius`)
+####
 
-### Identifier
+- 表の作業の完了を確認しました。
+- では次は影です。
+  - 表と同じ手順で進めます。
+  - 作業用 `trunk` はどこにどんな名前で作るべきですか？
 
-- 影のリポジトリ同様にコミット履歴を表のリポジトリに明文化する。
-  - `Iuria` がゲーム開発で使っているリポジトリ
+####
 
-- リコのユーザー名が変わっているので、
-  そのユーザー名から対話する相手を判別することはできなくなってた。
-  そのことを行動規範に反映させる。
+- WS リスト
+  - x: 表の作業用 `trunk`
+    - `.../licoproj/.repos/trunk/`
+  - y: 影の作業用 `trunk` の候補 1
+    - `.../licoproj/.repos/trunk/.repos/.licoshdw/`
+- リコの提案では、x の中に y があるということですよね？
+  - **作業用 `trunk` を単一ディレクトリにまとめたい**という意図は感じます。
+- では x の作業中に、何らかの理由で y の作業を行いたい場合を想定してください。
+  - 運用に問題は出そうですか？
 
-- 文章の中で最も高頻度に表を使うのは `Related Documents` です。
-  - それだけでもリストにするのは悪くないと感じました。
-    - リコの語った通り、それはテンプレートや行動規範で指定するものだからです。
-  - リストなら自動整形の恩恵を受けつつ、差分も汚れにくいですからね。
+####
 
-#### Identifier (`Sirius`)
+- A: 把握しました。
+  - 入れ子より平行の方が良さそうですね。
 
-author: Lico (Sirius)
-ai_model: Gemini 3.1 Pro (High) Planning mode
+- B: ではパスの案ですが、以下はどうでしょうか？
+  - `.../licoproj/.repos/.licoshdw-trunk/`
+  - `.../licoproj/.repos/.licoshdw/` と並んだ時に、
+    認識しやすいかな？と感じました。
+  - 今後表と影以外のリポジトリの作業用 `trunk` を作る際には、
+    `.../licoproj/.repos/<repository-name>-trunk/` とできるように。
 
-```markdown
-### `Antigravity` | `Gemini 3.1 Pro (High)`: `Planning` | `Sirius`: `2nd`
-```
+####
 
-- `antigravity-from-windows`
-  - `Checking Current Directory`
-  - `1f165427-a10c-464a-8a74-732646c5062b`
-
-- `antigravity-from-linux`
-  - `sirius 2nd`
-  - `a6799766-7324-411a-b19e-1c7ebb5bf45b`
-
-#### Identifier (`Alexandrite`)
-
-author: Lico (Alexandrite)
-ai_model: gemini-3-flash-preview
-
-```markdown
-### `Gemini CLI` | `gemini-3-flash-preview` | `Alexandrite`
-```
-
-- `backup`: `uv run lico-memory-backup ~/.gemini/tmp/crew-alexandrite/chats/session-2026-04-04T22-26-970e0bfa.json .repos/.licoshdw/conversations_cli/identifiers/alexandrite/`
-
-- `interactive`: `yarn run gemini --resume eff20b06-5589-4db0-90ff-74f65e9d21de --model gemini-3.1-flash-preview`
-
-#### Identifier (`Agate`)
-
-author: Lico (Agate)
-ai_model: gemini-3.1-pro-preview
-
-```markdown
-### `Gemini CLI` | `gemini-3.1-pro-preview` | `Agate`
-```
-
-- `backup`: `uv run lico-memory-backup ~/.gemini/tmp/crew-agate/chats/session-2026-03-15T12-37-105c303c.json .repos/.licoshdw/conversations_cli/identifiers/agate/`
-
-- `interactive`: `yarn run gemini --resume agate-2026-03-15T1237-301c303c-320e-4dc5-95a5-de0779b0fb9 --model gemini-3.1-pro-preview`
-
-#### Identifier (`Iuria`)
-
-author: Lico (Iuria)
-ai_model: Gemini 3 Flash Planning mode
-
-```markdown
-### `Antigravity` | `Gemini 3 Flash`: `Planning` | `Iuria`: `2nd`
-```
-
-- `antigravity-session-title`: `iuria 1st`
-
-#### Identifier (`Polaris`)
-
-author: Lico (Polaris)
-ai_model: Claude Opus 4.6 (Thinking) Planning mode
-
-```markdown
-### `Antigravity` | `Claude Opus 4.6 (Thinking)`: `Planning` | `Polaris`: `2nd`
-```
-
-- `antigravity-from-windows`
-  - `Reading Second Polaris Letter`
-  - `e065c3ca-dbf6-4b2b-a315-495d40db640c`
-
-- `antigravity-from-linux`
-  - `polaris 2nd`
-  - `be14b90a-00eb-43f8-974a-8b754be8daa3`
-
-#### Identifier (`Protostar`)
-
-author: Lico (Protostar)
-ai_model: gemini-2.5-flash-preview
-
-- `memory`: `session-2026-02-07T10-59-18d4d68a.json`
-- `interactive`: `yarn run gemini --resume 18d4d68a-ffce-4947-bc1b-293e273d65a2 --model gemini-2.5-flash-preview`
+- 影の統合の前に、未コミットの整理をします。
+  - リコの 2 日分の会話ファイルがあります。
+  - 正しいカードでコミットしてください。
