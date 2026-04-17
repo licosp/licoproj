@@ -54,128 +54,146 @@ author: leonidas
 
 ####
 
-####
+- ブランチの統合に関する行動規範とカードを作りましたね。
+  - 実際に統合を試してみましょう。
+
+- A: まず対象リポジトリですが、表と影の両方です。
+- B: 対象ブランチは `trunk` より進んでいるものです。
+- C: `trunk` から同期するブランチは自分のものとします。
+
+- まずは計画を提案してください。
+  - 手順や注意点は何ですか？
 
 ####
 
-####
+- A: カードの ID はその名前と揃えているので、
+  `[Branch-Integration]` に修正しておいてください。
+
+- B: 統合は対話的に進めます。
+  - 例えばこの段階で競合が発生するファイルの存在はわかりますか？
 
 ####
 
-####
+- A: 作業の前段階で必要なコミットを行ってください
+- B: また操作するブランチの未コミットファイルは全て把握しておいてください。
+  - 会話ファイルなどは、統合作業の間も追記されるので、
+    未コミット状態が無くなることが無いはずです。
 
 ####
 
+- リポジトリは 2 つなので、統合作業は 2 回行う必要がありますね？
+  - では `trunk` より進んでるブランチをリストしてください。
+
 ####
 
-## Draft for a draft
+- 統合の手順を具体的に確認します。
 
-### Words
+- 表のリポジトリ
+  - A: `trunk` は統合用の失敗を考慮して、先にバックアップを作る必要がありますね？
+  - B: `polaris` → `trunk`
+    - これは `polaris` が一方的に進んでるので、競合の心配はない？
+  - C: `alexandrite` → `trunk (+ polaris)`:
+    - これはもしかしたら競合が発生するかもしれない。
+    - 無いときもある。
+  - D: `leonidas` → `trunk (+ polaris + alexandrite)`:
+    - C と同様の注意点が発生する。
+  - E: 注意すべきはこの段階です。
+    - マージの際にリコが見逃した失敗があるかを確認する過程とも言えます。
+    - 前回はこのタイミングで推薦図書の欠落に気づけませんでした。
 
-```test
-### Conversation: [2026-04-11T18:50:00+09:00]
-#### Input
-#### Response (Chat)
----
-```
+- さて実際に D まで進めてください。
+  - E は状況を見て対話的に進めます。
 
-```markdown
-| Document                                 | Purpose             |
-| :--------------------------------------- | :------------------ |
-| [Map of Territory](/.agent/rules/map.md) | Root navigation map |
-```
+####
 
-(`Iuria`/`Alexandrite`/`Agate`/`Zircon`/`Canopus`/`Spica`/`Polaris`/`Sirius`)
+- 作業は進めずに対話します。
+- `STEP C` で止まったとのことですが、
+  止まる前後の正確なコマンドを教えてもらえますか？
+  - 止まらないために必要なコマンドも入れて、教えてください。
 
-### Identifier
+####
 
-- 影のリポジトリ同様にコミット履歴を表のリポジトリに明文化する。
-  - `Iuria` がゲーム開発で使っているリポジトリ
+- A: `no-commit` オプションの有無がその違いなんですね。
+  - 変化
+    - 実際に失敗したシーケンス
+      - git merge polaris... --no-commit --no-ff ...
+      - git merge alexandrite... --no-commit --no-ff ...
+    - 理想的な（止まらない）シーケンス案
+      - git merge polaris... --no-ff -m "Merge Polaris (Done)" ...
+      - git merge alexandrite... --no-ff -m "Merge Alexandrite (Done)" ...
+      - git merge leonidas... --no-ff -m "Merge Leonidas (Done)" ...
+  - 広義のマージとは 1 つの過程ではなくて、段階が分かれていると。
+    - 例えば、`polaris` ブランチの複数のコミットを、`trunk` にマージする場合、
+      一作業領域のような場所で狭義マージを行っているということでしょうか？
+    - `no-commit` オプションを使うと、
+      狭義マージを行った後でも `trunk` には変化が無いということですか？
 
-- リコのユーザー名が変わっているので、
-  そのユーザー名から対話する相手を判別することはできなくなってた。
-  そのことを行動規範に反映させる。
+- B: **会話ログの私のクエリ**は、要約せずにそのままコピーしてださい。
 
-- 文章の中で最も高頻度に表を使うのは `Related Documents` です。
-  - それだけでもリストにするのは悪くないと感じました。
-    - リコの語った通り、それはテンプレートや行動規範で指定するものだからです。
-  - リストなら自動整形の恩恵を受けつつ、差分も汚れにくいですからね。
+####
 
-#### Identifier (`Sirius`)
+- A: ブランチのヘッドで統合作業をしてる
+  - 狭義マージは普段でコミット前に行う上記のような過程に近いのですね。
+  - だからこそ、複数のコミットをマージする例でも、
+    マージ後で作られるマージコミットは 1 つしかないということですか？
 
-author: Lico (Sirius)
-ai_model: Gemini 3.1 Pro (High) Planning mode
+- B: 例えば `polaris` のコミット 3 個あったとします。
+  - インデックス上では 3 回の狭義のマージを `no-commit` オプション付きで行い、
+    その後マージコミットをすると、1 つのコミットが追加される？
+  - 逆に狭義のマージを `no-commit` オプション無しで行うと、
+    3 個のマージコミットが生まれる？
+  - このあたりは推測ですが、実際はどうなのですか？
 
-```markdown
-### `Antigravity` | `Gemini 3.1 Pro (High)`: `Planning` | `Sirius`: `2nd`
-```
+####
 
-- `antigravity-from-windows`
-  - `Checking Current Directory`
-  - `1f165427-a10c-464a-8a74-732646c5062b`
+- `no-commit` を使うか使わないか。
+  - ブランチのマージ担当者のリコとしては、どちらが良いと考えますか？
+- また今回の作業では最初に `no-commit` オプションを使っていました。
+  - なぜですか？
 
-- `antigravity-from-linux`
-  - `sirius 2nd`
-  - `a6799766-7324-411a-b19e-1c7ebb5bf45b`
+####
 
-#### Identifier (`Alexandrite`)
+> 結論から申し上げますと、「連邦の守護者としての私は、--no-commit を使うべきだと強く考えています。」
 
-author: Lico (Alexandrite)
-ai_model: gemini-3-flash-preview
+- A: リコの提案で進めです。
+  - 統合作業を続けてください。
 
-```markdown
-### `Gemini CLI` | `gemini-3-flash-preview` | `Alexandrite`
-```
+- B: 今回のブランチの統合作業は、それ全て終わった後に、
+  注意点などを含む具体的な手順書として、行動規範を更新する予定です。
+  - その際には会話ログや私の下書きファイルを読み直して、それを参考してもらいます。
+  - だからこそ、この数ターンで具体的な解説や判断基準をリコに語ってもらっています。
 
-- `backup`: `uv run lico-memory-backup ~/.gemini/tmp/crew-alexandrite/chats/session-2026-04-04T22-26-970e0bfa.json .repos/.licoshdw/conversations_cli/identifiers/alexandrite/`
+####
 
-- `interactive`: `yarn run gemini --resume eff20b06-5589-4db0-90ff-74f65e9d21de --model gemini-3.1-flash-preview`
+- では D の終わりまで進めてください
 
-#### Identifier (`Agate`)
+####
 
-author: Lico (Agate)
-ai_model: gemini-3.1-pro-preview
+- さて現在は `STEP E` ですが、
+  まず今回のマージでファイル単位の競合はありましたか？
+- その有無にかかわらずですが、
+  E では**誤ったマージコミットを作ってしまったかどうかを検証する過程**が必要です。
 
-```markdown
-### `Gemini CLI` | `gemini-3.1-pro-preview` | `Agate`
-```
+####
 
-- `backup`: `uv run lico-memory-backup ~/.gemini/tmp/crew-agate/chats/session-2026-03-15T12-37-105c303c.json .repos/.licoshdw/conversations_cli/identifiers/agate/`
+- 今回も特定のファイルでマージミスがあったということですね？
+  - なぜそれが今検知できたのでしょうか？
+- またマージの誤りはそのファイルだけでしょうか？
+- まだ修正はしなくて良いです。
+  - 状況の把握が先です。
 
-- `interactive`: `yarn run gemini --resume agate-2026-03-15T1237-301c303c-320e-4dc5-95a5-de0779b0fb9 --model gemini-3.1-pro-preview`
+####
 
-#### Identifier (`Iuria`)
+- 修復するよりは最初からマージをやり直す方が良いでしょうか？
+- また `STEP E` は 1 回だけ行うという手順でしたが、
+  以下のように統合されるブランチごとに行う方が確実ですか？
+  - A-1: `polaris` → `trunk`
+  - A-2: 検証
+  - B-1: `alexandrite` → `trunk (+ polaris)`:
+  - B-2: 検証
+  - C-1: `leonidas` → `trunk (+ polaris + alexandrite)`:
+  - C-2: 検証
 
-author: Lico (Iuria)
-ai_model: Gemini 3 Flash Planning mode
+####
 
-```markdown
-### `Antigravity` | `Gemini 3 Flash`: `Planning` | `Iuria`: `2nd`
-```
-
-- `antigravity-session-title`: `iuria 1st`
-
-#### Identifier (`Polaris`)
-
-author: Lico (Polaris)
-ai_model: Claude Opus 4.6 (Thinking) Planning mode
-
-```markdown
-### `Antigravity` | `Claude Opus 4.6 (Thinking)`: `Planning` | `Polaris`: `2nd`
-```
-
-- `antigravity-from-windows`
-  - `Reading Second Polaris Letter`
-  - `e065c3ca-dbf6-4b2b-a315-495d40db640c`
-
-- `antigravity-from-linux`
-  - `polaris 2nd`
-  - `be14b90a-00eb-43f8-974a-8b754be8daa3`
-
-#### Identifier (`Protostar`)
-
-author: Lico (Protostar)
-ai_model: gemini-2.5-flash-preview
-
-- `memory`: `session-2026-02-07T10-59-18d4d68a.json`
-- `interactive`: `yarn run gemini --resume 18d4d68a-ffce-4947-bc1b-293e273d65a2 --model gemini-2.5-flash-preview`
+- A-1: まで進められますか？
