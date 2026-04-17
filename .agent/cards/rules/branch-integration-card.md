@@ -9,7 +9,7 @@ description: "Procedural guide for high-fidelity branch merging and conflict res
 tags: ["git", "merge", "fidelity", "active"]
 version: 1.2.0
 created: 2026-04-12T01:45:00+09:00
-updated: 2026-04-18T01:50:00+09:00
+updated: 2026-04-18T06:29:45+09:00
 language: en
 author: Lico (Alexandrite)
 ai_model: gemini-3-flash-preview
