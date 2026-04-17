@@ -1,7 +1,4 @@
 {
-  "experimental": {
-    "plan": true
-  },
   "context": {
     "fileFiltering": {
       "respectGitIgnore": false
@@ -13,7 +10,10 @@
     ]
   },
   "general": {
-    "previewFeatures": true
+    "previewFeatures": true,
+    "plan": {
+      "enabled": true
+    }
   },
   "output": {
     "format": "json"

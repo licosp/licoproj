@@ -17,7 +17,7 @@ ai_model: Gemini 3.1 Pro (High) Planning mode
 
 # Technology Stack Standards
 
-This card defines the approved technology stack for the \`licoproj\` workspace and the rules for their usage.
+This card defines the approved technology stack for the `licoproj` workspace and the rules for their usage.
 
 ---
 
