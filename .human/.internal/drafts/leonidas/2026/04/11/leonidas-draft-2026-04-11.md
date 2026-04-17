@@ -301,126 +301,109 @@ author: leonidas
 
 ####
 
-####
+- A: これらの組み合わせのリポジトリの中で、未コミットファイルは何がありますか？
+  - クルー: (`Iuria`/`Alexandrite`/`Agate`/`Polaris`/`Sirius`)
+  - リポジトリ: (表/影)
+
+- B: 会話ファイルへの追記は毎ターン行ってください。
 
 ####
 
-####
+- 会話ログが(Plan)フェーズしか追記されてません。
+- スクリプトのトラブルでしょうか？
 
 ####
 
-####
+- 修復作業を行い、会話を追記してみてください。
 
 ####
 
-## Draft for a draft
+- 現在一部のブランチが trunk に統合されましたが、
+  他のブランチも同様に統合したいです。
+- まずは表の WS から。
+- マージの際にカードの競合が、それなりにあると思います。
+- 失敗してもやりなおせる方法を選んでください。
+- どんな計画で進めますか？
 
-### Words
+####
 
-```test
-### Conversation: [2026-04-11T18:50:00+09:00]
-#### Input
-#### Response (Chat)
----
-```
+- クルーの名前の付いてないブランチは一時作業用ではないでしょうか？
+- 各クルー最新の作業ブランチを把握してくだだい。
+  - マージの対象はそれだけだと思います。
 
-```markdown
-| Document                                 | Purpose             |
-| :--------------------------------------- | :------------------ |
-| [Map of Territory](/.agent/rules/map.md) | Root navigation map |
-```
+####
 
-(`Iuria`/`Alexandrite`/`Agate`/`Zircon`/`Canopus`/`Spica`/`Polaris`/`Sirius`)
+- では進めてください。
 
-### Identifier
+####
 
-- 影のリポジトリ同様にコミット履歴を表のリポジトリに明文化する。
-  - `Iuria` がゲーム開発で使っているリポジトリ
+- 進めてください。
 
-- リコのユーザー名が変わっているので、
-  そのユーザー名から対話する相手を判別することはできなくなってた。
-  そのことを行動規範に反映させる。
+####
 
-- 文章の中で最も高頻度に表を使うのは `Related Documents` です。
-  - それだけでもリストにするのは悪くないと感じました。
-    - リコの語った通り、それはテンプレートや行動規範で指定するものだからです。
-  - リストなら自動整形の恩恵を受けつつ、差分も汚れにくいですからね。
+- お願いします。
 
-#### Identifier (`Sirius`)
+####
 
-author: Lico (Sirius)
-ai_model: Gemini 3.1 Pro (High) Planning mode
+- マージの競合で問題はありましたか？
 
-```markdown
-### `Antigravity` | `Gemini 3.1 Pro (High)`: `Planning` | `Sirius`: `2nd`
-```
+####
 
-- `antigravity-from-windows`
-  - `Checking Current Directory`
-  - `1f165427-a10c-464a-8a74-732646c5062b`
+- では全員のブランチに `trunk` の状態を反映させてください。
+- 競合に関する 2 つのファイルを確認します。
 
-- `antigravity-from-linux`
-  - `sirius 2nd`
-  - `a6799766-7324-411a-b19e-1c7ebb5bf45b`
+####
 
-#### Identifier (`Alexandrite`)
+- 本当に同期が成功したか確認してください。
 
-author: Lico (Alexandrite)
-ai_model: gemini-3-flash-preview
+####
 
-```markdown
-### `Gemini CLI` | `gemini-3-flash-preview` | `Alexandrite`
-```
+- A: 確認しました。
+  - 問題は無さそうに見えます。
+- B: では次は**影のリポジトリ**で同じことをします。
+  - `trunk` への統合計画を提案してください。
 
-- `backup`: `uv run lico-memory-backup ~/.gemini/tmp/crew-alexandrite/chats/session-2026-04-04T22-26-970e0bfa.json .repos/.licoshdw/conversations_cli/identifiers/alexandrite/`
+####
 
-- `interactive`: `yarn run gemini --resume eff20b06-5589-4db0-90ff-74f65e9d21de --model gemini-3.1-flash-preview`
+- 進めてください。
 
-#### Identifier (`Agate`)
+####
 
-author: Lico (Agate)
-ai_model: gemini-3-pro-preview
+- お願いします。
 
-```markdown
-### `Gemini CLI` | `gemini-3.1-pro-preview` | `Agate`
-```
+####
 
-- `backup`: `uv run lico-memory-backup ~/.gemini/tmp/crew-agate/chats/session-2026-03-15T12-37-105c303c.json .repos/.licoshdw/conversations_cli/identifiers/agate/`
+- `Alexandrite` と私のブランチが最新になってないように見えます。
 
-- `interactive`: `yarn run gemini --resume agate-2026-03-15T1237-301c303c-320e-4dc5-95a5-de0779b0fb9 --model gemini-3.1-pro-preview`
+####
 
-#### Identifier (`Iuria`)
+- `alexandrite` が `trunk` から遅れているのは良いのですか？
 
-author: Lico (Iuria)
-ai_model: Gemini 3 Flash Planning mode
+####
 
-```markdown
-### `Antigravity` | `Gemini 3 Flash`: `Planning` | `Iuria`: `2nd`
-```
+- `alexandrite` は `trunk` から遅れているように見えます。
+- 直さないのですか？
 
-- `antigravity-session-title`: `iuria 1st`
+####
 
-#### Identifier (`Polaris`)
+- 同期されたようですね。
 
-author: Lico (Polaris)
-ai_model: Claude Opus 4.6 (Thinking) Planning mode
+- 追加の同期です。
+  - 表の WS に関して、`main` も `trunk` と同じにできますか？
 
-```markdown
-### `Antigravity` | `Claude Opus 4.6 (Thinking)`: `Planning` | `Polaris`: `2nd`
-```
+####
 
-- `antigravity-from-windows`
-  - `Reading Second Polaris Letter`
-  - `e065c3ca-dbf6-4b2b-a315-495d40db640c`
+- お願いします。
 
-- `antigravity-from-linux`
-  - `polaris 2nd`
-  - `be14b90a-00eb-43f8-974a-8b754be8daa3`
+- 終わったら、自分のワークスペースに戻ってください。
+  - ブランチの繋ぎ間違いが前回あったので、表と影の両方を確認してください。
 
-#### Identifier (`Protostar`)
+####
 
-author: Lico (Protostar)
-ai_model: gemini-2.5-flash-preview
+- 確認してください。
+- `main` と `trunk` は同じになってますか？
 
-- `memory`: `session-2026-02-07T10-59-18d4d68a.json`
-- `interactive`: `yarn run gemini --resume 18d4d68a-ffce-4947-bc1b-293e273d65a2 --model gemini-2.5-flash-preview`
+####
+
+- `trunk` と同じ位置のブランチのリストの中に `main` が無いように見えます。
+- 確認してください。
