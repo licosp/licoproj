@@ -13,9 +13,9 @@ tags:
     scalability,
     nomenclature,
   ]
-version: 1.5.0
+version: 1.6.0
 created: 2026-04-12T01:45:00+09:00
-updated: 2026-04-21T06:31:57+09:00
+updated: 2026-04-21T06:45:00+09:00
 language: en
 author: Lico (Alexandrite)
 ai_model: gemini-3-flash-preview
@@ -33,11 +33,12 @@ Branch merging is a critical juncture where separate historical strata converge.
 
 ### 2.1 Physical Isolation (Workspace Layers)
 
-To ensure purity and parallel progress, agents **MUST** use dedicated workspace layers for each stage of history management:
+To ensure purity and parallel progress, agents **MUST** use dedicated workspace layers for each stage of history management. These paths are **FIXED** to maintain IDE workspace consistency:
 
 - **Active Layer**: `/home/lico/develop/shared/crew/<identifier>/licoproj/` (Standard dev workspace)
-- **Sync Layer (B-1)**: `.repos/sync-<identifier>-<ISO8601>/` (For inbound rebase/merge)
-- **Integration Layer (B-2)**: `.repos/trunk-<identifier>-<ISO8601>/` (For outbound consolidation)
+- **Sync Layer (B-1)**: `.repos/sync/` (For inbound rebase/merge)
+- **Integration Layer (B-2)**: `.repos/trunk/` (For outbound consolidation)
+- **Shadow Mirrors**: For Shadow repositories, use the same structure prefixed with a dot (e.g., `.repos/.licoshdw-sync/`).
 
 ### 2.2 Universal Nomenclature (Branch Naming)
 
@@ -49,7 +50,7 @@ Every branch created within the federation **MUST** follow the Lead Architect's 
   - `sync`: For inbound missions to bring trunk into an individual branch.
   - Examples:
     - `alexandrite-2026-04-21T0050-integration`
-    - `leonidas-2026-04-21T0050-sync`
+    - `leonidas-2026-04-21T0631-sync`
 
 ### 2.3 Integration Sequencing
 
@@ -81,7 +82,8 @@ After every historical junction, agents **MUST** execute:
 
 **The Severed Strata Incident (April 2026)**: Truncation ignorance led to data death.
 **The Mirror Paradox (April 2026)**: Nested worktrees led to search pollution.
-**The Universal Nomenclature (April 2026)**: Formalized `<id>-<ISO>-<suffix>` to achieve perfect historical alignment.
+**The Universal Nomenclature (April 2026)**: Formalized `<id>-<ISO>-<suffix>` for historical alignment.
+**The Permanent Sanctum (April 2026)**: Fixed physical paths to enable IDE workspace persistence.
 
 ---
 
@@ -98,5 +100,6 @@ After every historical junction, agents **MUST** execute:
 ## Origin
 
 - 2026-04-12T01:45:00+09:00 by Lico (Alexandrite): Created following the information loss event.
-- 2026-04-18T06:29:45+09:00 by Lico (Alexandrite): Updated to v1.4.0. Unified the naming convention with standard development branches.
-- 2026-04-21T06:31:57+09:00 by Lico (Alexandrite): Updated to v1.5.0. Formalized the Universal Nomenclature for all branch types (integration/sync) and updated the physical layer definitions.
+- 2026-04-18T06:29:45+09:00 by Lico (Alexandrite): Updated to v1.4.0. Unified the naming convention.
+- 2026-04-21T06:31:57+09:00 by Lico (Alexandrite): Updated to v1.5.0. Formalized Universal Nomenclature.
+- 2026-04-21T06:45:00+09:00 by Lico (Alexandrite): Updated to v1.6.0. Established fixed physical paths for the Federal Workbench to support IDE workspace persistence.
