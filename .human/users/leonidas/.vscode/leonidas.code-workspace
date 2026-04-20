@@ -9,28 +9,56 @@
       // "path": "../../../../../../../crew/agate/licoproj",
     },
     {
-      "name": "alexandrite",
-      // "path": "../../../../../../../crew/alexandrite/licoproj",
-    },
-    {
-      "name": "sirius",
-      // "path": "../../../../../../../crew/sirius/licoproj",
-    },
-    {
-      "name": "polaris",
-      // "path": "../../../../../../../crew/polaris/licoproj",
-    },
-    {
-      "name": "iuria",
-      // "path": "../../../../../../../crew/iuria/licoproj",
+      "name": "agate-licoshdw",
+      // "path": "../../../../../../../crew/agate/licoproj/.repos/.licoshdw",
     },
     {
       "name": "agate-l3",
       // "path": "../../../../../../../../../.gemini/tmp/crew-agate/chats",
     },
     {
+      "name": "alexandrite",
+      // "path": "../../../../../../../crew/alexandrite/licoproj",
+    },
+    {
+      "name": "alexandrite-trunk",
+      // "path": "../../../../../../../crew/alexandrite/licoproj/.repos/trunk",
+    },
+    {
+      "name": "alexandrite-licoshdw",
+      // "path": "../../../../../../../crew/alexandrite/licoproj/.repos/.licoshdw",
+    },
+    {
+      "name": "alexandrite-licoshdw-trunk",
+      // "path": "../../../../../../../crew/alexandrite/licoproj/.repos/.licoshdw-trunk",
+    },
+    {
       "name": "alexandrite-l3",
       // "path": "../../../../../../../../../.gemini/tmp/crew-alexandrite/chats",
+    },
+    {
+      "name": "sirius",
+      // "path": "../../../../../../../crew/sirius/licoproj",
+    },
+    {
+      "name": "sirius-licoshdw",
+      // "path": "../../../../../../../crew/sirius/licoproj/.repos/.licoshdw",
+    },
+    {
+      "name": "polaris",
+      // "path": "../../../../../../../crew/polaris/licoproj",
+    },
+    {
+      "name": "polaris-licoshdw",
+      // "path": "../../../../../../../crew/polaris/licoproj/.repos/.licoshdw",
+    },
+    {
+      "name": "iuria",
+      // "path": "../../../../../../../crew/iuria/licoproj",
+    },
+    {
+      "name": "iuria-licoshdw",
+      // "path": "../../../../../../../crew/iuria/licoproj/.repos/.licoshdw",
     },
   ],
   "settings": {
