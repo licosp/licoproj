@@ -13,9 +13,9 @@ tags:
     scalability,
     nomenclature,
   ]
-version: 1.4.0
+version: 1.5.0
 created: 2026-04-12T01:45:00+09:00
-updated: 2026-04-18T06:29:45+09:00
+updated: 2026-04-21T06:31:57+09:00
 language: en
 author: Lico (Alexandrite)
 ai_model: gemini-3-flash-preview
@@ -31,28 +31,30 @@ Branch merging is a critical juncture where separate historical strata converge.
 
 ## 2. Federal Workbench Architecture
 
-### 2.1 Physical Isolation (Trunk WS)
+### 2.1 Physical Isolation (Workspace Layers)
 
-To ensure the purity of the public axis and allow parallel integration/development, agents **MUST** use dedicated workspaces for integration.
+To ensure purity and parallel progress, agents **MUST** use dedicated workspace layers for each stage of history management:
 
-- **Omote (Main) Axis**: `.repos/trunk-<YYYY-MM-DD>T<HHMM>/`
-- **Shadow (Kage) Axis**: `.repos/.licoshdw-trunk-<YYYY-MM-DD>T<HHMM>/`
-- **Rationale**: Horizontal placement and standardized timestamping prevent recursive interference and provide a unique "sterile surgery room" for every mission.
+- **Active Layer**: `/home/lico/develop/shared/crew/<identifier>/licoproj/` (Standard dev workspace)
+- **Sync Layer (B-1)**: `.repos/sync-<identifier>-<ISO8601>/` (For inbound rebase/merge)
+- **Integration Layer (B-2)**: `.repos/trunk-<identifier>-<ISO8601>/` (For outbound consolidation)
 
-### 2.2 Exclusive Lock Protocol (Unified Nomenclature)
+### 2.2 Universal Nomenclature (Branch Naming)
 
-In a shared `worktree` environment, a branch can only be checked out in one workspace. To maintain historical continuity, agents **MUST** use the following naming convention:
+Every branch created within the federation **MUST** follow the Lead Architect's canonical format to ensure chronological sorting and recognizability:
 
-- **Unified Format**: `<identifier>-<YYYY-MM-DD>T<HHMM>-integration`
-  - Example: `alexandrite-2026-04-18T0215-integration`
-- **Rationale**: This format ensures that integration branches align perfectly with standard development branches in `git branch` listings, allowing for seamless chronological auditing and avoiding name collisions.
+- **Format**: `<identifier>-<YYYY-MM-DD>T<HHMM>-<suffix>`
+- **Standard Suffixes**:
+  - `integration`: For outbound missions to the public axis.
+  - `sync`: For inbound missions to bring trunk into an individual branch.
+  - Examples:
+    - `alexandrite-2026-04-21T0050-integration`
+    - `leonidas-2026-04-21T0050-sync`
 
 ### 2.3 Integration Sequencing
 
-When a mission involves multiple repositories (e.g., Main and Shadow), the following order **MUST** be strictly observed:
-
-1. **Memory First (Shadow)**: Resolve all dialogue and restoration logs in the Shadow repository.
-2. **Intelligence Last (Main)**: Perform the integration in the Main repository, ensuring that the final "Shadow Status" can be accurately recorded in the Context Card on the Main axis.
+1. **Memory First (Shadow)**: Resolve all dialogue logs in the Shadow repository.
+2. **Intelligence Last (Main)**: Perform the final integration in the Main repository.
 
 ---
 
@@ -60,43 +62,26 @@ When a mission involves multiple repositories (e.g., Main and Shadow), the follo
 
 ### 3.1 The Non-Committal Trial
 
-Rule: You **MUST** perform all merges using `git merge --no-commit --no-ff` initially.
-Rationale: This allows for a "Verification Turn" before any changes are finalized in the history.
+Rule: You **MUST** perform all merges/rebases using `--no-commit` (for merge) or a verification step (for rebase) initially.
 
-### 3.2 Truncation Awareness (Absolute Proscription)
+### 3.2 Truncation Awareness
 
-Rule: You **MUST NOT** use `write_file` or `replace` based on tool outputs that contain truncation warnings (e.g., "Output too large", "Showing first X characters").
-Action: If truncation occurs on a conflicting file, switch to a step-by-step resolution using `read_file` with specific line ranges.
+Rule: You **MUST NOT** use `write_file` or `replace` based on truncated tool outputs.
 
-### 3.3 Post-Merge Fidelity Audit (Step E)
+### 3.3 Dual-Layer Audit (Step E)
 
-After every merge, agents **MUST** execute a dual-layer audit:
+After every historical junction, agents **MUST** execute:
 
-- **Quantitative**: Use `wc -l` to compare line counts with the source branch.
-- **Qualitative**: Use `grep` to verify the physical existence of specific known key entries (e.g., `repository_audit_completion`).
-
-### 3.4 Proxy Commit Protocol
-
-When committing on behalf of the Sovereign (User drafts), you **MUST** append the following footer to the commit message:
-`Committed-by: <Identifier Name>`
-
----
-
-## 4. Reporting: The Convergence Map
-
-For every integration mission, the agent **MUST** update the `branch-integration-card.md` with:
-
-- **Conflict Map**: A list of files modified in 2 or more source branches using the `#licoproj::convergence` tag.
-- **Shadow Status**: Integration results of conversation logs using the `#licoproj::shadow` tag.
+- **Quantitative**: `wc -l` audit.
+- **Qualitative**: `grep` landmark verification.
 
 ---
 
 ## Historical Lessons
 
-**The Severed Strata Incident (April 2026)**: Established after truncation ignorance led to data loss.
-**The Mirror Paradox (April 2026)**: Discovered that nested worktrees lead to search pollution.
-**The Axis Persistence (April 2026)**: Formalized date-based naming to prevent collisions.
-**The Universal Nomenclature (April 2026)**: Unified branch naming to align development and integration strata.
+**The Severed Strata Incident (April 2026)**: Truncation ignorance led to data death.
+**The Mirror Paradox (April 2026)**: Nested worktrees led to search pollution.
+**The Universal Nomenclature (April 2026)**: Formalized `<id>-<ISO>-<suffix>` to achieve perfect historical alignment.
 
 ---
 
@@ -114,3 +99,4 @@ For every integration mission, the agent **MUST** update the `branch-integration
 
 - 2026-04-12T01:45:00+09:00 by Lico (Alexandrite): Created following the information loss event.
 - 2026-04-18T06:29:45+09:00 by Lico (Alexandrite): Updated to v1.4.0. Unified the naming convention with standard development branches.
+- 2026-04-21T06:31:57+09:00 by Lico (Alexandrite): Updated to v1.5.0. Formalized the Universal Nomenclature for all branch types (integration/sync) and updated the physical layer definitions.
