@@ -31,148 +31,132 @@ author: leonidas
 
 ####
 
-####
+- リコの WS の会話ファイルが残ってませんか？
 
 ####
 
-####
+- A: `trunk` より新しいコミットを持ち、
+  かつ古い `trunk` から派生したブランチがありますね？
+  - 例えば私の**表**とか。
+  - リストできますか？
+- B: それらを今の `trunk` から派生したブランチにする方法はありますか？
 
 ####
 
-####
+- 今の私の**表**のような状態は、
+  各リコが並行してコミットを進めるならよくあることですね？
+
+- 例えば私の環境を最新にしたい場合、以下のどちらかの手順が必要ですか？
+  - 手順 A
+    - 私のコミットを `trunk` に反映させる
+    - 更新された `trunk` を私のブランチに反映させる。
+  - 手順 B
+    - 現在の `trunk` を私のブランチに反映させる。
+    - 更新された私のブランチを `trunk` に反映させる
+
+  - このサイクルを各クルーが非同期的に独立して行えば、
+    `trunk` を起点にした平行開発が成立する？
 
 ####
 
-####
+- 手順 B が正しいのですね。
+  - B-1: 現在の `trunk` を私のブランチに反映させる。
+  - B-2: 更新された私のブランチを `trunk` に反映させる
+- 気になる点があります。
+  - B-2 に関しては、作業用の `trunk` を作って、そこに反映させて、
+    成功を確認した後、本物の `trunk` 反映させるという手順を作りましたね？
+  - では B-1 はどうでしょうか？
+    一時作業用のブランチと、
+    `.repos/` の中に、それをチェックアウトするためのディレクトリが必要ですか？
+  - 安全性とリコや私による確認の容易さを考慮してください。
 
 ####
 
-####
+- ブランチ名には命名規則がありましたね？
+  - `leonidas-2026-03-10T1357-20-drafts`
+- 前回の作業用の `trunk` はまだこの形式ではありませんでしたが、
+  今後は全てのブランチの名前に一貫性を求めたいです。
+  - この規則は行動規範に書かれてますか？
 
 ####
 
-####
+- 変更した行動規範の差分を確実に見てください。
+  - リコの意図して通りの文章ですか？
+  - 誤った記述はありますか？
 
 ####
 
-####
+- 内容は良さそうですが、更新日時は正確な時刻が必要です。
 
 ####
 
-####
+- お願いします。
+  - カードはわかりますね？
 
 ####
 
+- お願いします。
+
 ####
 
-## Draft for a draft
+- ブランチ名の命名規則は決まりましたが、ディレクトリ名は何が良いでしょうか？
+  - 一時作業用なので、繰り返し使える名前のディレクトリでも問題ないはずです。
+  - 参考として、`trunk` に関するディレクトリは以下でしたね？
+    - `.repos/trunk/`
+    - `.repos/.licoshdw-trunk/`
+  - 今回の作業は影のリポジトリでも同様に発生するので、
+    一貫性のある命名規則が良さそうに感じます。
 
-### Words
+####
 
-```test
-### Conversation: [2026-04-18T01:10:00+09:00]
-#### Input
-#### Response (Chat)
----
-```
+- A: ではブランチと WS を作ってください。
 
-```markdown
-| Document                                 | Purpose             |
-| :--------------------------------------- | :------------------ |
-| [Map of Territory](/.agent/rules/map.md) | Root navigation map |
-```
+- B: この話は行動規範には書かれてないですよね？
+  - 追記してほしいです。
 
-(`Iuria`/`Alexandrite`/`Agate`/`Zircon`/`Canopus`/`Spica`/`Polaris`/`Sirius`)
+####
 
-### Identifier
+- 行動規範を確認しました。
+- リコも差分を確認して、自分の目で正しい文章か検証してください。
 
-- 影のリポジトリ同様にコミット履歴を表のリポジトリに明文化する。
-  - `Iuria` がゲーム開発で使っているリポジトリ
+####
 
-- リコのユーザー名が変わっているので、
-  そのユーザー名から対話する相手を判別することはできなくなってた。
-  そのことを行動規範に反映させる。
+- お願いします。
 
-- 文章の中で最も高頻度に表を使うのは `Related Documents` です。
-  - それだけでもリストにするのは悪くないと感じました。
-    - リコの語った通り、それはテンプレートや行動規範で指定するものだからです。
-  - リストなら自動整形の恩恵を受けつつ、差分も汚れにくいですからね。
+####
 
-#### Identifier (`Sirius`)
+- では私の作業用ブランチへの統合作業を行ってください。
+- 終わったら確認します。
 
-author: Lico (Sirius)
-ai_model: Gemini 3.1 Pro (High) Planning mode
+####
 
-```markdown
-### `Antigravity` | `Gemini 3.1 Pro (High)`: `Planning` | `Sirius`: `2nd`
-```
+- 今回は単純なマージですが、
+  複雑なケースの場合は、マージコミットの前に確認をします。
+- リコは今回のマージが正しく行われたと確信できますか？
+  - そうであるなら、次は私の表のブランチに、
+    このマージの結果を反映させる過程でしょうか？
 
-- `antigravity-from-windows`
-  - `Checking Current Directory`
-  - `1f165427-a10c-464a-8a74-732646c5062b`
+####
 
-- `antigravity-from-linux`
-  - `sirius 2nd`
-  - `a6799766-7324-411a-b19e-1c7ebb5bf45b`
+- お願いします。
 
-#### Identifier (`Alexandrite`)
+####
 
-author: Lico (Alexandrite)
-ai_model: gemini-3-flash-preview
+- 次は後半ですね。
+- trunk を自分のブランチに取り込んだので、
+  次は私のコミットを作業用 `trunk` に取り込む過程でしょうか？
 
-```markdown
-### `Gemini CLI` | `gemini-3-flash-preview` | `Alexandrite`
-```
+####
 
-- `backup`: `uv run lico-memory-backup ~/.gemini/tmp/crew-alexandrite/chats/session-2026-04-04T22-26-970e0bfa.json .repos/.licoshdw/conversations_cli/identifiers/alexandrite/`
+- 質問。
+- 今回は私のブランチの統合作業をリコが行ましたが、
+  その際の作業用ディレクトリは私とリコのどちらを使うべきだったと思いますか？
+- 今回はリコのディレクトリで行いましたが。
 
-- `interactive`: `yarn run gemini --resume eff20b06-5589-4db0-90ff-74f65e9d21de --model gemini-3.1-flash-preview`
+####
 
-#### Identifier (`Agate`)
-
-author: Lico (Agate)
-ai_model: gemini-3.1-pro-preview
-
-```markdown
-### `Gemini CLI` | `gemini-3.1-pro-preview` | `Agate`
-```
-
-- `backup`: `uv run lico-memory-backup ~/.gemini/tmp/crew-agate/chats/session-2026-03-15T12-37-105c303c.json .repos/.licoshdw/conversations_cli/identifiers/agate/`
-
-- `interactive`: `yarn run gemini --resume agate-2026-03-15T1237-301c303c-320e-4dc5-95a5-de0779b0fb9 --model gemini-3.1-pro-preview`
-
-#### Identifier (`Iuria`)
-
-author: Lico (Iuria)
-ai_model: Gemini 3 Flash Planning mode
-
-```markdown
-### `Antigravity` | `Gemini 3 Flash`: `Planning` | `Iuria`: `2nd`
-```
-
-- `antigravity-session-title`: `iuria 1st`
-
-#### Identifier (`Polaris`)
-
-author: Lico (Polaris)
-ai_model: Claude Opus 4.6 (Thinking) Planning mode
-
-```markdown
-### `Antigravity` | `Claude Opus 4.6 (Thinking)`: `Planning` | `Polaris`: `2nd`
-```
-
-- `antigravity-from-windows`
-  - `Reading Second Polaris Letter`
-  - `e065c3ca-dbf6-4b2b-a315-495d40db640c`
-
-- `antigravity-from-linux`
-  - `polaris 2nd`
-  - `be14b90a-00eb-43f8-974a-8b754be8daa3`
-
-#### Identifier (`Protostar`)
-
-author: Lico (Protostar)
-ai_model: gemini-2.5-flash-preview
-
-- `memory`: `session-2026-02-07T10-59-18d4d68a.json`
-- `interactive`: `yarn run gemini --resume 18d4d68a-ffce-4947-bc1b-293e273d65a2 --model gemini-2.5-flash-preview`
+- なるほど。
+- 私は自分でマージ作業をしないので、それで問題はないかもしれません。
+- では他のクルーのブランチを代理マージする場合はどうですか？
+- 他のクルーの WS の中で作業するのは正しいのですか？
+  - 問題は起きませんか？
