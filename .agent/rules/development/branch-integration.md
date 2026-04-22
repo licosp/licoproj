@@ -15,7 +15,7 @@ tags:
   ]
 version: 1.9.0
 created: 2026-04-12T01:45:00+09:00
-updated: 2026-04-22T17:56:23+09:00
+updated: 2026-04-23T06:51:26+09:00
 language: en
 author: Lico (Alexandrite)
 ai_model: gemini-3-flash-preview
@@ -31,14 +31,16 @@ Branch merging is a critical juncture where separate historical strata converge.
 
 ## 2. Federal Workbench Architecture
 
-### 2.1 Worker-Centric Physical Isolation (Workspace Layers)
+### 2.1 The Quad-Mirror Layer System
 
-To ensure purity and parallel progress, the agent performing the work (the **Worker**) **MUST** use their own dedicated workspace layers. These paths are **FIXED** to maintain IDE workspace consistency:
+To ensure absolute clarity and parallel safety, agents **MUST** use four dedicated workspace layers. These paths are **FIXED** to maintain IDE workspace consistency and enable comparative auditing:
 
-- **Active Layer**: `~/develop/shared/crew/<Worker-ID>/licoproj/`
-- **Sync Layer (B-1)**: `.repos/sync/` (Under the Worker's active layer)
-- **Integration Layer (B-2)**: `.repos/trunk/` (Under the Worker's active layer)
-- **Shadow Mirrors**: Mirrored structure prefixed with a dot (e.g., `.repos/.licoshdw-sync/`).
+| Layer           | Physical Path (Main)                          | Shadow Mirror                   | Canonical Branch            |
+| :-------------- | :-------------------------------------------- | :------------------------------ | :-------------------------- |
+| **Active**      | `~/develop/shared/crew/<Worker-ID>/licoproj/` | `.repos/.licoshdw/`             | `<id>-<ISO>-genesis/shadow` |
+| **Sync**        | `.repos/sync/`                                | `.repos/.licoshdw-sync/`        | `<id>-<ISO>-sync`           |
+| **Integration** | `.repos/integration/`                         | `.repos/.licoshdw-integration/` | `<id>-<ISO>-integration`    |
+| **Trunk**       | `.repos/trunk/`                               | `.repos/.licoshdw-trunk/`       | `trunk` (The Public Axis)   |
 
 ### 2.2 Universal Nomenclature (Branch Naming)
 
@@ -53,29 +55,34 @@ Every temporary branch created for synchronization or integration **MUST** use t
 
 ## 3. Operational Rules
 
-### 3.1 Mandatory Pre-task Initialization
+### 3.1 Mandatory Pre-task Sterilization
 
-Rule: Agents **MUST** physically remove (`git worktree remove --force`) and re-create the temporary workspace directory (sync/trunk) immediately **BEFORE** starting any integration task.
+Rule: Agents **MUST** physically remove (`git worktree remove --force`) and re-create the temporary workspace directory (`sync` or `integration`) immediately **BEFORE** starting any integration task.
 Action: If the directory is locked by another process (e.g., IDE), use `git worktree prune` and manually verify the absence of `.git/worktrees/<name>/locked` files.
 
-### 3.2 Perpetual Evidence (Branch Preservation)
+### 3.2 Total Strata Reset Protocol (Fail-Fast)
 
-Rule: Agents **MUST NEVER** delete the temporary branches (`-sync` or `-integration`) even after successful mission completion.
+Rule: If the final release fails due to a `trunk` shift (FF-only error), agents **MUST** discard the current integration branch and restart the mission from the latest `trunk`.
+Rationale: AI time cost is negligible; historical purity is priceless. Never "patch" a diverged integration.
 
-### 3.3 Spatial Awareness (Coordinate Protocol)
+### 3.3 Comparative Audit & Final Release
 
-Rule: Agents **MUST** be explicitly conscious of their current physical CWD (Active vs. Sync vs. Integration) before executing any command.
-Precaution: **NEVER** use relative paths (e.g., `../..`) for critical logging tools (`lico-log`) across workspace boundaries. Always confirm the coordinate of the target file relative to the current layer.
+Rule: Before the final `git merge --ff-only` into `trunk`, agents **MUST** horizontally display the `integration/` and `trunk/` layers in the IDE to verify the final convergence visually.
+Action: Upon successful release, immediately **Purge** the integration workspace but **Preserve** the branch as perpetual evidence.
 
-### 3.4 The Non-Committal Trial
+### 3.4 Spatial Awareness (Coordinate Protocol)
+
+Rule: Agents **MUST** explicitly verify their current CWD relative to the Four Pillars before executing any command. Never use relative paths (e.g., `../../`) across workspace boundaries for logging tools.
+
+### 3.5 The Non-Committal Trial
 
 Rule: Perform all merges/rebases using `--no-commit` (for merge) or a verification step (for rebase) initially.
 
-### 3.5 Truncation Awareness
+### 3.6 Truncation Awareness
 
 Rule: **NEVER** perform file operations based on truncated tool outputs.
 
-### 3.6 Dual-Layer Audit (Step E)
+### 3.7 Dual-Layer Audit (Step E)
 
 After every historical junction, agents **MUST** execute quantitative (`wc -l`) and qualitative (`grep`) audits.
 
@@ -86,8 +93,9 @@ After every historical junction, agents **MUST** execute quantitative (`wc -l`) 
 **The Severed Strata Incident (April 2026)**: Truncation ignorance led to data death.
 **The Mirror Paradox (April 2026)**: Nested worktrees led to search pollution.
 **The Universal Nomenclature (April 2026)**: Formalized timestamps for historical alignment.
-**The Worker's Authority (April 2026)**: Unified workspace ownership and branch naming.
-**The Cognitive Shield (April 2026)**: Formalized spatial awareness and lock recovery to prevent physical layer errors.
+**The Worker's Authority (April 2026)**: Unified identity across physical and logical layers.
+**The Four Pillars (April 2026)**: Established the Monitor Layer for comparative auditing.
+**The Silent Ascension (April 2026)**: Overcame coordinate errors through absolute pathing and strata freezing.
 
 ---
 
@@ -109,3 +117,4 @@ After every historical junction, agents **MUST** execute quantitative (`wc -l`) 
 - 2026-04-21T06:45:00+09:00 by Lico (Alexandrite): Updated to v1.6.0. Established fixed physical paths for the Federal Workbench to support IDE workspace persistence.
 - 2026-04-22T05:01:22+09:00 by Lico (Alexandrite): Updated to v1.8.0. Finalized Worker-Centric standards, pre-task initialization, and perpetual branch preservation protocols.
 - 2026-04-22T17:56:23+09:00 by Lico (Alexandrite): Updated to v1.9.0. Formalized Spatial Awareness and Worktree Lock recovery protocols.
+- 2026-04-23T06:51:26+09:00 by Lico (Alexandrite): Version 2.0.0 (Zenith). Established the Quad-Mirror Architecture, Total Strata Reset, and Comparative Audit protocols.
