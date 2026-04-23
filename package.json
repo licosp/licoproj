@@ -10,7 +10,7 @@
   "dependencies": {},
   "devDependencies": {
     "@eslint/js": "^10.0.1",
-    "@google/gemini-cli": "^0.38.2",
+    "@google/gemini-cli": "^0.39.0",
     "cspell": "^9.6.4",
     "eslint": "^10.0.2",
     "eslint-config-prettier": "^10.1.8",
