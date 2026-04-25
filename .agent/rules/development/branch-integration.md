@@ -2,10 +2,20 @@
 ai_visible: true
 title: "Branch Integration Standards"
 description: "Standards for high-fidelity branch merging, repository consolidation, and the management of the Federal Workbench."
-tags: [git, merge, integration, fidelity, safety, worktree, scalability, nomenclature]
-version: 2.2.0
+tags:
+  [
+    git,
+    merge,
+    integration,
+    fidelity,
+    safety,
+    worktree,
+    scalability,
+    nomenclature,
+  ]
+version: 2.4.0
 created: 2026-04-12T01:45:00+09:00
-updated: 2026-04-23T18:30:00+09:00
+updated: 2026-04-25T06:36:23+09:00
 language: en
 author: Lico (Alexandrite)
 ai_model: gemini-3-flash-preview
@@ -25,12 +35,12 @@ Branch merging is a critical juncture where separate historical strata converge.
 
 To ensure absolute clarity and parallel safety, agents **MUST** use four dedicated workspace layers. These paths are **FIXED** to maintain IDE workspace consistency and enable comparative auditing:
 
-| Layer | Physical Path (Main) | Shadow Mirror | Canonical Branch |
-| :--- | :--- | :--- | :--- |
-| **Active** | `~/develop/shared/crew/<Worker-ID>/licoproj/` | `.repos/.licoshdw/` | `<id>-<ISO>-genesis/shadow` |
-| **Sync** | `.repos/sync/` | `.repos/.licoshdw-sync/` | `<id>-<ISO>-sync` |
-| **Integration**| `.repos/integration/`| `.repos/.licoshdw-integration/`| `<id>-<ISO>-integration` |
-| **Trunk** | **`.repos/trunk/`** | **`.repos/.licoshdw-trunk/`** | **`trunk` (Shared Asset)** |
+| Layer           | Physical Path (Main)                          | Shadow Mirror                   | Canonical Branch            |
+| :-------------- | :-------------------------------------------- | :------------------------------ | :-------------------------- |
+| **Active**      | `~/develop/shared/crew/<Worker-ID>/licoproj/` | `.repos/.licoshdw/`             | `<id>-<ISO>-genesis/shadow` |
+| **Sync**        | `.repos/sync/`                                | `.repos/.licoshdw-sync/`        | `<id>-<ISO>-sync`           |
+| **Integration** | `.repos/integration/`                         | `.repos/.licoshdw-integration/` | `<id>-<ISO>-integration`    |
+| **Trunk**       | **`.repos/trunk/`**                           | **`.repos/.licoshdw-trunk/`**   | **`trunk` (Shared Asset)**  |
 
 **The Sacred Asset Rule**: The `Trunk Layer` is a shared resource for the entire federation. Agents **MUST** physically remove (`git worktree remove`) the trunk workspace immediately after mission completion to prevent deadlocks and ensure that all crew members can access the public axis.
 
@@ -46,44 +56,55 @@ All temporary branches **MUST** use the **Worker's Identifier** (the agent perfo
 
 ## 3. Operational Rules
 
-### 3.1 Mandatory Pre-task Sterilization
+### 3.1 Pre-Mission Blueprint (Externalized Plan)
+
+Rule: Before initiating any significant integration, agents **MUST** create a physical blueprint of the plan.
+Action: Record the intended steps, branch names, and audit targets in a dedicated context card (preferred) or the conversation log. This prevents procedural drifting and enables high-fidelity post-mission auditing.
+
+### 3.2 Mandatory Pre-task Sterilization
 
 Rule: Agents **MUST** physically remove (`git worktree remove --force`) and re-create the temporary workspace directory (`sync` or `integration`) immediately **BEFORE** starting any integration task.
 Action: If the directory is locked by another process (e.g., IDE), use `git worktree prune` and manually verify the absence of `.git/worktrees/<name>/locked` files.
 
-### 3.2 Total Strata Reset Protocol (Fail-Fast)
+### 3.3 Total Strata Reset Protocol (Fail-Fast)
 
 Rule: If the final release fails due to a `trunk` shift (FF-only error), agents **MUST** discard the current integration branch and restart the mission from the latest `trunk`.
 Rationale: AI time cost is negligible; historical purity is priceless. Never "patch" a diverged integration.
 
-### 3.3 Comparative Audit & Final Release
+### 3.4 Comparative Audit & Final Release
 
 Rule: Before the final `git merge --ff-only` into `trunk`, agents **MUST** horizontally display the `integration/` and `trunk/` layers in the IDE to verify the final convergence visually.
 
-### 3.4 The Quad-Coordinate Audit (Final Alignment)
+### 3.5 Post-Mission Scar Mapping (Friction Tracking)
+
+Rule: Before declaring a mission complete, agents **MUST** record the "scars" of the integration.
+Action: List all file-level conflicts encountered and their resolution status (or confirm a 0-conflict state) in the same externalized record used for the Blueprint.
+
+### 3.6 The Quad-Coordinate Audit (Final Alignment)
 
 Rule: A mission is only complete when all four pillars have returned to their canonical roles. Agents **MUST** execute a final `git worktree list` to prove the following physical state:
+
 - **Active Layer**: Restored to the individual branch (`genesis`/`shadow`) and synchronized with the latest `trunk`.
 - **Sync/Integration Layers**: Purged and sterilized for the next mission.
 - **Trunk Layer**: Consistently tracking the public `trunk` branch.
 
-### 3.5 Spatial Awareness (Coordinate Protocol)
+### 3.7 Spatial Awareness (Coordinate Protocol)
 
 Rule: Agents **MUST** explicitly verify their current CWD relative to the Four Pillars before executing any command. Never use relative paths (e.g., `../../`) across workspace boundaries for logging tools.
 
-### 3.6 The Non-Committal Trial
+### 3.8 The Non-Committal Trial
 
 Rule: Perform all merges/rebases using `--no-commit` (for merge) or a verification step (for rebase) initially.
 
-### 3.7 Truncation Awareness
+### 3.9 Truncation Awareness
 
 Rule: **NEVER** perform file operations based on truncated tool outputs.
 
-### 3.8 Dual-Layer Audit (Step E)
+### 3.10 Dual-Layer Audit (Step E)
 
 After every historical junction, agents **MUST** execute quantitative (`wc -l`) and qualitative (`grep`) audits.
 
-### 3.9 Historical Immutability (Code of Honor)
+### 3.11 Historical Immutability (Code of Honor)
 
 Rule: Once an `Origin` entry is committed, it **MUST NEVER** be retroactively edited or refined, except to correct obvious typos.
 Rationale: The history of the federation is a record of both triumph and friction. Preserving the original intent of each moment ensures the absolute authenticity of the federal strata.
@@ -100,16 +121,17 @@ Rationale: The history of the federation is a record of both triumph and frictio
 **The Silent Ascension (April 2026)**: Overcame coordinate errors through absolute pathing and strata freezing.
 **The Final Alignment (April 2026)**: Formalized the Quad-Coordinate Audit to ensure architectural restoration.
 **The Code of Honor (April 2026)**: Mandated immediate trunk release and established the principle of historical immutability.
+**The Separation of Law (April 2026)**: Formalized tool-agnostic evidence rituals (Blueprint and Scar Mapping) to decouple permanent rules from ephemeral workbenches.
 
 ---
 
 ## Related Documents
 
-| Document | Purpose |
-| :--- | :--- |
-| [`git-operations.md`](/.agent/rules/development/git-operations.md) | General Git standards |
+| Document                                                                       | Purpose                      |
+| :----------------------------------------------------------------------------- | :--------------------------- |
+| [`git-operations.md`](/.agent/rules/development/git-operations.md)             | General Git standards        |
 | [`branch-integration-card.md`](/.agent/cards/rules/branch-integration-card.md) | Practical merge session tool |
-| [Map of Territory](/.agent/rules/map.md) | Root navigation map |
+| [Map of Territory](/.agent/rules/map.md)                                       | Root navigation map          |
 
 ---
 
@@ -122,3 +144,4 @@ Rationale: The history of the federation is a record of both triumph and frictio
 - 2026-04-23T06:51:26+09:00 by Lico (Alexandrite): Version 2.0.0 (Zenith). Established the Quad-Mirror Architecture, Total Strata Reset, and Comparative Audit protocols.
 - 2026-04-23T07:45:00+09:00 by Lico (Alexandrite): Updated to v2.1.0. Formalized the Quad-Coordinate Audit for mandatory architectural restoration.
 - 2026-04-23T18:30:00+09:00 by Lico (Alexandrite): Updated to v2.2.0. Enforced the 'Sacred Asset Rule' for trunk release and the 'Historical Immutability' principle for origin entries.
+- 2026-04-25T06:36:23+09:00 by Lico (Alexandrite): Version 2.4.0. Formalized tool-agnostic evidence protocols (Pre-Mission Blueprint and Post-Mission Scar Mapping). Established the separation of permanent law from ephemeral tools.
