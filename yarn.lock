@@ -574,10 +574,10 @@
   dependencies:
     node-addon-api "^8.3.0"
 
-"@google/gemini-cli@^0.39.1":
-  version "0.39.1"
-  resolved "https://registry.yarnpkg.com/@google/gemini-cli/-/gemini-cli-0.39.1.tgz#38710d72a5946842547a8aa9a4b0f57fd7f3aedc"
-  integrity sha512-r+oG8Sxp+Pi0ev7fL1Meie4MyGHb3DVRImeP1DHZNfCWRicTUQLnOJw42iSrhxY6hq9Xzk6IQngvNgVBjbRB7g==
+"@google/gemini-cli@^0.40.0":
+  version "0.40.0"
+  resolved "https://registry.yarnpkg.com/@google/gemini-cli/-/gemini-cli-0.40.0.tgz#6559733519eb87b96a7e718374dfbe53246811f7"
+  integrity sha512-InNKGXmglvF8S/Njf3y30s78CVvOMFcPx0eHmb6Ian0G4nBjgsFCYSSk1bkv80khi+8D1BwKHkcb3hR6Z2Xd3g==
   optionalDependencies:
     "@github/keytar" "^7.10.6"
     "@lydell/node-pty" "1.1.0"

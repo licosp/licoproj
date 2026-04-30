@@ -1,8 +1,6 @@
 {
   "context": {
-    "fileFiltering": {
-      "respectGitIgnore": false
-    },
+    "fileFiltering": { "respectGitIgnore": false },
     "fileName": ["map.md"],
     "includeDirectories": [
       ".agent/identifiers/agate",
@@ -20,22 +18,16 @@
   },
   "security": {
     "blockGitExtensions": true,
-    "folderTrust": {
-      "enabled": true
-    },
+    "folderTrust": { "enabled": true },
     "enablePermanentToolApproval": true,
     "disableYoloMode": false
   },
-  "skills": {
-    "enabled": true
-  },
+  "skills": { "enabled": true },
   "ui": {
     "showStatusInTitle": true,
     "dynamicWindowTitle": true,
     "hideBanner": true,
-    "footer": {
-      "hideContextPercentage": false
-    },
+    "footer": { "hideContextPercentage": false },
     "showMemoryUsage": false,
     "showCitations": true,
     "showModelInfoInChat": true,
