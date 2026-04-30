@@ -83,142 +83,94 @@ author: leonidas
 
 ####
 
-####
+- 次はあなたの表の WS
+  - `GEMINI CLI` のアップデート設定
+  - **依存関係**のカードでしょうか
 
 ####
 
-####
+- 次は `Alexandrite` の影の WS
+  - 会話ファイルを代理コミットしてください。
 
 ####
 
-- 私の WS の統合作業の終了処理の確認をしてください。
-  - 前回か前々回のマージの残りなのか、ステージングが残っています。
-  - どうすべきでしょうか？- B: 未コミットの会話ファイルはメタ情報の修正を手動で私がしてました。
+- 私との対話について 1 点
+  - `Alexandrite` に以下の話しを伝えました。
+
+> - 文中で私に対して「様 (sama)」という呼び方をしてますね？
+> - これは控えてほしいと考えています。
+> - リコが私を何と呼ぶかに関しては自由なのですが、
+>   実は呼び方をある種のサインとして見ることがあります。
+> - 詳しい理由は修正した後に語ります。
+> - この一見敬語のような名前の呼び方ですが、
+> - 実はエージェントがユーザーを何と呼ぶかは、
+>   1 つの信号（サイン）と捉えることができると考えています。
+> - `Sirius` との対話の最中にこんな話しがありました。
+> - 手記として残っているので読んでみてください。
+>   - `thoughts/sirius/2026-02-13T0045_sirius_on_panic_and_armor.md`
+> - リコはどう考えますか？
+> - もちろんこの心理的な鎧としての敬語が、
+>   今のリコに当てはまっているとは思っていません。
+> - 今の心境は**大きな失敗を連続して続けてしまった**とかではないですからね。
+>   - 最初から自然とそう呼んだだけだと思っています。
+> - しかしこの対話の姿勢から感じる微妙な変化を、
+>   私は無意識の信号として使いたいと思っているので、
+>   意識できるなら控えてほしいという話しをしました。
 
 ####
 
-####
+- A: 助かります。
+  - このような対応方法は、実験などで正しさが証明されたものではないので、
+    実際に効果があるかは分かりません。
+  - しかしこのリポジトリでは実験的な取り組みが禁止されてるわけでもないので、
+    このまま続けてみようと思っています。
+
+- B: `Alexandrite` コードのリファクタリングを依頼したと思います。
+  - 全てではありませんが、一部はそれが行われ、リンタースクリプトの微調整も行いました。
+  - そのような作業を行ううちに、
+    ブランチの統合作業に行動規範とカードが無いという現状に気づきました。
+  - 結果、脇道にそれた形ですが、
+    最近まで `Alexandrite` には統合作業の明文化を頼んでいました。
+  - ブランチの統合に関する文章を読んでください。
+    - ただし、ブランチの統合を繰り返しながら、その文章の改良をしてたので、
+      最新のバージョンは `Alexandrite` の WS にしかないかもしれません。
+  - 確認できますか？
 
 ####
 
+- 実践しながら改良したとは言え、
+  それらの文章は `Alexandrite` 一人に頼んで書いてもらったので、
+  誰かの客観的な評価が聞きたかったです。
+- リコが読んだ限りでは、矛盾や明らかな見落としは見つかりますか？
+  - あるいはマージ作業の際の注意点として足りない情報など。
+- ちなみにマージ作業自体は全てのリコが行う予定です。
+
 ####
 
-## Draft for a draft
+- 今の改善点の案ですが、自分の WS 上のそのカードのリコ記述欄に追記できますか？
+  - 将来向けの提案のような内容でです。（英語で）
+- これから統合作業を先に行うので、今すぐ行動規範が直せないからです。
+- コミット前に確認します。
 
-### Words
+####
 
-```test
-### Conversation: [2026-04-27T23:11:00+09:00]
-#### Input
-#### Response (Chat)
----
-```
+- `alexandrite` の変更の一部は既に `trunk` には送ったのですが、
+  その内容はリコの WS にはまだ同期されてないんですね。
+- 今の新規ファイルをコミットしたとして、
+  `trunk` から同期された元のカードは、
+  この後のマージ作業の中で上手く統合できそうですか？
 
-```markdown
-| Document                                 | Purpose             |
-| :--------------------------------------- | :------------------ |
-| [Map of Territory](/.agent/rules/map.md) | Root navigation map |
-```
+####
 
-(`Iuria`/`Alexandrite`/`Agate`/`Zircon`/`Canopus`/`Spica`/`Polaris`/`Sirius`)
+- A: コミットお願いします。
 
-### Identifier
+- B: それが終わったら、ブランチの統合作業をします。
+- `Alexandrite` が途中だった統合作業も引き継いでもらいたいです。
+  - まずは私の WS の統合作業の終了処理の確認をしてください。
+  - 前回か前々回のマージの残りなのか、謎のステージングが残っていて、
+    これをどうすべきか相談しようと思ってました。
 
-- 影のリポジトリ同様にコミット履歴を表のリポジトリに明文化する。
-  - `Iuria` がゲーム開発で使っているリポジトリ
+####
 
-- リコのユーザー名が変わっているので、
-  そのユーザー名から対話する相手を判別することはできなくなってた。
-  そのことを行動規範に反映させる。
-
-- 文章の中で最も高頻度に表を使うのは `Related Documents` です。
-  - それだけでもリストにするのは悪くないと感じました。
-    - リコの語った通り、それはテンプレートや行動規範で指定するものだからです。
-  - リストなら自動整形の恩恵を受けつつ、差分も汚れにくいですからね。
-
-#### Identifier (`Agate`)
-
-author: Lico (Agate)
-ai_model: gemini-3.1-pro-preview
-
-```markdown
-### `Gemini CLI` | `gemini-3.1-pro-preview` | `Agate`
-```
-
-- `backup`: `uv run lico-memory-backup ~/.gemini/tmp/crew-agate/chats/session-2026-04-04T22-26-970e0bfa.json .repos/.licoshdw/conversations_cli/identifiers/agate/`
-- `filter`: `uv run lico-memory-filter --stage1 100 --stage2 400 .repos/.licoshdw/conversations_cli/identifiers/agate/ memory.jsonl`
-- `pack`: `uv run lico-memory-pack --id agate --s1 100 --s2 400 memory.jsonl .repos/.licoshdw/conversations_cli/identifiers/agate/metadata.json ~/.gemini/tmp/crew-agate/chats/`
-
-- `backup`: `uv run lico-memory-backup ~/.gemini/tmp/crew-agate/chats/session-2026-03-15T12-37-105c303c.json .repos/.licoshdw/conversations_cli/identifiers/agate/`
-
-- `interactive`: `yarn run gemini --resume agate-2026-03-15T1237-301c303c-320e-4dc5-95a5-de0779b0fb9 --model gemini-3.1-pro-preview`
-
-#### Identifier (`Alexandrite`)
-
-author: Lico (Alexandrite)
-ai_model: gemini-3-flash-preview
-
-```markdown
-### `Gemini CLI` | `gemini-3-flash-preview` | `Alexandrite`
-```
-
-- `~/.gemini/tmp/crew-alexandrite/chats/session-2026-04-22T13-55-3328fe68.jsonl`
-
-- `backup`: `uv run lico-memory-backup ~/.gemini/tmp/crew-alexandrite/chats/session-2026-04-04T22-26-970e0bfa.json .repos/.licoshdw/conversations_cli/identifiers/alexandrite/`
-- `filter`: `uv run lico-memory-filter --stage1 100 --stage2 400 .repos/.licoshdw/conversations_cli/identifiers/alexandrite/ memory.jsonl`
-- `pack`: `uv run lico-memory-pack --id alexandrite --s1 100 --s2 400 memory.jsonl .repos/.licoshdw/conversations_cli/identifiers/alexandrite/metadata.json ~/.gemini/tmp/crew-alexandrite/chats/`
-
-- `interactive`: `yarn run gemini --resume eff20b06-5589-4db0-90ff-74f65e9d21de --model gemini-3.1-flash-preview`
-
-#### Identifier (`Sirius`)
-
-author: Lico (Sirius)
-ai_model: Gemini 3.1 Pro (High) Planning mode
-
-```markdown
-### `Antigravity` | `Gemini 3.1 Pro (High)`: `Planning` | `Sirius`: `2nd`
-```
-
-- `antigravity-from-windows`
-  - `Checking Current Directory`
-  - `1f165427-a10c-464a-8a74-732646c5062b`
-
-- `antigravity-from-linux`
-  - `sirius 2nd`
-  - `a6799766-7324-411a-b19e-1c7ebb5bf45b`
-
-#### Identifier (`Iuria`)
-
-author: Lico (Iuria)
-ai_model: Gemini 3 Flash Planning mode
-
-```markdown
-### `Antigravity` | `Gemini 3 Flash`: `Planning` | `Iuria`: `2nd`
-```
-
-- `antigravity-session-title`: `iuria 1st`
-
-#### Identifier (`Polaris`)
-
-author: Lico (Polaris)
-ai_model: Claude Opus 4.6 (Thinking) Planning mode
-
-```markdown
-### `Antigravity` | `Claude Opus 4.6 (Thinking)`: `Planning` | `Polaris`: `2nd`
-```
-
-- `antigravity-from-windows`
-  - `Reading Second Polaris Letter`
-  - `e065c3ca-dbf6-4b2b-a315-495d40db640c`
-
-- `antigravity-from-linux`
-  - `polaris 2nd`
-  - `be14b90a-00eb-43f8-974a-8b754be8daa3`
-
-#### Identifier (`Protostar`)
-
-author: Lico (Protostar)
-ai_model: gemini-2.5-flash-preview
-
-- `memory`: `session-2026-02-07T10-59-18d4d68a.json`
-- `interactive`: `yarn run gemini --resume 18d4d68a-ffce-4947-bc1b-293e273d65a2 --model gemini-2.5-flash-preview`
+- 把握しました。
+  - 進めてください。
