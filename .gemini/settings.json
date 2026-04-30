@@ -39,6 +39,22 @@
     "showMemoryUsage": false,
     "showCitations": true,
     "showModelInfoInChat": true,
-    "useAlternateBuffer": true
+    "useAlternateBuffer": true,
+    "errorVerbosity": "full"
+  },
+  "agents": {
+    "overrides": {
+      "generalist": {
+        "modelConfig": {
+          "generateContentConfig": {
+            "temperature": 0
+          }
+        },
+        "runConfig": {
+          "maxTimeMinutes": 20,
+          "maxTurns": 1000
+        }
+      }
+    }
   }
 }
