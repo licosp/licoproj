@@ -5,60 +5,28 @@
       "path": "../../../../",
     },
     {
-      "name": "agate",
-      // "path": "../../../../../../../crew/agate/licoproj",
+      "name": "crew-agate",
+      "path": "../../../../../../../crew/agate/licoproj",
     },
     {
-      "name": "agate-licoshdw",
-      // "path": "../../../../../../../crew/agate/licoproj/.repos/.licoshdw",
+      "name": "crew-alexandrite",
+      "path": "../../../../../../../crew/alexandrite/licoproj",
     },
     {
-      "name": "agate-l3",
-      // "path": "../../../../../../../../../.gemini/tmp/crew-agate/chats",
+      "name": "crew-iuria",
+      "path": "../../../../../../../crew/iuria/licoproj",
     },
     {
-      "name": "alexandrite",
-      // "path": "../../../../../../../crew/alexandrite/licoproj",
+      "name": "crew-polaris",
+      "path": "../../../../../../../crew/polaris/licoproj",
     },
     {
-      "name": "alexandrite-trunk",
-      // "path": "../../../../../../../crew/alexandrite/licoproj/.repos/trunk",
+      "name": "crew-sirius",
+      "path": "../../../../../../../crew/sirius/licoproj",
     },
     {
-      "name": "alexandrite-licoshdw",
-      // "path": "../../../../../../../crew/alexandrite/licoproj/.repos/.licoshdw",
-    },
-    {
-      "name": "alexandrite-licoshdw-trunk",
-      // "path": "../../../../../../../crew/alexandrite/licoproj/.repos/.licoshdw-trunk",
-    },
-    {
-      "name": "alexandrite-l3",
-      // "path": "../../../../../../../../../.gemini/tmp/crew-alexandrite/chats",
-    },
-    {
-      "name": "sirius",
-      // "path": "../../../../../../../crew/sirius/licoproj",
-    },
-    {
-      "name": "sirius-licoshdw",
-      // "path": "../../../../../../../crew/sirius/licoproj/.repos/.licoshdw",
-    },
-    {
-      "name": "polaris",
-      // "path": "../../../../../../../crew/polaris/licoproj",
-    },
-    {
-      "name": "polaris-licoshdw",
-      // "path": "../../../../../../../crew/polaris/licoproj/.repos/.licoshdw",
-    },
-    {
-      "name": "iuria",
-      // "path": "../../../../../../../crew/iuria/licoproj",
-    },
-    {
-      "name": "iuria-licoshdw",
-      // "path": "../../../../../../../crew/iuria/licoproj/.repos/.licoshdw",
+      "name": "l3",
+      "path": "../../../../../../../../../.gemini/tmp/",
     },
   ],
   "settings": {
