@@ -1,4 +1,4 @@
-"""JSON to JSONL converter for Lico CLI logs."""
+"""JSON/JSONL to date-partitioned JSONL converter for Lico CLI logs."""
 
 import argparse
 import contextlib
@@ -249,32 +249,94 @@ def _save_metadata(output_root: Path, metadata: dict[str, Any]) -> None:
         json.dump(metadata, mf, indent=2, ensure_ascii=False)
 
 
+def _read_jsonl_input(
+    input_path: Path,
+) -> tuple[list[dict[str, Any]], dict[str, Any] | None]:
+    """Read a Gemini CLI JSONL session file.
+
+    Parses the new streaming JSONL format where:
+    - Line 1 is session metadata (sessionId, projectHash, etc.)
+    - Subsequent lines are message records or control operations
+    - ``$set`` lines update metadata fields (skipped as messages)
+    - ``$rewindTo`` lines record rewind operations (skipped)
+    - Duplicate message IDs are resolved by keeping the last occurrence
+
+    Args:
+        input_path (Path): Path to the .jsonl session file.
+
+    Returns:
+        tuple: (deduplicated_messages, metadata_or_None).
+    """
+    metadata: dict[str, Any] | None = None
+    msg_map: dict[str, dict[str, Any]] = {}
+    msg_order: list[str] = []
+
+    with input_path.open("r", encoding="utf-8") as f:
+        for i, line in enumerate(f):
+            if not (stripped := line.strip()):
+                continue
+            with contextlib.suppress(json.JSONDecodeError):
+                obj = json.loads(stripped)
+
+                # Line 1: session metadata
+                if i == 0 and "sessionId" in obj:
+                    metadata = obj
+                    continue
+
+                # $set: apply to metadata, skip as message
+                if "$set" in obj:
+                    if metadata is not None:
+                        metadata.update(obj["$set"])
+                    continue
+
+                # $rewindTo: skip
+                if "$rewindTo" in obj:
+                    continue
+
+                # Message record: deduplicate by ID (last-write-wins)
+                msg_id = _extract_message_id(obj)
+                if msg_id:
+                    if msg_id not in msg_map:
+                        msg_order.append(msg_id)
+                    msg_map[msg_id] = obj
+
+    # Preserve insertion order with last-write-wins values
+    messages = [msg_map[mid] for mid in msg_order if mid in msg_map]
+    return messages, metadata
+
+
 def main() -> None:
-    """Entry point for JSON to JSONL conversion."""
+    """Entry point for JSON/JSONL to date-partitioned JSONL conversion."""
     parser = argparse.ArgumentParser(
-        description="Convert Gemini CLI JSON to date-partitioned JSONL."
+        description="Convert Gemini CLI JSON/JSONL to date-partitioned JSONL."
     )
-    parser.add_argument("input_json", help="Path to the monolithic .json file")
+    parser.add_argument(
+        "input_file", help="Path to the .json or .jsonl session file"
+    )
     parser.add_argument(
         "output_root",
         help="Root directory for output",
     )
 
     args = parser.parse_args()
-    input_path, output_root = Path(args.input_json), Path(args.output_root)
+    input_path, output_root = Path(args.input_file), Path(args.output_root)
 
     if not input_path.exists():
         logger.error(LicoMsg.MEMORY.ERR_NOT_FOUND.format(path=input_path))
         sys.exit(1)
 
-    try:
-        with input_path.open("r", encoding="utf-8") as f:
-            data = json.load(f)
-    except json.JSONDecodeError:
-        logger.exception(LicoMsg.MEMORY.BACKUP_JSON_ERROR)
-        sys.exit(1)
+    if input_path.suffix == ".jsonl":
+        messages, metadata = _read_jsonl_input(input_path)
+        has_metadata = metadata is not None
+    else:
+        try:
+            with input_path.open("r", encoding="utf-8") as f:
+                data = json.load(f)
+        except json.JSONDecodeError:
+            logger.exception(LicoMsg.MEMORY.BACKUP_JSON_ERROR)
+            sys.exit(1)
+        messages, metadata, has_metadata = _normalize_input_data(data)
 
-    messages, metadata, has_metadata = _normalize_input_data(data)
     output_root.mkdir(parents=True, exist_ok=True)
 
     if has_metadata and metadata:
