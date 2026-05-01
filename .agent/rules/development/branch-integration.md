@@ -17,8 +17,8 @@ version: 2.5.0
 created: 2026-04-12T01:45:00+09:00
 updated: 2026-05-01T12:06:19+09:00
 language: en
-author: Lico (Alexandrite, Sirius)
-ai_model: gemini-3-flash-preview
+author: Lico (Sirius)
+ai_model: Gemini 3.1 Pro (High) Plan mode
 ---
 
 # Branch Integration Standards
@@ -51,7 +51,7 @@ All temporary branches **MUST** use the **Worker's Identifier** (the agent perfo
 - **Format**: `<Worker-ID>-<YYYY-MM-DD>T<HHMM>-<suffix>-<Target-ID>`
   - `sync`: For inbound missions (Trunk -> Branch).
   - `integration`: For outbound consolidation (Branch -> Trunk).
-  - *Note: The `<Target-ID>` suffix is mandatory to prevent branch name collisions during rapid continuous batch processing (Extended Nomenclature).*
+  - _Note: The `<Target-ID>` suffix is mandatory to prevent branch name collisions during rapid continuous batch processing (Extended Nomenclature)._
 
 ---
 
