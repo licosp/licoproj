@@ -8,6 +8,7 @@ dependencies = []
 
 [project.scripts]
 lico-memory-backup = "lico_memory.backup:main"
+lico-memory-rebuild = "lico_memory.rebuild:main"
 lico-memory-filter = "lico_memory.filter:main"
 lico-memory-pack = "lico_memory.pack:main"
 
