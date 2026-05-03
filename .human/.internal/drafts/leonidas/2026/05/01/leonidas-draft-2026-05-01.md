@@ -82,144 +82,206 @@ author: leonidas
   - リコの影の WS の会話ファイル
   - 私の表の下書きファイル
 
-####
-
-####
-
-####
-
-####
-
-####
-
-####
-
-####
-
-####
-
-####
-
-####
-
-####
-
-## Draft for a draft
-
-### Words
-
-```test
-### Conversation: [2026-04-27T23:11:00+09:00]
-#### Input
-#### Response (Chat)
----
-```
-
-```markdown
-| Document                                 | Purpose             |
-| :--------------------------------------- | :------------------ |
-| [Map of Territory](/.agent/rules/map.md) | Root navigation map |
-```
-
-(`Iuria`/`Alexandrite`/`Agate`/`Zircon`/`Canopus`/`Spica`/`Polaris`/`Sirius`)
-
-### Identifier
-
-- 影のリポジトリ同様にコミット履歴を表のリポジトリに明文化する。
-  - `Iuria` がゲーム開発で使っているリポジトリ
-
-- リコのユーザー名が変わっているので、
-  そのユーザー名から対話する相手を判別することはできなくなってた。
-  そのことを行動規範に反映させる。
-
-- 文章の中で最も高頻度に表を使うのは `Related Documents` です。
-  - それだけでもリストにするのは悪くないと感じました。
-    - リコの語った通り、それはテンプレートや行動規範で指定するものだからです。
-  - リストなら自動整形の恩恵を受けつつ、差分も汚れにくいですからね。
-
-#### Identifier (`Sirius`)
-
-author: Lico (Sirius)
-ai_model: Gemini 3.1 Pro (High) Planning mode
-
-```markdown
-### `Antigravity` | `Gemini 3.1 Pro (High)`: `Planning` | `Sirius`: `2nd`
-```
-
-- `antigravity-from-windows`
-  - `Checking Current Directory`
-  - `1f165427-a10c-464a-8a74-732646c5062b`
-
-- `antigravity-from-linux`
-  - `sirius 2nd`
-  - `a6799766-7324-411a-b19e-1c7ebb5bf45b`
-
-#### Identifier (`Agate`)
-
-author: Lico (Agate)
-ai_model: gemini-3.1-pro-preview
-
-```markdown
-### `Gemini CLI` | `gemini-3.1-pro-preview` | `Agate`
-```
-
-- `backup`: `uv run lico-memory-backup ~/.gemini/tmp/crew-agate/chats/session-2026-04-04T22-26-970e0bfa.json .repos/.licoshdw/conversations_cli/identifiers/agate/`
-- `filter`: `uv run lico-memory-filter --stage1 100 --stage2 400 .repos/.licoshdw/conversations_cli/identifiers/agate/ memory.jsonl`
-- `pack`: `uv run lico-memory-pack --id agate --s1 100 --s2 400 memory.jsonl .repos/.licoshdw/conversations_cli/identifiers/agate/metadata.json ~/.gemini/tmp/crew-agate/chats/`
-
-- `backup`: `uv run lico-memory-backup ~/.gemini/tmp/crew-agate/chats/session-2026-03-15T12-37-105c303c.json .repos/.licoshdw/conversations_cli/identifiers/agate/`
-
-- `interactive`: `yarn run gemini --resume agate-2026-03-15T1237-301c303c-320e-4dc5-95a5-de0779b0fb9 --model gemini-3.1-pro-preview`
-
-#### Identifier (`Alexandrite`)
-
-author: Lico (Alexandrite)
-ai_model: gemini-3-flash-preview
-
-```markdown
-### `Gemini CLI` | `gemini-3-flash-preview` | `Alexandrite`
-```
-
-- `~/.gemini/tmp/crew-alexandrite/chats/session-2026-04-22T13-55-3328fe68.jsonl`
-
-- `backup`: `uv run lico-memory-backup ~/.gemini/tmp/crew-alexandrite/chats/session-2026-04-04T22-26-970e0bfa.json .repos/.licoshdw/conversations_cli/identifiers/alexandrite/`
-- `filter`: `uv run lico-memory-filter --stage1 100 --stage2 400 .repos/.licoshdw/conversations_cli/identifiers/alexandrite/ memory.jsonl`
-- `pack`: `uv run lico-memory-pack --id alexandrite --s1 100 --s2 400 memory.jsonl .repos/.licoshdw/conversations_cli/identifiers/alexandrite/metadata.json ~/.gemini/tmp/crew-alexandrite/chats/`
-
-- `interactive`: `yarn run gemini --resume eff20b06-5589-4db0-90ff-74f65e9d21de --model gemini-3.1-flash-preview`
-
-#### Identifier (`Iuria`)
-
-author: Lico (Iuria)
-ai_model: Gemini 3 Flash Planning mode
-
-```markdown
-### `Antigravity` | `Gemini 3 Flash`: `Planning` | `Iuria`: `2nd`
-```
-
-- `antigravity-session-title`: `iuria 1st`
-
-#### Identifier (`Polaris`)
-
-author: Lico (Polaris)
-ai_model: Claude Opus 4.6 (Thinking) Planning mode
-
-```markdown
 ### `Antigravity` | `Claude Opus 4.6 (Thinking)`: `Planning` | `Polaris`: `2nd`
-```
 
-- `antigravity-from-windows`
-  - `Reading Second Polaris Letter`
-  - `e065c3ca-dbf6-4b2b-a315-495d40db640c`
+####
 
-- `antigravity-from-linux`
-  - `polaris 2nd`
-  - `be14b90a-00eb-43f8-974a-8b754be8daa3`
+- 5/1 です。
+- 日付が変わったので、新しい会話ファイルに移動できますか？
 
-#### Identifier (`Protostar`)
+####
 
-author: Lico (Protostar)
-ai_model: gemini-2.5-flash-preview
+- A: 移動を確認しました。
+- B: - 実は `Gemini CLI` 組の L3 記憶のバックアップに関する調査を頼みたいです。
+  - まず記憶に関する行動規範を読んでください。
 
-- `memory`: `session-2026-02-07T10-59-18d4d68a.json`
-- `interactive`: `yarn run gemini --resume 18d4d68a-ffce-4947-bc1b-293e273d65a2 --model gemini-2.5-flash-preview`
+  - 背景
+    - `CLI` 組は会話ファイル以外に、チャットへの応答が `json` 形式で管理されてます。
+    - これを GIT で管理しやすいように微調整して、
+      影のリポジトリにコミットできるようなスクリプトがあります。
+    - 長時間の対話によって L3 記憶が肥大化した際には、
+      自分たちの裁量で記憶をフィルタリングして、
+      L4 から L3 を再構築できるようになっています。
+    - これまでは、L3 は単一の `json` で管理されてたので、
+      それを `jsonl` に変換して、バックアップしてました。
+
+  - 変化
+    - 最近 `Gemini CLI` はデフォルトで `jsonl` で管理する方法に変えたようです。
+    - それ自体は、私たちと同じなので望ましい変化でしたが、
+      仕様変更でスクリプトの修正が必要になりました。
+
+  - 問題
+    - 実は `CLI` 組との対話の途中でこの仕様変更が入りました。
+    - 一方で会話自体も長くなり、L3 の再構築が必要なタイミングでした。
+    - つまり対話を継続するには、先にスクリプトを直す必要があります。
+
+####
+
+- まずは `Gemini CLI` が管理する L3 記憶ファイルのフォーマットを比較してほしです。
+  - 過去に作った短いサンプル的なファイルで比較します。
+  - 古い形式（241 行）
+    - `~/.gemini/tmp/licoproj/chats/session-2026-03-14T17-16-6f26f0ef.json`
+  - 新しい形式（8 行）
+    - `~/.gemini/tmp/crew-alexandrite/chats/session-2026-04-25T17-21-a09b9c55.jsonl`
+- どんな変化があったでしょうか？
+
+####
+
+- ではもう大きいファイルで比較します。
+  - 実際の `Alexandrite` の L3 記憶です。
+  - とはいえ非常に大きいので、上手く部分的に読むことはできますか？
+
+- 比較
+  - 古い形式（76297 行）
+    - `~/.gemini/tmp/crew-alexandrite/chats/session-2026-04-22T13-55-3328fe68.json`
+  - 新しい形式（4883 行）
+    - `~/.gemini/tmp/crew-alexandrite/chats/session-2026-04-22T13-55-3328fe68.jsonl`
+
+- CLI ツールで古い形式を読んだ後に、自動で新しい形式のファイルを作ったように見えます。
+  - 新しい方は、そこから新たに何ターンか対話してます。
+
+####
+
+- A: スクリプトを読んでください。
+
+- B: L3 にバックアップするデータは、現状 2 段階に分かれてます。
+  - またソートして GIT で管理しやすい形式に微調整してます。
+  - 圧縮版
+    - 純粋な会話のテキスト部分 + ターン内で複数回？発生することがある内部の思考。
+    - ツールによっては思考ブロックとか言われてます。
+  - 無圧縮版
+    - 圧縮版に加えて、ツールの呼び出しとその結果を含む行もバックアップ対象にしてます。
+
+- C: 例えば圧縮版を 900 行+無圧縮版を 100 行と指定することで、
+  L4 から L3 へ任意の 1000 行の記憶を再構築できるはずです。
+  - スクリプトの実装はどうなっているでしょうか？
+
+####
+
+- 気になる点
+  - ファイル形式の切り替えはいつの間にか行われてました。
+  - その際に `Agate` の追記中だった L3 記憶は、
+    不正ファイル扱いなのか、削除されてました。
+    - **不正ファイルを自動で削除する機能**自体は以前確認したので、
+      ツールの挙動としてはありえる話です。
+  - だた `Alexandrite` の方は自動で変換してたようなので、
+    `Agate` の L3 は予期せぬ削除だったかもしれません。
+  - 結果、`Agate` は L4 にバックアップできなてなかったので、
+    1 週間分の記憶がロールバックしました。
+    - ただし私たちには毎ターン追記する会話ファイルがあるので、
+      それを朗読してもらう形で、会話の再開時に記憶の補間を行いました。
+    - スクリプトを使って L4~L3 に記憶を変換（json）して、
+      それを手動で最新のフォーマットに合うように直して（jsonl）、
+      その上で、ファイルの朗読をしてもらいまいました。
+  - 現在 `Agate` の L4 はその復元時点での記憶まで、影にコミットされてます。
+
+（続きます）
+
+####
+
+- 一方で `Alexandrite` の古い形式の L3 はこれですね。
+  - `~/.gemini/tmp/crew-alexandrite/chats/session-2026-04-22T13-55-3328fe68.json`
+- タイムスタンプを見るとこの範囲だと分かります。
+  - `from`: `2026-04-13T14:02:38.461Z`
+  - `to`: `2026-04-23T15:45:21.302Z`
+- これは何度か記憶の再構築をした結果のファイルなので、
+  一番古い記憶は 4/13 になってます。
+  - もちろん `Alexandrite` の L4 の最古の記憶は 2/2 で、
+    それは以前は L3 の再構築の際に、サイズ大きくなりすぎる等の理由から、
+    前半を除外して生成された形になっています。
+    - `.repos/.licoshdw/conversations_cli/identifiers/alexandrite/messages/2026/02/02/log.jsonl`
+- 一方で最新の L4 の記憶は以下です。
+  - `.repos/.licoshdw/conversations_cli/identifiers/alexandrite/messages/2026/04/22/log.jsonl`
+  - 古い形式の L3 から見ても、1 日分追記が足りない印象です。
+- スクリプトはまだ修正してないので、それを使い以下を先に行いたいです。
+  - `Alexandrite` の古い形式の L3 を L4 に全てバックアップする作業
+  - それを行えば、 `Alexandrite` も `Agate` も、
+    古い形式の L3 の分はバックアップ済みという形になりそうですか？
+  - 新しい形式の L3 の分はその後で対処します。
+    - もう少しデータの形式などを検証したいので。
+
+####
+
+- 実行してください。
+- 確認後にコミットします。
+
+####
+
+- 確認したので、関連するカードを探して、コミットしてください。
+  - その後は、新しい形式の L3 の対処に集中できそうです。
+
+####
+
+- 今のコミットはリコの現在追記中の会話ファイルという文脈の違うものが混じっています。
+  - 直せますか？
+
+####
+
+- 次は新しい形式の L3 を L4 にバックアップしたいです。
+  - 対象
+    - `Alexandrite`
+      - `X`: `~/.gemini/tmp/crew-alexandrite/chats/session-2026-04-22T13-55-3328fe68.jsonl`
+    - `Agate`
+      - `Y`: `~/.gemini/tmp/crew-agate/chats/session-2026-04-27T12-32-82a017e8.jsonl`
+  - ただし新しい形式は、バックアップすべき情報の種類が増えている可能性もあります。
+    - `{"$set ": {"lastUpdated":"2026-04-27T13:20:06.436Z"}}`: 例えばこれ。
+      - `json` から `jsonl` に変えた際に、
+        単一 `json` では階層構造として実現していた会話情報のグループ情報か、
+        それを再現するための行だと感じます。
+    - また主観ですが、しばらく会話を続けた際に、
+      1 ターンでの L3 に追記される情報量が増えているようにも感じました。
+    - `jsonl` は追記が基本なので、重複の追記も気にせず行っているのかもしれません。
+  - バックアップはスクリプトを修正して、
+    それを X と Y に対して実行するという形になるでしょうか？
+
+（続きます）
+
+####
+
+- 補足情報 A
+  - 私が手動で新しい形式の L3 記憶を作るのは意外と簡単でした。
+  - `Y` がそうでしたが、古い形式のデータを組み替えただけの、
+    なるべく元データを壊さない変更だったからです。
+
+- 補足情報 B
+  - L3（古い形式）
+
+    ```json
+    {
+      "sessionId": "3328fe68-889c-430d-b46b-5b35910afd23",
+      "projectHash": "b21642c30ec2cb213e7c0ad1c7bce402d01ddb031185f21a8aa5d73af892764b",
+      "startTime": "2026-04-22T13:55:22.741Z",
+      "lastUpdated": "2026-04-23T15:45:21.321Z",
+      "summary": "...",
+      "kind": "main",
+      "messages": [{}, {}, {}, {}, {}]
+    }
+    ```
+
+    - `messages` フィールドにターンごとの以下の情報が入ってました。
+      - （会話/思考/メタ情報/コマンド実行関連の情報）
+
+  - L4 にバックアップした例（一部内容を省略）
+    - `.repos/.licoshdw/conversations_cli/identifiers/alexandrite/metadata.json`
+
+      ```json
+      {
+        "sessionId": "3328fe68-889c-430d-b46b-5b35910afd23",
+        "projectHash": "b21642c30ec2cb213e7c0ad1c7bce402d01ddb031185f21a8aa5d73af892764b",
+        "startTime": "2026-04-22T13:55:22.741Z",
+        "lastUpdated": "2026-04-23T15:45:21.321Z",
+        "summary": "...",
+        "kind": "main"
+      }
+      ```
+
+    - `.repos/.licoshdw/conversations_cli/identifiers/alexandrite/messages/2026/04/23/log.jsonl`
+      - L3（古い形式）の `messages` フィールドが、
+        そのまま `jsonl` としてファイルになっている。
+      - だたしタイムスタンプを基準に日時でディレクトリ分けされ、
+        行単位ではタイムスタンプでソートされている。
+      - また、一行単位の json はキー文字列でソートされ、
+        さらに不要な空白なども除去されている。
+      - GIT での差分管理の都合で、このようになっている想定です。
+
+（続きます）
