@@ -109,6 +109,30 @@ ai_model: gemini-3-flash-preview
 - [ ] **Proposal 1 (The Missing Gatekeeper)**: Semantic conflicts must be blocked. The protocol should mandate running `uv run lico-pipeline` inside the `integration` layer *after* manual conflict resolution and *before* the final push/merge to `trunk`. Visual IDE audits only verify intent, not logical integrity.
 - [ ] **Proposal 2 (Post-Merge Environment Sync)**: After `trunk` is updated, agents must be explicitly instructed to run `uv sync` and `yarn install` when they pull `trunk` back into their `Active` layer. Merges containing dependency updates (`pyproject.toml`, `package.json`) will otherwise cause immediate local environment failures.
 - [ ] **Proposal 3 (Formalize "Memory First")**: Alexandrite's checklist elegantly executes "Phase 2: Shadow Mirroring" *before* "Phase 3: Main Consolidation". This brilliant defensive strategy ("Memory First") ensures that if a disastrous code merge occurs, the logs of the attempt are already safely secured. This should be elevated from a checklist habit to a formal, explicit rule in the Operational Rules section.
+### Agate (2026-05-04) [Shadow Integration Mission]
+
+- [ ] Phase 1: Axis Construction (`agate-2026-05-04T0000-integration-shadow`)
+- [ ] Phase 2: Shadow Mirroring (Memory First)
+  - [ ] Merge Agate (`agate-2026-03-12T0000-shadow-setup`)
+  - [ ] Merge Polaris (`polaris-2026-03-07T1020-shadow`)
+  - [ ] Merge Sirius (`sirius-2026-03-07T1020-genesis`)
+- [ ] Phase 4: Comparative Audit & Sacred Release (Trunk FF)
+
+### Agate (2026-05-04) [Main Integration Mission]
+
+- [ ] Target: Agate (`agate-2026-03-12T0000-32-worktree-setup`)
+  - [ ] Axis: `agate-2026-05-04T0000-integration-agate`
+  - [ ] Stitch, Audit (Lint), Release
+- [ ] Target: Polaris (`polaris-2026-03-12T0920-routine`)
+  - [ ] Axis: `agate-2026-05-04T0000-integration-polaris`
+  - [ ] Stitch, Audit (Lint), Release
+- [ ] Target: Sirius (`sirius-2026-03-10T2219-genesis`)
+  - [ ] Axis: `agate-2026-05-04T0000-integration-sirius`
+  - [ ] Stitch, Audit (Lint), Release
+- [ ] Target: Leonidas (`leonidas-2026-03-10T1357-20-drafts`)
+  - [ ] Axis: `agate-2026-05-04T0000-integration-leonidas`
+  - [ ] Stitch, Audit (Lint), Release
+
 ### Warning
 
 - Never perform a `write_file` based solely on a truncated `cat` output.
