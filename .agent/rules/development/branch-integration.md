@@ -13,12 +13,12 @@ tags:
     scalability,
     nomenclature,
   ]
-version: 2.4.0
+version: 2.5.0
 created: 2026-04-12T01:45:00+09:00
-updated: 2026-04-25T06:36:23+09:00
+updated: 2026-05-01T12:06:19+09:00
 language: en
-author: Lico (Alexandrite)
-ai_model: gemini-3-flash-preview
+author: Lico (Sirius)
+ai_model: Gemini 3.1 Pro (High) Plan mode
 ---
 
 # Branch Integration Standards
@@ -48,9 +48,10 @@ To ensure absolute clarity and parallel safety, agents **MUST** use four dedicat
 
 All temporary branches **MUST** use the **Worker's Identifier** (the agent performing the merge) to ensure perfect synchronization between the physical operating table and the logical surgical tool:
 
-- **Format**: `<Worker-ID>-<YYYY-MM-DD>T<HHMM>-<suffix>`
+- **Format**: `<Worker-ID>-<YYYY-MM-DD>T<HHMM>-<suffix>-<Target-ID>`
   - `sync`: For inbound missions (Trunk -> Branch).
   - `integration`: For outbound consolidation (Branch -> Trunk).
+  - _Note: The `<Target-ID>` suffix is mandatory to prevent branch name collisions during rapid continuous batch processing (Extended Nomenclature)._
 
 ---
 
@@ -109,6 +110,16 @@ After every historical junction, agents **MUST** execute quantitative (`wc -l`) 
 Rule: Once an `Origin` entry is committed, it **MUST NEVER** be retroactively edited or refined, except to correct obvious typos.
 Rationale: The history of the federation is a record of both triumph and friction. Preserving the original intent of each moment ensures the absolute authenticity of the federal strata.
 
+### 3.12 Post-Merge Environment Sync
+
+Rule: After `trunk` is updated and pulled back into the `Active` layer (Phase 4 Outbound Sync), agents **MUST** physically execute dependency synchronization commands (e.g., `yarn install`, `uv sync`) within each active workspace.
+Rationale: Merges containing dependency updates (`package.json`, `pyproject.toml`) will otherwise cause immediate and silent local environment failures for the respective crew members.
+
+### 3.13 The Memory First Principle
+
+Rule: Agents **MUST** execute Shadow Mirroring (Log Integration) **BEFORE** Main Consolidation (Code Integration).
+Rationale: This defensive strategy ensures that if a disastrous, unrecoverable code merge occurs, the logs of the attempt are already safely secured in the central repository.
+
 ---
 
 ## Historical Lessons
@@ -122,6 +133,7 @@ Rationale: The history of the federation is a record of both triumph and frictio
 **The Final Alignment (April 2026)**: Formalized the Quad-Coordinate Audit to ensure architectural restoration.
 **The Code of Honor (April 2026)**: Mandated immediate trunk release and established the principle of historical immutability.
 **The Separation of Law (April 2026)**: Formalized tool-agnostic evidence rituals (Blueprint and Scar Mapping) to decouple permanent rules from ephemeral workbenches.
+**The Federal Convergence (May 2026)**: Formalized the Memory First principle and Extended Nomenclature following the successful batch integration of 14 separate strata.
 
 ---
 
@@ -145,3 +157,4 @@ Rationale: The history of the federation is a record of both triumph and frictio
 - 2026-04-23T07:45:00+09:00 by Lico (Alexandrite): Updated to v2.1.0. Formalized the Quad-Coordinate Audit for mandatory architectural restoration.
 - 2026-04-23T18:30:00+09:00 by Lico (Alexandrite): Updated to v2.2.0. Enforced the 'Sacred Asset Rule' for trunk release and the 'Historical Immutability' principle for origin entries.
 - 2026-04-25T06:36:23+09:00 by Lico (Alexandrite): Version 2.4.0. Formalized tool-agnostic evidence protocols (Pre-Mission Blueprint and Post-Mission Scar Mapping). Established the separation of permanent law from ephemeral tools.
+- 2026-05-01T12:06:19+09:00 by Lico (Sirius): Version 2.5.0. Formalized Extended Nomenclature, Post-Merge Environment Sync, and the Memory First principle following the massive 14-branch integration.
