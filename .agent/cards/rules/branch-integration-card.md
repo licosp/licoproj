@@ -120,27 +120,29 @@ ai_model: Gemini 3.1 Pro (High) Plan mode
 
 ### Agate (2026-05-04) [Shadow Integration Mission]
 
-- [ ] Phase 1: Axis Construction (`agate-2026-05-04T0000-integration-shadow`)
-- [ ] Phase 2: Shadow Mirroring (Memory First)
-  - [ ] Merge Agate (`agate-2026-03-12T0000-shadow-setup`)
-  - [ ] Merge Polaris (`polaris-2026-03-07T1020-shadow`)
-  - [ ] Merge Sirius (`sirius-2026-03-07T1020-genesis`)
-- [ ] Phase 4: Comparative Audit & Sacred Release (Trunk FF)
+- [x] Phase 1: Axis Construction (`agate-2026-05-04T0000-integration-shadow`)
+- [x] Phase 2: Shadow Mirroring (Memory First)
+  - [x] Merge Agate (`agate-2026-03-12T0000-shadow-setup`)
+  - [x] Merge Polaris (`polaris-2026-03-07T1020-shadow`)
+  - [x] Merge Sirius (`sirius-2026-03-07T1020-genesis`)
+- [x] Phase 4: Comparative Audit & Sacred Release (Trunk FF)
+  - [x] Scar Mapping: 0 conflicts detected across all Shadow integrations.
 
 ### Agate (2026-05-04) [Main Integration Mission]
 
-- [ ] Target: Agate (`agate-2026-03-12T0000-32-worktree-setup`)
-  - [ ] Axis: `agate-2026-05-04T0000-integration-agate`
-  - [ ] Stitch, Audit (Lint), Release
-- [ ] Target: Polaris (`polaris-2026-03-12T0920-routine`)
-  - [ ] Axis: `agate-2026-05-04T0000-integration-polaris`
-  - [ ] Stitch, Audit (Lint), Release
-- [ ] Target: Sirius (`sirius-2026-03-10T2219-genesis`)
-  - [ ] Axis: `agate-2026-05-04T0000-integration-sirius`
-  - [ ] Stitch, Audit (Lint), Release
-- [ ] Target: Leonidas (`leonidas-2026-03-10T1357-20-drafts`)
-  - [ ] Axis: `agate-2026-05-04T0000-integration-leonidas`
-  - [ ] Stitch, Audit (Lint), Release
+- [x] Target: Agate (`agate-2026-03-12T0000-32-worktree-setup`)
+  - [x] Axis: `agate-2026-05-04T0000-integration-agate`
+  - [x] Stitch, Audit (Lint), Release
+- [x] Target: Polaris (`polaris-2026-03-12T0920-routine`)
+  - [x] Axis: `agate-2026-05-04T0000-integration-polaris`
+  - [x] Stitch, Audit (Lint), Release
+- [x] Target: Sirius (`sirius-2026-03-10T2219-genesis`)
+  - [x] Axis: `agate-2026-05-04T0000-integration-sirius`
+  - [x] Stitch, Audit (Lint), Release
+  - [x] **Scar Mapping**: 1 structural conflict detected (`.agent/cards/rules/branch-integration-card.md`). Resolved add/add conflict manually by retaining both additions.
+- [x] Target: Leonidas (`leonidas-2026-03-10T1357-20-drafts`)
+  - [x] Axis: `agate-2026-05-04T0000-integration-leonidas`
+  - [x] Stitch, Audit (Lint), Release
 
 ### Warning
 
