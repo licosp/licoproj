@@ -52,6 +52,7 @@ All temporary branches **MUST** use the **Worker's Identifier** (the agent perfo
   - `sync`: For inbound missions (Trunk -> Branch).
   - `integration`: For outbound consolidation (Branch -> Trunk).
   - _Note: The `<Target-ID>` suffix is mandatory to prevent branch name collisions during rapid continuous batch processing (Extended Nomenclature)._
+  - **Rationale**: The `<Target-ID>` is not merely for avoiding git name collisions. Its profound architectural purpose is **Failure Isolation and Traceability**. If a catastrophic semantic conflict occurs during a batch integration, we must know exactly *whose* branch caused the failure. By enforcing one dedicated integration branch per target, we ensure that a failure in the third merge does not contaminate or destroy the successful results of the first two merges.
 
 ---
 
