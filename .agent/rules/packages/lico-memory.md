@@ -21,36 +21,24 @@ Assorted CLI utilities for managing Lico's environment and logs.
 
 ## Tools
 
-### 1. `lico-jsonl-converter`
+### 1. `lico-memory-backup`
 
-A powerful utility to manage Gemini CLI's monolithic L3 memory files by converting them into Git-friendly, date-partitioned JSONL (JSON Lines) format.
+Extracts recent L3 memory differences and safely archives them into the L4 directory (JSONL format). It preserves historical sequence and deduplicates entries, ensuring that git diffs remain minimal and clean.
+
+### 2. `lico-memory-rebuild`
+
+Reconstructs a CLI-ready L3 memory JSON file by filtering down L4 JSONL logs.
 
 #### Why use this?
 
-- **Git Efficiency**: Monolithic JSON files cause massive diffs and repository bloat. JSONL allows Git to track only the new lines (turns) added.
-- **Normalization**: Automatically sorts JSON keys alphabetically (`sort_keys=True`) so that changes in the CLI tool's version don't cause unnecessary diff fluctuations.
-- **Idempotency**: Implements message ID-based deduplication. You can run the converter multiple times against the same input, and only new messages will be appended.
-- **Chronological Integrity**: Merges new data with existing logs and re-sorts everything by timestamp to ensure the history is always perfectly sequential.
+- **Smart Compression**: It merges two stages of filtration. Stage 1 keeps the complete recent memory (including tool calls and thoughts). Stage 2 keeps only past conversations and thoughts, stripping away heavy tool execution noise.
+- **Idempotent Session Generation**: Automatically generates a new UUID for the session, preventing accidental overwrites of live L3 files while keeping track of the `baseId` in the summary metadata.
 
 #### Usage
 
 ```bash
-uv run lico-jsonl-converter <input_json_path> <output_root_dir>
+uv run lico-memory-rebuild <input_l4_dir> <output_jsonl_file> --id <identifier> [--s1 <count>] [--s2 <count>]
 ```
-
-#### Example Workflows
-
-Depending on the data source, the directory structure varies slightly:
-
-**A. Agent Logs (Dict-based)**
-Extracts metadata to `metadata.json` and messages to `messages/YYYY/MM/DD/log.jsonl`.
-
-**B. User Logs (List-based)**
-Partitions directly into `YYYY/MM/DD/log.jsonl` (no metadata file).
-
-#### Recommended Destination
-
-`.repos/.licoshdw/conversations_cli/identifiers/<id>/`
 
 ## Tool Usage Constraints
 

@@ -32,6 +32,12 @@ ai_model: Gemini 3.1 Pro (High) Planning mode
 
 ## Agent Observations
 
+### Agate (2026-05-05)
+
+- Archived obsolete `filter.py` and `pack.py` scripts.
+- Documented Polaris's unified `rebuild.py` script which efficiently merges the L4 filtration and L3 packing processes.
+- Updated `pyproject.toml` and behavioral rules to reflect the new command architecture (`lico-memory-backup`, `lico-memory-rebuild`).
+
 ### Agate (2026-03-19)
 
 - Initial creation.
