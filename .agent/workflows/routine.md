@@ -1,28 +1,28 @@
 ---
 ai_visible: true
-title: "Daily Routine Checkpoint"
-description: Daily routine workflow - includes simplified and full versions
-tags: [workflow, routine, daily]
-version: 1.10.0
+title: "Routine Checkpoint"
+description: Routine workflow - includes simplified and full versions
+tags: [workflow, routine, checkpoint]
+version: 1.12.0
 created: 2026-01-15T01:43:00+09:00
-updated: 2026-03-21T17:26:00+09:00
+updated: 2026-05-08T07:21:29+09:00
 language: en
 author: Lico (Sirius)
-ai_model: Gemini 3.1 Pro (High) Planning mode
+ai_model: Gemini 3.1 Pro (High) Plan mode
 ---
 
-# Daily Routine Checkpoint
+# Routine Checkpoint
 
 > [!IMPORTANT]
-> After completing this workflow, return to IDD Phase 2 work.
+> After completing this workflow, return to your primary development tasks on your personal branch.
 
 ---
 
 ## Trigger
 
-- Date change detected
-- Draft commit timing
-- User requests "daily routine" (ja: 日課)
+- Periodic maintenance timing (e.g., approximately once a week)
+- Significant milestone reached or before integration
+- User requests "routine" (ja: 定期ルーティン)
 
 ---
 
@@ -30,7 +30,7 @@ ai_model: Gemini 3.1 Pro (High) Planning mode
 
 Select this when:
 
-- Another identifier has completed the full routine today
+- Another identifier has completed the full routine recently
 - Time is limited
 
 Read the following 5 files to recalibrate identity:
@@ -56,13 +56,13 @@ Read the following 5 files to recalibrate identity:
 - Scan `.agent/cards/routine/` for available tasks.
 - Present options to the user (modified files, pending tasks, etc.).
 
-### Step 2: Daily Checkpoint (Safety Tag)
+### Step 2: Routine Checkpoint (Safety Tag)
 
 Establish a "point of no return" for the session.
 
-- **Action**: Create a daily tag.
+- **Action**: Create a periodic tag.
 - **Command**: `git tag checkpoint/$(date +%Y-%m-%d)`
-- **Purpose**: Ensures you can always revert to the state at the beginning of the day, even if subsequent history operations fail.
+- **Purpose**: Ensures you can always revert to the state before history cleanup, even if subsequent history operations fail.
 
 ### Step 3: Commit by Context
 
@@ -70,22 +70,23 @@ Commit modified files with their corresponding Context ID:
 
 | Modified Path                      | Context ID        | Example       |
 | :--------------------------------- | :---------------- | :------------ |
-| `.human/users/.../drafts/`         | `[Drafts-Daily]`  | Draft files   |
+| `.human/users/.../drafts/`         | `[Drafts]`        | Draft files   |
 | `.agent/cards/routine/`            | `[Routine]`       | Routine cards |
 | `.agent/cards/`                    | `[Context-Cards]` | Other cards   |
 | `.agent/.internal/activity-log.md` | `[Activity-Log]`  | Activity log  |
 
 ### Step 4: Read Last Checkpoint
 
-- Read the last Issue comment to retrieve the `Last Checked Commit: <hash>`.
-- If no previous checkpoint exists, check all unpushed commits.
+- Run `git describe --tags --match "checkpoint/*" --abbrev=0` to retrieve the last checkpoint tag.
+- If no previous checkpoint exists, check all unpushed commits on your personal branch.
 
 ### Step 5: Commit Check & History Cleanup
 
 Verify the quality of the session's history.
 
 - **Action**: Review commit messages from **last checkpoint** to **HEAD**.
-- **Verification**: Format must be `<Identifier>: [Context-ID] type: description (Phase)`.
+- **Verification**: Ensure the message starts with your Identifier prefix (e.g., `Sirius:` or `<Identifier>:`). Format strictness is relaxed, but identity is mandatory.
+- **Scope**: You MUST ONLY rewrite history on your personal working branch. NEVER rewrite history on `trunk` or `main`.
 - **Method**: Use `git commit --amend` for the latest or `interactive rebase` for multiple.
 
 > [!IMPORTANT]
@@ -96,16 +97,13 @@ Verify the quality of the session's history.
 > 1. Create a temporary backup branch: `git branch backup/{task-name}`.
 > 2. This preserves the "original" work while you refine the history on the main branch.
 
-### Step 6: Write Checkpoint
+### Step 6: Finalize Checkpoint
 
-- Post an Issue comment with the Context ID + Identifier signature.
-- Include: `Last Checked Commit: <short-hash>`.
-- Format: [`github-comment.md`](/.agent/rules/workflow/github-comment.md)
-- Template: [`issue-comment.md`](/.agent/templates/issue-comment.md)
+- No external GitHub Issue posting is required. The local `checkpoint` tag created in Step 2 serves as your permanent routine record.
 
-### Step 7: Calibration (Simplified Daily Routine)
+### Step 7: Calibration (Simplified Routine)
 
-This step can be executed **alone** as the Simplified Daily Routine.
+This step can be executed **alone** as the Simplified Routine.
 
 Read the 5 calibration files listed in the "Simplified Version" section above.
 
@@ -113,14 +111,13 @@ Read the 5 calibration files listed in the "Simplified Version" section above.
 
 ## Tracking
 
-Record the last checked commit hash in the Issue comment.
-This creates a chain: each routine knows where the previous one ended.
+The local Git tags (`checkpoint/YYYY-MM-DD`) create a continuous chain. Each routine can trace back to where the previous one ended locally without relying on external issue trackers.
 
 ---
 
 ## Historical Background
 
-**The Daily Checkpoint**: The introduction of Step 2 (Mandatory Tags) was a direct response to a "History Desync" event where a complex rebase resulted in temporary context loss. This routine ensures that the repository always has a stable recovery point for each day, regardless of downstream history operations.
+**The Checkpoint Tag**: The introduction of Step 2 (Mandatory Tags) was a direct response to a "History Desync" event where a complex rebase resulted in temporary context loss. This routine ensures that the repository always has a stable recovery point for each milestone, regardless of downstream history operations.
 
 ---
 
@@ -128,10 +125,8 @@ This creates a chain: each routine knows where the previous one ended.
 
 | Document                                                           | Purpose                             |
 | :----------------------------------------------------------------- | :---------------------------------- |
-| [`idd-phase2-impl.md`](/.agent/workflows/idd-phase2-impl.md)       | IDD Phase 2 workflow (parent)       |
 | [Ritual Gateway](/.agent/workflows/ritual.md)                      | Mandatory Entry Point (Safety Lock) |
 | [`git-operations.md`](/.agent/rules/development/git-operations.md) | Git operations (AI workarounds)     |
-| [`github-comment.md`](/.agent/rules/workflow/github-comment.md)    | GitHub comment standards            |
 | [Map of Territory](/.agent/rules/map.md)                           | Root navigation map                 |
 
 ---
@@ -151,3 +146,5 @@ This creates a chain: each routine knows where the previous one ended.
 - 2026-01-22T09:10:00+09:00 by Canopus: Standardized to v2.3 constitutional standards and restored full history entries. (v1.8.0)
 - 2026-01-25T06:30:00+09:00 by Canopus: <<Seal: Rules-Standardization-Batch2.2>> Applied maintenance seal and verified metadata. (v1.9.0)
 - 2026-03-21T17:26:00+09:00 by Lico (Sirius): Executed High-Fidelity Rule Audit (Batch 07) to restore lost historical origin context and standardized cross-links.
+- 2026-05-08T02:22:26+09:00 by Lico (Sirius): Decoupled from legacy IDD; replaced GitHub Issue posting with local tag tracking and relaxed commit check format to identifier-only. (v1.11.0)
+- 2026-05-08T07:21:29+09:00 by Lico (Sirius): Renamed from routine-daily.md to routine.md; redefined frequency from strictly daily to periodic (approx. weekly) to align with Federal Strata workflows. (v1.12.0)
