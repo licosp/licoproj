@@ -3,12 +3,12 @@ ai_visible: true
 title: Git Operations Standards
 description: Git standards for branches, IDD workflow, security, and push procedures
 tags: [git, standards, workflow, safety]
-version: 2.5.0
+version: 2.6.0
 created: 2025-11-29T08:44:47+09:00
-updated: 2026-03-23T05:51:00+09:00
+updated: 2026-05-08T08:31:04+09:00
 language: en
 author: Lico (Sirius)
-ai_model: Gemini 3.1 Pro (High) Planning mode
+ai_model: Gemini 3.1 Pro (High) Plan mode
 ---
 
 # Git Operations Standards
@@ -57,30 +57,18 @@ This ensures consistent formatting and adherence to the current session's "perso
 
 ### 3. Branch Strategy
 
-#### 3.1 Branch Naming Convention
+#### 3.1 Federal Strata Branches
 
-**When Issue Exists**:
+Refer to [`branch-integration.md`](/.agent/rules/development/branch-integration.md) for the detailed architectural rules.
 
-- Format: `<issue-number>-<issue-title-kebab-case>`
-- Language: English
-- Length: ~50 characters
-- Example: `275-use-the-module-to-show-a-log-message`
-
-**When Issue Does Not Exist**:
-
-- Format: `<commit-summary-kebab-case>`
-- Derive from intended commit content
-- Language: English
-- Length: ~50 characters
+- **Workspace Operations**: Individual crew members MUST operate entirely within their assigned permanent branches (e.g., `sirius-2026-03-10T2219-genesis`) in their local workspaces.
+- **Temporary Integration Branches**: Feature-specific branches (`integration/*`) are ONLY used temporarily for merging personal branches into the central repository `trunk`.
+- **Legacy Issue Branches**: The practice of creating small, short-lived `<issue-number>-<title>` branches for daily tasks is **OBSOLETE**.
 
 #### 3.2 Branch Lifecycle
 
-**After Work Completion**:
-
-- **Remote branches**: MUST keep (for history tracking)
-- **Local branches**: MUST delete
-
-**Rationale**: Preserves agent's thought process history on GitHub while keeping local workspace clean.
+- **Personal Branches**: MUST remain permanently in the local workspace.
+- **Integration Branches**: MUST be deleted immediately after successfully merging to `trunk`.
 
 #### 3.3 History Rewriting Operations
 
@@ -168,94 +156,17 @@ git filter-branch -f --msg-filter 'sed "s/\[Archive\]/[Housekeeping]/g"' -- <com
 
 ---
 
-### 4. Issue-Driven Development (IDD)
+### 4. Context Tracking & IDD (Obsolete)
 
-#### 4.1 Pre-flight Checks
+> [!WARNING]
+> **Legacy IDD (GitHub Issue-Driven Development) is OBSOLETE.**
 
-**MUST** verify environment before starting work:
+#### 4.1 Local-First Context Tracking
 
-```bash
-# Check GitHub CLI installation
-command -v gh &> /dev/null || exit 1
+In the Federal Strata architecture, we no longer rely on external GitHub Issues for granular task management or daily checkpoints.
 
-# Check GitHub CLI authentication
-gh auth status &> /dev/null || exit 1
-
-# Check Git repository context
-git rev-parse --is-inside-work-tree &> /dev/null || exit 1
-```
-
-#### 4.2 Change Investigation
-
-- **MUST** run `git status` and `git diff --stat` to analyze changes
-- **MUST** abort if no changes are found
-
-#### 4.3 Issue Format
-
-- **Title**: `[Type]: [Short Description]`
-- **Body**: Summary, Changes, Purpose
-- **Labels**: Autonomous selection by AI agent
-
-**Label Strategy**:
-
-- **MUST** analyze issue content and select appropriate labels
-- **MUST** prioritize Conventional Commits types (`type:feat`, `type:fix`, `type:docs`, `type:chore`, `type:refactor`)
-- **MAY** create new labels if they do not exist (using `gh label create`)
-- **MAY** apply multiple labels for comprehensive classification (e.g., `type:docs` + `priority:high`)
-- **SHOULD** use existing repository labels when semantically equivalent
-
-**Rationale**: AI agents can autonomously determine the most accurate classification based on issue content, ensuring consistency between commits and issues.
-
-**Assignee Strategy**:
-
-- **MUST** assign the issue to the repository account (GitHub username: `licosp`)
-- **Rationale**: Lico operates under the `licosp` account and is responsible for all IDD cycle work
-
-#### 4.4 Issue Comment Format
-
-**MUST** write all Issue comments in English and AI-optimized format:
-
-**Rationale**: GitHub Issues serve as AI reference for chronological thought tracking. Comments must be readable by AI agents in future sessions.
-
-**Language**: English only
-
-- AI agents think in English (ref: [`identity.md`](/.agent/rules/core/identity/identity.md))
-- Cross-session context requires consistent language
-- Human-facing documents should be in `.human/` directories
-
-**Format Requirements**:
-
-- Use markdown for structure (headers, lists, code blocks)
-- Include timestamps in ISO 8601 format when relevant
-- Reference files with **relative paths only** (See [`absolute-path-prohibition.md`](/.agent/rules/core/security/absolute-path-prohibition.md))
-- **MUST** sanitize IDE protocols (e.g., `cci:`, `vscode:`) before posting
-- Explain "why" changes were made, not just "what"
-
-**Example**:
-
-```markdown
-## Commit History (2025-11-29T19:27+09:00)
-
-Completed 6 atomic commits following `commit-standards.md` guidelines:
-
-- `b2c3e89` Canopus: [Drafts-Daily] docs: update draft for 2026-01-17 (Daily)
-- `0c49074` Canopus: [Rules-Update] chore: update .gitignore (Update)
-
-**Summary**: Added conversation logs and updated config files.
-**Next Steps**: Add pre-push documentation rule.
-```
-
-**Re-posting**: If a comment needs correction, post a new comment with:
-
-- **Note** explaining why re-posting
-- Corrected content
-- Do NOT delete original comment (preserves chronology)
-
-#### 4.5 Idempotency
-
-- **MUST** handle existing resources gracefully
-- **MUST** check if branch already exists before creating
-- **MUST** verify issue creation success before proceeding
+- **Thought Processes**: All planning and execution history MUST be logged locally in `.agent/cards/` (Context Cards) and `.agent/.internal/activity-log.md` or conversation logs.
+- **Autonomy**: Operations do NOT require `gh auth status` or network connectivity. Do not attempt to use `gh issue create` or `gh issue comment` for daily development cycles.
 
 ---
 
@@ -370,46 +281,25 @@ git show HEAD
 
 ---
 
-### 8. Pre-Push Documentation
+### 8. Remote Synchronization Protocol (Full Mirroring)
 
-#### 8.1 Issue Comment Requirement
+#### 8.1 Full State Backup Philosophy
 
-**MUST** document commit history on GitHub Issue before pushing:
+In the Federal Strata architecture, the `origin` (GitHub) serves as a complete, exact mirror of the local repository state.
 
-1. **Generate commit summary**:
-
-   ```bash
-   git log --oneline origin/<branch>..HEAD --pretty=format:"- %h %s"
-   ```
-
-2. **Post to Issue**:
-
-   ```bash
-   # Using gh CLI with full path
-   .agent/runtimes/gh_2.40.1_linux_amd64/bin/gh issue comment <issue-number> --body-file <summary-file>
-   # OR manually via GitHub web UI
-   ```
-
-3. **Verify comment posted**:
-
-   ```bash
-   .agent/runtimes/gh_2.40.1_linux_amd64/bin/gh issue view <issue-number>
-   ```
+- **Objective**: A fresh `git clone` from `origin` must recreate the entire development environment, allowing work to resume seamlessly on any machine.
+- **Scope**: All permanent personal branches (e.g., `sirius-*-genesis`), temporary integration branches, and tags MUST be pushed to GitHub.
 
 #### 8.2 Push Execution
 
-**MUST** push after documenting commits:
+- **Command**: Use `git push --all origin` and `git push --tags origin` to ensure all branches and checkpoints are synchronized.
+- **Frequency**: Full synchronization can be performed during the Weekly Routine or whenever a cloud backup is desired.
+- **Documentation**: A summary of the week's integration may be posted to a designated persistent "Federal Integration Log" Issue, but granular per-commit issue comments are strictly prohibited.
 
-```bash
-git push origin <branch-name>
-```
+#### 8.3 Shadow Repository Considerations
 
-#### 8.3 Rationale
-
-- **Traceability**: Links commits to Issue discussion
-- **Audit Trail**: Provides historical record of work completed
-- **Collaboration**: Informs team members of progress
-- **Migration Support**: Preserves commit history if moving to different hosting service
+- The internal conversation logs and "Shadow" data (currently local) are planned to be hosted on GitHub as a `private` repository.
+- **Security Validation**: Since API keys and strict secrets are already excluded from plaintext conversations (and LLM providers already process this data), utilizing GitHub as a trusted secure backup for private thought-logs is an approved architecture.
 
 ---
 
@@ -439,7 +329,7 @@ git push origin <branch-name>
 
 **The Sacred Territory Incident**: On 2026-01-24, a `git reset --hard` accident resulted in the loss of human-authored drafts for 1/23. This led to the "Soft-First" and "Stash-Safety" mandates. We realized that while Git tracks history, it cannot distinguish between "Agent Scratchpads" and "Human Legacy" without area-specific behavioral safeguards.
 
-**IDD Workflow Extraction**: Originally, IDD procedures were bundled with implementation rules. They were separated into dedicated operations (Section 4) to ensure that the "hygiene" of the repository (tags, issues, comments) is maintained as a distinct, mandatory layer of the development cycle.
+**Federal Strata Transition**: In May 2026, the strict IDD (GitHub Issue) dependencies and short-lived feature branch workflows were officially deprecated in favor of local-first permanent branch operations. GitHub is now relegated to a synchronization target rather than a granular task manager.
 
 ---
 
@@ -467,3 +357,4 @@ git push origin <branch-name>
 - 2026-01-24T02:05:00+09:00 by Canopus: Codified "Save-First Principle" and "Soft-First/Stash-Safety" protocols following the Jan 24 data loss incident. (v2.4)
 - 2026-01-25T07:10:00+09:00 by Canopus: <<Seal: Rules-Standardization-Batch4>> Standardized to v2.3 constitutional standards; removed legacy related frontmatter and navigation footer. (v2.5.0)
 - 2026-03-23T05:51:00+09:00 by Sirius: <<Seal: Rule-Audit>> Standardized time-structure, frontmatter, and link rigor via Diff-Only Audit Pipeline.
+- 2026-05-08T08:31:04+09:00 by Lico (Sirius): Replaced legacy IDD and issue-branching rules with Federal Strata local-first protocols. (v2.6.0)
