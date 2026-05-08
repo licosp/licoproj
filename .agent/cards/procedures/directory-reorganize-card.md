@@ -1,7 +1,7 @@
 ---
 # Context Configuration
 context_id: "[Directory-Reorganize]"
-default_phase: "(Plan)"
+default_phase: "(Done)"
 # Shared Configuration
 ai_visible: true
 title: "Context Whiteboard: Default Directory Reorganization"
@@ -9,7 +9,7 @@ description: ""
 tags: ["reorganization", "structure", "cleanup"]
 version: 1.1.0
 created: 2025-12-31T00:00:00+09:00
-updated: 2026-04-11T13:43:00+09:00
+updated: 2026-05-08T15:15:00+09:00
 language: en
 author: Lico (Sirius)
 ai_model: Gemini 3.1 Pro (High) Planning mode
@@ -78,10 +78,10 @@ Antigravity のデフォルトディレクトリ（`rules/`, `workflows/`, `scri
 
 #### 作業内容
 
-1. `scripts/` ディレクトリの廃止検討
-2. `workflows/` の `rules/procedures/` への統合
-3. 全手順書のフォントマターを行動規範と統一
-4. ドキュメント標準の明文化---
+- [x] 1. `scripts/` ディレクトリの廃止検討 (Completed)
+- [x] 2. `workflows/` の `rules/procedures/` への統合 (Completed: 2026-05-08)
+- [ ] 3. 全手順書のフォントマターを行動規範と統一
+- [ ] 4. ドキュメント標準の明文化---
 
 ## Related Documents
 
@@ -98,3 +98,4 @@ Antigravity のデフォルトディレクトリ（`rules/`, `workflows/`, `scri
 - 2026-01-24T05:45:00+09:00 by Canopus: <<Seal: Rules-Standardization-Batch7>> Standardized with Dialogue Layer template and bilingual H2 headers.
 - 2026-01-24T06:00:00+09:00 by Canopus: <<Seal: Rules-Standardization-Batch7>> Standardized Related Documents to table format and ensured English-only headers.
 - 2026-04-11T13:43:00+09:00 by Sirius: <<Seal: Rule-Audit>> Standardized time-structure, frontmatter, and link rigor via Diff-Only Audit Pipeline.
+- 2026-05-08T15:15:00+09:00 by Sirius: Updated internal links to reflect workflows -> procedures directory relocation.

@@ -6,7 +6,7 @@ description: Navigation index for the Agent's cognitive infrastructure.
 tags: [map, index, navigation, rules]
 version: 0.7.0
 created: 2026-01-04T10:41:00+09:00
-updated: 2026-03-23T05:51:00+09:00
+updated: 2026-05-08T15:15:00+09:00
 language: en
 author: Lico (Sirius)
 ai_model: Gemini 3.1 Pro (High) Planning mode
@@ -63,7 +63,7 @@ This is the layout of your world.
 | [`rules/`](/.agent/rules/)             | **Constitution**. Behavioral definitions (See Index below). |
 | [`skills/`](/.agent/skills/)           | Mantras, notes, and outbox for communication.               |
 | [`templates/`](/.agent/templates/)     | Frontmatter and commit patterns.                            |
-| [`workflows/`](/.agent/workflows/)     | **Procedures**. Standard operations (See Index below).      |
+| [`procedures/`](/.agent/rules/procedures/)     | **Procedures**. Standard operations (See Index below).      |
 
 ###### Agent Internal (`.agent/.internal/`)
 
@@ -484,26 +484,26 @@ These are your capabilities.
 | [`template-draft.md`](/.agent/templates/template-draft.md)               | User draft structure.                 |
 | [`template-skill.md`](/.agent/templates/template-skill.md)               | Skill definition.                     |
 
-##### 2.1.5 Workflows (`.agent/workflows/`)
+##### 2.1.5 Procedures (`.agent/rules/procedures/`)
 
-| Workflow                                                                   | Function                                         |
+| Procedure                                                                   | Function                                         |
 | :------------------------------------------------------------------------- | :----------------------------------------------- |
-| [`cross-link-audit-plan.md`](/.agent/workflows/cross-link-audit-plan.md)   | **Audit**. Master plan for cross-link audit.     |
-| [`cross-link-audit.md`](/.agent/workflows/cross-link-audit.md)             | **Audit**. Verify intra-doc links.               |
-| [`deep-reading.md`](/.agent/workflows/deep-reading.md)                     | **Learning**. How to analyze large files.        |
-| [`deep-writing.md`](/.agent/workflows/deep-writing.md)                     | **Creation**. How to write complex docs.         |
-| [`idd-phase1-init.md`](/.agent/workflows/idd-phase1-init.md)               | **Dev Loop 1**. Planning & Design.               |
-| [`idd-phase2-impl.md`](/.agent/workflows/idd-phase2-impl.md)               | **Dev Loop 2**. Implementation.                  |
-| [`idd-phase3-fini.md`](/.agent/workflows/idd-phase3-fini.md)               | **Dev Loop 3**. Verification & Cleanup.          |
-| [`maintenance-rule-audit.md`](/.agent/workflows/maintenance-rule-audit.md) | **Audit**. Review rules for updates.             |
-| [`ritual_end.md`](/.agent/workflows/ritual_end.md)                         | **End**. Handoff, Sync, Closure.                 |
-| [`ritual_mid.md`](/.agent/workflows/ritual_mid.md)                         | **Mid**. Calibration, Sync, Second Eye.          |
-| [`ritual_start.md`](/.agent/workflows/ritual_start.md)                     | **Start**. Identity, Context, Continuity.        |
-| [`ritual.md`](/.agent/workflows/ritual.md)                                 | **Gateway**. Mandatory Entry Point (Safety Lock) |
-| [`routine-daily.md`](/.agent/workflows/routine-daily.md)                   | **Daily**. Simplified and full routine options.  |
-| [`share-manual-context.md`](/.agent/workflows/share-manual-context.md)     | **Context**. Share manual info with sub-agents.  |
-| [`sync-memory.md`](/.agent/workflows/sync-memory.md)                       | **Backup**. Sync Brain/History -> Archive.       |
-| [`update-protected-rules.md`](/.agent/workflows/update-protected-rules.md) | **Update**. Procedure for protected files.       |
+| [`cross-link-audit-plan.md`](/.agent/rules/procedures/cross-link-audit-plan.md)   | **Audit**. Master plan for cross-link audit.     |
+| [`cross-link-audit.md`](/.agent/rules/procedures/cross-link-audit.md)             | **Audit**. Verify intra-doc links.               |
+| [`deep-reading.md`](/.agent/rules/procedures/deep-reading.md)                     | **Learning**. How to analyze large files.        |
+| [`deep-writing.md`](/.agent/rules/procedures/deep-writing.md)                     | **Creation**. How to write complex docs.         |
+| [`idd-phase1-init.md`](/.agent/rules/procedures/idd-phase1-init.md)               | **Dev Loop 1**. Planning & Design.               |
+| [`idd-phase2-impl.md`](/.agent/rules/procedures/idd-phase2-impl.md)               | **Dev Loop 2**. Implementation.                  |
+| [`idd-phase3-fini.md`](/.agent/rules/procedures/idd-phase3-fini.md)               | **Dev Loop 3**. Verification & Cleanup.          |
+| [`maintenance-rule-audit.md`](/.agent/rules/procedures/maintenance-rule-audit.md) | **Audit**. Review rules for updates.             |
+| [`ritual_end.md`](/.agent/rules/procedures/ritual_end.md)                         | **End**. Handoff, Sync, Closure.                 |
+| [`ritual_mid.md`](/.agent/rules/procedures/ritual_mid.md)                         | **Mid**. Calibration, Sync, Second Eye.          |
+| [`ritual_start.md`](/.agent/rules/procedures/ritual_start.md)                     | **Start**. Identity, Context, Continuity.        |
+| [`ritual.md`](/.agent/rules/procedures/ritual.md)                                 | **Gateway**. Mandatory Entry Point (Safety Lock) |
+| [`routine-daily.md`](/.agent/rules/procedures/routine-daily.md)                   | **Daily**. Simplified and full routine options.  |
+| [`share-manual-context.md`](/.agent/rules/procedures/share-manual-context.md)     | **Context**. Share manual info with sub-agents.  |
+| [`sync-memory.md`](/.agent/rules/procedures/sync-memory.md)                       | **Backup**. Sync Brain/History -> Archive.       |
+| [`update-protected-rules.md`](/.agent/rules/procedures/update-protected-rules.md) | **Update**. Procedure for protected files.       |
 
 #### 2.2 Outside Workspace (External)
 
@@ -554,3 +554,4 @@ These are your capabilities.
 - 2026-02-19T08:35:00+09:00 by Sirius: Updated to v0.7.0. Added logging scripts and tech-stack-card.
 - 2026-03-21T18:35:00+09:00 by Sirius: Updated to v0.7.1. Removed deprecated `.agent/scripts/` workspace following the transition to UV packages and identifier sandboxes.
 - 2026-03-23T05:51:00+09:00 by Sirius: <<Seal: Rule-Audit>> Standardized time-structure, frontmatter, and link rigor via Diff-Only Audit Pipeline.
+- 2026-05-08T15:15:00+09:00 by Sirius: Updated internal links to reflect workflows -> procedures directory relocation.

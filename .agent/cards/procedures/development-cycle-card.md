@@ -9,7 +9,7 @@ description: ""
 tags: ["development", "coding", "routine", "cycle"]
 version: 2.0.0
 created: 2026-01-09T00:00:00+09:00
-updated: 2026-05-08T09:21:24+09:00
+updated: 2026-05-08T15:15:00+09:00
 language: en
 author: Lico (Sirius)
 ai_model: Gemini 3.1 Pro (High) Planning mode
@@ -87,11 +87,11 @@ ai_model: Gemini 3.1 Pro (High) Planning mode
 
 ## Related Documents
 
-| Document                                                               | Purpose                                      |
-| :--------------------------------------------------------------------- | :------------------------------------------- |
-| [`development-cycle.md`](/.agent/workflows/development-cycle.md)       | Workflow for continuous coding phase         |
-| [`commit-standards.md`](/.agent/rules/development/commit-standards.md) | Rules for commits and message quality        |
-| [Map of Territory](/.agent/rules/map.md)                               | Root navigation map                          |
+| Document                                                                | Purpose                               |
+| :---------------------------------------------------------------------- | :------------------------------------ |
+| [`development-cycle.md`](/.agent/rules/procedures/development-cycle.md) | Workflow for continuous coding phase  |
+| [`commit-standards.md`](/.agent/rules/development/commit-standards.md)  | Rules for commits and message quality |
+| [Map of Territory](/.agent/rules/map.md)                                | Root navigation map                   |
 
 ---
 
@@ -101,3 +101,4 @@ ai_model: Gemini 3.1 Pro (High) Planning mode
 - 2026-01-24T05:45:00+09:00 by Canopus: <<Seal: Rules-Standardization-Batch7>> Standardized with Dialogue Layer template and bilingual H2 headers.
 - 2026-01-24T06:00:00+09:00 by Canopus: <<Seal: Rules-Standardization-Batch7>> Standardized Related Documents to table format and ensured English-only headers.
 - 2026-04-11T13:43:00+09:00 by Sirius: <<Seal: Rule-Audit>> Standardized time-structure, frontmatter, and link rigor via Diff-Only Audit Pipeline.
+- 2026-05-08T15:15:00+09:00 by Sirius: Updated internal links to reflect workflows -> procedures directory relocation.

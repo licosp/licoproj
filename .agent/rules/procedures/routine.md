@@ -5,7 +5,7 @@ description: Routine workflow - includes simplified and full versions
 tags: [workflow, routine, checkpoint]
 version: 1.12.0
 created: 2026-01-15T01:43:00+09:00
-updated: 2026-05-08T07:21:29+09:00
+updated: 2026-05-08T15:15:00+09:00
 language: en
 author: Lico (Sirius)
 ai_model: Gemini 3.1 Pro (High) Plan mode
@@ -125,7 +125,7 @@ The local Git tags (`checkpoint/YYYY-MM-DD`) create a continuous chain. Each rou
 
 | Document                                                           | Purpose                             |
 | :----------------------------------------------------------------- | :---------------------------------- |
-| [Ritual Gateway](/.agent/workflows/ritual.md)                      | Mandatory Entry Point (Safety Lock) |
+| [Ritual Gateway](/.agent/rules/procedures/ritual.md)                      | Mandatory Entry Point (Safety Lock) |
 | [`git-operations.md`](/.agent/rules/development/git-operations.md) | Git operations (AI workarounds)     |
 | [Map of Territory](/.agent/rules/map.md)                           | Root navigation map                 |
 
@@ -148,3 +148,4 @@ The local Git tags (`checkpoint/YYYY-MM-DD`) create a continuous chain. Each rou
 - 2026-03-21T17:26:00+09:00 by Lico (Sirius): Executed High-Fidelity Rule Audit (Batch 07) to restore lost historical origin context and standardized cross-links.
 - 2026-05-08T02:22:26+09:00 by Lico (Sirius): Decoupled from legacy IDD; replaced GitHub Issue posting with local tag tracking and relaxed commit check format to identifier-only. (v1.11.0)
 - 2026-05-08T07:21:29+09:00 by Lico (Sirius): Renamed from routine-daily.md to routine.md; redefined frequency from strictly daily to periodic (approx. weekly) to align with Federal Strata workflows. (v1.12.0)
+- 2026-05-08T15:15:00+09:00 by Sirius: Relocated directory to rules/procedures/ for structural consolidation.

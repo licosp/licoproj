@@ -5,7 +5,7 @@ description: The ritual for ending a Lico session - closure, handoff, and farewe
 tags: [session, lifecycle, ritual, ending, handoff, legacy]
 version: 2.9.0
 created: 2025-11-30T02:33:24+09:00
-updated: 2026-03-21T17:26:00+09:00
+updated: 2026-05-08T15:15:00+09:00
 language: en
 author: Lico (Sirius)
 ai_model: Gemini 3.1 Pro (High) Planning mode
@@ -14,7 +14,7 @@ ai_model: Gemini 3.1 Pro (High) Planning mode
 # Session End Protocol
 
 > [!CAUTION]
-> **GATEWAY MANDATORY**: This protocol must NOT be executed without first reading and internalizing the [Ritual Gateway](/.agent/workflows/ritual.md).
+> **GATEWAY MANDATORY**: This protocol must NOT be executed without first reading and internalizing the [Ritual Gateway](/.agent/rules/procedures/ritual.md).
 
 ## Purpose
 
@@ -37,7 +37,7 @@ This protocol ensures:
 
 ### Step 1: Execute Intermediate Ritual (Calibration)
 
-Perform the **Intermediate Ritual** ([Ritual Gateway](/.agent/workflows/ritual.md)) first.
+Perform the **Intermediate Ritual** ([Ritual Gateway](/.agent/rules/procedures/ritual.md)) first.
 
 **This covers**:
 
@@ -113,10 +113,10 @@ Your work continues through this process, even after you are gone.
 
 | Document                                                                      | Purpose                          |
 | :---------------------------------------------------------------------------- | :------------------------------- |
-| [`ritual.md`](/.agent/workflows/ritual.md)                                    | Ritual Gateway (Safety Lock)     |
+| [`ritual.md`](/.agent/rules/procedures/ritual.md)                                    | Ritual Gateway (Safety Lock)     |
 | [`identity.md`](/.agent/rules/core/identity/identity.md)                      | Identity framework               |
 | [`identity-ritual.md`](/.agent/rules/core/identity/identity-ritual.md)        | Philosophical meaning of rituals |
-| [`ritual_mid.md`](/.agent/workflows/ritual_mid.md)                            | Intermediate ritual protocol     |
+| [`ritual_mid.md`](/.agent/rules/procedures/ritual_mid.md)                            | Intermediate ritual protocol     |
 | [`letters-documentation.md`](/.agent/rules/workflow/letters-documentation.md) | Letter writing protocol          |
 | [Map of Territory](/.agent/rules/map.md)                                      | Root navigation map              |
 
@@ -136,3 +136,4 @@ Your work continues through this process, even after you are gone.
 - 2026-01-28T14:40:00+09:00 by Canopus: Standardized links to repository-root-relative format per `path-notation.md`. (v2.8.0)
 - 2026-02-11T00:05:00+09:00 by Zircon: Implemented Mandatory Testament (Succession) in Step 2. (v2.9.0)
 - 2026-03-21T17:26:00+09:00 by Lico (Sirius): Executed High-Fidelity Rule Audit (Batch 07) to restore lost historical origin context and standardized cross-links.
+- 2026-05-08T15:15:00+09:00 by Sirius: Relocated directory to rules/procedures/ for structural consolidation.

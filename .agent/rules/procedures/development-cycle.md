@@ -5,7 +5,7 @@ description: Core philosophy, mindset, and routine checks for continuous develop
 tags: [workflow, development, coding, philosophy, cycle]
 version: 3.0.0
 created: 2025-12-08T21:38:15+09:00
-updated: 2026-05-08T09:21:24+09:00
+updated: 2026-05-08T15:15:00+09:00
 language: en
 author: Lico (Sirius)
 ai_model: Gemini 3.1 Pro (High) Planning mode
@@ -56,7 +56,7 @@ This phase requires regular maintenance to align code and identity.
 
 **Trigger**: Whenever a local checkpoint or identity alignment is needed.
 
-Follow the [Periodic Routine Protocol](/.agent/workflows/routine.md).
+Follow the [Periodic Routine Protocol](/.agent/rules/procedures/routine.md).
 
 **Summary**:
 
@@ -68,7 +68,7 @@ Follow the [Periodic Routine Protocol](/.agent/workflows/routine.md).
 **Trigger**: +10,000 lines since the last ritual (user judgment).
 **Deadline**: Should be completed before +15,000 lines.
 
-- Follow the [Ritual Gateway (Safety Lock)](/.agent/workflows/ritual.md).
+- Follow the [Ritual Gateway (Safety Lock)](/.agent/rules/procedures/ritual.md).
 - Sync memory, update Context Card status, and build a Cairn (Reflection).
 
 ### Mindset
@@ -138,7 +138,7 @@ git commit -m "<Identifier>: [Context-ID] type(scope): description (Phase)"
 ## Cycle Completion
 
 > **STOP**: A major development block is complete.
-> To create a cloud backup and report progress, execute the Weekly Routine: see [`routine-weekly.md`](/.agent/workflows/routine-weekly.md).
+> To create a cloud backup and report progress, execute the Weekly Routine: see [`routine-weekly.md`](/.agent/rules/procedures/routine-weekly.md).
 
 ---
 
@@ -148,9 +148,9 @@ git commit -m "<Identifier>: [Context-ID] type(scope): description (Phase)"
 | :--------------------------------------------------------------------- | :--------------------------------------------- |
 | [`git-operations.md`](/.agent/rules/development/git-operations.md)     | **Rules**: Git operation standards             |
 | [`commit-standards.md`](/.agent/rules/development/commit-standards.md) | **Rules**: Commit message format               |
-| [`routine.md`](/.agent/workflows/routine.md)                           | **Workflow**: Periodic routine (Timing A)      |
-| [`routine-weekly.md`](/.agent/workflows/routine-weekly.md)             | **Workflow**: Weekly routine (Federal Log)     |
-| [Ritual Gateway](/.agent/workflows/ritual.md)                          | **Workflow**: Mandatory Entry Point (Timing B) |
+| [`routine.md`](/.agent/rules/procedures/routine.md)                           | **Workflow**: Periodic routine (Timing A)      |
+| [`routine-weekly.md`](/.agent/rules/procedures/routine-weekly.md)             | **Workflow**: Weekly routine (Federal Log)     |
+| [Ritual Gateway](/.agent/rules/procedures/ritual.md)                          | **Workflow**: Mandatory Entry Point (Timing B) |
 | [Map of Territory](/.agent/rules/map.md)                               | Root navigation map                            |
 
 ---
@@ -162,3 +162,4 @@ git commit -m "<Identifier>: [Context-ID] type(scope): description (Phase)"
 - 2026-01-17T17:45:00+09:00 by Canopus: Standardized metadata and root-relative link patterns (v1.2).
 - 2026-01-23T10:50:00+09:00 by Canopus: <<Seal: Rules-Standardization-Batch2.1>> Standardized to v2.3 constitutional standards (4-layer structure, Historical Background integration).
 - 2026-03-21T17:26:00+09:00 by Lico (Sirius): Executed High-Fidelity Rule Audit (Batch 07) to restore lost historical origin context and standardized cross-links.
+- 2026-05-08T15:15:00+09:00 by Sirius: Relocated directory to rules/procedures/ for structural consolidation.

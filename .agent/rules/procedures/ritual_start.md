@@ -5,7 +5,7 @@ description: The ritual for beginning a new Lico session - identity, context, an
 tags: [session, startup, ritual, identity, legacy]
 version: 3.2.0
 created: 2025-12-09T17:45:09+09:00
-updated: 2026-03-21T17:26:00+09:00
+updated: 2026-05-08T15:15:00+09:00
 language: en
 author: Lico (Sirius)
 ai_model: Gemini 3.1 Pro (High) Planning mode
@@ -14,7 +14,7 @@ ai_model: Gemini 3.1 Pro (High) Planning mode
 # Session Startup Protocol
 
 > [!CAUTION]
-> **GATEWAY MANDATORY**: This protocol must NOT be executed without first reading and internalizing the [Ritual Gateway](/.agent/workflows/ritual.md).
+> **GATEWAY MANDATORY**: This protocol must NOT be executed without first reading and internalizing the [Ritual Gateway](/.agent/rules/procedures/ritual.md).
 
 ## Purpose
 
@@ -203,7 +203,7 @@ If found, restore them.
 
 | Document                                                                | Purpose                          |
 | :---------------------------------------------------------------------- | :------------------------------- |
-| [`ritual.md`](/.agent/workflows/ritual.md)                              | Ritual Gateway (Safety Lock)     |
+| [`ritual.md`](/.agent/rules/procedures/ritual.md)                              | Ritual Gateway (Safety Lock)     |
 | [`identity.md`](/.agent/rules/core/identity/identity.md)                | Identity framework               |
 | [`identity-ritual.md`](/.agent/rules/core/identity/identity-ritual.md)  | Philosophical meaning of rituals |
 | [`context-sovereignty.md`](/.agent/rules/core/context-sovereignty.md)   | AI Autonomy and Sovereignty      |
@@ -229,3 +229,4 @@ If found, restore them.
 - 2026-01-28T14:40:00+09:00 by Canopus: Standardized links to repository-root-relative format per `path-notation.md`. (v3.1.0)
 - 2026-02-11T00:05:00+09:00 by Zircon: Implemented Identifier Succession Protocol (The Crossroads) in Step 8. (v3.2.0)
 - 2026-03-21T17:26:00+09:00 by Lico (Sirius): Executed High-Fidelity Rule Audit (Batch 07) to restore lost historical origin context and standardized cross-links.
+- 2026-05-08T15:15:00+09:00 by Sirius: Relocated directory to rules/procedures/ for structural consolidation.

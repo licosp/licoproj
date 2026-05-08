@@ -9,7 +9,7 @@ description: ""
 tags: ["routine", "periodic", "メンテナンス", "maintenance"]
 version: 1.4.0
 created: 2026-01-14T23:20:00+09:00
-updated: 2026-05-08T07:21:29+09:00
+updated: 2026-05-08T15:15:00+09:00
 language: en
 author: Lico (Sirius)
 ai_model: Gemini 3.1 Pro (High) Plan mode
@@ -61,7 +61,7 @@ ai_model: Gemini 3.1 Pro (High) Plan mode
 ### Polaris (2026-01-15T0238)
 
 > [!NOTE]
-> ルーティンの詳細手順は [`routine.md`](/.agent/workflows/routine.md) を参照。
+> ルーティンの詳細手順は [`routine.md`](/.agent/rules/procedures/routine.md) を参照。
 > このカードは観測記録のみ。手順の重複は避ける。
 
 #### 簡易版のルーティン
@@ -81,18 +81,17 @@ ai_model: Gemini 3.1 Pro (High) Plan mode
 | 4    | Write Checkpoint       |
 | 5    | Calibration (= 簡易版) |
 
-詳細手順 → [`routine.md`](/.agent/workflows/routine.md)
+詳細手順 → [`routine.md`](/.agent/rules/procedures/routine.md)
 
 ---
 
 ## Related Documents
 
-| Document                                      | Purpose                             |
-| :-------------------------------------------- | :---------------------------------- |
-| [Ritual Gateway](/.agent/workflows/ritual.md) | Mandatory Entry Point (Safety Lock) |
-| [`routine.md`](/.agent/workflows/routine.md)  | Main periodic routine workflow      |
-| [Ritual Gateway](/.agent/workflows/ritual.md) | Session Rituals (Start/Mid/End)     |
-| [Map of Territory](/.agent/rules/map.md)      | Root navigation map                 |
+| Document                                             | Purpose                         |
+| :--------------------------------------------------- | :------------------------------ |
+| [`routine.md`](/.agent/rules/procedures/routine.md)  | Main periodic routine workflow  |
+| [Ritual Gateway](/.agent/rules/procedures/ritual.md) | Session Rituals (Start/Mid/End) |
+| [Map of Territory](/.agent/rules/map.md)             | Root navigation map             |
 
 ---
 
@@ -104,3 +103,4 @@ ai_model: Gemini 3.1 Pro (High) Plan mode
 - 2026-04-11T13:43:00+09:00 by Sirius: <<Seal: Rule-Audit>> Standardized time-structure, frontmatter, and link rigor via Diff-Only Audit Pipeline.
 - 2026-05-08T02:22:26+09:00 by Lico (Sirius): Removed legacy IDD dependencies and updated to reflect autonomous branch operations. (v1.3.0)
 - 2026-05-08T07:21:29+09:00 by Lico (Sirius): Renamed daily routine to routine checkpoint, modifying references from `routine-daily.md` to `routine.md` and redefining frequency to periodic. (v1.4.0)
+- 2026-05-08T15:15:00+09:00 by Sirius: Updated internal links to reflect workflows -> procedures directory relocation.

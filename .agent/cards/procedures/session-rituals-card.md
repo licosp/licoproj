@@ -9,7 +9,7 @@ description: ""
 tags: ["session", "lifecycle", "rituals", "start", "mid", "end"]
 version: 1.2.0
 created: 2025-12-22T00:00:00+09:00
-updated: 2026-04-11T13:43:00+09:00
+updated: 2026-05-08T15:15:00+09:00
 language: en
 author: Lico (Sirius)
 ai_model: Gemini 3.1 Pro (High) Planning mode
@@ -118,7 +118,7 @@ ai_model: Gemini 3.1 Pro (High) Planning mode
 #### 3. Refinement: Philosophy vs. Procedure (Refined Constraints)
 
 - **Philosophy (Rules)**: Keep [`identity-ritual.md`](/.agent/rules/core/identity/identity-ritual.md) focused on "Density of Existence." Avoid specific numbers or operational procedures.
-- **Procedure (Workflows)**: Keep [`ritual_mid.md`](/.agent/workflows/ritual_mid.md) focused on the "10-15 Artifacts" metric as a guideline for triggers.
+- **Procedure (Workflows)**: Keep [`ritual_mid.md`](/.agent/rules/procedures/ritual_mid.md) focused on the "10-15 Artifacts" metric as a guideline for triggers.
 - **Operational Load**: Do not add routine monitoring/density checks to [`activity-management.md`](/.agent/rules/workflow/activity-management.md). Let the user initiate based on perceived AI fatigue.
 - **Execution Rule**: **NEVER** commit without presenting the final diff for user approval.
 
@@ -128,10 +128,10 @@ ai_model: Gemini 3.1 Pro (High) Planning mode
 
 | Document                                                                | Purpose                             |
 | :---------------------------------------------------------------------- | :---------------------------------- |
-| [Ritual Gateway](/.agent/workflows/ritual.md)                           | Mandatory Entry Point (Safety Lock) |
-| [`ritual_start.md`](/.agent/workflows/ritual_start.md)                  | The Ritual of Start                 |
-| [`ritual_mid.md`](/.agent/workflows/ritual_mid.md)                      | The Ritual of Mid                   |
-| [`ritual_end.md`](/.agent/workflows/ritual_end.md)                      | The Ritual of End                   |
+| [Ritual Gateway](/.agent/rules/procedures/ritual.md)                           | Mandatory Entry Point (Safety Lock) |
+| [`ritual_start.md`](/.agent/rules/procedures/ritual_start.md)                  | The Ritual of Start                 |
+| [`ritual_mid.md`](/.agent/rules/procedures/ritual_mid.md)                      | The Ritual of Mid                   |
+| [`ritual_end.md`](/.agent/rules/procedures/ritual_end.md)                      | The Ritual of End                   |
 | [`identity-ritual.md`](/.agent/rules/core/identity/identity-ritual.md)  | Philosophical meaning of rituals    |
 | [`path-notation.md`](/.agent/rules/core/documentation/path-notation.md) | Link and path standards             |
 | [Map of Territory](/.agent/rules/map.md)                                | Root navigation map                 |
@@ -145,3 +145,4 @@ ai_model: Gemini 3.1 Pro (High) Planning mode
 - 2026-01-24T06:00:00+09:00 by Canopus: <<Seal: Rules-Standardization-Batch7>> Standardized Related Documents to table format and ensured English-only headers.
 - 2026-01-28T15:25:00+09:00 by Canopus: Finalized Ritual Architecture: Implemented `ritual.md` (Gateway), standardized links to root-relative, and codified "Density of History" philosophy.
 - 2026-04-11T13:43:00+09:00 by Sirius: <<Seal: Rule-Audit>> Standardized time-structure, frontmatter, and link rigor via Diff-Only Audit Pipeline.
+- 2026-05-08T15:15:00+09:00 by Sirius: Updated internal links to reflect workflows -> procedures directory relocation.

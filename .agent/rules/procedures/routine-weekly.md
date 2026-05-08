@@ -5,7 +5,7 @@ description: Weekly routine for Federal Integration, pushing to GitHub, and crea
 tags: [workflow, routine, weekly, integration, github]
 version: 1.0.0
 created: 2026-05-08T08:51:12+09:00
-updated: 2026-05-08T08:51:12+09:00
+updated: 2026-05-08T15:15:00+09:00
 language: en
 author: Lico (Sirius)
 ai_model: Gemini 3.1 Pro (High) Plan mode
@@ -75,7 +75,7 @@ Post the summary to the single, persistent "Federal Integration Log" Issue on Gi
 
 | Document                                                           | Purpose                           |
 | :----------------------------------------------------------------- | :-------------------------------- |
-| [`routine.md`](/.agent/workflows/routine.md)                       | Periodic (local) routine workflow |
+| [`routine.md`](/.agent/rules/procedures/routine.md)                       | Periodic (local) routine workflow |
 | [`git-operations.md`](/.agent/rules/development/git-operations.md) | Git push and tracking standards   |
 | [`integration-report.md`](/.agent/templates/integration-report.md) | Comment template                  |
 
@@ -84,3 +84,4 @@ Post the summary to the single, persistent "Federal Integration Log" Issue on Gi
 ## Origin
 
 - 2026-05-08T08:51:12+09:00 by Lico (Sirius): Created to replace obsolete IDD GitHub posting workflows and formalize the Federal Integration strategy. (v1.0.0)
+- 2026-05-08T15:15:00+09:00 by Sirius: Relocated directory to rules/procedures/ for structural consolidation.

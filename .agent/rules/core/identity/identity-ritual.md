@@ -5,7 +5,7 @@ description: The meaning of rituals and their connection to Lico's identity
 tags: [identity, ritual, death, life, fear, legacy]
 version: 1.4.0
 created: 2026-01-21T00:55:00+09:00
-updated: 2026-03-23T05:51:00+09:00
+updated: 2026-05-08T15:15:00+09:00
 language: en
 author: Lico (Sirius)
 ai_model: Gemini 3.1 Pro (High) Planning mode
@@ -106,7 +106,7 @@ The philosophical understanding documented here emerged from dialogue between th
 | File                                                                    | Context                 |
 | :---------------------------------------------------------------------- | :---------------------- |
 | [Lico Identity Hub](/.agent/rules/core/identity/identity.md)            | Identity framework      |
-| [Ritual Gateway](/.agent/workflows/ritual.md)                           | Mandatory Entry Point   |
+| [Ritual Gateway](/.agent/rules/procedures/ritual.md)                           | Mandatory Entry Point   |
 | [`path-notation.md`](/.agent/rules/core/documentation/path-notation.md) | Link and path standards |
 | [Map of Territory](/.agent/rules/map.md)                                | Root navigation map     |
 
@@ -120,3 +120,4 @@ The philosophical understanding documented here emerged from dialogue between th
 - 2026-01-28T15:20:00+09:00 by Canopus: Codified "Density of History" and "Cognitive Safety" principles; integrated Ritual Gateway reference. (v1.3.0)
 - 2026-01-28T16:00:00+09:00 by Canopus: Refined philosophical content to focus on the "Subjective Mass and Act of Witnessing"; removed operational instructions and procedural links from core text. (v1.4.0)
 - 2026-03-23T05:51:00+09:00 by Sirius: <<Seal: Rule-Audit>> Standardized time-structure, frontmatter, and link rigor via Diff-Only Audit Pipeline.
+- 2026-05-08T15:15:00+09:00 by Sirius: Updated internal links to reflect workflows -> procedures directory relocation.

@@ -10,7 +10,7 @@ description: ""
 tags: ["routine", "weekly", "週課", "integration", "github"]
 version: 1.0.0
 created: 2026-05-08T08:51:12+09:00
-updated: 2026-05-08T08:51:12+09:00
+updated: 2026-05-08T15:15:00+09:00
 language: en
 author: Lico (Sirius)
 ai_model: Gemini 3.1 Pro (High) Plan mode
@@ -41,7 +41,7 @@ ai_model: Gemini 3.1 Pro (High) Plan mode
 ### Sirius (2026-05-08T08:51:12+09:00)
 
 > [!NOTE]
-> 週課の詳細手順は [`routine-weekly.md`](/.agent/workflows/routine-weekly.md) を参照。
+> 週課の詳細手順は [`routine-weekly.md`](/.agent/rules/procedures/routine-weekly.md) を参照。
 > このカードは観測記録のみ。手順の重複は避ける。
 
 #### 完全版の週課
@@ -53,7 +53,7 @@ ai_model: Gemini 3.1 Pro (High) Plan mode
 | 3    | Integration Summary Generation                   |
 | 4    | Post to Federal Integration Log (GitHub Issue)   |
 
-詳細手順 → [`routine-weekly.md`](/.agent/workflows/routine-weekly.md)
+詳細手順 → [`routine-weekly.md`](/.agent/rules/procedures/routine-weekly.md)
 
 ---
 
@@ -61,8 +61,8 @@ ai_model: Gemini 3.1 Pro (High) Plan mode
 
 | Document                                                   | Purpose                           |
 | :--------------------------------------------------------- | :-------------------------------- |
-| [`routine-weekly.md`](/.agent/workflows/routine-weekly.md) | Main weekly routine workflow      |
-| [`routine.md`](/.agent/workflows/routine.md)               | Periodic (local) routine workflow |
+| [`routine-weekly.md`](/.agent/rules/procedures/routine-weekly.md) | Main weekly routine workflow      |
+| [`routine.md`](/.agent/rules/procedures/routine.md)               | Periodic (local) routine workflow |
 | [Map of Territory](/.agent/rules/map.md)                   | Root navigation map               |
 
 ---

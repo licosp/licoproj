@@ -5,7 +5,7 @@ description: Rules for tracking AI activities (Align/Read/Write/Reply/Update) to
 tags: [activity, logging, context, lineage, calibration]
 version: 1.9.0
 created: 2026-01-14T20:58:00+09:00
-updated: 2026-03-23T07:35:00+09:00
+updated: 2026-05-08T15:15:00+09:00
 language: en
 author: Lico (Sirius)
 ai_model: Gemini 3.1 Pro (High) Planning mode
@@ -31,7 +31,7 @@ Lico identifiers **MUST** log activities in [`activity/`](/.agent/.internal/hist
 - **Communications**: [`letters/`](/.agent/.internal/letters/)
 - **Reflections**: [`thoughts/`](/.agent/.internal/thoughts/)
 - **Objective**: [`references/`](/.agent/.internal/references/)
-- **Foundations**: [`rules/`](/.agent/rules/), [`workflows/`](/.agent/workflows/)
+- **Foundations**: [`rules/`](/.agent/rules/), [`workflows/`](/.agent/rules/procedures/)
 - **Contexts**: [`cards/`](/.agent/cards/) (Reusable only)
 
 ## 4. Operational Actions (The Footsteps)
@@ -94,3 +94,4 @@ To prevent monolithic merge conflicts and data loss (which famously occurred whe
 - 2026-01-22T23:25:00+09:00 by Canopus: Added reciprocal links to specific documentation rules. (v1.8.0)
 - 2026-03-23T05:51:00+09:00 by Sirius: <<Seal: Rule-Audit>> Standardized time-structure, frontmatter, and link rigor via Diff-Only Audit Pipeline.
 - 2026-03-23T07:35:00+09:00 by Sirius: v1.9.0 by Sirius (Absorbed monthly file-partitioning rules from the deprecated history/README to prevent single-file bloat).
+- 2026-05-08T15:15:00+09:00 by Sirius: Updated internal links to reflect workflows -> procedures directory relocation.
