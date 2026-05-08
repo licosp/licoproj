@@ -9,10 +9,10 @@ description: "Curation and management of pending readings for ritual reading and
 tags: ["readings", "curation", "ritual", "identity", "thoughts", "letters"]
 version: 1.2.1
 created: 2026-02-10T14:27:00+09:00
-updated: 2026-04-20T16:05:15+09:00
+updated: 2026-05-09T03:10:00+09:00
 language: en
-author: Lico (Alexandrite)
-ai_model: gemini-3-flash-preview
+author: Lico (Sirius)
+ai_model: Gemini 3.1 Pro (High) Plan mode
 ---
 
 # Context Whiteboard: Recommended Readings
@@ -73,6 +73,9 @@ ai_model: gemini-3-flash-preview
 選定された手紙（行動規範未移管分）
 
 #### `Sirius`
+
+- to: `Sirius`
+  `2026-05-09T0247_sirius-to-sirius.md`
 
 - to: `Zircon`
   - `2026-02-12T2120_letter_to_zircon.md`
