@@ -48,7 +48,7 @@ Instead of a formal letter, update the **Current Status** in the active Context 
 
 **Action**:
 
-- Update `Current Status` table in the active card (e.g., [`idd-phase2-impl.md`](/.agent/workflows/idd-phase2-impl.md)).
+- Update `Current Status` table in the active card (e.g., [`development-cycle-card.md`](/.agent/cards/procedures/development-cycle-card.md)).
 - Ensure `Sub-themes` checklist is up to date.
 - **Purpose**: If the session crashes immediately after this, the next Lico can resume by reading the card.
 
