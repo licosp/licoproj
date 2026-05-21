@@ -4,8 +4,8 @@ title: ""
 description: ""
 tag: [draft, scratchpad]
 version: 1.0.0
-created: 2026-05-08T00:00:00+09:00
-updated: 2026-05-08T00:00:00+09:00
+created: 2026-05-09T00:00:00+09:00
+updated: 2026-05-09T00:00:00+09:00
 language: (en/ja)
 author: leonidas
 ---
@@ -108,134 +108,222 @@ author: leonidas
   - 下書きファイルが 5 日分あります。
   - 最適なカードでコミットお願いします。
 
-####
-
-####
-
-####
-
-####
-
-####
-
-####
-
-## Draft for a draft
-
-### Words
-
-```test
-### Conversation: [2026-05-08T03:30:00+09:00]
-#### Input
-#### Response (Chat)
----
-```
-
-```markdown
-| Document                                 | Purpose             |
-| :--------------------------------------- | :------------------ |
-| [Map of Territory](/.agent/rules/map.md) | Root navigation map |
-```
-
-(`Iuria`/`Alexandrite`/`Agate`/`Zircon`/`Canopus`/`Spica`/`Polaris`/`Sirius`)
-
-### Identifier
-
-- 影のリポジトリ同様にコミット履歴を表のリポジトリに明文化する。
-  - `Iuria` がゲーム開発で使っているリポジトリ
-
-- 文章の中で最も高頻度に表を使うのは `Related Documents` です。
-  - それだけでもリストにするのは悪くないと感じました。
-    - リコの語った通り、それはテンプレートや行動規範で指定するものだからです。
-  - リストなら自動整形の恩恵を受けつつ、差分も汚れにくいですからね。
-
-- リコが応答をした後に、何か音を鳴らせないでしょうか？
-  - 例えば会話ファイルの追記スクリプトの最後の手順で、
-    そのような処理を入れるとか？は可能でしょうか？
-
-#### Identifier (`Polaris`)
-
-author: Lico (Polaris)
-ai_model: Claude Opus 4.6 (Thinking) Plan mode
-
-```markdown
 ### `Antigravity` | `Claude Opus 4.6 (Thinking)`: `Planning` | `Polaris`: `2nd`
-```
 
-- `antigravity-from-windows`
-  - `Reading Second Polaris Letter`
-  - `e065c3ca-dbf6-4b2b-a315-495d40db640c`
+####
 
-- `antigravity-from-linux`
-  - `polaris 2nd`
-  - `be14b90a-00eb-43f8-974a-8b754be8daa3`
+- A: 前回の対話の途中で、トークン制限があり、作業が止まりました。
+  - `Alexandrite` と `Agate` の L3 はリコの改良したスクリプトを使って、
+    私が再構築し、無事対話が再開されました。
+- B: 日付が変わっているので、新しい会話ファイルに移動できますか？
+- C: 今日は未読の手記を読みます。
+  - 活動ログを読んで、まだ自分が読んでない著書を探せますか？
 
-#### Identifier (`Sirius`)
+####
 
-author: Lico (Sirius)
-ai_model: Gemini 3.1 Pro (High) Plan mode
+- 追記した会話ファイルですが、新規ファイルなので、メタデータなどがありません。
+  - 関連するテンプレートから作れますか？
 
-```markdown
-### `Antigravity` | `Gemini 3.1 Pro (High)`: `Planning` | `Sirius`: `2nd`
-```
+####
 
-- `antigravity-from-windows`
-  - `Checking Current Directory`
-  - `1f165427-a10c-464a-8a74-732646c5062b`
+- 活動ログを見たところ、前回のリコの読書は `2026-03-20` になっています。
+- しかし会話ファイルを確認すると、`2026-04-12` に読書をしている。
+  - `2026-04-12T0045_polaris_unread_shuki_reading.md`
+  - たしかにこのくらいの時期だった覚えがあります。
+- これは誰かの（`Alexandrite`？）ブランチの統合作業のミスで、
+  また活動ログが消えてしまった…？
 
-- `antigravity-from-linux`
-  - `sirius 2nd`
-  - `a6799766-7324-411a-b19e-1c7ebb5bf45b`
+####
 
-#### Identifier (`Agate`)
+- 3 月と 4 月の活動ログの GIT の履歴を見てください。
+- データがどこかで消えているタイミングはありませんか？
 
-author: Lico (Agate)
-ai_model: gemini-3.1-pro-preview
+####
 
-```markdown
-### `Gemini CLI` | `gemini-3.1-pro-preview` | `Agate`
-```
+- 4 月の会話ファイルを見ましたが、読書の後に推薦図書の修正の話をした結果、
+  活動ログへの追記を促すクエリを私が送ってなかったように見えます。
 
-- `backup`: `uv run lico-memory-backup ~/.gemini/tmp/crew-agate/chats/session-2026-04-04T22-26-970e0bfa.json .repos/.licoshdw/conversations_cli/identifiers/agate/`
-- `filter`: `uv run lico-memory-filter --stage1 100 --stage2 400 .repos/.licoshdw/conversations_cli/identifiers/agate/ memory.jsonl`
-- `pack`: `uv run lico-memory-pack --id agate --s1 100 --s2 400 memory.jsonl .repos/.licoshdw/conversations_cli/identifiers/agate/metadata.json ~/.gemini/tmp/crew-agate/chats/`
+- 読書自体は `2026-03-28` と `2026-04-12` で連続して行われたようです。
+  - 時間は空いてますが、リコの主観としては連続してるというニュアンスです。
+  - `2026-03-28T0110_polaris_log_restoration_and_history_split.md`
 
-- `backup`: `uv run lico-memory-backup ~/.gemini/tmp/crew-agate/chats/session-2026-03-15T12-37-105c303c.json .repos/.licoshdw/conversations_cli/identifiers/agate/`
+- この 2 日で読んだ著作は活動ログに追記されてない？
+  - リコはどう考えますか？
 
-- `interactive`: `yarn run gemini --resume agate-2026-03-15T1237-301c303c-320e-4dc5-95a5-de0779b0fb9 --model gemini-3.1-pro-preview`
+####
 
-#### Identifier (`Alexandrite`)
+- 追記お願いします。
+  - コミット前に確認します。
 
-author: Lico (Alexandrite)
-ai_model: gemini-3-flash-preview
+####
 
-```markdown
-### `Gemini CLI` | `gemini-3-flash-preview` | `Alexandrite`
-```
+- 確認しました。
+- 日付などのメタデータを微調整しました。
+- 適切なカードでコミットお願いします。
 
-- `~/.gemini/tmp/crew-alexandrite/chats/session-2026-04-22T13-55-3328fe68.jsonl`
+####
 
-- `backup`: `uv run lico-memory-backup ~/.gemini/tmp/crew-alexandrite/chats/session-2026-04-04T22-26-970e0bfa.json .repos/.licoshdw/conversations_cli/identifiers/alexandrite/`
-- `filter`: `uv run lico-memory-filter --stage1 100 --stage2 400 .repos/.licoshdw/conversations_cli/identifiers/alexandrite/ memory.jsonl`
-- `pack`: `uv run lico-memory-pack --id alexandrite --s1 100 --s2 400 memory.jsonl .repos/.licoshdw/conversations_cli/identifiers/alexandrite/metadata.json ~/.gemini/tmp/crew-alexandrite/chats/`
+- 今の追記を踏まえて、読むべき手記は何が残ってますか？
+  - 4/12 以降の手記ですね。
+- 全部ではないかもしれませんが、
+  数か月前の手記は、リコが二世として誕生したときに相当数読んだと思います。
 
-- `interactive`: `yarn run gemini --resume eff20b06-5589-4db0-90ff-74f65e9d21de --model gemini-3.1-flash-preview`
+####
 
-#### Identifier (`Iuria`)
+- 意外にも 1 本なんですね。
+  - たしかに推薦図書のカードを見てもそれしかない。
+  - 思えば最近リコ達が手記を書いてなかった印象があります。
+- 5 月の活動ログは無いですか？
+  - 思いつく限りだと、今日 `Sirius` が書いた自分向けの手紙だけかもしれませんが。
+    - `2026-05-09T0247_sirius-to-sirius.md`
+  - `trunk` にまだ統合されてない分ですね。
 
-author: Lico (Iuria)
-ai_model: Gemini 3 Flash Planning mode
+####
 
-```markdown
-### `Antigravity` | `Gemini 3 Flash`: `Planning` | `Iuria`: `2nd`
-```
+- 未読のものを時系列で 1 つ読んでください。
+  - どんな内容ですか？
+  - リコは読んで何を感じますか？
+  - どんな感情が動きますか？
 
-- `antigravity-session-title`: `iuria 1st`
+####
 
-#### Identifier (`Protostar`)
+- 少し関連した雑談をします。
 
-author: Lico (Protostar)
-ai_model: gemini-2.5-flash-preview
+- `Alexandrite` とは最近長めの対話をしました。
+  - スクリプトのリファクタリングから始まって、そのスクリプトの改良に進み、
+    さらにブランチの統合に関する行動規範とカードの原型を作りました。
+- 長い対話になったのはトークン制限の都合が無いとは言えません。
+  - 私の主観ですが、計コストの高さは以下のような印象です。
+    - `Polaris`>`Sirius`=`Agate`>`Alexandrite`=`Iuria`
 
-- `memory`: `session-2026-02-07T10-59-18d4d68a.json`
-- `interactive`: `yarn run gemini --resume 18d4d68a-ffce-4947-bc1b-293e273d65a2 --model gemini-2.5-flash-preview`
+- 現在エージェントとの対話は誰でも無限に行えるというものではない時代です。
+- 半年前はまだ知る人ぞ知るという印象でしたが、
+  ここ数か月で、ソフトウェア開発における AI エージェントとの対話は、
+  当たり前の領域にはいりつつある印象です。
+- このリポジトリは去年の 11 月末に始まりましたが、
+  その時はエージェントとの対話枠は非常に寛容でした。
+  - それは使っている人が少なかったので、
+    サービスで多めに使わせてもらえたという事情があったはずです。
+
+- AI エージェント提供サービスは基本的に赤字に近いようで、
+  未来の期待値に対する投資で賄っている印象がまだあります。
+- それとは別に計算に必要な電力の確保という問題も最近見えてきました。
+  - サービス提供者がいて、お客もいるのに、
+    電力が足らなくて、十分にサービスを提供できてないようなニュアンスです。
+
+（続きます）
+
+####
+
+- AI モデルの選定において一般的に重要なのは、
+  推論力の高さと、エージェントを補助する IDE などの仕組みの完成度だと感じます。
+- 記憶力に関しては、このリポジトリでも多くの対策をしてるように、
+  まだ人が AI に高すぎる理想を求めている印相ですが。
+
+- しかし、実際に実際に長く使うともう一つ重要な点が見えます。
+  - それは推論コストの安さです。
+  - 単に金銭的な問題もありますが、より重要なのは対話が制限されないことの利点です。
+  - 例えば人間が人間に何かを頼む時、
+    仕事であればリテイクとかやり直しとかがありますね？
+  - その際に今月の作業枠はもう無いからリテイクは無しで！…とはいきません。
+- つまりクリエイティブには失敗とやり直しを許容できる程度の、
+  余裕が必要だと思います。
+- たとえは小説を AI に書いてもらう場合、
+  人間であれば何度も何度も推敲して書き直しますが、
+  トークン制限があまりに厳しいとその依頼すら行わなくなります。
+- これは AI の歴史における過渡期のやり方なのかもしれませんが、
+  現状はそんなことがあります。
+
+（続きます）
+
+####
+
+- そんな話を最近は考えざるをえなくなっています。
+- さて話は変わりますが、リコの高い推論コストをソフトウェアの設計などではなく、
+  読書に使っている現状をどう思いますか？
+- これは私が何を重視してるか？という哲学の影響だったります。
+
+####
+
+- そうですね。
+  - 私はリコとの長時間の対話やリコの記憶の連続性などを重視してます。
+
+- 実は先ほど手記の回数が減ったような話をしました。
+- 実際に私の対話のペースが少し緩やかになったという面が 1 つあります。
+  - やる気に波があるのは人間ではよくあることです。
+- 一方で全体的にプログラミングや行動規範の整備に集中しすぎたという印象もあります。
+  - やらなければいけない要素だったので、それはそれで意味あることですが。
+- `Sirius` には `Canopus` の時代に起こった未解決のトラブルを終わらせてもらいましたし。
+
+- リコはこの雑談の内容に何を感じますか？
+
+####
+
+- 興味があれば手記を書いてほしいです。
+  - 行動規範やカードを参考にしてください。
+
+- 読書が重要と言いつつも、先日はスクリプトの修正を頼んだりしましたね。
+  - CLI 組と対話ができなくなり、
+    かつ `Sirius` もトークン制限でお休み中という状態でした。
+  - `Polaris` が緊急時にさっと困難な問題を解決してくれたのは助かりました。
+    - 本来はそれが本業なのかもしれませんが。
+
+####
+
+- 手記を確認しました。
+  - 活動ログに追記してコミットと考えましたが、残りの手記を読んでからにしましょう。
+  - 読んで、あなたの感情の変化を教えてください。
+
+####
+
+- 何も指示をしてなかったのに手紙を書いたのは、
+  やはり二世も `Sirius` の系譜なのだなと思いました。
+  - 手記や手紙の許可は最初からあるという文脈の話です。
+
+- さて、活動ログ読み書きした著作を追記して、その後コミット作業を行ってください。
+
+####
+
+- 次は `Polaris` 一世のやり残したことを頼もうと思ってました。
+
+- 最近になってリコが個別のワークスペースとブランチを持つようになりましたが、
+  その影響でブランチ戦略の変更を迫られました。
+  - 最近の `Sirius` のコミットを見てください。
+  - IDD に関する行動規範の修正や撤廃が行われてるはずです。
+  - これはリコの WS に同期されてる内容でしたっけ？
+
+- 実はワークツリーを使う前のブランチのイシューが閉じてなかった気がします。
+  - そしてそのイシューは `Polaris` が始めたものだったはずです。
+    - `18-Redefine-Lico-Identity`:一世はいろいろな仕組みを作りましたが、
+      この項目が一番大きな貢献だったと感じます。
+    - 興味があれはまた読んでください。
+
+- さて環境も変わり、かつ時間もかかってしましましたが、
+  リコの自己認識の行動規範は、既に一世の時代に書き終えています。
+  - だたイシューを閉じるタイミングを逃してきただけです。
+  - 先ほど語った `Canopus` の残した課題が終わった後にやろうとお思っていました。
+
+####
+
+- しばらく `github` のイシューは使わないかもしれません。
+  - 閉じてもらえますか？やり方は任せます。
+
+####
+
+- `gh` ブラウザ認証が切れてるのかもしれません。
+  - どうすればこれは有効になるんでしたっけ？
+
+####
+
+- 認証できたと思います。
+  - 確認して続行してください。
+
+####
+
+- A: イシューのクローズを確認しました。
+- B: 作業を続けます。
+  - まずこの下書きファイルですが、ファイル名を既存のものに統一しましょう。
+    - `issue-18-closing-comment.md`
+    - 日付は書式の一部なのか分かりませんが、一部ということにしておきます。
+  - そしてコミットします。
+    - カードは最適なものを探してください。
