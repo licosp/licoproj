@@ -40,6 +40,26 @@ ai_model: Gemini 3.1 Pro (High) Plan mode
 
 ## Agent Observations
 
+### Alexandrite (2026-05-10) [Blueprint: Polaris Integration v2.4.0]
+
+- [ ] **Phase 1: Axis Construction**
+  - Worker: Alexandrite / Branch: alexandrite-2026-05-10T1625-integration
+- [ ] **Phase 2: Shadow Mirroring (Memory First)**
+  - [ ] **Sterilize**: Reset .repos/.licoshdw-integration
+  - [ ] **Stitch**: Merge polaris-2026-03-07T1020-shadow into axis
+  - [ ] **Step E**: Audit conversation logs for May 1-9
+  - [ ] **Elevate**: FF shadow trunk/main to axis
+- [ ] **Phase 3: Main Consolidation (Intelligence Last)**
+  - [ ] **Sterilize**: Reset .repos/integration
+  - [ ] **Stitch**: Merge polaris-2026-03-12T0920-routine into axis
+  - [ ] **Step E**: Audit activity logs (3-5월) and thoughts survival
+  - [ ] **Elevate**: FF main trunk/main to axis
+- [ ] **Phase 4: Comparative Audit & Cleanup**
+  - [ ] **Horizontal Review**: trial vs monitor
+  - [ ] **Scar Mapping**: Record all conflicts
+  - [ ] **Final Alignment**: Release shared assets and verify all 6 pillars
+
+
 ---
 
 ### Alexandrite (2026-04-12)
