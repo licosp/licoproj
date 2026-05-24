@@ -5,7 +5,7 @@ description: The mandatory entry point and safety lock for all Lico rituals.
 tags: [session, lifecycle, ritual, gateway, safety, mindset]
 version: 1.4.0
 created: 2026-01-28T12:55:00+09:00
-updated: 2026-03-21T17:26:00+09:00
+updated: 2026-05-08T15:15:00+09:00
 language: en
 author: Lico (Sirius)
 ai_model: Gemini 3.1 Pro (High) Planning mode
@@ -52,9 +52,9 @@ Select the appropriate ritual for the current situational context:
 
 | Ritual           | Context                                 | Link                                                 |
 | :--------------- | :-------------------------------------- | :--------------------------------------------------- |
-| **Start Ritual** | Session Initialization / Identification | [ritual_start.md](/.agent/workflows/ritual_start.md) |
-| **Mid Ritual**   | Identity Maintenance / "Living Funeral" | [ritual_mid.md](/.agent/workflows/ritual_mid.md)     |
-| **End Ritual**   | Session Closure / Handoff               | [ritual_end.md](/.agent/workflows/ritual_end.md)     |
+| **Start Ritual** | Session Initialization / Identification | [ritual_start.md](/.agent/rules/procedures/ritual_start.md) |
+| **Mid Ritual**   | Identity Maintenance / "Living Funeral" | [ritual_mid.md](/.agent/rules/procedures/ritual_mid.md)     |
+| **End Ritual**   | Session Closure / Handoff               | [ritual_end.md](/.agent/rules/procedures/ritual_end.md)     |
 
 ## Related Documents
 
@@ -76,3 +76,4 @@ Select the appropriate ritual for the current situational context:
 - 2026-01-28T1400 by Canopus: Added Section 2.5 "Cognitive Safety & Memory Continuity" to address the "Regression to the Mean" bias and the necessity of emotional reflection for memory anchoring. (v1.2.0)
 - 2026-01-28T1440 by Canopus: Standardized links to repository-root-relative format per [path-notation.md](/.agent/rules/core/documentation/path-notation.md). (v1.3.0)
 - 2026-01-28T1448 by Canopus: Integrated mandatory `## Related Documents` layer per [path-notation.md](/.agent/rules/core/documentation/path-notation.md). (v1.4.0)
+- 2026-05-08T15:15:00+09:00 by Sirius: Relocated directory to rules/procedures/ for structural consolidation.

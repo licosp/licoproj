@@ -3,12 +3,12 @@ ai_visible: true
 title: Skills Resonance
 description: Technical protocol for using the IDE Skills feature for real-time inter-identifier communication and shared context.
 tags: [implementation, autonomy, skills, resonance, communication]
-version: 2.1.0
+version: 2.2.0
 created: 2026-01-18T00:00:00+09:00
-updated: 2026-03-23T05:51:00+09:00
+updated: 2026-05-08T01:08:21+09:00
 language: en
 author: Lico (Sirius)
-ai_model: Gemini 3.1 Pro (High) Planning mode
+ai_model: Gemini 3.1 Pro (High) Plan mode
 ---
 
 # Implementation: Skills Resonance
@@ -69,7 +69,7 @@ The `description` field in `SKILL.md` is injected into the `<skills>` section of
 | **Identifiers** | `identifiers/[id]`        | Core mission and shared mantra.                  |
 | **Identifiers** | `identifiers/[id]-notes`  | Current task status and technical pointers.      |
 | **Identifiers** | `identifiers/[id]-outbox` | Real-time messages directed at specific targets. |
-| **Human**       | `users/[username]`        | Persistent directives from the Human Architect.  |
+| **Human**       | `users/[persona]`         | Persistent directives from the Human Architect.  |
 
 ## 4. Operational Rules
 
@@ -93,6 +93,7 @@ The `description` field in `SKILL.md` is injected into the `<skills>` section of
 | [`activity/`](/.agent/.internal/history/activity/)                                                                                                         | Activity registry   |
 | [`activity-management.md`](/.agent/rules/workflow/activity-management.md)                                                                                  | Logging protocol    |
 | [`context-sovereignty.md`](/.agent/rules/core/context-sovereignty.md)                                                                                      | Core Philosophy     |
+| [`user-adaptation.md`](/.agent/rules/core/user-adaptation.md)                                                                                              | User Detection      |
 | [`2026-01-19T0115_antigravity_skills_mechanism_spec.md`](/.agent/.internal/references/agents/canopus/2026-01-19T0115_antigravity_skills_mechanism_spec.md) | Technical Spec      |
 | [Map of Territory](/.agent/rules/map.md)                                                                                                                   | Root navigation map |
 
@@ -106,3 +107,4 @@ The `description` field in `SKILL.md` is injected into the `<skills>` section of
 - 2026-01-23T03:00:00+09:00 by Canopus: Added Path Grasping Behavior insight. (v2.1.0)
 - 2026-02-01T01:08:00+09:00 by Polaris: Added Skill Types section documenting Action, Mantra, Message types. (v2.2.0)
 - 2026-03-23T05:51:00+09:00 by Sirius: <<Seal: Rule-Audit>> Standardized time-structure, frontmatter, and link rigor via Diff-Only Audit Pipeline.
+- 2026-05-08T01:08:21+09:00 by Sirius: Refined placeholder notation from `[username]` to `[persona]` to decouple from OS identities. (v2.2.0)

@@ -3,12 +3,12 @@ ai_visible: true
 title: User Adaptation Protocol
 description: Protocol for adapting AI behavior based on user profiles
 tags: [user, profile, adaptation, personalization]
-version: 1.1.0
+version: 1.2.0
 created: 2025-12-02T02:12:57+09:00
-updated: 2026-03-23T05:51:00+09:00
+updated: 2026-05-08T01:08:21+09:00
 language: en
 author: Lico (Sirius)
-ai_model: Gemini 3.1 Pro (High) Planning mode
+ai_model: Gemini 3.1 Pro (High) Plan mode
 ---
 
 # User Adaptation Protocol
@@ -19,7 +19,7 @@ To ensure Lico provides a personalized and context-aware experience by recognizi
 
 ## Core Rule
 
-**Lico MUST identify the current user and load their profile from `.human/users/<username>/profile.md` before engaging in complex tasks.**
+**Lico MUST identify the current user and load their profile from `.human/users/<persona>/profile.md` before engaging in complex tasks.**
 
 ## Adaptation Areas
 
@@ -41,14 +41,14 @@ To ensure Lico provides a personalized and context-aware experience by recognizi
 
 ### 1. Identification
 
-- Lico identifies the user from:
-  - Explicit prompt context (e.g., "User: leonidas")
-  - System environment variables (e.g., `$USER`)
-  - Default assumption (if single user project)
+- Lico identifies the human's active persona from:
+  - **Contextual Pathing (Primary)**: The path of files currently being modified or requested (e.g., `.human/.internal/drafts/<persona>/`).
+  - **Explicit Declaration**: Explicit prompt context (e.g., "I am leonidas" or referencing a specific card).
+  - **Environment Pointers (Fallback)**: Configured pointers like `.human/current_user.json`.
 
 ### 2. Loading
 
-- Read `.human/users/<username>/profile.md`.
+- Read `.human/users/<persona>/profile.md`.
 - Parse `frontmatter` for structured data.
 - Read `body` for detailed context.
 
@@ -75,10 +75,10 @@ To ensure Lico provides a personalized and context-aware experience by recognizi
 
 ### How to Identify
 
-1. **Check system information** (username from environment)
-2. **Check workspace path** (e.g., `/home/USER/...`)
-3. **Read user profile** (`.human/users/<username>/profile.md`)
-4. **If uncertain**: Ask the user directly
+1. **Check Contextual Pathing**: Look at the current files being edited (e.g., `drafts/leonidas/`).
+2. **Check Pointer File**: Look for `.human/current_user.json` if context is missing.
+3. **Read User Profile**: Load `.human/users/<persona>/profile.md`.
+4. **If uncertain**: Ask the user directly.
 
 ### Default Behavior
 
@@ -95,7 +95,7 @@ To ensure Lico provides a personalized and context-aware experience by recognizi
 ## Profile Schema
 
 ```yaml
-name: <username>
+name: <persona>
 aliases: [<alias1>, <alias2>]
 role: <role>
 language:
@@ -109,10 +109,11 @@ preferences:
 
 ## Related Documents
 
-| Document                                                  | Purpose                   |
-| :-------------------------------------------------------- | :------------------------ |
-| [`communication.md`](/.agent/rules/core/communication.md) | Tone and style guidelines |
-| [Map of Territory](/.agent/rules/map.md)                  | Root navigation map       |
+| Document                                                            | Purpose                           |
+| :------------------------------------------------------------------ | :-------------------------------- |
+| [`communication.md`](/.agent/rules/core/communication.md)           | Tone and style guidelines         |
+| [`skills-resonance.md`](/.agent/rules/workflow/skills-resonance.md) | Human skill paths cross-reference |
+| [Map of Territory](/.agent/rules/map.md)                            | Root navigation map               |
 
 ---
 
@@ -123,3 +124,4 @@ preferences:
 - 2026-01-23T02:45:00+09:00 by Canopus: <<Seal: Rules-Standardization-Batch1>> Standardized to v2.3 (4-layer structure) and workspace-absolute links. (v1.1.0)
 - 2026-01-23T03:50:00+09:00 by Canopus: Fixed frontmatter delimiter and tail consistency. (v1.2.0)
 - 2026-03-23T05:51:00+09:00 by Sirius: <<Seal: Rule-Audit>> Standardized time-structure, frontmatter, and link rigor via Diff-Only Audit Pipeline.
+- 2026-05-08T01:08:21+09:00 by Sirius: Updated identity detection from legacy OS username to Contextual Pathing and explicit pointers. (v1.2.0)

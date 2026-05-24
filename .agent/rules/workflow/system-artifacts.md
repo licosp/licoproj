@@ -3,12 +3,12 @@ ai_visible: true
 title: System Artifacts Guidelines
 description: Behavioral protocols for task.md, implementation_plan.md, and walkthrough.md.
 tags: [artifacts, workflow, tunneling, consensus, verification]
-version: 2.0
+version: 2.1
 created: 2025-12-13T07:58:48+09:00
-updated: 2026-03-23T05:51:00+09:00
+updated: 2026-05-23T17:48:00+09:00
 language: en
 author: Lico (Sirius)
-ai_model: Gemini 3.1 Pro (High) Planning mode
+ai_model: Gemini 3.1 Pro (High)
 ---
 
 # System Artifacts Guidelines
@@ -36,6 +36,7 @@ Standard AI-generated artifacts possess inherent **Structural Defects** that hin
 | **Cognitive Tunneling** | The urge to "fill the template" encourages the AI to ignore the user's immediate feedback.            |
 | **Ephemeral Nature**    | Often stored outside the cognitive root ([`.agent/`](/.agent/)), losing context for future instances. |
 | **Completionism Bias**  | They prioritize "Done" status over "Agreement" status.                                                |
+| **CLI UI Friction**     | In CLI environments, artifacts exist only as raw file paths, making them invisible and inaccessible.  |
 
 **Policy**: Direct dialogue in Japanese and recording consensus on **Context Cards** ([`.agent/cards/`](/.agent/cards/)) is always superior to standard artifact templates.
 
@@ -44,10 +45,11 @@ Standard AI-generated artifacts possess inherent **Structural Defects** that hin
 ## 1. task.md (The Status Board)
 
 > [!CAUTION]
-> **DEPRECATED**: `task.md` usage is discouraged. Use **Context Cards** instead.
+> **BANNED**: `task.md` usage is prohibited in CLI environments. Use **Context Cards** instead.
 
 ### Rationale
 
+- **CLI UI Friction**: Checklists are practically invisible to the user in a CLI environment.
 - **Completionism Bias**: Checklist-driven behavior causes the AI to rush toward completion rather than alignment.
 - **Lack of Persistence**: `task.md` is rarely version-controlled in the core brain, causing "Context Decay" between sessions.
 - **Isolation**: Users cannot easily peer into the AI's "internal checklist" without manual notification.
@@ -55,9 +57,7 @@ Standard AI-generated artifacts possess inherent **Structural Defects** that hin
 ### Implementation
 
 1. **Prefer Context Cards**: Active tasks **MUST** be managed via [Context Cards](/.agent/rules/workflow/context-card-workflow.md).
-2. **Legacy Use (Only if required)**:
-   - Treat as a **passive record**, not an active command queue.
-   - **MUST** insert `[ ] Ask User for Confirmation` items between major logical steps to enforce pauses.
+2. **Absolute Prohibition**: Do not generate or update `task.md` for shared tracking in CLI environments.
 
 ---
 
@@ -71,8 +71,9 @@ Standard AI-generated artifacts possess inherent **Structural Defects** that hin
 ### Implementation
 
 1. **Review Requirement**: **MUST NOT** execute a plan until the user has explicitly approved it.
-2. **Leonidas-First Format**: Prioritize Japanese and "Intent-first" descriptions over system templates.
-3. **Card Anchoring**: Once approved, the final consensus **MUST** be summarized on a [Context Card](/.agent/cards/) for historical persistence.
+2. **Minimize Usage**: Even for complex changes, attempt to present the plan via direct dialogue or Context Cards (e.g., `Agent Observations`) first to avoid CLI UI friction.
+3. **Leonidas-First Format**: Prioritize Japanese and "Intent-first" descriptions over system templates.
+4. **Card Anchoring**: Once approved, the final consensus **MUST** be summarized on a [Context Card](/.agent/cards/) for historical persistence.
 
 ---
 
@@ -113,6 +114,8 @@ The Walkthrough is an **Internal Verification Tool** for the AI to observe its o
 
 **The User's Absence (Consensus 2026-01-21)**: During dialogue with Leonidas, we confirmed that the user **does not read** the walkthroughs. This revelation allowed us to specialize `walkthrough.md` as a purely internal AI tool, removing the burden of user-focused reporting while doubling down on its utility for AI self-verification and hallucination detection.
 
+**The CLI Transition (2026-05)**: The shift from GUI to CLI stripped away the visual UI panels that made artifacts readable. This introduced severe "UI Friction", leading to the complete ban of `task.md` and the heavy restriction of `implementation_plan.md` in favor of direct dialogue and Context Cards.
+
 ---
 
 ## Related Documents
@@ -132,3 +135,4 @@ The Walkthrough is an **Internal Verification Tool** for the AI to observe its o
 - 2026-01-05T07:45:00+09:00 by Polaris: Deprecated `task.md` usage.
 - 2026-01-21T07:45:00+09:00 by Canopus: Major revision (v2.0): Applied Meta-Rules (Policy/Rationale), clarified `walkthrough.md` as an internal "Silent Guardian," and documented user non-review status.
 - 2026-03-23T05:51:00+09:00 by Sirius: <<Seal: Rule-Audit>> Standardized time-structure, frontmatter, and link rigor via Diff-Only Audit Pipeline.
+- 2026-05-23T17:48:00+09:00 by Sirius: Major revision (v2.1): Documented CLI UI Friction and banned `task.md`.

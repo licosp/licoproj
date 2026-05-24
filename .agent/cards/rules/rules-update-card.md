@@ -12,7 +12,7 @@ created: 2025-12-01T00:00:00+09:00
 updated: 2026-04-11T13:43:00+09:00
 language: en
 author: Lico (Sirius)
-ai_model: Gemini 3.1 Pro (High) Planning mode
+ai_model: Gemini 3.1 Pro (High)
 ---
 
 # Context Whiteboard: Rules Update
@@ -56,6 +56,13 @@ ai_model: Gemini 3.1 Pro (High) Planning mode
 ## Agent Observations
 
 ---
+
+### Sirius (2026-05-23)
+
+- [x] [Rules] `system-artifacts.md` を改定 (v2.1)
+  - CLI 環境への移行に伴う「UI Friction（視認性の喪失）」を第 5 の欠陥として定義
+  - CLI 環境における `task.md` の使用を禁止（BANNED）に格上げ
+  - `implementation_plan.md` の利用をさらに制限し、対話とカードへ比重を移行
 
 ### Polaris (2026-01-02)
 

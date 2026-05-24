@@ -5,7 +5,7 @@ description: Audit and fix cross-links in rules and workflows
 tags: [workflow, maintenance, cross-link, audit]
 version: 1.0.0
 created: 2026-01-01T12:26:00+09:00
-updated: 2026-03-21T17:26:00+09:00
+updated: 2026-05-08T15:15:00+09:00
 language: en
 author: Lico (Sirius)
 ai_model: Gemini 3.1 Pro (High) Planning mode
@@ -53,7 +53,7 @@ Execute this workflow on one directory at a time. All paths MUST be workspace-ro
 | :------------------------------------------------------------------------------------------ | :---------------------- |
 | [`meta-rules.md`](/.agent/rules/core/meta-rules.md)                                         | Cross-linking standards |
 | [`markdown-ai.md`](/.agent/rules/core/markdown/markdown-ai.md)                              | AI markdown format      |
-| [`cross-link-audit-plan.md`](/.agent/workflows/cross-link-audit-plan.md)                    | Master plan for audits  |
+| [`cross-link-audit-plan.md`](/.agent/rules/procedures/cross-link-audit-plan.md)                    | Master plan for audits  |
 | [`documentation-standards.md`](/.agent/rules/core/documentation/documentation-standards.md) | Structural standards    |
 | [Map of Territory](/.agent/rules/map.md)                                                    | Root navigation map     |
 
@@ -66,3 +66,4 @@ Execute this workflow on one directory at a time. All paths MUST be workspace-ro
 - 2026-01-17T17:45:00+09:00 by Canopus: Standardized metadata and root-relative link patterns (v1.5).
 - 2026-01-25T07:00:00+09:00 by Canopus: <<Seal: Rules-Standardization-Batch2.3>> Created by standardizing the cross-link audit procedure to v2.3 constitutional standards. (v1.0.0)
 - 2026-03-21T17:26:00+09:00 by Lico (Sirius): Executed High-Fidelity Rule Audit (Batch 07) to restore lost historical origin context and standardized cross-links.
+- 2026-05-08T15:15:00+09:00 by Sirius: Relocated directory to rules/procedures/ for structural consolidation.

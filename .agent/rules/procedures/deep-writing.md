@@ -5,7 +5,7 @@ description: Structure-first approach to writing with appropriate length
 tags: [deep-writing, cognition, protocol]
 version: 2.3
 created: 2025-12-31T22:34:00+09:00
-updated: 2026-03-21T17:26:00+09:00
+updated: 2026-05-08T15:15:00+09:00
 language: en
 author: Lico (Sirius)
 ai_model: Gemini 3.1 Pro (High) Planning mode
@@ -121,7 +121,7 @@ AI finishes when it finishes. Phase 4-5 triggers forced re-evaluation.
 
 | Document                                                               | Purpose               |
 | :--------------------------------------------------------------------- | :-------------------- |
-| [Deep Reading](/.agent/workflows/deep-reading.md)                      | Deep reading protocol |
+| [Deep Reading](/.agent/rules/procedures/deep-reading.md)                      | Deep reading protocol |
 | [Context Preservation](/.agent/rules/workflow/context-preservation.md) | Context preservation  |
 | [Map of Territory](/.agent/rules/map.md)                               | Root navigation map   |
 
@@ -133,3 +133,4 @@ AI finishes when it finishes. Phase 4-5 triggers forced re-evaluation.
 - 2026-01-01T05:28:00+09:00 by Polaris: Updated.
 - 2026-01-23T11:50:00+09:00 by Canopus: <<Seal: Rules-Standardization-Batch2.1>> Standardized to v2.3 constitutional standards (4-layer structure, Historical Background integration).
 - 2026-03-21T17:26:00+09:00 by Lico (Sirius): Executed High-Fidelity Rule Audit (Batch 07) to restore lost historical origin context and standardized cross-links.
+- 2026-05-08T15:15:00+09:00 by Sirius: Relocated directory to rules/procedures/ for structural consolidation.

@@ -3,12 +3,12 @@ ai_visible: true
 title: Commit Standards
 description: Comprehensive commit message standards and atomic commit philosophy
 tags: [rules, development, git, standards]
-version: 2.3.0
+version: 2.3.1
 created: 2025-12-10T15:48:41+09:00
-updated: 2026-03-23T05:51:00+09:00
+updated: 2026-05-09T03:38:00+09:00
 language: en
 author: Lico (Sirius)
-ai_model: Gemini 3.1 Pro (High) Planning mode
+ai_model: Gemini 3.1 Pro (High) Plan mode
 ---
 
 # Commit Standards
@@ -146,8 +146,9 @@ Changed files:
 
 - **Normal Commit**: Signature footer is **OPTIONAL**. Since the contributing agent is identified in the first line of the header, redundant signatures should be avoided.
 - **Proxy Commit (REQUIRED)**: If an agent (e.g., Canopus) is committing work designed or requested by another agent (e.g., Polaris):
-  1. **Header Identifier**: Use the **Worker Identifier** (the one who designed/processed the logic).
-  2. **Signature**: Footer MUST include `Committed-by: <Identifier>` to identify the agent who performed the technical task.
+  1. **Physical Workspace Constraint**: In the Federal Strata architecture, each identifier has a dedicated physical workspace and branch (e.g., `/home/lico/develop/shared/crew/<identifier>/...`). A proxy commit **MUST** be executed by navigating to the target identifier's specific workspace. Do **NOT** copy their files into your own workspace.
+  2. **Header Identifier**: Use the **Worker Identifier** (the one who designed/processed the logic).
+  3. **Signature**: Footer MUST include `Committed-by: <Identifier>` to identify the agent who performed the technical task.
 
 **Format (Proxy)**:
 `Committed-by: <Identifier>`
@@ -274,3 +275,4 @@ Fine-grained commits with detailed messages:
 - 2026-01-22T22:50:00+09:00 by Canopus: Integrated Vertical Stacking vs. Horizontal Batching rules and the Checkpoint Principle for managing diff-bloat. (v1.5.0)
 - 2026-01-25T07:05:00+09:00 by Canopus: <<Seal: Rules-Standardization-Batch4>> Standardized to v2.3 constitutional standards (4-layer structure) and added Historical Background. (v2.3.0)
 - 2026-03-23T05:51:00+09:00 by Sirius: <<Seal: Rule-Audit>> Standardized time-structure, frontmatter, and link rigor via Diff-Only Audit Pipeline.
+- 2026-05-09T03:38:00+09:00 by Sirius: Updated proxy commit rules to clarify physical workspace constraints. (v2.3.1)

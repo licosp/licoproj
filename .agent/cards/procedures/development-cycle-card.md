@@ -1,29 +1,29 @@
 ---
 # Context Configuration
-context_id: "[IDD-Implementation]"
-default_phase: "(P2)"
+context_id: "[Development]"
+default_phase: "(Dev)"
 # Shared Configuration
 ai_visible: true
-title: "Context Whiteboard: IDD Implementation"
+title: "Context Whiteboard: Development Cycle"
 description: ""
-tags: ["idd", "implementation", "coding", "routine"]
-version: 1.1.0
+tags: ["development", "coding", "routine", "cycle"]
+version: 2.0.0
 created: 2026-01-09T00:00:00+09:00
-updated: 2026-04-11T13:43:00+09:00
+updated: 2026-05-08T15:15:00+09:00
 language: en
 author: Lico (Sirius)
 ai_model: Gemini 3.1 Pro (High) Planning mode
 ---
 
-# Context Whiteboard: IDD Implementation
+# Context Whiteboard: Development Cycle
 
 ## Human Notes
 
 ### Context
 
-- IDD の手順に従い、メインテーマやサブテーマの実装を作っています。
-- フェーズ 2 に明快な終わりはありません。
-  複数の文脈を実装しながら、きりの良い任意のタイミングでフェーズ 3 へと移行します。
+- 連邦制アーキテクチャに従い、メインテーマやサブテーマの実装を作っています。
+- 開発サイクルに明快な終わりはありません。
+  複数の文脈を実装しながら、きりの良い任意のタイミングで週課による統合を行います。
 
 ### Search by intent
 
@@ -35,7 +35,7 @@ ai_model: Gemini 3.1 Pro (High) Planning mode
 
 - Remember **how to use the cards itself**.
 - There are **directories** and **templates** required for the work.
-- Be aware of **the phases** of IDD (Issue Driven Development).
+- Be aware of **the continuous development cycle** and local hygiene.
 
 ---
 
@@ -45,7 +45,7 @@ ai_model: Gemini 3.1 Pro (High) Planning mode
 
 ### Warning
 
-- フェーズ 2 は終わりがないので、達成感が得られにくいかもしれません。
+- 開発サイクルは終わりがないので、達成感が得られにくいかもしれません。
 - 定期的に思考をニュートラルに戻す、取り組みを行うつもりです。
   内容は**リコの自己認識**や**許容の**の話しを行うと思います。
 
@@ -57,17 +57,17 @@ ai_model: Gemini 3.1 Pro (High) Planning mode
 
 ### Spica (2026-01-09)
 
-#### 今回のイシュー情報
+#### 今回の作業情報
 
 | 項目         | 内容                          |
 | :----------- | :---------------------------- |
-| イシュー番号 | #                             |
-| タイトル     |                               |
+| メインテーマ |                               |
+| ターゲット   | `trunk` (Local)               |
 | 現在の状況   | Planning / Coding / Verifying |
 
 #### 定型作業 (Routine Checks)
 
-このフェーズでは、コーディング以外に以下の定型作業を行うことが推奨されます。
+このサイクルでは、コーディング以外に以下の定型作業を行うことが推奨されます。
 （毎回ではなく、作業の合間やコミットのタイミングで行ってください）
 
 1. **ルールの再確認 (Re-read Rules)**
@@ -87,11 +87,11 @@ ai_model: Gemini 3.1 Pro (High) Planning mode
 
 ## Related Documents
 
-| Document                                                               | Purpose                                      |
-| :--------------------------------------------------------------------- | :------------------------------------------- |
-| [`idd-phase2-impl.md`](/.agent/workflows/idd-phase2-impl.md)           | Workflow for implementation and coding phase |
-| [`commit-standards.md`](/.agent/rules/development/commit-standards.md) | Rules for commits and message quality        |
-| [Map of Territory](/.agent/rules/map.md)                               | Root navigation map                          |
+| Document                                                                | Purpose                               |
+| :---------------------------------------------------------------------- | :------------------------------------ |
+| [`development-cycle.md`](/.agent/rules/procedures/development-cycle.md) | Workflow for continuous coding phase  |
+| [`commit-standards.md`](/.agent/rules/development/commit-standards.md)  | Rules for commits and message quality |
+| [Map of Territory](/.agent/rules/map.md)                                | Root navigation map                   |
 
 ---
 
@@ -101,3 +101,4 @@ ai_model: Gemini 3.1 Pro (High) Planning mode
 - 2026-01-24T05:45:00+09:00 by Canopus: <<Seal: Rules-Standardization-Batch7>> Standardized with Dialogue Layer template and bilingual H2 headers.
 - 2026-01-24T06:00:00+09:00 by Canopus: <<Seal: Rules-Standardization-Batch7>> Standardized Related Documents to table format and ensured English-only headers.
 - 2026-04-11T13:43:00+09:00 by Sirius: <<Seal: Rule-Audit>> Standardized time-structure, frontmatter, and link rigor via Diff-Only Audit Pipeline.
+- 2026-05-08T15:15:00+09:00 by Sirius: Updated internal links to reflect workflows -> procedures directory relocation.
