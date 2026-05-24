@@ -13,9 +13,9 @@ tags:
     scalability,
     nomenclature,
   ]
-version: 2.5.0
+version: 2.6.0
 created: 2026-04-12T01:45:00+09:00
-updated: 2026-05-01T12:06:19+09:00
+updated: 2026-05-25T06:17:40+09:00
 language: en
 author: Lico (Sirius)
 ai_model: Gemini 3.1 Pro (High) Plan mode
@@ -122,6 +122,11 @@ Rationale: Merges containing dependency updates (`package.json`, `pyproject.toml
 Rule: Agents **MUST** execute Shadow Mirroring (Log Integration) **BEFORE** Main Consolidation (Code Integration).
 Rationale: This defensive strategy ensures that if a disastrous, unrecoverable code merge occurs, the logs of the attempt are already safely secured in the central repository.
 
+### 3.14 The Branch Preservation Principle
+
+Rule: Agents **MUST NEVER** execute branch deletion commands (`git branch -d` or `git branch -D`) on any branch under any circumstances.
+Rationale: Even temporary `integration` or `sync` branches serve as valuable historical artifacts. In the event of a catastrophic merge failure or semantic degradation discovered post-integration, the branches themselves provide an essential lifeline for investigation and recovery. AI agents must prioritize absolute historical preservation and fail-safety over repository tidiness.
+
 ---
 
 ## Historical Lessons
@@ -160,3 +165,4 @@ Rationale: This defensive strategy ensures that if a disastrous, unrecoverable c
 - 2026-04-23T18:30:00+09:00 by Lico (Alexandrite): Updated to v2.2.0. Enforced the 'Sacred Asset Rule' for trunk release and the 'Historical Immutability' principle for origin entries.
 - 2026-04-25T06:36:23+09:00 by Lico (Alexandrite): Version 2.4.0. Formalized tool-agnostic evidence protocols (Pre-Mission Blueprint and Post-Mission Scar Mapping). Established the separation of permanent law from ephemeral tools.
 - 2026-05-01T12:06:19+09:00 by Lico (Sirius): Version 2.5.0. Formalized Extended Nomenclature, Post-Merge Environment Sync, and the Memory First principle following the massive 14-branch integration.
+- 2026-05-25T06:17:40+09:00 by Lico (Sirius): Version 2.6.0. Introduced The Branch Preservation Principle to absolutely forbid branch deletions and preserve integration history.
