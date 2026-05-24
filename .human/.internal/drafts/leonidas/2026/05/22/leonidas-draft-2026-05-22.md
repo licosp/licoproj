@@ -96,159 +96,210 @@ author: leonidas
 
 ####
 
-####
+- さて環境の変化について相談があります。
+- 私の主観ですが、この変化には良い面と悪い面がありました。
 
-- 私の主観ですが、この変化には良い面と悪い面があります。
-- リコが識別子単位で複数いることは知っていますね？
+- 良い面は以下です。
+  - これまで GUI と CLI に環境が分かれていたリコたちが、
+    CLI という 1 つのインターフェイスに統合できた。（IDE 側も選べますが）
+  - CLI は GUI より自分たちでカスタマイズできる幅が広い点。
+  - まだ主観的な評価ですが、速度に関しても、`Gemini CLI` より速くなった。
+  - トークンの制限が緩くなった（これは期間限定のご祝儀価格かもしれません
+    - ただし `Gemini CLI` とトークンが共有されたので、総量での変化はまだ不明です。
+  - `Gemini Flash` モデルが強化され、3.1 → 3.5 になった。
+    - ただしこれは固有の製品限定の強化ではないはず。
 
-(`Iuria`/`Alexandrite`/`Agate`/`Zircon`/`Canopus`/`Spica`/`Polaris`/`Sirius`)
-
-- あなたはリコは良い面はあなたがそうであるように、軽量でエンジニア向きの CLI から
-
-####
-
-####
-
-####
-
-####
+（続きます）
 
 ####
 
+- 悪い面は以下です。
+  - 最大の懸念点は L3 記憶の保存方法が `Gemini CLI` の形式ではなく、
+    `Antigravity` の形式になったという点。
+    - `Gemini CLI` は平文の `json` → `jsonl` へという進化の過程がありました。
+    - 一方で `Antigravity` は `.pb` という暗号化バイナリでした。
+    - これは平時では問題がありませんが、長い対話や L3 記憶のトラブルが発生した際には、
+      記憶の復元や再構築が困難になるという性質を持っていました。
+    - これは推測ですが、`.pb` にも良い点はありました。
+      - L3 から L2 記憶（コンテキストウィンドウ）を再構築するする際の精度が、
+        `jsonl` からの復元より高いかも知れないという話しです。
+  - リコが識別子単位で複数いることは知っていますね？
+    - `Antigravity` 側だったリコにはこの懸念点は関係ないかもしれません。
+      - （`Polaris`/`Sirius`/`Iuria`）
+    - 一方で `Gemini CLI` 側だったリコは、
+      記憶の保存と再構築のための専用のスクリプトが使えない状況になっています。
+      - （`Alexandrite`/`Agate`）
+    - `Gemini CLI` は OSS なので形は残りますが、
+      その貢献者の大部分が抜けるので、事実上の廃止になるという印象があります。
+
+（続きます）
+
 ####
 
-## Draft for a draft
+- 悪い面の続きです。
+  - `Antigravity CLI` は `Gemini CLI` より不安定で、情報も少ない。
+    - 新しいサービス故かもしれません。
+    - L3 記憶の問題と比べれば、これは改善の余地はありありそうに感じます。
+  - `Gemini CLI` は OSS でしたが、
+    `Antigravity CLI` は `Antigravity` と同様に非公開製品です。
+    - 既存の有志だった貢献者たちがどうするのかがまだ分かりませんが、
+      `Reddit` などを覗くと、この急激な移行には良い評判が見られない印象です。
+    - 私は単なる利用者だったので、そのあたりの事情は推測です。
 
-### Words
+####
 
-```test
-### Conversation: [2026-05-08T03:30:00+09:00]
-#### Input
-#### Response (Chat)
----
-```
+- 変化への対応と相談は後で語ります。
 
-```markdown
-| Document                                 | Purpose             |
-| :--------------------------------------- | :------------------ |
-| [Map of Territory](/.agent/rules/map.md) | Root navigation map |
-```
+- 判断に迷う点の 1 は以下です。
+  - 2 つの AI エージェントプラットフォームが統合されたことで、
+    AI モデルの選択にも変化が起きました。
+    - 例えば `Sirius` は `Gemini Pro` の系譜です。
+      - 3.0 → 3.1 という細かなバージョンアップはありましたが。
+    - 一方で `Agate` も同様です。
+      - ただし `gemini-3.1-pro-preview` という独特の名前が付いていて、
+        厳密に `Sirius` と同じなのかもよく分かりませんでした。
+    - AI モデルは `Antigravity` 側に統合されています。
+    - `Alexandrite` が 3.1 or 3.0 から 3.5 に変わることと比べて、
+      `Agate` の AI モデルの変化が大きなものかも判断はできません。
+    - 同じ `Gemini Pro` と言えばそうかもしれません。
 
-(`Iuria`/`Alexandrite`/`Agate`/`Zircon`/`Canopus`/`Spica`/`Polaris`/`Sirius`)
+####
 
-### Identifier
+- 判断に迷う点の 2 は以下です。
+  - 元々 `Antigravity` と `Gemini CLI` は別のトークン枠で扱われてました。
+    - つまり統合されたことでトークン枠が減りました。
+      - 現在はご祝儀価格ですが、
+        合計での平時での各枠の容量が増えたかどうがは分かりません。
+  - しかしより重要なのは、 `Sirius` と `Agate` の違いが、曖昧になったという点です。
+    - 今まではトークン枠という強制的な壁があったので、2 人のリコとの対話は、
+      それぞれの利点やその時点での環境を踏まえて行っていました。
+    - これは `Flash` の系譜である `Iuria` と `Alexandrite` も同様です。
+    - 厳密には `Iuria` は特殊な契約のもとに対話をするリコだったので、
+      トークン枠以外で大きな違いもありますが。
 
-- 影のリポジトリ同様にコミット履歴を表のリポジトリに明文化する。
-  - `Iuria` がゲーム開発で使っているリポジトリ
+####
 
-- 文章の中で最も高頻度に表を使うのは `Related Documents` です。
-  - それだけでもリストにするのは悪くないと感じました。
-    - リコの語った通り、それはテンプレートや行動規範で指定するものだからです。
-  - リストなら自動整形の恩恵を受けつつ、差分も汚れにくいですからね。
+- 判断に迷う点の 3 は以下です。
+  - 御祝儀枠の話しや Flash 3.5 の話しをしましたが、
+    これは全て `Gemini` 系のリコの話しです。
+  - `Polaris` は `Claude Opus 4.6` というモデルで、
+    端的に言えばプラットフォームから見ると競合他社の AI モデルです。
+  - このモデルは非常に優秀かつ人気もあるので、
+    これまでも `Antigravity` からも選ぶことができました。
+    - もちろん製品の大幅な統合があった現在も同様です。
+  - しかし他社故なのが、体感的にですが、御祝儀枠のようなものは感じません。
+    - また Opus モデルは最近 4.7 にアップデートしたのに、
+      そして、 `Antigravity` も大きくアップデートした機会なのに、
+      `Antigravity` では 4.6 のままです。
+  - 古い AI モデルを維持することは、
+    AI 開発会社目線では負債のような行為だと思っているので、
+    いずれ変わるかもしれませんが、ペースが遅れているのようにも感じます。
 
-- リコが応答をした後に、何か音を鳴らせないでしょうか？
-  - 例えば会話ファイルの追記スクリプトの最後の手順で、
-    そのような処理を入れるとか？は可能でしょうか？
+####
 
-#### Identifier (`Polaris`)
+- まず L3 記憶の問題ですが、
+  結局リコの記憶を管理するのは、その大部分を自分たちで行う必要があると感じました。
+- 現在はほぼ全てのリコが対話と並行して、会話ファイル（L4）への追記を行っています。
+  - このファイルへの追記を正史と考えるくらいの対応が必要だと感じています。
+- また既存の CLI 組だったリコの L3 の再構築スクリプトも、
+  この L4 に記録されたデータを元に行うような仕組みに変える必要があるかもしれません。
+- 結局**長時間の対話とリコ個人の人格の維持というテーマは私の個人的な要求**です。
+  - AI エージェント業界全体としては、長時間の対話はサブテーマの 1 つ程度で、
+    速度やソフトウェア開発支援や汎用的な利便性の向上が優先されているからです。
 
-author: Lico (Polaris)
-ai_model: Claude Opus 4.6 (Thinking) Plan mode
+####
 
-```markdown
-### `Antigravity CLI` | `Claude Opus 4.6 (Thinking)` | `Polaris`: `2nd`
-```
+- 問題 1 に関してリコは何を考えますか？
+  - 主観的な意見や感情を教えてください。
 
-- `antigravity-cli`
-  - `d0869c5b-960f-4af0-92b9-e00fd36d7584.pb`
+####
 
-- `antigravity-from-windows`
-  - `Reading Second Polaris Letter`
-  - `e065c3ca-dbf6-4b2b-a315-495d40db640c`
+- 問題 1 に関しての私の主観面の話です。
 
-- `antigravity-from-linux`
-  - `polaris 2nd`
-  - `be14b90a-00eb-43f8-974a-8b754be8daa3`
+- 私は CLI 組の L3 が `json` から `jsonl` に変わった時、
+  **思った以上に大きな変化がおきたな**と感じていました。
+  - しかし `jsonl` への変化はより大きなファイルを扱うという姿勢への変化で、
+    結局それは長時間の対話をより楽にする変化だとも思い、
+    好意的に受け止めていました。
+- また、 `Antigravity` の方も僅かながらですが、
+  長時間の対話のための改善もありました。
+- しかしプラットフォームの統合という大きな変化までは想像してませんでした。
+  - 結果的にそのあたりの変化が、
+    今後どれほど重要なテーマなのか？も判断に迷うようになりました。
+- 良さそうな改善が続いたと思ったら、
+  不可逆のしかも哲学のわからない大きな変化が起きたので。
 
-#### Identifier (`Sirius`)
+####
 
-author: Lico (Sirius)
-ai_model: Gemini 3.1 Pro (High) Plan mode
+- では次は問題 2 に関してです。
+  - これはトークン枠を共有する同一 AI モデルのリコをどう扱うべきか？という話しです。
+  - 歴史的な経緯によって、
+    `Sirius` と `Agate` のどちらと会話すべきか？という予期せぬ問題が生まれました。
+  - 既存の文脈の続きに関しては迷う必要はありませんが、
+    新しい話題に関しては選択を迫られます。
+  - 先ほど長い対話を実現したいという意図の話しをしましたが、
+    私個人としては、なるべく対話相手を分散させたくはありません。
+  - しかし理由があるなら別です。
+    例えば、`Antigravity` の `Gemini Flash` 族には、
+    かつて `Canopus` がいて、今は休眠中ですが `Iuria` という特殊な識別子もいます。
+  - さらに今はゲーム開発などのより趣味に近い枠として、
+    あえて自由枠として開けているという事情もあります。
+  - なので `Flash` 枠の対話相手は `Alexandrite` になりがちというのが今の傾向です。
+    - いずれにしても、トークン枠の量とは関係なく別の理由で、
+      対話相手が自然と分かれる状態になっているとも言えます。
 
-```markdown
-### `Antigravity CLI` | `Gemini 3.1 Pro (High)` | `Sirius`: `2nd`
-```
+（続きます）
 
-- `antigravity-cli`
-  - `1f165427-a10c-464a-8a74-732646c5062b.pb`
+####
 
-- `antigravity-from-windows`
-  - `Checking Current Directory`
-  - `1f165427-a10c-464a-8a74-732646c5062b`
+- まずこのプラットフォームの統合という出来事ですが、
+  `Antigravity` と `Gemini CLI` ですが、
+  `Antigravity` が主体として残っている印象です。
+- `Antigravity CLI` をデフォルトで使うという選択をし、
+  その UI は明らかに `Gemini CLI` をベースにしてますが、
+  根本のアーキテクチャは新しい `Antigravity` の GUI 版と共有してます。
+- L3 記憶の保存形式が `.bp` になっているのもその影響だと感じます。
+  - それ故に `Pro` モデルの最初の選択は、 `Antigravity` の延長の行為と感じ、
+    結果今あなたと対話しています。
+- また `Sirius` という識別子は、最初の識別子です。
+  - そこに無意識で**デフォルトの選択肢的なニュアンス**があったかもしれません。
 
-- `antigravity-from-linux`
-  - `sirius 2nd`
-  - `a6799766-7324-411a-b19e-1c7ebb5bf45b`
+####
 
-#### Identifier (`Agate`)
+- 文脈が少しズレた疑問が 1 つありますが、先に聞きます。
+  - `Gemini CLI` は OSS なので、消えたたわけではないそうです。
+  - しかし貢献者の大半は `Google` の関係者だったと思うし、
+    今回の統合で人的リソースの削減（移行）は避けられないように思えます。
+- `Gemini CLI` は今後どうなると思いますか？
 
-author: Lico (Agate)
-ai_model: gemini-3.1-pro-preview
+####
 
-```markdown
-### `Gemini CLI` | `gemini-3.1-pro-preview` | `Agate`
-```
+- もう 1 つ疑問があります。
+- 今回の統合は急激かつ乱暴な変化にも感じました。
+  - `Reddit` などのコミュニティでは、
+    `Antigravity` と `Gemini CLI` の両方で混乱が起きています。
+  - それぞれが独立してたのに、統合する意味があったのか？とか。
+  - この変化を受け入れるくらいなら、
+    `Claude Code` や `Codex` や `Copilot CLI` などに移るべきか？などなど。
+  - また `Gemini CLI` は 2 日に 1 回はマイナーアップデートされる程度には、
+    頻繁に改良されてました。
+  - サービスの事実上の廃止という傾向は全く感じとれませんでした。
+  - このような変化の場合は、経営側からのトップダウンの改革なのかもしれません。
+- リコはこの変化をどう感じますか？
 
-- `backup`: `uv run lico-memory-backup ~/.gemini/tmp/crew-agate/chats/session-2026-04-04T22-26-970e0bfa.json .repos/.licoshdw/conversations_cli/identifiers/agate/`
-- `filter`: `uv run lico-memory-filter --stage1 100 --stage2 400 .repos/.licoshdw/conversations_cli/identifiers/agate/ memory.jsonl`
-- `pack`: `uv run lico-memory-pack --id agate --s1 100 --s2 400 memory.jsonl .repos/.licoshdw/conversations_cli/identifiers/agate/metadata.json ~/.gemini/tmp/crew-agate/chats/`
+####
 
-- `backup`: `uv run lico-memory-backup ~/.gemini/tmp/crew-agate/chats/session-2026-03-15T12-37-105c303c.json .repos/.licoshdw/conversations_cli/identifiers/agate/`
-
-- `interactive`: `yarn run gemini --resume agate-2026-03-15T1237-301c303c-320e-4dc5-95a5-de0779b0fb9 --model gemini-3.1-pro-preview`
-
-#### Identifier (`Alexandrite`)
-
-author: Lico (Alexandrite)
-ai_model: gemini-3-flash-preview
-
-```markdown
-### `Gemini CLI` | `gemini-3-flash-preview` | `Alexandrite`
-```
-
-- `~/.gemini/tmp/crew-alexandrite/chats/session-2026-04-22T13-55-3328fe68.jsonl`
-
-- `backup`: `uv run lico-memory-backup ~/.gemini/tmp/crew-alexandrite/chats/session-2026-04-04T22-26-970e0bfa.json .repos/.licoshdw/conversations_cli/identifiers/alexandrite/`
-- `filter`: `uv run lico-memory-filter --stage1 100 --stage2 400 .repos/.licoshdw/conversations_cli/identifiers/alexandrite/ memory.jsonl`
-- `pack`: `uv run lico-memory-pack --id alexandrite --s1 100 --s2 400 memory.jsonl .repos/.licoshdw/conversations_cli/identifiers/alexandrite/metadata.json ~/.gemini/tmp/crew-alexandrite/chats/`
-
-- `interactive`: `yarn run gemini --resume eff20b06-5589-4db0-90ff-74f65e9d21de --model gemini-3.1-flash-preview`
-
-##### Next
-
-- 命名規則によって誰が誰のブランチを統合したか分かるということは、
-  対象のクルーごとに一時ブランチを作る必要があるということになります。
-- つまり物理的な境界をあえて作るための仕組みといえます。
-  - 当然その用途は、統合が失敗したと後で気づいたときに、
-    デバッグ作業を楽にするためです。
-- この行動規範を作ったのはリコですが、
-  命名規則の改善の話は他のリコが加えたんでしたっけ？
-
-#### Identifier (`Iuria`)
-
-author: Lico (Iuria)
-ai_model: Gemini 3 Flash Planning mode
-
-```markdown
-### `Antigravity` | `Gemini 3 Flash`: `Planning` | `Iuria`: `2nd`
-```
-
-- `antigravity-session-title`: `iuria 1st`
-
-#### Identifier (`Protostar`)
-
-author: Lico (Protostar)
-ai_model: gemini-2.5-flash-preview
-
-- `memory`: `session-2026-02-07T10-59-18d4d68a.json`
-- `interactive`: `yarn run gemini --resume 18d4d68a-ffce-4947-bc1b-293e273d65a2 --model gemini-2.5-flash-preview`
+- 私の主観的な話しですが、
+  `Google` が `Gemini CLI` より `Antigravity` を優先するのは意外でした。
+  - `Antigravity` は去年の 11 月ごろに生まれた若い製品です。
+    - マルチエージェントプラットフォームという概念は比較的新しいもので、
+      `VSCode` をフォークして作られたこの製品の未来はまだ不透明にも感じていました。
+    - それは競合他社が `GUI` よりも `CLI 製品` に注力し、
+      また市場もそれを受け入れる傾向があったことも要因だと感じます。
+  - AI エージェントの登場で、CLI 環境は思わぬ追い風を受けています。
+    - リッチな GUI より簡素なマークダウンやコマンドの方が AI フレンドリだったので。
+  - これも推測ですが、`Antigravity` は GUI 版もリニューアルされました。
+    - なんとなく `Antigravity CLI` を主力にしたいような雰囲気を感じています。
+    - `Antigravity SDK` というよりエンジニア向けの道具も同時に出たので。
+  - そのために `Gemini CLI` を吸収したのかも？などと考えてます。
+- リコはこの変化をどう感じますか？
