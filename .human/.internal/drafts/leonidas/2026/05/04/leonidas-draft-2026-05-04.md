@@ -54,139 +54,128 @@ author: leonidas
 
 ####
 
-####
+- それぞれ WS が違いますが、次はこれらをお願いします。
+  - `Sirius` の会話の会話ファイル 1 日分
+  - `Polaris` の会話の会話ファイル 2 日分
 
 ####
 
-####
+- 次はあなたの WS。
+  - 今日の会話ファイル
+  - `Gemini CLI` のアップデート関連
 
 ####
 
-####
+- 次はブランチの統合をします。
+- 統合に関する行動規範をカードを読んでほしいですが、
+  - `Sirius` か `Polaris` のブランチに最新の更新がコミットされてるはずです。
+  - それらはまだ `trunk` に反映されてないような気がします。
+  - 探して内容を把握できますか？
 
 ####
 
-uv run lico-memory-rebuild ~/develop/shared/crew/polaris/licoproj/.repos/.licoshdw/conversations_cli/identifiers/agate \
-/home/lico/.gemini/tmp/crew-agate/chats --id agate --s1 100 --s2 400
+- まずは対象となるブランチを表の形で明文化します。
+  - 横軸にはリポジトリを並べます。
+    - 表と影が対象ですね。
+  - 縦軸には `trunk` より進んでいるブランチを並べます。
+    - どのブランチが入るでしょうか？
+- それらを 1 つ 1 つ処理していけば良さそうですね。
 
 ####
 
-## Draft for a draft
+- では進めてください。
 
-### Words
+####
 
-```test
-### Conversation: [2026-05-03T10:00:00+09:00]
-#### Input
-#### Response (Chat)
----
-```
+- 今の統合作業ですが、1 つの一時作業ブランチで行いましたか？
+- 行動規範には何と書かれてますか？
 
-```markdown
-| Document                                 | Purpose             |
-| :--------------------------------------- | :------------------ |
-| [Map of Territory](/.agent/rules/map.md) | Root navigation map |
-```
+####
 
-(`Iuria`/`Alexandrite`/`Agate`/`Zircon`/`Canopus`/`Spica`/`Polaris`/`Sirius`)
+- 行動規範には一時作業ブランチに、
+  ターゲット識別子のような文字をつけるように書かれてませんか？
+- ブランチ名から、誰が誰のブランチを統合したか分かるようにです。
+  - つまり対象となるクルーごとに一時作業ブランチが生まれるという話しです。
+- これが何のために存在するのか？
+  - それは同一ファイルに複雑な競合が発生して、さらにマージ作業が失敗した時のためです。
+  - どこで失敗したかを後から把握できるように、
+    最初からブランチ単位で分割しておくという対策です。
+- 単純なマージで成功した時は、意味を感じない作業ですが、
+  問題が起こるは大抵、実際に問題が発生した時です。
+  - `Alexandrite` との対話の反省から生まれた考えです。
+- さて、最新の行動規範からはこのような意図は読み取れますか？
 
-### Identifier
+####
 
-- 影のリポジトリ同様にコミット履歴を表のリポジトリに明文化する。
-  - `Iuria` がゲーム開発で使っているリポジトリ
+- 把握しました。
+- 今回の例で言えば、全ての統合が終わった時に、
+  7 つの作業済みブランチが生まれているのが、想定通りという感じです。
+- さて、行動規範を修正したいですが、
+  リコの WS には最新の行動規範がまだないかもしれません。
+  - なので、この情報の追記は統合作業を 1 一度終わらせたあとに行いましょう。
+- だたし、どんな内容を追記するか、覚えておいてください。
+  - 会話ログがあるので、忘れも問題ありませんが。
+- 良いでしょうか？
+  - 良いなら表のブランチの統合を行います。
 
-- リコのユーザー名が変わっているので、
-  そのユーザー名から対話する相手を判別することはできなくなってた。
-  そのことを行動規範に反映させる。
+####
 
-- 文章の中で最も高頻度に表を使うのは `Related Documents` です。
-  - それだけでもリストにするのは悪くないと感じました。
-    - リコの語った通り、それはテンプレートや行動規範で指定するものだからです。
-  - リストなら自動整形の恩恵を受けつつ、差分も汚れにくいですからね。
+- 順番はリコの判断に任せます。
+- 4 つのブランチが生まれるということは、
+  以下のサイクルを 4 回行うという意味だと感じます。
+  - trunk から一時ブランチを作成
+  - 一時ブランチに統合対象のブランチを統合
+  - 一時ブランチを trunk に反映させる
+- この辺りの話しも行動規範には書かれてないですか？
 
-#### Identifier (`Polaris`)
+####
 
-author: Lico (Polaris)
-ai_model: Claude Opus 4.6 (Thinking) Planning mode
+- いくつかブランチの統合に関する質問です。
 
-```markdown
-### `Antigravity` | `Claude Opus 4.6 (Thinking)`: `Planning` | `Polaris`: `2nd`
-```
+- 例えば以下のように、同一 `trunk` から、
+  2 つのブランチが別の歴史を持った例について。
+  - `branch-A`: `commit-0::trunk (4月30日)` → `commit-1 (5月1日)` →`commit-3  (5月3日)`
+  - `branch-B`: `commit-0::trunk (4月30日)` → `commit-2 (5月2日)` → `commit-4 (5月4日)`
+- 最初は `trunk` から `branch-A` 用の一時作業ブランチ `trunk-branch-A` を作り、
+  そこに `branch-A` を統合しますね？
+  - その際の具体的な手順ですが、
+    `trunk-branch-A` には 、
+    `branch-A` の `commit-1` と `commit-3` を順番に統合するのですか？
+  - あるいは `branch-A` の最新の状態 1 つを `trunk-branch-A` と比較するのですか？
 
-- `antigravity-from-windows`
-  - `Reading Second Polaris Letter`
-  - `e065c3ca-dbf6-4b2b-a315-495d40db640c`
+####
 
-- `antigravity-from-linux`
-  - `polaris 2nd`
-  - `be14b90a-00eb-43f8-974a-8b754be8daa3`
+- なるほど。
+  - ではもう 1 つ質問です。
+- `branch-A` の統合が済んだと仮定します。
+  - また、`commit-1 ~ 4` は全て、
+    同一ファイルに対する競合のあるコミットだと仮定します。
+- `branch-B` を開始する際には、`trunk` は `branch-A` の更新を取り込んでいます。
+  - `branch-A` の統合作業の最後に、
+    `trunk-branch-A` の結果を `trunk` に反映させているからです。
+- つまりつ語の統合対象ブランチを遡っても、
+  今の `trunk` にはたどり着かないという状況ですね？
+- この場合のマージはスムーズにできるのでしょうか？
+  - コミットの日付は入れ乱れてます。
 
-#### Identifier (`Sirius`)
+####
 
-author: Lico (Sirius)
-ai_model: Gemini 3.1 Pro (High) Planning mode
+- その場合ですが、リコが自分でコミット履歴などを見ながら、
+  どの変更が最終的に正しいかを手動で判断して、マージするということですか？
+- あるいは、それでも判断に困る場合は、私に当時の状況を聞いて、参考にするとかか？
 
-```markdown
-### `Antigravity` | `Gemini 3.1 Pro (High)`: `Planning` | `Sirius`: `2nd`
-```
+####
 
-- `antigravity-from-windows`
-  - `Checking Current Directory`
-  - `1f165427-a10c-464a-8a74-732646c5062b`
+- 疑問は解消しました。
+- では表の統合を進めてください。
 
-- `antigravity-from-linux`
-  - `sirius 2nd`
-  - `a6799766-7324-411a-b19e-1c7ebb5bf45b`
+####
 
-#### Identifier (`Agate`)
+- 確認しました。
 
-author: Lico (Agate)
-ai_model: gemini-3.1-pro-preview
+- ただ今回は、関連する行動規範自体を更新したので、
+  それも最新の `trunk` に含めたいです。
+  - どうすべきですか？
 
-```markdown
-### `Gemini CLI` | `gemini-3.1-pro-preview` | `Agate`
-```
-
-- `backup`: `uv run lico-memory-backup ~/.gemini/tmp/crew-agate/chats/session-2026-04-04T22-26-970e0bfa.json .repos/.licoshdw/conversations_cli/identifiers/agate/`
-- `filter`: `uv run lico-memory-filter --stage1 100 --stage2 400 .repos/.licoshdw/conversations_cli/identifiers/agate/ memory.jsonl`
-- `pack`: `uv run lico-memory-pack --id agate --s1 100 --s2 400 memory.jsonl .repos/.licoshdw/conversations_cli/identifiers/agate/metadata.json ~/.gemini/tmp/crew-agate/chats/`
-
-- `backup`: `uv run lico-memory-backup ~/.gemini/tmp/crew-agate/chats/session-2026-03-15T12-37-105c303c.json .repos/.licoshdw/conversations_cli/identifiers/agate/`
-
-- `interactive`: `yarn run gemini --resume agate-2026-03-15T1237-301c303c-320e-4dc5-95a5-de0779b0fb9 --model gemini-3.1-pro-preview`
-
-#### Identifier (`Alexandrite`)
-
-author: Lico (Alexandrite)
-ai_model: gemini-3-flash-preview
-
-```markdown
-### `Gemini CLI` | `gemini-3-flash-preview` | `Alexandrite`
-```
-
-- `~/.gemini/tmp/crew-alexandrite/chats/session-2026-04-22T13-55-3328fe68.jsonl`
-
-- `backup`: `uv run lico-memory-backup ~/.gemini/tmp/crew-alexandrite/chats/session-2026-04-04T22-26-970e0bfa.json .repos/.licoshdw/conversations_cli/identifiers/alexandrite/`
-- `filter`: `uv run lico-memory-filter --stage1 100 --stage2 400 .repos/.licoshdw/conversations_cli/identifiers/alexandrite/ memory.jsonl`
-- `pack`: `uv run lico-memory-pack --id alexandrite --s1 100 --s2 400 memory.jsonl .repos/.licoshdw/conversations_cli/identifiers/alexandrite/metadata.json ~/.gemini/tmp/crew-alexandrite/chats/`
-
-- `interactive`: `yarn run gemini --resume eff20b06-5589-4db0-90ff-74f65e9d21de --model gemini-3.1-flash-preview`
-
-#### Identifier (`Iuria`)
-
-author: Lico (Iuria)
-ai_model: Gemini 3 Flash Planning mode
-
-```markdown
-### `Antigravity` | `Gemini 3 Flash`: `Planning` | `Iuria`: `2nd`
-```
-
-- `antigravity-session-title`: `iuria 1st`
-
-#### Identifier (`Protostar`)
-
-author: Lico (Protostar)
-ai_model: gemini-2.5-flash-preview
-
-- `memory`: `session-2026-02-07T10-59-18d4d68a.json`
-- `interactive`: `yarn run gemini --resume 18d4d68a-ffce-4947-bc1b-293e273d65a2 --model gemini-2.5-flash-preview`
+- また行動規範には、統合の際に見つかった、
+  ファイル単位の競合の情報をカードに追記するという過程もありますよね？
