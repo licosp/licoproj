@@ -49,10 +49,11 @@ To ensure absolute clarity and parallel safety, agents **MUST** use four dedicat
 All temporary branches **MUST** use the **Worker's Identifier** (the agent performing the merge) to ensure perfect synchronization between the physical operating table and the logical surgical tool:
 
 - **Format**: `<Worker-ID>-<YYYY-MM-DD>T<HHMM>-<suffix>-<Target-ID>`
+  - `active`: For everyday working branches (Active Layer). The `<Target-ID>` acts as a free-text field to distinguish between main/shadow or specific tasks (e.g., `active-shadow`, `active-main`, `active-20-drafts`).
   - `sync`: For inbound missions (Trunk -> Branch).
   - `integration`: For outbound consolidation (Branch -> Trunk).
   - _Note: The `<Target-ID>` suffix is mandatory to prevent branch name collisions during rapid continuous batch processing (Extended Nomenclature)._
-  - **Rationale**: The `<Target-ID>` is not merely for avoiding git name collisions. Its profound architectural purpose is **Failure Isolation and Traceability**. If a catastrophic semantic conflict occurs during a batch integration, we must know exactly *whose* branch caused the failure. By enforcing one dedicated integration branch per target, we ensure that a failure in the third merge does not contaminate or destroy the successful results of the first two merges.
+  - **Rationale**: The `<Target-ID>` is not merely for avoiding git name collisions. Its profound architectural purpose is **Failure Isolation and Traceability**. If a catastrophic semantic conflict occurs during a batch integration, we must know exactly _whose_ branch caused the failure. By enforcing one dedicated integration branch per target, we ensure that a failure in the third merge does not contaminate or destroy the successful results of the first two merges.
 
 ---
 
