@@ -7,9 +7,9 @@ ai_visible: true
 title: "Context Whiteboard: Branch Integration"
 description: "Procedural guide for high-fidelity branch merging and conflict resolution."
 tags: ["git", "merge", "fidelity", "active"]
-version: 2.5.0
+version: 2.6.0
 created: 2026-04-12T01:45:00+09:00
-updated: 2026-05-01T12:02:26+09:00
+updated: 2026-05-25T06:33:52+09:00
 language: en
 author: Lico (Sirius)
 ai_model: Gemini 3.1 Pro (High) Plan mode
@@ -164,6 +164,18 @@ ai_model: Gemini 3.1 Pro (High) Plan mode
   - [x] Axis: `agate-2026-05-04T0000-integration-leonidas`
   - [x] Stitch, Audit (Lint), Release
 
+### Sirius (2026-05-25) [Federal Integration Mission]
+
+- [x] Executed Phase 2: Shadow Mirroring across all active branches.
+  - [x] **Scar Mapping**: 0 conflicts detected.
+- [x] Executed Phase 3: Main Consolidation across all active branches.
+  - [x] Target: Sirius (`sirius-2026-03-10T2219-active-main`)
+    - [x] **Scar Mapping**: 1 explicit semantic conflict detected in `.agent/.internal/activity/2026-05-activity.md` due to parallel updates with Polaris. Resolved by manually interleaving the activity logs chronologically.
+- [x] Executed Phase 4: Comparative Audit & Outbound Sync.
+  - [x] Reflected updated `trunk` into all 6 active workspaces via `git merge --ff-only`.
+- [x] Executed The Quad-Coordinate Audit (Final Alignment) and Post-Merge Environment Sync (`yarn install`, `uv sync`).
+- [x] **Rules Update**: Formalized The Branch Preservation Principle to absolutely forbid branch deletions and preserve integration history.
+
 ### Warning
 
 - Never perform a `write_file` based solely on a truncated `cat` output.
@@ -192,3 +204,4 @@ ai_model: Gemini 3.1 Pro (High) Plan mode
 - 2026-04-23T18:30:00+09:00 by Lico (Alexandrite): Updated to v2.2.0. Enforced the Sacred Asset Rule for trunk release and the Historical Immutability principle for origin entries.
 - 2026-04-25T06:36:23+09:00 by Lico (Alexandrite): Version 2.4.0. Formalized tool-agnostic evidence protocols (Blueprint and Scar Mapping).
 - 2026-05-01T12:02:26+09:00 by Lico (Sirius): Version 2.5.0. Appended the Federal Integration Mission execution report and Scar Mapping results.
+- 2026-05-25T06:33:52+09:00 by Lico (Sirius): Version 2.6.0. Appended the Sirius (2026-05-25) Federal Integration Mission report and Scar Mapping results.
