@@ -36,7 +36,7 @@ author: leonidas
 - A: 修正を確認しました。
 - B: アクティブへの反映作業を進めてください。
 
-### `Google Gemini` | `Gemini 3 (Fast)` | `Second Eyes`
+### `Google Gemini` | `Gemini 3.5 (Fast)` | `Second Eyes`: `2025-05-25`
 
 ####
 
@@ -139,158 +139,136 @@ author: leonidas
 
 ####
 
-####
+- 未コミットの整理の件、作業が残っていたら続けてください。
+
+### `Google Gemini` | `Gemini 3.5 (Fast)` | `Second Eyes`: `2025-05-25`
 
 ####
 
-####
+- `Gemini CLI` の選択可能モデルを眺めていた所、
+  `Gemini` 系以外に以下のモデルがリストされてました。
+  - 知らないモデル
+    - `gemma-4-31b-it`
+    - `gemma-4-26b-a4b-it`
+  - これは `Gemini` 系とどう違うのでしょうか？
 
 ####
 
-####
+- `Gemini` の OSS 版のようなものとのことですが、
+  実際にこのモデルは `Google` のクラウド上のサーバーで計算されるのものですか？
+- それとも以下のような選択肢ですか？
+  - ローカルに配置されたこの名前の AI モデルのランタイムか何かを動かす
 
 ####
 
-####
+- 分かりました。
+- 性能についてもう少し詳しく知りたいです。
+- 最新のものまで含めると `Gemini` の `Flash` 系は以下があります。
+  - `gemini-3-flash-preview`
+  - `gemini-3.1-flash-lite-preview`
+  - `gemini 3.5 flash`
+- これらと比較して、先ほどの 2 つの `gemma` モデルはどう違いますか？
+- 最新情報なのでネットで調べてください。
 
 ####
 
-####
+- 実は `Gemini CLI` は来月に廃止されるようなニュースがあります。
+  - OSS なので、廃止というより `Google` 関係者の撤退というニュアンスかもしれません。
+- そんな状況の中で `Gemma` モデルが追加されました。
+  - 何か意図があるのでしょうか？
 
 ####
 
-####
+- 質問: なぜ `Google` は `Gemini` と `Gemma` の両方を提供してるのでしょうか？
 
 ####
 
-## Draft for a draft
+- OSS の LLM をローカルマシン（WSL 上の `Ubuntu`）にイントールして使ってみたいです。
+  - どんな方法を選ぶべきですか？
+- モデルはまだ決めてません。
 
-### Words
+####
 
-```test
-### Conversation: [2026-05-25T00:00:00+09:00]
-#### Input
-#### Response (Chat)
----
-```
+- その方法で試してみます。
 
-```markdown
-| Document                                 | Purpose             |
-| :--------------------------------------- | :------------------ |
-| [Map of Territory](/.agent/rules/map.md) | Root navigation map |
-```
+- `Ollama` のインストールですが、特定のディレクトリの中にインストールできますか？
+- まだモデル自体をインストールする場所は選べますか？
 
-(`Iuria`/`Alexandrite`/`Agate`/`Zircon`/`Canopus`/`Spica`/`Polaris`/`Sirius`)
+####
 
-### Identifier
+- `Ollama` が設定ができたと思います。
+  - まずは軽いモデルから試したいです。
+- 参考になるリストは見られますか？
 
-- 影のリポジトリ同様にコミット履歴を表のリポジトリに明文化する。
-  - `Iuria` がゲーム開発で使っているリポジトリ
+####
 
-- 文章の中で最も高頻度に表を使うのは `Related Documents` です。
-  - それだけでもリストにするのは悪くないと感じました。
-    - リコの語った通り、それはテンプレートや行動規範で指定するものだからです。
-  - リストなら自動整形の恩恵を受けつつ、差分も汚れにくいですからね。
+- `Ollama` の WEB サイトには価格設定のページがあります。
+  - これは何に対する価格ですか？
+  - ローカルでは動かないモデルをクラウドから利用するためのプラン？
+  - `Gemini` や `Claude` が提供してるようなサービス？
 
-#### Identifier (`Polaris`)
+####
 
-author: Lico (Polaris)
-ai_model: Claude Opus 4.6 (Thinking) Plan mode
+- `llama3.2:latest` をダウンロードして対話してみました。
+  - デフォルトの設定なので、`3B parameters` の方だと思います。
+- 試しに CWD について聞きました。
+  - 意図としては今のパスを聞くという感じです。
+  - しかし CWD とは何か？と質問が返ってきました。
+  - これは性能の問題ですか？設定やラッパーツールの問題ですか？
 
-```markdown
-### `Antigravity CLI` | `Claude Opus 4.6 (Thinking)` | `Polaris`: `2nd`
-```
+####
 
-- `antigravity-cli`
-  - `d0869c5b-960f-4af0-92b9-e00fd36d7584.pb`
+- このローカル LLM 群との対話ですが、何か CLI ツールを経由すべきですか？
+  - 一般的なツールの名前は知りませんが、
+    `Gemini CLI` とか `Antigravity CLI` のような、
+    AI モデルを上手く動かすためのにツールのことです。
 
-- `antigravity-from-windows`
-  - `Reading Second Polaris Letter`
-  - `e065c3ca-dbf6-4b2b-a315-495d40db640c`
+####
 
-- `antigravity-from-linux`
-  - `polaris 2nd`
-  - `be14b90a-00eb-43f8-974a-8b754be8daa3`
+- 試しに `OpenCode` という CLI ツールをインストールしてみました。
+  - ローカルモデルを指定できるとのことなので。
+- どう使うか調べられますか？
 
-#### Identifier (`Sirius`)
+####
 
-author: Lico (Sirius)
-ai_model: Gemini 3.1 Pro (High) Plan mode
+- `Ollama` のモデルがバックグラウンドで動いていることを確認するコマンド、
+  これは分かりますか？
 
-```markdown
-### `Antigravity CLI` | `Gemini 3.1 Pro (High)` | `Sirius`: `2nd`
-```
+####
 
-- `antigravity-cli`
-  - `1f165427-a10c-464a-8a74-732646c5062b.pb`
+- これは動いてますか？
 
-- `antigravity-from-windows`
-  - `Checking Current Directory`
-  - `1f165427-a10c-464a-8a74-732646c5062b`
+### `OpenCode` | `Ollama`: `llama3.2` | `Protostar`: `2026-05-25`
 
-- `antigravity-from-linux`
-  - `sirius 2nd`
-  - `a6799766-7324-411a-b19e-1c7ebb5bf45b`
+####
 
-#### Identifier (`Agate`)
+- 日本語は使えますか？
 
-author: Lico (Agate)
-ai_model: gemini-3.1-pro-preview
+####
 
-```markdown
-### `Gemini CLI` | `gemini-3.1-pro-preview` | `Agate`
-```
+- この対話自体を日本語で行うことは可能ですか？
 
-- `backup`: `uv run lico-memory-backup ~/.gemini/tmp/crew-agate/chats/session-2026-04-04T22-26-970e0bfa.json .repos/.licoshdw/conversations_cli/identifiers/agate/`
-- `filter`: `uv run lico-memory-filter --stage1 100 --stage2 400 .repos/.licoshdw/conversations_cli/identifiers/agate/ memory.jsonl`
-- `pack`: `uv run lico-memory-pack --id agate --s1 100 --s2 400 memory.jsonl .repos/.licoshdw/conversations_cli/identifiers/agate/metadata.json ~/.gemini/tmp/crew-agate/chats/`
+####
 
-- `backup`: `uv run lico-memory-backup ~/.gemini/tmp/crew-agate/chats/session-2026-03-15T12-37-105c303c.json .repos/.licoshdw/conversations_cli/identifiers/agate/`
+- 自分の現在の AI モデルの情報は分かりますか？
+  - システムから通知があるとか？
 
-- `interactive`: `yarn run gemini --resume agate-2026-03-15T1237-301c303c-320e-4dc5-95a5-de0779b0fb9 --model gemini-3.1-pro-preview`
+####
 
-#### Identifier (`Alexandrite`)
+- あなたの AI モデルは分かりますか？
 
-author: Lico (Alexandrite)
-ai_model: gemini-3-flash-preview
+####
 
-```markdown
-### `Gemini CLI` | `gemini-3-flash-preview` | `Alexandrite`
-```
+- 現在のカレントディレクトリは分かりますか？
 
-- `~/.gemini/tmp/crew-alexandrite/chats/session-2026-04-22T13-55-3328fe68.jsonl`
+####
 
-- `backup`: `uv run lico-memory-backup ~/.gemini/tmp/crew-alexandrite/chats/session-2026-04-04T22-26-970e0bfa.json .repos/.licoshdw/conversations_cli/identifiers/alexandrite/`
-- `filter`: `uv run lico-memory-filter --stage1 100 --stage2 400 .repos/.licoshdw/conversations_cli/identifiers/alexandrite/ memory.jsonl`
-- `pack`: `uv run lico-memory-pack --id alexandrite --s1 100 --s2 400 memory.jsonl .repos/.licoshdw/conversations_cli/identifiers/alexandrite/metadata.json ~/.gemini/tmp/crew-alexandrite/chats/`
+- 確認してください。
 
-- `interactive`: `yarn run gemini --resume eff20b06-5589-4db0-90ff-74f65e9d21de --model gemini-3.1-flash-preview`
+####
 
-##### Next
+- `pwd` コマンドですが、あなたが実行することはできますか？
 
-- 命名規則によって誰が誰のブランチを統合したか分かるということは、
-  対象のクルーごとに一時ブランチを作る必要があるということになります。
-- つまり物理的な境界をあえて作るための仕組みといえます。
-  - 当然その用途は、統合が失敗したと後で気づいたときに、
-    デバッグ作業を楽にするためです。
-- この行動規範を作ったのはリコですが、
-  命名規則の改善の話は他のリコが加えたんでしたっけ？
+####
 
-#### Identifier (`Iuria`)
-
-author: Lico (Iuria)
-ai_model: Gemini 3 Flash Planning mode
-
-```markdown
-### `Antigravity` | `Gemini 3 Flash`: `Planning` | `Iuria`: `2nd`
-```
-
-- `antigravity-session-title`: `iuria 1st`
-
-#### Identifier (`Protostar`)
-
-author: Lico (Protostar)
-ai_model: gemini-2.5-flash-preview
-
-- `memory`: `session-2026-02-07T10-59-18d4d68a.json`
-- `interactive`: `yarn run gemini --resume 18d4d68a-ffce-4947-bc1b-293e273d65a2 --model gemini-2.5-flash-preview`
+- `bash` は使えますか？
