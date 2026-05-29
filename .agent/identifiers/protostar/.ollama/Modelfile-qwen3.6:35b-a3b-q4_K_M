@@ -1,0 +1,18 @@
+# base model
+FROM qwen3.6:35b-a3b-q4_K_M
+
+# context window size (token): 128K
+PARAMETER num_ctx 131072
+
+# increase the probability of entering thinking mode: near 0.0
+PARAMETER temperature 0.1
+
+# maximum number of characters to output: unlimited
+PARAMETER num_predict -1
+
+# system Prompt
+SYSTEM """
+Think deeply and step-by-step using thinking mode for every single turn
+before generating your final response, regardless of how simple the user's query is.
+Do not omit the thinking process.
+"""
