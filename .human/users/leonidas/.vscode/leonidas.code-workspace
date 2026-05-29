@@ -21,6 +21,10 @@
       "path": "../../../../../../../crew/polaris/licoproj",
     },
     {
+      "name": "crew-protostar",
+      "path": "../../../../../../../crew/protostar/licoproj",
+    },
+    {
       "name": "crew-sirius",
       "path": "../../../../../../../crew/sirius/licoproj",
     },
