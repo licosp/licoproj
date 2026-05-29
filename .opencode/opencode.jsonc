@@ -1,0 +1,66 @@
+{
+  "$schema": "https://opencode.ai/config.json",
+  "provider": {
+    "ollama": {
+      "npm": "@ai-sdk/openai-compatible",
+      "name": "Ollama",
+      "options": {
+        "baseURL": "http://localhost:11434/v1",
+      },
+      "models": {
+        "qwen3.6:35b-a3b-q4_K_M-128K-T10": { "name": "qwen-deep" },
+        "gemma4:31b-it-q4_K_M-256k": { "name": "gemma high" },
+        "gemma4:26b-a4b-it-q4_K_M-256k": { "name": "gemma middle" },
+        "gemma4:e4b-it-q4_K_M-128K": { "name": "gemma low" },
+        "gemma4:e2b-it-q4_K_M-128K": { "name": "gemma mini" },
+        "gpt-oss:20b": { "name": "gpt-13" },
+        "magistral:24b-small-2506-q4_K_M": { "name": "magistral-14" },
+        "glm-4.7-flash:q4_K_M": { "name": "glm-19" },
+        "laguna-xs.2:q4_K_M": { "name": "laguna-23" },
+        "nemotron3:33b-q4_K_M": { "name": "nemotron-27-v" },
+      },
+    },
+  },
+  "agent": {
+    "qwen3.6:35b-a3b-q4_K_M-128K-T10": {
+      "mode": "primary",
+      "model": "ollama/qwen3.6:35b-a3b-q4_K_M-128K-T10",
+    },
+    "gemma4:31b-it-q4_K_M-256k": {
+      "mode": "primary",
+      "model": "ollama/gemma4:31b-it-q4_K_M-256k",
+    },
+    "gemma4:26b-a4b-it-q4_K_M-256k": {
+      "mode": "primary",
+      "model": "ollama/gemma4:26b-a4b-it-q4_K_M-256k",
+    },
+    "gemma4:e4b-it-q4_K_M-128K": {
+      "mode": "primary",
+      "model": "ollama/gemma4:e4b-it-q4_K_M-128K",
+    },
+    "gemma4:e2b-it-q4_K_M-128K": {
+      "mode": "primary",
+      "model": "ollama/gemma4:e2b-it-q4_K_M-128K",
+    },
+    "gpt-oss:20b": {
+      "mode": "primary",
+      "model": "ollama/gpt-oss:20b",
+    },
+    "magistral:24b-small-2506-q4_K_M": {
+      "mode": "primary",
+      "model": "ollama/magistral:24b-small-2506-q4_K_M",
+    },
+    "glm-4.7-flash:q4_K_M": {
+      "mode": "primary",
+      "model": "ollama/glm-4.7-flash:q4_K_M",
+    },
+    "laguna-xs.2:q4_K_M": {
+      "mode": "primary",
+      "model": "ollama/laguna-xs.2:q4_K_M",
+    },
+    "nemotron3:33b-q4_K_M": {
+      "mode": "primary",
+      "model": "ollama/nemotron3:33b-q4_K_M",
+    },
+  },
+}
