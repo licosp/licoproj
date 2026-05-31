@@ -114,148 +114,194 @@ author: leonidas
 
 ####
 
-####
+- A: コミットを確認しました。
+
+- B: 次は `Protostar` の影の WS について。
+  - 会話のログファイルが書き出されています。
+    - 数も多くディレクトリ分けされてます。
+  - 関連カードは**IDEの会話**みたいな内容のです。
+  - ディレクトリはモデルの種類で分かれてます。
+    - ディレクトリごとの個別のコミットにできますか？
+  - 形式は**代理コミット**とします。
+    - その際の独自の書式も調べておいてください。
 
 ####
 
-####
+- 次は `Protostar` の表の WS についてですが、
+  実はコミット用のカードがまだありません。
+- ローカル LLM という存在は今までこのリポジトリにはなかったので。
+- 現時点での未コミットは 2 つ。
+  - `Ollama` でモデルを調整する際の設定ファイル。
+    - モデルのコンテキストウィンドウのサイズとかを決めます。
+  - `opencode` の設定ファイル。
+    - モデルやモデルプロバイダー設定などをしてます。
+- 内容的には以下の 2 つに分かれているので、2 つの新規カードを作るべきでしょうか？
+  - 推論サーバー
+  - コーディングエージェント
 
 ####
 
-####
+- 提案された文脈 ID を選ぶなら、両方とも後者が良いと感じます。
+  - 推論サーバーもコーディングエージェントが、
+    今後も 1 つではないと考えるからです。
+  - だた `[Coding-Agent]` は既存カードに類似品がありそうにも思えます。
+    - `Gemini CLI` とか `Antigaraity` のような、
+      サービス名が直接使われたカードはありませんか？
 
 ####
 
-## Draft for a draft
+- 把握しました。
+  - 今回は直接名前を使う方式とします。
+- カードの内容は、行動規範やテンプレートや既存の類似カードを参考にしてください。
+  - ファイル自体は自分の WS に作ってください。
+- カードができたら確認します。
 
-### Words
+####
 
-```test
-### Conversation: [2026-05-30T00:00:00+09:00]
-#### Input
-#### Response (Chat)
----
-```
+- 内容を確認しました。
+- 4 つのファイルをコミットしてください。
+  - 名義は自身のもので問題ありません。
+- WS が違う点に注意してください。
 
-```markdown
-| Document                                 | Purpose             |
-| :--------------------------------------- | :------------------ |
-| [Map of Territory](/.agent/rules/map.md) | Root navigation map |
-```
+### `Google Gemini` | `Gemini 3.5 (Fast)` | `Second Eyes`: `2025-05-30`
 
-(`Iuria`/`Alexandrite`/`Agate`/`Zircon`/`Canopus`/`Spica`/`Polaris`/`Sirius`)
+####
 
-### Identifier
+- `ubuntu` の入ったラップトップがあります。
+  - これを別の PC から操作したい。
+  - インターネット越しではなく、同じ LAN の環境からです。
+- 別の PC は `Windows` で、既に WSL2 で `ubuntu` を入れています。
+  - その WSL の `Ubuntu` は、
+    `Windows` からリモート接続機能で GUI 付きで操作できる環境にあります。
+- `ubuntu` から `ubuntu` を操作するような形式になれば望ましいです。
+  - ダメなら `Windows` からダイレクトに動かす方法も考えます。
 
-- 影のリポジトリ同様にコミット履歴を表のリポジトリに明文化する。
-  - `Iuria` がゲーム開発で使っているリポジトリ
+####
 
-- 文章の中で最も高頻度に表を使うのは `Related Documents` です。
-  - それだけでもリストにするのは悪くないと感じました。
-    - リコの語った通り、それはテンプレートや行動規範で指定するものだからです。
-  - リストなら自動整形の恩恵を受けつつ、差分も汚れにくいですからね。
+- `sudo` を持たないリモート用ユーザーを先に作りたいです
 
-#### Identifier (`Polaris`)
+####
 
-author: Lico (Polaris)
-ai_model: Claude Opus 4.6 (Thinking) Plan mode
+- `xrdp` を使う場合の GUI の衝突を防ぐ設定
+  - これはどちらの `Ubuntu` での設定ですか？
 
-```markdown
-### `Antigravity CLI` | `Claude Opus 4.6 (Thinking)` | `Polaris`: `2nd`
-```
+####
 
-- `antigravity-cli`
-  - `d0869c5b-960f-4af0-92b9-e00fd36d7584.pb`
+- `remmina desctop client` というウィンドウが開きました。
+  - GUI 自体は `Linux` 由来の表示っぽいです。
 
-- `antigravity-from-windows`
-  - `Reading Second Polaris Letter`
-  - `e065c3ca-dbf6-4b2b-a315-495d40db640c`
+####
 
-- `antigravity-from-linux`
-  - `polaris 2nd`
-  - `be14b90a-00eb-43f8-974a-8b754be8daa3`
+- 接続できたように見えます。
+  - 写っている画面が少し小さいので大きくしたいです。
 
-#### Identifier (`Sirius`)
+####
 
-author: Lico (Sirius)
-ai_model: Gemini 3.1 Pro (High) Plan mode
+- 解像度の設定が終わりました。
+- UI がデフォルトで少し使いづらいので、
+  タスクバーやランチャーのような UI を表示したいです。
 
-```markdown
-### `Antigravity CLI` | `Gemini 3.1 Pro (High)` | `Sirius`: `2nd`
-```
+####
 
-- `antigravity-cli`
-  - `1f165427-a10c-464a-8a74-732646c5062b.pb`
+- 先に修正すべきことがありました。
+  - キーボード入力が正しく行われてません。
+  - `qwe` と押すと `op@` が入力されれます。
 
-- `antigravity-from-windows`
-  - `Checking Current Directory`
-  - `1f165427-a10c-464a-8a74-732646c5062b`
+####
 
-- `antigravity-from-linux`
-  - `sirius 2nd`
-  - `a6799766-7324-411a-b19e-1c7ebb5bf45b`
+> sudo systemctl restart xrdp
 
-#### Identifier (`Agate`)
+- ラップトップ上でここまで実行しました。
+- そして `Remmina` で接続できなくなりました。
+  - サーバーが動いてない？
 
-author: Lico (Agate)
-ai_model: gemini-3.1-pro-preview
+####
 
-```markdown
-### `Gemini CLI` | `gemini-3.1-pro-preview` | `Agate`
-```
+- ラップトップを再起動した結果、接続できるようになりました。
+- 一方で、キーボードの入力ズレが変わってない状態です。
 
-- `backup`: `uv run lico-memory-backup ~/.gemini/tmp/crew-agate/chats/session-2026-04-04T22-26-970e0bfa.json .repos/.licoshdw/conversations_cli/identifiers/agate/`
-- `filter`: `uv run lico-memory-filter --stage1 100 --stage2 400 .repos/.licoshdw/conversations_cli/identifiers/agate/ memory.jsonl`
-- `pack`: `uv run lico-memory-pack --id agate --s1 100 --s2 400 memory.jsonl .repos/.licoshdw/conversations_cli/identifiers/agate/metadata.json ~/.gemini/tmp/crew-agate/chats/`
+####
 
-- `backup`: `uv run lico-memory-backup ~/.gemini/tmp/crew-agate/chats/session-2026-03-15T12-37-105c303c.json .repos/.licoshdw/conversations_cli/identifiers/agate/`
+- A: `xrdp` を再起動すると、接続ができなくなります。
+- その後ラップトップを再起動すると（ログアウトではダメ）、
+  接続ができるようになります。
+  - 2 回同じ事がおきました。
 
-- `interactive`: `yarn run gemini --resume agate-2026-03-15T1237-301c303c-320e-4dc5-95a5-de0779b0fb9 --model gemini-3.1-pro-preview`
+- B: 再接続後に試しましたが、キーボードの方は依然としてズレがあります。
+  - キーボード関連を設定したアカウントと、
+    接続用のアカウントの違いとか？
 
-#### Identifier (`Alexandrite`)
+####
 
-author: Lico (Alexandrite)
-ai_model: gemini-3-flash-preview
+- エンターボタンが J にずれているせいで、ペースとしたコマンドを実行できません。
+  - ではどのキーがこの環境のエンターだと思いますか？
 
-```markdown
-### `Gemini CLI` | `gemini-3-flash-preview` | `Alexandrite`
-```
+####
 
-- `~/.gemini/tmp/crew-alexandrite/chats/session-2026-04-22T13-55-3328fe68.jsonl`
+- デスクトップで使っているキーボード自体を一度ラップトップに繋げて入力してみました。
+  - 普通に入力できました。
+- `remmina` を挟んで入力してる事自体が原因の可能性はありますか？
 
-- `backup`: `uv run lico-memory-backup ~/.gemini/tmp/crew-alexandrite/chats/session-2026-04-04T22-26-970e0bfa.json .repos/.licoshdw/conversations_cli/identifiers/alexandrite/`
-- `filter`: `uv run lico-memory-filter --stage1 100 --stage2 400 .repos/.licoshdw/conversations_cli/identifiers/alexandrite/ memory.jsonl`
-- `pack`: `uv run lico-memory-pack --id alexandrite --s1 100 --s2 400 memory.jsonl .repos/.licoshdw/conversations_cli/identifiers/alexandrite/metadata.json ~/.gemini/tmp/crew-alexandrite/chats/`
+####
 
-- `interactive`: `yarn run gemini --resume eff20b06-5589-4db0-90ff-74f65e9d21de --model gemini-3.1-flash-preview`
+- `remmina` の `preference` を調整した結果ある程度状況が改善しました。
+- `preference` に縦に並ぶタブがあり、その中に `RDP` というタブがあります。
+- `RDP` タブの中には `Keybord Layout` というセクションがあります。
+- `Keybord Layout` セクションには、
+  `Use client keybord mapping` というチェックボックスがあります。
+- このチェックボックスを ON にしました。
+  - その結果、キーボードの半分くらいのキーは、正しく入力できるようになりました。
 
-##### Next
+- しかし正しく入力できないキーの説明が難しいです。
+  - そこでネットで似たようなトラブルが無いか探しました。
+  - その結果近い症状のユーザーがいました。
+  - このページを読めますか？
+    - `https://gitlab.com/Remmina/Remmina/-/work_items/3171`
+  - さらにページ内に 1 つあるキーボードの画像を読んでほしいです。
+    - 上手く読めない場合は直接画像を送ります。
 
-- 命名規則によって誰が誰のブランチを統合したか分かるということは、
-  対象のクルーごとに一時ブランチを作る必要があるということになります。
-- つまり物理的な境界をあえて作るための仕組みといえます。
-  - 当然その用途は、統合が失敗したと後で気づいたときに、
-    デバッグ作業を楽にするためです。
-- この行動規範を作ったのはリコですが、
-  命名規則の改善の話は他のリコが加えたんでしたっけ？
+####
 
-#### Identifier (`Iuria`)
+- `Linux` こだわっているのには理由があります。
+  - この環境を作った後にやりたいことが、このラップトップの画面をリアルタイムで、
+    リアルタイムでローカル LLM に分析してもらうためです。
+- 詳しい構造の解説は今は省きますが、
+  つまりもう少し Linux での接続で粘りたいということです。
 
-author: Lico (Iuria)
-ai_model: Gemini 3 Flash Planning mode
+####
 
-```markdown
-### `Antigravity` | `Gemini 3 Flash`: `Planning` | `Iuria`: `2nd`
-```
+- まず `xfreerdp` を実行じました。
+  - 起動はしてるようですが、ウィンドウが表示されません。
+    - ただしタスクバーには写っています。
+  - 説明しづらいですが、画面は存在するのに、表に出ないような。
+    - ただしそのタスクバーのプレビューで見える画面には何も写ってません。
 
-- `antigravity-session-title`: `iuria 1st`
+####
 
-#### Identifier (`Protostar`)
+- 変化は無いように見えます。
+- 先ほどと同じ状態になってます。
 
-author: Lico (Protostar)
-ai_model: gemini-2.5-flash-preview
+####
 
-- `0000`: `ollama launch opencode --model qwen3.6:35b-a3b-q4_K_M-128K-T10`
+- VNC サーバーが稼働してるという状態について。
+  - 5 秒に 1 回程度のペースでログが流れています。
+    - `11vnc loop` というメッセージと共に。
+  - これで正常ですか？
 
-- `memory`: `session-2026-02-07T10-59-18d4d68a.json`
-- `interactive`: `yarn run gemini --resume 18d4d68a-ffce-4947-bc1b-293e273d65a2 --model gemini-2.5-flash-preview`
+####
+
+- 実行しました。
+- **VNC サーバーに接続できない**というメッセージが表示されています。
+  ラップトップは依然として待ち受け状態が続いています。
+
+####
+
+- 実行しました。
+- 依然として、**VNC サーバーに接続できない**というメッセージが表示されています。
+- `remmina` は GUI アプリですが、どこかにデバッグ用ログは保存されてませんか？
+
+####
+
+- コマンドを実行しました。
+- `vncviewer` のヘルプ文字が出力されます。
+  - このパターンは引数の入力ミスでしょうか？
