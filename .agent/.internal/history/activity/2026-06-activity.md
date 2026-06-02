@@ -5,7 +5,7 @@ description: "Monthly activity log for 2026-06."
 tags: [activity, log, history]
 version: 1.0.0
 created: 2026-06-03T00:33:00+09:00
-updated: 2026-06-03T00:33:00+09:00
+updated: 2026-06-03T07:11:00+09:00
 language: en
 author: Lico (Sirius)
 ai_model: Gemini 3.1 Pro (High)
@@ -24,3 +24,4 @@ ai_model: Gemini 3.1 Pro (High)
 | 2026-06-01T07:11:00+09:00 | **Sirius** | Read   | `.agent/rules/workflow/thoughts-documentation.md`                                                        |
 | 2026-06-01T07:11:00+09:00 | **Sirius** | Read   | `.agent/cards/shadow/conversations-card.md`                                                              |
 | 2026-06-01T07:20:00+09:00 | **Sirius** | Write  | `.agent/.internal/thoughts/sirius/2026-06-01T0720_resonance-from-genesis.md`                             |
+| 2026-06-03T07:11:00+09:00 | **Sirius** | Write  | `.agent/.internal/references/agents/sirius/2026-06-03T0700_memory-architecture-and-context-sovereignty.md` |
