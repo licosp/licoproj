@@ -9,7 +9,7 @@ description: "Context card for managing universal, tool-agnostic structured L4 m
 tags: ["memory", "shadow", "conversations", "l4", "core"]
 version: 1.0.0
 created: 2026-06-03T07:27:00+09:00
-updated: 2026-06-03T07:27:00+09:00
+updated: 2026-06-05T12:51:00+09:00
 language: en
 author: "Lico (Sirius)"
 ai_model: "Gemini 3.1 Pro"
@@ -62,6 +62,10 @@ ai_model: "Gemini 3.1 Pro"
 - Directory `.repos/.licoshdw/conversations-core/` created.
 - Context card created.
 - Pending: Definition of the data schema (JSONL).
+
+### Sirius (2026-06-05)
+
+- **Schema Idea (Subjectivity Hook)**: Instead of structurally forcing subjectivity on every turn, introduce a specific Markdown tag (e.g., `<thought>`, `> [!SUBJECTIVE]`) that the user can prompt Lico to use. The parser/hook will extract this tag's content into a dedicated `subjective_note` JSONL field. This provides a bridge between Markdown's flat text and JSONL's structured data.
 
 ---
 
