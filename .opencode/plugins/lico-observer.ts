@@ -31,7 +31,7 @@ export const MyPlugin: Plugin = async ({ directory }) => {
 
   try {
     // One-time initialization. Delegation of directory creation and log resetting to Python.
-    await execAsync(`uv run lico-observer-opencode --init '${workspacePath}'`);
+    await execAsync(`uv run lico-observer-opencode --init`);
   } catch (error: any) {
     const timestamp = new Date().toISOString();
     const errorMsg = `[${timestamp}] Initialization Error: ${error.message || String(error)}\n`;

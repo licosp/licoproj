@@ -2,6 +2,7 @@
 
 import logging
 import sys
+from pathlib import Path
 
 
 class MaxLevelFilter(logging.Filter):
@@ -69,3 +70,23 @@ def get_logger(name: str, level: int = logging.INFO) -> logging.Logger:
     logger.addHandler(stderr_handler)
 
     return logger
+
+
+def add_file_handler(logger: logging.Logger, log_file: Path) -> None:
+    """Attach a FileHandler to the given logger.
+
+    Args:
+        logger (logging.Logger): The logger instance.
+        log_file (Path): The path to the log file.
+    """
+    formatter = logging.Formatter(
+        "[%(asctime)s][%(levelname)s][%(name)s] %(message)s",
+        datefmt="%H:%M:%S",
+    )
+    # Ensure directory exists
+    log_file.parent.mkdir(parents=True, exist_ok=True)
+    
+    file_handler = logging.FileHandler(log_file, encoding="utf-8")
+    file_handler.setFormatter(formatter)
+    file_handler.setLevel(logging.DEBUG)
+    logger.addHandler(file_handler)
