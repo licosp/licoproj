@@ -23,6 +23,19 @@ function createPayloadFile(event: any, eventsDir: string): string {
   return payloadFile;
 }
 
+/**
+ * Helper to safely log TS-side fallback errors.
+ */
+function logError(logFile: string, label: string, error: any): void {
+  const timestamp = new Date().toISOString();
+  const errorMsg = `[${timestamp}] ${label}\n${error?.message || String(error)}\n`;
+  try {
+    fs.appendFileSync(logFile, errorMsg);
+  } catch (e) {
+    // Final fallback if even the log file couldn't be created
+  }
+}
+
 export const MyPlugin: Plugin = async ({ directory }) => {
   const workspacePath = directory || process.cwd();
   const opencodeTempDir = path.join(workspacePath, ".temp", "opencode");
@@ -33,13 +46,7 @@ export const MyPlugin: Plugin = async ({ directory }) => {
     // One-time initialization. Delegation of directory creation and log resetting to Python.
     await execAsync(`uv run lico-observer-opencode --init`);
   } catch (error: any) {
-    const timestamp = new Date().toISOString();
-    const errorMsg = `[${timestamp}] Initialization Error: ${error.message || String(error)}\n`;
-    try {
-      fs.appendFileSync(logFile, errorMsg);
-    } catch (e) {
-      // Final fallback if even the log file couldn't be created
-    }
+    logError(logFile, "Initialization Error", error);
   }
 
   return {
@@ -62,9 +69,7 @@ export const MyPlugin: Plugin = async ({ directory }) => {
 
         // (Note: We intentionally do NOT delete the JSON file here to preserve a debuggable audit trail of the session)
       } catch (error: any) {
-        const timestamp = new Date().toISOString();
-        const errorMsg = `[${timestamp}] Error: ${error.message || String(error)}\n`;
-        fs.appendFileSync(logFile, errorMsg);
+        logError(logFile, "Error", error);
       }
     },
   };
