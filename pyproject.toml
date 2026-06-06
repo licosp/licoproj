@@ -9,6 +9,7 @@ lico-backup = ["lico-backup"]
 lico-config = ["lico-config"]
 lico-devc = ["lico-devc"]
 lico-exec = ["lico-exec"]
+lico-observer = ["lico-observer"]
 lico-lint = ["lico-lint"]
 lico-log = ["lico-log"]
 lico-logger = ["lico-logger"]
@@ -31,6 +32,7 @@ lico-backup = ["lico-backup"]
 lico-config = ["lico-config"]
 lico-devc = ["lico-devc"]
 lico-exec = ["lico-exec"]
+lico-observer = ["lico-observer"]
 lico-lint = ["lico-lint"]
 lico-log = ["lico-log"]
 lico-logger = ["lico-logger"]
@@ -46,6 +48,7 @@ default-groups = [
   "lico-config",
   "lico-devc",
   "lico-exec",
+  "lico-observer",
   "lico-lint",
   "lico-log",
   "lico-logger",
@@ -59,6 +62,7 @@ lico-backup = { workspace = true }
 lico-config = { workspace = true }
 lico-devc = { workspace = true }
 lico-exec = { workspace = true }
+lico-observer = { workspace = true }
 lico-lint = { workspace = true }
 lico-log = { workspace = true }
 lico-logger = { workspace = true }
@@ -72,6 +76,7 @@ members = [
   "packages/lico-config",
   "packages/lico-devc",
   "packages/lico-exec",
+  "packages/lico-observer",
   "packages/lico-lint",
   "packages/lico-log",
   "packages/lico-logger",

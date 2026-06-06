@@ -12,6 +12,7 @@ members = [
     "lico-log",
     "lico-logger",
     "lico-memory",
+    "lico-observer",
     "lico-pipeline",
     "lico-shim",
     "licoproj",
@@ -88,6 +89,11 @@ version = "0.1.0"
 source = { editable = "packages/lico-memory" }
 
 [[package]]
+name = "lico-observer"
+version = "0.1.0"
+source = { editable = "packages/lico-observer" }
+
+[[package]]
 name = "lico-pipeline"
 version = "0.1.0"
 source = { editable = "packages/lico-pipeline" }
@@ -126,6 +132,9 @@ lico-logger = [
 ]
 lico-memory = [
     { name = "lico-memory" },
+]
+lico-observer = [
+    { name = "lico-observer" },
 ]
 lico-pipeline = [
     { name = "lico-pipeline" },
@@ -168,6 +177,9 @@ lico-logger = [
 lico-memory = [
     { name = "lico-memory" },
 ]
+lico-observer = [
+    { name = "lico-observer" },
+]
 lico-pipeline = [
     { name = "lico-pipeline" },
 ]
@@ -185,10 +197,11 @@ requires-dist = [
     { name = "lico-log", marker = "extra == 'lico-log'", editable = "packages/lico-log" },
     { name = "lico-logger", marker = "extra == 'lico-logger'", editable = "packages/lico-logger" },
     { name = "lico-memory", marker = "extra == 'lico-memory'", editable = "packages/lico-memory" },
+    { name = "lico-observer", marker = "extra == 'lico-observer'", editable = "packages/lico-observer" },
     { name = "lico-pipeline", marker = "extra == 'lico-pipeline'", editable = "packages/lico-pipeline" },
     { name = "lico-shim", marker = "extra == 'lico-shim'", editable = "packages/lico-shim" },
 ]
-provides-extras = ["lico-backup", "lico-config", "lico-devc", "lico-exec", "lico-lint", "lico-log", "lico-logger", "lico-memory", "lico-pipeline", "lico-shim"]
+provides-extras = ["lico-backup", "lico-config", "lico-devc", "lico-exec", "lico-observer", "lico-lint", "lico-log", "lico-logger", "lico-memory", "lico-pipeline", "lico-shim"]
 
 [package.metadata.requires-dev]
 dev = [
@@ -208,6 +221,7 @@ lico-lint = [{ name = "lico-lint", editable = "packages/lico-lint" }]
 lico-log = [{ name = "lico-log", editable = "packages/lico-log" }]
 lico-logger = [{ name = "lico-logger", editable = "packages/lico-logger" }]
 lico-memory = [{ name = "lico-memory", editable = "packages/lico-memory" }]
+lico-observer = [{ name = "lico-observer", editable = "packages/lico-observer" }]
 lico-pipeline = [{ name = "lico-pipeline", editable = "packages/lico-pipeline" }]
 lico-shim = [{ name = "lico-shim", editable = "packages/lico-shim" }]
 
