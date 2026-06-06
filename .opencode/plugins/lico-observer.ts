@@ -64,10 +64,7 @@ export const MyPlugin: Plugin = async ({ directory }) => {
           fs.appendFileSync(logFile, `[Event: ${event.type}]: ${stdout}\n`);
         }
 
-        // Delete the JSON file once Python processing completes successfully
-        if (fs.existsSync(payloadFile)) {
-          fs.unlinkSync(payloadFile);
-        }
+        // (Note: We intentionally do NOT delete the JSON file here to preserve a debuggable audit trail of the session)
       } catch (error: any) {
         const timestamp = new Date().toISOString();
         const errorMsg = `[${timestamp}] Error: ${error.message || String(error)}\n`;

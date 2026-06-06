@@ -15,6 +15,10 @@ def init_environment(workspace_path: str) -> None:
     events_dir = opencode_temp_dir / "events"
     log_file = opencode_temp_dir / "plugin-debug.log"
 
+    import shutil
+
+    if events_dir.exists():
+        shutil.rmtree(events_dir)
     events_dir.mkdir(parents=True, exist_ok=True)
 
     boot_time = _get_timestamp()
