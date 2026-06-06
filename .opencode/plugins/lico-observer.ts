@@ -56,13 +56,9 @@ export const MyPlugin: Plugin = async ({ directory }) => {
         // Create a JSON payload file for each event
         const payloadFile = createPayloadFile(event, eventsDir);
 
-        // Pass the file path to Python and execute
+        // Pass the file path to Python and execute. (Silence on success, catch on failure)
         const cmd = `uv run lico-observer-opencode '${payloadFile}'`;
-        const { stdout } = await execAsync(cmd);
-
-        if (stdout) {
-          fs.appendFileSync(logFile, `[Event: ${event.type}]: ${stdout}\n`);
-        }
+        await execAsync(cmd);
 
         // (Note: We intentionally do NOT delete the JSON file here to preserve a debuggable audit trail of the session)
       } catch (error: any) {
