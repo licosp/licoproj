@@ -36,8 +36,8 @@ function logError(logFile: string, label: string, error: any): void {
   }
 }
 
-export const MyPlugin: Plugin = async ({ directory }) => {
-  const workspacePath = directory || process.cwd();
+export const MyPlugin: Plugin = async () => {
+  const workspacePath = process.cwd();
   const opencodeTempDir = path.join(workspacePath, ".temp", "opencode");
   const eventsDir = path.join(opencodeTempDir, "events");
   const logFile = path.join(opencodeTempDir, "plugin-debug.log");
