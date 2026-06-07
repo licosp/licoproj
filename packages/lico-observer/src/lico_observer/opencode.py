@@ -1,17 +1,10 @@
 import argparse
 import sys
-from datetime import UTC, datetime
 from pathlib import Path
 
 from lico_logger import add_file_handler, get_logger
 
 logger = get_logger(__name__)
-
-
-def _get_timestamp() -> str:
-    return datetime.now(tz=UTC).astimezone().isoformat(
-        timespec="seconds"
-    )
 
 def get_debug_log_path() -> Path:
     """Return the fixed path for the plugin debug log."""
@@ -49,8 +42,7 @@ def main() -> None:
     add_file_handler(logger, get_debug_log_path())
 
     if args.init:
-        boot_time = _get_timestamp()
-        logger.info(f"--- Plugin Loaded at {boot_time} ---")
+        logger.info("--- Plugin Loaded ---")
         return
 
     if not args.payload:
