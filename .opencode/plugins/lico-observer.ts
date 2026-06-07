@@ -24,10 +24,19 @@ function createPayloadFile(event: any, eventsDir: string): string {
 }
 
 /**
+ * Returns a JST (+09:00) formatted timestamp: YYYY-MM-DDTHH:MM:SS+09:00
+ */
+function getTimestamp(): string {
+  const d = new Date();
+  d.setUTCHours(d.getUTCHours() + 9);
+  return `${d.toISOString().substring(0, 19)}+09:00`;
+}
+
+/**
  * Helper to safely log TS-side fallback errors.
  */
 function logError(logFile: string, label: string, error: any): void {
-  const timestamp = new Date().toISOString();
+  const timestamp = getTimestamp();
   const errorMsg = `[${timestamp}] ${label}\n${error?.message || String(error)}\n`;
   try {
     fs.appendFileSync(logFile, errorMsg);
