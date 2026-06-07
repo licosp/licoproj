@@ -61,11 +61,10 @@ export const MyPlugin: Plugin = async () => {
   return {
     event: async ({ event }) => {
       try {
-        // Filter out word-by-word spam (delta) and non-message events
-        if (
-          event.type === "message.part.delta" ||
-          !event.type.includes("message")
-        ) {
+        // Filter out word-by-word streaming spam to prevent I/O bottleneck.
+        // We allow all other message.* and session.* events to pass through
+        // so Python can track token usage, session diffs, and conversation state.
+        if (event.type === "message.part.delta") {
           return;
         }
 
