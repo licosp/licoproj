@@ -21,6 +21,7 @@ def init_environment() -> None:
     workspace = Path.cwd()
     opencode_temp_dir = workspace / ".temp" / "opencode"
     events_dir = opencode_temp_dir / "events"
+    log_file = get_debug_log_path()
 
     import shutil
 
@@ -28,8 +29,11 @@ def init_environment() -> None:
         shutil.rmtree(events_dir)
     events_dir.mkdir(parents=True, exist_ok=True)
 
-    boot_time = _get_timestamp()
-    logger.info(f"--- Plugin Loaded at {boot_time} ---")
+    if log_file.exists():
+        try:
+            log_file.unlink()
+        except OSError:
+            pass
 
 def main() -> None:
     parser = argparse.ArgumentParser(description="Lico Observer OpenCode hook")
@@ -38,11 +42,15 @@ def main() -> None:
 
     args = parser.parse_args()
 
+    if args.init:
+        init_environment()
+
     # Configure file logging
     add_file_handler(logger, get_debug_log_path())
 
     if args.init:
-        init_environment()
+        boot_time = _get_timestamp()
+        logger.info(f"--- Plugin Loaded at {boot_time} ---")
         return
 
     if not args.payload:
