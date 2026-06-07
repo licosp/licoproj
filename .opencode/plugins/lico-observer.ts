@@ -37,7 +37,7 @@ function getTimestamp(): string {
  */
 function logError(logFile: string, label: string, error: any): void {
   const timestamp = getTimestamp();
-  const errorMsg = `[${timestamp}] ${label}\n${error?.message || String(error)}\n`;
+  const errorMsg = `[${timestamp}] ERROR [lico_observer.plugin]\n(${label}) ${error?.message || String(error)}\n`;
   try {
     fs.appendFileSync(logFile, errorMsg);
   } catch (e) {
