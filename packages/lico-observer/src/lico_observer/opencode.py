@@ -23,6 +23,10 @@ def get_agent_response_log_path() -> Path:
     """Return the path for the filtered agent response JSONL dump."""
     return Path.cwd() / ".temp" / "opencode" / "events-agent-response.jsonl"
 
+def get_agent_thinking_log_path() -> Path:
+    """Return the path for the filtered agent thinking JSONL dump."""
+    return Path.cwd() / ".temp" / "opencode" / "events-agent-thinking.jsonl"
+
 def get_state_path() -> Path:
     """Return the path for the stateless role mapping file."""
     return Path.cwd() / ".temp" / "opencode" / "state.json"
@@ -35,6 +39,7 @@ def init_environment() -> None:
     events_log = get_events_log_path()
     user_log = get_user_input_log_path()
     agent_log = get_agent_response_log_path()
+    thinking_log = get_agent_thinking_log_path()
     state_file = get_state_path()
 
     import shutil
@@ -43,7 +48,7 @@ def init_environment() -> None:
         shutil.rmtree(events_dir)
     events_dir.mkdir(parents=True, exist_ok=True)
 
-    for f in [log_file, events_log, user_log, agent_log, state_file]:
+    for f in [log_file, events_log, user_log, agent_log, thinking_log, state_file]:
         if f.exists():
             try:
                 f.unlink()
@@ -122,20 +127,30 @@ def main() -> None:
                             with open(user_log, "a", encoding="utf-8") as f:
                                 for buffered_event in state["buffered_parts"][msg_id]:
                                     f.write(json.dumps(buffered_event, ensure_ascii=False) + "\n")
-                                    logger.info(f"Asynchronous buffering: {role, buffered_event.get('type')}, {buffered_event.get('id')}")
+                                    logger.info("Filtering events: user.input.delay")
                         elif role == "assistant":
                             agent_log = get_agent_response_log_path()
-                            with open(agent_log, "a", encoding="utf-8") as f:
-                                for buffered_event in state["buffered_parts"][msg_id]:
-                                    f.write(json.dumps(buffered_event, ensure_ascii=False) + "\n")
-                                    logger.info(f"Asynchronous buffering: {role, buffered_event.get('type')}, {buffered_event.get('id')}")
+                            thinking_log = get_agent_thinking_log_path()
+                            for buffered_event in state["buffered_parts"][msg_id]:
+                                buf_part = buffered_event.get("properties", {}).get("part", {})
+                                buf_type = buf_part.get("type")
+                                if buf_type == "reasoning":
+                                    with open(thinking_log, "a", encoding="utf-8") as f:
+                                        f.write(json.dumps(buffered_event, ensure_ascii=False) + "\n")
+                                        logger.info("Filtering events: agent.thinking.delay")
+                                else:
+                                    with open(agent_log, "a", encoding="utf-8") as f:
+                                        f.write(json.dumps(buffered_event, ensure_ascii=False) + "\n")
+                                        logger.info("Filtering events: agent.response.delay")
                         # Clear buffer once role is known
                         del state["buffered_parts"][msg_id]
 
         elif event_type == "message.part.updated":
             part = prop.get("part", {})
-            if isinstance(part, dict) and "text" in part:
+            # Only process if text content is not empty
+            if isinstance(part, dict) and part.get("text"):
                 msg_id = part.get("messageID")
+                part_type = part.get("type")
                 if msg_id:
                     role = state["roles"].get(msg_id)
                     if role == "user":
@@ -143,11 +158,19 @@ def main() -> None:
                         user_log = get_user_input_log_path()
                         with open(user_log, "a", encoding="utf-8") as f:
                             f.write(json.dumps(data, ensure_ascii=False) + "\n")
+                            logger.info("Filtering events: user.input")
                     elif role == "assistant":
-                        # We know it's an assistant, append directly
-                        agent_log = get_agent_response_log_path()
-                        with open(agent_log, "a", encoding="utf-8") as f:
-                            f.write(json.dumps(data, ensure_ascii=False) + "\n")
+                        # We know it's an assistant, route based on part type
+                        if part_type == "reasoning":
+                            thinking_log = get_agent_thinking_log_path()
+                            with open(thinking_log, "a", encoding="utf-8") as f:
+                                f.write(json.dumps(data, ensure_ascii=False) + "\n")
+                                logger.info("Filtering events: agent.thinking")
+                        else:
+                            agent_log = get_agent_response_log_path()
+                            with open(agent_log, "a", encoding="utf-8") as f:
+                                f.write(json.dumps(data, ensure_ascii=False) + "\n")
+                                logger.info("Filtering events: agent.response")
                     elif role is None:
                         # We don't know the role yet, buffer it
                         if msg_id not in state["buffered_parts"]:
