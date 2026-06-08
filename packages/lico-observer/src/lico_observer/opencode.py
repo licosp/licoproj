@@ -19,6 +19,10 @@ def get_user_input_log_path() -> Path:
     """Return the path for the filtered user input JSONL dump."""
     return Path.cwd() / ".temp" / "opencode" / "events-user-input.jsonl"
 
+def get_agent_response_log_path() -> Path:
+    """Return the path for the filtered agent response JSONL dump."""
+    return Path.cwd() / ".temp" / "opencode" / "events-agent-response.jsonl"
+
 def get_state_path() -> Path:
     """Return the path for the stateless role mapping file."""
     return Path.cwd() / ".temp" / "opencode" / "state.json"
@@ -30,6 +34,7 @@ def init_environment() -> None:
     log_file = get_debug_log_path()
     events_log = get_events_log_path()
     user_log = get_user_input_log_path()
+    agent_log = get_agent_response_log_path()
     state_file = get_state_path()
 
     import shutil
@@ -38,7 +43,7 @@ def init_environment() -> None:
         shutil.rmtree(events_dir)
     events_dir.mkdir(parents=True, exist_ok=True)
 
-    for f in [log_file, events_log, user_log, state_file]:
+    for f in [log_file, events_log, user_log, agent_log, state_file]:
         if f.exists():
             try:
                 f.unlink()
@@ -110,14 +115,20 @@ def main() -> None:
                 if msg_id and role and state["roles"].get(msg_id) != role:
                     state["roles"][msg_id] = role
                     state_changed = True
-                    # Flush buffered parts if this is a user
+                    # Flush buffered parts if this is a user or assistant
                     if msg_id in state["buffered_parts"]:
                         if role == "user":
                             user_log = get_user_input_log_path()
                             with open(user_log, "a", encoding="utf-8") as f:
                                 for buffered_event in state["buffered_parts"][msg_id]:
                                     f.write(json.dumps(buffered_event, ensure_ascii=False) + "\n")
-                                    logger.info(f"Asynchronous buffering: {buffered_event["type"], buffered_event["id"]}")
+                                    logger.info(f"Asynchronous buffering: {role, buffered_event.get('type')}, {buffered_event.get('id')}")
+                        elif role == "assistant":
+                            agent_log = get_agent_response_log_path()
+                            with open(agent_log, "a", encoding="utf-8") as f:
+                                for buffered_event in state["buffered_parts"][msg_id]:
+                                    f.write(json.dumps(buffered_event, ensure_ascii=False) + "\n")
+                                    logger.info(f"Asynchronous buffering: {role, buffered_event.get('type')}, {buffered_event.get('id')}")
                         # Clear buffer once role is known
                         del state["buffered_parts"][msg_id]
 
@@ -131,6 +142,11 @@ def main() -> None:
                         # We know it's a user, append directly
                         user_log = get_user_input_log_path()
                         with open(user_log, "a", encoding="utf-8") as f:
+                            f.write(json.dumps(data, ensure_ascii=False) + "\n")
+                    elif role == "assistant":
+                        # We know it's an assistant, append directly
+                        agent_log = get_agent_response_log_path()
+                        with open(agent_log, "a", encoding="utf-8") as f:
                             f.write(json.dumps(data, ensure_ascii=False) + "\n")
                     elif role is None:
                         # We don't know the role yet, buffer it
