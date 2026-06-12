@@ -2,7 +2,6 @@
 name = "licoproj"
 version = "0.0.1"
 requires-python = ">=3.14"
-dependencies = []
 
 [dependency-groups]
 lico-backup = ["lico-backup"]
@@ -25,6 +24,7 @@ dev = [
   "shellcheck-py>=0.10.0.1",
   "shfmt-py>=3.8.0.1",
   "ty>=0.0.28",
+  "huggingface-hub>=1.18.0",
 ]
 
 [project.optional-dependencies]
