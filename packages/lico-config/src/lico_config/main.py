@@ -4,7 +4,7 @@ import json
 from pathlib import Path
 from typing import Any
 
-from lico_logger import LicoMsg, get_logger
+from lico_logger import LicoMsg, add_stream_handler, get_logger
 
 
 class ConfigManager:
@@ -19,6 +19,7 @@ class ConfigManager:
         """
         self.pkg_root: Path = Path(__file__).parent
         self.logger = get_logger(__name__)
+        add_stream_handler(self.logger)
 
         if config_path:
             self.config_path: Path = config_path
