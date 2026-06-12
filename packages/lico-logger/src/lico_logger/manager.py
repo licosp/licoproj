@@ -55,16 +55,22 @@ def get_logger(name: str, level: int = logging.INFO) -> logging.Logger:
     """
     logger = logging.getLogger(name)
 
-    # Avoid duplicate handlers if already configured
+    # Avoid duplicate handlers.
+    logger.propagate = False
+
     if logger.hasHandlers():
-        return logger
+        logger.handlers.clear()
 
     logger.setLevel(level)
 
+    return logger
+
+def get_formatter() -> str:
     # Standard format: [TIME] LEVEL [NAME] \n MESSAGE
-    formatter = LicoFormatter(
-        "[%(asctime)s] %(levelname)s [%(name)s]\n%(message)s"
-    )
+    return "[%(asctime)s] %(levelname)s [%(name)s]\n%(message)s"
+
+def add_stream_handler(logger: logging.Logger) -> None:
+    formatter = LicoFormatter(fmt=get_formatter())
 
     # 1. Stdout Handler (INFO and below)
     stdout_handler = logging.StreamHandler(sys.stdout)
@@ -79,9 +85,6 @@ def get_logger(name: str, level: int = logging.INFO) -> logging.Logger:
     stderr_handler.setLevel(logging.WARNING)
     logger.addHandler(stderr_handler)
 
-    return logger
-
-
 def add_file_handler(logger: logging.Logger, log_file: Path) -> None:
     """Attach a FileHandler to the given logger.
 
@@ -89,9 +92,8 @@ def add_file_handler(logger: logging.Logger, log_file: Path) -> None:
         logger (logging.Logger): The logger instance.
         log_file (Path): The path to the log file.
     """
-    formatter = LicoFormatter(
-        "[%(asctime)s] %(levelname)s [%(name)s]\n%(message)s"
-    )
+    formatter = LicoFormatter(fmt=get_formatter())
+
     # Ensure directory exists
     log_file.parent.mkdir(parents=True, exist_ok=True)
 
