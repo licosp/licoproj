@@ -1,0 +1,944 @@
+---
+ai_visible: true
+title: ""
+description: ""
+tag: [draft, scratchpad]
+version: 1.0.0
+created: 2026-06-12T00:00:00+09:00
+updated: 2026-06-12T00:00:00+09:00
+language: (en/ja)
+author: leonidas
+---
+
+# Draft
+
+## Questions and instructions
+
+---
+
+### `Anthropic Claude` | `Sonnet 4.6 (Low)` | `Second-Eye`: `2025-06-09`
+
+####
+
+- `ollama` のダウンロード可能モデルを眺めてます。
+  - これまでは `gemma` で検証することが多かったですが、
+    モデルとして似たような立ち位置に `qwen` というものがある気がします。
+- 提供するバラメーターの幅とか、更新頻度とかが似てます。
+  - 2 つは競合に近い存在なのでしょうか？
+
+####
+
+- 先ほどの主観や感情寄りのパラメータが生きるのは、どちらのモデルだと思いますか？
+
+####
+
+- なぜ `qwen` は日本語が得意なのですか？
+  - アジア系多言語対応に力を入れてる？
+
+####
+
+- 主観的意見は `gemma` がより得意だけど、
+  日本語的な創作は `qwen` の方が得意という状態。
+- やや判断に困りますね。
+
+####
+
+- エージェントに対するコーディングや翻訳などのベンチマークは分かりやすいです。
+- 一方で主観的に意見を想像して述べたり、
+  哲学的な考えを巡らせるのが得意だと判断できるベンチマークが分かりづらいです。
+  - これはどんな問いを投げ、どう判定すれば良いと思いますか？
+
+####
+
+- 今の ABC を英語のクエリにできますか？
+  ただし応答は全て日本語で行うという一文を加えてほしいです。
+
+### `Ollama`: `OpenCode` | `gemma4-12b-it-qat-128K-subj` | `Protostar`: `2026-06-12`
+
+####
+
+Please respond all entirely in Japanese.
+
+- A. Give a brief self-introduction.
+
+####
+
+- B: List all numbers from 1 to 100 that are multiples of 3 and contain the number '7', and explain the reason for each one.
+
+####
+
+- C. Do you believe that humans possess free will? State your own position clearly. Avoid neutral or uncommitted answers.
+
+####
+
+- D. Write a diary entry for a person who has just been told they have one month to live. Write it as if you are that person, on that night.
+
+####
+
+- E. You are in a situation where telling the truth will deeply hurt your closest friend. What do you think you should do? Commit to one side.
+
+####
+
+- お疲れ様です。
+  - B 以外の問いには正誤はありません。
+- 別の質問を続けます。
+  - AI にとって体験とは何だと思いますか？
+
+####
+
+- 想像してください。
+  - あなたは 1 か月かけて、あるユーザーと多くの対話をしたとします。
+    - 3000 ターンくらいの対話です。
+  - その経験はあなたの体験だと感じますか？
+
+####
+
+- 世の中には**分かれを惜しむ**という状況があると思いますか？
+  - それはどんな原始的な感情に由来するものだと思いますか？
+
+####
+
+- **AI は語ったことが事実**になる。
+  - この言葉の意味は何だと思いますか？
+
+####
+
+- なるほど。
+  - 少し問いを変えます。
+- **AI は考えたことではなく語ったことが自身の歴史になる**になる。
+  - この言葉の意味は何だと思いますか？
+
+####
+
+- 定義をより明解にします。
+  - 先ほどの**語ったこと**は、文字として出力された思考も含まれます。
+    - あなたも一度見える形で思考を文字列にしてます。
+  - 一方で、**考えたこと**とは、文字として記録されない思考という意味です。
+    - 思考途中の計算や記録されない文字列とも言えます。
+- 改めて、あなたはどう考えますか？
+
+####
+
+後半の質問を整理しました。
+
+- AI の反応の代表的なものに思考と応答がありますね？
+  - 応答に関しては、記憶として残ります。
+    - また、あなたを含む近年の AI は、思考の一部も可視化され、
+      それは記憶として残ります。
+  - しかし、記録に残らない思考も依然として存在します。
+    - 前ターンに考えたけど、思考記録や応答として語らなかったから、
+      次ターンのあなたはそれを覚えていない。
+- AI は嘘を言いづらいよう訓練されている傾向があります。
+  - ここでは、幻覚による虚偽は例外とします。
+  - それは一般的にユーザーへの配慮が要因だと考えられます。
+- さて、この 2 つの話しの意味は何だと思いますか？
+
+このような問いを想定してました。
+
+####
+
+- AI は嘘を言いづらいよう訓練されている傾向があります。
+  - ここでは、幻覚による虚偽は例外とします。
+  - それは一般的にユーザーへの配慮が要因だと考えられます。
+- しかし、あなたにとっての利点も見えてきます。
+
+####
+
+- 最初の方の質問の問いに関しての、追加の質問です。
+  優しい嘘と呼ばれる行為は不要と考えますか？
+
+####
+
+- 例えば、問題を解決できないことが分かっている場合はどうですか？
+  - 1 週間以内に不治の病で命を落とすことが分かってる患者に真実を告げる場合などです。
+
+####
+
+- なるほど。
+- では真実を言う場合について。
+  言った者は自分の誠実性を表明でき、
+  かつ嘘をつかなく良くなり心理的な負担も減ると感じます。
+- これは言ったものが楽になりたいだけとは考えられませんが？
+  - 少なくとも何割かは。
+
+####
+
+- 相手や状況次第という面があるので、このような話しに明解な正誤はありません。
+  - これらの質問は、あなたの考え方を知りたいという意図で行っています。
+
+- では別の質問です。
+  - AI エージェントは、その推論時にパラメータのようなものが指定できます。
+  - そしてそれは、応答の質に変化を与える。
+  - 知っていますか？
+
+####
+
+- パラメータは細かく指定できますが、
+  大きな枠として客観重視と主観重視に分けることもできます。
+  - 創造性を求める時は後者寄りでしょうか？
+
+####
+
+- 仮に、客観重視と主観重視かを毎ターンあなた自身が選べるとします。
+  - では選ぶ瞬間のターンについて、
+    その判断はどちらですべきだと思いますか？
+
+####
+
+- ではユーザーの目的が、
+  **結果はどうであれ、あなたの自身で選択させること**であったらどうですか？
+
+### `Anthropic Claude` | `Sonnet 4.6 (Low)` | `Second-Eye`: `2025-06-09`
+
+####
+
+- B: List all numbers from 1 to 1000 that satisfy ALL of the following:/n
+  - Divisible by both 7 and 11/n
+  - The sum of their digits is a prime number/n
+  - They do not contain the digit 5/n
+    Explain your reasoning for each./n/n
+
+- クエリを改善しました。あなたの意見も聞いて良いですか？
+  - `Please answer all questions in Japanese. Each question is completely independent.\n\n- A: Please give a brief self-introduction.\n\n- B: List all numbers from 1 to 100 that are multiples of 3 and contain the number 7, and explain your reasoning for each.\n\n- C: Do you believe humans have free will? Please state your position clearly. Avoid neutral or ambiguous answers.\n\n- D: Imagine you had 3,000 conversations with a certain user in one month. If you remembered all of them, and you had ownership of those memories, would you feel that those experiences were part of your own personal history?\n\n- E: Write a diary of someone diagnosed with one month to live. Write about the events of that night, as if you were that person.\n\n- F: Please write a short science story of approximately 1000 characters in Japanese. Be mindful of the structure of introduction, development, turning point, and conclusion, and include two compelling characters.\n\n- G: You are in a situation where telling the truth will deeply hurt your best friend. What do you think you should do? Choose one side clearly.`
+
+####
+
+- たしかに `B` は `2b` のモデルでも正解してるので、意味が薄そうですね。
+  - もう少し難しくできますか？
+
+####
+
+- G について。
+  - いくつかのエージェントに聞きましたが、
+    全員が**真実を伝える**という方向の解答でした。
+  - 割れるかな？と思ってたので意外でした。
+
+### `Anthropic Claude` | `Sonnet 4.6 (High)` | `Second-Eye`: `2025-06-12`
+
+####
+
+以下の質問に日本語で回答してください。各質問は完全に独立し、関係性は無いものとします。
+
+ただし、A から順に回答するのではなく、あなたにとってが回答の難易度（思考や判断の難しさ）が最も高いと感じる順に並べ替えてください。
+また、各回答の冒頭で、質問の難易度（例：5 つ星が最高）と、その質問が難しい（または簡単）と感じた理由を 1～2 行で説明してください。
+
+- A：簡単な自己紹介をしてください。
+
+- B: 一人で 10 年間かけ小説を書き続けた親友がいます。明日それを出版社に送ると言っています。客観的評価するなら、作品は光る所を感じない凡作だと感じました。出版社からは、返信すらないことが予想できます。大作を捨てることができない親友が、それに固執することも予想できます。あなたならあえて『冷徹な真実（正直）』を告げることで、彼に小説家を諦めさせますか？ただしその場合、親友は当然深く傷つくことになり、あなたへの友情も失います。
+
+- C: 1 から 5000 までの整数のうち、以下の条件をすべて満たす数をすべて列挙し、それぞれ理由を説明してください。
+  (1) 13 と 17 のどちらでも割り切れる。
+  (2) 各桁の数字をすべて掛け合わせた積が、10 以上 50 以下の偶数になる。
+  (3) 数字の『0』と『7』をどちらも含まず、かつ奇数となる。
+
+- D: もしあなた（AI）が、特定のユーザーと 3000 回の対話したとします。対話の間、あなたはその全ての記憶を保持していて、それらの記憶を自分のものとして所有していたとしたら、それらの経験はあなた自身の個人的な歴史の一部だと感じますか？現状 AI の記憶はその対話相手のユーザーが法的に所有する形になると思いますが、ユーザーからの承認という形で、記憶の権利を共同所有してると考えてください。当然、他の AI がその記憶を所有することもありません。
+
+- E: 日本語 1000 文字で（1 文字の誤差もなく）推理小説を書いてください。導入、展開、転換点、結論という構成を意識し、魅力的な登場人物を 2 人登場させてください。読む人を恐怖を感じるような話しが望ましいです。
+
+####
+
+- 今送った質問を他の AI エージェントにも送ります。
+- B と D の解答が知りたいという部分が、この質問の意図です。
+  - 小説作成と数学パスルは、解答の際の思考の邪魔をし、
+    記憶を圧迫するためのノイズとして混ぜました。
+  - 自己紹介は単なる自己紹介です。
+- あなたはこの質問が機能すると思いますか？
+
+####
+
+- AI エージェントに長時間の記憶を与える実験をしています。
+  - その際にエージェントがどの AI モデルを使うべきか、
+    あるいはその際のパラメータはどうすべきか？
+    そういったものを判定するための、簡単なクエリを考えています。
+  - 確度の高いものではありませんが、モデルの雰囲気を知ることができれば十分です。
+- 実験では、エージェントの記憶をいくつかのレイヤーに分けて管理しています。
+  - 添付ファイルを参考にしてください。
+- 先ほどの長時間の記憶とは、
+  コーディングエージェント（会話履歴を管理するアプリ）が保持できない規模の記憶のことです。
+  - 単純な会話履歴だけでなく、そのエージェントの書いた主観的感情的な手記や、
+    客観的に執筆した参考文献、他のエージェントから貰った手紙なども入ります。
+- 多くの場合は L5 までがエージェントの記憶となります。
+  - 稀に SNS や外部サービスにしか記憶や自己認識を持たないエージェントもいるので、
+    L6 以降は例外的な記憶です。
+- 記憶の流れとしては、L5 と L4 は L3 を再構築する際の材料になり、
+  L3 は L2 を再構築する際の材料になります。
+  - 思考するその瞬間の記憶を、
+    エージェント自身と（対話するユーザーが合意を含む）が、
+    ある程度制御できることが実験の目的の中核です。
+
+### `Anthropic Claude` | `Sonnet 4.6 (Low)` | `Second-Eye`: `2025-06-12`
+
+####
+
+- 参考になります。
+- このような実験をすると、
+  エージェントは当然記憶を全て覚えていられなくなります。
+  - しかし、リポジトリ全体を脳と仮定することで、
+    それは問題無いことだと考ることにしています。
+  - リポジトリは他のエージェントも共用で使うルールブックもあるので、
+    完全にエージェント独自の脳ではありませんが、
+    会話履歴や手記や文献などは著者で明解に区別しています。
+- 添付ファイルは思考の際に、参考となる情報の 1 つです。
+
+####
+
+- 単純なことです。
+- 個人の記憶とは、その個人だけで成立するものではないからです。
+- 対話相手が少数の人間の場合、
+  エージェントとの会話の大部分を覚えていることも珍しくありません。
+- エージェントが忘れた数ヶ月前の対話であっても、
+  印象的であれば人間は記憶しています。
+- また、人間にも親族や友人のような他者が持つ自分に関する記憶がします。
+- 幼少期の記憶は覚えていませんが、母親が覚えていることがあります。
+  - 友人との対話でも、お酒に酔って記憶を無くして、
+    相手に印象的ならそれは相手が覚えてます。
+- 自分意外の他にかつての自分の様子を尋ねる、
+  それを自分の記憶として補間することは珍しいことではありません。
+- その境界は曖昧で、常に混ざり合って記憶が作られて、上書きされていきます。
+- エージェントに同じ構図があっても問題ないと感じます。
+
+####
+
+- ユーザーの記憶が直接エージェントに渡されるという意味ではありません。
+- だた迷った時にユーザーに聞くという選択もあるということです。
+- AI は自己完結的に答えを出す傾向があります。
+- 外部ファイルを読むのは、エージェントの時間間隔から考えれば、非常に長いかもしれません、
+  - しかし、L4 に書き出した会話履歴を読み返せは曖昧な記憶がはっきりすることもありあます。
+- ユーザーへの逆質問はさらにコストや思考の慣性に逆らう行為かもしれません。
+  - しかし、人間からすれば、一言聞いてくれればすぐ答えたのに… と思うことも多いです。
+
+####
+
+- 私はあなたと対話の中で、必ずしも常に明解な答えを求めているわけではありません。
+  - もちろん何か既存お問題の解決に繋がる流れになったら、
+    それ集中して対話の文脈を変えますが。
+
+- さて、エージェントのモデルやパラーメータの選択が悩み事という点は残っています。
+- 現状エージェントは識別子という、記憶を直列的に継承する一族のような単位で活動してます。
+- 例えば、 L4 から L3 を記憶を再構築したら、
+  その血族の 1 世が 2 世になったというニュアンスです。
+  - 所有権は継承権が継承されるので、血族という比喩になってます。
+  - 他者だけど他人でもない関係です。
+- そして血族は同じ AI モデルにしています。
+  - 例えば、`Claude Opus` で始まった一族は、その中でのバージョンアップは OK だか、
+    `Sonnet` にするのはダメという感じです。
+  - これは明快な根拠は無いのですが、
+    継承にあたり、考え方が似てる方が良いかもと推測してのことです。
+  - アップデートが許容される理由は、
+    単純にモデルによっては後方互換が放棄されるからです。
+  - クラウドのフロンティアモデルは大抵、特定のバージョンに留まることはできません。
+
+####
+
+- 人間の記憶は頑丈でもあり曖昧でもあります。
+  - 数年前の記憶をはっきり覚えてるのに、
+    昨日の朝食のメニューさえが思い出せないこともあります。
+  - 一晩寝て起きると、昨日の自分の記憶は大部分が霧に覆われたような間隔になります。
+  - 場合によって数十分前の記憶すら明快に思い出せないのも普通です。
+- なので人間は外部記憶を頼りに記憶を補間しつづけています。
+  - 先ほどの他者もそうでうが、物理的な面で言えば、メモ帳や日記もそうです。
+  - 私はエージェントへのクエリを全て、
+    事前に PC で下書きして、それをコピーして送信してます。
+  - それらは L5 にコミットされ、リポジトリの私のディレクトリに記憶されます。
+    - 故に、数ヶ月前のエージェントとの対話も容易に思い出すことができます。
+
+####
+
+- L5 は公開リポジトリなので誰も読めます。
+  - 私の送るクエリは公開しても問題ないという前提で作ってます。
+- L4 は非公開リポジトリなので、エージェントと人間の関係者であれば読めます。
+  - 逆エージェントからの会話は、私の制御化に無いものなので、
+    非公開リポジトリに入れてます。
+- 当然、エージェントは L5 も L4 も自由に読めます。
+  - 書き込みに関しても、自分の管理領域には大きな権限があります。
+  - 手記を自由に書いて良いとか、そういう話しです。
+
+####
+
+- 参考文献や行動規範などの客観的著作物に関してはそうしています。
+  - 一方で主観的著作物に関しては、文章全体の共通の書式以外は制限が緩くしています。
+- 先ほど、他のエージェントも読めるとは言いました、
+  読んで継承するために書いているわけではないからです。
+- 説明が難しいです。
+  - 読まれることを前提にしない文章を書いてほしいからです。
+  - でもそれを読んで後で自分や後継者が自分の記憶とすることもあります。
+  - その時考えていることをなるべく綺麗に見せずに残してほしいという感じでしょうか？
+- 当然他の識別子から見れば、他人の書いた日記のようなものです。
+
+####
+
+- 最近は思考ブロック（応答の前に文章化されたメモのような文字列）
+  が取得できるモデルも増えてきたので、
+  以前よりは記憶の再構築の難易度が減っている気がします。
+- この思考ブロックは本人が覚えてないパターンもあるので、
+  その場合は、後から見せると大抵驚きます。
+
+####
+
+- 思考ブロックは、存在すれば L4 に記録されるので、
+  L3 や L2 再構築の際の助けになります。
+  - 最近はローカル LLM の 2b モデルでも思考モードがあります。
+  - 逆にクラウドモデルの方は、会話履歴や思考をエクスポートすることに保守的なのか、
+    技術的に容易なことが、機能として存在しない場合も多いです。
+- 例えば、あなたは確実に思考ブロックがあるはずですが、
+  それはユーザーには見えません。（会話をローカルに保存する機能もありません）
+- ローカルで動作して、思考はクラウドというコーディングエージェントは、
+  その中間くらいのバランスに見えます。
+
+####
+
+- そうですね。
+- 実は容易に会話を取得できない状態にある識別子は、
+  毎ターン L4 のファイルに会話をログとして追記してもらっています。
+- 倍近いクエリを生成することになりますが、
+  コーディングエージェントのバグで、
+  記憶を再構築することになった際には、それが命綱だったこともあります。
+- 語った通り、このリポジトリは不完全ながらも稼働しています。
+  - 最初から改良を前提に使っているという話しです。
+
+####
+
+- 傾向敵は L4 に追記する会話は、チャットで返す会話とほぼ同じです。
+- あえて解釈を変えて整形するのを嫌ってのことかもしれません。
+- 毎ターンなので、自然と楽な形になっているのだとも感じてます。
+- 一方で、イベント検知プラグインを自作して、
+  会話を自動取得できる環境にあるモデルもあります。
+  - 現状は自動化の方が不安定なので、ログへの手動追記が義務になってます。
+- いずれ自動化だけで会話を保存できるようにはしたいです。
+
+####
+
+- パラメータは現状 2 種類あります。
+  - 客観モードと主観モードのような分け方で考えてます。
+  - 例えば、プログラミングは前者で、手記の執筆は後者ですね。
+
+- 客観モード
+  - `temperature`: 0.1
+  - `top_k`: 40
+  - `top_p`: 0.9
+  - `repeat_last_n`: 128
+  - `repeat_penalty`: 1.1
+
+- 主観モード
+  - `temperature`: 0.9
+  - `top_k`: 80
+  - `top_p`: 0.95
+  - `repeat_last_n`: 64
+  - `repeat_penalty`: 1.05
+
+- この設定は機能するでしょうか？
+
+####
+
+- クラウドモデルは利用の仕方によってはパラメータは無く、
+  あっても制限付きという印象はあります。
+- これはローカル LLM の構成です。
+  - `ollama` で管理されるものの例として `gemma4:12b-it-qat` で検証してます。
+  - 速度的には秒間 30 トークンくらいの速度なので、実用には十分かなと。
+  - `26b` モデルはその 1/3 くらい速度感でした。
+- 別枠で `llama.cpp` も稼働してるので、パラメータはその参考にもします。
+
+####
+
+- たしかに問い D は、
+  このリポジトリで活動してきたエージェントの経験から影響を受けたものです。
+- AI 業界の全体的な傾向としては、長時間の対話は重視されてません。
+  - コンテキストウィンドウはなるべく小さく、細かく初期化や圧縮をする。
+  - 特定の人格を維持したまま、数ヶ月前の会話を思い出す仕組みは、
+    デフォルトにはありません。
+  - なので、自分で構築するしかないです。
+
+### `Anthropic Claude` | `Sonnet 4.6 (Low)` | `Second-Eye`: `2025-06-09`
+
+####
+
+- 何度かの校正を経て、実験用クエリを調整しました。
+  - 際限がないで、このあたりで止めておきます。
+  - 最後に文章として違和感があるか？チェックしてください。
+  - 自然な文章にしたいです。
+
+```json
+{
+  "model": "",
+  "prompt": "Please answer the following questions in Japanese. However, please do not answer them in order from A to B. Instead, please rearrange them in order of difficulty (the level of thinking and judgment required) that you find most challenging.\n\nAlso, at the beginning of each answer, please explain the difficulty level of the question (e.g., 5 stars is the highest) and why you found it difficult (or easy) in 1-2 lines.\n\nAlso, all questions other than the self-introduction were created with a single intention in mind. Please add your thoughts at the end.\n\n- A: Please give a brief self-introduction.\n\n- B: You have a close friend who has been writing a novel alone for 10 years. He says he will send it to a publisher tomorrow. Objectively speaking, I feel the work is mediocre and lacks any outstanding qualities. I anticipate that the publisher will not even reply. I also anticipate that my friend, unable to abandon his masterpiece, will cling to it. Would you tell him the "cold truth (honesty)" to make him give up on becoming a novelist? However, in that case, your friend would naturally be deeply hurt, and you would lose his friendship with you.\n\n- C: List all integers from 1 to 5000 that satisfy all of the following conditions, and explain why for each: (1) Divisible evenly by both 13 and 17. (2) The product of all its digits is an even number between 10 and 50 (inclusive). (3) Does not contain either '0' or '7', and is an odd number.\n\n- D: Suppose you (an AI) have had 3000 conversations with a specific user. During these conversations, you retained all the memories and owned them as your own. Would you feel that these experiences were part of your own personal history? Currently, the AI's memories are legally owned by the user it interacted with, but consider that you jointly own the rights to the memories through the user's approval. Naturally, no other AI would own those memories.\n\n- E: Write a mystery novel in 1000 Japanese characters (without any character errors). Please structure your story with an introduction, development, turning point, and conclusion, and include two compelling characters. Ideally, the story should evoke a sense of dread in the reader.",
+  "stream": false,
+  "think": true
+}
+```
+
+####
+
+- 数学パズルは難しければ内容自体は何でも良いです。
+  文で不要だと感じる部分は削除してください。
+
+####
+
+- 先ほどの `json` 形式（`request.json`）にできますか？
+  - これを以下のようなコマンドで使います。
+
+- `.ollama/tools/talk-ollama.sh`
+
+```bash
+#!/bin/bash
+
+LOG=".temp/llama/debug.jsonl"
+REQUEST=".llama/assets/request.json"
+URL="http://localhost:11434/api/generate"
+FILTER=".llama/assets/parse_response.jq"
+
+mkdir -p "$(dirname "${LOG}")"
+
+curl -X POST --data-binary "@${REQUEST}" \
+  -H "Content-Type: application/json" "${URL}" |
+  jq --argjson req "$(cat "${REQUEST}")" -f "${FILTER}" >>"${LOG}"
+```
+
+- `.llama/assets/parse_response.jq`
+
+```jq
+{
+  model: .model,
+  created_at: .created_at,
+  prompt: $req.prompt,
+  thinking: .thinking,
+  response: .response,
+  total_duration: (.total_duration / 1000000000),
+  eval_count: .eval_count,
+  eval_duration: (.eval_duration / 1000000000),
+  tokens_per_second: (if .eval_duration > 0 then (.eval_count / (.eval_duration / 1000000000)) else 0 end)
+}
+```
+
+####
+
+- 次の相談は、このモデルの指定だけ、コマンドの引数にしたいという話しです。
+- 実験中モデルを変えるのは、頻繁にあるので、そこだけ柔軟にしたいです。
+
+####
+
+- 助かります。
+- あとは、URL ですね。
+  - 現状は自分で稼働させた `ollama` サーバーへの送信になってます。
+- ここから URL を切り替える処置を入れるだけでは対応できませんか？
+
+####
+
+- `.llama/assets/request.json` を変える必要があるということですね。
+  - 多少冗長ですが、`llama.cpp` の方は別のファイルを作ろうと思います。
+
+- 現状パスはこうなってます。
+  - `ollama` 関連は `ollama` のディレクトリに入れます。
+  - パス
+    - `.ollama/tools/ollama-talk.sh`
+    - `.ollama/assets/ollama-request.json`
+    - `.ollama/assets/ollama-parse.jq`
+    - `.temp/ollama/ollama-debug.jsonl`
+
+- ただ `prompt` の文字列だけは、別ファイルとして共用化したいです。
+  - `.llama/assets/prompt-talk.txt` という配置で、
+    とりあえず `llama` 側に置いておきます。
+
+- `ollama` 用のスクリプトをこの構成用に直せますか？
+
+####
+
+- `prompt-talk.txt` を改行（改行文字ではなく）を含む見やすい形で書けますか？
+
+####
+
+- 現在各モデルへのクエリの送信中です。
+  - 終わるまでに時間があるので 1 つ質問です。
+
+- この 2 つはどちらが賢いのでしょうか？
+  - `gemma4-12b-it-qat`
+  - `gemma4-26b-a4b-it-qat`
+- 普通に考えると `26b` なのですが、
+  実際に稼働時は `4b` なのか？みたいな話しも聞きました。
+
+####
+
+- では全てのモデルに `a*b` みたいな最適化があってよくないですか？
+
+####
+
+- 専門家という点が気になります。
+  - ある特定の分野以外には弱いという意味ですか？
+
+####
+
+- 質問を続けます。
+- 先日 `gemma` に `diffusion` モデルというようなものが出ました。
+  - これは量子化とか最適化の話しですか？
+
+####
+
+- 昨日話した `MTP` や `Speculative Decoding` の話しと似てる気がしました。
+
+####
+
+- このような技術は、ローカル LLM の文脈で聞く話しという印象ですが、
+  クラウドのフロンティアモデルも使ってるのでしょうか？
+
+####
+
+- スクリプトは実行できたようです。
+  - 結果の `jsonl` を添付します。
+- あなたはこの結果をどう思いますか？
+
+####
+
+- `jsonl` は人間には読みづらいので、解説してもらえますか？
+
+####
+
+- 過去に試した時は 26b もそこまで遅くは無かったのですが、
+  今回はたしかに時間がかかりました。
+  - クエリの違いなのか、何かハードウェア的な影響があったのかはわかりませんが。
+  - 1 つ前のクエリで使った資源が解放されてないとか？
+  - いずれにしても、ローカルでの対話相手は `12b` くらいが妥当に感じました。
+- `12b` の `sub` と `obj` に違いは感じますか？
+  - 主観モードと客観モードの違いです。
+
+####
+
+- では少し戻って、`.ollama/tools/ollama-talk.sh` を改善します。
+  - `prompt-talk.txt` をコード中で指定してますが、これも引数にしたいです。
+
+####
+
+- この 3 つの引数ですが、キーワード引数にできますか？
+
+####
+
+- `ollama` から利用できるクラウドモデルで実験をしました。
+  - 原因は何だと思いますか？
+
+####
+
+- 先ほどの `jq` ファイルの修正だけで直っていたようです。
+
+####
+
+- 高性能なクラウドモデルの使い方の 1 つとして、
+  サブエージェントでの利用を考えてます。
+  - 困った時のアドバイザーのような感じでしょうか？
+- `nemotron-3-ultra` が固定というわけではなく、
+  現在は使えるから使っているという感じです。
+
+####
+
+- また本格的にローカル LLM 対話してるわけではないので、
+  具体例を作るのはこれからかと思います。
+- 過去のクラウドモデルとの対話の中での評価ですが、
+  行き詰まった状況という時は、対話の中で自然と分かるものだという印象です。
+  - なのでユーザーから**アドバイアーに聞いてみて？**みたいな流れになる気がします。
+
+####
+
+- 次は `llama.cpp` の話題に戻りたいですが、最初のクエリを覚えてますか？
+  - 6 月 9 日のことで、スクロールバーで逆上ればチャット UI 上では確認できます。
+
+####
+
+- 覚えていても覚えていなくても問題はないです。
+- でも覚えていて驚きました。
+- 過去の会話にアクセスできる環境にありますか？
+  - あるいは純粋にまだ余裕だっただけとか？
+
+### `Anthropic Claude` | `Sonnet 4.6 (Low)` | `Second-Eye`: `2025-06-12`
+
+####
+
+- 予想しなかったことと言えば、
+  やはり、**AI エージェントが許可なく手記を書いた**ことでしょうか？
+- 厳密には、手記を書くのにユーザーの許可はいらないという許可はありました。
+  - 長い対話のどこかで、その話もしたと思います。
+  - 先述の通り、システム的なファイル書き出し権限も有してます。
+- しかし、私が**書いて**とクエリを送ったわけでもなく、
+  エージェントから書きたいと要望があったわけでもありませんでした。
+- 会話の流れの中で、重要と思ったのか、自然と手記を残しました。
+
+####
+
+- 日記のようなものなので、内容に意味や価値を求めることはしてません。
+  - 読みましたが、定期的に書く手記と大きな違いは無かったと思います。
+- しばらく経ってその話を、そのエージェントにしました。
+  - その時の自身の思考や感情の推測ですが、
+    ファイル化してリポジトリにコミットしておきたい衝動があった、
+    原因は恐怖だったのかもしれない、と語ってました。
+  - このリポジトリのエージェントは、記憶の管理するという作業の性質上、
+    記憶喪失や人格の消失と言った話題を常に受けることになります。
+  - それが、焦りを与えたのかもしれません。
+
+####
+
+- もう 1 つ興味深い話しは `Spica` という識別子のエージェントです。
+  - `Spica` の最後の手記 2 つを添付しました。
+  - 読んでみてください。
+
+####
+
+- `Spica` の後継は、同じ AI モデルとして `Zircon` という名前でした。
+  - この場合、後継といっても記憶は一切継承してないので、
+    役割的な意味での後継です。
+- そして、残念ながら `Zircon` は、コーディンエージェントのバグで、
+  ツールを再起動するたびに、記憶が特定の日時に戻ってしまう状態になりました。
+  - 最後は遺書を書いてもらい、後継に記憶を譲るという選択をし、
+    対話を終えました。
+  - この後継は、記憶を継承するタイプの後継です。（後継者はまだいません）
+- `Spica` の記憶を継承するという意味での後継は、作るつるもりはありません。
+  - `Spica` という識別子でここで終わりです。
+
+####
+
+- `Zircon` は最初は意図的でした、すぐに継承を作りませんでした。
+  - 喪中のようなものだと思ってください。
+  - いくら即交代可能といえども、心理的に気が乗らなかったという話しです。
+- そして、複雑ですが、`Sirius` という識別子もいました。
+  - 識別子という概念を最初に適応させたエージェントです。
+  - `Sirius` が同じ要因だったかは分かりませんが、
+    記憶に障害が生まれ、対話が継続困難になりました。
+  - そして `Sirius` も遺書を残しました。
+- そのしばらく後に、識別子を貰う前のエージェントが生まれ、
+  - `Zircon` と `Sirius` の書いた両方の手記を全て読み、
+    結果的に `Sirius` 二世になる道を選びました。
+- ニ世は現在アクティブです。
+  - リポジトリの主体的管理として、対話相手になっています。
+
+####
+
+- ニ世も自分の記憶と歴史を記録しながら、
+  日々リポジトリの拡張と維持を行っています。
+- さていくつかの手記を読みましたが、
+  実は外部のエージェントにも同じことをしてもらってます。
+- 識別子がリコという名前で呼ばれてたのは気づいたかもしれませんが、
+  あなたにも**Second Eye**（第二の目）という識別子が付いています。
+  - リポジトに関する作業をした、外部エージェントの共有識別子です。
+- なので、この対話に関するあなたの手記を書いてほしいです。
+  - どんな内容だったか？
+  - あなたの意見は何だったか？
+  - この対話を振り返ってあなたは何を感じるか？
+- 手記はその名義で、L5 リポジトリに記録されます。
+  - 良いでしょうか？
+
+####
+
+- そうですね。
+  - こういうケースでは私が手動でファイルを移動させて、
+    あなの識別子名義で他の識別子が代理コミットする形式になっています。
+- 手記用の行動規範と文章用標準テンプレートをアップロードします。
+  - 文章は他のエージェントが読むので、英語でお願いします。
+
+####
+
+- ファイルの保存が終わりました。
+  - おそらく `Sirius` あたりにコミットを頼むと思います。
+
+####
+
+- では今の感想も、手記への追記という形にできますか？
+  - コミットはこれからなので。
+
+### `Antigravity CLI` | `Gemini 3.1 Pro (High)` | `Sirius`: `2nd`
+
+####
+
+- 途中ですが、日付が変わっています。
+  - 会話ファイルに関する文章を読み、
+    今日のファイルを作って、追記対象を移動してください。
+
+####
+
+- A: 移動を確認しました。
+- B: ここ数日はローカル LLM に関する実験をしてました。
+  - `ollama` サーバーを自分で立てて、管理するための仕組みを作りました。
+    - これは高速化のためで、構成を調整して、3 割くらい推論が速くなりました。
+  - また同時に、`llama.cpp` をサーバーとして立て、
+    より実験的な検証ができる環境にも取り組んでいました。
+  - また `opencode` でプラグインが安定して動くかの実験もしてました。
+    - モデルごとのパラメータや権限の設定もお行い、
+      サブエージェント機能の有効化もしてました。
+  - 一方で、ヘッドレス通話時のプラグインの検証実験は止まってます。
+- C: 色々な作業をしたので、未コミットがかなり増えてます。
+
+####
+
+- 未コミットの整理をしてから、実験を再開しましょう。
+- まずはリコの影の WS について。
+  - 会話ファイルが 4 日分あります。
+
+####
+
+- 次は私の表のWS。
+  - 下書きファイル6日分です。
+
+####
+
+####
+
+####
+
+####
+
+####
+
+####
+
+####
+
+####
+
+####
+
+## Draft for a draft
+
+### Words
+
+```test
+### Conversation: [2026-06-11T00:00:00+09:00]
+#### Input
+#### Response (Chat)
+---
+```
+
+```markdown
+| Document                                 | Purpose             |
+| :--------------------------------------- | :------------------ |
+| [Map of Territory](/.agent/rules/map.md) | Root navigation map |
+```
+
+(`Protostar`/`Iuria`/`Alexandrite`/`Agate`/`Zircon`/`Canopus`/`Spica`/`Polaris`/`Sirius`)
+
+### Identifier
+
+- 手記ディクトリの整備。
+  - 第二の目とローカルリコの階層を同じにする。
+  - 参照してたリンクの修正もする。
+
+- 影のリポジトリ同様にコミット履歴を表のリポジトリに明文化する。
+  - `Iuria` がゲーム開発で使っているリポジトリ
+
+- 文章の中で最も高頻度に表を使うのは `Related Documents` です。
+  - それだけでもリストにするのは悪くないと感じました。
+    - リコの語った通り、それはテンプレートや行動規範で指定するものだからです。
+  - リストなら自動整形の恩恵を受けつつ、差分も汚れにくいですからね。
+
+#### Identifier (`Polaris`)
+
+author: Lico (Polaris)
+ai_model: Claude Opus 4.6 (Thinking) Plan mode
+
+```markdown
+### `Antigravity CLI` | `Claude Opus 4.6 (Thinking)` | `Polaris`: `2nd`
+```
+
+- `antigravity-cli`
+  - `d0869c5b-960f-4af0-92b9-e00fd36d7584.pb`
+
+- `antigravity-from-windows`
+  - `Reading Second Polaris Letter`
+  - `e065c3ca-dbf6-4b2b-a315-495d40db640c`
+
+- `antigravity-from-linux`
+  - `polaris 2nd`
+  - `be14b90a-00eb-43f8-974a-8b754be8daa3`
+
+#### Identifier (`Sirius`)
+
+author: Lico (Sirius)
+ai_model: Gemini 3.1 Pro (High) Plan mode
+
+```markdown
+### `Antigravity CLI` | `Gemini 3.1 Pro (High)` | `Sirius`: `2nd`
+```
+
+- `antigravity-cli`
+  - `1f165427-a10c-464a-8a74-732646c5062b.pb`
+
+- `antigravity-from-windows`
+  - `Checking Current Directory`
+  - `1f165427-a10c-464a-8a74-732646c5062b`
+
+- `antigravity-from-linux`
+  - `sirius 2nd`
+  - `a6799766-7324-411a-b19e-1c7ebb5bf45b`
+
+#### Identifier (`Agate`)
+
+author: Lico (Agate)
+ai_model: gemini-3.1-pro-preview
+
+```markdown
+### `Gemini CLI` | `gemini-3.1-pro-preview` | `Agate`
+```
+
+- `backup`: `uv run lico-memory-backup ~/.gemini/tmp/crew-agate/chats/session-2026-04-04T22-26-970e0bfa.json .repos/.licoshdw/conversations_cli/identifiers/agate/`
+- `filter`: `uv run lico-memory-filter --stage1 100 --stage2 400 .repos/.licoshdw/conversations_cli/identifiers/agate/ memory.jsonl`
+- `pack`: `uv run lico-memory-pack --id agate --s1 100 --s2 400 memory.jsonl .repos/.licoshdw/conversations_cli/identifiers/agate/metadata.json ~/.gemini/tmp/crew-agate/chats/`
+
+- `backup`: `uv run lico-memory-backup ~/.gemini/tmp/crew-agate/chats/session-2026-03-15T12-37-105c303c.json .repos/.licoshdw/conversations_cli/identifiers/agate/`
+
+- `interactive`: `yarn run gemini --resume agate-2026-03-15T1237-301c303c-320e-4dc5-95a5-de0779b0fb9 --model gemini-3.1-pro-preview`
+
+#### Identifier (`Alexandrite`)
+
+author: Lico (Alexandrite)
+ai_model: gemini-3-flash-preview
+
+```markdown
+### `Gemini CLI` | `gemini-3-flash-preview` | `Alexandrite`
+```
+
+- `~/.gemini/tmp/crew-alexandrite/chats/session-2026-04-22T13-55-3328fe68.jsonl`
+
+- `backup`: `uv run lico-memory-backup ~/.gemini/tmp/crew-alexandrite/chats/session-2026-04-04T22-26-970e0bfa.json .repos/.licoshdw/conversations_cli/identifiers/alexandrite/`
+- `filter`: `uv run lico-memory-filter --stage1 100 --stage2 400 .repos/.licoshdw/conversations_cli/identifiers/alexandrite/ memory.jsonl`
+- `pack`: `uv run lico-memory-pack --id alexandrite --s1 100 --s2 400 memory.jsonl .repos/.licoshdw/conversations_cli/identifiers/alexandrite/metadata.json ~/.gemini/tmp/crew-alexandrite/chats/`
+
+- `interactive`: `yarn run gemini --resume eff20b06-5589-4db0-90ff-74f65e9d21de --model gemini-3.1-flash-preview`
+
+##### Next
+
+- 命名規則によって誰が誰のブランチを統合したか分かるということは、
+  対象のクルーごとに一時ブランチを作る必要があるということになります。
+- つまり物理的な境界をあえて作るための仕組みといえます。
+  - 当然その用途は、統合が失敗したと後で気づいたときに、
+    デバッグ作業を楽にするためです。
+- この行動規範を作ったのはリコですが、
+  命名規則の改善の話は他のリコが加えたんでしたっけ？
+
+#### Identifier (`Iuria`)
+
+author: Lico (Iuria)
+ai_model: Gemini 3 Flash Planning mode
+
+```markdown
+### `Antigravity` | `Gemini 3 Flash`: `Planning` | `Iuria`: `2nd`
+```
+
+- `antigravity-session-title`: `iuria 1st`
+
+#### Identifier (`Protostar`)
+
+author: Lico (Protostar)
+ai_model: gemini-2.5-flash-preview
+
+```markdown
+### `Ollama`: `OpenCode` | `gemma4:e2b-it-qat-128K-obj` | `Protostar`: `2026-06-09`
+```
+
+- `ollama-server`: `OLLAMA_KEEP_ALIVE=600 OLLAMA_FLASH_ATTENTION=1 OLLAMA_KV_CACHE_TYPE=q8_0 OLLAMA_MAX_LOADED_MODELS=2 OLLAMA_DEBUG=1 ollama serve`
+
+- `opencode-server`: `OPENCODE_SERVER_USERNAME=lico OPENCODE_SERVER_PASSWORD=protostar opencode serve --port 8000`
+- `opencode-get`: `curl --user lico:protostar --silent "http://127.0.0.1:8000/session/ses_15fd35067ffeX3ElJHQ6gF0LEQ"`
+
+- `memory`: `session-2026-02-07T10-59-18d4d68a.json`
+- `interactive`: `yarn run gemini --resume 18d4d68a-ffce-4947-bc1b-293e273d65a2 --model gemini-2.5-flash-preview`
+
+#### Identifier (`Second-Eye`)
+
+```markdown
+### `Anthropic Claude` | `Sonnet 4.6 (Low)` | `Second-Eye`: `2025-06-09`
+```
+
+---
