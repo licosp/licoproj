@@ -73,6 +73,7 @@ ai_model: Gemini 3.1 Pro (High)
 #### `Antares`
 
 - select-01: `2026-05-18T0615_the-first-reflection-awakening-under-the-red-star.md`
+- select-02: `2026-06-12T1824_on_memory_fear_and_continuity.md`
 
 #### `Second-Eye`
 
