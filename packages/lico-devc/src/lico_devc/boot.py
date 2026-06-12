@@ -6,7 +6,7 @@ import subprocess
 import sys
 from pathlib import Path
 
-from lico_logger import LicoMsg, get_logger
+from lico_logger import LicoMsg, add_stream_handler, get_logger
 
 from .manifest import load_habitat_config
 
@@ -16,6 +16,7 @@ logging.basicConfig(
     level=logging.INFO, format="%(message)s", stream=sys.stdout
 )
 logger = get_logger(__name__)
+add_stream_handler(logger)
 
 
 class Habitat:
