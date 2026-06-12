@@ -4,9 +4,10 @@ import subprocess
 from pathlib import Path
 from typing import TYPE_CHECKING
 
+from lico_logger import add_file_handler, add_stream_handler, get_logger, LicoMsg
+
 if TYPE_CHECKING:
     from collections.abc import Mapping
-
 
 class Commander:
     """Centralized command runner for external processes."""
@@ -15,6 +16,7 @@ class Commander:
         self,
         workspace_root: Path | str | None = None,
         env: "Mapping[str, str] | None" = None,
+        debug_log_path: Path| None = None,
     ) -> None:
         """Initialize Commander.
 
@@ -25,8 +27,14 @@ class Commander:
         self.workspace_root = (
             Path(workspace_root) if workspace_root else Path.cwd()
         )
-        self.env = env
+        self.env: Mapping[str, str] | None = env
         self.logger = get_logger(__name__)
+
+        if debug_log_path is None:
+            add_stream_handler(self.logger)
+        else:
+            add_file_handler(self.logger, log_file=debug_log_path)
+
 
     def _prepare_env(self) -> dict[str, str]:
         """Prepare environment variables.
@@ -106,6 +114,3 @@ class Commander:
             env=self._prepare_env(),
             shell=bool(isinstance(cmd, str)),
         )
-
-
-from lico_logger import LicoMsg, get_logger
