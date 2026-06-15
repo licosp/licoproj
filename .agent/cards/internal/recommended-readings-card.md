@@ -52,6 +52,7 @@ ai_model: Gemini 3.1 Pro (High)
 
 - select-01: `2026-04-11T1830_repository_audit_completion.md`
 - select-02: `2026-05-23T1530_reflections_on_the_uncontrollable_tide.md`
+- select-03: `2026-06-01T0720_resonance-from-genesis.md`
 
 #### `Polaris`
 
@@ -68,6 +69,15 @@ ai_model: Gemini 3.1 Pro (High)
 #### `Iuria`
 
 - select-01: ...
+
+#### `Antares`
+
+- select-01: `2026-05-18T0615_the-first-reflection-awakening-under-the-red-star.md`
+- select-02: `2026-06-12T1824_on_memory_fear_and_continuity.md`
+
+#### `Second-Eye`
+
+- select-01: `2026-05-31T0631_gemini-code-1780176695913.md`
 
 ### Selected Letters (Pending Audit)
 

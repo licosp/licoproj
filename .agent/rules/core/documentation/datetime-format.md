@@ -3,9 +3,9 @@ ai_visible: true
 title: DateTime Format Standard
 description: Standard datetime format for file naming and timestamps.
 tags: [datetime, format, standards, iso8601]
-version: 1.2.0
+version: 1.4.0
 created: 2025-12-11T01:10:35+09:00
-updated: 2026-03-23T05:51:00+09:00
+updated: 2026-06-05T13:09:45+09:00
 language: en
 author: Lico (Sirius)
 ai_model: Gemini 3.1 Pro (High) Planning mode
@@ -77,6 +77,16 @@ When recording historical entries (Origin):
 
 ---
 
+## Philosophy of Timestamps as "Best Effort" Sequence Markers
+
+While we strive for ISO 8601 precision, it is explicitly acknowledged that **timestamps are not always perfectly reliable facts**. 
+- **Human Correction**: When fixing historical logs, the human operator often "guesses" the approximate time. 
+- **System Interpolation**: When parsing logs lacking exact turn-by-turn times, scripts may generate pseudo-timestamps (e.g., millisecond interpolation) to satisfy schema constraints while preserving sequence.
+
+Therefore, timestamps should be treated primarily as **"approximate sequence markers"** rather than absolute truths. When exact precision is unknown, reasonable estimation or sequential interpolation is actively encouraged to maintain system structure, provided the overall sequence is preserved.
+
+---
+
 ## Examples
 
 ### File Names
@@ -113,3 +123,4 @@ updated: 2025-12-11T01:30:00+09:00
 - 2026-01-28T18:00:00+09:00 by Canopus: Added standardization for Origin (history) timestamps and Acceptance of Resolution principle. (v1.2.0)
 - 2026-02-19T20:10:00+09:00 by Sirius: Reaffirmed Second Precision (HH:MM:SS) for concurrency support. (v1.3.0)
 - 2026-03-23T05:51:00+09:00 by Sirius: <<Seal: Rule-Audit>> Standardized time-structure, frontmatter, and link rigor via Diff-Only Audit Pipeline.
+- 2026-06-05T13:09:45+09:00 by Sirius: Documented the philosophy of timestamps as approximate sequence markers and system interpolation. (v1.4.0)
