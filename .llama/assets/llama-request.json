@@ -1,0 +1,13 @@
+{
+  "model": "",
+  "messages": [
+    {
+      "role": "user",
+      "content": ""
+    }
+  ],
+  "chat_template_kwargs": {
+    "enable_thinking": false
+  },
+  "stream": false
+}
