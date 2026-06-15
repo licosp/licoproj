@@ -8,11 +8,12 @@ lico-backup = ["lico-backup"]
 lico-config = ["lico-config"]
 lico-devc = ["lico-devc"]
 lico-exec = ["lico-exec"]
-lico-observer = ["lico-observer"]
 lico-lint = ["lico-lint"]
+lico-llama = ["lico-llama"]
 lico-log = ["lico-log"]
 lico-logger = ["lico-logger"]
 lico-memory = ["lico-memory"]
+lico-observer = ["lico-observer"]
 lico-pipeline = ["lico-pipeline"]
 lico-shim = ["lico-shim"]
 
@@ -24,7 +25,6 @@ dev = [
   "shellcheck-py>=0.10.0.1",
   "shfmt-py>=3.8.0.1",
   "ty>=0.0.28",
-  "huggingface-hub>=1.18.0",
 ]
 
 [project.optional-dependencies]
@@ -32,11 +32,12 @@ lico-backup = ["lico-backup"]
 lico-config = ["lico-config"]
 lico-devc = ["lico-devc"]
 lico-exec = ["lico-exec"]
-lico-observer = ["lico-observer"]
 lico-lint = ["lico-lint"]
+lico-llama = ["lico-llama"]
 lico-log = ["lico-log"]
 lico-logger = ["lico-logger"]
 lico-memory = ["lico-memory"]
+lico-observer = ["lico-observer"]
 lico-pipeline = ["lico-pipeline"]
 lico-shim = ["lico-shim"]
 
@@ -48,11 +49,12 @@ default-groups = [
   "lico-config",
   "lico-devc",
   "lico-exec",
-  "lico-observer",
   "lico-lint",
+  "lico-llama",
   "lico-log",
   "lico-logger",
   "lico-memory",
+  "lico-observer",
   "lico-pipeline",
   "lico-shim",
 ]
@@ -62,11 +64,12 @@ lico-backup = { workspace = true }
 lico-config = { workspace = true }
 lico-devc = { workspace = true }
 lico-exec = { workspace = true }
-lico-observer = { workspace = true }
 lico-lint = { workspace = true }
+lico-llama = { workspace = true }
 lico-log = { workspace = true }
 lico-logger = { workspace = true }
 lico-memory = { workspace = true }
+lico-observer = { workspace = true }
 lico-pipeline = { workspace = true }
 lico-shim = { workspace = true }
 
@@ -76,11 +79,12 @@ members = [
   "packages/lico-config",
   "packages/lico-devc",
   "packages/lico-exec",
-  "packages/lico-observer",
   "packages/lico-lint",
+  "packages/lico-llama",
   "packages/lico-log",
   "packages/lico-logger",
   "packages/lico-memory",
+  "packages/lico-observer",
   "packages/lico-pipeline",
   "packages/lico-shim",
 ]
