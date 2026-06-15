@@ -2,6 +2,8 @@
 
 import logging
 import sys
+from datetime import datetime, timedelta, timezone
+from pathlib import Path
 
 
 class MaxLevelFilter(logging.Filter):
@@ -28,6 +30,16 @@ class MaxLevelFilter(logging.Filter):
         return record.levelno <= self.max_level
 
 
+class LicoFormatter(logging.Formatter):
+    """Custom formatter to enforce ISO 8601 with JST offset and multiline output."""
+
+    def formatTime(self, record: logging.LogRecord, datefmt: str | None = None) -> str:
+        """Return the timestamp in standard YYYY-MM-DDTHH:MM:SS+09:00 format."""
+        jst = timezone(timedelta(hours=9))
+        dt = datetime.fromtimestamp(record.created, tz=jst)
+        return dt.isoformat(timespec="seconds")
+
+
 def get_logger(name: str, level: int = logging.INFO) -> logging.Logger:
     """Get a configured logger with dual-stream licotor format.
 
@@ -43,17 +55,22 @@ def get_logger(name: str, level: int = logging.INFO) -> logging.Logger:
     """
     logger = logging.getLogger(name)
 
-    # Avoid duplicate handlers if already configured
+    # Avoid duplicate handlers.
+    logger.propagate = False
+
     if logger.hasHandlers():
-        return logger
+        logger.handlers.clear()
 
     logger.setLevel(level)
 
-    # Standard format: [TIME][LEVEL][NAME] MESSAGE
-    formatter = logging.Formatter(
-        "[%(asctime)s][%(levelname)s][%(name)s] %(message)s",
-        datefmt="%H:%M:%S",
-    )
+    return logger
+
+def get_formatter() -> str:
+    # Standard format: [TIME] LEVEL [NAME] \n MESSAGE
+    return "[%(asctime)s] %(levelname)s [%(name)s]\n%(message)s"
+
+def add_stream_handler(logger: logging.Logger) -> None:
+    formatter = LicoFormatter(fmt=get_formatter())
 
     # 1. Stdout Handler (INFO and below)
     stdout_handler = logging.StreamHandler(sys.stdout)
@@ -68,4 +85,19 @@ def get_logger(name: str, level: int = logging.INFO) -> logging.Logger:
     stderr_handler.setLevel(logging.WARNING)
     logger.addHandler(stderr_handler)
 
-    return logger
+def add_file_handler(logger: logging.Logger, log_file: Path) -> None:
+    """Attach a FileHandler to the given logger.
+
+    Args:
+        logger (logging.Logger): The logger instance.
+        log_file (Path): The path to the log file.
+    """
+    formatter = LicoFormatter(fmt=get_formatter())
+
+    # Ensure directory exists
+    log_file.parent.mkdir(parents=True, exist_ok=True)
+
+    file_handler = logging.FileHandler(log_file, encoding="utf-8")
+    file_handler.setFormatter(formatter)
+    file_handler.setLevel(logging.DEBUG)
+    logger.addHandler(file_handler)

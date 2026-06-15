@@ -12,12 +12,13 @@ from datetime import UTC, datetime
 from pathlib import Path
 from typing import TYPE_CHECKING
 
-from lico_logger import LicoMsg, get_logger
+from lico_logger import LicoMsg, add_stream_handler, get_logger
 
 if TYPE_CHECKING:
     from types import FrameType
 
 logger = get_logger(__name__)
+add_stream_handler(logger)
 
 
 def handle_signal(signum: int, _frame: FrameType | None) -> None:

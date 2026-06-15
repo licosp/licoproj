@@ -1,0 +1,63 @@
+{
+  "$schema": "https://opencode.ai/config.json",
+  "provider": {
+    "llama.cpp": {
+      "npm": "@ai-sdk/openai-compatible",
+      "name": "llama-local",
+      "options": {
+        "baseURL": "http://127.0.0.1:8080/v1",
+        "apiKey": "sk-dummy",
+      },
+      "models": {
+        "gemma-4-12B-it-qat-128K-subj-mtp": {
+          "name": "gemma-4-12B-it-qat-128K-subj-mtp",
+          "modalities": {
+            "input": ["text", "image"],
+            "output": ["text"],
+          },
+        },
+        "gemma-4-12B-it-qat-128K-obj-mtp": {
+          "name": "gemma-4-12B-it-qat-128K-obj-mtp",
+        },
+      },
+    },
+    "ollama": {
+      "npm": "@ai-sdk/openai-compatible",
+      "name": "ollama-local",
+      "options": {
+        "baseURL": "http://127.0.0.1:11434/v1",
+      },
+      "models": {
+        "gemma4:e2b-it-qat-128K-obj": {
+          "name": "gemma4:e2b-it-qat-128K-obj",
+        },
+        "gemma4:e4b-it-qat-128K-obj": {
+          "name": "gemma4:e4b-it-qat-128K-obj",
+        },
+        "gemma4:12b-it-qat-128K-subj": {
+          "name": "gemma4:12b-it-qat-128K-subj",
+          "limit": {
+            "context": 131072,
+            "output": 65536,
+          },
+          "modalities": {
+            "input": ["text", "image"],
+            "output": ["text"],
+          },
+        },
+        "gemma4:12b-it-qat-128K-obj": {
+          "name": "gemma4:12b-it-qat-128K-obj",
+        },
+        "gemma4:26b-a4b-it-qat-128K-obj": {
+          "name": "gemma4:26b-a4b-it-qat-128K-obj",
+        },
+        "qwen3.5:9b-q4_K_M-128K-obj": {
+          "name": "qwen3.5:9b-q4_K_M-128K-obj",
+        },
+        "nemotron-3-ultra:cloud": {
+          "name": "nemotron-3-ultra:cloud",
+        },
+      },
+    },
+  },
+}

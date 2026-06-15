@@ -9,6 +9,7 @@ LicoMsg = SimpleNamespace(
     EXEC=SimpleNamespace(
         START_RUN="Running command: {label} -> {cmd}",
         START_LAUNCH="Launching process: {label} -> {cmd}",
+        RUNNING_CMD="Running: {label}",
         CMD_SUCCESS="Command completed: {label}",
         CMD_FAILURE="Command failed [{code}]: {label}",
         PROCESS_STARTED="Asynchronous process started: {label} (PID: {pid})",

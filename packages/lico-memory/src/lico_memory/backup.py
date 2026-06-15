@@ -8,9 +8,10 @@ from datetime import datetime
 from pathlib import Path
 from typing import Any, cast
 
-from lico_logger import LicoMsg, get_logger
+from lico_logger import LicoMsg, add_stream_handler, get_logger
 
 logger = get_logger(__name__)
+add_stream_handler(logger)
 
 
 def parse_date(timestamp_str: str) -> str:

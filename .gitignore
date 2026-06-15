@@ -23,6 +23,7 @@ __pycache__/
 .agent/.internal/workspace/agate/*
 .agent/.internal/workspace/alexandrite/*
 .agent/.internal/workspace/iuria/*
+.agent/.internal/workspace/protostar/*
 
 ## Git
 !.gitkeep

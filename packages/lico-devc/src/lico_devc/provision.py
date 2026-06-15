@@ -16,7 +16,7 @@ from contextlib import suppress
 from pathlib import Path
 from typing import cast
 
-from lico_logger import LicoMsg, get_logger
+from lico_logger import LicoMsg, add_stream_handler, get_logger
 
 from .manifest import (
     CrewMember,
@@ -47,6 +47,7 @@ logging.basicConfig(
     level=logging.INFO, format="%(message)s", stream=sys.stdout
 )
 logger = get_logger(__name__)
+add_stream_handler(logger)
 
 
 def run(

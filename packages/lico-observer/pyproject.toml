@@ -1,0 +1,17 @@
+[project]
+name = "lico-observer"
+version = "0.1.0"
+description = ""
+readme = "README.md"
+requires-python = ">=3.14"
+dependencies = []
+
+[project.scripts]
+lico-observer-opencode = "lico_observer.opencode:main"
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/lico_observer"]
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
